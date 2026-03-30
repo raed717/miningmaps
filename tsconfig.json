@@ -1,0 +1,3 @@
+{
+  "extends": "@miningmaps/config/tsconfig.base.json"
+}
