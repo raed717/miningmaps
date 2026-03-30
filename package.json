@@ -16,6 +16,7 @@
   "dependencies": {
     "@miningmaps/env": "*",
     "dotenv": "^17.2.2",
+    "react-intersection-observer": "^10.0.3",
     "zod": "^4.1.13"
   },
   "devDependencies": {

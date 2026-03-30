@@ -1,8 +1,226 @@
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { Link } from "react-router";
 import { ArrowRight, Layers, BarChart3, Globe2, Download, Mountain } from "lucide-react";
+import { useRef } from "react";
+
+function CinematicHero({ scrollContainerRef }: { scrollContainerRef: React.RefObject<HTMLElement | null> }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    container: scrollContainerRef,
+    offset: ["start start", "end end"],
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 40,
+    damping: 20,
+    restDelta: 0.001,
+  });
+
+  // Phase 1: Geological Time (Ancient Terrain)
+  const p1Opacity = useTransform(smoothProgress, [0, 0.15, 0.25], [1, 1, 0]);
+  const p1Scale = useTransform(smoothProgress, [0, 0.25], [1, 1.4]);
+  const p1TextY = useTransform(smoothProgress, [0, 0.2], [0, -100]);
+
+  // Phase 2: Formations (Grid & Data Structure)
+  const p2Opacity = useTransform(smoothProgress, [0.15, 0.3, 0.45, 0.55], [0, 1, 1, 0]);
+  const p2Scale = useTransform(smoothProgress, [0.15, 0.55], [0.8, 1.1]);
+  const p2TextY = useTransform(smoothProgress, [0.15, 0.45], [100, -50]);
+
+  // Phase 3: Modern Operations (Neon/Active)
+  const p3Opacity = useTransform(smoothProgress, [0.45, 0.6, 0.75, 0.85], [0, 1, 1, 0]);
+  const p3Scale = useTransform(smoothProgress, [0.45, 0.85], [1.1, 0.9]);
+  const p3TextY = useTransform(smoothProgress, [0.45, 0.75], [100, -50]);
+
+  // Phase 4: Future / Sustainable
+  const p4Opacity = useTransform(smoothProgress, [0.75, 0.9, 1], [0, 1, 1]);
+  const p4Scale = useTransform(smoothProgress, [0.75, 1], [0.9, 1]);
+  const p4TextY = useTransform(smoothProgress, [0.75, 1], [100, 0]);
+
+  // Global CTA visibility
+  const ctaOpacity = useTransform(smoothProgress, [0.8, 0.95], [0, 1]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative h-[400vh] w-full shrink-0 bg-black text-white"
+    >
+      <div className="sticky top-0 h-[calc(100svh-4rem)] w-full overflow-hidden flex flex-col items-center justify-center">
+        {/* Abstract Progress Indicator */}
+        <div className="absolute left-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4 hidden md:flex">
+          <motion.div className="w-[2px] h-32 bg-white/10 relative overflow-hidden">
+            <motion.div
+              className="absolute top-0 left-0 w-full bg-primary"
+              style={{
+                height: useTransform(smoothProgress, [0, 1], ["0%", "100%"]),
+              }}
+            />
+          </motion.div>
+          <span
+            className="text-xs tracking-widest text-white/40 rotate-180"
+            style={{ writingMode: "vertical-rl" }}
+          >
+            EVOLUTION
+          </span>
+        </div>
+
+        {/* --- PHASE 1: Ancient Terrain --- */}
+        <motion.div
+          style={{ opacity: p1Opacity, scale: p1Scale }}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-luminosity"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1686968719625-3faf853a543e?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          />
+          {/* Gritty Texture */}
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black" />
+          <div className="absolute w-[60vw] h-[60vw] rounded-full bg-amber-900/30 blur-[100px]" />
+          <motion.div style={{ y: p1TextY }} className="z-10 text-center px-4">
+            <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-stone-300 to-stone-700 drop-shadow-2xl">
+              Ancient <br /> Terrain
+            </h2>
+            <p className="mt-6 text-xl text-stone-400 font-mono tracking-widest max-w-lg mx-auto bg-black/40 backdrop-blur-sm p-2 rounded-md">
+              MILLIONS OF YEARS OF GEOLOGICAL PRESSURE
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* --- PHASE 2: Formations --- */}
+        <motion.div
+          style={{ opacity: p2Opacity, scale: p2Scale }}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 saturate-0"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1520299607509-dcd935f9a839?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          />
+          <div className="absolute inset-0 bg-black/60" />
+          {/* Wireframe Grid Layer */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+          <motion.div
+            style={{ y: p2TextY }}
+            className="z-10 text-center px-4 backdrop-blur-sm bg-black/30 p-8 rounded-2xl border border-white/5"
+          >
+            <div className="w-24 h-1 bg-chart-2 mb-8 mx-auto shadow-[0_0_15px_rgba(249,115,22,0.8)]" />
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-white drop-shadow-xl">
+              Data Substrata
+            </h2>
+            <p className="mt-4 text-xl text-muted-foreground max-w-2xl mx-auto">
+              Mapping complex stratigraphy with high-resolution radar
+              topologies.
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* --- PHASE 3: Modern Operations --- */}
+        <motion.div
+          style={{ opacity: p3Opacity, scale: p3Scale }}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1660367439240-d38cb03a4365?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-radial from-transparent to-black/90" />
+
+          {/* Tech Radar Rings */}
+          <div className="absolute border border-primary/30 rounded-full w-[40vw] h-[40vw] animate-pulse shadow-[0_0_30px_rgba(0,194,255,0.2)_inset]"></div>
+          <div className="absolute border border-primary/50 rounded-full w-[30vw] h-[30vw]"></div>
+          <div className="absolute border border-primary/80 rounded-full w-[20vw] h-[20vw] shadow-[0_0_20px_rgba(0,194,255,0.4)]"></div>
+
+          <motion.div
+            style={{ y: p3TextY }}
+            className="z-10 text-center px-4 backdrop-blur-md bg-black/40 p-12 border border-primary/30 rounded-3xl shadow-2xl"
+          >
+            <h2 className="text-5xl md:text-8xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary to-chart-2 drop-shadow-lg">
+              LIVE OPERATIONS
+            </h2>
+            <p className="mt-4 text-lg text-primary/90 font-mono uppercase bg-black/50 inline-block px-4 py-1 rounded">
+              Real-time extraction metrics & telemetry
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* --- PHASE 4: Future / Sustainable UI --- */}
+        <motion.div
+          style={{ opacity: p4Opacity, scale: p4Scale }}
+          className="absolute inset-0 flex flex-col items-center justify-center bg-background text-foreground overflow-hidden"
+        >
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2041&auto=format&fit=crop')",
+            }}
+          />
+          {/* Fade to page background color so it blends into the rest of the site */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background" />
+
+          {/* Clean Light Flare */}
+          <div className="absolute top-0 w-full h-1/2 bg-gradient-to-b from-primary/10 to-transparent" />
+
+          <motion.div
+            style={{ y: p4TextY }}
+            className="z-10 text-center px-4 max-w-4xl"
+          >
+            <div className="mb-4 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-md">
+              <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse" />
+              MiningMaps v2.0 is Here
+            </div>
+            <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-7xl">
+              Sustainable Insights. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-chart-2">
+                Unified Vision.
+              </span>
+            </h1>
+            <p className="mx-auto mb-10 text-xl text-muted-foreground max-w-2xl">
+              A modern, performant platform for geospatial mining operations.
+              Optimize resource extraction while minimizing ecological impact.
+            </p>
+
+            <motion.div
+              style={{ opacity: ctaOpacity }}
+              className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+            >
+              <Link
+                to="/map"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground shadow-[0_0_30px_rgba(0,194,255,0.4)] transition-all hover:bg-primary/90 hover:scale-105"
+              >
+                Launch Platform
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <Link
+                to="/dashboard"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-input bg-background/50 backdrop-blur-md px-8 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+              >
+                View Analytics
+              </Link>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
   const features = [
     {
       title: "Interactive Layers",
@@ -40,46 +258,9 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex h-full w-full flex-col overflow-y-auto">
+    <div ref={scrollRef} className="h-full w-full overflow-y-auto relative">
       {/* Hero Section */}
-      <section className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-background px-4">
-        {/* Abstract Background Elements */}
-        <div className="absolute inset-0 z-0 opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/30 via-background to-background" />
-        <div className="absolute right-0 top-1/4 h-96 w-96 rounded-full bg-chart-2/10 blur-[128px]" />
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="z-10 text-center"
-        >
-          <div className="mb-4 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm text-primary">
-            <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse" />
-            Introducing MiningMaps v2.0
-          </div>
-          <h1 className="mb-6 max-w-4xl text-5xl font-extrabold tracking-tight md:text-7xl">
-            Explore Mining Data <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-chart-2">Visually</span>
-          </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            A modern, performant platform for geospatial mining insights. Unearth complex data relationships in milliseconds.
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              to="/map"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              Explore Map
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-            <Link
-              to="/dashboard"
-              className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-transparent px-8 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-            >
-              View Dashboard
-            </Link>
-          </div>
-        </motion.div>
-      </section>
+      <CinematicHero scrollContainerRef={scrollRef} />
 
       {/* Demo Preview Section */}
       <section className="container mx-auto px-4 py-24">
