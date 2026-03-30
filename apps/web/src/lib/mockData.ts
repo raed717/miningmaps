@@ -48,7 +48,7 @@ export const miningSites = [
     estimatedValue: 650000000,
     status: "active",
     region: "South America",
-  }
+  },
 ];
 
 export const projects = [
