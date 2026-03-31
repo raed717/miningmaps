@@ -83,7 +83,14 @@ A dedicated section for rural real estate properties, separate from mineral clai
 - A clear call-to-action (email contact) should be present on every page.
 - The "For Sale" listings should be easy to find and visually distinct from the service pages.
 
-## Features
+## Implemented Features (Current State)
+
+- **Cinematic Scroll Landing Page**: A 4-phase immersive scroll hero section using `framer-motion` spring physics, replacing generic templates with bold typography and high-contrast dark mode aesthetics.
+- **Interactive Global Map**: A `react-leaflet` powered map featuring a sidebar toggle to switch between "Portfolio" (past projects/case studies) and "Marketplace" (active properties for sale), complete with dynamic slide-out info panels.
+- **Dynamic Case Study Pages**: Blog-style portfolio views with integrated image zooming (`react-medium-image-zoom`) and mini-maps rendering real project coordinates.
+- **Data Architecture**: Clear separation of state/mock data into `projects` (consulting portfolio) and `propertiesForSale` (active listings) to correctly support the dual-purpose nature of the business.
+
+## Tech Stack Features
 
 - **TypeScript** - For type safety and improved developer experience
 - **React + Vite** - Client-routed React SPA powered by Vite

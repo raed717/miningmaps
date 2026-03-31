@@ -10,7 +10,7 @@ import {
   LineChart,
   Line
 } from "recharts";
-import { miningSites } from "@/lib/mockData";
+import { propertiesForSale } from "@/lib/mockData";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
 import { Map, Activity, Layers, DollarSign } from "lucide-react";
@@ -42,7 +42,7 @@ const activityData = [
 ];
 
 export default function Dashboard() {
-  const totalValue = miningSites.reduce((acc, curr) => acc + curr.estimatedValue, 0);
+  const totalValue = propertiesForSale.reduce((acc, curr) => acc + curr.estimatedValue, 0);
 
   return (
     <div className="flex-1 overflow-y-auto bg-background p-6 md:p-8">
@@ -62,7 +62,7 @@ export default function Dashboard() {
               <h3 className="tracking-tight text-sm font-medium text-muted-foreground">Total Sites</h3>
               <Map className="h-4 w-4 text-muted-foreground" />
             </div>
-            <div className="text-3xl font-bold">{miningSites.length}</div>
+            <div className="text-3xl font-bold">{propertiesForSale.length}</div>
             <p className="text-xs text-muted-foreground mt-1">+2 from last month</p>
           </motion.div>
           
@@ -171,7 +171,7 @@ export default function Dashboard() {
               <TileLayer
                 url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
               />
-              {miningSites.map((site) => (
+              {propertiesForSale.map((site) => (
                 <Marker
                   key={site.id}
                   position={site.coordinates}

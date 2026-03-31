@@ -8,9 +8,9 @@ export default function Projects() {
     <div className="flex-1 overflow-y-auto bg-background px-4 py-12 md:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mb-12">
-          <h1 className="text-4xl font-extrabold tracking-tight">Case Studies</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight">Portfolio</h1>
           <p className="mt-2 text-lg text-muted-foreground max-w-2xl">
-            Explore how MiningMaps is actively transforming extraction methodologies and operational efficiency across global sites.
+            Explore a selection of mapping projects, right-of-way planning, and mineral exploration work completed by Adamson Geomatics.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export default function Projects() {
                   {project.title}
                 </h3>
                 <p className="mb-6 text-sm text-muted-foreground flex-1">
-                  {project.description}
+                  {project.summary}
                 </p>
                 
                 <Link

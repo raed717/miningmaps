@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Linkedin, Facebook } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -19,7 +19,7 @@ export default function Contact() {
             transition={{ delay: 0.1 }}
             className="mt-4 text-lg text-muted-foreground"
           >
-            Ready to deploy MiningMaps for your operations? Our team is standing by.
+            Ready to discuss your GIS mapping, land management, or real estate needs?
           </motion.p>
         </div>
 
@@ -32,23 +32,9 @@ export default function Contact() {
             className="space-y-8"
           >
             <div className="rounded-xl border border-border/50 bg-card p-8">
-              <h3 className="mb-6 text-2xl font-bold">Global Headquarters</h3>
+              <h3 className="mb-6 text-2xl font-bold">Contact Information</h3>
               
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="rounded-lg bg-primary/10 p-3 text-primary">
-                    <MapPin className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Address</h4>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      100 Exploration Way<br />
-                      Suite 400<br />
-                      Denver, CO 80202
-                    </p>
-                  </div>
-                </div>
-
                 <div className="flex items-start gap-4">
                   <div className="rounded-lg bg-primary/10 p-3 text-primary">
                     <Mail className="h-6 w-6" />
@@ -56,20 +42,36 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold">Email</h4>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      deployments@miningmaps.app<br />
-                      support@miningmaps.app
+                      <strong>Properties:</strong> <a href="mailto:chris@miningpropertymaps.com" className="hover:text-primary transition-colors">chris@miningpropertymaps.com</a><br />
+                      <strong>Land Services:</strong> <a href="mailto:chris@adamsonlandservices.com" className="hover:text-primary transition-colors">chris@adamsonlandservices.com</a>
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="rounded-lg bg-primary/10 p-3 text-primary">
-                    <Phone className="h-6 w-6" />
+                    <Linkedin className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Phone</h4>
+                    <h4 className="font-semibold">LinkedIn</h4>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      +1 (800) 555-0199
+                      <a href="https://www.linkedin.com/in/chris-adamson-r-84649b4b" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                        Chris Adamson
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="rounded-lg bg-primary/10 p-3 text-primary">
+                    <Facebook className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Facebook</h4>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      <a href="https://www.facebook.com/profile.php?id=61561908187975" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                        Adamson Geomatics
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -119,7 +121,7 @@ export default function Contact() {
                 <input 
                   id="company" 
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" 
-                  placeholder="Global Extract Inc." 
+                  placeholder="Mining Co." 
                 />
               </div>
 
@@ -128,7 +130,7 @@ export default function Contact() {
                 <textarea 
                   id="message" 
                   className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" 
-                  placeholder="Tell us about your operational needs..." 
+                  placeholder="Tell us about your project needs..." 
                 />
               </div>
 

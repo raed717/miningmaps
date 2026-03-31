@@ -4,6 +4,8 @@ import { ArrowLeft, MapPin, Target, Lightbulb, TrendingUp } from "lucide-react";
 import { projects } from "@/lib/mockData";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 const createCustomIcon = () => {
   return L.divIcon({
@@ -31,11 +33,7 @@ export default function ProjectDetails() {
     );
   }
 
-  // Generate random coords for the specific project mock map
-  const mockCoords: [number, number] = [
-    (Math.random() - 0.5) * 100,
-    (Math.random() - 0.5) * 100,
-  ];
+  const mapCoords = project.coordinates;
 
   return (
     <div className="flex-1 overflow-y-auto bg-background">
@@ -78,55 +76,51 @@ export default function ProjectDetails() {
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-12">
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-destructive/10 text-destructive">
-                  <Target className="h-5 w-5" />
+            {project.sections.map((section, index) => (
+              <motion.section
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Target className="h-5 w-5" />
+                  </div>
+                  <h2 className="text-2xl font-bold">{section.heading}</h2>
                 </div>
-                <h2 className="text-2xl font-bold">The Challenge</h2>
-              </div>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {project.problem}
-              </p>
-            </motion.section>
 
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <Lightbulb className="h-5 w-5" />
-                </div>
-                <h2 className="text-2xl font-bold">Our Solution</h2>
-              </div>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {project.solution}
-              </p>
-            </motion.section>
+                {section.image && (
+                  <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 cursor-zoom-in">
+                    <Zoom zoomMargin={40} overlayBgColorEnd="rgba(0, 0, 0, 0.85)">
+                      <img 
+                        src={section.image} 
+                        alt={section.heading} 
+                        className="w-full h-auto object-cover max-h-[500px]"
+                      />
+                    </Zoom>
+                  </div>
+                )}
 
-            <motion.section
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/10 text-green-500">
-                  <TrendingUp className="h-5 w-5" />
-                </div>
-                <h2 className="text-2xl font-bold">The Outcome</h2>
-              </div>
-              <div className="rounded-xl border border-border/50 bg-card p-6">
-                <p className="text-lg font-medium text-foreground">
-                  {project.outcome}
-                </p>
-              </div>
-            </motion.section>
+                {section.type === "paragraph" && (
+                  <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-wrap">
+                    {section.content}
+                  </p>
+                )}
+
+                {section.type === "bullet_list" && Array.isArray(section.content) && (
+                  <ul className="space-y-3 rounded-xl border border-border/50 bg-card p-6">
+                    {section.content.map((item, i) => (
+                      <li key={i} className="flex items-start">
+                        <Lightbulb className="mr-3 h-5 w-5 text-primary shrink-0 mt-0.5" />
+                        <span className="text-lg text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </motion.section>
+            ))}
           </div>
 
           {/* Sidebar / Map Context */}
@@ -137,7 +131,7 @@ export default function ProjectDetails() {
               </h3>
               <div className="h-[300px] w-full overflow-hidden rounded-lg border border-border/50 relative">
                 <MapContainer
-                  center={mockCoords}
+                  center={mapCoords}
                   zoom={5}
                   style={{ height: "100%", width: "100%", background: "#0B0F14" }}
                   zoomControl={false}
@@ -147,7 +141,7 @@ export default function ProjectDetails() {
                   <TileLayer
                     url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
                   />
-                  <Marker position={mockCoords} icon={createCustomIcon()} />
+                  <Marker position={mapCoords} icon={createCustomIcon()} />
                 </MapContainer>
               </div>
             </div>
