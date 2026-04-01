@@ -17,7 +17,7 @@ export default function Header() {
       <div className="container mx-auto flex h-16 items-center px-4 md:px-8">
         <NavLink to="/" className="mr-8 flex items-center space-x-2 text-primary">
           <Mountain className="h-6 w-6" />
-          <span className="font-bold tracking-tight text-foreground">MiningMaps</span>
+          <span className="font-bold tracking-tight text-foreground">Adamson Geomatics</span>
         </NavLink>
         <nav className="flex flex-1 items-center space-x-6 text-sm font-medium">
           {links.map(({ to, label }) => {
