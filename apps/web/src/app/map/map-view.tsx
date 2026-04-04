@@ -196,6 +196,11 @@ export default function MapView() {
                     <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                       <Briefcase className="h-3.5 w-3.5" /> Case Study
                     </div>
+                    {selectedSite.isForSale && (
+                      <div className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-yellow-500/20 bg-yellow-500/10 px-2.5 py-0.5 text-xs font-semibold text-yellow-500 ml-2">
+                        <Tag className="h-3.5 w-3.5" /> For Sale
+                      </div>
+                    )}
                     <h2 className="text-2xl font-bold leading-tight mt-1">
                       {selectedSite.title}
                     </h2>

@@ -9,6 +9,7 @@ import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
 import Zoom from "react-medium-image-zoom";
 // react-medium-image-zoom styles
+// @ts-ignore CSS side-effect import
 import "react-medium-image-zoom/dist/styles.css";
 
 const createCustomIcon = () => {
