@@ -117,54 +117,54 @@ export const projects: Project[] = [
       },
     ],
   },
-  // {
-  //   id: "bc-002",
-  //   title: "Barkerville Gold Powerline Right-of-Way",
-  //   summary:
-  //     "Comprehensive GIS routing and title research for a 100+ km industrial powerline in British Columbia.",
-  //   region: "British Columbia",
-  //   image:
-  //     "https://images.unsplash.com/photo-1590492817354-1ea747120a2e?auto=format&fit=crop&q=80&w=800",
-  //   coordinates: [53.0667, -121.5167],
-  //   sections: [
-  //     {
-  //       heading: "Project Scope",
-  //       type: "paragraph",
-  //       content:
-  //         "Led the complete GIS mapping and land ownership research for a critical 100+ km powerline route required to bring grid power to an expanding gold mining operation in the historic Cariboo region.",
-  //     },
-  //     {
-  //       heading: "Key Deliverables",
-  //       type: "bullet_list",
-  //       image:
-  //         "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800",
-  //       content: [
-  //         "Comprehensive Land Title searches across the proposed route",
-  //         "Detailed mapping of Crown Grants, private lands, and existing tenure",
-  //         "Summary of liens, encumbrances, and potential legal hurdles",
-  //         "Route optimization based on topographical and ownership constraints",
-  //       ],
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: "on-003",
-  //   title: "Ontario Lithium Pegmatite Target Generation",
-  //   summary:
-  //     "Advanced spatial analysis and target identification for battery metal exploration in Northern Ontario.",
-  //   region: "Ontario",
-  //   image:
-  //     "https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?auto=format&fit=crop&q=80&w=800",
-  //   coordinates: [51.0, -88.0],
-  //   sections: [
-  //     {
-  //       heading: "Exploration Strategy",
-  //       type: "paragraph",
-  //       image:
-  //         "https://images.unsplash.com/photo-1686968719625-3faf853a543e?auto=format&fit=crop&q=80&w=800",
-  //       content:
-  //         "Utilized modern predictive modeling and historical geological survey data to identify high-probability spodumene-bearing pegmatite dykes. The mapping provided our client with highly actionable drill targets, saving hundreds of thousands of dollars in preliminary groundwork.",
-  //     },
-  //   ],
-  // },
+  {
+    id: "bc-002",
+    title: "Barkerville Gold Powerline Right-of-Way",
+    summary:
+      "Comprehensive GIS routing and title research for a 100+ km industrial powerline in British Columbia.",
+    region: "British Columbia",
+    image:
+      "https://images.unsplash.com/photo-1590492817354-1ea747120a2e?auto=format&fit=crop&q=80&w=800",
+    coordinates: [53.0667, -121.5167],
+    sections: [
+      {
+        heading: "Project Scope",
+        type: "paragraph",
+        content:
+          "Led the complete GIS mapping and land ownership research for a critical 100+ km powerline route required to bring grid power to an expanding gold mining operation in the historic Cariboo region.",
+      },
+      {
+        heading: "Key Deliverables",
+        type: "bullet_list",
+        image:
+          "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800",
+        content: [
+          "Comprehensive Land Title searches across the proposed route",
+          "Detailed mapping of Crown Grants, private lands, and existing tenure",
+          "Summary of liens, encumbrances, and potential legal hurdles",
+          "Route optimization based on topographical and ownership constraints",
+        ],
+      },
+    ],
+  },
+  {
+    id: "on-003",
+    title: "Ontario Lithium Pegmatite Target Generation",
+    summary:
+      "Advanced spatial analysis and target identification for battery metal exploration in Northern Ontario.",
+    region: "Ontario",
+    image:
+      "https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?auto=format&fit=crop&q=80&w=800",
+    coordinates: [51.0, -88.0],
+    sections: [
+      {
+        heading: "Exploration Strategy",
+        type: "paragraph",
+        image:
+          "https://images.unsplash.com/photo-1686968719625-3faf853a543e?auto=format&fit=crop&q=80&w=800",
+        content:
+          "Utilized modern predictive modeling and historical geological survey data to identify high-probability spodumene-bearing pegmatite dykes. The mapping provided our client with highly actionable drill targets, saving hundreds of thousands of dollars in preliminary groundwork.",
+      },
+    ],
+  },
 ];

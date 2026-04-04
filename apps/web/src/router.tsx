@@ -7,6 +7,8 @@ import Dashboard from "./routes/dashboard";
 import Projects from "./routes/projects";
 import ProjectDetails from "./routes/project-details";
 import Contact from "./routes/contact";
+import Posts from "./routes/post";
+import PostDetails from "./routes/post-details";
 
 function NotFound() {
   return (
@@ -28,6 +30,8 @@ export const router = createBrowserRouter([
       { path: "projects", element: <Projects /> },
       { path: "projects/:id", element: <ProjectDetails /> },
       { path: "contact", element: <Contact /> },
+      { path: "posts", element: <Posts /> },
+      { path: "posts/:id", element: <PostDetails /> },
       { path: "*", element: <NotFound /> },
     ],
   },
