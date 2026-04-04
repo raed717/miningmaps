@@ -13,7 +13,7 @@ This file provides context about the project for AI assistants.
 
 ### Frontend
 
-- Framework: react-vite
+- Framework: Next.js (App Router)
 - CSS: tailwind
 - UI Library: shadcn-ui
 

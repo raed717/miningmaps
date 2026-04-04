@@ -1,3 +1,5 @@
+"use client";
+
 import { Layers, FileSearch, Building2, Gem } from "lucide-react";
 import { motion } from "motion/react";
 

@@ -1,5 +1,7 @@
+"use client";
+
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
-import { Link } from "react-router";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
@@ -197,14 +199,14 @@ export function CinematicHero({ scrollContainerRef }: { scrollContainerRef: Reac
               className="flex flex-col items-center justify-center gap-4 sm:flex-row"
             >
               <Link
-                to="/portfolio"
+                href="/portfolio"
                 className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground shadow-[0_0_30px_rgba(0,194,255,0.4)] transition-all hover:bg-primary/90 hover:scale-105"
               >
                 View Map Portfolio
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
-                to="/properties"
+                href="/properties"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-input bg-background/50 backdrop-blur-md px-8 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 Properties for Sale

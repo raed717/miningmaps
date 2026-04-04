@@ -1,5 +1,7 @@
+"use client";
+
 import { motion } from "motion/react";
-import { Link } from "react-router";
+import Link from "next/link";
 import { Pickaxe, TrendingUp, ShieldCheck, Map } from "lucide-react";
 
 export function PropertiesSection() {
@@ -46,7 +48,7 @@ export function PropertiesSection() {
           </p>
         </div>
         <Link
-          to="/properties"
+          href="/properties"
           className="inline-flex h-10 items-center justify-center rounded-md bg-secondary px-6 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
         >
           View All Listings

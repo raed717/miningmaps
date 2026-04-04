@@ -1,5 +1,8 @@
+"use client";
+
 import { useRef } from "react";
-import { Link } from "react-router";
+import Link from "next/link";
+
 import { Map } from "lucide-react";
 
 import { CinematicHero } from "@/components/home/cinematic-hero";
@@ -36,9 +39,9 @@ export default function Home() {
             Adamson Geomatics
           </div>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <Link to="/portfolio" className="hover:text-primary transition-colors">Portfolio</Link>
-            <Link to="/services" className="hover:text-primary transition-colors">Services</Link>
-            <Link to="/properties" className="hover:text-primary transition-colors">Properties</Link>
+            <Link href="/portfolio" className="hover:text-primary transition-colors">Portfolio</Link>
+            <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+            <Link href="/properties" className="hover:text-primary transition-colors">Properties</Link>
             <a href="mailto:chris@adamsonlandservices.com" className="hover:text-primary transition-colors">Contact</a>
           </div>
           <div className="flex items-center gap-4">

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -5,7 +7,8 @@ import L from "leaflet";
 import { motion, AnimatePresence } from "motion/react";
 import { Layers, Activity, Filter, MapPin, ChevronRight, X, Briefcase, Tag } from "lucide-react";
 import { propertiesForSale, projects } from "@/lib/mockData";
-import { Link } from "react-router";
+import Link from "next/link";
+
 
 // Fix for default Leaflet icon in React
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -323,7 +326,7 @@ export default function MapView() {
                       </div>
                     </div>
 
-                    <Link to={`/projects/${selectedSite.id}`} className="mt-6 flex w-full items-center justify-center rounded-md bg-primary py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+                    <Link href={`/projects/${selectedSite.id}`} className="mt-6 flex w-full items-center justify-center rounded-md bg-primary py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
                       Read Full Case Study
                       <ChevronRight className="ml-1 h-4 w-4" />
                     </Link>

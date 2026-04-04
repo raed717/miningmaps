@@ -93,7 +93,7 @@ A dedicated section for rural real estate properties, separate from mineral clai
 ## Tech Stack Features
 
 - **TypeScript** - For type safety and improved developer experience
-- **React + Vite** - Client-routed React SPA powered by Vite
+- **Next.js** - React framework using the App Router
 - **TailwindCSS** - CSS framework
 - **shadcn/ui** - UI components
 - **Turborepo** - Optimized monorepo build system
@@ -112,14 +112,14 @@ Then, run the development server:
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser to see the web application.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the web application.
 
 ## Project Structure
 
 ```
 miningmaps/
 ├── apps/
-│   ├── web/         # Frontend application (React + Vite SPA)
+│   ├── web/         # Frontend application (Next.js App Router)
 ```
 
 ## Available Scripts

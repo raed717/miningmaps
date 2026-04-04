@@ -1,10 +1,14 @@
-import { useParams, Link } from "react-router";
+"use client";
+
+import Link from "next/link";
+
 import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import { mockPosts } from "@/lib/postData";
 
-export default function PostDetails() {
-  const { id } = useParams();
+import { use } from "react";
+export default function PostDetails({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
   const post = mockPosts.find((p) => p.id === id);
 
   if (!post) {
@@ -12,7 +16,7 @@ export default function PostDetails() {
       <div className="flex h-[50vh] flex-col items-center justify-center">
         <h1 className="text-4xl font-bold tracking-tight text-primary">Post Not Found</h1>
         <p className="mt-4 text-muted-foreground">The article you are looking for does not exist.</p>
-        <Link to="/posts" className="mt-8 flex items-center text-primary hover:underline">
+        <Link href="/posts" className="mt-8 flex items-center text-primary hover:underline">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Posts
         </Link>
       </div>
@@ -23,7 +27,7 @@ export default function PostDetails() {
     <div className="flex-1 overflow-y-auto bg-background px-4 py-12 md:px-8">
       <div className="mx-auto max-w-4xl">
         <Link
-          to="/posts"
+          href="/posts"
           className="mb-8 inline-flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />

@@ -1,4 +1,7 @@
-import { useParams, Link } from "react-router";
+"use client";
+
+import Link from "next/link";
+
 import { motion } from "motion/react";
 import { ArrowLeft, MapPin, Target, Lightbulb, TrendingUp } from "lucide-react";
 import { projects } from "@/lib/mockData";
@@ -16,8 +19,9 @@ const createCustomIcon = () => {
   });
 };
 
-export default function ProjectDetails() {
-  const { id } = useParams<{ id: string }>();
+import { use } from "react";
+export default function ProjectDetails({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
@@ -25,7 +29,7 @@ export default function ProjectDetails() {
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold">Project not found</h2>
-          <Link to="/projects" className="mt-4 inline-block text-primary hover:underline">
+          <Link href="/projects" className="mt-4 inline-block text-primary hover:underline">
             Back to projects
           </Link>
         </div>
@@ -49,7 +53,7 @@ export default function ProjectDetails() {
         <div className="absolute inset-0 flex items-end">
           <div className="container mx-auto px-4 pb-12">
             <Link 
-              to="/projects" 
+              href="/projects" 
               className="mb-6 inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -93,7 +97,7 @@ export default function ProjectDetails() {
 
                 {section.image && (
                   <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 cursor-zoom-in">
-                    <Zoom zoomMargin={40} overlayBgColorEnd="rgba(0, 0, 0, 0.85)">
+                    <Zoom zoomMargin={40}>
                       <img 
                         src={section.image} 
                         alt={section.heading} 

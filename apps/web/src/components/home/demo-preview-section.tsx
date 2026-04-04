@@ -1,5 +1,7 @@
+"use client";
+
 import { motion } from "motion/react";
-import { Link } from "react-router";
+import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 
 export function DemoPreviewSection() {
@@ -13,7 +15,7 @@ export function DemoPreviewSection() {
           </p>
         </div>
         <Link
-          to="/portfolio"
+          href="/portfolio"
           className="inline-flex items-center text-sm font-medium text-primary hover:underline"
         >
           View Full Portfolio <ArrowRight className="ml-1 h-4 w-4" />
