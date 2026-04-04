@@ -1,4 +1,4 @@
-export type ProjectSection = 
+export type ProjectSection =
   | {
       heading: string;
       type: "bullet_list";
@@ -26,7 +26,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "ak-001",
-    title: "Nikolai Nickel Copper Cobalt & Port Snettisham Projects",
+    title: "Alaska - Nikolai Nickel Copper Cobalt & Port Snettisham Projects",
     summary:
       "Large-scale polymetallic resource and successful iron ore marketing project in Alaska.",
     region: "Alaska, USA",
@@ -38,8 +38,7 @@ export const projects: Project[] = [
       {
         heading: "Nikolai Project Resource",
         type: "bullet_list",
-        image:
-          "https://miningmaps.wordpress.com/wp-content/uploads/2024/07/image-4.png?w=768",
+        image: "/images/projects/Alaska/1.png",
         content: [
           "813 million tonnes grading 0.29% NiEq (896 Mt Inferred)",
           "3.871 billion pounds of nickel (4.225 Blbs Inferred)",
@@ -52,16 +51,14 @@ export const projects: Project[] = [
       {
         heading: "Alaska Marketing Pitch Deck & Success",
         type: "paragraph",
-        image:
-          "https://miningmaps.wordpress.com/wp-content/uploads/2012/03/0021150001-003.jpg",
+        image: "/images/projects/Alaska/2.jpg",
         content:
           "Adamson Geomatics has been consulting for prospectors and mining companies producing marketing materials for mining projects since 2011. The Alaska Iron Ore maps were made in 2011 and 2012. The project was successfully sold using my marketing materials.",
       },
       {
         heading: "Port Snettisham & Claim Staking",
         type: "paragraph",
-        image:
-          "https://miningmaps.wordpress.com/wp-content/uploads/2024/07/portsnettisclaim-1.png",
+        image: "/images/projects/Alaska/3.png",
         content:
           "Commodity: Iron (Port Snettisham) Mining - Alaska Iron Ore Deposit.\n\nIncluded the generation of comprehensive Alaska Claim Staking Maps to solidify mineral tenure and project boundaries.",
       },
@@ -69,12 +66,11 @@ export const projects: Project[] = [
   },
   {
     id: "bc-002",
-    title: "Barkerville Gold Powerline Right-of-Way",
-    summary:
-      "Comprehensive GIS routing and title research for a 100+ km industrial powerline in British Columbia.",
-    region: "British Columbia",
+    title: "Alberta",
+    summary: "Alberta…not only oil!",
+    region: "Alberta, Canada",
     image:
-      "https://images.unsplash.com/photo-1590492817354-1ea747120a2e?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1586399254662-c8948cd73421?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [53.0667, -121.5167],
     isForSale: true,
     sections: [
@@ -82,40 +78,31 @@ export const projects: Project[] = [
         heading: "Project Scope",
         type: "paragraph",
         content:
-          "Led the complete GIS mapping and land ownership research for a critical 100+ km powerline route required to bring grid power to an expanding gold mining operation in the historic Cariboo region.",
+          "Alberta also hosts uranium prospects in the northern regions of the province (as does neighbouring northern Saskatchewan).",
       },
       {
-        heading: "Key Deliverables",
-        type: "bullet_list",
-        image:
-          "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800",
-        content: [
-          "Comprehensive Land Title searches across the proposed route",
-          "Detailed mapping of Crown Grants, private lands, and existing tenure",
-          "Summary of liens, encumbrances, and potential legal hurdles",
-          "Route optimization based on topographical and ownership constraints",
-        ],
+        heading: "Alberta Uranium Occurrences (Athabasca Region)",
+        type: "paragraph",
+        image: "/images/projects/Alberta/1.jpg",
+        content: "Alberta uranium prospect",
       },
     ],
   },
   {
     id: "on-003",
-    title: "Ontario Lithium Pegmatite Target Generation",
-    summary:
-      "Advanced spatial analysis and target identification for battery metal exploration in Northern Ontario.",
-    region: "Ontario",
+    title: "Arizona",
+    summary: "Prospecting, ownership and infrastructure map",
+    region: "Arizona USA",
     image:
-      "https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?auto=format&fit=crop&q=80&w=800",
-    coordinates: [51.0, -88.0],
+      "https://images.unsplash.com/photo-1549318558-02fe75fc51d2?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [33.4484, -112.074],
     isForSale: false,
     sections: [
       {
-        heading: "Exploration Strategy",
+        heading: "Prospecting, ownership and infrastructure map",
         type: "paragraph",
-        image:
-          "https://images.unsplash.com/photo-1686968719625-3faf853a543e?auto=format&fit=crop&q=80&w=800",
-        content:
-          "Utilized modern predictive modeling and historical geological survey data to identify high-probability spodumene-bearing pegmatite dykes. The mapping provided our client with highly actionable drill targets, saving hundreds of thousands of dollars in preliminary groundwork.",
+        image: "/images/projects/Arizona/1.jpg",
+        content: "",
       },
     ],
   },
