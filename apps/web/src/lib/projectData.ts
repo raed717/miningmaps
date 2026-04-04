@@ -20,60 +20,8 @@ export interface Project {
   image: string;
   coordinates: [number, number];
   sections: ProjectSection[];
+  isForSale?: boolean;
 }
-
-export const propertiesForSale = [
-  {
-    id: "prop-001",
-    name: "Atlas Gold Mine",
-    coordinates: [37.7749, -122.4194] as [number, number],
-    resourceType: "gold",
-    depth: 1200,
-    estimatedValue: 450000000,
-    status: "active",
-    region: "North America",
-  },
-  {
-    id: "site-002",
-    name: "Cobalt Nexus",
-    coordinates: [-10.5, 25.5] as [number, number],
-    resourceType: "cobalt",
-    depth: 450,
-    estimatedValue: 800000000,
-    status: "exploration",
-    region: "Africa",
-  },
-  {
-    id: "site-003",
-    name: "Lithium Flats",
-    coordinates: [-23.5, -68.5] as [number, number],
-    resourceType: "lithium",
-    depth: 50,
-    estimatedValue: 1200000000,
-    status: "active",
-    region: "South America",
-  },
-  {
-    id: "site-004",
-    name: "Iron Range Alpha",
-    coordinates: [47.5, -92.5] as [number, number],
-    resourceType: "iron",
-    depth: 200,
-    estimatedValue: 300000000,
-    status: "inactive",
-    region: "North America",
-  },
-  {
-    id: "site-005",
-    name: "Copper Mountain",
-    coordinates: [-33.0, -70.5] as [number, number],
-    resourceType: "copper",
-    depth: 800,
-    estimatedValue: 650000000,
-    status: "active",
-    region: "South America",
-  },
-];
 
 export const projects: Project[] = [
   {
@@ -85,6 +33,7 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1574788901656-6a9ee34a3fa7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [63.2, -145.5],
+    isForSale: true,
     sections: [
       {
         heading: "Nikolai Project Resource",
@@ -111,7 +60,8 @@ export const projects: Project[] = [
       {
         heading: "Port Snettisham & Claim Staking",
         type: "paragraph",
-        image:"https://miningmaps.wordpress.com/wp-content/uploads/2024/07/portsnettisclaim-1.png",
+        image:
+          "https://miningmaps.wordpress.com/wp-content/uploads/2024/07/portsnettisclaim-1.png",
         content:
           "Commodity: Iron (Port Snettisham) Mining - Alaska Iron Ore Deposit.\n\nIncluded the generation of comprehensive Alaska Claim Staking Maps to solidify mineral tenure and project boundaries.",
       },
@@ -126,6 +76,7 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1590492817354-1ea747120a2e?auto=format&fit=crop&q=80&w=800",
     coordinates: [53.0667, -121.5167],
+    isForSale: true,
     sections: [
       {
         heading: "Project Scope",
@@ -156,6 +107,7 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1502481851512-e9e2529bfbf9?auto=format&fit=crop&q=80&w=800",
     coordinates: [51.0, -88.0],
+    isForSale: false,
     sections: [
       {
         heading: "Exploration Strategy",
