@@ -1,3 +1,4 @@
+// @ts-expect-error -- side-effect CSS import is handled by the bundler
 import "./globals.css";
 
 import Header from "@/components/header";
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

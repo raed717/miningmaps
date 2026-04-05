@@ -97,22 +97,29 @@ export default function ProjectDetails({
                 viewport={{ once: true }}
                 className="space-y-6"
               >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                    <Target className="h-5 w-5" />
+                {section.heading && (
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <Target className="h-5 w-5" />
+                    </div>
+                    <h2 className="text-2xl font-bold">{section.heading}</h2>
                   </div>
-                  <h2 className="text-2xl font-bold">{section.heading}</h2>
-                </div>
+                )}
 
                 {section.image && (
                   <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 cursor-zoom-in">
                     <Zoom zoomMargin={40}>
                       <img
                         src={section.image}
-                        alt={section.heading}
+                        alt={section.heading || "Project image"}
                         className="w-full h-auto object-cover max-h-125"
                       />
                     </Zoom>
+                    {section.imageCaption && (
+                      <p className="mt-2 text-sm text-muted-foreground text-center">
+                        {section.imageCaption}
+                      </p>
+                    )}
                   </div>
                 )}
 
