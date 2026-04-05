@@ -37,19 +37,6 @@ const createCustomIcon = (color: string) => {
 };
 
 export default function MapView() {
-  useEffect(() => {
-    const leafletCssId = "leaflet-runtime-css";
-
-    if (!document.getElementById(leafletCssId)) {
-      const link = document.createElement("link");
-      link.id = leafletCssId;
-      link.rel = "stylesheet";
-      link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
-      link.crossOrigin = "";
-      document.head.appendChild(link);
-    }
-  }, []);
-
   const [selectedSiteId, setSelectedSiteId] = useState<string | null>(null);
   const [showOnlyForSale, setShowOnlyForSale] = useState(false);
 

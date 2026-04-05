@@ -1,5 +1,9 @@
-// @ts-expect-error -- side-effect CSS import is handled by the bundler
+// @ts-ignore
 import "./globals.css";
+// @ts-ignore
+import "leaflet/dist/leaflet.css";
+// @ts-ignore
+import "react-medium-image-zoom/dist/styles.css";
 
 import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
