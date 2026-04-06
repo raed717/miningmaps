@@ -30,6 +30,11 @@ export type ProjectSection =
       links?: LinkPreview[];
     };
 
+export type QuickFact = {
+  label: string;
+  value: string;
+};
+
 export interface Project {
   id: string;
   title: string;
@@ -39,6 +44,11 @@ export interface Project {
   coordinates: [number, number];
   sections: ProjectSection[];
   isForSale?: boolean;
+  quickFacts?: QuickFact[];
+  date?: string;
+  author?: string;
+  contactEmail?: string;
+  tags?: string[];
 }
 
 export const projects: Project[] = [
@@ -52,6 +62,15 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1574788901656-6a9ee34a3fa7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [63.2, -145.5],
     isForSale: true,
+    date: "2024-03-15",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Nickel", "Copper", "Polymetallic", "Marketing"],
+    quickFacts: [
+      { label: "Commodities", value: "Ni, Cu, Co, PGE, Au" },
+      { label: "Area", value: "Alaska, USA" },
+      { label: "Status", value: "Sold" }
+    ],
     sections: [
       {
         heading: "Nikolai Project Resource",
@@ -101,6 +120,14 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1586399254662-c8948cd73421?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [53.0667, -121.5167],
     isForSale: true,
+    date: "2024-04-10",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Uranium", "Prospecting"],
+    quickFacts: [
+      { label: "Commodity", value: "Uranium" },
+      { label: "Region", value: "Athabasca Basin, Alberta" }
+    ],
     sections: [
       {
         heading: "Project Scope",
@@ -125,6 +152,14 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1549318558-02fe75fc51d2?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [33.4484, -112.074],
     isForSale: false,
+    date: "2024-02-22",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Infrastructure", "Prospecting", "Mapping"],
+    quickFacts: [
+      { label: "Type", value: "Infrastructure Map" },
+      { label: "Location", value: "Arizona, USA" }
+    ],
     sections: [
       {
         heading: "Prospecting, ownership and infrastructure map",
@@ -143,6 +178,14 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [-25.2744, 133.7751],
     isForSale: false,
+    date: "2024-05-05",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Copper", "Lithium", "Gold", "Uranium", "Zinc"],
+    quickFacts: [
+      { label: "Scope", value: "Multiple Projects" },
+      { label: "Regions", value: "Australia, New Zealand" }
+    ],
     sections: [
       {
         heading: " Summary of Projects in Australia and New Zealand",
@@ -236,6 +279,15 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1672851612972-651dd2bb6363?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [53.7267, -127.6476],
     isForSale: false,
+    date: "2024-06-12",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Polymetallic", "Gold", "Claim Mapping"],
+    quickFacts: [
+      { label: "Size", value: "362 Hectares" },
+      { label: "Commodities", value: "Cu, Zn, Au" },
+      { label: "Tenure", value: "Claim #1106809" }
+    ],
     sections: [
       {
         heading:
@@ -414,6 +466,14 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       "https://images.unsplash.com/photo-1499310226026-b9d598980b90?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [36.7783, -119.4179],
     isForSale: false,
+    date: "2024-01-30",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Gold", "Patented Mine"],
+    quickFacts: [
+      { label: "Type", value: "Patented Gold Mine" },
+      { label: "District", value: "Rand Mining District" }
+    ],
     sections: [
       {
         type: "paragraph",
@@ -445,6 +505,14 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       "https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [61.9241, 25.7482],
     isForSale: false,
+    date: "2024-08-15",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Gold", "Investment"],
+    quickFacts: [
+      { label: "Commodity", value: "Gold" },
+      { label: "Status", value: "Seeking Investors" }
+    ],
     sections: [
       {
         heading: "European Mining Projects",
@@ -469,6 +537,14 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       "https://images.unsplash.com/photo-1632455351235-682d08cbb3e0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [56.1304, -106.3468],
     isForSale: false,
+    date: "2024-07-20",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Prospecting", "Geology"],
+    quickFacts: [
+      { label: "Type", value: "Prospecting Map" },
+      { label: "Region", value: "Manitoba" }
+    ],
     sections: [
       {
         heading: " Prospecting Maps",
@@ -487,6 +563,15 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       "https://images.unsplash.com/photo-1614823498916-a28a7d67182c?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [38.8026, -116.4194],
     isForSale: true,
+    date: "2024-09-01",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Gold", "High Grade", "BLM Mapping"],
+    quickFacts: [
+      { label: "Commodity", value: "Gold" },
+      { label: "Intercepts", value: ">15 g/t over 2m+" },
+      { label: "Status", value: "Seeking Investors" }
+    ],
     sections: [
       {
         heading: "Nevada Project For Sale & Seeking Investors!",
@@ -520,6 +605,14 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       "https://images.unsplash.com/photo-1592701601033-c17588001fb8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [53.1327, -57.6629],
     isForSale: false,
+    date: "2024-03-25",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Iron", "Claim Staking", "Mapping"],
+    quickFacts: [
+      { label: "Type", value: "Claim Block Mapping" },
+      { label: "Commodity", value: "Iron" }
+    ],
     sections: [
       {
         heading:

@@ -216,24 +216,81 @@ export default function ProjectDetails({
                 Quick Facts
               </h3>
               <ul className="space-y-4 text-sm">
-                <li className="flex justify-between border-b border-border/50 pb-2">
-                  <span className="text-muted-foreground">Duration</span>
-                  <span className="font-medium text-foreground">14 Months</span>
-                </li>
-                <li className="flex justify-between border-b border-border/50 pb-2">
-                  <span className="text-muted-foreground">Tech Stack</span>
-                  <span className="font-medium text-foreground">
-                    LiDAR, AI, GeoJSON
-                  </span>
-                </li>
-                <li className="flex justify-between border-b border-border/50 pb-2">
-                  <span className="text-muted-foreground">Team Size</span>
-                  <span className="font-medium text-foreground">
-                    12 Specialists
-                  </span>
-                </li>
+                {project.quickFacts ? (
+                  project.quickFacts.map((fact, index) => (
+                    <li key={index} className="flex justify-between border-b border-border/50 pb-2">
+                      <span className="text-muted-foreground">{fact.label}</span>
+                      <span className="font-medium text-foreground">{fact.value}</span>
+                    </li>
+                  ))
+                ) : (
+                  <>
+                    <li className="flex justify-between border-b border-border/50 pb-2">
+                      <span className="text-muted-foreground">Location</span>
+                      <span className="font-medium text-foreground">{project.region}</span>
+                    </li>
+                    <li className="flex justify-between border-b border-border/50 pb-2">
+                      <span className="text-muted-foreground">Availability</span>
+                      <span className="font-medium text-foreground">
+                        {project.isForSale ? "For Sale" : "Active"}
+                      </span>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
+
+            {(project.tags || project.date || project.author) && (
+              <div className="rounded-xl border border-border/50 bg-card p-6 mt-6">
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                  Project Meta
+                </h3>
+                <div className="space-y-4 text-sm">
+                  {project.author && (
+                    <div className="flex flex-col">
+                      <span className="text-xs text-muted-foreground">Author</span>
+                      {project.contactEmail ? (
+                        <a 
+                          href={`mailto:${project.contactEmail}`} 
+                          className="font-medium text-primary hover:underline"
+                        >
+                          {project.author}
+                        </a>
+                      ) : (
+                        <span className="font-medium text-foreground">{project.author}</span>
+                      )}
+                    </div>
+                  )}
+                  {project.date && (
+                    <div className="flex flex-col">
+                      <span className="text-xs text-muted-foreground">Date</span>
+                      <span className="font-medium text-foreground">
+                        {new Date(project.date).toLocaleDateString(undefined, {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </span>
+                    </div>
+                  )}
+                  {project.tags && project.tags.length > 0 && (
+                    <div className="flex flex-col pt-2">
+                      <span className="text-xs text-muted-foreground mb-2">Tags</span>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, idx) => (
+                          <span
+                            key={idx}
+                            className="inline-flex items-center rounded-md bg-secondary/50 px-2 py-1 text-xs font-medium text-secondary-foreground"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
