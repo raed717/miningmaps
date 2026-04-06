@@ -457,7 +457,95 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         type: "SimpleImage",
         image: "/images/projects/Europe/1.png",
         imageCaption: "Promising Finland gold project",
-      }
+      },
+    ],
+  },
+  {
+    id: "sk-008",
+    title: "Manitoba",
+    summary: "Manitoba",
+    region: "Manitoba, Canada",
+    image:
+      "https://images.unsplash.com/photo-1632455351235-682d08cbb3e0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [56.1304, -106.3468],
+    isForSale: false,
+    sections: [
+      {
+        heading: " Prospecting Maps",
+        type: "SimpleImage",
+        image: "/images/projects/Manitoba/1.webp",
+        imageCaption: "Manitoba geology",
+      },
+    ],
+  },
+  {
+    id: "sk-009",
+    title: "Nevada",
+    summary: "Nevada Project For Sale & Seeking Investors!",
+    region: "Nevada, USA",
+    image:
+      "https://images.unsplash.com/photo-1614823498916-a28a7d67182c?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [38.8026, -116.4194],
+    isForSale: true,
+    sections: [
+      {
+        heading: "Nevada Project For Sale & Seeking Investors!",
+        type: "paragraph",
+        content:
+          "I am brokering a deal for a client who is seeking investors in a promising gold project in Nevada. If you are interested in reviewing the presentation and connecting with the executive team, please email chris@miningpropertymaps.com.",
+      },
+      {
+        heading: "High grade Nevada gold project for sale",
+        type: "paragraph",
+        image: "/images/projects/Nevada/1.png",
+        content:
+          "Disco Zone High Grade Discovery contains intercepts of over 15 g/t over 2m+ widths!",
+      },
+      {
+        heading: "Nevada BLM Mapping",
+        type: "paragraph",
+        image: "/images/projects/Nevada/2.jpg",
+        imageCaption: "Nevada claim map",
+        content:
+          "Adamson Geomatics can assist with mapping requests for any U.S states including Nevada. Below is an example locating a property area in BLM land sections.",
+      },
+    ],
+  },
+  {
+    id: "sk-010",
+    title: "Newfoundland",
+    summary: "Newfoundland",
+    region: "Newfoundland, Canada",
+    image:
+      "https://images.unsplash.com/photo-1592701601033-c17588001fb8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [53.1327, -57.6629],
+    isForSale: false,
+    sections: [
+      {
+        heading:
+          "Newfound claim claim block mapping for geologist client Greg Davison from Hawkeye Gold.",
+        type: "bullet_list",
+        content: [
+          "Raster data processing",
+          "Drill hole coller mapping to help with exploration program",
+          "Georefrenced transparent maps which were separate mapping projects.",
+        ],
+      },
+      {
+        type: "paragraph",
+        image: "/images/projects/Newfoundland/1.webp",
+        content: "Claims, Patents and Claim Staking Grid for Project Planning",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Newfoundland/2.jpg",
+        imageCaption: "Georeferenced geology map with mineral occurrences",
+        heading: "Newfoundland Prospecting Maps",
+      },
+      {
+        type: "paragraph",
+        content: "Newfoundland Claims and Iron Occurrences",
+      },
     ],
   },
 ];
