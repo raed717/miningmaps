@@ -69,7 +69,7 @@ export const projects: Project[] = [
     quickFacts: [
       { label: "Commodities", value: "Ni, Cu, Co, PGE, Au" },
       { label: "Area", value: "Alaska, USA" },
-      { label: "Status", value: "Sold" }
+      { label: "Status", value: "Sold" },
     ],
     sections: [
       {
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     tags: ["Uranium", "Prospecting"],
     quickFacts: [
       { label: "Commodity", value: "Uranium" },
-      { label: "Region", value: "Athabasca Basin, Alberta" }
+      { label: "Region", value: "Athabasca Basin, Alberta" },
     ],
     sections: [
       {
@@ -158,7 +158,7 @@ export const projects: Project[] = [
     tags: ["Infrastructure", "Prospecting", "Mapping"],
     quickFacts: [
       { label: "Type", value: "Infrastructure Map" },
-      { label: "Location", value: "Arizona, USA" }
+      { label: "Location", value: "Arizona, USA" },
     ],
     sections: [
       {
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     tags: ["Copper", "Lithium", "Gold", "Uranium", "Zinc"],
     quickFacts: [
       { label: "Scope", value: "Multiple Projects" },
-      { label: "Regions", value: "Australia, New Zealand" }
+      { label: "Regions", value: "Australia, New Zealand" },
     ],
     sections: [
       {
@@ -286,7 +286,7 @@ export const projects: Project[] = [
     quickFacts: [
       { label: "Size", value: "362 Hectares" },
       { label: "Commodities", value: "Cu, Zn, Au" },
-      { label: "Tenure", value: "Claim #1106809" }
+      { label: "Tenure", value: "Claim #1106809" },
     ],
     sections: [
       {
@@ -472,7 +472,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     tags: ["Gold", "Patented Mine"],
     quickFacts: [
       { label: "Type", value: "Patented Gold Mine" },
-      { label: "District", value: "Rand Mining District" }
+      { label: "District", value: "Rand Mining District" },
     ],
     sections: [
       {
@@ -511,7 +511,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     tags: ["Gold", "Investment"],
     quickFacts: [
       { label: "Commodity", value: "Gold" },
-      { label: "Status", value: "Seeking Investors" }
+      { label: "Status", value: "Seeking Investors" },
     ],
     sections: [
       {
@@ -543,7 +543,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     tags: ["Prospecting", "Geology"],
     quickFacts: [
       { label: "Type", value: "Prospecting Map" },
-      { label: "Region", value: "Manitoba" }
+      { label: "Region", value: "Manitoba" },
     ],
     sections: [
       {
@@ -570,7 +570,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     quickFacts: [
       { label: "Commodity", value: "Gold" },
       { label: "Intercepts", value: ">15 g/t over 2m+" },
-      { label: "Status", value: "Seeking Investors" }
+      { label: "Status", value: "Seeking Investors" },
     ],
     sections: [
       {
@@ -611,7 +611,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     tags: ["Iron", "Claim Staking", "Mapping"],
     quickFacts: [
       { label: "Type", value: "Claim Block Mapping" },
-      { label: "Commodity", value: "Iron" }
+      { label: "Commodity", value: "Iron" },
     ],
     sections: [
       {
@@ -638,6 +638,250 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       {
         type: "paragraph",
         content: "Newfoundland Claims and Iron Occurrences",
+      },
+    ],
+  },
+  {
+    id: "nt-011",
+    title: "NWT / Nunavut",
+    summary: "Lithium & Uranium Prospecting targets in Northern Canada.",
+    region: "NWT & Nunavut, Canada",
+    image:
+      "https://images.unsplash.com/photo-1570669405132-f4771bdf399a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [64.8255, -124.8457],
+    isForSale: true,
+    date: "2024-06-01",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Lithium", "Uranium", "Prospecting", "Pegmatite"],
+    quickFacts: [
+      { label: "Commodities", value: "Lithium, Uranium" },
+      { label: "Status", value: "Open for Staking" },
+      { label: "Region", value: "Northern Canada" },
+    ],
+    sections: [
+      {
+        heading: "Lithium & Uranium Prospecting",
+        type: "paragraph",
+        content:
+          "I am able to find lithium and uranium targets in northern Canada. I have found several already that are open for staking. Below are targets I have found. For more information, or for assistance finding more targets, email chris@miningpropertymaps.com",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/NWT/1.jpg",
+      },
+      {
+        type: "SimpleImage",
+        heading: "NWT Lithium Target with Pegmatite hosting geology",
+        image: "/images/projects/NWT/2.jpg",
+      },
+      {
+        heading: "NWT Lithium prospect",
+        type: "paragraph",
+        content:
+          "Open for staking as of June 2024. Contact chris@miningpropertymaps.com for more information.",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/NWT/3.webp",
+      },
+      {
+        heading: "NWT Propecting Maps",
+        type: "SimpleImage",
+        image: "/images/projects/NWT/4.jpg",
+        imageCaption: "Rankin Inlet Claim and Geology Map",
+      },
+      {
+        heading: "Indigenous Lands Mapping",
+        type: "paragraph",
+        image: "/images/projects/NWT/5.webp",
+        content:
+          "I always make sure to map alienations, withdrawn areas, parks and First Nations / Indigenous land areas where exploration is or may be restricted.",
+      },
+      {
+        type: "paragraph",
+        content:
+          "I can make prospecting maps and find targets for you anywhere in the world. Email chris@miningpropertymaps.com with your project requirements.",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/NWT/6.webp",
+      },
+      {
+        type: "paragraph",
+        content:
+          "This map is a uranium target I found in the NWT. To see the full sized image, email me at chris@miningpropertymaps.com. I am open to finders fee deals if the area gets staked!",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/NWT/7.png",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/NWT/8.jpg",
+      },
+    ],
+  },
+  {
+    id: "sk-012",
+    title: "Ontario",
+    summary: "Ontario",
+    region: "Ontario, Canada",
+    image:
+      "https://images.unsplash.com/photo-1607388510015-c632e99da586?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [51.2538, -85.3232],
+    isForSale: false,
+    date: "2006",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Pb", "Cu", "Zn"],
+    quickFacts: [
+      { label: "Status", value: "Open for Staking" },
+      { label: "Region", value: "Northern Canada" },
+    ],
+    sections: [
+      {
+        heading: "Geologic Claim Maps",
+        type: "bullet_list",
+        content: [
+          "Marshall's Corner Project (near Cobalt, Ontario)",
+          "High-grade lead mineralization, with values exceeding 5% Pb across all samples.",
+          "Significant copper enrichment, with grades up to 1.77% Cu, largely attributed to visible chalcopyrite.",
+          "Zinc mineralization locally exceeding 2.1% Zn, further boosting the project’s polymetallic potential.",
+          "Host rocks include a diabase sill, which historically serves as a favorable host for structurally controlled, high-grade sulphide veins.",
+        ],
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Ontario/1.png",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Ontario/2.png",
+      },
+      {
+        type: "paragraph",
+        image: "/images/projects/Ontario/3.jpg",
+        heading:
+          "Melchett Lake, Ontario project map made for client Hawkeye Gold & Diamond.",
+        content: "",
+        links: [
+          {
+            textPreview: "Hawkeye Gold & Diamond",
+            url: "https://hawkeyegold.com/",
+          },
+        ],
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Ontario/4.jpg",
+        imageCaption: "Shabu Lake Claims and Mineral Occurrences",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Ontario/5.jpg",
+        imageCaption: "Red Lake Properties with Ultramafics",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Ontario/6.jpg",
+      },
+      {
+        type: "paragraph",
+        content:
+          "I was the Land Manager for Rubicon Minerals from 2006 – 2011 and have mapped several Ontario gold and lithium targets for clients in 2023 and 2024",
+      },
+    ],
+  },
+  // Quebec,
+  {
+    id: "sk-013",
+    title: "Quebec",
+    summary: "Quebec",
+    region: "Quebec, Canada",
+    image:
+      "https://images.unsplash.com/photo-1576771304215-6d4d30f7bb63?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [52.9399, -73.5491],
+    isForSale: false,
+    date: "2024-04-10",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Lithium"],
+    sections: [
+      {
+        heading: "Geologic claim maps",
+        type: "paragraph",
+        content:
+          "Adamson Geomatics was active mapping James Bay for Osisko Development in 2022 and 2023 and as a consultant during the lithium rush of 2022 and we look for targets in this region periodically.",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Quebec/1.jpg",
+        imageCaption: "Map of lithium target and target claims",
+      },
+      {
+        type: "SimpleImage",
+        heading: "Prospecting Maps",
+        image: "/images/projects/Quebec/2.jpg",
+        imageCaption:
+          "Greenstone Map showing lithium occurrences in relation to claims",
+      },
+      {
+        type: "SimpleImage",
+        heading: "Geology Maps",
+        image: "/images/projects/Quebec/3.jpg",
+      },
+      {
+        type: "paragraph",
+        content: "Staking Maps of targets along iron formation, Ungaava Bay:",
+      },
+      {
+        type: "SimpleImage",
+        heading: "Claim Staking Maps",
+        image: "/images/projects/Quebec/4.jpg",
+      },
+      {
+        type: "paragraph",
+        content: "Property Sale Map showing property covering iron formation:",
+      },
+      {
+        type: "SimpleImage",
+        heading: "Marketing Maps",
+        image: "/images/projects/Quebec/5.jpg",
+      },
+    ],
+  },
+  //Saskatchewan
+  {
+    id: "sk-014",
+    title: "Saskatchewan",
+    summary: "Saskatchewan",
+    region: "Saskatchewan, Canada",
+    image:
+      "https://images.unsplash.com/photo-1599861807502-0341592902f6?q=80&w=1299&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [52.9399, -106.4509],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Uranium", "Saskatchewan"],
+    quickFacts: [
+      { label: "Commodity", value: "Uranium" },
+      { label: "Region", value: "Saskatchewan" },
+    ],
+    sections: [
+      {
+        heading: "Uranium Target Mapping",
+        type: "paragraph",
+        content:
+          "Adamson Geomatics has found several uranium targets in Saskatchewan. Below is an example of a target I found in the Athabasca Basin.",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Saskatchewan/1.png",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Saskatchewan/2.jpg",
       },
     ],
   },
