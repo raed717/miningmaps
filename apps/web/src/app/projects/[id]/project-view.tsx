@@ -8,6 +8,11 @@ import { projects } from "@/lib/projectData";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
 import Zoom from "react-medium-image-zoom";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const createCustomIcon = () => {
   return L.divIcon({
@@ -139,6 +144,44 @@ export default function ProjectDetails({
                       ))}
                     </ul>
                   )}
+
+                {section.links && section.links.length > 0 && (
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    {section.links.map((link, idx) => (
+                      <HoverCard key={idx}>
+                        <HoverCardTrigger asChild>
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline font-medium cursor-pointer"
+                          >
+                            {link.textPreview || "See More"}
+                          </a>
+                        </HoverCardTrigger>
+                        <HoverCardContent className="w-80">
+                          <div className="space-y-3">
+                            {link.image && (
+                              <img
+                                src={link.image}
+                                alt="Link preview"
+                                className="w-full h-32 object-cover rounded-md"
+                              />
+                            )}
+                            <div className="space-y-1">
+                              <h4 className="text-sm font-semibold leading-none">{link.url}</h4>
+                              {link.description && (
+                                <p className="text-sm text-muted-foreground">
+                                  {link.description}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        </HoverCardContent>
+                      </HoverCard>
+                    ))}
+                  </div>
+                )}
               </motion.section>
             ))}
           </div>
