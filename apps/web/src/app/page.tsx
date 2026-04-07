@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div
       ref={scrollRef}
-      className={`h-full w-full overflow-y-auto relative bg-[#060608] text-[#E4E4E7] selection:bg-[#FF3300] selection:text-white ${syne.className}`}
+      className={`h-full w-full overflow-y-auto relative bg-background text-foreground selection:bg-primary selection:text-white ${syne.className}`}
     >
       {/* GLOBAL NOISE TEXTURE */}
       <div 
@@ -30,7 +30,7 @@ export default function Home() {
       />
 
       {/* Grid Lines (Fixed) */}
-      <div className="pointer-events-none fixed inset-0 z-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
+      <div className="pointer-events-none fixed inset-0 z-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
 
       {/* Cinematic Hero (Unchanged) */}
       <div className="relative z-10">
@@ -38,14 +38,14 @@ export default function Home() {
       </div>
 
       {/* SECTION 1: OPERATIONAL CAPABILITIES */}
-      <section className="relative z-10 border-t border-[#333] bg-[#060608] overflow-hidden">
+      <section className="relative z-10 border-t border-border bg-background overflow-hidden">
         <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/3 border-b md:border-b-0 md:border-r border-[#333] p-8 md:p-16 flex flex-col justify-between">
+          <div className="md:w-1/3 border-b md:border-b-0 md:border-r border-border p-8 md:p-16 flex flex-col justify-between">
             <h2 className={`text-5xl md:text-7xl font-extrabold leading-[0.85] tracking-tighter uppercase ${syne.className}`}>
               Operational<br />
-              <span className="text-[#FF3300]">Capabilities</span>
+              <span className="text-primary">Capabilities</span>
             </h2>
-            <p className={`mt-8 text-[#888] text-sm uppercase tracking-widest ${fira.className}`}>
+            <p className={`mt-8 text-muted-foreground text-sm uppercase tracking-widest ${fira.className}`}>
               // Adamson_Geomatics<br/>
               // Geospatial_Intelligence<br/>
               // Data_Extraction_Matrix
@@ -84,7 +84,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative border-b border-r border-[#333] p-8 md:p-12 hover:bg-[#FF3300] hover:text-[#060608] transition-colors duration-300 flex flex-col justify-between aspect-square md:aspect-auto min-h-[300px]"
+                className="group relative border-b border-r border-border p-8 md:p-12 hover:bg-primary hover:text-[#060608] transition-colors duration-300 flex flex-col justify-between aspect-square md:aspect-auto min-h-75"
               >
                 <div className={`flex justify-between items-start text-xs font-bold tracking-widest ${fira.className}`}>
                   <span>{feature.id}</span>
@@ -94,7 +94,7 @@ export default function Home() {
                   <h3 className="text-2xl font-extrabold uppercase mb-4 tracking-tight leading-none">
                     {feature.title}
                   </h3>
-                  <p className="text-[#888] group-hover:text-[#060608]/80 text-sm leading-relaxed">
+                  <p className="text-muted-foreground group-hover:text-[#060608]/80 text-sm leading-relaxed">
                     {feature.desc}
                   </p>
                 </div>
@@ -105,12 +105,12 @@ export default function Home() {
       </section>
 
       {/* SECTION 2: ACQUISITION TARGETS */}
-      <section className="relative z-10 py-24 md:py-40 px-4 md:px-12 lg:px-24 bg-[#0A0A0E] overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FF3300] to-transparent opacity-50" />
+      <section className="relative z-10 py-24 md:py-40 px-4 md:px-12 lg:px-24 bg-card overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-[#FF3300] to-transparent opacity-50" />
         
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <div className={`text-[#FF3300] font-bold tracking-[0.2em] text-xs mb-4 flex items-center gap-2 ${fira.className}`}>
+            <div className={`text-primary font-bold tracking-[0.2em] text-xs mb-4 flex items-center gap-2 ${fira.className}`}>
               <ShieldAlert className="h-4 w-4" /> SECURE_ASSETS
             </div>
             <h2 className="text-5xl md:text-8xl font-extrabold uppercase tracking-tighter max-w-4xl leading-[0.85]">
@@ -119,7 +119,7 @@ export default function Home() {
           </div>
           <Link href="/properties" className="group flex items-center gap-4 hover:opacity-80 transition-opacity">
             <div className={`text-xs uppercase tracking-widest font-bold ${fira.className}`}>Access Complete Database</div>
-            <div className="h-12 w-12 rounded-full border border-[#FF3300] flex items-center justify-center text-[#FF3300] group-hover:bg-[#FF3300] group-hover:text-black transition-colors">
+            <div className="h-12 w-12 rounded-full border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors">
               <ArrowUpRight className="h-5 w-5" />
             </div>
           </Link>
@@ -138,12 +138,12 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="relative p-6 border border-[#222] bg-[#060608] hover:border-[#555] transition-colors group cursor-pointer"
+              className="relative p-6 border border-accent bg-background hover:border-[#555] transition-colors group cursor-pointer"
             >
               <div className="absolute top-0 right-0 p-2 opacity-20">
                 <Cpu className="h-16 w-16" />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#111] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-linear-to-br from-transparent to-muted opacity-0 group-hover:opacity-100 transition-opacity" />
               
               <div className="relative z-10">
                 <div className={`flex justify-between items-center mb-12 ${fira.className} text-[10px] tracking-widest text-[#666]`}>
@@ -154,11 +154,11 @@ export default function Home() {
                 <h3 className="text-2xl font-bold uppercase tracking-tight mb-2">
                   {target.tag}
                 </h3>
-                <div className={`text-[#888] uppercase text-xs tracking-widest ${fira.className}`}>
+                <div className={`text-muted-foreground uppercase text-xs tracking-widest ${fira.className}`}>
                   LOC: {target.reg}
                 </div>
                 
-                <div className="mt-12 h-1 w-full bg-[#222] overflow-hidden">
+                <div className="mt-12 h-1 w-full bg-accent overflow-hidden">
                   <div className="h-full bg-current transition-all duration-1000 w-0 group-hover:w-full" style={{ color: target.color }} />
                 </div>
               </div>
@@ -168,10 +168,10 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: GLOBAL TELEMETRY (Replaces DemoPreview) */}
-      <section className="relative z-10 py-32 bg-[#000] border-t border-b border-[#333] overflow-hidden">
+      <section className="relative z-10 py-32 bg-black border-t border-b border-border overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-luminosity grayscale contrast-150" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop')" }} />
-          <div className="absolute inset-0 bg-[#000]/60" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -179,33 +179,33 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter">
               Global Telemetry
             </h2>
-            <div className={`flex items-center gap-4 bg-[#111] border border-[#333] px-6 py-3 text-xs tracking-widest ${fira.className}`}>
-              <Satellite className="h-4 w-4 text-[#00FF41] animate-pulse" />
+            <div className={`flex items-center gap-4 bg-muted border border-border px-6 py-3 text-xs tracking-widest ${fira.className}`}>
+              <Satellite className="h-4 w-4 text-secondary animate-pulse" />
               <span>SATELLITE_LINK_ACTIVE</span>
             </div>
           </div>
 
-          <div className="relative aspect-video md:aspect-[21/9] w-full border border-[#333] bg-[#00000]/80 backdrop-blur-md overflow-hidden flex items-center justify-center">
+          <div className="relative aspect-video md:aspect-21/9 w-full border border-border bg-[#00000]/80 backdrop-blur-md overflow-hidden flex items-center justify-center">
             {/* Radar Sweep */}
             <div className="absolute inset-0 w-full h-full">
-              <div className="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#333] opacity-20" />
-              <div className="absolute top-1/2 left-1/2 w-[100%] h-[100%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#333] opacity-20" />
-              <div className="absolute top-1/2 left-1/2 w-[50%] h-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#333] opacity-20" />
-              <div className="absolute top-0 left-1/2 w-[1px] h-full bg-[#333] opacity-20" />
-              <div className="absolute top-1/2 left-0 w-full h-[1px] bg-[#333] opacity-20" />
+              <div className="absolute top-1/2 left-1/2 w-[150%] h-[150%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border opacity-20" />
+              <div className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 rounded-full border border-border opacity-20" />
+              <div className="absolute top-1/2 left-1/2 w-[50%] h-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-border opacity-20" />
+              <div className="absolute top-0 left-1/2 w-px h-full bg-[#333] opacity-20" />
+              <div className="absolute top-1/2 left-0 w-full h-px bg-[#333] opacity-20" />
               
               {/* Animated scanning line */}
               <motion.div 
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                className="absolute top-1/2 left-1/2 w-[50%] h-[2px] origin-left bg-gradient-to-r from-[#00FF41] to-transparent z-20"
+                className="absolute top-1/2 left-1/2 w-[50%] h-0.5 origin-left bg-linear-to-r from-secondary to-transparent z-20"
                 style={{ filter: 'drop-shadow(0 0 8px #00FF41)' }}
               />
             </div>
 
             {/* Target Nodes */}
             {[
-              { top: '30%', left: '40%', color: '#00FF41', label: 'NWT_LITHIUM' },
+              { top: '30%', left: '40%', color: 'var(--color-secondary)', label: 'NWT_LITHIUM' },
               { top: '65%', left: '70%', color: '#FFB000', label: 'AUS_GOLD' },
               { top: '45%', left: '20%', color: '#00E5FF', label: 'NEV_COPPER' },
             ].map((node, i) => (
@@ -214,13 +214,13 @@ export default function Home() {
                   <div className="absolute inset-0 animate-ping opacity-50 rounded-full" style={{ backgroundColor: node.color }} />
                   <div className="h-3 w-3 rounded-full relative z-10" style={{ backgroundColor: node.color, boxShadow: `0 0 10px ${node.color}` }} />
                 </div>
-                <div className={`mt-2 px-2 py-1 bg-black border border-[#333] text-[9px] tracking-widest uppercase ${fira.className}`} style={{ color: node.color }}>
+                <div className={`mt-2 px-2 py-1 bg-black border border-border text-[9px] tracking-widest uppercase ${fira.className}`} style={{ color: node.color }}>
                   {node.label}
                 </div>
               </div>
             ))}
 
-            <Link href="/map" className="absolute bottom-8 right-8 z-30 group flex items-center gap-3 bg-white text-black px-6 py-3 hover:bg-[#FF3300] hover:text-white transition-colors">
+            <Link href="/map" className="absolute bottom-8 right-8 z-30 group flex items-center gap-3 bg-white text-black px-6 py-3 hover:bg-primary hover:text-white transition-colors">
               <span className="font-bold uppercase tracking-widest text-xs">View Full Map</span>
               <ArrowUpRight className="h-4 w-4" />
             </Link>
@@ -229,13 +229,13 @@ export default function Home() {
       </section>
 
       {/* SECTION 4: FIELD REPORTS (Testimonials) */}
-      <section className="relative z-10 py-32 px-4 md:px-12 lg:px-24 bg-[#060608]">
+      <section className="relative z-10 py-32 px-4 md:px-12 lg:px-24 bg-background">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-24">
           <div className="lg:col-span-1">
             <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tighter mb-6">
               Field<br/>Reports
             </h2>
-            <p className={`text-[#888] text-sm uppercase tracking-widest leading-relaxed ${fira.className}`}>
+            <p className={`text-muted-foreground text-sm uppercase tracking-widest leading-relaxed ${fira.className}`}>
               Endorsements from executives, geologists, and industry leaders. Verified intelligence.
             </p>
           </div>
@@ -259,7 +259,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.2 }}
-                className="border-l-4 border-[#FF3300] pl-6 py-2"
+                className="border-l-4 border-primary pl-6 py-2"
               >
                 <p className="text-lg md:text-xl font-medium leading-relaxed mb-6">
                   "{report.text}"
@@ -275,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* Footer (Unchanged) */}
-      <div className="relative z-10 border-t border-[#333]">
+      <div className="relative z-10 border-t border-border">
         <Footer />
       </div>
     </div>
