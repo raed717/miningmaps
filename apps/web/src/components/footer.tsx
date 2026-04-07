@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Fira_Code } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 
-const fira = Fira_Code({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export default function Footer() {
   return (
-    <footer className={`border-t border-border py-16 bg-background ${fira.className}`}>
+    <footer className={`border-t border-border py-16 bg-background ${mono.className}`}>
       <div className="container mx-auto px-4 flex flex-col items-center justify-between gap-12 text-xs uppercase tracking-widest text-muted-foreground md:flex-row md:items-start">
         
         {/* Brand / Logo */}

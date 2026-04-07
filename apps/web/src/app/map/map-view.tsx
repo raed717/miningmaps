@@ -17,10 +17,10 @@ import {
 } from "lucide-react";
 import { projects } from "@/lib/projectData";
 import Link from "next/link";
-import { Syne, Fira_Code } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 
-const syne = Syne({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const fira = Fira_Code({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 // Fix for default Leaflet icon in React
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -71,7 +71,7 @@ export default function MapView() {
   );
 
   return (
-    <div className={`flex h-full w-full overflow-hidden bg-background text-foreground selection:bg-primary selection:text-white ${syne.className}`}>
+    <div className={`flex h-full w-full overflow-hidden bg-background text-foreground selection:bg-primary selection:text-white ${inter.className}`}>
       
       {/* GLOBAL NOISE TEXTURE */}
       <div 
@@ -86,7 +86,7 @@ export default function MapView() {
         
         {/* Header */}
         <div className="p-6 border-b border-border bg-background">
-          <div className={`text-primary font-bold tracking-[0.2em] text-[10px] mb-2 flex items-center gap-2 ${fira.className}`}>
+          <div className={`text-primary font-bold tracking-[0.2em] text-[10px] mb-2 flex items-center gap-2 ${mono.className}`}>
             <Database className="h-3 w-3" /> MAP_DATABASE
           </div>
           <h2 className="text-3xl font-extrabold uppercase tracking-tighter leading-none">
@@ -99,7 +99,7 @@ export default function MapView() {
           <label className="flex cursor-pointer items-center justify-between group">
             <div className="flex items-center gap-3">
               <Filter className={`h-4 w-4 ${showOnlyForSale ? "text-secondary" : "text-[#555]"}`} />
-              <span className={`text-xs font-bold uppercase tracking-widest ${fira.className} ${showOnlyForSale ? "text-secondary" : "text-muted-foreground"}`}>
+              <span className={`text-xs font-bold uppercase tracking-widest ${mono.className} ${showOnlyForSale ? "text-secondary" : "text-muted-foreground"}`}>
                 Available Assets Only
               </span>
             </div>
@@ -117,7 +117,7 @@ export default function MapView() {
 
         {/* Project List */}
         <div className="flex-1 flex flex-col">
-          <div className={`px-6 py-3 bg-muted border-b border-border text-[9px] uppercase tracking-widest font-bold text-[#666] ${fira.className} flex justify-between`}>
+          <div className={`px-6 py-3 bg-muted border-b border-border text-[9px] uppercase tracking-widest font-bold text-[#666] ${mono.className} flex justify-between`}>
             <span>IDENTIFIED TARGETS</span>
             <span>[{visibleProjects.length}]</span>
           </div>
@@ -142,7 +142,7 @@ export default function MapView() {
                     </div>
                     
                     <div className="flex-1 min-w-0 flex flex-col justify-center">
-                      <div className={`text-[10px] text-primary tracking-widest font-bold mb-1 flex items-center justify-between ${fira.className}`}>
+                      <div className={`text-[10px] text-primary tracking-widest font-bold mb-1 flex items-center justify-between ${mono.className}`}>
                         <span>ID_{p.id}</span>
                         {p.isForSale && (
                           <span className="text-secondary px-1 border border-secondary bg-secondary/10">SALE</span>
@@ -151,7 +151,7 @@ export default function MapView() {
                       <div className="font-bold text-sm uppercase tracking-tight truncate group-hover:text-white transition-colors">
                         {p.title}
                       </div>
-                      <div className={`text-[10px] text-[#666] mt-1 truncate uppercase ${fira.className}`}>
+                      <div className={`text-[10px] text-[#666] mt-1 truncate uppercase ${mono.className}`}>
                         LOC: {p.region}
                       </div>
                     </div>
@@ -199,7 +199,7 @@ export default function MapView() {
                 }}
               >
                 <Popup className="mining-popup" closeButton={false}>
-                  <div className={`font-sans bg-card border border-[${color}] p-1 uppercase tracking-widest ${fira.className}`}>
+                  <div className={`font-sans bg-card border border-[${color}] p-1 uppercase tracking-widest ${mono.className}`}>
                     <div className="font-bold text-white text-[10px] border-b border-border pb-1 mb-1">{project.title}</div>
                     <div className="text-[9px] text-muted-foreground">
                       {project.coordinates[0].toFixed(2)}, {project.coordinates[1].toFixed(2)}
@@ -230,7 +230,7 @@ export default function MapView() {
               className="absolute bottom-6 right-6 top-6 z-1000 w-96 border border-border bg-card/95 p-0 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl flex flex-col"
             >
               {/* Header Bar */}
-              <div className={`flex justify-between items-center p-4 border-b border-border bg-background ${fira.className} text-[10px] tracking-widest uppercase`}>
+              <div className={`flex justify-between items-center p-4 border-b border-border bg-background ${mono.className} text-[10px] tracking-widest uppercase`}>
                 <span className="text-primary font-bold flex items-center gap-2">
                   <Activity className="h-3 w-3 animate-pulse" />
                   TARGET_LOCKED
@@ -257,7 +257,7 @@ export default function MapView() {
                 </div>
 
                 {selectedSite.isForSale && (
-                  <div className={`mb-4 inline-block border border-secondary bg-secondary/10 px-3 py-1 text-[10px] font-bold tracking-widest text-secondary uppercase w-fit shadow-[0_0_10px_rgba(0,255,65,0.2)] ${fira.className}`}>
+                  <div className={`mb-4 inline-block border border-secondary bg-secondary/10 px-3 py-1 text-[10px] font-bold tracking-widest text-secondary uppercase w-fit shadow-[0_0_10px_rgba(0,255,65,0.2)] ${mono.className}`}>
                     AVAILABLE_FOR_ACQUISITION
                   </div>
                 )}
@@ -266,7 +266,7 @@ export default function MapView() {
                   {selectedSite.title}
                 </h2>
                 
-                <div className={`flex flex-col gap-1 mb-8 text-[10px] tracking-widest uppercase text-muted-foreground ${fira.className}`}>
+                <div className={`flex flex-col gap-1 mb-8 text-[10px] tracking-widest uppercase text-muted-foreground ${mono.className}`}>
                   <span className="flex items-center gap-2 text-white">
                     <Target className="h-3 w-3 text-primary" /> ID: {selectedSite.id}
                   </span>
@@ -279,14 +279,14 @@ export default function MapView() {
                 </div>
 
                 <div className="flex-1">
-                  <p className={`text-xs text-[#AAA] leading-relaxed uppercase tracking-wide ${fira.className} border-l-2 border-primary pl-4`}>
+                  <p className={`text-xs text-[#AAA] leading-relaxed uppercase tracking-wide ${mono.className} border-l-2 border-primary pl-4`}>
                     {selectedSite.summary}
                   </p>
                 </div>
 
                 <Link
                   href={`/projects/${selectedSite.id}`}
-                  className={`mt-8 flex w-full items-center justify-between border border-primary bg-transparent hover:bg-primary hover:text-black text-primary p-4 text-[10px] font-bold uppercase tracking-widest transition-all ${fira.className} group`}
+                  className={`mt-8 flex w-full items-center justify-between border border-primary bg-transparent hover:bg-primary hover:text-black text-primary p-4 text-[10px] font-bold uppercase tracking-widest transition-all ${mono.className} group`}
                 >
                   <span>ACCESS_FULL_DOSSIER</span>
                   <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

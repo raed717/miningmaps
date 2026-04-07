@@ -6,12 +6,12 @@ import { motion, useScroll, useTransform, useInView } from "motion/react";
 import { CinematicHero } from "@/components/home/cinematic-hero";
 import Footer from "@/components/footer";
 
-import { Syne, Fira_Code } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { Map, Zap, Layers, Target, ShieldAlert, Cpu, ArrowUpRight, Satellite } from "lucide-react";
 
 // Extremely bold font pairing
-const syne = Syne({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const fira = Fira_Code({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div
       ref={scrollRef}
-      className={`h-full w-full overflow-y-auto relative bg-background text-foreground selection:bg-primary selection:text-white ${syne.className}`}
+      className={`h-full w-full overflow-y-auto relative bg-background text-foreground selection:bg-primary selection:text-white ${inter.className}`}
     >
       {/* GLOBAL NOISE TEXTURE */}
       <div 
@@ -39,19 +39,19 @@ export default function Home() {
 
       {/* SECTION 1: OPERATIONAL CAPABILITIES */}
       <section className="relative z-10 border-t border-border bg-background overflow-hidden">
-        <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/3 border-b md:border-b-0 md:border-r border-border p-8 md:p-16 flex flex-col justify-between">
-            <h2 className={`text-5xl md:text-7xl font-extrabold leading-[0.85] tracking-tighter uppercase ${syne.className}`}>
+        <div className="flex flex-col lg:flex-row">
+          <div className="lg:w-2/5 border-b lg:border-b-0 lg:border-r border-border p-8 lg:p-10 flex flex-col justify-between relative z-20 bg-background">
+            <h2 className={`text-5xl lg:text-10xl xl:text-15xl font-extrabold leading-[0.85] tracking-tighter uppercase ${inter.className}`}>
               Operational<br />
               <span className="text-primary">Capabilities</span>
             </h2>
-            <p className={`mt-8 text-muted-foreground text-sm uppercase tracking-widest ${fira.className}`}>
+            <p className={`mt-8 text-muted-foreground text-sm uppercase tracking-widest ${mono.className}`}>
               // Adamson_Geomatics<br/>
               // Geospatial_Intelligence<br/>
               // Data_Extraction_Matrix
             </p>
           </div>
-          <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2">
+          <div className="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 relative z-10">
             {[
               {
                 id: "01",
@@ -86,7 +86,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="group relative border-b border-r border-border p-8 md:p-12 hover:bg-primary hover:text-[#060608] transition-colors duration-300 flex flex-col justify-between aspect-square md:aspect-auto min-h-75"
               >
-                <div className={`flex justify-between items-start text-xs font-bold tracking-widest ${fira.className}`}>
+                <div className={`flex justify-between items-start text-xs font-bold tracking-widest ${mono.className}`}>
                   <span>{feature.id}</span>
                   <feature.icon className="h-6 w-6 opacity-50 group-hover:opacity-100 group-hover:animate-spin-slow" />
                 </div>
@@ -110,7 +110,7 @@ export default function Home() {
         
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
-            <div className={`text-primary font-bold tracking-[0.2em] text-xs mb-4 flex items-center gap-2 ${fira.className}`}>
+            <div className={`text-primary font-bold tracking-[0.2em] text-xs mb-4 flex items-center gap-2 ${mono.className}`}>
               <ShieldAlert className="h-4 w-4" /> SECURE_ASSETS
             </div>
             <h2 className="text-5xl md:text-8xl font-extrabold uppercase tracking-tighter max-w-4xl leading-[0.85]">
@@ -118,7 +118,7 @@ export default function Home() {
             </h2>
           </div>
           <Link href="/properties" className="group flex items-center gap-4 hover:opacity-80 transition-opacity">
-            <div className={`text-xs uppercase tracking-widest font-bold ${fira.className}`}>Access Complete Database</div>
+            <div className={`text-xs uppercase tracking-widest font-bold ${mono.className}`}>Access Complete Database</div>
             <div className="h-12 w-12 rounded-full border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors">
               <ArrowUpRight className="h-5 w-5" />
             </div>
@@ -146,7 +146,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-linear-to-br from-transparent to-muted opacity-0 group-hover:opacity-100 transition-opacity" />
               
               <div className="relative z-10">
-                <div className={`flex justify-between items-center mb-12 ${fira.className} text-[10px] tracking-widest text-[#666]`}>
+                <div className={`flex justify-between items-center mb-12 ${mono.className} text-[10px] tracking-widest text-[#666]`}>
                   <span>ID: {target.id}</span>
                   <span style={{ color: target.color }}>{target.stat}</span>
                 </div>
@@ -154,7 +154,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold uppercase tracking-tight mb-2">
                   {target.tag}
                 </h3>
-                <div className={`text-muted-foreground uppercase text-xs tracking-widest ${fira.className}`}>
+                <div className={`text-muted-foreground uppercase text-xs tracking-widest ${mono.className}`}>
                   LOC: {target.reg}
                 </div>
                 
@@ -179,7 +179,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tighter">
               Global Telemetry
             </h2>
-            <div className={`flex items-center gap-4 bg-muted border border-border px-6 py-3 text-xs tracking-widest ${fira.className}`}>
+            <div className={`flex items-center gap-4 bg-muted border border-border px-6 py-3 text-xs tracking-widest ${mono.className}`}>
               <Satellite className="h-4 w-4 text-secondary animate-pulse" />
               <span>SATELLITE_LINK_ACTIVE</span>
             </div>
@@ -214,7 +214,7 @@ export default function Home() {
                   <div className="absolute inset-0 animate-ping opacity-50 rounded-full" style={{ backgroundColor: node.color }} />
                   <div className="h-3 w-3 rounded-full relative z-10" style={{ backgroundColor: node.color, boxShadow: `0 0 10px ${node.color}` }} />
                 </div>
-                <div className={`mt-2 px-2 py-1 bg-black border border-border text-[9px] tracking-widest uppercase ${fira.className}`} style={{ color: node.color }}>
+                <div className={`mt-2 px-2 py-1 bg-black border border-border text-[9px] tracking-widest uppercase ${mono.className}`} style={{ color: node.color }}>
                   {node.label}
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tighter mb-6">
               Field<br/>Reports
             </h2>
-            <p className={`text-muted-foreground text-sm uppercase tracking-widest leading-relaxed ${fira.className}`}>
+            <p className={`text-muted-foreground text-sm uppercase tracking-widest leading-relaxed ${mono.className}`}>
               Endorsements from executives, geologists, and industry leaders. Verified intelligence.
             </p>
           </div>
@@ -264,7 +264,7 @@ export default function Home() {
                 <p className="text-lg md:text-xl font-medium leading-relaxed mb-6">
                   "{report.text}"
                 </p>
-                <div className={`text-[#666] text-xs uppercase tracking-widest ${fira.className}`}>
+                <div className={`text-[#666] text-xs uppercase tracking-widest ${mono.className}`}>
                   <strong className="text-white block mb-1">{report.author}</strong>
                   {report.role}
                 </div>

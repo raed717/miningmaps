@@ -15,7 +15,7 @@ export function DemoPreviewSection() {
           </p>
         </div>
         <Link
-          href="/portfolio"
+          href="/map"
           className="inline-flex items-center text-sm font-medium text-primary hover:underline"
         >
           View Full Portfolio <ArrowRight className="ml-1 h-4 w-4" />

@@ -190,7 +190,7 @@ export function CinematicHero({ scrollContainerRef }: { scrollContainerRef: Reac
             </div>
             <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-7xl">
               Precision GIS & <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-chart-2">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-chart-2">
                 Land Management.
               </span>
             </h1>
@@ -203,7 +203,7 @@ export function CinematicHero({ scrollContainerRef }: { scrollContainerRef: Reac
               className="flex flex-col items-center justify-center gap-4 sm:flex-row"
             >
               <Link
-                href="/portfolio"
+                href="/map"
                 className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground shadow-[0_0_30px_rgba(0,194,255,0.4)] transition-all hover:bg-primary/90 hover:scale-105"
               >
                 View Map Portfolio

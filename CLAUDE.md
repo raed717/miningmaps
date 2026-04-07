@@ -46,4 +46,8 @@ Keep CLAUDE.md updated when:
 - Adding new features or services
 - Modifying build/dev workflows
 
+## Design System
+
+See `DESIGN_SYSTEM.md` in the root directory for the application's aesthetic guidelines (Industrial Cartography / Terminal Brutalism), color variables, and styling instructions for new pages.
+
 AI assistants should suggest updates to this file when they notice relevant changes.

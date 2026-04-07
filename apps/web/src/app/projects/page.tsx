@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
-import { Syne, Fira_Code } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { ArrowUpRight, MapPin, Search, Cpu, Database, Activity, Target } from "lucide-react";
 import { projects } from "@/lib/projectData";
 
-const syne = Syne({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const fira = Fira_Code({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export default function Projects() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -30,7 +30,7 @@ export default function Projects() {
   });
 
   return (
-    <div className={`min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-white ${syne.className}`}>
+    <div className={`min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-white ${inter.className}`}>
       
       {/* GLOBAL NOISE TEXTURE & GRID */}
       <div 
@@ -45,14 +45,14 @@ export default function Projects() {
         <header className="mb-16 border-b border-border pb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
-              <div className={`text-primary font-bold tracking-[0.2em] text-xs mb-4 flex items-center gap-2 ${fira.className}`}>
+              <div className={`text-primary font-bold tracking-[0.2em] text-xs mb-4 flex items-center gap-2 ${mono.className}`}>
                 <Database className="h-4 w-4" /> ASSET_DATABASE
               </div>
               <h1 className="text-5xl md:text-8xl font-extrabold uppercase tracking-tighter leading-[0.85]">
                 Project<br/>Portfolio
               </h1>
             </div>
-            <div className={`max-w-md text-muted-foreground text-sm uppercase tracking-widest leading-relaxed ${fira.className}`}>
+            <div className={`max-w-md text-muted-foreground text-sm uppercase tracking-widest leading-relaxed ${mono.className}`}>
               Exploring a selection of mapping projects, right-of-way planning, and mineral exploration intel extracted by Adamson Geomatics.
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function Projects() {
               placeholder="SEARCH ASSETS / REGIONS / IDS..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className={`w-full bg-card border border-border py-4 pl-12 pr-4 text-sm text-white placeholder-[#555] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all uppercase tracking-widest ${fira.className}`}
+              className={`w-full bg-card border border-border py-4 pl-12 pr-4 text-sm text-white placeholder-[#555] focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all uppercase tracking-widest ${mono.className}`}
             />
             {searchQuery && (
               <div className="absolute right-4 top-1/2 -translate-y-1/2">
@@ -84,7 +84,7 @@ export default function Projects() {
           <div className="flex flex-wrap gap-2 lg:w-2/3 lg:justify-end">
             <button
               onClick={() => setActiveFilter(null)}
-              className={`px-4 py-2 border text-xs font-bold uppercase tracking-widest transition-all ${fira.className} ${
+              className={`px-4 py-2 border text-xs font-bold uppercase tracking-widest transition-all ${mono.className} ${
                 activeFilter === null 
                   ? "border-primary bg-primary text-black" 
                   : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
@@ -96,7 +96,7 @@ export default function Projects() {
               <button
                 key={tag}
                 onClick={() => setActiveFilter(tag === activeFilter ? null : tag)}
-                className={`px-4 py-2 border text-xs font-bold uppercase tracking-widest transition-all ${fira.className} ${
+                className={`px-4 py-2 border text-xs font-bold uppercase tracking-widest transition-all ${mono.className} ${
                   activeFilter === tag 
                     ? "border-secondary bg-secondary text-black" 
                     : "border-border bg-card text-muted-foreground hover:border-secondary hover:text-secondary"
@@ -109,7 +109,7 @@ export default function Projects() {
         </section>
 
         {/* RESULTS METRICS */}
-        <div className={`mb-8 flex justify-between text-xs tracking-widest uppercase border-b border-border pb-4 text-[#666] ${fira.className}`}>
+        <div className={`mb-8 flex justify-between text-xs tracking-widest uppercase border-b border-border pb-4 text-[#666] ${mono.className}`}>
           <span>Displaying {filteredProjects.length} Records</span>
           <span>SYSTEM_STATUS: {filteredProjects.length > 0 ? "ONLINE" : "NO_MATCH"}</span>
         </div>
@@ -134,7 +134,7 @@ export default function Projects() {
                   </div>
                   
                   {/* ID & Region Strip */}
-                  <div className={`flex justify-between items-center p-4 border-b border-accent bg-background text-[10px] font-bold tracking-widest uppercase ${fira.className}`}>
+                  <div className={`flex justify-between items-center p-4 border-b border-accent bg-background text-[10px] font-bold tracking-widest uppercase ${mono.className}`}>
                     <span className="text-muted-foreground flex items-center gap-2">
                       <Target className="h-3 w-3" />
                       ID_{project.id}
@@ -154,7 +154,7 @@ export default function Projects() {
                     />
                     {project.isForSale && (
                       <div className="absolute top-4 left-4">
-                        <div className={`px-2 py-1 bg-secondary text-black text-[9px] font-bold tracking-widest uppercase border border-secondary ${fira.className} shadow-[0_0_10px_var(--color-secondary)]`}>
+                        <div className={`px-2 py-1 bg-secondary text-black text-[9px] font-bold tracking-widest uppercase border border-secondary ${mono.className} shadow-[0_0_10px_var(--color-secondary)]`}>
                           AVAILABLE_FOR_ACQUISITION
                         </div>
                       </div>
@@ -170,19 +170,19 @@ export default function Projects() {
                       {project.title}
                     </h3>
                     
-                    <p className={`mb-8 text-sm text-muted-foreground leading-relaxed uppercase ${fira.className}`}>
+                    <p className={`mb-8 text-sm text-muted-foreground leading-relaxed uppercase ${mono.className}`}>
                       {project.summary}
                     </p>
 
                     <div className="mt-auto pt-4 border-t border-accent flex items-center justify-between">
                       <div className="flex gap-2">
                         {project.tags?.slice(0, 2).map(tag => (
-                          <span key={tag} className={`text-[9px] uppercase tracking-widest border border-border px-2 py-1 text-[#666] ${fira.className}`}>
+                          <span key={tag} className={`text-[9px] uppercase tracking-widest border border-border px-2 py-1 text-[#666] ${mono.className}`}>
                             {tag}
                           </span>
                         ))}
                         {(project.tags?.length || 0) > 2 && (
-                          <span className={`text-[9px] uppercase tracking-widest border border-border px-2 py-1 text-[#666] ${fira.className}`}>
+                          <span className={`text-[9px] uppercase tracking-widest border border-border px-2 py-1 text-[#666] ${mono.className}`}>
                             +{(project.tags?.length || 0) - 2}
                           </span>
                         )}
@@ -203,12 +203,12 @@ export default function Projects() {
           <div className="w-full py-32 flex flex-col items-center justify-center text-center border border-border bg-card">
             <Target className="h-16 w-16 text-[#555] mb-6 animate-pulse" />
             <h3 className="text-2xl font-bold uppercase tracking-tighter mb-2 text-muted-foreground">No Records Found</h3>
-            <p className={`text-[#555] text-sm uppercase tracking-widest ${fira.className}`}>
+            <p className={`text-[#555] text-sm uppercase tracking-widest ${mono.className}`}>
               Modify search parameters or clear active filters.
             </p>
             <button 
               onClick={() => { setSearchQuery(""); setActiveFilter(null); }}
-              className={`mt-8 px-6 py-3 border border-primary text-primary text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-black transition-colors ${fira.className}`}
+              className={`mt-8 px-6 py-3 border border-primary text-primary text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-black transition-colors ${mono.className}`}
             >
               RESET_QUERY
             </button>

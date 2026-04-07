@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Crosshair, ShieldAlert } from "lucide-react";
-import { Fira_Code, Syne } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 
-const syne = Syne({ subsets: ["latin"], weight: ["400", "700", "800"] });
-const fira = Fira_Code({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export default function Header() {
   const pathname = usePathname();
@@ -20,7 +20,7 @@ export default function Header() {
   ] as const;
 
   return (
-    <header className={`sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-md supports-backdrop-filter:bg-background/60 ${fira.className}`}>
+    <header className={`sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-md supports-backdrop-filter:bg-background/60 ${mono.className}`}>
       <div className="container mx-auto flex h-16 items-center px-4 md:px-8 justify-between">
         
         {/* LOGO */}
@@ -33,7 +33,7 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col">
-            <span className={`font-bold tracking-tighter text-white uppercase text-lg leading-none ${syne.className}`}>
+            <span className={`font-bold tracking-tighter text-white uppercase text-lg leading-none ${inter.className}`}>
               Adamson
             </span>
             <span className="text-primary text-[9px] tracking-widest font-bold">
