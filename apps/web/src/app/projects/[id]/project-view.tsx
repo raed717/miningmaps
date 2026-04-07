@@ -109,18 +109,20 @@ export default function ProjectDetails({
                 )}
 
                 {section.image && (
-                  <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 cursor-zoom-in">
+                  <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 cursor-zoom-in flex flex-col items-center">
                     <Zoom zoomMargin={40}>
                       <img
                         src={section.image}
                         alt={section.heading || "Project image"}
-                        className="w-full h-auto object-cover max-h-125"
+                        className="max-w-full h-auto object-contain"
                       />
                     </Zoom>
                     {section.imageCaption && (
-                      <p className="mt-2 text-sm text-muted-foreground text-center">
-                        {section.imageCaption}
-                      </p>
+                      <div className="w-full bg-background/90 p-3 text-center border-t border-border/50">
+                        <p className="text-sm text-muted-foreground">
+                          {section.imageCaption}
+                        </p>
+                      </div>
                     )}
                   </div>
                 )}
