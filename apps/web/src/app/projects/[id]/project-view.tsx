@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 import { motion } from "motion/react";
-import { ArrowLeft, MapPin, Target, Lightbulb, TrendingUp } from "lucide-react";
+import { ArrowLeft, MapPin, Target, Lightbulb, TrendingUp, PlayCircle, ExternalLink } from "lucide-react";
 import { projects } from "@/lib/projectData";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
@@ -182,6 +182,64 @@ export default function ProjectDetails({
                         </HoverCardContent>
                       </HoverCard>
                     ))}
+                  </div>
+                )}
+
+                {section.VideoLinks && section.VideoLinks.length > 0 && (
+                  <div className="grid gap-6 sm:grid-cols-2 pt-4">
+                    {section.VideoLinks.map((video, idx) => {
+                      let embedUrl = "";
+                      if (video.youtubeUrl) {
+                        const ytMatch = video.youtubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+                        if (ytMatch && ytMatch[1]) {
+                          embedUrl = `https://www.youtube.com/embed/${ytMatch[1]}`;
+                        } else if (video.youtubeUrl.includes("youtube.com/embed/")) {
+                          embedUrl = video.youtubeUrl;
+                        }
+                      }
+
+                      return (
+                        <div key={idx} className="flex flex-col overflow-hidden rounded-xl border border-border/50 bg-card">
+                          <div className="relative aspect-video w-full bg-background/50 border-b border-border/50">
+                            {embedUrl ? (
+                              <iframe
+                                src={embedUrl}
+                                title={video.title}
+                                className="absolute inset-0 h-full w-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              />
+                            ) : video.vimeoUrl ? (
+                              <a 
+                                href={video.vimeoUrl} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="group flex h-full w-full flex-col items-center justify-center p-4 text-center hover:bg-primary/5 transition-colors"
+                              >
+                                <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary group-hover:bg-primary group-hover:text-black transition-all">
+                                  <PlayCircle className="h-10 w-10" />
+                                </div>
+                                <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary group-hover:underline">
+                                  Watch on Vimeo <ExternalLink className="h-4 w-4" />
+                                </span>
+                              </a>
+                            ) : (
+                              <div className="flex h-full w-full items-center justify-center p-4 text-sm text-muted-foreground text-center">
+                                Invalid video URL or missing provider
+                              </div>
+                            )}
+                          </div>
+                          <div className="p-4">
+                            <h4 className="font-bold text-foreground text-sm uppercase tracking-tight">{video.title}</h4>
+                            {video.description && (
+                              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                                {video.description}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 )}
               </motion.section>

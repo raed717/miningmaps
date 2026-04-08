@@ -5,6 +5,13 @@ export type LinkPreview = {
   url: string;
 };
 
+export type VideoLink = {
+  title: string;
+  description?: string;
+  vimeoUrl?: string;
+  youtubeUrl?: string;
+};
+
 export type ProjectSection =
   | {
       heading: string;
@@ -13,6 +20,7 @@ export type ProjectSection =
       imageCaption?: string;
       content: string[];
       links?: LinkPreview[];
+      VideoLinks?: VideoLink[];
     }
   | {
       heading?: string;
@@ -21,6 +29,7 @@ export type ProjectSection =
       imageCaption?: string;
       content: string;
       links?: LinkPreview[];
+      VideoLinks?: VideoLink[];
     }
   | {
       heading?: string;
@@ -28,6 +37,7 @@ export type ProjectSection =
       image: string;
       imageCaption?: string;
       links?: LinkPreview[];
+      VideoLinks?: VideoLink[];
     };
 
 export type QuickFact = {
@@ -882,6 +892,197 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       {
         type: "SimpleImage",
         image: "/images/projects/Saskatchewan/2.jpg",
+      },
+    ],
+  },
+  // Chile
+  {
+    id: "sk-015",
+    title: "Chile",
+    summary:
+      "Copperman - Giant copper porphyry systems confirmed with drilling next to the Escondida and Collahuasi mines!",
+    region: "Chile",
+    image:
+      "https://images.unsplash.com/photo-1490782300182-697b80ad4293?q=80&w=1227&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [-35.6751, -71.543],
+    isForSale: true,
+    date: "2024-08-01",
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Copper"],
+    quickFacts: [
+      { label: "Commodity", value: "Copper" },
+      { label: "Status", value: "Seeking Investors" },
+    ],
+    sections: [
+      {
+        heading:
+          "Copperman - Giant copper porphyry systems confirmed with drilling next to the Escondida and Collahuasi mines!",
+        type: "paragraph",
+        content: `
+Escondida is the largest copper mine globally owned by BHP and Rio Tinto located in Chile's Atacama Desert
+
+Copperman is a mineral holding company formed to develop three prospective Chilean porphyry targets.
+
+Copperman's La Poderosa and Raiya projects are located on the Western Fissure Fault connecting the Collahuasi, El Abra and Chuquicamata mines.
+
+Copperman's Luna project is located on the FSV Fault shared by the Escondida mine.
+`,
+        links: [
+          {
+            textPreview: "Copperman website",
+            url: "https://www.copperman.com/",
+          },
+          {
+            textPreview: "Escondida",
+            url: "https://en.wikipedia.org/wiki/Minera_Escondida",
+          },
+        ],
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Chile/1.png",
+      },
+      {
+        type: "bullet_list",
+        heading: "SEEKING QUALIFIED INVESTORS",
+        content: [
+          "$17 MILLION INVESTED TO-DATE",
+          "COMPANY ESTABLISHED IN 2011 BY A PROVEN MANAGEMENT TEAM AND BLUE CHIP BOARD OF DIRECTORS",
+        ],
+      },
+      {
+        type: "paragraph",
+        content: `
+8500 METRES OF DRILLING COMPLETED - Location of copper porphyry area narrowed down based on drilling done so far. Copperman Exploration team is gaining information on likely location of deposit. Needs to be confirmed with more drilling.
+          `,
+        VideoLinks: [
+          {
+            title: "LA PODEROSA PROJECT VIDEO SUMMARY",
+            vimeoUrl: "https://vimeo.com/825643151/f3427bc243?fl=pl&fe=sh",
+          },
+          {
+            title: "LUNA PROJECT SUMMARY",
+            vimeoUrl: "https://vimeo.com/993596847/a8fa78731b?ts=0&share=copy",
+          },
+          {
+            title: "COPPERMAN CEO PRESENTATION",
+            vimeoUrl: " https://vimeo.com/832317641/9e0b12f992",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        content: `
+FULL PRESENTATION & TECHNICAL REPORTS AVAILABLE (43-101 format) upon request (NDA required)
+
+Chile is the largest producer of copper globally from the Antofagasta Region, which produces circa 30% of global copper, including 64% of US copper, from 16 Giant copper mines situated in the Antofagasta Desert Region of Chile.
+
+Email chris@miningpropertymaps.com if you are a qualified investor, or working on behalf of one, to connect with project owner
+        `,
+      },
+      {
+        type: "bullet_list",
+        heading: "Colombian high grade gold project!",
+        content: [
+          "Most holes of recent drill program intercepted high grade gold",
+          "18.35 g/t Au over 2.77m and 9.29 g/t Au over 1.92m",
+        ],
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Chile/2.png",
+        imageCaption: "Colombian high grade gold project",
+      },
+    ],
+  },
+  // Brazil
+  {
+    id: "sk-016",
+    title: "Brazil",
+    summary: "Brazilian Claim Staking Maps:",
+    region: "Brazil",
+    image:
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?q=80&w=1226&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [-14.235, -51.9253],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Claim Staking", "Brazil"],
+    sections: [
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Brazil/1.jpg",
+        heading: "Brazilian Claim Staking Maps",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Brazil/2.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Brazil/3.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Brazil/4.jpg",
+        heading: "Brazil Prospecting Maps",
+        imageCaption: "Brazil Li Claim Target",
+      },
+    ],
+  },
+  // Wyoming
+  {
+    id: "sk-017",
+    title: "Wyoming",
+    summary: "Wyoming Thorium Prospecting using GIS",
+    region: "Wyoming",
+    image:
+      "https://images.unsplash.com/photo-1610687660051-9fe41058f9b8?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [43.075, -107.291],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Mining Claims", "Wyoming"],
+    sections: [
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Wyoming/1.png",
+        heading: "Wyoming Thorium Prospecting using GIS",
+        imageCaption: "Identification of Wyoming thorium target",
+      },
+    ],
+  },
+  // Yukon
+  {
+    id: "sk-018",
+    title: "Yukon",
+    summary: "Yukon Prospecting Maps",
+    region: "Yukon, Canada",
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [60.7212, -135.0568],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Prospecting", "Yukon"],
+    sections: [
+      {
+        type: "paragraph",
+        heading: "Yukon Prospecting Maps",
+        content: `Yukon claim maps I made for clients to identify targets`,
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Yukon/1.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Yukon/2.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Yukon/3.jpg",
       },
     ],
   },
