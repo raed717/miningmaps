@@ -118,13 +118,33 @@ export function CinematicHero({ scrollContainerRef }: { scrollContainerRef: Reac
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black" />
           <div className="absolute w-[60vw] h-[60vw] rounded-full bg-amber-900/30 blur-[100px]" />
-          <motion.div style={{ y: p2TextY }} className="z-10 text-center px-4">
-            <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-stone-300 to-stone-700 drop-shadow-2xl">
-              Ancient <br /> Terrain
-            </h2>
-            <p className="mt-6 text-xl text-stone-400 font-mono tracking-widest max-w-lg mx-auto bg-black/40 backdrop-blur-sm p-2 rounded-md">
-              MILLIONS OF YEARS OF GEOLOGICAL PRESSURE
-            </p>
+          <motion.div style={{ y: p2TextY }} className="z-10 w-full max-w-6xl px-4">
+            <div className="border border-stone-700/60 bg-black/45 p-6 md:p-10 backdrop-blur-sm shadow-[0_0_40px_rgba(0,0,0,0.45)]">
+              <div className="text-center">
+                <div className="text-[10px] md:text-xs font-mono tracking-[0.35em] text-stone-400 uppercase">
+                  Adamson Geomatics Service Registry
+                </div>
+                <h2 className="mt-4 text-4xl md:text-7xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-stone-200 to-stone-600 drop-shadow-2xl">
+                  Geomatics / GIS
+                </h2>
+              </div>
+
+              <div className="mt-8 grid gap-px border border-stone-700/50 bg-stone-700/50 md:grid-cols-2 xl:grid-cols-3">
+                {[
+                  "Property Brokerage",
+                  "Geological Mapping",
+                  "Lidar / DEM",
+                  "Prospecting",
+                  "Permitting",
+                ].map((item) => (
+                  <div key={item} className="bg-black/70 px-4 py-5 text-center">
+                    <div className="text-sm md:text-base font-mono uppercase tracking-[0.2em] text-stone-300">
+                      {item}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </motion.div>
 

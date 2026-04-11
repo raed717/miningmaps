@@ -27,6 +27,8 @@ This file provides context about the project for AI assistants.
 miningmaps/
 ├── apps/
 │   ├── web/         # Frontend application
+│   │   ├── src/app/services/   # Service registry landing page
+│   │   ├── src/lib/servicesData.ts   # Shared service catalog for homepage and services route
 ├── packages/
 ```
 

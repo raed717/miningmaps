@@ -11,12 +11,12 @@ const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] 
 export default function Header() {
   const pathname = usePathname();
   const links = [
-    { to: "/", label: "Platform" },
-    { to: "/map", label: "Map View" },
-    { to: "/dashboard", label: "Dashboard" },
+    { to: "/", label: "Home" },
+    { to: "/services", label: "Services" },
     { to: "/projects", label: "Projects" },
+    { to: "/map", label: "Map View" },
+    { to: "/dashboard", label: "Insights" },
     { to: "/contact", label: "Contact" },
-    { to: "/posts", label: "Posts" },
   ] as const;
 
   return (

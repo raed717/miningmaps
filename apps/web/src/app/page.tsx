@@ -1,17 +1,40 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform, useInView } from "motion/react";
+import { motion } from "motion/react";
 import { CinematicHero } from "@/components/home/cinematic-hero";
 import Footer from "@/components/footer";
+import { serviceMetrics, serviceModules } from "@/lib/servicesData";
 
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { Map, Zap, Layers, Target, ShieldAlert, Cpu, ArrowUpRight, Satellite } from "lucide-react";
+import { Map, Zap, Layers, Target, ShieldAlert, ArrowUpRight, Satellite, ShieldCheck, BriefcaseBusiness, Crosshair, FileText, Mountain } from "lucide-react";
 
 // Extremely bold font pairing
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
 const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
+const serviceIcons = [ShieldCheck, BriefcaseBusiness, Crosshair, FileText, Mountain];
+const serviceAccentColors = [
+  "var(--color-primary)",
+  "var(--color-secondary)",
+  "var(--color-chart-3)",
+  "var(--color-chart-4)",
+  "var(--color-chart-5)",
+];
+const serviceFeed = serviceModules.flatMap((module, moduleIndex) =>
+  module.services.map((service, serviceIndex) => ({
+    moduleId: module.id,
+    moduleCode: module.code,
+    moduleTitle: module.title,
+    service,
+    accentColor:
+      serviceAccentColors[moduleIndex % serviceAccentColors.length],
+    rowId: `${module.id}-${serviceIndex}`,
+  })),
+);
+const outputFeed = Array.from(
+  new Set(serviceModules.flatMap((module) => module.deliverables)),
+);
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -38,7 +61,7 @@ export default function Home() {
       </div>
 
       {/* SECTION 1: OPERATIONAL CAPABILITIES */}
-      <section className="relative z-10 border-t border-border bg-background overflow-hidden">
+      {/* <section className="relative z-10 border-t border-border bg-background overflow-hidden">
         <div className="flex flex-col lg:flex-row">
           <div className="lg:w-2/5 border-b lg:border-b-0 lg:border-r border-border p-8 lg:p-10 flex flex-col justify-between relative z-20 bg-background">
             <h2 className={`text-5xl lg:text-10xl xl:text-15xl font-extrabold leading-[0.85] tracking-tighter uppercase ${inter.className}`}>
@@ -102,68 +125,191 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* SECTION 2: ACQUISITION TARGETS */}
+      {/* SECTION 2: SERVICE REGISTRY */}
       <section className="relative z-10 py-24 md:py-40 px-4 md:px-12 lg:px-24 bg-card overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-[#FF3300] to-transparent opacity-50" />
-        
-        <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div>
-            <div className={`text-primary font-bold tracking-[0.2em] text-xs mb-4 flex items-center gap-2 ${mono.className}`}>
-              <ShieldAlert className="h-4 w-4" /> SECURE_ASSETS
-            </div>
-            <h2 className="text-5xl md:text-8xl font-extrabold uppercase tracking-tighter max-w-4xl leading-[0.85]">
-              Target<br/>Acquisitions
-            </h2>
-          </div>
-          <Link href="/properties" className="group flex items-center gap-4 hover:opacity-80 transition-opacity">
-            <div className={`text-xs uppercase tracking-widest font-bold ${mono.className}`}>Access Complete Database</div>
-            <div className="h-12 w-12 rounded-full border border-primary flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors">
-              <ArrowUpRight className="h-5 w-5" />
-            </div>
-          </Link>
-        </div>
+        <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-primary to-transparent opacity-60" />
+        <div className="absolute inset-y-0 right-0 w-1/3 bg-[radial-gradient(circle_at_top_right,rgba(255,51,0,0.18),transparent_55%)] opacity-60" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-          {[
-            { tag: "GOLD/SILVER", reg: "BC, CANADA", stat: "FOR SALE", id: "ASX-902", color: "#FFB000" },
-            { tag: "LITHIUM", reg: "ONTARIO", stat: "JOINT VENTURE", id: "LTM-441", color: "#00FF41" },
-            { tag: "URANIUM", reg: "SASKATCHEWAN", stat: "OPTION AVAIL", id: "URN-109", color: "#00E5FF" },
-            { tag: "COPPER/ZINC", reg: "NEVADA, USA", stat: "FOR SALE", id: "VMS-774", color: "#FF3300" }
-          ].map((target, i) => (
+        <div className="relative border border-border bg-background/70 backdrop-blur-sm">
+          <div className="grid gap-px bg-border xl:grid-cols-[minmax(280px,0.9fr)_minmax(0,1.35fr)_minmax(260px,0.75fr)]">
             <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="relative p-6 border border-accent bg-background hover:border-[#555] transition-colors group cursor-pointer"
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="bg-background p-6 md:p-8 xl:p-10"
             >
-              <div className="absolute top-0 right-0 p-2 opacity-20">
-                <Cpu className="h-16 w-16" />
+              <div className={`text-primary font-bold tracking-[0.2em] text-xs mb-4 flex items-center gap-2 ${mono.className}`}>
+                <ShieldAlert className="h-4 w-4" /> SERVICE_REGISTRY
               </div>
-              <div className="absolute inset-0 bg-linear-to-br from-transparent to-muted opacity-0 group-hover:opacity-100 transition-opacity" />
-              
-              <div className="relative z-10">
-                <div className={`flex justify-between items-center mb-12 ${mono.className} text-[10px] tracking-widest text-[#666]`}>
-                  <span>ID: {target.id}</span>
-                  <span style={{ color: target.color }}>{target.stat}</span>
-                </div>
-                
-                <h3 className="text-2xl font-bold uppercase tracking-tight mb-2">
-                  {target.tag}
-                </h3>
-                <div className={`text-muted-foreground uppercase text-xs tracking-widest ${mono.className}`}>
-                  LOC: {target.reg}
-                </div>
-                
-                <div className="mt-12 h-1 w-full bg-accent overflow-hidden">
-                  <div className="h-full bg-current transition-all duration-1000 w-0 group-hover:w-full" style={{ color: target.color }} />
-                </div>
+              <h2 className="text-5xl md:text-7xl xl:text-8xl font-extrabold uppercase tracking-tighter leading-[0.85]">
+                GIS Service<br />Ops Deck
+              </h2>
+              <p className={`mt-8 text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}>
+                Dense field support for tenure, acquisition, prospecting, permitting, terrain modeling, and investor-facing mapping packages.
+              </p>
+
+              <div className="mt-10 grid gap-px border border-border bg-border">
+                {serviceModules.map((module, i) => {
+                  const Icon = serviceIcons[i % serviceIcons.length];
+                  const accentColor = serviceAccentColors[i % serviceAccentColors.length];
+
+                  return (
+                    <Link
+                      key={module.id}
+                      href={`/services#${module.id}`}
+                      className="group bg-card px-4 py-4 transition-colors hover:bg-background"
+                    >
+                      <div className={`flex items-center justify-between gap-3 text-[10px] uppercase tracking-[0.22em] ${mono.className}`}>
+                        <span style={{ color: accentColor }}>{module.code}</span>
+                        <Icon className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-white" />
+                      </div>
+                      <div className="mt-3 text-lg font-extrabold uppercase tracking-tight leading-none">
+                        {module.title}
+                      </div>
+                      <div className={`mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}>
+                        {String(module.services.length).padStart(2, "0")}_LINES / OPEN_MODULE
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Link href="/services" className="group inline-flex items-center justify-between gap-4 border border-primary bg-primary px-5 py-4 text-black transition-colors hover:bg-transparent hover:text-primary">
+                  <div>
+                    <div className={`text-[10px] uppercase tracking-[0.22em] ${mono.className}`}>
+                      FULL_ROUTE
+                    </div>
+                    <div className="mt-1 text-sm font-bold uppercase tracking-wider">
+                      Open Service Registry
+                    </div>
+                  </div>
+                  <ArrowUpRight className="h-5 w-5" />
+                </Link>
+                <Link href="/contact" className="inline-flex items-center justify-between gap-4 border border-border bg-card px-5 py-4 transition-colors hover:border-primary">
+                  <div>
+                    <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
+                      DIRECT_LINK
+                    </div>
+                    <div className="mt-1 text-sm font-bold uppercase tracking-wider">
+                      Request Scope
+                    </div>
+                  </div>
+                  <ArrowUpRight className="h-5 w-5 text-primary" />
+                </Link>
               </div>
             </motion.div>
-          ))}
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="bg-card"
+            >
+              <div className="flex items-center justify-between border-b border-border px-6 py-4 md:px-8">
+                <div>
+                  <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+                    LIVE_SERVICE_FEED
+                  </div>
+                  <div className="mt-2 text-2xl font-extrabold uppercase tracking-tight">
+                    Active Lines
+                  </div>
+                </div>
+                <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
+                  {String(serviceFeed.length).padStart(2, "0")} ENTRIES
+                </div>
+              </div>
+
+              <div className="grid gap-px bg-border">
+                {serviceFeed.map((item, i) => (
+                  <motion.div
+                    key={item.rowId}
+                    initial={{ opacity: 0, x: -18 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.35, delay: i * 0.02 }}
+                    className="grid gap-4 bg-background px-6 py-4 md:grid-cols-[88px_minmax(140px,0.45fr)_minmax(0,1fr)] md:px-8"
+                  >
+                    <div className={`text-[10px] uppercase tracking-[0.22em] ${mono.className}`} style={{ color: item.accentColor }}>
+                      {item.moduleCode}
+                    </div>
+                    <div className={`text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}>
+                      {item.moduleTitle}
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="mt-1.5 h-2 w-2 shrink-0" style={{ backgroundColor: item.accentColor }} />
+                      <p className="text-sm leading-relaxed text-foreground/90">{item.service}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.aside
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              className="grid gap-px bg-border"
+            >
+              <div className="bg-background p-6 md:p-8">
+                <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+                  SYSTEM_TOTALS
+                </div>
+                <div className="mt-6 grid gap-px border border-border bg-border">
+                  {[
+                    { label: "Modules", value: String(serviceMetrics.moduleCount).padStart(2, "0") },
+                    { label: "Service Lines", value: String(serviceMetrics.serviceLineCount).padStart(2, "0") },
+                    { label: "Outputs", value: String(serviceMetrics.deliverableCount).padStart(2, "0") },
+                  ].map((metric) => (
+                    <div key={metric.label} className="bg-card px-4 py-4">
+                      <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
+                        {metric.label}
+                      </div>
+                      <div className="mt-2 text-3xl font-extrabold uppercase tracking-tight text-foreground">
+                        {metric.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-card p-6 md:p-8">
+                <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+                  OUTPUT_INDEX
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {outputFeed.map((output, i) => (
+                    <span
+                      key={`${output}-${i}`}
+                      className={`border border-border px-2 py-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}
+                    >
+                      {output}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-background p-6 md:p-8">
+                <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+                  FIELD_NOTE
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-foreground/85">
+                  Built for operators who need claim status, permitting support, maps, and terrain intelligence in one coordinated workflow instead of scattered vendors.
+                </p>
+                <div className="mt-6 border-t border-border pt-4">
+                  <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
+                    NEXT_ACTION
+                  </div>
+                  <Link href="/services" className="mt-3 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary hover:opacity-70">
+                    Review Full Specification
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </motion.aside>
+          </div>
         </div>
       </section>
 
