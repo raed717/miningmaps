@@ -1,13 +1,4 @@
-// @ts-ignore
-import "./globals.css";
-// @ts-ignore
-import "leaflet/dist/leaflet.css";
-// @ts-ignore
-import "react-medium-image-zoom/dist/styles.css";
-
-import Header from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/sonner";
 
 export const metadata = {
   title: "Mining Maps",
@@ -29,13 +20,9 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="dark"
           disableTransitionOnChange
-          storageKey="vite-ui-theme"
+          storageKey="miningmaps-theme"
         >
-          <div className="grid h-svh grid-rows-[auto_1fr]">
-            <Header />
-            {children}
-          </div>
-          <Toaster richColors />
+          <div id="root">{children}</div>
         </ThemeProvider>
       </body>
     </html>

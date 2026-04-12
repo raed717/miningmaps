@@ -17,10 +17,7 @@ import {
 } from "lucide-react";
 import { projects } from "@/lib/projectData";
 import Link from "next/link";
-import { Inter, JetBrains_Mono } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
+import { inter, mono } from "@/lib/fonts";
 
 // Fix for default Leaflet icon in React
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -71,7 +68,9 @@ export default function MapView() {
   );
 
   return (
-    <div className={`flex h-full w-full overflow-hidden bg-background text-foreground selection:bg-primary selection:text-white ${inter.className}`}>
+    <div
+      className={`flex h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] w-full overflow-hidden bg-background text-foreground selection:bg-primary selection:text-white ${inter.className}`}
+    >
       
       {/* GLOBAL NOISE TEXTURE */}
       <div 
@@ -82,7 +81,7 @@ export default function MapView() {
       />
 
       {/* Left Sidebar - Brutalist */}
-      <aside className="w-80 shrink-0 border-r border-border bg-card p-0 overflow-y-auto flex flex-col relative z-20 shadow-[10px_0_30px_rgba(0,0,0,0.8)]">
+      <aside className="relative z-20 flex h-full w-80 shrink-0 flex-col overflow-y-auto border-r border-border bg-card p-0 shadow-[10px_0_30px_rgba(0,0,0,0.8)]">
         
         {/* Header */}
         <div className="p-6 border-b border-border bg-background">
@@ -164,7 +163,7 @@ export default function MapView() {
       </aside>
 
       {/* Main Map Area */}
-      <main className="relative flex-1 bg-black">
+      <main className="relative min-w-0 flex-1 bg-black">
         {/* Scanning Line overlay */}
         <motion.div 
           animate={{ top: ['-10%', '110%'] }}
@@ -227,7 +226,7 @@ export default function MapView() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 50, transition: { duration: 0.2 } }}
               transition={{ type: "spring", stiffness: 400, damping: 40 }}
-              className="absolute bottom-6 right-6 top-6 z-1000 w-96 border border-border bg-card/95 p-0 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl flex flex-col"
+              className="absolute top-6 right-6 bottom-6 z-[1000] flex w-96 flex-col border border-border bg-card/95 p-0 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl"
             >
               {/* Header Bar */}
               <div className={`flex justify-between items-center p-4 border-b border-border bg-background ${mono.className} text-[10px] tracking-widest uppercase`}>

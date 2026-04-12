@@ -23,14 +23,12 @@ const createCustomIcon = () => {
   });
 };
 
-import { use } from "react";
 export default function ProjectDetails({
-  params,
+  projectId,
 }: {
-  params: Promise<{ id: string }>;
+  projectId: string;
 }) {
-  const { id } = use(params);
-  const project = projects.find((p) => p.id === id);
+  const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
     return (
@@ -53,7 +51,7 @@ export default function ProjectDetails({
   return (
     <div className="flex-1 overflow-y-auto bg-background">
       {/* Header Banner */}
-      <div className="relative h-[40vh] min-h-75 w-full overflow-hidden">
+      <div className="relative h-[40vh] min-h-[18.75rem] w-full overflow-hidden">
         <img
           src={project.image}
           alt={project.title}
@@ -252,7 +250,7 @@ export default function ProjectDetails({
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 Location Context
               </h3>
-              <div className="h-75 w-full overflow-hidden rounded-lg border border-border/50 relative">
+              <div className="relative h-[18.75rem] w-full overflow-hidden rounded-lg border border-border/50">
                 <MapContainer
                   center={mapCoords}
                   zoom={5}

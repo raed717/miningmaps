@@ -3,10 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Crosshair, ShieldAlert } from "lucide-react";
-import { Inter, JetBrains_Mono } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
+import { inter, mono } from "@/lib/fonts";
 
 export default function Header() {
   const pathname = usePathname();

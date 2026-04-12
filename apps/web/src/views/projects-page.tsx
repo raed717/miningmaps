@@ -1,0 +1,233 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import { AnimatePresence, motion } from "motion/react";
+import {
+  Activity,
+  ArrowUpRight,
+  Cpu,
+  Database,
+  MapPin,
+  Search,
+  Target,
+} from "lucide-react";
+import { inter, mono } from "@/lib/fonts";
+import { projects } from "@/lib/projectData";
+
+type ProjectsPageProps = {
+  showOnlyForSale?: boolean;
+};
+
+export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPageProps) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+
+  const allTags = Array.from(new Set(projects.flatMap((project) => project.tags || [])));
+
+  const filteredProjects = projects.filter((project) => {
+    const matchesSearch =
+      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.region.toLowerCase().includes(searchQuery.toLowerCase());
+
+    const matchesFilter = activeFilter ? project.tags?.includes(activeFilter) : true;
+    const matchesSaleState = showOnlyForSale ? project.isForSale : true;
+
+    return matchesSearch && matchesFilter && matchesSaleState;
+  });
+
+  return (
+    <div className={`min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-white ${inter.className}`}>
+      <div
+        className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+        }}
+      />
+      <div className="pointer-events-none fixed inset-0 z-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_80%_at_50%_0%,#000_40%,transparent_100%)]" />
+
+      <main className="relative z-10 mx-auto max-w-[100rem] px-4 py-24 md:px-12">
+        <header className="mb-16 border-b border-border pb-16">
+          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div>
+              <div className={`mb-4 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}>
+                <Database className="h-4 w-4" />
+                {showOnlyForSale ? "PROPERTY_REGISTRY" : "ASSET_DATABASE"}
+              </div>
+              <h1 className="text-5xl font-extrabold uppercase tracking-tighter leading-[0.85] md:text-8xl">
+                {showOnlyForSale ? (
+                  <>
+                    Available
+                    <br />
+                    Properties
+                  </>
+                ) : (
+                  <>
+                    Project
+                    <br />
+                    Portfolio
+                  </>
+                )}
+              </h1>
+            </div>
+            <div className={`max-w-md text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}>
+              {showOnlyForSale
+                ? "Live acquisition-ready mineral properties filtered from the wider Adamson Geomatics project archive."
+                : "Exploring a selection of mapping projects, right-of-way planning, and mineral exploration intel extracted by Adamson Geomatics."}
+            </div>
+          </div>
+        </header>
+
+        <section className="mb-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+          <div className="relative w-full lg:w-1/3">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+              <Search className="h-5 w-5 text-primary" />
+            </div>
+            <input
+              type="text"
+              placeholder="SEARCH ASSETS / REGIONS / IDS..."
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              className={`w-full border border-border bg-card py-4 pr-4 pl-12 text-sm tracking-widest text-white uppercase placeholder-[#555] transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none ${mono.className}`}
+            />
+            {searchQuery && (
+              <div className="absolute top-1/2 right-4 -translate-y-1/2">
+                <Activity className="h-4 w-4 animate-pulse text-secondary" />
+              </div>
+            )}
+          </div>
+
+          <div className="flex flex-wrap gap-2 lg:w-2/3 lg:justify-end">
+            <button
+              onClick={() => setActiveFilter(null)}
+              className={`px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all ${mono.className} ${
+                activeFilter === null
+                  ? "border-primary bg-primary text-black"
+                  : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
+              } border`}
+            >
+              ALL
+            </button>
+            {allTags.slice(0, 5).map((tag) => (
+              <button
+                key={tag}
+                onClick={() => setActiveFilter(tag === activeFilter ? null : tag)}
+                className={`px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all ${mono.className} ${
+                  activeFilter === tag
+                    ? "border-secondary bg-secondary text-black"
+                    : "border-border bg-card text-muted-foreground hover:border-secondary hover:text-secondary"
+                } border`}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <div className={`mb-8 flex justify-between border-b border-border pb-4 text-xs tracking-widest uppercase text-[#666] ${mono.className}`}>
+          <span>Displaying {filteredProjects.length} Records</span>
+          <span>SYSTEM_STATUS: {filteredProjects.length > 0 ? "ONLINE" : "NO_MATCH"}</span>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+              >
+                <Link href={`/projects/${project.id}`} className="group relative block h-full overflow-hidden border border-accent bg-card transition-colors duration-500 hover:border-primary">
+                  <div className="absolute top-0 right-0 p-3 opacity-10 transition-opacity group-hover:opacity-30">
+                    <Cpu className="h-24 w-24" />
+                  </div>
+
+                  <div className={`flex items-center justify-between border-b border-accent bg-background p-4 text-[10px] font-bold tracking-widest uppercase ${mono.className}`}>
+                    <span className="flex items-center gap-2 text-muted-foreground">
+                      <Target className="h-3 w-3" />
+                      ID_{project.id}
+                    </span>
+                    <span className="flex items-center gap-1 text-primary">
+                      <MapPin className="h-3 w-3" />
+                      {project.region}
+                    </span>
+                  </div>
+
+                  <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-accent bg-black">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-full w-full object-cover opacity-60 mix-blend-luminosity transition-all duration-700 group-hover:scale-105 group-hover:opacity-100 group-hover:mix-blend-normal"
+                    />
+                    {project.isForSale && (
+                      <div className="absolute top-4 left-4">
+                        <div className={`border border-secondary bg-secondary px-2 py-1 text-[9px] font-bold tracking-widest text-black uppercase shadow-[0_0_10px_var(--color-secondary)] ${mono.className}`}>
+                          AVAILABLE_FOR_ACQUISITION
+                        </div>
+                      </div>
+                    )}
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(255,255,255,0.05)_50%)] bg-[length:100%_4px] mix-blend-overlay" />
+                  </div>
+
+                  <div className="relative z-10 flex grow flex-col bg-card p-6">
+                    <h3 className="mb-4 text-2xl font-extrabold uppercase tracking-tight leading-none transition-colors group-hover:text-primary">
+                      {project.title}
+                    </h3>
+
+                    <p className={`mb-8 text-sm uppercase leading-relaxed text-muted-foreground ${mono.className}`}>
+                      {project.summary}
+                    </p>
+
+                    <div className="mt-auto flex items-center justify-between border-t border-accent pt-4">
+                      <div className="flex gap-2">
+                        {project.tags?.slice(0, 2).map((tag) => (
+                          <span key={tag} className={`border border-border px-2 py-1 text-[9px] uppercase tracking-widest text-[#666] ${mono.className}`}>
+                            {tag}
+                          </span>
+                        ))}
+                        {(project.tags?.length || 0) > 2 && (
+                          <span className={`border border-border px-2 py-1 text-[9px] uppercase tracking-widest text-[#666] ${mono.className}`}>
+                            +{(project.tags?.length || 0) - 2}
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-all group-hover:border-primary group-hover:bg-primary group-hover:text-black">
+                        <ArrowUpRight className="h-5 w-5" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+
+        {filteredProjects.length === 0 && (
+          <div className="flex w-full flex-col items-center justify-center border border-border bg-card py-32 text-center">
+            <Target className="mb-6 h-16 w-16 animate-pulse text-[#555]" />
+            <h3 className="mb-2 text-2xl font-bold uppercase tracking-tighter text-muted-foreground">
+              No Records Found
+            </h3>
+            <p className={`text-sm uppercase tracking-widest text-[#555] ${mono.className}`}>
+              Modify search parameters or clear active filters.
+            </p>
+            <button
+              onClick={() => {
+                setSearchQuery("");
+                setActiveFilter(null);
+              }}
+              className={`mt-8 border border-primary px-6 py-3 text-xs font-bold uppercase tracking-widest text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
+            >
+              RESET_QUERY
+            </button>
+          </div>
+        )}
+      </main>
+    </div>
+  );
+}

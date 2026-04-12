@@ -1,9 +1,8 @@
 import { createEnv } from "@t3-oss/env-core";
-import { z } from "zod";
 
 export const env = createEnv({
-  clientPrefix: "VITE_",
+  clientPrefix: "NEXT_PUBLIC_",
   client: {},
-  runtimeEnv: (import.meta as any).env,
+  runtimeEnv: process.env,
   emptyStringAsUndefined: true,
 });

@@ -6,6 +6,7 @@ node_modules
 # Build outputs
 dist
 build
+.next
 *.tsbuildinfo
 
 # Environment variables
@@ -36,6 +37,10 @@ lerna-debug.log*
 # Turbo
 .turbo
 
+.playwright-mcp
+playwright-report
+test-results
+
 # Better Fullstack
 .alchemy
 
@@ -48,3 +53,4 @@ coverage
 .cache
 tmp
 temp
+next-env.d.ts

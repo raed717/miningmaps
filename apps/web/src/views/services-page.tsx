@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Inter, JetBrains_Mono } from "next/font/google";
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -14,14 +13,12 @@ import {
   ShieldAlert,
   ShieldCheck,
 } from "lucide-react";
+import { inter, mono } from "@/lib/fonts";
 import {
   serviceDeliverables,
   serviceMetrics,
   serviceModules,
 } from "@/lib/servicesData";
-
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "700", "800"] });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 const serviceIcons = [ShieldCheck, BriefcaseBusiness, Crosshair, FileText, Mountain];
 const serviceAccentColors = [
@@ -67,11 +64,13 @@ export default function ServicesPage() {
                 <ShieldAlert className="h-4 w-4" /> SERVICE_REGISTRY
               </div>
               <h1 className="max-w-5xl text-5xl font-extrabold uppercase tracking-tighter leading-[0.85] md:text-8xl">
-                Full GIS<br />
+                Full GIS
+                <br />
                 Service Registry
               </h1>
               <p className={`mt-8 max-w-3xl text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}>
-                A field-ops view of the services available across tenure management, acquisition, mapping, permitting, terrain modeling, and investor support.
+                A field-ops view of the services available across tenure management,
+                acquisition, mapping, permitting, terrain modeling, and investor support.
               </p>
             </div>
 
@@ -109,7 +108,7 @@ export default function ServicesPage() {
               >
                 <div className="absolute inset-x-0 top-0 h-px opacity-80" style={{ backgroundColor: accentColor }} />
                 <div className="grid lg:grid-cols-[280px_minmax(0,1fr)]">
-                  <div className="border-b border-border bg-background/80 p-6 md:p-8 lg:border-b-0 lg:border-r">
+                  <div className="border-b border-border bg-background/80 p-6 md:p-8 lg:border-r lg:border-b-0">
                     <div className={`flex items-center justify-between text-[10px] uppercase tracking-[0.22em] ${mono.className}`}>
                       <span style={{ color: accentColor }}>{module.code}</span>
                       <span className="text-muted-foreground">{String(module.services.length).padStart(2, "0")}_LINES</span>
@@ -211,7 +210,9 @@ export default function ServicesPage() {
                 Next Action
               </div>
               <p className="mt-4 text-sm leading-relaxed text-foreground/85">
-                Need a tailored scope, a property review, or a field-ready mapping package? Open a direct channel and outline the land position, region, or exploration objective.
+                Need a tailored scope, a property review, or a field-ready mapping
+                package? Open a direct channel and outline the land position, region,
+                or exploration objective.
               </p>
               <Link
                 href="/contact"

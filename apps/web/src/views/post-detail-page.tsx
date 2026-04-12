@@ -1,21 +1,24 @@
 "use client";
 
 import Link from "next/link";
-
 import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
 import { mockPosts } from "@/lib/postData";
 
-import { use } from "react";
-export default function PostDetails({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
-  const post = mockPosts.find((p) => p.id === id);
+type PostDetailPageProps = {
+  postId: string;
+};
+
+export default function PostDetailPage({ postId }: PostDetailPageProps) {
+  const post = mockPosts.find((entry) => entry.id === postId);
 
   if (!post) {
     return (
       <div className="flex h-[50vh] flex-col items-center justify-center">
         <h1 className="text-4xl font-bold tracking-tight text-primary">Post Not Found</h1>
-        <p className="mt-4 text-muted-foreground">The article you are looking for does not exist.</p>
+        <p className="mt-4 text-muted-foreground">
+          The article you are looking for does not exist.
+        </p>
         <Link href="/posts" className="mt-8 flex items-center text-primary hover:underline">
           <ArrowLeft className="mr-2 h-4 w-4" /> Back to Posts
         </Link>
@@ -34,73 +37,59 @@ export default function PostDetails({ params }: { params: Promise<{ id: string }
           Back to Posts
         </Link>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="space-y-8"
-        >
-          {/* Header */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="space-y-8">
           <div className="space-y-4">
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:leading-[1.1]">
               {post.title}
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              {post.summary}
-            </p>
+            <p className="text-xl leading-relaxed text-muted-foreground">{post.summary}</p>
           </div>
 
-          {/* Preview Image */}
           {post.previewImage && (
             <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-border/50 bg-muted">
-              <img
-                src={post.previewImage}
-                alt={post.title}
-                className="h-full w-full object-cover"
-              />
+              <img src={post.previewImage} alt={post.title} className="h-full w-full object-cover" />
             </div>
           )}
 
-          {/* Content Sections */}
-          <div className="prose prose-invert max-w-none mt-12 space-y-12">
-            {post.section.map((sec, i) => (
+          <div className="prose prose-invert mt-12 max-w-none space-y-12">
+            {post.section.map((section, index) => (
               <motion.section
-                key={i}
+                key={`${section.heading}-${index}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5 }}
                 className="space-y-6"
               >
-                <h2 className="text-2xl font-bold tracking-tight text-foreground border-b border-border/50 pb-2">
-                  {sec.heading}
+                <h2 className="border-b border-border/50 pb-2 text-2xl font-bold tracking-tight text-foreground">
+                  {section.heading}
                 </h2>
 
-                {sec.type === "paragraph" && (
-                  <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
-                    {sec.content as string}
+                {section.type === "paragraph" && (
+                  <p className="whitespace-pre-wrap text-lg leading-relaxed text-muted-foreground">
+                    {section.content}
                   </p>
                 )}
 
-                {sec.type === "bullet_list" && (
+                {section.type === "bullet_list" && (
                   <ul className="space-y-3 text-lg text-muted-foreground">
-                    {(sec.content as string[]).map((item, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="mr-3 mt-2 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                    {section.content.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start">
+                        <span className="mt-2 mr-3 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 )}
 
-                {/* Section Images */}
-                {sec.image && sec.image.length > 0 && (
-                  <div className={`grid gap-4 mt-6 ${sec.image.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
-                    {sec.image.map((imgSrc, idx) => (
-                      <div key={idx} className="overflow-hidden rounded-lg border border-border/50 bg-muted">
+                {section.image && section.image.length > 0 && (
+                  <div className={`mt-6 grid gap-4 ${section.image.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}>
+                    {section.image.map((image, imageIndex) => (
+                      <div key={imageIndex} className="overflow-hidden rounded-lg border border-border/50 bg-muted">
                         <img
-                          src={imgSrc}
-                          alt={`${sec.heading} - image ${idx + 1}`}
-                          className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                          src={image}
+                          alt={`${section.heading} - image ${imageIndex + 1}`}
+                          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                         />
                       </div>
                     ))}

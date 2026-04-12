@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import {
   BarChart,
@@ -8,7 +9,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
   LineChart,
   Line,
 } from "recharts";
@@ -42,6 +42,46 @@ const activityData = [
   { month: "May", active: 25, exploration: 14 },
   { month: "Jun", active: 30, exploration: 18 },
 ];
+
+function MeasuredChart({
+  children,
+}: {
+  children: (size: { width: number; height: number }) => React.ReactNode;
+}) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
+  const height = 300;
+
+  useEffect(() => {
+    const element = containerRef.current;
+
+    if (!element) {
+      return;
+    }
+
+    const updateWidth = () => {
+      setWidth(Math.floor(element.getBoundingClientRect().width));
+    };
+
+    updateWidth();
+
+    const observer = new ResizeObserver(() => {
+      updateWidth();
+    });
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <div ref={containerRef} className="h-[18.75rem] min-w-0 w-full">
+      {width > 0 ? children({ width, height }) : null}
+    </div>
+  );
+}
 
 export default function Dashboard() {
   const propertiesForSale = projects.filter((p) => p.isForSale);
@@ -134,17 +174,19 @@ export default function Dashboard() {
         </div>
 
         {/* Charts Row */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8">
+        <div className="mb-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="col-span-1 lg:col-span-2 rounded-xl border border-border/50 bg-card p-6 shadow-sm"
+            className="col-span-1 min-w-0 rounded-xl border border-border/50 bg-card p-6 shadow-sm lg:col-span-2"
           >
             <h3 className="text-lg font-semibold mb-6">Activity Over Time</h3>
-            <div className="h-75 w-full">
-              <ResponsiveContainer width="100%" height="100%">
+            <MeasuredChart>
+              {({ width, height }) => (
                 <LineChart
+                  width={width}
+                  height={height}
                   data={activityData}
                   margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
                 >
@@ -190,22 +232,24 @@ export default function Dashboard() {
                     dot={{ r: 4, strokeWidth: 2 }}
                   />
                 </LineChart>
-              </ResponsiveContainer>
-            </div>
+              )}
+            </MeasuredChart>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="rounded-xl border border-border/50 bg-card p-6 shadow-sm"
+            className="min-w-0 rounded-xl border border-border/50 bg-card p-6 shadow-sm"
           >
             <h3 className="text-lg font-semibold mb-6">
               Resource Distribution
             </h3>
-            <div className="h-75 w-full">
-              <ResponsiveContainer width="100%" height="100%">
+            <MeasuredChart>
+              {({ width, height }) => (
                 <BarChart
+                  width={width}
+                  height={height}
                   data={resourceData}
                   layout="vertical"
                   margin={{ top: 0, right: 0, bottom: 0, left: 20 }}
@@ -246,8 +290,8 @@ export default function Dashboard() {
                     barSize={24}
                   />
                 </BarChart>
-              </ResponsiveContainer>
-            </div>
+              )}
+            </MeasuredChart>
           </motion.div>
         </div>
 
@@ -264,7 +308,7 @@ export default function Dashboard() {
               View Full Map
             </button>
           </div>
-          <div className="h-75 w-full rounded-lg overflow-hidden border border-border/50 relative">
+          <div className="relative h-[18.75rem] w-full overflow-hidden rounded-lg border border-border/50">
             {/* Using a non-interactive minimap for the dashboard */}
             <MapContainer
               center={[20, 0]}

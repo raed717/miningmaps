@@ -5,11 +5,13 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
-export function CinematicHero({ scrollContainerRef }: { scrollContainerRef: React.RefObject<HTMLElement | null> }) {
+const noiseTexture =
+  'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")';
+
+export function CinematicHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    container: scrollContainerRef,
     offset: ["start start", "end end"],
   });
 
@@ -45,6 +47,7 @@ export function CinematicHero({ scrollContainerRef }: { scrollContainerRef: Reac
   return (
     <div
       ref={containerRef}
+      data-cinematic-hero
       className="relative h-[400vh] w-full shrink-0 bg-black text-white"
     >
       <div className="sticky top-0 h-[calc(100svh-4rem)] w-full overflow-hidden flex flex-col items-center justify-center">
@@ -72,7 +75,10 @@ export function CinematicHero({ scrollContainerRef }: { scrollContainerRef: Reac
           className="absolute inset-0 flex items-center justify-center bg-background"
         >
           {/* Gritty Texture */}
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
+          <div
+            className="absolute inset-0 opacity-30 mix-blend-overlay"
+            style={{ backgroundImage: noiseTexture }}
+          />
           
           {/* Wireframe Grid Layer */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]"></div>
@@ -115,7 +121,10 @@ export function CinematicHero({ scrollContainerRef }: { scrollContainerRef: Reac
             }}
           />
           {/* Gritty Texture */}
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-30 mix-blend-overlay"></div>
+          <div
+            className="absolute inset-0 opacity-30 mix-blend-overlay"
+            style={{ backgroundImage: noiseTexture }}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black" />
           <div className="absolute w-[60vw] h-[60vw] rounded-full bg-amber-900/30 blur-[100px]" />
           <motion.div style={{ y: p2TextY }} className="z-10 w-full max-w-6xl px-4">
