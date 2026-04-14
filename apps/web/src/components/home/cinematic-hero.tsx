@@ -50,7 +50,7 @@ export function CinematicHero() {
       data-cinematic-hero
       className="relative h-[400vh] w-full shrink-0 bg-black text-white"
     >
-      <div className="sticky top-0 h-[calc(100svh-4rem)] w-full overflow-hidden flex flex-col items-center justify-center">
+      <div className="sticky top-16 h-[calc(100svh-4rem)] w-full overflow-hidden flex flex-col items-center justify-center">
         {/* Abstract Progress Indicator */}
         <div className="absolute left-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4 hidden md:flex">
           <motion.div className="w-[2px] h-32 bg-white/10 relative overflow-hidden">
@@ -79,26 +79,26 @@ export function CinematicHero() {
             className="absolute inset-0 opacity-30 mix-blend-overlay"
             style={{ backgroundImage: noiseTexture }}
           />
-          
+
           {/* Wireframe Grid Layer */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]"></div>
-          
+
           <motion.div
             style={{ y: p1TextY }}
             className="z-10 flex flex-col items-center justify-center w-full max-w-5xl px-4"
           >
             {/* The Full Logo - Increased Size */}
-            <div className="relative w-80 md:w-[36rem] aspect-square drop-shadow-[0_0_30px_rgba(255,176,0,0.3)]">
-              <img 
-                src="/images/general/full-logo.png" 
-                alt="Adamson Geomatics Full Logo" 
+            <div className="relative w-64 md:w-120 aspect-square drop-shadow-[0_0_30px_rgba(255,176,0,0.3)]">
+              <img
+                src="/images/general/full-logo.png"
+                alt="Adamson Geomatics Full Logo"
                 className="w-full h-full object-contain"
               />
-              
+
               {/* Scanning laser over logo */}
               <div className="absolute inset-0 overflow-hidden mix-blend-overlay pointer-events-none rounded-full">
-                <motion.div 
-                  animate={{ top: ['-20%', '120%'] }}
+                <motion.div
+                  animate={{ top: ["-20%", "120%"] }}
                   transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                   className="absolute left-0 w-full h-1 bg-white shadow-[0_0_20px_#fff]"
                 />
@@ -127,7 +127,10 @@ export function CinematicHero() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black" />
           <div className="absolute w-[60vw] h-[60vw] rounded-full bg-amber-900/30 blur-[100px]" />
-          <motion.div style={{ y: p2TextY }} className="z-10 w-full max-w-6xl px-4">
+          <motion.div
+            style={{ y: p2TextY }}
+            className="z-10 w-full max-w-6xl px-4"
+          >
             <div className="border border-stone-700/60 bg-black/45 p-6 md:p-10 backdrop-blur-sm shadow-[0_0_40px_rgba(0,0,0,0.45)]">
               <div className="text-center">
                 <div className="text-[10px] md:text-xs font-mono tracking-[0.35em] text-stone-400 uppercase">
@@ -181,7 +184,7 @@ export function CinematicHero() {
             style={{ y: p3TextY }}
             className="z-10 text-center px-4 backdrop-blur-md bg-black/40 p-12 border border-primary/30 rounded-3xl shadow-2xl"
           >
-            <h2 className="text-5xl md:text-8xl font-black italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-primary to-chart-2 drop-shadow-lg">
+            <h2 className="text-3xl md:text-'3.5xl font-black italic tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-primary to-chart-2 drop-shadow-lg">
               LIVE OPERATIONS
             </h2>
             <p className="mt-4 text-lg text-primary/90 font-mono uppercase bg-black/50 inline-block px-4 py-1 rounded">
@@ -224,7 +227,9 @@ export function CinematicHero() {
               </span>
             </h1>
             <p className="mx-auto mb-10 text-xl text-muted-foreground max-w-2xl">
-              Expert geospatial consulting for mineral exploration, land management, and real estate services across Canada, the USA, and internationally.
+              Expert geospatial consulting for mineral exploration, land
+              management, and real estate services across Canada, the USA, and
+              internationally.
             </p>
 
             <motion.div
