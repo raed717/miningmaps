@@ -1,12 +1,14 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Crosshair, ShieldAlert } from "lucide-react";
+import { ShieldAlert } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 
 export default function Header() {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const links = [
     { to: "/", label: "Home" },
     { to: "/services", label: "Services" },
@@ -15,6 +17,10 @@ export default function Header() {
     { to: "/dashboard", label: "Insights" },
     { to: "/contact", label: "Contact" },
   ] as const;
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   return (
     <header className={`sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-md supports-backdrop-filter:bg-background/60 ${mono.className}`}>
@@ -69,14 +75,50 @@ export default function Header() {
             <span className="text-[9px] text-secondary tracking-widest uppercase">Uplink_Secure</span>
           </div>
           
-          {/* MOBILE MENU TOGGLE (Placeholder icon) */}
-          <button className="md:hidden flex flex-col gap-1.5 p-2">
-            <span className="w-6 h-0.5 bg-white" />
-            <span className="w-6 h-0.5 bg-white" />
-            <span className="w-4 h-0.5 bg-primary" />
+          <button
+            type="button"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            className="md:hidden flex flex-col gap-1.5 rounded-sm border border-border bg-card/80 p-2 transition-colors hover:bg-muted"
+          >
+            <span className={`h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "w-6 translate-y-2 rotate-45" : "w-6"}`} />
+            <span className={`h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : "w-6"}`} />
+            <span className={`h-0.5 bg-primary transition-all duration-300 ${mobileMenuOpen ? "w-6 -translate-y-2 -rotate-45 bg-white" : "w-4"}`} />
           </button>
         </div>
 
+      </div>
+
+      <div
+        id="mobile-navigation"
+        className={`md:hidden overflow-hidden border-t border-border bg-background/98 transition-[max-height,opacity] duration-300 ${mobileMenuOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"}`}
+      >
+        <nav className="container mx-auto flex flex-col px-4 py-4">
+          {links.map(({ to, label }) => {
+            const isActive = to === "/" ? pathname === "/" : pathname.startsWith(to);
+
+            return (
+              <Link
+                key={to}
+                href={to}
+                className={`border-b border-border/70 px-1 py-3 text-xs font-bold uppercase tracking-[0.28em] transition-colors last:border-b-0 ${
+                  isActive
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-white"
+                }`}
+              >
+                {label}
+              </Link>
+            );
+          })}
+
+          <div className="mt-4 flex items-center gap-2 border border-border bg-card px-3 py-2">
+            <ShieldAlert className="h-3 w-3 text-secondary animate-pulse" />
+            <span className="text-[9px] text-secondary tracking-widest uppercase">Uplink_Secure</span>
+          </div>
+        </nav>
       </div>
     </header>
   );

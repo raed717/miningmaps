@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
 const noiseTexture =
-  'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")';
+  "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")";
 
 export function CinematicHero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,28 +27,27 @@ export function CinematicHero() {
   const p1TextY = useTransform(smoothProgress, [0, 0.2], [0, -100]);
 
   // Phase 2: Formations (Grid & Data Structure)
-  const p2Opacity = useTransform(smoothProgress, [0.15, 0.3, 0.45, 0.55], [0, 1, 1, 0]);
-  const p2Scale = useTransform(smoothProgress, [0.15, 0.55], [0.8, 1.1]);
-  const p2TextY = useTransform(smoothProgress, [0.15, 0.45], [100, -50]);
+  const p2Opacity = useTransform(
+    smoothProgress,
+    [0.15, 0.3, 0.5, 0.65],
+    [0, 1, 1, 0],
+  );
+  const p2Scale = useTransform(smoothProgress, [0.15, 0.65], [0.8, 1.08]);
+  const p2TextY = useTransform(smoothProgress, [0.15, 0.5], [100, -50]);
 
-  // Phase 3: Modern Operations (Neon/Active)
-  const p3Opacity = useTransform(smoothProgress, [0.45, 0.6, 0.75, 0.85], [0, 1, 1, 0]);
-  const p3Scale = useTransform(smoothProgress, [0.45, 0.85], [1.1, 0.9]);
-  const p3TextY = useTransform(smoothProgress, [0.45, 0.75], [100, -50]);
-
-  // Phase 4: Future / Sustainable
-  const p4Opacity = useTransform(smoothProgress, [0.75, 0.9, 1], [0, 1, 1]);
-  const p4Scale = useTransform(smoothProgress, [0.75, 1], [0.9, 1]);
-  const p4TextY = useTransform(smoothProgress, [0.75, 1], [100, 0]);
+  // Phase 3: Future / Sustainable
+  const p4Opacity = useTransform(smoothProgress, [0.55, 0.75, 1], [0, 1, 1]);
+  const p4Scale = useTransform(smoothProgress, [0.55, 1], [0.92, 1]);
+  const p4TextY = useTransform(smoothProgress, [0.55, 1], [100, 0]);
 
   // Global CTA visibility
-  const ctaOpacity = useTransform(smoothProgress, [0.8, 0.95], [0, 1]);
+  const ctaOpacity = useTransform(smoothProgress, [0.72, 0.9], [0, 1]);
 
   return (
     <div
       ref={containerRef}
       data-cinematic-hero
-      className="relative h-[400vh] w-full shrink-0 bg-black text-white"
+      className="relative h-[300vh] w-full shrink-0 bg-black text-white"
     >
       <div className="sticky top-16 h-[calc(100svh-4rem)] w-full overflow-hidden flex flex-col items-center justify-center">
         {/* Abstract Progress Indicator */}
@@ -160,40 +159,7 @@ export function CinematicHero() {
           </motion.div>
         </motion.div>
 
-        {/* --- PHASE 3: Modern Operations --- */}
-        <motion.div
-          style={{ opacity: p3Opacity, scale: p3Scale }}
-          className="absolute inset-0 flex items-center justify-center"
-        >
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen"
-            style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1660367439240-d38cb03a4365?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-radial from-transparent to-black/90" />
-
-          {/* Tech Radar Rings */}
-          <div className="absolute border border-primary/30 rounded-full w-[40vw] h-[40vw] animate-pulse shadow-[0_0_30px_rgba(0,194,255,0.2)_inset]"></div>
-          <div className="absolute border border-primary/50 rounded-full w-[30vw] h-[30vw]"></div>
-          <div className="absolute border border-primary/80 rounded-full w-[20vw] h-[20vw] shadow-[0_0_20px_rgba(0,194,255,0.4)]"></div>
-
-          <motion.div
-            style={{ y: p3TextY }}
-            className="z-10 text-center px-4 backdrop-blur-md bg-black/40 p-12 border border-primary/30 rounded-3xl shadow-2xl"
-          >
-            <h2 className="text-3xl md:text-'3.5xl font-black italic tracking-tighter text-transparent bg-clip-text bg-linear-to-r from-primary to-chart-2 drop-shadow-lg">
-              LIVE OPERATIONS
-            </h2>
-            <p className="mt-4 text-lg text-primary/90 font-mono uppercase bg-black/50 inline-block px-4 py-1 rounded">
-              Real-time extraction metrics & telemetry
-            </p>
-          </motion.div>
-        </motion.div>
-
-        {/* --- PHASE 4: Future / Sustainable UI --- */}
+        {/* --- PHASE 3: Future / Sustainable UI --- */}
         <motion.div
           style={{ opacity: p4Opacity, scale: p4Scale }}
           className="absolute inset-0 flex flex-col items-center justify-center bg-background text-foreground overflow-hidden"

@@ -10,6 +10,7 @@ import {
   Filter,
   MapPin,
   ChevronRight,
+  PanelLeft,
   X,
   Target,
   Cpu,
@@ -60,6 +61,7 @@ function MapFlyTo({ coordinates }: { coordinates: [number, number] | null }) {
 export default function MapView() {
   const [selectedSiteId, setSelectedSiteId] = useState<string | null>(null);
   const [showOnlyForSale, setShowOnlyForSale] = useState(false);
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   const selectedSite = projects.find((p) => p.id === selectedSiteId);
 
@@ -80,11 +82,33 @@ export default function MapView() {
         }}
       />
 
+      {mobileSidebarOpen && (
+        <button
+          type="button"
+          aria-label="Close project list"
+          onClick={() => setMobileSidebarOpen(false)}
+          className="absolute inset-0 z-[1190] bg-black/60 md:hidden"
+        />
+      )}
+
       {/* Left Sidebar - Brutalist */}
-      <aside className="relative z-20 flex h-full w-80 shrink-0 flex-col overflow-y-auto border-r border-border bg-card p-0 shadow-[10px_0_30px_rgba(0,0,0,0.8)]">
+      <aside
+        className={`absolute inset-y-0 left-0 z-[1200] flex h-full w-[min(20rem,calc(100vw-3rem))] shrink-0 flex-col overflow-y-auto border-r border-border bg-card p-0 shadow-[10px_0_30px_rgba(0,0,0,0.8)] transition-transform duration-300 md:relative md:z-20 md:w-80 md:translate-x-0 ${
+          mobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
         
         {/* Header */}
         <div className="p-6 border-b border-border bg-background">
+          <div className="mb-4 flex items-center justify-end md:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileSidebarOpen(false)}
+              className="border border-border p-2 text-muted-foreground transition-colors hover:text-white"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
           <div className={`text-primary font-bold tracking-[0.2em] text-[10px] mb-2 flex items-center gap-2 ${mono.className}`}>
             <Database className="h-3 w-3" /> MAP_DATABASE
           </div>
@@ -127,7 +151,10 @@ export default function MapView() {
               return (
                 <button
                   key={p.id}
-                  onClick={() => setSelectedSiteId(p.id)}
+                  onClick={() => {
+                    setSelectedSiteId(p.id);
+                    setMobileSidebarOpen(false);
+                  }}
                   className={`w-full text-left flex items-stretch border-b border-accent transition-all duration-300 group ${
                     isSelected ? "bg-primary/10" : "hover:bg-muted"
                   }`}
@@ -164,6 +191,15 @@ export default function MapView() {
 
       {/* Main Map Area */}
       <main className="relative min-w-0 flex-1 bg-black">
+        <button
+          type="button"
+          onClick={() => setMobileSidebarOpen(true)}
+          className="absolute left-4 top-4 z-[1001] flex items-center gap-2 border border-border bg-background/90 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-white shadow-[0_0_30px_rgba(0,0,0,0.55)] backdrop-blur md:hidden"
+        >
+          <PanelLeft className="h-4 w-4 text-primary" />
+          Projects
+        </button>
+
         {/* Scanning Line overlay */}
         <motion.div 
           animate={{ top: ['-10%', '110%'] }}
@@ -222,11 +258,11 @@ export default function MapView() {
         <AnimatePresence>
           {selectedSite && (
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 50, transition: { duration: 0.2 } }}
+              initial={{ opacity: 0, x: 50, y: 24 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              exit={{ opacity: 0, x: 50, y: 24, transition: { duration: 0.2 } }}
               transition={{ type: "spring", stiffness: 400, damping: 40 }}
-              className="absolute top-6 right-6 bottom-6 z-[1000] flex w-96 flex-col border border-border bg-card/95 p-0 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+              className="absolute inset-x-3 bottom-3 top-auto z-[1000] flex max-h-[68svh] flex-col border border-border bg-card/95 p-0 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl md:inset-x-auto md:right-6 md:top-6 md:bottom-6 md:max-h-none md:w-96"
             >
               {/* Header Bar */}
               <div className={`flex justify-between items-center p-4 border-b border-border bg-background ${mono.className} text-[10px] tracking-widest uppercase`}>
@@ -242,8 +278,8 @@ export default function MapView() {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto p-6 flex flex-col">
-                <div className="relative w-full aspect-video border border-border mb-6 bg-black overflow-hidden group">
+              <div className="flex-1 overflow-y-auto p-4 md:p-6 flex flex-col">
+                <div className="relative w-full aspect-video border border-border mb-4 md:mb-6 bg-black overflow-hidden group">
                   <div className="absolute top-2 right-2 z-10 opacity-20">
                     <Cpu className="h-12 w-12 text-white" />
                   </div>
@@ -256,16 +292,16 @@ export default function MapView() {
                 </div>
 
                 {selectedSite.isForSale && (
-                  <div className={`mb-4 inline-block border border-secondary bg-secondary/10 px-3 py-1 text-[10px] font-bold tracking-widest text-secondary uppercase w-fit shadow-[0_0_10px_rgba(0,255,65,0.2)] ${mono.className}`}>
+                  <div className={`mb-3 md:mb-4 inline-block border border-secondary bg-secondary/10 px-3 py-1 text-[10px] font-bold tracking-widest text-secondary uppercase w-fit shadow-[0_0_10px_rgba(0,255,65,0.2)] ${mono.className}`}>
                     AVAILABLE_FOR_ACQUISITION
                   </div>
                 )}
                 
-                <h2 className="text-3xl font-extrabold uppercase leading-none tracking-tighter mb-2">
+                <h2 className="text-2xl md:text-3xl font-extrabold uppercase leading-none tracking-tighter mb-2">
                   {selectedSite.title}
                 </h2>
                 
-                <div className={`flex flex-col gap-1 mb-8 text-[10px] tracking-widest uppercase text-muted-foreground ${mono.className}`}>
+                <div className={`flex flex-col gap-1 mb-5 md:mb-8 text-[10px] tracking-widest uppercase text-muted-foreground ${mono.className}`}>
                   <span className="flex items-center gap-2 text-white">
                     <Target className="h-3 w-3 text-primary" /> ID: {selectedSite.id}
                   </span>
@@ -278,14 +314,14 @@ export default function MapView() {
                 </div>
 
                 <div className="flex-1">
-                  <p className={`text-xs text-[#AAA] leading-relaxed uppercase tracking-wide ${mono.className} border-l-2 border-primary pl-4`}>
+                  <p className={`text-[11px] md:text-xs text-[#AAA] leading-relaxed uppercase tracking-wide ${mono.className} border-l-2 border-primary pl-4`}>
                     {selectedSite.summary}
                   </p>
                 </div>
 
                 <Link
                   href={`/projects/${selectedSite.id}`}
-                  className={`mt-8 flex w-full items-center justify-between border border-primary bg-transparent hover:bg-primary hover:text-black text-primary p-4 text-[10px] font-bold uppercase tracking-widest transition-all ${mono.className} group`}
+                  className={`mt-5 md:mt-8 flex w-full items-center justify-between border border-primary bg-transparent hover:bg-primary hover:text-black text-primary p-4 text-[10px] font-bold uppercase tracking-widest transition-all ${mono.className} group`}
                 >
                   <span>ACCESS_FULL_DOSSIER</span>
                   <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
