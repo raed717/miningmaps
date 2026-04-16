@@ -29,7 +29,9 @@ export default function HomePage() {
         <CinematicHero />
       </div>
       <ProjectPreviewCarouselSection />
-      <ServiceRegistrySection />
+      <div id="services-section">
+        <ServiceRegistrySection />
+      </div>
       <GlobalTelemetrySection />
 
       <FieldReportsSection />

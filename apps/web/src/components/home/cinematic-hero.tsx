@@ -43,6 +43,17 @@ export function CinematicHero() {
   // Global CTA visibility
   const ctaOpacity = useTransform(smoothProgress, [0.72, 0.9], [0, 1]);
 
+  const scrollToServices = () => {
+    const target = document.getElementById("services-section");
+
+    if (!target) {
+      return;
+    }
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", "#services-section");
+  };
+
   return (
     <div
       ref={containerRef}
@@ -209,12 +220,13 @@ export function CinematicHero() {
                 View Map Portfolio
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
-              <Link
-                href="/properties"
+              <button
+                type="button"
+                onClick={scrollToServices}
                 className="inline-flex h-12 items-center justify-center rounded-full border border-input bg-background/50 backdrop-blur-md px-8 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                Properties for Sale
-              </Link>
+                My Services
+              </button>
             </motion.div>
           </motion.div>
         </motion.div>
