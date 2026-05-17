@@ -14,15 +14,15 @@ export const pastClients: PastClient[] = [
     name: "Quantum Critical Metals Corp",
     url: "https://www.quantumcriticalmetals.com/",
   },
-  { name: "Phoenix Copper Company Inc.", url: "" },
-  { name: "Hawkeye Gold & Diamond", url: "https://hawkeyegold.com/" },
+  { name: "BC Copper Company", url: "" },
+  { name: "Silver Spruce Resources", url: "https://silverspruceresources.com/" },
   { name: "Perry English", url: "" },
   { name: "Steven Scott", url: "" },
   { name: "Tony Derrien", url: "" },
   { name: "Hertz Energy", url: "https://hertz-energy.com/" },
   {
     name: "B.C Hydro",
-    notes: "Reservoir monitoring report",
+    notes: "Reservoir monitoring reportS",
     url: "https://www.bchydro.com/index.html",
   },
   {

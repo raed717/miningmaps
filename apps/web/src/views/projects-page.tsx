@@ -48,15 +48,15 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
       />
       <div className="pointer-events-none fixed inset-0 z-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_80%_at_50%_0%,#000_40%,transparent_100%)]" />
 
-      <main className="relative z-10 mx-auto max-w-[100rem] px-4 py-24 md:px-12">
-        <header className="mb-16 border-b border-border pb-16">
-          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+      <main className="relative z-10 mx-auto max-w-[80rem] px-4 py-12 md:px-10 md:py-16">
+        <header className="mb-8 border-b border-border pb-8 md:mb-10 md:pb-10">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <div className={`mb-4 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}>
-                <Database className="h-4 w-4" />
+              <div className={`mb-3 flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-primary ${mono.className}`}>
+                <Database className="h-3 w-3" />
                 {showOnlyForSale ? "PROPERTY_REGISTRY" : "ASSET_DATABASE"}
               </div>
-              <h1 className="text-5xl font-extrabold uppercase tracking-tighter leading-[0.85] md:text-8xl">
+              <h1 className="text-3xl font-extrabold uppercase tracking-tighter leading-[0.88] md:text-5xl xl:text-6xl">
                 {showOnlyForSale ? (
                   <>
                     Available
@@ -71,8 +71,26 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                   </>
                 )}
               </h1>
+
+              <Link
+                href="/map"
+                className="group mt-5 inline-flex items-center gap-3 border border-primary/40 bg-card/70 px-4 py-3 backdrop-blur-sm transition-all hover:border-primary hover:bg-primary/10"
+              >
+                <div className="flex h-9 w-9 items-center justify-center border border-primary/40 bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-black">
+                  <MapPin className="h-4 w-4" />
+                </div>
+                <div>
+                  <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+                    Spatial Access
+                  </div>
+                  <div className="mt-1 text-xs font-extrabold uppercase tracking-[0.18em] text-white md:text-sm">
+                    View on Map
+                  </div>
+                </div>
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+              </Link>
             </div>
-            <div className={`max-w-md text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}>
+            <div className={`max-w-md text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}>
               {showOnlyForSale
                 ? "Live acquisition-ready mineral properties filtered from the wider Adamson Geomatics project archive."
                 : "Exploring a selection of mapping projects, right-of-way planning, and mineral exploration intel extracted by Adamson Geomatics."}
@@ -80,7 +98,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
           </div>
         </header>
 
-        <section className="mb-16 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+        <section className="mb-10 flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-center">
           <div className="relative w-full lg:w-1/3">
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
               <Search className="h-5 w-5 text-primary" />
@@ -90,7 +108,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
               placeholder="SEARCH ASSETS / REGIONS / IDS..."
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
-              className={`w-full border border-border bg-card py-4 pr-4 pl-12 text-sm tracking-widest text-white uppercase placeholder-[#555] transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none ${mono.className}`}
+              className={`w-full border border-border bg-card py-3 pr-4 pl-12 text-xs tracking-[0.18em] text-white uppercase placeholder-[#555] transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none md:text-sm ${mono.className}`}
             />
             {searchQuery && (
               <div className="absolute top-1/2 right-4 -translate-y-1/2">
@@ -102,10 +120,10 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
           <div className="flex flex-wrap gap-2 lg:w-2/3 lg:justify-end">
             <button
               onClick={() => setActiveFilter(null)}
-              className={`px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all ${mono.className} ${
-                activeFilter === null
-                  ? "border-primary bg-primary text-black"
-                  : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
+                className={`px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
+                  activeFilter === null
+                    ? "border-primary bg-primary text-black"
+                    : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
               } border`}
             >
               ALL
@@ -114,7 +132,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
               <button
                 key={tag}
                 onClick={() => setActiveFilter(tag === activeFilter ? null : tag)}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all ${mono.className} ${
+                className={`px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
                   activeFilter === tag
                     ? "border-secondary bg-secondary text-black"
                     : "border-border bg-card text-muted-foreground hover:border-secondary hover:text-secondary"
@@ -126,7 +144,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
           </div>
         </section>
 
-        <div className={`mb-8 flex justify-between border-b border-border pb-4 text-xs tracking-widest uppercase text-[#666] ${mono.className}`}>
+        <div className={`mb-6 flex justify-between border-b border-border pb-3 text-[10px] tracking-[0.18em] uppercase text-[#666] md:text-xs ${mono.className}`}>
           <span>Displaying {filteredProjects.length} Records</span>
           <span>SYSTEM_STATUS: {filteredProjects.length > 0 ? "ONLINE" : "NO_MATCH"}</span>
         </div>

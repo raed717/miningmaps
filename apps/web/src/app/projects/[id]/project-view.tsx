@@ -1,18 +1,30 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const PdfPreview = dynamic(() => import("@/components/pdf-preview"), { ssr: false });
 
 import { motion } from "motion/react";
-import { ArrowLeft, MapPin, Target, Lightbulb, TrendingUp, PlayCircle, ExternalLink } from "lucide-react";
+import { ArrowLeft, MapPin, Target, Lightbulb, TrendingUp, PlayCircle, ExternalLink, Download } from "lucide-react";
 import { projects } from "@/lib/projectData";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
 import Zoom from "react-medium-image-zoom";
+
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const createCustomIcon = () => {
   return L.divIcon({
@@ -106,13 +118,13 @@ export default function ProjectDetails({
                   </div>
                 )}
 
-                {section.image && (
+                {section.type === "SimpleImage" && section.image && (
                   <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 cursor-zoom-in flex flex-col items-center">
                     <Zoom zoomMargin={40}>
                       <img
                         src={section.image}
-                        alt={section.heading || "Project image"}
-                        className="max-w-full h-auto object-contain"
+                        alt={section.heading || section.imageCaption || "Project image"}
+                        className="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
                       />
                     </Zoom>
                     {section.imageCaption && (
@@ -122,6 +134,70 @@ export default function ProjectDetails({
                         </p>
                       </div>
                     )}
+                  </div>
+                )}
+
+                {section.type === "ImageGallery" && section.images && section.images.length > 0 && (
+                  <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 p-4">
+                    <Carousel
+                      opts={{
+                        align: "start",
+                        loop: true,
+                      }}
+                      plugins={[
+                        Autoplay({
+                          delay: 4000,
+                        }),
+                      ]}
+                      className="w-full"
+                    >
+                      <CarouselContent className="-ml-2 md:-ml-4">
+                        {section.images.map((img, i) => (
+                          <CarouselItem key={i} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                            <div className="overflow-hidden rounded-lg relative cursor-zoom-in aspect-square bg-black/5 flex items-center justify-center">
+                              <Zoom zoomMargin={40}>
+                                <img
+                                  src={img.src}
+                                  alt={img.alt || `Gallery image ${i + 1}`}
+                                  className="w-full h-full object-cover rounded-lg"
+                                />
+                              </Zoom>
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious className="left-2" />
+                      <CarouselNext className="right-2" />
+                    </Carousel>
+                  </div>
+                )}
+
+                {section.type === "PdfDocuments" && (
+                  <div className="flex flex-col gap-8">
+                    {section.documents.map((doc, docIdx) => (
+                      <div key={docIdx} className="flex flex-col items-center p-6 border border-border/50 rounded-xl bg-card">
+                        <div className="w-full overflow-hidden rounded-lg border border-border/50 shadow-sm">
+                          <PdfPreview fileUrl={doc.fileUrl} />
+                        </div>
+                        <div className="mt-6 flex flex-col items-center gap-4">
+                          {doc.description && (
+                            <p className="text-sm text-muted-foreground text-center max-w-lg">
+                              {doc.description}
+                            </p>
+                          )}
+                          <a
+                            href={doc.fileUrl}
+                            download={doc.fileName || "document.pdf"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-6 py-2"
+                          >
+                            <Download className="mr-2 h-4 w-4" />
+                            Download PDF
+                          </a>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 )}
 
@@ -145,9 +221,9 @@ export default function ProjectDetails({
                     </ul>
                   )}
 
-                {section.links && section.links.length > 0 && (
+                {"links" in section && (section as any).links && (section as any).links.length > 0 && (
                   <div className="flex flex-wrap gap-4 pt-2">
-                    {section.links.map((link, idx) => (
+                    {(section as any).links.map((link: any, idx: number) => (
                       <HoverCard key={idx}>
                         <HoverCardTrigger asChild>
                           <a
@@ -183,9 +259,9 @@ export default function ProjectDetails({
                   </div>
                 )}
 
-                {section.VideoLinks && section.VideoLinks.length > 0 && (
+                {"VideoLinks" in section && (section as any).VideoLinks && (section as any).VideoLinks.length > 0 && (
                   <div className="grid gap-6 sm:grid-cols-2 pt-4">
-                    {section.VideoLinks.map((video, idx) => {
+                    {(section as any).VideoLinks.map((video: any, idx: number) => {
                       let embedUrl = "";
                       if (video.youtubeUrl) {
                         const ytMatch = video.youtubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);

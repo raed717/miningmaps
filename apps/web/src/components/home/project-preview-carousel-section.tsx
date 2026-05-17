@@ -10,7 +10,7 @@ import { projects } from "@/lib/projectData";
 const previewProjects = projects.slice(0, 10).map((project) => ({
   ...project,
   previewImage:
-    project.sections.find((section) => section.image)?.image ?? project.image,
+    (project.sections.find((section: any) => section.image) as any)?.image ?? project.image,
 }));
 
 export function ProjectPreviewCarouselSection() {

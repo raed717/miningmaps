@@ -38,6 +38,24 @@ export type ProjectSection =
       imageCaption?: string;
       links?: LinkPreview[];
       VideoLinks?: VideoLink[];
+    }
+  // slide show of simple images
+  | {
+      heading?: string;
+      type: "ImageGallery";
+      images: {
+        src: string;
+        alt?: string;
+      }[];
+    }
+  | {
+      heading?: string;
+      type: "PdfDocuments";
+      documents: {
+        fileUrl: string;
+        fileName?: string;
+        description?: string;
+      }[];
     };
 
 export type QuickFact = {
@@ -187,7 +205,7 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [-25.2744, 133.7751],
-    isForSale: false,
+    isForSale: true,
     date: "2024-05-05",
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
@@ -493,16 +511,49 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       {
         heading: "Sante Fe Mine - Rand Mining District, California",
         type: "SimpleImage",
-        image: "/images/projects/California/1.png",
-        imageCaption: "santa fe 2 gold mine",
-      },
-      {
-        type: "SimpleImage",
-        image: "/images/projects/California/2.png",
+        image:
+          "/images/projects/California/DaveTwp45N_8W_20250713_page-0001.jpg",
+        imageCaption: "California - DaveTwp45N_8W_20250713",
       },
       {
         type: "paragraph",
         content: "Gold grades of up to 0.1 oz/ton! (3.19 grams/ton).",
+      },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/California/1.png",
+            alt: "santa fe 2 gold mine",
+          },
+          {
+            src: "/images/projects/California/LarryTwp9N_4W_GM1_GM60areamap_page-0001.jpg",
+            alt: "LarryTwp9N_4W_GM1_GM60areamap",
+          },
+          {
+            src: "/images/projects/California/2.png",
+          },
+        ],
+      },
+      {
+        heading: "Project Documentation",
+        type: "PdfDocuments",
+        documents: [
+          {
+            fileUrl:
+              "/images/projects/California/LP_Gold Potential of the Green Mtn Project Area_20251230_v2.pdf",
+            fileName:
+              "LP_Gold Potential of the Green Mtn Project Area_20251230_v2.pdf",
+            description: "Click below to download the official mapping report.",
+          },
+          {
+            fileUrl:
+              "/images/projects/California/LP_Gold Potential of the Green Mtn Project Area_v2_20251218.pdf",
+            fileName:
+              "LP_Gold Potential of the Green Mtn Project Area_v2_20251218.pdf",
+            description: "Click below to download the official mapping report.",
+          },
+        ],
       },
     ],
   },
@@ -514,7 +565,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     image:
       "https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [61.9241, 25.7482],
-    isForSale: false,
+    isForSale: true,
     date: "2024-08-15",
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
@@ -587,7 +638,12 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         heading: "Nevada Project For Sale & Seeking Investors!",
         type: "paragraph",
         content:
-          "I am brokering a deal for a client who is seeking investors in a promising gold project in Nevada. If you are interested in reviewing the presentation and connecting with the executive team, please email chris@miningpropertymaps.com.",
+          "We completed mapping for a client who acquired property in between Newmont and Barrick on the prolific Cortez trend.",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Nevada/13N 45E Grouped Geology (1)_page-0001.jpg",
       },
       {
         heading: "High grade Nevada gold project for sale",
@@ -597,12 +653,96 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
           "Disco Zone High Grade Discovery contains intercepts of over 15 g/t over 2m+ widths!",
       },
       {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Nevada/KM_Nevada_Northumberland_13N 45E Full Geology_20251214_page-0001.jpg",
+      },
+      {
         heading: "Nevada BLM Mapping",
         type: "paragraph",
         image: "/images/projects/Nevada/2.jpg",
         imageCaption: "Nevada claim map",
         content:
           "Adamson Geomatics can assist with mapping requests for any U.S states including Nevada. Below is an example locating a property area in BLM land sections.",
+      },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/Nevada/CT_Northumberland Open Sections_Updated_20260108_page-0001.jpg",
+            alt: "Nevada geology map",
+          },
+          {
+            src: "/images/projects/Nevada/CT_Northumberland Land Agency Overview V2_20260115_page-0001.jpg",
+            alt: "Nevada geology map",
+          },
+          {
+            src: "/images/projects/Nevada/CT_Fourmile Open Sections_20260107_page-0001.jpg",
+            alt: "Nevada geology map",
+          },
+        ],
+      },
+      {
+        heading: "Fourmile Area Geology & Staking Priority Ranking",
+        type: "bullet_list",
+        content: [
+          "1. Geologic Context The project area lies within the Cortez Trend, a world-class Carlin-type gold belt characterized by favorable carbonate and siliceous sedimentary host rocks, strong structural preparation, and proximity to deposits such as Pipeline, Cortez Hills, Goldrush, and Fourmile",
+          "2. Geological Data Used • Bedrock geology polygons and legend supplied by the client. • Regional structural and stratigraphic framework interpreted from client GIS layers.",
+          "3. Ranking Methodology Only sections classified as open or conditionally open in the land-status review were considered. Ranking criteria included host-rock favorability, proximity to known mineralized trends, adjacency to existing claim blocks, inferred structural continuity, and land-status confidence.",
+          "4. Tier 1 - Highest Priority (Low Land-Status Risk) T28N R49E:  Sections 22, 23, 24, 25, 26, 27, 28, 29",
+          "5. Tier 2 - Moderate Priority (Conditional Open) T27N R49E:  Section 27 T28N R49E:  Sections 18, 19, 30, 35, 36",
+          "6. Tier 3 - Conceptual Targets T28N R48E:  Sections 3, 4, 9, 11, 13, 15, 17, 23, 25, 29 T26N R50E:  Sections 2, 3, 4, 9, 10, 13, 14, 23, 24, 36",
+          "7. Notes and Limitations Geological ranking does not imply economic mineralization. Tier 2 and Tier 3 sections carry  increased uncertainty and should be considered secondary opportunities pending additional land-status and geological verification",
+          "8. References USGS data base for bedrock geology BLM MLRS Mining Claims Listings and BLM GLO Patent Records.",
+        ],
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Nevada/KM_Nevada mapping Staking OverviewMap_20251219_page-0001.jpg",
+      },
+
+      {
+        type: "ImageGallery",
+        heading: "Nevada Geology Maps",
+        images: [
+          {
+            src: "/images/projects/Nevada/13N 45E Grouped Geology (1)_page-0001.jpg",
+            alt: "13N 45E Grouped Geology",
+          },
+          {
+            src: "/images/projects/Nevada/Barrick's Fourmile BLM Updated_page-0001.jpg",
+            alt: "Barrick's Fourmile BLM",
+          },
+          {
+            src: "/images/projects/Nevada/Barrick's Fourmile Claimants Add 1_page-0001.jpg",
+            alt: "Barrick's Fourmile Claimants",
+          },
+          {
+            src: "/images/projects/Nevada/Barrick's Fourmile project Map v2 (1)_page-0001.jpg",
+            alt: "Barrick's Fourmile project Map v2",
+          },
+        ],
+      },
+      {
+        type: "PdfDocuments",
+        heading: "Project Documentation",
+        documents: [
+          {
+            fileUrl:
+              "/images/projects/Nevada/Northumberland Staking Report (2).pdf",
+            fileName: "Northumberland Staking Report (2).pdf",
+          },
+          {
+            fileUrl: "/images/projects/Nevada/T13N+R45E-1.pdf",
+            fileName: "T13N+R45E-1.pdf",
+          },
+          {
+            fileUrl:
+              "/images/projects/Nevada/Northumberland_Geology_Summaryfinal.pdf",
+            fileName: "Northumberland_Geology_Summaryfinal.pdf",
+          },
+        ],
       },
     ],
   },
@@ -762,12 +902,15 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         ],
       },
       {
-        type: "SimpleImage",
-        image: "/images/projects/Ontario/1.png",
-      },
-      {
-        type: "SimpleImage",
-        image: "/images/projects/Ontario/2.png",
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/Ontario/1.png",
+          },
+          {
+            src: "/images/projects/Ontario/2.png",
+          },
+        ],
       },
       {
         type: "paragraph",
@@ -800,6 +943,11 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         type: "paragraph",
         content:
           "I was the Land Manager for Rubicon Minerals from 2006 – 2011 and have mapped several Ontario gold and lithium targets for clients in 2023 and 2024",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Ontario/Ontario Tungsten Open Ground_page-0001.jpg",
       },
     ],
   },
@@ -896,106 +1044,106 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     ],
   },
   // Chile
-  {
-    id: "sk-015",
-    title: "Chile",
-    summary:
-      "Copperman - Giant copper porphyry systems confirmed with drilling next to the Escondida and Collahuasi mines!",
-    region: "Chile",
-    image:
-      "https://images.unsplash.com/photo-1490782300182-697b80ad4293?q=80&w=1227&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    coordinates: [-35.6751, -71.543],
-    isForSale: true,
-    date: "2024-08-01",
-    author: "Adamson Geomatics",
-    contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Copper"],
-    quickFacts: [
-      { label: "Commodity", value: "Copper" },
-      { label: "Status", value: "Seeking Investors" },
-    ],
-    sections: [
-      {
-        heading:
-          "Copperman - Giant copper porphyry systems confirmed with drilling next to the Escondida and Collahuasi mines!",
-        type: "paragraph",
-        content: `
-Escondida is the largest copper mine globally owned by BHP and Rio Tinto located in Chile's Atacama Desert
+  //   {
+  //     id: "sk-015",
+  //     title: "Chile",
+  //     summary:
+  //       "Copperman - Giant copper porphyry systems confirmed with drilling next to the Escondida and Collahuasi mines!",
+  //     region: "Chile",
+  //     image:
+  //       "https://images.unsplash.com/photo-1490782300182-697b80ad4293?q=80&w=1227&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //     coordinates: [-35.6751, -71.543],
+  //     isForSale: true,
+  //     date: "2024-08-01",
+  //     author: "Adamson Geomatics",
+  //     contactEmail: "chris@miningpropertymaps.com",
+  //     tags: ["Copper"],
+  //     quickFacts: [
+  //       { label: "Commodity", value: "Copper" },
+  //       { label: "Status", value: "Seeking Investors" },
+  //     ],
+  //     sections: [
+  //       {
+  //         heading:
+  //           "Copperman - Giant copper porphyry systems confirmed with drilling next to the Escondida and Collahuasi mines!",
+  //         type: "paragraph",
+  //         content: `
+  // Escondida is the largest copper mine globally owned by BHP and Rio Tinto located in Chile's Atacama Desert
 
-Copperman is a mineral holding company formed to develop three prospective Chilean porphyry targets.
+  // Copperman is a mineral holding company formed to develop three prospective Chilean porphyry targets.
 
-Copperman's La Poderosa and Raiya projects are located on the Western Fissure Fault connecting the Collahuasi, El Abra and Chuquicamata mines.
+  // Copperman's La Poderosa and Raiya projects are located on the Western Fissure Fault connecting the Collahuasi, El Abra and Chuquicamata mines.
 
-Copperman's Luna project is located on the FSV Fault shared by the Escondida mine.
-`,
-        links: [
-          {
-            textPreview: "Copperman website",
-            url: "https://www.copperman.com/",
-          },
-          {
-            textPreview: "Escondida",
-            url: "https://en.wikipedia.org/wiki/Minera_Escondida",
-          },
-        ],
-      },
-      {
-        type: "SimpleImage",
-        image: "/images/projects/Chile/1.png",
-      },
-      {
-        type: "bullet_list",
-        heading: "SEEKING QUALIFIED INVESTORS",
-        content: [
-          "$17 MILLION INVESTED TO-DATE",
-          "COMPANY ESTABLISHED IN 2011 BY A PROVEN MANAGEMENT TEAM AND BLUE CHIP BOARD OF DIRECTORS",
-        ],
-      },
-      {
-        type: "paragraph",
-        content: `
-8500 METRES OF DRILLING COMPLETED - Location of copper porphyry area narrowed down based on drilling done so far. Copperman Exploration team is gaining information on likely location of deposit. Needs to be confirmed with more drilling.
-          `,
-        VideoLinks: [
-          {
-            title: "LA PODEROSA PROJECT VIDEO SUMMARY",
-            vimeoUrl: "https://vimeo.com/825643151/f3427bc243?fl=pl&fe=sh",
-          },
-          {
-            title: "LUNA PROJECT SUMMARY",
-            vimeoUrl: "https://vimeo.com/993596847/a8fa78731b?ts=0&share=copy",
-          },
-          {
-            title: "COPPERMAN CEO PRESENTATION",
-            vimeoUrl: " https://vimeo.com/832317641/9e0b12f992",
-          },
-        ],
-      },
-      {
-        type: "paragraph",
-        content: `
-FULL PRESENTATION & TECHNICAL REPORTS AVAILABLE (43-101 format) upon request (NDA required)
+  // Copperman's Luna project is located on the FSV Fault shared by the Escondida mine.
+  // `,
+  //         links: [
+  //           {
+  //             textPreview: "Copperman website",
+  //             url: "https://www.copperman.com/",
+  //           },
+  //           {
+  //             textPreview: "Escondida",
+  //             url: "https://en.wikipedia.org/wiki/Minera_Escondida",
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         type: "SimpleImage",
+  //         image: "/images/projects/Chile/1.png",
+  //       },
+  //       {
+  //         type: "bullet_list",
+  //         heading: "SEEKING QUALIFIED INVESTORS",
+  //         content: [
+  //           "$17 MILLION INVESTED TO-DATE",
+  //           "COMPANY ESTABLISHED IN 2011 BY A PROVEN MANAGEMENT TEAM AND BLUE CHIP BOARD OF DIRECTORS",
+  //         ],
+  //       },
+  //       {
+  //         type: "paragraph",
+  //         content: `
+  // 8500 METRES OF DRILLING COMPLETED - Location of copper porphyry area narrowed down based on drilling done so far. Copperman Exploration team is gaining information on likely location of deposit. Needs to be confirmed with more drilling.
+  //           `,
+  //         VideoLinks: [
+  //           {
+  //             title: "LA PODEROSA PROJECT VIDEO SUMMARY",
+  //             vimeoUrl: "https://vimeo.com/825643151/f3427bc243?fl=pl&fe=sh",
+  //           },
+  //           {
+  //             title: "LUNA PROJECT SUMMARY",
+  //             vimeoUrl: "https://vimeo.com/993596847/a8fa78731b?ts=0&share=copy",
+  //           },
+  //           {
+  //             title: "COPPERMAN CEO PRESENTATION",
+  //             vimeoUrl: " https://vimeo.com/832317641/9e0b12f992",
+  //           },
+  //         ],
+  //       },
+  //       {
+  //         type: "paragraph",
+  //         content: `
+  // FULL PRESENTATION & TECHNICAL REPORTS AVAILABLE (43-101 format) upon request (NDA required)
 
-Chile is the largest producer of copper globally from the Antofagasta Region, which produces circa 30% of global copper, including 64% of US copper, from 16 Giant copper mines situated in the Antofagasta Desert Region of Chile.
+  // Chile is the largest producer of copper globally from the Antofagasta Region, which produces circa 30% of global copper, including 64% of US copper, from 16 Giant copper mines situated in the Antofagasta Desert Region of Chile.
 
-Email chris@miningpropertymaps.com if you are a qualified investor, or working on behalf of one, to connect with project owner
-        `,
-      },
-      {
-        type: "bullet_list",
-        heading: "Colombian high grade gold project!",
-        content: [
-          "Most holes of recent drill program intercepted high grade gold",
-          "18.35 g/t Au over 2.77m and 9.29 g/t Au over 1.92m",
-        ],
-      },
-      {
-        type: "SimpleImage",
-        image: "/images/projects/Chile/2.png",
-        imageCaption: "Colombian high grade gold project",
-      },
-    ],
-  },
+  // Email chris@miningpropertymaps.com if you are a qualified investor, or working on behalf of one, to connect with project owner
+  //         `,
+  //       },
+  //       {
+  //         type: "bullet_list",
+  //         heading: "Colombian high grade gold project!",
+  //         content: [
+  //           "Most holes of recent drill program intercepted high grade gold",
+  //           "18.35 g/t Au over 2.77m and 9.29 g/t Au over 1.92m",
+  //         ],
+  //       },
+  //       {
+  //         type: "SimpleImage",
+  //         image: "/images/projects/Chile/2.png",
+  //         imageCaption: "Colombian high grade gold project",
+  //       },
+  //     ],
+  //   },
   // Brazil
   {
     id: "sk-016",
@@ -1051,6 +1199,26 @@ Email chris@miningpropertymaps.com if you are a qualified investor, or working o
         heading: "Wyoming Thorium Prospecting using GIS",
         imageCaption: "Identification of Wyoming thorium target",
       },
+      {
+        type: "PdfDocuments",
+        heading: "Mining Claim Customer Information",
+        documents: [
+          {
+            fileUrl:
+              "/images/projects/Wyoming/BLM_06_0220N_0710W - Halleck - BURGEX INC - 20250925.pdf",
+          },
+        ],
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Wyoming/WyomingHalleckCrk_20250906_page-0001.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Wyoming/WyomingHalleckCrk_20250927_page-0001.jpg",
+      },
     ],
   },
   // Yukon
@@ -1074,6 +1242,11 @@ Email chris@miningpropertymaps.com if you are a qualified investor, or working o
       },
       {
         type: "SimpleImage",
+        image:
+          "/images/projects/Yukon/Yukon with Historical Claims_pages-to-jpg-0001.jpg",
+      },
+      {
+        type: "SimpleImage",
         image: "/images/projects/Yukon/1.jpg",
       },
       {
@@ -1083,6 +1256,175 @@ Email chris@miningpropertymaps.com if you are a qualified investor, or working o
       {
         type: "SimpleImage",
         image: "/images/projects/Yukon/3.jpg",
+      },
+    ],
+  },
+  // Utah
+  {
+    id: "sk-019",
+    title: "Utah",
+    summary: "Utah Prospecting Maps",
+    region: "Utah, USA",
+    image:
+      "https://images.unsplash.com/photo-1434730737257-3e97ad16f4b6?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [39.321, -111.0937],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Prospecting", "Utah"],
+    sections: [
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Utah/Quantum_UtahStakingLayout_2025117_page-0001.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Utah/Quantum_UtahStakingLayout_2025129_page-0001.jpg",
+      },
+    ],
+  },
+  // nunavut
+  {
+    id: "sk-020",
+    title: "Nunavut",
+    summary: "Nunavut Prospecting Maps",
+    region: "Nunavut, Canada",
+    image:
+      "https://images.unsplash.com/photo-1611877667635-8b10d0d7171d?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [63.75, -95.0],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Prospecting", "Nunavut"],
+    sections: [
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Nunavut/055MNW0038_Shane Lake Project - Ms Claims_page-0001.jpg",
+      },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/Nunavut/065JNE0019_Nip, Rev (Noranda Expln.)_page-0001.jpg",
+            alt: "065JNE0019 Nip, Rev (Noranda Exploration)",
+          },
+          {
+            src: "/images/projects/Nunavut/065JNW0006_Rib & Fst (Noranda)_page-0001.jpg",
+            alt: "065JNW0006 Rib & Fst (Noranda)",
+          },
+          {
+            src: "/images/projects/Nunavut/065NSE0001_Outlet Bay_page-0001.jpg",
+            alt: "065NSE0001 Outlet Bay",
+          },
+          {
+            src: "/images/projects/Nunavut/065OSE0003_Nutarawit Lake_page-0001.jpg",
+            alt: "065OSE0003 Nutarawit Lake",
+          },
+          {
+            src: "/images/projects/Nunavut/066GSE0001_Lost Lake Deep Rose Project_page-0001.jpg",
+            alt: "066GSE0001 Lost Lake Deep Rose Project",
+          },
+          {
+            src: "/images/projects/Nunavut/066GSE0002_Naujatuuk Lake Deep Rose (Sandhills Project)_page-0001.jpg",
+            alt: "066GSE0002 Naujatuuk Lake Deep Rose (Sandhills Project)",
+          },
+        ],
+      },
+    ],
+  },
+  // Barkerville
+  {
+    id: "sk-021",
+    title: "Barkerville",
+    summary: "Barkerville Prospecting Maps",
+    region: "Barkerville, Canada",
+    image:
+      "https://images.unsplash.com/photo-1720132698702-bb798823dd4e?q=80&w=1317&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [53.0881, -121.5133],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Prospecting", "Barkerville"],
+    sections: [
+      {
+        type: "paragraph",
+        heading: "Barkerville Prospecting Maps",
+        content: `Barkerville claim maps I made for clients to identify targets`,
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Barkerville/BGM_Ownership_DRAFT_r11_page-0001.jpg",
+      },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/Barkerville/BGM_Ownership_DRAFT_r1 2-3_page-0001.jpg",
+            alt: "Barkerville Claim Map 1",
+          },
+          {
+            src: "/images/projects/Barkerville/BGM_Ownership_DRAFT_r1 2-3_page-0002.jpg",
+            alt: "Barkerville Claim Map 2",
+          },
+          {
+            src: "/images/projects/Barkerville/BGM_Ownership_DRAFT_r1 4-5_page-0001.jpg",
+            alt: "Barkerville Claim Map 2",
+          },
+          {
+            src: "/images/projects/Barkerville/BGM_Ownership_DRAFT_r1 4-5_page-0002.jpg",
+            alt: "Barkerville Claim Map 2",
+          },
+        ],
+      },
+    ],
+  },
+  // Lexington
+  {
+    id: "sk-022",
+    title: "Lexington",
+    summary: "Lexington Prospecting Maps",
+    region: "Lexington, Canada",
+    image:
+      "https://plus.unsplash.com/premium_photo-1694475206309-d201a616ffa3?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [33.98154, -81.23621],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Prospecting", "Lexington"],
+    sections: [
+      {
+        type: "paragraph",
+        heading: "GEOLOGICAL MAP OF LEXINGTON PROPERTY",
+        content: `Lexington claim maps I made for clients to identify targets`,
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-1.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-2.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-3.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-4.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-5.jpg",
       },
     ],
   },

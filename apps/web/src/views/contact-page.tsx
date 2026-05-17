@@ -28,7 +28,7 @@ const contactRoutes = [
     id: "COMM_LINK_01",
     title: "For a quote or proposal",
     description:
-      "Mining property maps, GIS services, data analysis, and custom solutions for mining exploration and development.",
+      "Mining property maps, GIS services, data analysis.",
     icon: Gem,
     href: "mailto:chris@miningpropertymaps.com",
     label: "chris@miningpropertymaps.com",
