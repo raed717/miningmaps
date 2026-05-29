@@ -12,7 +12,7 @@ export default function Footer() {
           <Link href="/" className="flex items-center gap-3">
             <div className="h-12 w-12 flex items-center justify-center">
               <img
-                src="/images/general/logo.png"
+                src="/images/general/minLogo.png"
                 alt="Adamson Geomatics Logo"
                 className="h-full w-full object-contain"
               />
@@ -81,7 +81,7 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
           {[
             {
-              src: "/images/general/banner.png",
+              src: "/images/general/bannerlogo.png",
               alt: "Adamson Geomatics Banner",
               className: "h-16 w-auto max-w-[10rem] object-contain",
             },

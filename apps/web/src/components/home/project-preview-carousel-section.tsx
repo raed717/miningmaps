@@ -3,14 +3,21 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowRight, ChevronLeft, ChevronRight, MapPin, Radar } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
+  Radar,
+} from "lucide-react";
 import { mono } from "@/lib/fonts";
 import { projects } from "@/lib/projectData";
 
 const previewProjects = projects.slice(0, 10).map((project) => ({
   ...project,
   previewImage:
-    (project.sections.find((section: any) => section.image) as any)?.image ?? project.image,
+    (project.sections.find((section: any) => section.image) as any)?.image ??
+    project.image,
 }));
 
 export function ProjectPreviewCarouselSection() {
@@ -18,7 +25,8 @@ export function ProjectPreviewCarouselSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const progressLabel = useMemo(
-    () => `${String(activeIndex + 1).padStart(2, "0")}/${String(previewProjects.length).padStart(2, "0")}`,
+    () =>
+      `${String(activeIndex + 1).padStart(2, "0")}/${String(previewProjects.length).padStart(2, "0")}`,
     [activeIndex],
   );
 
@@ -33,14 +41,18 @@ export function ProjectPreviewCarouselSection() {
 
   const scrollToIndex = (index: number) => {
     const rail = railRef.current;
-    const card = rail?.querySelectorAll<HTMLElement>("[data-project-card]")[index];
+    const card = rail?.querySelectorAll<HTMLElement>("[data-project-card]")[
+      index
+    ];
 
     if (!rail || !card) {
       return;
     }
 
     rail.scrollTo({
-      left: card.offsetLeft - Math.max((rail.clientWidth - card.offsetWidth) / 2, 0),
+      left:
+        card.offsetLeft -
+        Math.max((rail.clientWidth - card.offsetWidth) / 2, 0),
       behavior: "smooth",
     });
   };
@@ -52,7 +64,9 @@ export function ProjectPreviewCarouselSection() {
       return;
     }
 
-    const cards = Array.from(rail.querySelectorAll<HTMLElement>("[data-project-card]"));
+    const cards = Array.from(
+      rail.querySelectorAll<HTMLElement>("[data-project-card]"),
+    );
 
     if (cards.length === 0) {
       return;
@@ -107,7 +121,9 @@ export function ProjectPreviewCarouselSection() {
             viewport={{ once: true, margin: "-80px" }}
             className="bg-background p-6 md:p-8 xl:p-10"
           >
-            <div className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+            <div
+              className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary ${mono.className}`}
+            >
               <Radar className="h-4 w-4" /> PORTFOLIO_SIGNAL
             </div>
 
@@ -117,21 +133,32 @@ export function ProjectPreviewCarouselSection() {
               Preview Rail
             </h2>
 
-            <p className={`mt-6 max-w-md text-xs uppercase tracking-[0.2em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}>
-              A fast scan of active regions, available properties, and featured cartography before you open each full dossier.
+            <p
+              className={`mt-6 max-w-md text-xs uppercase tracking-[0.2em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
+            >
+              A fast scan of active regions, available properties, and featured
+              cartography before you open each full dossier.
             </p>
 
             <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-3">
               {[
-                { label: "Visible Cards", value: String(previewProjects.length).padStart(2, "0") },
+                {
+                  label: "Visible Cards",
+                  value: String(previewProjects.length).padStart(2, "0"),
+                },
                 {
                   label: "For Sale",
-                  value: String(previewProjects.filter((project) => project.isForSale).length).padStart(2, "0"),
+                  value: String(
+                    previewProjects.filter((project) => project.isForSale)
+                      .length,
+                  ).padStart(2, "0"),
                 },
                 { label: "Scroll Position", value: progressLabel },
               ].map((item) => (
                 <div key={item.label} className="bg-card px-4 py-4">
-                  <div className={`text-[9px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
+                  <div
+                    className={`text-[9px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}
+                  >
                     {item.label}
                   </div>
                   <div className="mt-2 text-2xl font-extrabold uppercase tracking-tight text-white">
@@ -155,7 +182,14 @@ export function ProjectPreviewCarouselSection() {
                 className="inline-flex items-center justify-center gap-3 border border-primary bg-primary px-5 py-4 text-sm font-bold uppercase tracking-[0.18em] text-black transition-colors hover:bg-transparent hover:text-primary"
               >
                 Next <ChevronRight className="h-4 w-4" />
-              </button>
+              </button>{" "}
+              {/* see all projects page button */}
+              <Link
+                href="/projects"
+                className={`inline-flex items-center gap-2 text-[20px] font-bold uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-white ${mono.className}`}
+              >
+                See All Projects <ArrowRight className="h-4 w-4 text-primary" />
+              </Link>
             </div>
           </motion.div>
 
@@ -167,7 +201,9 @@ export function ProjectPreviewCarouselSection() {
           >
             <div className="mb-5 flex items-center justify-between px-6 md:px-8">
               <div>
-                <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+                <div
+                  className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}
+                >
                   FEATURED_PROJECTS
                 </div>
                 <div className="mt-2 text-2xl font-extrabold uppercase tracking-tight">
@@ -178,7 +214,8 @@ export function ProjectPreviewCarouselSection() {
                 href="/projects"
                 className={`hidden items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-white md:inline-flex ${mono.className}`}
               >
-                Open Full Archive <ArrowRight className="h-4 w-4 text-primary" />
+                Open Full Archive{" "}
+                <ArrowRight className="h-4 w-4 text-primary" />
               </Link>
             </div>
 
@@ -211,27 +248,37 @@ export function ProjectPreviewCarouselSection() {
 
                     <div className="relative flex min-h-[28rem] flex-col justify-between p-5 md:p-6">
                       <div className="flex items-start justify-between gap-4">
-                        <div className={`border border-white/20 bg-black/55 px-3 py-2 text-[9px] uppercase tracking-[0.24em] text-white backdrop-blur-sm ${mono.className}`}>
+                        <div
+                          className={`border border-white/20 bg-black/55 px-3 py-2 text-[9px] uppercase tracking-[0.24em] text-white backdrop-blur-sm ${mono.className}`}
+                        >
                           {String(index + 1).padStart(2, "0")}_SECTOR
                         </div>
                         {project.isForSale && (
-                          <div className={`border border-secondary bg-secondary/15 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.24em] text-secondary backdrop-blur-sm ${mono.className}`}>
+                          <div
+                            className={`border border-secondary bg-secondary/15 px-3 py-2 text-[9px] font-bold uppercase tracking-[0.24em] text-secondary backdrop-blur-sm ${mono.className}`}
+                          >
                             AVAILABLE
                           </div>
                         )}
                       </div>
 
                       <div>
-                        <div className={`mb-4 inline-flex items-center gap-2 border border-white/15 bg-black/55 px-3 py-2 text-[9px] uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm ${mono.className}`}>
-                          <MapPin className="h-3.5 w-3.5 text-primary" /> {project.region}
+                        <div
+                          className={`mb-4 inline-flex items-center gap-2 border border-white/15 bg-black/55 px-3 py-2 text-[9px] uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm ${mono.className}`}
+                        >
+                          <MapPin className="h-3.5 w-3.5 text-primary" />{" "}
+                          {project.region}
                         </div>
 
                         <h3 className="max-w-[16rem] text-2xl font-extrabold uppercase tracking-tight text-white sm:max-w-[18rem] md:max-w-[22rem] md:text-4xl">
                           {project.title}
                         </h3>
 
-                        <p className={`mt-4 max-w-[28rem] text-[10px] uppercase tracking-[0.14em] leading-relaxed text-white/78 md:text-xs md:tracking-[0.18em] ${mono.className}`}>
-                          {project.summary || "Open the project dossier for maps, highlights, and regional documentation."}
+                        <p
+                          className={`mt-4 max-w-[28rem] text-[10px] uppercase tracking-[0.14em] leading-relaxed text-white/78 md:text-xs md:tracking-[0.18em] ${mono.className}`}
+                        >
+                          {project.summary ||
+                            "Open the project dossier for maps, highlights, and regional documentation."}
                         </p>
 
                         <div className="mt-6 flex flex-wrap gap-2">
@@ -247,7 +294,9 @@ export function ProjectPreviewCarouselSection() {
 
                         <div className="mt-8 flex items-center justify-between border-t border-white/15 pt-4 text-white">
                           <div>
-                            <div className={`text-[9px] uppercase tracking-[0.22em] text-white/45 ${mono.className}`}>
+                            <div
+                              className={`text-[9px] uppercase tracking-[0.22em] text-white/45 ${mono.className}`}
+                            >
                               Drill Into File
                             </div>
                             <div className="mt-1 text-sm font-bold uppercase tracking-wide">

@@ -84,6 +84,17 @@ export function CinematicHero() {
           style={{ opacity: p1Opacity, scale: p1Scale }}
           className="absolute inset-0 flex items-center justify-center bg-background"
         >
+          {/* Background Image */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              opacity: 0.15,
+            }}
+          />
+
           {/* Gritty Texture */}
           <div
             className="absolute inset-0 opacity-30 mix-blend-overlay"
@@ -94,26 +105,21 @@ export function CinematicHero() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
           <motion.div
-            style={{ y: p1TextY }}
-            className="z-10 flex flex-col items-center justify-center w-full max-w-5xl px-4"
+            animate={{
+              filter: [
+                "drop-shadow(0 0 15px rgba(255,176,0,0.2))",
+                "drop-shadow(0 0 40px rgba(255,176,0,1))",
+                "drop-shadow(0 0 15px rgba(255,176,0,0.2))",
+              ],
+            }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="relative w-full max-w-2xl aspect-square"
           >
-            {/* The Full Logo - Increased Size */}
-            <div className="relative w-64 md:w-120 aspect-square drop-shadow-[0_0_30px_rgba(255,176,0,0.3)]">
-              <img
-                src="/images/general/full-logo.png"
-                alt="Adamson Geomatics Full Logo"
-                className="w-full h-full object-contain"
-              />
-
-              {/* Scanning laser over logo */}
-              <div className="absolute inset-0 overflow-hidden mix-blend-overlay pointer-events-none rounded-full">
-                <motion.div
-                  animate={{ top: ["-20%", "120%"] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  className="absolute left-0 w-full h-1 bg-white shadow-[0_0_20px_#fff]"
-                />
-              </div>
-            </div>
+            <img
+              src="/images/general/bannerlogo.png"
+              alt="Adamson Geomatics Full Logo"
+              className="w-full h-full object-contain"
+            />
           </motion.div>
         </motion.div>
 

@@ -4,7 +4,7 @@ export const metadata = {
   title: "Mining Maps",
   description: "Mining Maps Application",
   icons: {
-    icon: "/images/general/logo.ico",
+    icon: "/images/general/miniLogo.ico",
   },
 };
 

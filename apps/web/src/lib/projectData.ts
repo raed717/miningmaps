@@ -1380,6 +1380,27 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
           },
         ],
       },
+      {
+        type: "SimpleImage",
+        heading: " Barkerville Map",
+        image: "/images/projects/Barkerville/BARKERVILLE_MAP_03MAR26.jpg",
+      },
+      {
+        type: "SimpleImage",
+        heading: "SM Barkerville Placers Map",
+        image: "/images/projects/Barkerville/SM_BarkervillePlacers_20251115_page-0001.jpg",
+      },
+      {
+        type: "PdfDocuments",
+        heading: "Project Documentation",
+        documents: [
+          {
+            fileUrl: "/images/projects/Barkerville/geologicSummaryOfBarkervilleClaims.pdf",
+            fileName: "geologicSummaryOfBarkervilleClaims.pdf",
+          },
+        ],
+
+      },
     ],
   },
   // Lexington
