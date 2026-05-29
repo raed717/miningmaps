@@ -7,11 +7,11 @@ export const metadata = {
     icon: "/images/general/miniLogo.ico",
   },
   openGraph: {
-    images: ["/og.png"],
+    images: ["/general/og.png"],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og.png"],
+    images: ["/general/og.png"],
   },
 };
 
