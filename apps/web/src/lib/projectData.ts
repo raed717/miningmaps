@@ -217,11 +217,11 @@ export const projects: Project[] = [
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: [
-      "Copper (Cu)",
-      "Lithium (Li)",
-      "Nickel (Ni)",
-      "Gold (Au)",
-      "Uranium (U)",
+      "Copper",
+      "Lithium",
+      "Nickel",
+      "Gold",
+      "Uranium",
     ],
     quickFacts: [
       { label: "Scope", value: "Multiple Projects" },

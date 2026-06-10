@@ -3,9 +3,18 @@ import { mono } from "@/lib/fonts";
 
 const fieldReports = [
   {
-    text: "The best lands guy in the business. Instrumental in securing 1 million ounces of gold rights.",
-    author: "Chris Lodder",
-    role: "President, Barkerville Gold Mines",
+    text: `
+    Hi Chris, 
+Congratulations on having your image selected
+ for the 2025 Esri User Conference!  Your image was displayed in Jack
+ Dangermond's Plenary Presentation.  Well
+ done!  
+ We would like to sincerely thank you for your work
+ and look forward to your future submissions.
+`,
+    author: "Esri",
+    role: "Esri Plenary Image Submission Team",
+    link: "https://mediaspace.esri.com/media/1_2rc7uxir?kalturaStartTime=563",
   },
   {
     text: "His mapping accuracy and claim staking intuition provided a massive advantage for our Northern campaigns.",
@@ -24,7 +33,9 @@ export function FieldReportsSection() {
             <br />
             Reports
           </h2>
-          <p className={`text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}>
+          <p
+            className={`text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}
+          >
             Endorsements from executives, geologists, and industry leaders.
             Verified intelligence.
           </p>
@@ -43,10 +54,24 @@ export function FieldReportsSection() {
               <p className="mb-6 text-lg font-medium leading-relaxed md:text-xl">
                 "{report.text}"
               </p>
-              <div className={`text-xs uppercase tracking-widest text-[#666] ${mono.className}`}>
-                <strong className="mb-1 block text-white">{report.author}</strong>
+              <div
+                className={`text-xs uppercase tracking-widest text-[#666] ${mono.className}`}
+              >
+                <strong className="mb-1 block text-white">
+                  {report.author}
+                </strong>
                 {report.role}
               </div>
+              {report.link && (
+                <a
+                  href={report.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-primary hover:text-primary/80"
+                >
+                  Jack Dangermond's Plenary Presentation.
+                </a>
+              )}
             </motion.div>
           ))}
         </div>
