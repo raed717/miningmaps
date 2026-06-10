@@ -80,6 +80,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  // Alaska
   {
     id: "ak-001",
     title: "Alaska - Nikolai Nickel Copper Cobalt & Port Snettisham Projects",
@@ -95,7 +96,7 @@ export const projects: Project[] = [
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Nickel", "Copper", "Polymetallic", "Marketing"],
     quickFacts: [
-      { label: "Commodities", value: "Ni, Cu, Co, PGE, Au" },
+      { label: "Commodities", value: "Ni, Cu, Co, PGE, Au, Gu, Sn" },
       { label: "Area", value: "Alaska, USA" },
       { label: "Status", value: "Sold" },
     ],
@@ -139,6 +140,7 @@ export const projects: Project[] = [
       },
     ],
   },
+  // Alberta
   {
     id: "bc-002",
     title: "Alberta",
@@ -147,7 +149,7 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1586399254662-c8948cd73421?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [53.0667, -121.5167],
-    isForSale: true,
+    isForSale: false,
     date: "2024-04-10",
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
@@ -171,6 +173,7 @@ export const projects: Project[] = [
       },
     ],
   },
+  // Arizona
   {
     id: "on-003",
     title: "Arizona",
@@ -179,14 +182,18 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1549318558-02fe75fc51d2?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [33.4484, -112.074],
-    isForSale: false,
-    date: "2024-02-22",
+    isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Infrastructure", "Prospecting", "Mapping"],
     quickFacts: [
       { label: "Type", value: "Infrastructure Map" },
       { label: "Location", value: "Arizona, USA" },
+      {
+        label: "Commodity",
+        value: "Gold (Au) Silver (Ag), Gold (Au), Tungsten (W)",
+      },
+      { label: "AREA (HECTARES)", value: "1 700,49" },
     ],
     sections: [
       {
@@ -197,6 +204,7 @@ export const projects: Project[] = [
       },
     ],
   },
+  // Australia
   {
     id: "sk-004",
     title: "Australia / New Zealand",
@@ -206,10 +214,15 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [-25.2744, 133.7751],
     isForSale: true,
-    date: "2024-05-05",
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Copper", "Lithium", "Gold", "Uranium", "Zinc"],
+    tags: [
+      "Copper (Cu)",
+      "Lithium (Li)",
+      "Nickel (Ni)",
+      "Gold (Au)",
+      "Uranium (U)",
+    ],
     quickFacts: [
       { label: "Scope", value: "Multiple Projects" },
       { label: "Regions", value: "Australia, New Zealand" },
@@ -298,16 +311,16 @@ export const projects: Project[] = [
       },
     ],
   },
+  // British Columbia BC
   {
-    id: "sk-005",
+    id: "bc-005",
     title: "British Columbia",
     summary: "Little Fort Polymetallic Claim # 1106809",
     region: "British Columbia, Canada",
     image:
       "https://images.unsplash.com/photo-1672851612972-651dd2bb6363?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [51.508691, -120.272788],
-    isForSale: false,
-    date: "2024-06-12",
+    isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Polymetallic", "Gold", "Claim Mapping"],
@@ -483,8 +496,21 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         content:
           "Mr. Adamson has a Letter of Reference from Barkerville Gold Mines for my work there, and a recommendation from the President of the Company, Chris Lodder who says Mr. Adamson is the “best lands guy in the business”. Along with these accomplishments, Mr. Adamson led the development of major infrastructure projects for the Province of British Columbia and this mining company, including the cell tower and power line right of way projects. For more information, email chris@miningpropertymaps.com.",
       },
+      {
+        type: "PdfDocuments",
+        heading: "Little Fort Report",
+        documents: [
+          {
+            fileUrl: "/images/projects/British-Columbia/Little Fort Report.pdf",
+            fileName: "Little Fort Report.pdf",
+            description:
+              "Click below to download the report on the Little Fort claim.",
+          },
+        ],
+      },
     ],
   },
+  // California
   {
     id: "sk-006",
     title: "California",
@@ -493,14 +519,15 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     image:
       "https://images.unsplash.com/photo-1499310226026-b9d598980b90?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [36.7783, -119.4179],
-    isForSale: false,
-    date: "2024-01-30",
+    isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Gold", "Patented Mine"],
     quickFacts: [
       { label: "Type", value: "Patented Gold Mine" },
       { label: "District", value: "Rand Mining District" },
+      { label: "AREA (HECTARES)", value: "950,00" },
+      { label: "COMMODITY", value: "Gold (Au)" },
     ],
     sections: [
       {
@@ -536,6 +563,10 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         ],
       },
       {
+        type: "SimpleImage",
+        image: "/images/projects/California/LP_GeologyGreenMtn_20251214.jpg",
+      },
+      {
         heading: "Project Documentation",
         type: "PdfDocuments",
         documents: [
@@ -557,6 +588,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       },
     ],
   },
+  // Finland
   {
     id: "sk-007",
     title: "Finland",
@@ -565,8 +597,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     image:
       "https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [61.9241, 25.7482],
-    isForSale: true,
-    date: "2024-08-15",
+    isForSale: false,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Gold", "Investment"],
@@ -589,6 +620,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       },
     ],
   },
+  // Manitoba
   {
     id: "sk-008",
     title: "Manitoba",
@@ -598,7 +630,6 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       "https://images.unsplash.com/photo-1632455351235-682d08cbb3e0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [56.1304, -106.3468],
     isForSale: false,
-    date: "2024-07-20",
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Prospecting", "Geology"],
@@ -615,6 +646,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       },
     ],
   },
+  // Nevada
   {
     id: "sk-009",
     title: "Nevada",
@@ -623,14 +655,13 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     image:
       "https://images.unsplash.com/photo-1614823498916-a28a7d67182c?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [38.8026, -116.4194],
-    isForSale: true,
-    date: "2024-09-01",
+    isForSale: false,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Gold", "High Grade", "BLM Mapping"],
+    tags: ["Gold(Au)", "Silver(Ag)"],
     quickFacts: [
-      { label: "Commodity", value: "Gold" },
-      { label: "Intercepts", value: ">15 g/t over 2m+" },
+      { label: "Commodity", value: "Gold (Au)" },
+      { label: "AREA (HECTARES)", value: "3 116,00" },
       { label: "Status", value: "Seeking Investors" },
     ],
     sections: [
@@ -746,6 +777,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       },
     ],
   },
+  // Newfoundland
   {
     id: "sk-010",
     title: "Newfoundland",
@@ -754,14 +786,18 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     image:
       "https://images.unsplash.com/photo-1592701601033-c17588001fb8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [53.1327, -57.6629],
-    isForSale: false,
-    date: "2024-03-25",
+    isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Iron", "Claim Staking", "Mapping"],
+    tags: ["Rare Earth Elements"],
     quickFacts: [
       { label: "Type", value: "Claim Block Mapping" },
-      { label: "Commodity", value: "Iron" },
+      {
+        label: "Commodity (Rare Earth Elements)",
+        value:
+          "Sc, Y, La, Ce, Pr, Nd, Pm, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, Lu",
+      },
+      { label: "AREA (HECTARES)", value: "3 700,00" },
     ],
     sections: [
       {
@@ -789,18 +825,36 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         type: "paragraph",
         content: "Newfoundland Claims and Iron Occurrences",
       },
+      {
+        type: "SimpleImage",
+        image: "/images/projects/Newfoundland/NorthArrowAug30TargetGeol.JPG",
+        imageCaption: "North Arrow Aug 30 TargetGeol",
+      },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/Newfoundland/NorthArrowTarget1.jpg",
+            alt: "NorthArrowTarget1",
+          },
+          {
+            src: "/images/projects/Newfoundland/NorthArrowStatusMap.JPG",
+            alt: "NorthArrowStatusMap",
+          },
+        ],
+      },
     ],
   },
+  // NWT
   {
     id: "nt-011",
-    title: "NWT / Nunavut",
+    title: "NWT",
     summary: "Lithium & Uranium Prospecting targets in Northern Canada.",
     region: "NWT & Nunavut, Canada",
     image:
       "https://images.unsplash.com/photo-1570669405132-f4771bdf399a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [64.8255, -124.8457],
     isForSale: true,
-    date: "2024-06-01",
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Lithium", "Uranium", "Prospecting", "Pegmatite"],
@@ -818,22 +872,57 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       },
       {
         type: "SimpleImage",
-        image: "/images/projects/NWT/1.jpg",
+        image: "/images/projects/NWT/NWTprospectsmap.JPG",
       },
       {
-        type: "SimpleImage",
-        heading: "NWT Lithium Target with Pegmatite hosting geology",
-        image: "/images/projects/NWT/2.jpg",
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/NWT/Pegs1.JPG",
+          },
+          {
+            src: "/images/projects/NWT/PlannedStakingArea2.JPG",
+          },
+          {
+            src: "/images/projects/NWT/Target20230830_2_ortho.JPG",
+          },
+        ],
       },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/NWT/NWT.JPG",
+          },
+          {
+            src: "/images/projects/NWT/NT3114.JPG",
+          },
+          {
+            src: "/images/projects/NWT/Target20230830_2.JPG",
+          },
+        ],
+      },
+      {
+        type: "ImageGallery",
+        heading: "NWT Lithium Target with Pegmatite hosting geology",
+        images: [
+          {
+            src: "/images/projects/NWT/1.jpg",
+          },
+          {
+            src: "/images/projects/NWT/2.jpg",
+          },
+          {
+            src: "/images/projects/NWT/3.webp",
+          },
+        ],
+      },
+
       {
         heading: "NWT Lithium prospect",
         type: "paragraph",
         content:
           "Open for staking as of June 2024. Contact chris@miningpropertymaps.com for more information.",
-      },
-      {
-        type: "SimpleImage",
-        image: "/images/projects/NWT/3.webp",
       },
       {
         heading: "NWT Propecting Maps",
@@ -872,6 +961,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       },
     ],
   },
+  // Ontario
   {
     id: "sk-012",
     title: "Ontario",
@@ -880,14 +970,14 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     image:
       "https://images.unsplash.com/photo-1607388510015-c632e99da586?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [51.2538, -85.3232],
-    isForSale: false,
-    date: "2006",
+    isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Pb", "Cu", "Zn"],
+    tags: ["Au", "Cu"],
     quickFacts: [
       { label: "Status", value: "Open for Staking" },
       { label: "Region", value: "Northern Canada" },
+      { label: "Area (Hecatars)", value: "10 537" },
     ],
     sections: [
       {
@@ -960,8 +1050,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     image:
       "https://images.unsplash.com/photo-1576771304215-6d4d30f7bb63?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [52.9399, -73.5491],
-    isForSale: false,
-    date: "2024-04-10",
+    isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Lithium"],
@@ -983,6 +1072,32 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         image: "/images/projects/Quebec/2.jpg",
         imageCaption:
           "Greenstone Map showing lithium occurrences in relation to claims",
+      },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/Quebec/JamesBayAug21_A_page-0001.jpg",
+          },
+          {
+            src: "/images/projects/Quebec/LacEwartGraniticPegmatiteOpen_page-0001.jpg",
+          },
+          {
+            src: "/images/projects/Quebec/LacEwartGraniticPegZoomedGeology_page-0001.jpg",
+          },
+        ],
+      },
+      {
+        type: "ImageGallery",
+        heading: "Map of azimut open ground",
+        images: [
+          {
+            src: "/images/projects/Quebec/mapofazimutopenground/image (2).png",
+          },
+          {
+            src: "/images/projects/Quebec/mapofazimutopenground/image (3).png",
+          },
+        ],
       },
       {
         type: "SimpleImage",
@@ -1211,6 +1326,11 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       },
       {
         type: "SimpleImage",
+        image: "/images/projects/Wyoming/ClaimsWyoming.JPG",
+        imageCaption: "claims location array interactive map service",
+      },
+      {
+        type: "SimpleImage",
         image:
           "/images/projects/Wyoming/WyomingHalleckCrk_20250906_page-0001.jpg",
       },
@@ -1244,14 +1364,23 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         type: "SimpleImage",
         image:
           "/images/projects/Yukon/Yukon with Historical Claims_pages-to-jpg-0001.jpg",
+        imageCaption: "Yukon Tungsten Open Ground",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/Yukon/Yukon Tungsten Open Ground 2_page-0001.jpg",
+        imageCaption: "Yukon Tungsten Open Ground",
       },
       {
         type: "SimpleImage",
         image: "/images/projects/Yukon/1.jpg",
+        imageCaption: "Yukon Claim Map Snowline Gold Corp",
       },
       {
         type: "SimpleImage",
         image: "/images/projects/Yukon/2.jpg",
+        imageCaption: "Yukon Claim Map Snowline Gold Corp",
       },
       {
         type: "SimpleImage",
@@ -1275,11 +1404,14 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     sections: [
       {
         type: "SimpleImage",
+        heading: "Quantum Utah Staking Layout",
+        imageCaption: "Quantum Utah Staking Layout 2025117",
         image:
           "/images/projects/Utah/Quantum_UtahStakingLayout_2025117_page-0001.jpg",
       },
       {
         type: "SimpleImage",
+        imageCaption: "Quantum Utah Staking Layout 2025129",
         image:
           "/images/projects/Utah/Quantum_UtahStakingLayout_2025129_page-0001.jpg",
       },
@@ -1344,7 +1476,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     image:
       "https://images.unsplash.com/photo-1720132698702-bb798823dd4e?q=80&w=1317&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [53.0881, -121.5133],
-    isForSale: false,
+    isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Prospecting", "Barkerville"],
@@ -1388,18 +1520,19 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       {
         type: "SimpleImage",
         heading: "SM Barkerville Placers Map",
-        image: "/images/projects/Barkerville/SM_BarkervillePlacers_20251115_page-0001.jpg",
+        image:
+          "/images/projects/Barkerville/SM_BarkervillePlacers_20251115_page-0001.jpg",
       },
       {
         type: "PdfDocuments",
         heading: "Project Documentation",
         documents: [
           {
-            fileUrl: "/images/projects/Barkerville/geologicSummaryOfBarkervilleClaims.pdf",
+            fileUrl:
+              "/images/projects/Barkerville/geologicSummaryOfBarkervilleClaims.pdf",
             fileName: "geologicSummaryOfBarkervilleClaims.pdf",
           },
         ],
-
       },
     ],
   },
@@ -1446,6 +1579,156 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         type: "SimpleImage",
         image:
           "/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-5.jpg",
+      },
+    ],
+  },
+  // Texas
+  {
+    id: "sk-023",
+    title: "Texas",
+    summary: "Texas Mineral Claims and Occurences Mapping",
+    region: "Texas, USA",
+    image:
+      "https://plus.unsplash.com/premium_photo-1690522330262-5bdf16b17e26?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [31.0545, -97.5635],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Mineral Claims", "Texas"],
+    sections: [
+      {
+        type: "SimpleImage",
+        heading: "Mineral Claims And occurences Round Top Mine",
+        image:
+          "/images/projects/Texas/Round Top V1.1 Scale 1_50000 _page-0001.jpg",
+      },
+    ],
+  },
+  // Cripple Creek Alaska
+  {
+    id: "sk-024",
+    title: "Cripple Creek, Alaska",
+    summary: "Cripple Creek, Alaska Prospecting Maps",
+    region: "Cripple Creek, Alaska, USA",
+    image:
+      "https://plus.unsplash.com/premium_photo-1690522330262-5bdf16b17e26?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    coordinates: [63.6091, -156.1356],
+    isForSale: true,
+    quickFacts: [
+      { label: "Commodity", value: "Gold" },
+      { label: "Status", value: "For Sale" },
+      { label: "Region", value: "Alaska, USA" },
+      { label: "Area (Acres)", value: "1,640± ACRES" },
+    ],
+    sections: [
+      {
+        type: "SimpleImage",
+        heading: "Mineral Claims And occurences Round Top Mine",
+        image:
+          "https://fayranches.com/wp-content/uploads/2024/09/bear-hunting-trips-alaska-cripple-creek-gold-mine-e1726179144750.jpg",
+      },
+      {
+        type: "paragraph",
+        heading: "Property Overview",
+        content: `
+Cripple Creek Gold Mine, situated deep within Alaska’s untamed wilderness, offers a rare opportunity for both gold miners and gold investors or as a dual-purpose gold mine in the summer and hunting camp in the fall. Located roughly 46 miles north/northwest of McGrath, this expansive property is within the Innoko Mining District, spanning 1,640± acres at the confluence of Bear Creek and Cripple Creek, which flows into Graham Creek and extends to Colorado Creek. The site is comprised of 72 unpatented claims.
+
+With a rich history of gold mining in this area dating back to 1917, the Alamin Mining Corporation acquired or leased these mining claims forming the Cripple Creek Gold Mine in the early 1980s.  Before that time, some of the claims had been mined by various miners, including Willard “Tex” Gates and his son-in-law Dennis Gould. Cripple Creek Mine has been extensively explored and tested, revealing substantial reserves with overburden depths ranging from 8-15 feet. The seller has drilling information on about 25% of the claims.
+
+The property’s location offers more than just mining potential. The area has an abundance of wildlife, including grizzly and black bears, moose, caribou, wolves, wolverines, and lynx, making it a haven for miners and outdoor enthusiasts.
+
+A 1,600± foot gravel runway provides access to this remote location with room to add another 400’ if needed. The site is equipped with a modern suction dredge, a trommel, and additional mining equipment. Multiple cabins are on-site, including crew bunks, a kitchen cabin, a utility cabin, and a supplies cabin. Numerous pieces of heavy equipment are at the mine, including a JD dozer, a Cat loader, and several others.
+
+The property’s remote location is balanced by its accessibility, with a nearby 6,000’ paved airstrip at McGrath. Whether you’re drawn by the prospect of mining or the allure of Alaska’s wilderness, Cripple Creek Gold Mine presents a unique and compelling investment opportunity.
+          `,
+      },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/untamed-wilderness-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/alaska-wilderness-tours-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/big-game-species-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/world-class-fishing-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/alaska-bush-plane-access-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/prime-hunting-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/bush-plane-access-alaska-gold-mining-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/bear-creek-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/beaver-dam-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/caribou-hunting-trips-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/mammoth-fossils-alaska-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/metal-shed-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/cripple-creek-investment-alaska-cripple-creek-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/gold-mine-opportunities-alaska-cripple-creek-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/remote-gold-mine-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/ski-adventures-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/vast-gold-mines-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/winding-creek-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/adventure-travel-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/airstrip-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/alaska-hunting-trips-alaska-cripple-creek-gold-mine.jpg",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2024/09/dolly-varden-fishing-alaska-cripple-creek-gold-mine.jpg",
+          },
+        ],
+      },
+      {
+        type: "bullet_list",
+        heading: "Property Facts",
+        content: [
+          "72 unpatented claims; 1,640± claim acres",
+          "Access to the property is by private airstrip, approximately 1,600’ long",
+          "Overburden averages 12-15 feet",
+          "There are three reports available; the highest indicator of gold amounts is 300,000 ounces",
+          "Gates claims are leased by the seller and will be conveyed by the seller at closing",
+          "Claims are located on Cripple Creek, Bear Creek, and Graham Creek",
+          "Claims are located within the historically productive Innoko Mining District",
+          "Located 45 miles NNW of McGrath, Alaska, which offers a 6,000± foot long by 100-foot-wide asphalt runway, offering fuel, lodging, and limited supplies",
+          "The property is currently permitted for mining operations, and approximately 90% of the claims in the area remain unmined",
+          "Test holes indicate rich gold reserves",
+          "Equipment and infrastructure on-site",
+        ],
       },
     ],
   },

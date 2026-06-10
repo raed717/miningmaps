@@ -202,9 +202,29 @@ export default function ProjectDetails({
                 )}
 
                 {section.type === "paragraph" && (
-                  <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-wrap">
-                    {section.content}
-                  </p>
+                  <div className="space-y-4">
+                    {section.image && (
+                      <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 cursor-zoom-in flex flex-col items-center">
+                        <Zoom zoomMargin={40}>
+                          <img
+                            src={section.image}
+                            alt={section.heading || section.imageCaption || "Project image"}
+                            className="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
+                          />
+                        </Zoom>
+                        {section.imageCaption && (
+                          <div className="w-full bg-background/90 p-3 text-center border-t border-border/50">
+                            <p className="text-sm text-muted-foreground">
+                              {section.imageCaption}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    <p className="text-lg text-muted-foreground leading-relaxed whitespace-pre-wrap">
+                      {section.content}
+                    </p>
+                  </div>
                 )}
 
                 {section.type === "bullet_list" &&
