@@ -14,7 +14,7 @@ export default function Header() {
     { to: "/services", label: "Services" },
     { to: "/projects", label: "Projects" },
     { to: "/map", label: "Map View" },
-    { to: "/dashboard", label: "Insights" },
+    // { to: "/dashboard", label: "Insights" },
     { to: "/contact", label: "Contact" },
   ] as const;
 

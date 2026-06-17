@@ -6,6 +6,7 @@ import { FieldReportsSection } from "@/components/home/field-reports-section";
 import { GlobalTelemetrySection } from "@/components/home/global-telemetry-section";
 import { ProjectPreviewCarouselSection } from "@/components/home/project-preview-carousel-section";
 import { ServiceRegistrySection } from "@/components/home/service-registry-section";
+import { AccomplishmentsSection } from "@/components/home/accomplishments-section";
 import { CertificationsSection } from "@/components/home/certifications-section";
 import Footer from "@/components/footer";
 import { inter } from "@/lib/fonts";
@@ -35,6 +36,7 @@ export default function HomePage() {
       </div>
       <GlobalTelemetrySection />
       <CertificationsSection />
+      <AccomplishmentsSection />
       <FieldReportsSection />
       <div className="relative z-10 border-t border-border">
         <Footer />

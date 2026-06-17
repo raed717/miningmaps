@@ -216,13 +216,7 @@ export const projects: Project[] = [
     isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: [
-      "Copper",
-      "Lithium",
-      "Nickel",
-      "Gold",
-      "Uranium",
-    ],
+    tags: ["Copper", "Lithium", "Nickel", "Gold", "Uranium"],
     quickFacts: [
       { label: "Scope", value: "Multiple Projects" },
       { label: "Regions", value: "Australia, New Zealand" },
@@ -508,7 +502,30 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
           },
         ],
       },
+      {
+        heading: "Gold Potential Assessment",
+        type: "paragraph",
+        content: `
+Based on historical reports and high-grade sampling results, the Mount Burns Property demonstrates significant gold exploration potential. Historical data references grades of up to 21 ounces of gold per ton from specific mineralized zones.
+
+For illustrative purposes only, a hypothetical high-grade zone containing 100,000 tons of material at this grade would represent approximately 2.1 million ounces of gold. Using recent gold prices, this equates to a theoretical in-situ gross value exceeding USD $9.1 billion.
+
+While these figures highlight the property's potential, additional due diligence is required. Independent verification by a Qualified Person under NI 43-101 standards is necessary to determine whether reported grades are representative of a larger mineralized body. Further drilling, resource classification, and metallurgical testing are also required to assess economic viability and recoverable gold content.
+
+The property is located near Stanley, British Columbia, approximately 4 km from Wells and the historic Barkerville mining district, at coordinates 53.068100° N, -121.639125° W.
+  `,
+      },
     ],
+  },
+  {
+    id: "bc-005",
+    title: "Goldin Rock propertys - British Columbia",
+    coordinates: [53.0681, -121.639125],
+    region: "British Columbia, Canada",
+    image:
+      "https://images.unsplash.com/photo-1672851612972-651dd2bb6363?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    summary: "Goldin Rock Resources Inc. - Mount Burns Property",
+    sections: [],
   },
   // California
   {
@@ -1626,6 +1643,16 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         heading: "Mineral Claims And occurences Round Top Mine",
         image:
           "https://fayranches.com/wp-content/uploads/2024/09/bear-hunting-trips-alaska-cripple-creek-gold-mine-e1726179144750.jpg",
+      },
+      {
+        type: "SimpleImage",
+        heading: "Mineral Claim #815 — Campbell (136.19 hectares)",
+        image: "/images/projects/Alaska/Screenshot 2026-06-12 144530.png",
+      },
+      {
+        type: "SimpleImage",
+        heading: "Mineral Claim #816 — Campbell Creek (	427.99 hectares)",
+        image: "/images/projects/Alaska/Screenshot 2026-06-12 141901.png",
       },
       {
         type: "paragraph",
