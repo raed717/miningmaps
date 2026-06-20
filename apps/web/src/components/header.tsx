@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShieldAlert } from "lucide-react";
+import { Facebook, Linkedin } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 
 export default function Header() {
@@ -73,13 +73,39 @@ export default function Header() {
           })}
         </nav>
 
-        {/* STATUS INDICATOR (Replaces generic Mode Toggle) */}
+        {/* SOCIAL LINKS */}
         <div className="flex items-center space-x-4">
-          <div className="hidden md:flex items-center gap-2 border border-border bg-card px-3 py-1.5">
-            <ShieldAlert className="h-3 w-3 text-secondary animate-pulse" />
-            <span className="text-[9px] text-secondary tracking-widest uppercase">
-              Uplink_Secure
-            </span>
+          <div className="hidden md:flex items-center gap-1">
+            <a
+              href="https://www.linkedin.com/in/chris-adamson-r-84649b4b"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center border border-border bg-card p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61561908187975"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center border border-border bg-card p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              aria-label="Facebook"
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a
+              href="https://x.com/Christalball93"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center border border-border bg-card p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              aria-label="X / Twitter"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+              </svg>
+            </a>
           </div>
 
           <button
@@ -129,11 +155,37 @@ export default function Header() {
             );
           })}
 
-          <div className="mt-4 flex items-center gap-2 border border-border bg-card px-3 py-2">
-            <ShieldAlert className="h-3 w-3 text-secondary animate-pulse" />
-            <span className="text-[9px] text-secondary tracking-widest uppercase">
-              Uplink_Secure
-            </span>
+          <div className="mt-4 flex items-center gap-2">
+            <a
+              href="https://www.linkedin.com/in/chris-adamson-r-84649b4b"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center border border-border bg-card p-3 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61561908187975"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center border border-border bg-card p-3 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              aria-label="Facebook"
+            >
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a
+              href="https://x.com/Christalball93"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center border border-border bg-card p-3 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+              aria-label="X / Twitter"
+            >
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+              </svg>
+            </a>
           </div>
         </nav>
       </div>

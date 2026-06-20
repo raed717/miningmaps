@@ -2,9 +2,7 @@
 
 import { motion } from "motion/react";
 import {
-  Book,
   Crosshair,
-  GraduationCap,
   Map,
   MapPin,
   Shield,
@@ -30,18 +28,16 @@ const expertiseAreas = [
 const education = [
   {
     institution: "University of British Columbia (UBC)",
-    degree: "Degree in Geography",
-    icon: GraduationCap,
-  },
-  {
-    institution: "University of Waterloo",
-    degree: "Studies in Mapping and Spatial Analysis",
-    icon: Map,
+    degree: "UBC degree Geography (GIS) 2006",
+    image: "/images/general/University%20of%20British%20Columbia.jpg",
+    url: "https://www.ubc.ca/",
   },
   {
     institution: "Real Estate Institute of British Columbia (RIBC)",
     degree: "Professional Studies",
-    icon: Book,
+    image:
+      "/images/general/Real%20Estate%20Institute%20of%20British%20Columbia.png",
+    url: "https://www.reibc.org/",
   },
 ];
 
@@ -54,7 +50,7 @@ export default function AboutPage() {
         className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] mix-blend-overlay"
         style={{
           backgroundImage:
-            'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
         }}
       />
 
@@ -80,78 +76,11 @@ export default function AboutPage() {
               className="shrink-0"
             >
               <div className="relative mx-auto h-40 w-40 overflow-hidden border border-primary/30 bg-black md:h-52 md:w-52">
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 to-transparent">
-                  <svg
-                    viewBox="0 0 200 200"
-                    className="h-full w-full p-4 opacity-80"
-                  >
-                    <defs>
-                      <clipPath id="hexClip">
-                        <polygon points="100,10 170,55 170,145 100,190 30,145 30,55" />
-                      </clipPath>
-                    </defs>
-                    <polygon
-                      points="100,10 170,55 170,145 100,190 30,145 30,55"
-                      fill="none"
-                      stroke="currentColor"
-                      className="text-primary/30"
-                      strokeWidth="1"
-                    />
-                    <g clipPath="url(#hexClip)">
-                      <circle
-                        cx="100"
-                        cy="80"
-                        r="35"
-                        fill="none"
-                        stroke="currentColor"
-                        className="text-primary/50"
-                        strokeWidth="1.5"
-                      />
-                      <path
-                        d="M50 175 Q100 110 150 175"
-                        fill="none"
-                        stroke="currentColor"
-                        className="text-primary/50"
-                        strokeWidth="1.5"
-                      />
-                      <line
-                        x1="100"
-                        y1="115"
-                        x2="100"
-                        y2="150"
-                        stroke="currentColor"
-                        className="text-primary/30"
-                        strokeWidth="1"
-                      />
-                      <line
-                        x1="70"
-                        y1="130"
-                        x2="130"
-                        y2="130"
-                        stroke="currentColor"
-                        className="text-primary/20"
-                        strokeWidth="1"
-                      />
-                    </g>
-                    {/* Scanning line */}
-                    <motion.rect
-                      x="28"
-                      y="10"
-                      width="144"
-                      height="2"
-                      fill="currentColor"
-                      className="text-primary"
-                      opacity="0.4"
-                      animate={{ y: [10, 178, 10] }}
-                      transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "linear",
-                      }}
-                    />
-                  </svg>
-                </div>
-                <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(255,255,255,0.03)_50%)] bg-[size:100%_4px] pointer-events-none" />
+                <img
+                  src="/images/general/avatar.jpg"
+                  alt="Chris Adamson"
+                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                />
                 <div className="absolute -inset-px border border-primary/10" />
               </div>
             </motion.div>
@@ -166,7 +95,7 @@ export default function AboutPage() {
               >
                 Chris
                 <br />
-                <span className="text-primary">Adamson</span>
+                <span className="text-primary">Adamson, R.I.</span>
               </motion.h1>
 
               <motion.div
@@ -257,9 +186,8 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {education.map((item, i) => {
-              const Icon = item.icon;
               return (
                 <motion.div
                   key={item.institution}
@@ -267,17 +195,29 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="group border border-border bg-card/50 p-5 transition-colors hover:border-primary/40"
+                  className="group border border-border bg-card/50 p-0 transition-colors hover:border-primary/40"
                 >
-                  <Icon className="mb-4 h-6 w-6 text-primary/60" />
-                  <h3 className="text-sm font-bold uppercase tracking-tight text-white">
-                    {item.institution}
-                  </h3>
-                  <p
-                    className={`mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}
-                  >
-                    {item.degree}
-                  </p>
+                  <div className="relative h-44 w-full overflow-hidden border-b border-border bg-black md:h-56">
+                    {item.url ? (
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex h-full w-full items-center justify-center p-6">
+                        <img src={item.image} alt={item.institution} className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110" />
+                      </a>
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center p-6">
+                        <img src={item.image} alt={item.institution} className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110" />
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-sm font-bold uppercase tracking-tight text-white">
+                      {item.institution}
+                    </h3>
+                    <p
+                      className={`mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}
+                    >
+                      {item.degree}
+                    </p>
+                  </div>
                 </motion.div>
               );
             })}

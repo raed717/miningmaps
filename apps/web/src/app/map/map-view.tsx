@@ -326,7 +326,7 @@ export default function MapView() {
 
                 {selectedSite.isForSale && (
                   <div className={`mb-3 md:mb-4 inline-block border border-secondary bg-secondary/10 px-3 py-1 text-[10px] font-bold tracking-widest text-secondary uppercase w-fit shadow-[0_0_10px_rgba(0,255,65,0.2)] ${mono.className}`}>
-                    AVAILABLE_FOR_ACQUISITION
+                    AVAILABLE FOR ACQUISITION
                   </div>
                 )}
                 

@@ -185,7 +185,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                     {project.isForSale && (
                       <div className="absolute top-4 left-4">
                         <div className={`border border-secondary bg-secondary px-2 py-1 text-[9px] font-bold tracking-widest text-black uppercase shadow-[0_0_10px_var(--color-secondary)] ${mono.className}`}>
-                          AVAILABLE_FOR_ACQUISITION
+                          AVAILABLE FOR ACQUISITION
                         </div>
                       </div>
                     )}
