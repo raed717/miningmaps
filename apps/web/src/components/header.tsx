@@ -11,6 +11,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const links = [
     { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
     { to: "/projects", label: "Projects" },
     { to: "/map", label: "Map View" },

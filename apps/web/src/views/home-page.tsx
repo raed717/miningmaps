@@ -33,10 +33,10 @@ export default function HomePage() {
       <ProjectPreviewCarouselSection />
       <div id="services-section">
         <ServiceRegistrySection />
-      </div>
+      </div> <AccomplishmentsSection />
       <GlobalTelemetrySection />
       <CertificationsSection />
-      <AccomplishmentsSection />
+     
       <FieldReportsSection />
       <div className="relative z-10 border-t border-border">
         <Footer />

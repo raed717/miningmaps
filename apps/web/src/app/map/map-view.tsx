@@ -49,7 +49,7 @@ function MapFlyTo({ coordinates }: { coordinates: [number, number] | null }) {
   const map = useMap();
   useEffect(() => {
     if (coordinates) {
-      map.flyTo(coordinates, 6, {
+      map.flyTo(coordinates, 13, {
         duration: 1.5,
         easeLinearity: 0.25,
       });
@@ -60,6 +60,7 @@ function MapFlyTo({ coordinates }: { coordinates: [number, number] | null }) {
 
 export default function MapView() {
   const [selectedSiteId, setSelectedSiteId] = useState<string | null>(null);
+  const [flyToCoords, setFlyToCoords] = useState<[number, number] | null>(null);
   const [showOnlyForSale, setShowOnlyForSale] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
@@ -87,13 +88,13 @@ export default function MapView() {
           type="button"
           aria-label="Close project list"
           onClick={() => setMobileSidebarOpen(false)}
-          className="absolute inset-0 z-[1190] bg-black/60 md:hidden"
+          className="absolute inset-0 z-1190 bg-black/60 md:hidden"
         />
       )}
 
       {/* Left Sidebar - Brutalist */}
       <aside
-        className={`absolute inset-y-0 left-0 z-[1200] flex h-full w-[min(20rem,calc(100vw-3rem))] shrink-0 flex-col overflow-y-auto border-r border-border bg-card p-0 shadow-[10px_0_30px_rgba(0,0,0,0.8)] transition-transform duration-300 md:relative md:z-20 md:w-80 md:translate-x-0 ${
+        className={`absolute inset-y-0 left-0 z-1200 flex h-full w-[min(20rem,calc(100vw-3rem))] shrink-0 flex-col overflow-y-auto border-r border-border bg-card p-0 shadow-[10px_0_30px_rgba(0,0,0,0.8)] transition-transform duration-300 md:relative md:z-20 md:w-80 md:translate-x-0 ${
           mobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -194,7 +195,7 @@ export default function MapView() {
         <button
           type="button"
           onClick={() => setMobileSidebarOpen(true)}
-          className="absolute left-4 top-4 z-[1001] flex items-center gap-2 border border-border bg-background/90 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-white shadow-[0_0_30px_rgba(0,0,0,0.55)] backdrop-blur md:hidden"
+          className="absolute left-4 top-4 z-1001 flex items-center gap-2 border border-border bg-background/90 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-white shadow-[0_0_30px_rgba(0,0,0,0.55)] backdrop-blur md:hidden"
         >
           <PanelLeft className="h-4 w-4 text-primary" />
           Projects
@@ -209,16 +210,16 @@ export default function MapView() {
 
         <MapContainer
           center={[53.0, -100.0]}
-          zoom={3}
+          zoom={2}
           style={{ height: "100%", width: "100%", background: "#0B0F14" }}
           zoomControl={false}
         >
           <TileLayer
-            attribution='&copy; <a href="https://carto.com/">CARTO</a>'
+            attribution='&copy; projects are displayed not at exact coordinates for security reasons'
             url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
           />
 
-          <MapFlyTo coordinates={selectedSite ? selectedSite.coordinates : null} />
+          <MapFlyTo coordinates={flyToCoords} />
 
           {visibleProjects.map((project) => {
             const isSelected = selectedSiteId === project.id;
@@ -230,7 +231,10 @@ export default function MapView() {
                 position={project.coordinates}
                 icon={createCustomIcon(color, project.isForSale || isSelected)}
                 eventHandlers={{
-                  click: () => setSelectedSiteId(project.id),
+                  click: () => {
+                    setSelectedSiteId(project.id);
+                    setFlyToCoords(project.coordinates);
+                  },
                 }}
               >
                 <Popup className="mining-popup" closeButton={false}>
@@ -244,6 +248,35 @@ export default function MapView() {
               </Marker>
             )
           })}
+
+          {visibleProjects.map((project) =>
+            project.subProjects?.map((sub, i) => {
+              const subColor = project.isForSale ? "#00FF41" : "#888888";
+              return (
+                <Marker
+                  key={`${project.id}-sub-${i}`}
+                  position={sub.coordinates}
+                  icon={createCustomIcon(subColor, !!project.isForSale)}
+                  eventHandlers={{
+                    click: () => {
+                      setSelectedSiteId(project.id);
+                      setFlyToCoords(sub.coordinates);
+                    },
+                  }}
+                >
+                  <Popup className="mining-popup" closeButton={false}>
+                    <div className={`font-sans bg-card border border-[${subColor}] p-1 uppercase tracking-widest ${mono.className}`}>
+                      <div className="font-bold text-white text-[10px] border-b border-border pb-1 mb-1">{sub.title}</div>
+                      <div className="text-[9px] text-muted-foreground">
+                        {sub.coordinates[0].toFixed(2)}, {sub.coordinates[1].toFixed(2)}
+                      </div>
+                    </div>
+                  </Popup>
+                </Marker>
+              )
+            })
+          )}
+
         </MapContainer>
 
         {/* Global styling for Leaflet elements */}
@@ -262,7 +295,7 @@ export default function MapView() {
               animate={{ opacity: 1, x: 0, y: 0 }}
               exit={{ opacity: 0, x: 50, y: 24, transition: { duration: 0.2 } }}
               transition={{ type: "spring", stiffness: 400, damping: 40 }}
-              className="absolute inset-x-3 bottom-3 top-auto z-[1000] flex max-h-[68svh] flex-col border border-border bg-card/95 p-0 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl md:inset-x-auto md:right-6 md:top-6 md:bottom-6 md:max-h-none md:w-96"
+              className="absolute inset-x-3 bottom-3 top-auto z-1000 flex max-h-[68svh] flex-col border border-border bg-card/95 p-0 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl md:inset-x-auto md:right-6 md:top-6 md:bottom-6 md:max-h-none md:w-96"
             >
               {/* Header Bar */}
               <div className={`flex justify-between items-center p-4 border-b border-border bg-background ${mono.className} text-[10px] tracking-widest uppercase`}>

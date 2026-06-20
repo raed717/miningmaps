@@ -7,6 +7,7 @@ import Header from "@/components/header";
 import { Toaster } from "@/components/ui/sonner";
 
 const HomePage = dynamic(() => import("@/views/home-page"));
+const AboutPage = dynamic(() => import("@/views/about-page"));
 const ServicesPage = dynamic(() => import("@/views/services-page"));
 const ContactPage = dynamic(() => import("@/views/contact-page"));
 const ProjectsPage = dynamic(() => import("@/views/projects-page"));
@@ -68,6 +69,8 @@ export default function App() {
 
   if (normalizedPathname === "/") {
     content = <HomePage />;
+  } else if (normalizedPathname === "/about") {
+    content = <AboutPage />;
   } else if (normalizedPathname === "/services") {
     content = <ServicesPage />;
   } else if (normalizedPathname === "/contact") {

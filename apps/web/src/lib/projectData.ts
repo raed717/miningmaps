@@ -63,6 +63,13 @@ export type QuickFact = {
   value: string;
 };
 
+export interface SubProject {
+  title: string;
+  coordinates: [number, number];
+  summary?: string;
+  image?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -70,6 +77,7 @@ export interface Project {
   region: string;
   image: string;
   coordinates: [number, number];
+  subProjects?: SubProject[];
   sections: ProjectSection[];
   isForSale?: boolean;
   quickFacts?: QuickFact[];
@@ -94,7 +102,7 @@ export const projects: Project[] = [
     date: "2024-03-15",
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Nickel", "Copper", "Polymetallic", "Marketing"],
+    tags: ["Nickel", "Copper", "Cobalt", "Platinum", "Gold", "Gallium", "Tin"],
     quickFacts: [
       { label: "Commodities", value: "Ni, Cu, Co, PGE, Au, Gu, Sn" },
       { label: "Area", value: "Alaska, USA" },
@@ -153,7 +161,7 @@ export const projects: Project[] = [
     date: "2024-04-10",
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Uranium", "Prospecting"],
+    tags: ["Uranium"],
     quickFacts: [
       { label: "Commodity", value: "Uranium" },
       { label: "Region", value: "Athabasca Basin, Alberta" },
@@ -185,13 +193,13 @@ export const projects: Project[] = [
     isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Infrastructure", "Prospecting", "Mapping"],
+    tags: ["Gold", "Silver", "Tungsten"],
     quickFacts: [
       { label: "Type", value: "Infrastructure Map" },
       { label: "Location", value: "Arizona, USA" },
       {
         label: "Commodity",
-        value: "Gold (Au) Silver (Ag), Gold (Au), Tungsten (W)",
+        value: "Gold (Au) Silver (Ag), Tungsten (W)",
       },
       { label: "AREA (HECTARES)", value: "1 700,49" },
     ],
@@ -220,6 +228,7 @@ export const projects: Project[] = [
     quickFacts: [
       { label: "Scope", value: "Multiple Projects" },
       { label: "Regions", value: "Australia, New Zealand" },
+      { label: "Commodities", value: "Cu, Li, Ni, Au, U" },
     ],
     sections: [
       {
@@ -317,11 +326,20 @@ export const projects: Project[] = [
     isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Polymetallic", "Gold", "Claim Mapping"],
+    tags: ["Copper", "Zinc", "Gold"],
     quickFacts: [
       { label: "Size", value: "362 Hectares" },
       { label: "Commodities", value: "Cu, Zn, Au" },
       { label: "Tenure", value: "Claim #1106809" },
+    ],
+    subProjects: [
+      {
+        title: "Goldin Rock propertys - British Columbia",
+        coordinates: [53.0681, -121.639125],
+        image:
+          "https://images.unsplash.com/photo-1672851612972-651dd2bb6363?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        summary: "Goldin Rock Resources Inc. - Mount Burns Property",
+      },
     ],
     sections: [
       {
@@ -515,17 +533,12 @@ While these figures highlight the property's potential, additional due diligence
 The property is located near Stanley, British Columbia, approximately 4 km from Wells and the historic Barkerville mining district, at coordinates 53.068100° N, -121.639125° W.
   `,
       },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/British-Columbia/TL_GoldinRock_2025111_page-0001.jpg",
+      },
     ],
-  },
-  {
-    id: "bc-005",
-    title: "Goldin Rock propertys - British Columbia",
-    coordinates: [53.0681, -121.639125],
-    region: "British Columbia, Canada",
-    image:
-      "https://images.unsplash.com/photo-1672851612972-651dd2bb6363?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    summary: "Goldin Rock Resources Inc. - Mount Burns Property",
-    sections: [],
   },
   // California
   {
@@ -539,7 +552,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Gold", "Patented Mine"],
+    tags: ["Gold"],
     quickFacts: [
       { label: "Type", value: "Patented Gold Mine" },
       { label: "District", value: "Rand Mining District" },
@@ -618,10 +631,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
     tags: ["Gold", "Investment"],
-    quickFacts: [
-      { label: "Commodity", value: "Gold" },
-      { label: "Status", value: "Seeking Investors" },
-    ],
+    quickFacts: [{ label: "Commodity", value: "Gold" }],
     sections: [
       {
         heading: "European Mining Projects",
@@ -675,9 +685,9 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     isForSale: false,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Gold(Au)", "Silver(Ag)"],
+    tags: ["Gold", "Silver"],
     quickFacts: [
-      { label: "Commodity", value: "Gold (Au)" },
+      { label: "Commodity", value: "Gold (Au), Silver (Ag)" },
       { label: "AREA (HECTARES)", value: "3 116,00" },
       { label: "Status", value: "Seeking Investors" },
     ],

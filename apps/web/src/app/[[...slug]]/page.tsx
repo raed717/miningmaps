@@ -12,6 +12,7 @@ import ClientPage from "./client";
 export function generateStaticParams() {
   return [
     { slug: [""] },
+    { slug: ["about"] },
     { slug: ["services"] },
     { slug: ["contact"] },
     { slug: ["projects"] },
