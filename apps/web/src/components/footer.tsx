@@ -58,7 +58,7 @@ export default function Footer() {
         {/* Socials */}
         <div className="flex items-center gap-6">
           <a
-            href="https://www.linkedin.com/in/chris-adamson-r-84649b4b"
+            href="https://www.linkedin.com/company/adamson-geomatics/"
             target="_blank"
             rel="noreferrer"
             className="hover:text-primary border border-border px-3 py-1 hover:border-primary transition-all"

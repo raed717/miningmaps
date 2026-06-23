@@ -77,7 +77,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <div className="hidden md:flex items-center gap-1">
             <a
-              href="https://www.linkedin.com/in/chris-adamson-r-84649b4b"
+              href="https://www.linkedin.com/company/adamson-geomatics/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center border border-border bg-card p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
@@ -101,7 +101,15 @@ export default function Header() {
               className="flex items-center justify-center border border-border bg-card p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
               aria-label="X / Twitter"
             >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
                 <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
               </svg>
@@ -157,7 +165,7 @@ export default function Header() {
 
           <div className="mt-4 flex items-center gap-2">
             <a
-              href="https://www.linkedin.com/in/chris-adamson-r-84649b4b"
+              href="https://www.linkedin.com/company/adamson-geomatics/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center border border-border bg-card p-3 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
@@ -181,7 +189,15 @@ export default function Header() {
               className="flex items-center justify-center border border-border bg-card p-3 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
               aria-label="X / Twitter"
             >
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
                 <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
               </svg>

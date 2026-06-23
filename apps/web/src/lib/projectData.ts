@@ -72,6 +72,8 @@ export interface SubProject {
 
 export interface Project {
   id: string;
+  // new field type of project could be project or subproject, by default project
+  type?: "project" | "subproject";
   title: string;
   summary: string;
   region: string;
@@ -547,7 +549,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     summary: "Patented California Gold Mine",
     region: "California, USA",
     image:
-      "https://images.unsplash.com/photo-1499310226026-b9d598980b90?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://media-cdn.tripadvisor.com/media/photo-c/1280x250/0f/5d/30/94/san-bernardino-national.jpg",
     coordinates: [36.7783, -119.4179],
     isForSale: true,
     author: "Adamson Geomatics",
@@ -1570,7 +1572,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     summary: "Lexington Prospecting Maps",
     region: "Lexington, Canada",
     image:
-      "https://plus.unsplash.com/premium_photo-1694475206309-d201a616ffa3?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://storyofbutte.org/files/fullsize/2355ddedbdb16da41ad8289a7fcee3a3.jpg",
     coordinates: [33.98154, -81.23621],
     isForSale: false,
     author: "Adamson Geomatics",
@@ -1638,7 +1640,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     summary: "Cripple Creek, Alaska Prospecting Maps",
     region: "Cripple Creek, Alaska, USA",
     image:
-      "https://plus.unsplash.com/premium_photo-1690522330262-5bdf16b17e26?q=80&w=749&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://fayranches.com/wp-content/uploads/2024/09/beaver-dam-alaska-cripple-creek-gold-mine.jpg",
     coordinates: [63.6091, -156.1356],
     isForSale: true,
     quickFacts: [

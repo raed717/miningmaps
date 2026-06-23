@@ -4,6 +4,16 @@ import { mono } from "@/lib/fonts";
 const fieldReports = [
   {
     text: `
+    I have had the opportunity over the last several years to work closely with Chris on a number of matters, some of which were very complex in nature and required a careful analysis of the approach to take in order to achieve the desired result. 
+He is very intelligent, hardworking, seeks solutions and follows up on various matters including staying on top of developments and what needs to be carried out with respect to files and matters that he deals with. 
+He has a very solid understanding of the issues and challenges on matters that arise and I found him excellent to work with and he develops a thorough knowledge of the matter that he is working on. 
+I am pleased to be able to provide a reference letter for him and I would be pleased to expand on the positive experiences that I have had working with him if comments or questions need to be followed up further. 
+    `,
+    author: "Brian Abraham",
+    role: "K.C., P.Geo",
+  },
+  {
+    text: `
     Hi Chris, 
 Congratulations on having your image selected
  for the 2025 Esri User Conference!  Your image was displayed in Jack
@@ -15,11 +25,6 @@ Congratulations on having your image selected
     author: "Esri",
     role: "Esri Plenary Image Submission Team",
     link: "https://mediaspace.esri.com/media/1_2rc7uxir?kalturaStartTime=563",
-  },
-  {
-    text: "His mapping accuracy and claim staking intuition provided a massive advantage for our Northern campaigns.",
-    author: "Senior Geologist",
-    role: "Confidential Client, NWT",
   },
 ];
 

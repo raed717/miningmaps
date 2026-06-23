@@ -27,8 +27,7 @@ const contactRoutes = [
   {
     id: "COMM_LINK_01",
     title: "For a quote or proposal",
-    description:
-      "Mining property maps, GIS services, data analysis.",
+    description: "Mining property maps, GIS services, data analysis.",
     icon: Gem,
     href: "mailto:chris@miningpropertymaps.com",
     label: "chris@miningpropertymaps.com",
@@ -48,7 +47,7 @@ const contactRoutes = [
     description:
       "Best for partnerships, professional introductions, and broader business discussions.",
     icon: Linkedin,
-    href: "https://www.linkedin.com/in/chris-adamson-r-84649b4b",
+    href: "https://www.linkedin.com/company/adamson-geomatics/",
     label: "Chris Adamson",
     external: true,
   },

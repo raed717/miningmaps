@@ -70,7 +70,7 @@ A dedicated section for rural real estate properties, separate from mineral clai
 
 - **Email (properties):** chris@miningpropertymaps.com
 - **Email (land services):** chris@adamsonlandservices.com
-- **LinkedIn:** [Chris Adamson](https://www.linkedin.com/in/chris-adamson-r-84649b4b)
+- **LinkedIn:** [Chris Adamson](https://www.linkedin.com/company/adamson-geomatics/)
 - **Facebook:** [Adamson Geomatics](https://www.facebook.com/profile.php?id=61561908187975)
 
 ---
