@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
@@ -40,6 +41,7 @@ export default function ProjectDetails({
 }: {
   projectId: string;
 }) {
+  const [showFloatingBack, setShowFloatingBack] = useState(false);
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
@@ -60,8 +62,17 @@ export default function ProjectDetails({
 
   const mapCoords = project.coordinates;
 
+  useEffect(() => {
+    const handler = () => {
+      setShowFloatingBack(window.scrollY > 250);
+    };
+    window.addEventListener("scroll", handler, { passive: true });
+    handler();
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
   return (
-    <div className="flex-1 overflow-y-auto bg-background">
+    <div className="flex-1 overflow-y-auto bg-background relative">
       {/* Header Banner */}
       <div className="relative h-[40vh] min-h-[18.75rem] w-full overflow-hidden">
         <img
@@ -75,9 +86,9 @@ export default function ProjectDetails({
           <div className="container mx-auto px-4 pb-12">
             <Link
               href="/projects"
-              className="mb-6 inline-flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-background/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary backdrop-blur-md transition-all hover:border-primary hover:bg-background/90 hover:text-primary"
             >
-              <ArrowLeft className="mr-2 h-4 w-4" />
+              <ArrowLeft className="h-3.5 w-3.5" />
               Back to Projects
             </Link>
             <motion.div
@@ -96,6 +107,19 @@ export default function ProjectDetails({
           </div>
         </div>
       </div>
+
+      {/* Floating Back Button — visible when hero is scrolled past */}
+      <Link
+        href="/projects"
+        className={`fixed bottom-6 left-6 z-50 flex items-center gap-2 rounded-full border border-primary/30 bg-background/80 px-3.5 py-2 text-[10px] font-bold uppercase tracking-widest text-primary shadow-lg backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background hover:text-primary md:bottom-8 md:left-8 ${
+          showFloatingBack
+            ? "translate-y-0 opacity-100"
+            : "translate-y-4 opacity-0 pointer-events-none"
+        }`}
+      >
+        <ArrowLeft className="h-3.5 w-3.5" />
+        Back
+      </Link>
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-12 lg:grid-cols-3">
@@ -363,6 +387,15 @@ export default function ProjectDetails({
                   <Marker position={mapCoords} icon={createCustomIcon()} />
                 </MapContainer>
               </div>
+              <a
+                href={`https://www.google.com/maps?q=${project.coordinates[0]},${project.coordinates[1]}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md border border-primary/30 bg-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary transition-all hover:bg-primary/20 hover:border-primary"
+              >
+                <MapPin className="h-3.5 w-3.5" />
+                Open in Google Maps
+              </a>
             </div>
 
             <div className="rounded-xl border border-border/50 bg-card p-6">
@@ -393,6 +426,51 @@ export default function ProjectDetails({
                 )}
               </ul>
             </div>
+
+            {/* Parent / Sub Project Navigation */}
+            {(project.parentProjectId || (project.subProjectIds && project.subProjectIds.length > 0)) && (
+              <div className="rounded-xl border border-border/50 bg-card p-6">
+                <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                  Project Relations
+                </h3>
+                <div className="space-y-3 text-sm">
+                  {project.parentProjectId && (() => {
+                    const parent = projects.find((p) => p.id === project.parentProjectId);
+                    return parent ? (
+                      <div className="flex flex-col">
+                        <span className="text-xs text-muted-foreground">Parent Project</span>
+                        <Link
+                          href={`/projects/${parent.id}`}
+                          className="font-medium text-primary hover:underline"
+                        >
+                          {parent.title}
+                        </Link>
+                      </div>
+                    ) : null;
+                  })()}
+                  {project.subProjectIds && project.subProjectIds.length > 0 && (
+                    <div className="flex flex-col">
+                      <span className="text-xs text-muted-foreground">Sub Projects</span>
+                      <ul className="mt-1 space-y-1">
+                        {project.subProjectIds.map((subId) => {
+                          const sub = projects.find((p) => p.id === subId);
+                          return sub ? (
+                            <li key={subId}>
+                              <Link
+                                href={`/projects/${sub.id}`}
+                                className="font-medium text-primary hover:underline"
+                              >
+                                {sub.title}
+                              </Link>
+                            </li>
+                          ) : null;
+                        })}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             {(project.tags || project.date || project.author) && (
               <div className="rounded-xl border border-border/50 bg-card p-6 mt-6">

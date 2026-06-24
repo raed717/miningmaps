@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import {
   Activity,
@@ -20,12 +21,15 @@ type ProjectsPageProps = {
 };
 
 export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPageProps) {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
   const allTags = Array.from(new Set(projects.flatMap((project) => project.tags || [])));
 
   const filteredProjects = projects.filter((project) => {
+    if (project.type === "subproject") return false;
+
     const matchesSearch =
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -38,12 +42,14 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
   });
 
   return (
-    <div className={`min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-white ${inter.className}`}>
+    <div
+      className={`min-h-screen w-full bg-background text-foreground selection:bg-primary selection:text-white ${inter.className}`}
+    >
       <div
         className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] mix-blend-overlay"
         style={{
           backgroundImage:
-            'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
         }}
       />
       <div className="pointer-events-none fixed inset-0 z-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_80%_at_50%_0%,#000_40%,transparent_100%)]" />
@@ -52,7 +58,9 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
         <header className="mb-8 border-b border-border pb-8 md:mb-10 md:pb-10">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <div className={`mb-3 flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-primary ${mono.className}`}>
+              <div
+                className={`mb-3 flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-primary ${mono.className}`}
+              >
                 <Database className="h-3 w-3" />
                 {showOnlyForSale ? "PROPERTY_REGISTRY" : "ASSET_DATABASE"}
               </div>
@@ -80,7 +88,9 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                   <MapPin className="h-4 w-4" />
                 </div>
                 <div>
-                  <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+                  <div
+                    className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}
+                  >
                     Spatial Access
                   </div>
                   <div className="mt-1 text-xs font-extrabold uppercase tracking-[0.18em] text-white md:text-sm">
@@ -90,7 +100,9 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
               </Link>
             </div>
-            <div className={`max-w-md text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}>
+            <div
+              className={`max-w-md text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
+            >
               {showOnlyForSale
                 ? "Live acquisition-ready mineral properties filtered from the wider Adamson Geomatics project archive."
                 : "Exploring a selection of mapping projects, right-of-way planning, and mineral exploration intel extracted by Adamson Geomatics."}
@@ -120,10 +132,10 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
           <div className="flex flex-wrap gap-2 lg:w-2/3 lg:justify-end">
             <button
               onClick={() => setActiveFilter(null)}
-                className={`px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
-                  activeFilter === null
-                    ? "border-primary bg-primary text-black"
-                    : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
+              className={`px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
+                activeFilter === null
+                  ? "border-primary bg-primary text-black"
+                  : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
               } border`}
             >
               ALL
@@ -131,7 +143,9 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
             {allTags.slice(0, 5).map((tag) => (
               <button
                 key={tag}
-                onClick={() => setActiveFilter(tag === activeFilter ? null : tag)}
+                onClick={() =>
+                  setActiveFilter(tag === activeFilter ? null : tag)
+                }
                 className={`px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
                   activeFilter === tag
                     ? "border-secondary bg-secondary text-black"
@@ -144,9 +158,13 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
           </div>
         </section>
 
-        <div className={`mb-6 flex justify-between border-b border-border pb-3 text-[10px] tracking-[0.18em] uppercase text-[#666] md:text-xs ${mono.className}`}>
+        <div
+          className={`mb-6 flex justify-between border-b border-border pb-3 text-[10px] tracking-[0.18em] uppercase text-[#666] md:text-xs ${mono.className}`}
+        >
           <span>Displaying {filteredProjects.length} Records</span>
-          <span>SYSTEM_STATUS: {filteredProjects.length > 0 ? "ONLINE" : "NO_MATCH"}</span>
+          <span>
+            SYSTEM_STATUS: {filteredProjects.length > 0 ? "ONLINE" : "NO_MATCH"}
+          </span>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -160,12 +178,17 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <Link href={`/projects/${project.id}`} className="group relative block h-full overflow-hidden border border-accent bg-card transition-colors duration-500 hover:border-primary">
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="group relative block h-full overflow-hidden border border-accent bg-card transition-colors duration-500 hover:border-primary"
+                >
                   <div className="absolute top-0 right-0 p-3 opacity-10 transition-opacity group-hover:opacity-30">
                     <Cpu className="h-24 w-24" />
                   </div>
 
-                  <div className={`flex items-center justify-between border-b border-accent bg-background p-4 text-[10px] font-bold tracking-widest uppercase ${mono.className}`}>
+                  <div
+                    className={`flex items-center justify-between border-b border-accent bg-background p-4 text-[10px] font-bold tracking-widest uppercase ${mono.className}`}
+                  >
                     <span className="flex items-center gap-2 text-muted-foreground">
                       <Target className="h-3 w-3" />
                       ID_{project.id}
@@ -182,13 +205,19 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                       alt={project.title}
                       className="h-full w-full object-cover opacity-60 mix-blend-luminosity transition-all duration-700 group-hover:scale-105 group-hover:opacity-100 group-hover:mix-blend-normal"
                     />
-                    {project.isForSale && (
-                      <div className="absolute top-4 left-4">
-                        <div className={`border border-secondary bg-secondary px-2 py-1 text-[9px] font-bold tracking-widest text-black uppercase shadow-[0_0_10px_var(--color-secondary)] ${mono.className}`}>
-                          AVAILABLE FOR ACQUISITION
-                        </div>
+                    <div className="absolute top-4 left-4">
+                      <div
+                        className={`px-2 py-1 text-[9px] font-bold tracking-widest uppercase ${
+                          project.isForSale
+                            ? "border border-secondary bg-secondary text-black shadow-[0_0_10px_var(--color-secondary)]"
+                            : "border border-gold-500 bg-yellow-500 text-black shadow-[0_0_10px_#22c55e]"
+                        } ${mono.className}`}
+                      >
+                        {project.isForSale
+                          ? "AVAILABLE FOR ACQUISITION"
+                          : "ACQUIRED"}
                       </div>
-                    )}
+                    </div>
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(255,255,255,0.05)_50%)] bg-[length:100%_4px] mix-blend-overlay" />
                   </div>
 
@@ -197,19 +226,60 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                       {project.title}
                     </h3>
 
-                    <p className={`mb-8 text-sm uppercase leading-relaxed text-muted-foreground ${mono.className}`}>
+                    <p
+                      className={`mb-6 text-sm uppercase leading-relaxed text-muted-foreground ${mono.className}`}
+                    >
                       {project.summary}
                     </p>
+
+                    {project.subProjectIds &&
+                      project.subProjectIds.length > 0 && (
+                        <div className="mb-6 border-l-2 border-primary/30 pl-4">
+                          <span
+                            className={`mb-2 block text-[9px] uppercase tracking-[0.2em] text-primary ${mono.className}`}
+                          >
+                            SUB PROJECTS
+                          </span>
+                          <ul className="space-y-1.5">
+                            {project.subProjectIds.map((subId) => {
+                              const sub = projects.find((p) => p.id === subId);
+                              if (!sub) return null;
+                              return (
+                                <li key={subId}>
+                                  <button
+                                    type="button"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      router.push(`/projects/${subId}`);
+                                    }}
+                                    className="group/sub flex w-full items-center gap-2 text-left text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
+                                  >
+                                    <span className="text-primary/40 transition-colors group-hover/sub:text-primary">
+                                      &rsaquo;
+                                    </span>
+                                    {sub.title}
+                                  </button>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                      )}
 
                     <div className="mt-auto flex items-center justify-between border-t border-accent pt-4">
                       <div className="flex gap-2">
                         {project.tags?.slice(0, 2).map((tag) => (
-                          <span key={tag} className={`border border-border px-2 py-1 text-[9px] uppercase tracking-widest text-[#666] ${mono.className}`}>
+                          <span
+                            key={tag}
+                            className={`border border-border px-2 py-1 text-[9px] uppercase tracking-widest text-[#666] ${mono.className}`}
+                          >
                             {tag}
                           </span>
                         ))}
                         {(project.tags?.length || 0) > 2 && (
-                          <span className={`border border-border px-2 py-1 text-[9px] uppercase tracking-widest text-[#666] ${mono.className}`}>
+                          <span
+                            className={`border border-border px-2 py-1 text-[9px] uppercase tracking-widest text-[#666] ${mono.className}`}
+                          >
                             +{(project.tags?.length || 0) - 2}
                           </span>
                         )}
@@ -231,7 +301,9 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
             <h3 className="mb-2 text-2xl font-bold uppercase tracking-tighter text-muted-foreground">
               No Records Found
             </h3>
-            <p className={`text-sm uppercase tracking-widest text-[#555] ${mono.className}`}>
+            <p
+              className={`text-sm uppercase tracking-widest text-[#555] ${mono.className}`}
+            >
               Modify search parameters or clear active filters.
             </p>
             <button

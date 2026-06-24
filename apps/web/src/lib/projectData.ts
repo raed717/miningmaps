@@ -63,23 +63,14 @@ export type QuickFact = {
   value: string;
 };
 
-export interface SubProject {
-  title: string;
-  coordinates: [number, number];
-  summary?: string;
-  image?: string;
-}
-
 export interface Project {
   id: string;
-  // new field type of project could be project or subproject, by default project
   type?: "project" | "subproject";
   title: string;
   summary: string;
   region: string;
   image: string;
   coordinates: [number, number];
-  subProjects?: SubProject[];
   sections: ProjectSection[];
   isForSale?: boolean;
   quickFacts?: QuickFact[];
@@ -87,9 +78,43 @@ export interface Project {
   author?: string;
   contactEmail?: string;
   tags?: string[];
+  parentProjectId?: string;
+  subProjectIds?: string[];
 }
 
 export const projects: Project[] = [
+  {
+    id: "sub-001",
+    title: "Goldin Rock propertys - British Columbia",
+    type: "subproject",
+    isForSale: true,
+    parentProjectId: "bc-005",
+    coordinates: [53.0681, -121.639125],
+    image:
+      "https://images.unsplash.com/photo-1672851612972-651dd2bb6363?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    summary: "Goldin Rock Resources Inc. - Mount Burns Property",
+    region: "British Columbia, Canada",
+    sections: [
+      {
+        heading: "Gold Potential Assessment",
+        type: "paragraph",
+        content: `
+Based on historical reports and high-grade sampling results, the Mount Burns Property demonstrates significant gold exploration potential. Historical data references grades of up to 21 ounces of gold per ton from specific mineralized zones.
+
+For illustrative purposes only, a hypothetical high-grade zone containing 100,000 tons of material at this grade would represent approximately 2.1 million ounces of gold. Using recent gold prices, this equates to a theoretical in-situ gross value exceeding USD $9.1 billion.
+
+While these figures highlight the property's potential, additional due diligence is required. Independent verification by a Qualified Person under NI 43-101 standards is necessary to determine whether reported grades are representative of a larger mineralized body. Further drilling, resource classification, and metallurgical testing are also required to assess economic viability and recoverable gold content.
+
+The property is located near Stanley, British Columbia, approximately 4 km from Wells and the historic Barkerville mining district, at coordinates 53.068100° N, -121.639125° W.
+  `,
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "/images/projects/British-Columbia/TL_GoldinRock_2025111_page-0001.jpg",
+      },
+    ],
+  },
   // Alaska
   {
     id: "ak-001",
@@ -100,7 +125,7 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1574788901656-6a9ee34a3fa7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     coordinates: [63.2, -145.5],
-    isForSale: true,
+    isForSale: false,
     date: "2024-03-15",
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
@@ -220,8 +245,7 @@ export const projects: Project[] = [
     title: "Australia / New Zealand",
     summary: "",
     region: "Australia / New Zealand",
-    image:
-      "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://hydrosmart.com.au/wp-content/uploads/Mining-2.jpg",
     coordinates: [-25.2744, 133.7751],
     isForSale: true,
     author: "Adamson Geomatics",
@@ -322,8 +346,9 @@ export const projects: Project[] = [
     title: "British Columbia",
     summary: "Little Fort Polymetallic Claim # 1106809",
     region: "British Columbia, Canada",
+    subProjectIds: ["sub-001", "sub-002"],
     image:
-      "https://images.unsplash.com/photo-1672851612972-651dd2bb6363?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b7/City_of_Kamloops.jpg",
     coordinates: [51.508691, -120.272788],
     isForSale: true,
     author: "Adamson Geomatics",
@@ -333,15 +358,6 @@ export const projects: Project[] = [
       { label: "Size", value: "362 Hectares" },
       { label: "Commodities", value: "Cu, Zn, Au" },
       { label: "Tenure", value: "Claim #1106809" },
-    ],
-    subProjects: [
-      {
-        title: "Goldin Rock propertys - British Columbia",
-        coordinates: [53.0681, -121.639125],
-        image:
-          "https://images.unsplash.com/photo-1672851612972-651dd2bb6363?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        summary: "Goldin Rock Resources Inc. - Mount Burns Property",
-      },
     ],
     sections: [
       {
@@ -522,24 +538,6 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
           },
         ],
       },
-      {
-        heading: "Gold Potential Assessment",
-        type: "paragraph",
-        content: `
-Based on historical reports and high-grade sampling results, the Mount Burns Property demonstrates significant gold exploration potential. Historical data references grades of up to 21 ounces of gold per ton from specific mineralized zones.
-
-For illustrative purposes only, a hypothetical high-grade zone containing 100,000 tons of material at this grade would represent approximately 2.1 million ounces of gold. Using recent gold prices, this equates to a theoretical in-situ gross value exceeding USD $9.1 billion.
-
-While these figures highlight the property's potential, additional due diligence is required. Independent verification by a Qualified Person under NI 43-101 standards is necessary to determine whether reported grades are representative of a larger mineralized body. Further drilling, resource classification, and metallurgical testing are also required to assess economic viability and recoverable gold content.
-
-The property is located near Stanley, British Columbia, approximately 4 km from Wells and the historic Barkerville mining district, at coordinates 53.068100° N, -121.639125° W.
-  `,
-      },
-      {
-        type: "SimpleImage",
-        image:
-          "/images/projects/British-Columbia/TL_GoldinRock_2025111_page-0001.jpg",
-      },
     ],
   },
   // California
@@ -627,7 +625,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     summary: "Promising Finland gold project",
     region: "Finland",
     image:
-      "https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.squarespace-cdn.com/content/v1/6113853c291f13180a11ed5d/1631252734076-TZROH5G12PYEFY7OWPN8/unsplash-image-oF7hh97lVqA.jpg",
     coordinates: [61.9241, 25.7482],
     isForSale: false,
     author: "Adamson Geomatics",
@@ -656,7 +654,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     summary: "Manitoba",
     region: "Manitoba, Canada",
     image:
-      "https://images.unsplash.com/photo-1632455351235-682d08cbb3e0?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/m/a/manitoba-andre-brandt.jpg?crop=0%2C7%2C2048%2C1075&wid=1200&hei=630&scl=1.7066666666666668",
     coordinates: [56.1304, -106.3468],
     isForSale: false,
     author: "Adamson Geomatics",
@@ -813,7 +811,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     summary: "Newfoundland",
     region: "Newfoundland, Canada",
     image:
-      "https://images.unsplash.com/photo-1592701601033-c17588001fb8?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://www.renewcanada.net/wp-content/uploads/2020/10/newfoundland-rural-scaled.jpg",
     coordinates: [53.1327, -57.6629],
     isForSale: true,
     author: "Adamson Geomatics",
@@ -1295,7 +1293,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     summary: "Brazilian Claim Staking Maps:",
     region: "Brazil",
     image:
-      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?q=80&w=1226&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://i.guim.co.uk/img/media/ab3af563226dcfb144cbc8e919f39f3897233d64/0_68_2000_1200/master/2000.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=b515b60106a04e953bceff784c5697f7",
     coordinates: [-14.235, -51.9253],
     isForSale: false,
     author: "Adamson Geomatics",
@@ -1382,7 +1380,8 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     isForSale: false,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Prospecting", "Yukon"],
+    tags: ["Prospecting", "Yukon", "Gold"],
+    subProjectIds: ["sub-003"],
     sections: [
       {
         type: "paragraph",
@@ -1567,12 +1566,14 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
   },
   // Lexington
   {
-    id: "sk-022",
+    id: "sub-002",
     title: "Lexington",
     summary: "Lexington Prospecting Maps",
     region: "Lexington, Canada",
+    type: "subproject",
+    parentProjectId: "bc-005",
     image:
-    "https://storyofbutte.org/files/fullsize/2355ddedbdb16da41ad8289a7fcee3a3.jpg",
+      "https://storyofbutte.org/files/fullsize/2355ddedbdb16da41ad8289a7fcee3a3.jpg",
     coordinates: [33.98154, -81.23621],
     isForSale: false,
     author: "Adamson Geomatics",
@@ -1768,6 +1769,73 @@ The property’s remote location is balanced by its accessibility, with a nearby
           "Test holes indicate rich gold reserves",
           "Equipment and infrastructure on-site",
         ],
+      },
+    ],
+  },
+  // sub project for Yukon Woodchopper Gold Claim
+  {
+    id: "sub-003",
+    title: "Woodchopper Gold Claim",
+    summary: "$12,500,000|Circle, Alaska |1,418± ACRES",
+    region: "yukon, Alaska",
+    type: "subproject",
+    isForSale: true,
+    parentProjectId: "sk-018",
+    image:
+      "https://fayranches.com/wp-content/uploads/2023/03/alaska-property-for-sale-woodchopper-gold-claim-Photo-from-NPS-Josh-Spice-1.png",
+    coordinates: [65.188135, -151.447157],
+    tags: ["Gold"],
+    quickFacts: [
+      { label: "Type", value: "Claim Block Mapping" },
+      {
+        label: "Commodity",
+        value: "Au",
+      },
+      { label: "AREA (HECTARES)", value: "3 700,00" },
+    ],
+    sections: [
+      {
+        type: "ImageGallery",
+        heading: "Project Overview",
+        images: [
+          {
+            src: "https://fayranches.com/wp-content/uploads/2023/03/Charlie-river-fall-colors-alaska-woodchopper-gold-claim-photo-by-NPS-Josh-Spice-e1695657486662.png",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2023/03/Yukon-in-the-fall-alaska-woodchopper-gold-claim-photo-by-NPS-Josh-Spice.png",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2023/03/merging-creeks-alaska-woodchopper-gold-claim-photo-by-NPS-e1695657351848.png",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2023/03/floating-the-river-alaska-woodchopper-gold-claim-ptoto-by-NPS-Josh-Spice.png",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2023/03/Bear-alaska-woodchopper-gold-claim-photo-by-NPS-Jacob-Frank.png",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2023/03/cabin-alaska-woodchopper-gold-claim-photo-by-NPS-Josh-Spice.png",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2023/03/Coal-creek-camp-alaska-woodchopper-gold-claim-photo-by-NPS-Al-Hendricks-Jr.png",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2023/03/Roadhouse-alaska-woodchopper-gold-claim-photo-by-NPS.png",
+          },
+        ],
+      },
+      {
+        type: "paragraph",
+        heading: "Property Overview",
+        content: `
+The year was 1898. One of the most significant events in Alaska’s history was in full swing, The Klondike-Alaska Gold Rush. The Klondike Gold Rush first began in 1896 when gold was discovered in the Yukon Territory. One of the most prominent areas of the Klondike Gold Rush was the Woodchopper Creek region, which is located about 200 river miles downstream of Dawson City, the epicenter of the gold rush. Woodchopper Creek was, and still is today, an attractive location for miners due to a significant amount of high-grade gold and other valuable minerals.
+
+This offering, “Woodchopper Creek Gold Claim”, consists of a set of 52 claims representing a total of about 1418± acres, with 15 of these claims (about 230± acres) being patented and the remaining 37 claims (about 1188± acres) being unpatented. Located in the Yukon-Koyukuk Borough between the towns of Circle and Eagle, Alaska, the property is an inholding situated within the Yukon-Charley Rivers National Preserve managed by the US National Park Service (NPS). The Property’s 15 patented claims were periodically mined up through the 1980s, whereas the 37 unpatented claims remain undeveloped.
+
+One of the most notable aspects of the Woodchopper Creek Gold Claims is the unique geology of the region. The area is characterized by rugged, mountainous terrain located in the heart of the Tintina Gold Belt. Woodchopper Creek Gold Claim is part of the mixed forest/scrub-shrub permafrost ecosystem of interior Alaska. It is comprised of highland, lowland, wetland, and riparian features that support more than forty wildlife species, including black bear, grizzly bear, caribou, Dall sheep, moose, wolf, and wolverine. These species use the property as either full-time or temporary habitat making the property highly valuable for conservation purposes. The Yukon River supports three species of salmon at this location – coho, Chinook, and chum. Chinook salmon spawn at the mouth of Woodchopper Creek upstream of its confluence with the Yukon River. The lack of wildfire damage in this area enhances the value of the relatively pristine character when compared with neighboring landscapes that have suffered wildfire damage in the recent past.
+
+The Woodchopper Creek Gold Claims have a rich history and remain a significant source of precious metals in the Yukon Territory. The region's unique geology and high-grade ores continue to attract mining operations. The potential for significant profits makes the area a desirable location for both small and large-scale mining operations. While the area presents many challenges, the rewards for successful mining ventures can be substantial
+        `,
       },
     ],
   },

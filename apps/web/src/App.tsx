@@ -97,7 +97,7 @@ export default function App() {
   return (
     <div className="grid min-h-svh grid-rows-[auto_1fr]">
       <Header />
-      <div className="h-full min-h-0">{content}</div>
+      <div className="h-full min-h-0 flex flex-col">{content}</div>
       <Toaster richColors />
     </div>
   );

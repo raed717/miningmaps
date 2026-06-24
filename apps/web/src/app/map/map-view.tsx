@@ -67,7 +67,7 @@ export default function MapView() {
   const selectedSite = projects.find((p) => p.id === selectedSiteId);
 
   const visibleProjects = projects.filter(
-    (site) => !showOnlyForSale || site.isForSale
+    (site) => site.type !== "subproject" && (!showOnlyForSale || site.isForSale)
   );
 
   return (
@@ -149,41 +149,80 @@ export default function MapView() {
           <div className="flex-1 overflow-y-auto">
             {visibleProjects.map((p) => {
               const isSelected = selectedSiteId === p.id;
+              const subs = (p.subProjectIds ?? [])
+                .map((id) => projects.find((proj) => proj.id === id))
+                .filter(Boolean) as typeof projects;
               return (
-                <button
-                  key={p.id}
-                  onClick={() => {
-                    setSelectedSiteId(p.id);
-                    setMobileSidebarOpen(false);
-                  }}
-                  className={`w-full text-left flex items-stretch border-b border-accent transition-all duration-300 group ${
-                    isSelected ? "bg-primary/10" : "hover:bg-muted"
-                  }`}
-                >
-                  <div className={`w-1 transition-colors ${isSelected ? "bg-primary" : "bg-transparent group-hover:bg-[#333]"}`} />
-                  
-                  <div className="flex-1 p-4 flex gap-4">
-                    {/* Small Image Thumbnail */}
-                    <div className={`h-16 w-16 shrink-0 overflow-hidden border ${isSelected ? "border-primary" : "border-border grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100"}`}>
-                      <img src={p.image} alt={p.title} className="h-full w-full object-cover" />
-                    </div>
+                <div key={p.id}>
+                  <button
+                    onClick={() => {
+                      setSelectedSiteId(p.id);
+                      setFlyToCoords(p.coordinates);
+                      setMobileSidebarOpen(false);
+                    }}
+                    className={`w-full text-left flex items-stretch border-b border-accent transition-all duration-300 group ${
+                      isSelected ? "bg-primary/10" : "hover:bg-muted"
+                    }`}
+                  >
+                    <div className={`w-1 transition-colors ${isSelected ? "bg-primary" : "bg-transparent group-hover:bg-[#333]"}`} />
                     
-                    <div className="flex-1 min-w-0 flex flex-col justify-center">
-                      <div className={`text-[10px] text-primary tracking-widest font-bold mb-1 flex items-center justify-between ${mono.className}`}>
-                        <span>ID_{p.id}</span>
-                        {p.isForSale && (
-                          <span className="text-secondary px-1 border border-secondary bg-secondary/10">SALE</span>
-                        )}
+                    <div className="flex-1 p-4 flex gap-4">
+                      {/* Small Image Thumbnail */}
+                      <div className={`h-16 w-16 shrink-0 overflow-hidden border ${isSelected ? "border-primary" : "border-border grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100"}`}>
+                        <img src={p.image} alt={p.title} className="h-full w-full object-cover" />
                       </div>
-                      <div className="font-bold text-sm uppercase tracking-tight truncate group-hover:text-white transition-colors">
-                        {p.title}
-                      </div>
-                      <div className={`text-[10px] text-[#666] mt-1 truncate uppercase ${mono.className}`}>
-                        LOC: {p.region}
+                      
+                      <div className="flex-1 min-w-0 flex flex-col justify-center">
+                        <div className={`text-[10px] text-primary tracking-widest font-bold mb-1 flex items-center justify-between ${mono.className}`}>
+                          <span>ID_{p.id}</span>
+                          {p.isForSale && (
+                            <span className="text-secondary px-1 border border-secondary bg-secondary/10">SALE</span>
+                          )}
+                        </div>
+                        <div className="font-bold text-sm uppercase tracking-tight truncate group-hover:text-white transition-colors">
+                          {p.title}
+                        </div>
+                        <div className={`text-[10px] text-[#666] mt-1 truncate uppercase ${mono.className}`}>
+                          LOC: {p.region}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </button>
+                  </button>
+
+                  {subs.length > 0 && (
+                    <div className="border-b border-border/50">
+                      {subs.map((sub) => {
+                        const isSubSelected = selectedSiteId === sub.id;
+                        return (
+                          <button
+                            key={sub.id}
+                            onClick={() => {
+                              setSelectedSiteId(p.id);
+                              setFlyToCoords(sub.coordinates);
+                              setMobileSidebarOpen(false);
+                            }}
+                            className={`w-full text-left flex items-stretch transition-all duration-300 group ${
+                              isSubSelected ? "bg-primary/5" : "hover:bg-muted"
+                            }`}
+                          >
+                            <div className={`w-1 transition-colors ${isSubSelected ? "bg-primary/60" : "bg-transparent group-hover:bg-[#333]"}`} />
+                            <div className="flex-1 py-2 pl-12 pr-4 flex items-center gap-3">
+                              <span className="text-[10px] text-primary/60 font-bold">&rsaquo;</span>
+                              <div className="flex-1 min-w-0">
+                                <div className={`text-[10px] text-muted-foreground tracking-widest font-bold mb-0.5 ${mono.className}`}>
+                                  SUB_{sub.id}
+                                </div>
+                                <div className={`text-xs uppercase tracking-tight truncate text-muted-foreground group-hover:text-white transition-colors ${mono.className}`}>
+                                  {sub.title}
+                                </div>
+                              </div>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
@@ -249,14 +288,18 @@ export default function MapView() {
             )
           })}
 
-          {visibleProjects.map((project) =>
-            project.subProjects?.map((sub, i) => {
-              const subColor = project.isForSale ? "#00FF41" : "#888888";
+          {visibleProjects.map((project) => {
+            const subs = (project.subProjectIds ?? []).map((id) =>
+              projects.find((p) => p.id === id)
+            ).filter(Boolean) as typeof projects;
+            return subs.map((sub) => {
+              const subSelected = selectedSiteId === project.id;
+              const subColor = sub.isForSale ? "#00FF41" : (subSelected ? "#FF3300" : "#888888");
               return (
                 <Marker
-                  key={`${project.id}-sub-${i}`}
+                  key={`${project.id}-sub-${sub.id}`}
                   position={sub.coordinates}
-                  icon={createCustomIcon(subColor, !!project.isForSale)}
+                  icon={createCustomIcon(subColor, sub.isForSale || subSelected)}
                   eventHandlers={{
                     click: () => {
                       setSelectedSiteId(project.id);
@@ -267,6 +310,9 @@ export default function MapView() {
                   <Popup className="mining-popup" closeButton={false}>
                     <div className={`font-sans bg-card border border-[${subColor}] p-1 uppercase tracking-widest ${mono.className}`}>
                       <div className="font-bold text-white text-[10px] border-b border-border pb-1 mb-1">{sub.title}</div>
+                      {sub.isForSale && (
+                        <div className="text-secondary text-[8px] border border-secondary bg-secondary/10 px-1 mb-1 inline-block">SALE</div>
+                      )}
                       <div className="text-[9px] text-muted-foreground">
                         {sub.coordinates[0].toFixed(2)}, {sub.coordinates[1].toFixed(2)}
                       </div>
@@ -275,7 +321,7 @@ export default function MapView() {
                 </Marker>
               )
             })
-          )}
+          })}
 
         </MapContainer>
 
