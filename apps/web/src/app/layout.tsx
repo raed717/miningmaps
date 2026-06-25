@@ -6,13 +6,6 @@ export const metadata = {
   icons: {
     icon: "/images/general/miniLogo.ico",
   },
-  openGraph: {
-    images: ["/general/og.png"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: ["/general/og.png"],
-  },
 };
 
 export default function RootLayout({
