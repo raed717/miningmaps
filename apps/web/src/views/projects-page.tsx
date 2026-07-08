@@ -25,7 +25,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
-  const allTags = Array.from(new Set(projects.flatMap((project) => project.tags || [])));
+  const staticTags = ["Gold", "Silver", "Copper", "Platinum", "Cobalt", "Nickel"];
 
   const filteredProjects = projects.filter((project) => {
     if (project.type === "subproject") return false;
@@ -62,7 +62,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 className={`mb-3 flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-primary ${mono.className}`}
               >
                 <Database className="h-3 w-3" />
-                {showOnlyForSale ? "PROPERTY_REGISTRY" : "ASSET_DATABASE"}
+                {showOnlyForSale ? "PROPERTY_REGISTRY" : "ASSET DATABASE"}
               </div>
               <h1 className="text-3xl font-extrabold uppercase tracking-tighter leading-[0.88] md:text-5xl xl:text-6xl">
                 {showOnlyForSale ? (
@@ -140,7 +140,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
             >
               ALL
             </button>
-            {allTags.slice(0, 5).map((tag) => (
+            {staticTags.map((tag) => (
               <button
                 key={tag}
                 onClick={() =>
@@ -163,7 +163,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
         >
           <span>Displaying {filteredProjects.length} Records</span>
           <span>
-            SYSTEM_STATUS: {filteredProjects.length > 0 ? "ONLINE" : "NO_MATCH"}
+            SYSTEM STATUS: {filteredProjects.length > 0 ? "ONLINE" : "NO_MATCH"}
           </span>
         </div>
 
@@ -238,7 +238,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                           <span
                             className={`mb-2 block text-[9px] uppercase tracking-[0.2em] text-primary ${mono.className}`}
                           >
-                            SUB PROJECTS
+                            CLIENT PROJECTS
                           </span>
                           <ul className="space-y-1.5">
                             {project.subProjectIds.map((subId) => {

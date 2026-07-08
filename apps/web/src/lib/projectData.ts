@@ -85,7 +85,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "sub-001",
-    title: "Goldin Rock propertys - British Columbia",
+    title: "Goldin Rock Properties - British Columbia",
     type: "subproject",
     isForSale: true,
     parentProjectId: "bc-005",
@@ -346,7 +346,14 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     title: "British Columbia",
     summary: "Little Fort Polymetallic Claim # 1106809",
     region: "British Columbia, Canada",
-    subProjectIds: ["sub-001", "sub-002"],
+    subProjectIds: [
+      "sub-001",
+      "sub-002",
+      "sub-004",
+      "sub-005",
+      "sub-006",
+      "sub-007",
+    ],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/b/b7/City_of_Kamloops.jpg",
     coordinates: [51.508691, -120.272788],
@@ -1417,34 +1424,34 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
     ],
   },
   // Utah
-  {
-    id: "sk-019",
-    title: "Utah",
-    summary: "Utah Prospecting Maps",
-    region: "Utah, USA",
-    image:
-      "https://images.unsplash.com/photo-1434730737257-3e97ad16f4b6?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    coordinates: [39.321, -111.0937],
-    isForSale: false,
-    author: "Adamson Geomatics",
-    contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Prospecting", "Utah"],
-    sections: [
-      {
-        type: "SimpleImage",
-        heading: "Quantum Utah Staking Layout",
-        imageCaption: "Quantum Utah Staking Layout 2025117",
-        image:
-          "/images/projects/Utah/Quantum_UtahStakingLayout_2025117_page-0001.jpg",
-      },
-      {
-        type: "SimpleImage",
-        imageCaption: "Quantum Utah Staking Layout 2025129",
-        image:
-          "/images/projects/Utah/Quantum_UtahStakingLayout_2025129_page-0001.jpg",
-      },
-    ],
-  },
+  // {
+  //   id: "sk-019",
+  //   title: "Utah",
+  //   summary: "Utah Prospecting Maps",
+  //   region: "Utah, USA",
+  //   image:
+  //     "https://images.unsplash.com/photo-1434730737257-3e97ad16f4b6?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   coordinates: [39.321, -111.0937],
+  //   isForSale: false,
+  //   author: "Adamson Geomatics",
+  //   contactEmail: "chris@miningpropertymaps.com",
+  //   tags: ["Prospecting", "Utah"],
+  //   sections: [
+  //     {
+  //       type: "SimpleImage",
+  //       heading: "Quantum Utah Staking Layout",
+  //       imageCaption: "Quantum Utah Staking Layout 2025117",
+  //       image:
+  //         "/images/projects/Utah/Quantum_UtahStakingLayout_2025117_page-0001.jpg",
+  //     },
+  //     {
+  //       type: "SimpleImage",
+  //       imageCaption: "Quantum Utah Staking Layout 2025129",
+  //       image:
+  //         "/images/projects/Utah/Quantum_UtahStakingLayout_2025129_page-0001.jpg",
+  //     },
+  //   ],
+  // },
   // nunavut
   {
     id: "sk-020",
@@ -1836,6 +1843,465 @@ One of the most notable aspects of the Woodchopper Creek Gold Claims is the uniq
 
 The Woodchopper Creek Gold Claims have a rich history and remain a significant source of precious metals in the Yukon Territory. The region's unique geology and high-grade ores continue to attract mining operations. The potential for significant profits makes the area a desirable location for both small and large-scale mining operations. While the area presents many challenges, the rewards for successful mining ventures can be substantial
         `,
+      },
+    ],
+  },
+
+  {
+    id: "sub-004",
+    title: "Mt. McQuillan Property - British Columbia",
+    type: "subproject",
+    parentProjectId: "bc-005",
+    isForSale: true,
+    region: "British Columbia, Canada",
+    image:
+      "https://content.app-sources.com/s/08901972839218532/uploads/Images/quay-9010625.jpg",
+    coordinates: [49.109795, -124.606089],
+    summary:
+      "Historic gold-silver-copper-lead vein property located 15 km SE of Port Alberni, BC.",
+    quickFacts: [
+      { label: "Property", value: "Mt. McQuillan Property" },
+      {
+        label: "Location",
+        value: "15 km SE of Port Alberni, British Columbia",
+      },
+      { label: "Area", value: "338.3 ha" },
+      { label: "Asking Price", value: "$55000.00 + 2% nsr" },
+      { label: "Commodities", value: "Au, Ag, Cu, Pb, Zn" },
+    ],
+    tags: ["Gold", "Silver", "Copper", "Lead", "Zinc"],
+    sections: [
+      {
+        heading: "Overview",
+        type: "paragraph",
+        content:
+          "The Mt. McQuillan Property covers 338.3 hectares located 15 km southeast of Port Alberni, British Columbia. The property hosts several historic mineral occurrences with documented past production and high-grade sampling results.",
+      },
+      {
+        heading: "Mineral Occurrences",
+        type: "bullet_list",
+        content: [
+          "Gillespie Vein (092F 082) — Historic gold-silver-copper-lead vein. Historic production of 949 tons yielded 8,056 g Au, 43,669 g Ag, 4,244 kg Cu and 12,677 kg Pb. Later sampling returned up to 26.65 g/t Au from dump material.",
+          "McQuillan Vein (092F 437) — Shear-hosted quartz vein with pyrite, sphalerite, galena and chalcopyrite. Representative sample assayed 5.5 g/t Au and 20.6 g/t Ag.",
+          "Sol B Showing (092F 385) — Three mineralized zones with Au-Ag-Cu-Pb-Zn mineralization. Best reported vein assayed 2.4 g/t Au, 85.7 g/t Ag, 0.24% Cu, 1.95% Pb and 1.1% Zn.",
+        ],
+      },
+      {
+        heading: "Historic Production",
+        type: "bullet_list",
+        content: [
+          "Gillespie Vein (092F 082): 949 tons ore mined",
+          "Gold: 8,056 g Au",
+          "Silver: 43,669 g Ag",
+          "Base Metals: 4,244 kg Cu; 12,677 kg Pb",
+        ],
+      },
+      {
+        heading: "Exploration Highlights",
+        type: "bullet_list",
+        content: [
+          "Historic underground mining demonstrates the presence of economic-grade mineralization.",
+          "1988 drilling intersected 0.20 m grading 0.214 oz/t Au and 9.25 oz/t Ag at the Gillespie Vein.",
+          "1990 chip sampling returned 7.33 g/t Au and 317.09 g/t Ag from the Gillespie Vein.",
+          "2001 dump sampling returned up to 26.65 g/t Au with elevated Ag, Cu, Pb and Zn.",
+          "McQuillan Vein sampling returned 5.5 g/t Au and 20.6 g/t Ag.",
+          "Sol B Showing returned assays up to 2.4 g/t Au, 85.7 g/t Ag, 0.24% Cu, 1.95% Pb and 1.1% Zn.",
+          "The Sol B mineralization is interpreted as a possible northern extension of the Gillespie mineralized shear.",
+        ],
+      },
+      {
+        heading: "Location Map",
+        type: "SimpleImage",
+        image: "/images/projects/British-Columbia/McQuillan.png",
+        imageCaption:
+          "Mt. McQuillan Property location, 15 km SE of Port Alberni, BC.",
+      },
+    ],
+  },
+
+  {
+    id: "sub-005",
+    title: "Lightning Peak Property - British Columbia",
+    type: "subproject",
+    parentProjectId: "bc-005",
+    isForSale: true,
+    region: "British Columbia, Canada",
+    image: "/images/projects/British-Columbia/lightningPeak.png",
+    coordinates: [0, 0], // TODO: replace with actual lat/long
+    summary:
+      "746.77-hectare polymetallic silver-lead-zinc vein property comprising six documented BC MINFILE occurrences.",
+    quickFacts: [
+      { label: "Property", value: "Lightning Peak Property" },
+      { label: "Area", value: "746.77 hectares" },
+      { label: "Location", value: "British Columbia, Canada" },
+      { label: "Purchase Price", value: "CAD $80,000.00" },
+      { label: "Royalty", value: "2% NSR" },
+      { label: "Commodities", value: "Au, Ag, Pb, Zn, Cu" },
+    ],
+    tags: ["Gold", "Silver", "Lead", "Zinc", "Copper"],
+    sections: [
+      {
+        heading: "Overview",
+        type: "paragraph",
+        content:
+          "The Lightning Peak Property is a 746.77-hectare mineral claim package comprising six documented BC MINFILE occurrences. The property contains historic precious and base metal occurrences, recognized as a past-producing polymetallic silver-lead-zinc vein system. The package offers an attractive grassroots to advanced exploration opportunity with numerous historically identified mineralized structures that warrant modern exploration upside through modern geological mapping, geochemistry and drilling.",
+      },
+      {
+        heading: "High-Grade Silver Mineralization",
+        type: "bullet_list",
+        content: [
+          "6,600.6 g/t Ag over 0.9 metres (diamond drilling)",
+          "2,790 g/t Ag with 1.94% Pb and 3.82% Zn (grab sample)",
+          "1,482 g/t Ag with 1.81% Pb and 26.77% Zn (grab sample)",
+          "112.93 g/t Ag and 11.48% Zn over 0.7 metres true width (diamond drilling)",
+        ],
+      },
+      {
+        heading: "Historic Ore Shipment",
+        type: "paragraph",
+        content:
+          "In 1983, a shipment of 11 tonnes of crude ore reportedly averaged 2,101.6 g/t Silver, 0.05% Copper, 0.50% Lead and 1.10% Zinc.",
+      },
+      {
+        heading: "Favourable Geology",
+        type: "paragraph",
+        content:
+          "Mineralization is hosted in structurally controlled quartz-sulphide veins associated with regional shear zones, a proven setting for high-grade polymetallic deposits.",
+      },
+      {
+        heading: "Exploration & Mineralization",
+        type: "paragraph",
+        content:
+          "Historic exploration identified polymetallic quartz veins hosted within regional shear zones. Documented sulphide minerals include galena, sphalerite, chalcopyrite, pyrite, pyrrhotite and tetrahedrite together with silver-bearing minerals. Historic underground development and prospecting confirmed the presence of economically significant precious- and base-metal mineralization across multiple occurrences. Other documented showings demonstrate similar structurally controlled mineralization, indicating the potential for a district-scale vein system. Although historical prospecting, underground development and surface sampling confirmed mineralization, much of the property has not been systematically evaluated using modern exploration techniques.",
+      },
+      {
+        heading: "Historic Exploration Highlights",
+        type: "bullet_list",
+        content: [
+          "Underground development.",
+          "Multiple documented mineral occurrences across the property.",
+          "Historic prospecting, mapping and sampling.",
+          "Veins remain open along strike and at depth.",
+          "Limited modern exploration leaves substantial upside potential.",
+        ],
+      },
+      {
+        heading: "Property Outline",
+        type: "SimpleImage",
+        image: "/images/projects/British-Columbia/lightningPeak.png",
+        imageCaption: "Lightning Peak property outline",
+      },
+      {
+        heading: "Site Photos",
+        type: "ImageGallery",
+        images: [
+          {
+            src: "/images/projects/British-Columbia/rampaloAdit.png",
+            alt: "Rampalo adit",
+          },
+          {
+            src: "/images/projects/British-Columbia/SilverSpotadit.png",
+            alt: "Silver Spot adit",
+          },
+          {
+            src: "/images/projects/British-Columbia/Inside the Rampalo adit.png",
+            alt: "Inside the Rampalo adit",
+          },
+          {
+            src: "/images/projects/British-Columbia/Silver Spot Tailings.png",
+            alt: "Silver Spot tailings",
+          },
+          {
+            src: "/images/projects/British-Columbia/Silver Spot Tailings2.png",
+            alt: "Silver Spot Tailings",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "sub-006",
+    title: "Babs Property - British Columbia",
+    type: "subproject",
+    parentProjectId: "bc-005",
+    isForSale: true,
+    region: "British Columbia, Canada",
+    image: "/images/projects/British-Columbia/Babs_Map.jpg",
+    coordinates: [0, 0], // TODO: replace with actual lat/long (near Babine Lake, ~9 km from Granisle Mine)
+    summary:
+      "1,395.70-hectare porphyry copper-gold exploration property within the Babine Lake mining camp, 9 km from the former Granisle Mine.",
+    quickFacts: [
+      { label: "Property", value: "Babs Property" },
+      { label: "Area", value: "1,395.70 hectares" },
+      { label: "Location", value: "British Columbia, Canada" },
+      { label: "MINFILE", value: "093L 342" },
+      { label: "Purchase Price", value: "CAD $120,000.00" },
+      {
+        label: "Royalty",
+        value: "2% NSR (buyback of 1% for CAD $1,000,000.00)",
+      },
+      { label: "Commodities", value: "Cu, Au, Ag, Mo" },
+    ],
+    tags: ["Copper", "Gold", "Silver", "Molybdenum", "Porphyry"],
+    sections: [
+      {
+        heading: "Overview",
+        type: "paragraph",
+        content:
+          "The Babs Property is a mineral exploration opportunity located in British Columbia, Canada. The property consists of 6 mineral claims totaling approximately 1,395.70 hectares within a prospective geological environment associated with copper-gold mineralization. Historical exploration has identified geological features and mineral occurrences consistent with a copper-gold-silver exploration target. The property provides an opportunity for investors seeking exposure to a strategically positioned exploration asset with historical technical work and significant exploration upside.",
+      },
+      {
+        heading: "Acquisition Opportunity",
+        type: "bullet_list",
+        content: [
+          "Purchase Price: $120,000.00 CAD",
+          "Net Smelter Return (NSR): 2% NSR Royalty retained on future mineral production",
+          "NSR Buyback Provision: purchaser has the option to buy back 1% of the 2% NSR for $1,000,000.00 CAD",
+          "Upon exercise of the buyback option, the remaining royalty interest would be 1% NSR retained",
+        ],
+      },
+      {
+        heading: "Investment Highlights",
+        type: "bullet_list",
+        content: [
+          "1,395.70-hectare mineral claim package",
+          "British Columbia mining jurisdiction",
+          "Copper-gold-silver exploration opportunity",
+          "Historical exploration database",
+          "Existing geological information and targets",
+          "Low acquisition entry cost",
+          "Attractive royalty structure",
+          "Exploration upside with future discovery potential",
+        ],
+      },
+      {
+        heading: "Mineral Occurrence",
+        type: "paragraph",
+        content:
+          "The property is associated with the Babs mineral occurrence (MINFILE 093L 342), which is classified as a porphyry copper ± molybdenum ± gold exploration environment. The documented commodities include gold and copper.",
+      },
+      {
+        heading: "Historical High-Grade Sample Highlights",
+        type: "bullet_list",
+        content: [
+          "Sample 45224: 5.0 g/t Au (ICP-ES)",
+          "Sample 042456: 2.0 g/t Au (ICP-ES)",
+          "These results were obtained from mineralized intrusive rock samples containing approximately 1–2% pyrite with traces of chalcopyrite (2012 grab samples).",
+        ],
+      },
+      {
+        heading: "Geological Programs",
+        type: "bullet_list",
+        content: [
+          "Geological mapping",
+          "Prospecting",
+          "Rock sampling",
+          "Geological interpretation",
+          "Mineral occurrence evaluation",
+        ],
+      },
+      {
+        heading: "Geochemical Surveys",
+        type: "bullet_list",
+        content: [
+          "Soil geochemical surveys",
+          "Rock geochemistry",
+          "Follow-up sampling",
+          "These programs identified discrete geochemical anomalies requiring additional evaluation.",
+        ],
+      },
+      {
+        heading: "Geophysical Exploration",
+        type: "bullet_list",
+        content: [
+          "Magnetic anomalies",
+          "Intrusive bodies",
+          "Potential sulphide-bearing zones",
+          "These datasets provide a foundation for modern exploration targeting.",
+        ],
+      },
+      {
+        heading: "Prospecting & Sampling",
+        type: "paragraph",
+        content:
+          "In 2012, prospecting crews completed field investigations on the Babs claims, collecting samples from available bedrock exposures. Several samples were identified as altered intrusive rocks containing pyrite and chalcopyrite.",
+      },
+      {
+        heading: "Geological Opportunity",
+        type: "bullet_list",
+        content: [
+          "Intrusive rock units",
+          "Hydrothermal alteration zones",
+          "Copper sulphide occurrences",
+          "Historical geochemical anomalies",
+          "Exploration targets requiring additional evaluation",
+        ],
+      },
+      {
+        heading: "Exploration Potential",
+        type: "bullet_list",
+        content: [
+          "Compilation of historical exploration data",
+          "Updated geological interpretation",
+          "Detailed geophysical surveys",
+          "Soil and rock geochemistry",
+          "Drill target development",
+          "Diamond drilling programs",
+        ],
+      },
+      {
+        heading: "Investor Considerations",
+        type: "bullet_list",
+        content: [
+          "A defined land position",
+          "Existing technical history",
+          "A clear acquisition structure",
+          "Retained royalty participation",
+          "Potential for value creation through exploration success",
+        ],
+      },
+      {
+        heading: "Regional Geology & Setting",
+        type: "paragraph",
+        content:
+          "The Babs Mineral Claim is located within a highly prospective porphyry copper district of central British Columbia and is situated approximately 9 km from the former Granisle Mine and 17 km from the Bell Mine. The claim area lies within the broader Babine Lake mining camp, where several significant copper-gold porphyry systems occur. The regional geology is characterized by Jurassic Hazelton Group volcanic rocks intruded by Eocene Babine Plutonic Suite porphyries, which are associated with copper, gold, silver, and molybdenum mineralization. The close proximity of the Babs Mineral Claim to these past-producing deposits suggests that it occupies a favourable geological setting influenced by the same intrusive, structural, and hydrothermal processes responsible for mineralization at the Granisle and Bell deposits.",
+      },
+      {
+        heading: "Granisle Mine (Nearby Past Producer)",
+        type: "paragraph",
+        content:
+          "The Granisle Mine, located approximately 9 km from the Babs Mineral Claim on MacDonald Island in Babine Lake, is a past-producing porphyry copper-gold-silver-molybdenum deposit. The deposit is hosted by Jurassic Hazelton Group volcanic rocks intruded by Eocene Babine Plutonic Suite quartz diorite and biotite-feldspar porphyry bodies. Mineralization occurs as stockwork-style veining and disseminations, with chalcopyrite, bornite, pyrite, and molybdenite as the principal ore minerals. The deposit is associated with potassic, sericitic, and propylitic alteration zones, and mineralization is structurally controlled by northwest-trending faults and fractures. Mining operations from 1966 to 1982 produced significant quantities of copper, gold, silver, and molybdenum, confirming the economic potential of the Babine Lake porphyry district.",
+      },
+      {
+        heading: "Bell Mine (Nearby Past Producer)",
+        type: "paragraph",
+        content:
+          "The Bell Mine, located approximately 17 km from the Babs Mineral Claim on Newman Peninsula at the north end of Babine Lake, is another major past-producing porphyry copper deposit. The Bell deposit is hosted primarily by Eocene Babine Plutonic Suite biotite-feldspar porphyry intrusions that cut Jurassic Hazelton Group volcanic rocks and Cretaceous Skeena Group sedimentary rocks. Copper mineralization occurs mainly as disseminated and fracture-controlled chalcopyrite with lesser bornite, associated with quartz stockwork veining and hydrothermal alteration. The deposit also contains gold, silver, zinc, lead, and molybdenum values. Production began in 1972, and the Bell Mine processed approximately 71 million tonnes of ore, making it one of the significant copper producers within the Babine Lake porphyry camp.",
+      },
+      {
+        heading: "Property Location Map",
+        type: "SimpleImage",
+        image: "/images/projects/British-Columbia/Babs_Map.jpg",
+        imageCaption:
+          "Babs Property claim outline with MINFILE 093L 342 occurrence.",
+      },
+      {
+        heading: "Regional Context Map",
+        type: "SimpleImage",
+        image: "/images/projects/British-Columbia/Babs_Regional_Map.jpg",
+        imageCaption:
+          "Babs Property relative to the Bell and Granisle mines, Babine Lake.",
+      },
+    ],
+  },
+  {
+    id: "sub-007",
+    title: "The Polley Property - British Columbia",
+    type: "subproject",
+    parentProjectId: "bc-005",
+    isForSale: true,
+    region: "British Columbia, Canada",
+    image:
+      "https://i.cbc.ca/ais/1.4237116,1756424464000/full/max/0/default.jpg?im=Crop%2Crect%3D%280%2C172%2C3400%2C1912%29%3B",
+    coordinates: [52.531841, -121.582004],
+    summary:
+      "1,100.66-hectare alkalic porphyry copper-gold exploration property located in the same district as the producing Mount Polley Mine.",
+    quickFacts: [
+      { label: "Property", value: "The Polley Property" },
+      { label: "Area", value: "1,100.66 hectares" },
+      { label: "Location", value: "British Columbia, Canada" },
+      {
+        label: "Claims",
+        value: "Three mineral claims — Tenures 1101390, 1112234, 1121170",
+      },
+      {
+        label: "Deposit Model",
+        value: "Alkalic Porphyry Copper-Gold (Deposit Type L03)",
+      },
+      { label: "Purchase Price", value: "CAD $75,000.00 Cash" },
+      {
+        label: "Royalty",
+        value: "2% NSR (buyback of 1% for CAD $1,000,000.00, leaving 1% NSR)",
+      },
+      { label: "Commodities", value: "Cu, Au, Ag" },
+    ],
+    tags: ["Copper", "Gold", "Silver", "Porphyry"],
+    sections: [
+      {
+        heading: "Investment Highlights",
+        type: "bullet_list",
+        content: [
+          "Large Strategic Land Position — 1,100.66 hectares of mineral claims located within a proven copper-gold district of British Columbia.",
+          "Alkalic Porphyry Copper-Gold Target — the Property is interpreted as prospective for an alkalic porphyry Cu-Au system, a globally important deposit environment associated with large-scale copper and gold discoveries.",
+          "Immediate District-Scale Advantage — located in the same broader mineral district as the producing Mount Polley Mine, providing strategic geological context and proximity to established mining infrastructure.",
+        ],
+      },
+      {
+        heading: "Executive Summary",
+        type: "paragraph",
+        content:
+          "Prospectors Micheal Langille and Richard Young present The Polley Property, a high-potential copper-gold exploration opportunity positioned in one of British Columbia's recognized mineral belts. The Property consists of three mineral claims totaling 1,100.66 hectares and represents a strategic acquisition opportunity for a private mining company seeking exposure to copper-gold exploration upside in a mature mining jurisdiction. The geological setting is favourable for discovery, with the Property interpreted to share characteristics associated with alkalic porphyry copper-gold systems, including favourable intrusive environments, structural controls, magnetic responses, and geochemical signatures. The Property's proximity to the operating Mount Polley Mine provides a significant strategic advantage. Mount Polley is a producing copper-gold-silver operation and demonstrates the established mineral potential of the surrounding district.",
+      },
+      {
+        heading: "Why Buy The Polley Property Now",
+        type: "bullet_list",
+        content: [
+          "Copper-Gold Fundamentals — copper demand continues to be driven by electrification, infrastructure investment, and energy transition requirements. Quality copper-gold exploration assets in established jurisdictions are increasingly strategic acquisition targets. Offers exposure to copper discovery potential, gold exploration upside, BC mining infrastructure, and an established geological district.",
+          "Located Within a Proven Mining District — the Property is located in a region hosting significant copper-gold mineralization. The nearby Mount Polley Mine has historically produced copper, gold, and silver. An operating mine nearby provides geological validation of the district, existing regional exploration knowledge, nearby infrastructure, and potential future synergies.",
+          "Compelling Geological Model — targets an alkalic porphyry Cu-Au system, characterized by monzonitic intrusive rocks, monzodiorite, syenitic intrusions, and island arc geological settings. Expected mineral assemblages include chalcopyrite, bornite, magnetite, pyrite, and gold-bearing mineralization.",
+          "Untapped Exploration Upside — similar intrusive and volcanic geology to nearby deposits, comparable structural environment, magnetic anomalies, and geochemical indications. Much of the Property may have limited surface exposure due to glacial-derived cover, meaning modern exploration techniques may identify targets not previously exposed at surface.",
+        ],
+      },
+      {
+        heading: "Access & Infrastructure Advantage",
+        type: "bullet_list",
+        content: [
+          "Established access via the Likely Road corridor northeast of Williams Lake.",
+          "Year-round access",
+          "Nearby mining activity",
+          "Regional workforce",
+          "Existing exploration history",
+        ],
+      },
+      {
+        heading: "Alteration System",
+        type: "bullet_list",
+        content: [
+          "The Property is considered prospective based on alteration styles and geological features commonly associated with porphyry systems.",
+          "Potassic Alteration — associated minerals include biotite and potassium feldspar.",
+          "Calc-Silicate Alteration — these alteration zones can represent areas of strong hydrothermal activity and are often associated with copper-gold mineralization.",
+        ],
+      },
+      {
+        heading: "Structural and Exploration Indicators",
+        type: "bullet_list",
+        content: [
+          "Similar intrusive and volcanic rocks to nearby deposits",
+          "Regional structural similarities",
+          "Magnetic responses",
+          "Geochemical anomalies",
+          "Potential for concealed mineralization due to glacial-derived sediment cover masking bedrock exposure, creating exploration upside where modern geophysical and geochemical techniques may identify buried mineralized systems.",
+        ],
+      },
+      {
+        heading: "Strategic Acquisition Rationale",
+        type: "bullet_list",
+        content: [
+          "A large exploration land package",
+          "A copper-gold target in British Columbia",
+          "A property near an operating mine district",
+          "A proven geological environment",
+          "A low entry acquisition cost",
+          "Significant exploration leverage",
+          "The Property is classified as an alkalic porphyry Cu-Au exploration target (Deposit Type L03), a deposit style commonly associated with intrusive complexes formed in island arc geological environments and important globally as a source of copper and gold.",
+        ],
+      },
+      {
+        heading: "Property Location Map",
+        type: "SimpleImage",
+        image: "/images/projects/British-Columbia/Polley Property.jpg",
+        imageCaption:
+          "Polley North and Polley East claim blocks, located between Hydraulic and Likely, BC, near Polley Lake and the Mount Polley Mine.",
       },
     ],
   },

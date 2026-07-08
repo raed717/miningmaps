@@ -77,7 +77,7 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-4 mt-16 pt-8 border-t border-border flex flex-col gap-6 md:flex-row md:items-center md:justify-between text-[10px] uppercase tracking-widest text-muted-foreground/60">
-        <p>SYSTEM_STATUS: ONLINE</p>
+        <p>SYSTEM STATUS: ONLINE</p>
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
           {[
             {

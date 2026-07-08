@@ -16,9 +16,11 @@
   },
   "dependencies": {
     "@miningmaps/env": "*",
+    "@react-email/render": "^2.0.9",
     "react-intersection-observer": "^10.0.3",
     "react-is": "^19.2.4",
-    "zod": "^4.1.13"
+    "resend": "^6.16.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@miningmaps/config": "*",

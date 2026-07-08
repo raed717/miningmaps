@@ -8,10 +8,12 @@ import {
   Linkedin,
   Mail,
   Map,
+  PenLine,
   ShieldAlert,
   Terminal,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
+import ContactForm from "@/components/ContactForm";
 
 type ContactRoute = {
   id: string;
@@ -65,12 +67,14 @@ const contactRoutes = [
 
 export default function ContactPage() {
   return (
-    <div className={`relative min-h-screen w-full overflow-x-hidden bg-background text-foreground ${inter.className}`}>
+    <div
+      className={`relative min-h-screen w-full overflow-x-hidden bg-background text-foreground ${inter.className}`}
+    >
       <div
         className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] mix-blend-overlay"
         style={{
           backgroundImage:
-            'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
         }}
       />
 
@@ -101,9 +105,35 @@ export default function ContactPage() {
             transition={{ delay: 0.2 }}
             className={`mt-6 max-w-2xl text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
           >
-            Pick the contact path that matches what you need help with, and route your inquiry directly to the right place.
+            Pick the contact path that matches what you need help with, and
+            route your inquiry directly to the right place.
           </motion.p>
         </div>
+
+        {/* Contact Form */}
+        {/* <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="mt-16 border border-border bg-card/70 backdrop-blur-sm"
+        >
+          <div className="border-b border-border px-5 py-4 md:px-8">
+            <div
+              className={`flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
+            >
+              <PenLine className="h-4 w-4" /> SEND INQUIRY
+            </div>
+            <p
+              className={`mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}
+            >
+              Use the form below and we&rsquo;ll route your message to the right
+              person.
+            </p>
+          </div>
+          <div className="px-5 py-6 md:px-8 md:py-8">
+            <ContactForm />
+          </div>
+        </motion.div> */}
 
         <div className="border border-border bg-card/70 backdrop-blur-sm">
           <div className="grid gap-px bg-border">
@@ -125,7 +155,9 @@ export default function ContactPage() {
                     <div className="flex h-14 w-14 items-center justify-center border border-primary/30 bg-primary/10 text-primary transition-colors group-hover:border-primary group-hover:bg-primary group-hover:text-black">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground md:mt-4 ${mono.className}`}>
+                    <div
+                      className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground md:mt-4 ${mono.className}`}
+                    >
                       {route.id}
                     </div>
                   </div>
@@ -134,13 +166,17 @@ export default function ContactPage() {
                     <h2 className="text-2xl font-extrabold uppercase tracking-tight text-white">
                       {route.title}
                     </h2>
-                    <div className={`mt-3 text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+                    <div
+                      className={`mt-3 text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}
+                    >
                       Best for
                     </div>
                   </div>
 
                   <div>
-                    <p className={`text-xs uppercase tracking-[0.16em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}>
+                    <p
+                      className={`text-xs uppercase tracking-[0.16em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
+                    >
                       {route.description}
                     </p>
                     <div className="mt-4 inline-flex max-w-full items-center gap-2 border border-border bg-card px-3 py-2 text-sm text-white transition-colors group-hover:border-primary">
@@ -167,12 +203,18 @@ export default function ContactPage() {
           className="mt-12 grid gap-4 border-t border-border pt-8 md:grid-cols-[auto_1fr]"
         >
           <ShieldAlert className="h-5 w-5 shrink-0 text-primary" />
-          <div className={`space-y-3 text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground ${mono.className}`}>
+          <div
+            className={`space-y-3 text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground ${mono.className}`}
+          >
             <p>
-              Response time is typically within 24-48 hours. For urgent field operations or immediate staking requirements, include `URGENT` in the subject line.
+              Response time is typically within 24-48 hours. For urgent field
+              operations or immediate staking requirements, include `URGENT` in
+              the subject line.
             </p>
             <p>
-              For mining property opportunities use the mining properties route first. For GIS, land management, tenure, or permitting support use the land services route.
+              For mining property opportunities use the mining properties route
+              first. For GIS, land management, tenure, or permitting support use
+              the land services route.
             </p>
           </div>
         </motion.div>
@@ -183,7 +225,9 @@ export default function ContactPage() {
           transition={{ delay: 0.6 }}
           className="mt-10 border border-border bg-card/70 p-5 md:p-6"
         >
-          <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+          <div
+            className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}
+          >
             Please Provide
           </div>
           <div className="mt-4 grid gap-px border border-border bg-border">

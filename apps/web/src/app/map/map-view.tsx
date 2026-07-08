@@ -111,7 +111,7 @@ export default function MapView() {
             </button>
           </div>
           <div className={`text-primary font-bold tracking-[0.2em] text-[10px] mb-2 flex items-center gap-2 ${mono.className}`}>
-            <Database className="h-3 w-3" /> MAP_DATABASE
+            <Database className="h-3 w-3" /> MAP DATABASE
           </div>
           <h2 className="text-3xl font-extrabold uppercase tracking-tighter leading-none">
             Global<br/>Telemetry
@@ -347,7 +347,7 @@ export default function MapView() {
               <div className={`flex justify-between items-center p-4 border-b border-border bg-background ${mono.className} text-[10px] tracking-widest uppercase`}>
                 <span className="text-primary font-bold flex items-center gap-2">
                   <Activity className="h-3 w-3 animate-pulse" />
-                  TARGET_LOCKED
+                  TARGET LOCKED
                 </span>
                 <button
                   onClick={() => setSelectedSiteId(null)}
@@ -402,7 +402,7 @@ export default function MapView() {
                   href={`/projects/${selectedSite.id}`}
                   className={`mt-5 md:mt-8 flex w-full items-center justify-between border border-primary bg-transparent hover:bg-primary hover:text-black text-primary p-4 text-[10px] font-bold uppercase tracking-widest transition-all ${mono.className} group`}
                 >
-                  <span>ACCESS_FULL_DOSSIER</span>
+                  <span>ACCESS FULL DOSSIER</span>
                   <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
