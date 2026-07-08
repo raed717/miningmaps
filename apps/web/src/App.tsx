@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/next";
 
 const HomePage = dynamic(() => import("@/views/home-page"));
 const AboutPage = dynamic(() => import("@/views/about-page"));
@@ -97,6 +98,7 @@ export default function App() {
   return (
     <div className="grid min-h-svh grid-rows-[auto_1fr]">
       <Header />
+      <Analytics />
       <div className="h-full min-h-0 flex flex-col">{content}</div>
       <Toaster richColors />
     </div>
