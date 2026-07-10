@@ -2,6 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://miningpropertymaps.com"),
   title: "Adamson Geomatics | Chris Adamson, R.I.",
   description:
     "Professional land and geospatial services in British Columbia. GIS mapping, mineral claim staking, LiDAR, digital elevation models, geological modelling, land valuations, and legal dispute support.",
