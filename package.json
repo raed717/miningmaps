@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@miningmaps/config": "*",
+    "next-sitemap": "^4.2.3",
     "turbo": "^2.6.3",
     "typescript": "^5"
   },
