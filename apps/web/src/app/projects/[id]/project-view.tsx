@@ -44,6 +44,10 @@ export default function ProjectDetails({
   const [showFloatingBack, setShowFloatingBack] = useState(false);
   const project = projects.find((p) => p.id === projectId);
 
+  const subProjects = (project?.subProjectIds || [])
+    .map((subId) => projects.find((p) => p.id === subId))
+    .filter((sub): sub is typeof projects[number] => !!sub);
+
   if (!project) {
     return (
       <div className="flex h-full items-center justify-center">
@@ -124,7 +128,79 @@ export default function ProjectDetails({
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-12">
+          <div className="w-full min-w-0 lg:col-span-2 space-y-12">
+            {subProjects.length > 0 && (
+              <motion.section
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="space-y-6"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <TrendingUp className="h-5 w-5" />
+                  </div>
+                  <h2 className="text-2xl font-bold uppercase tracking-tight">Client Projects</h2>
+                </div>
+
+                <div className="w-full min-w-0 overflow-hidden rounded-xl border border-border/50 bg-card p-6 relative z-10">
+                  <Carousel
+                    opts={{
+                      align: "start",
+                      loop: subProjects.length > 2,
+                    }}
+                    plugins={[
+                      Autoplay({
+                        delay: 5000,
+                      }),
+                    ]}
+                    className="w-full"
+                  >
+                    <CarouselContent className="-ml-4">
+                      {subProjects.map((sub) => (
+                        <CarouselItem key={sub.id} className="pl-4 basis-full sm:basis-1/2">
+                          <Link
+                            href={`/projects/${sub.id}`}
+                            className="group relative flex flex-col h-48 overflow-hidden rounded-lg border border-border/40 bg-background/50 hover:border-primary/50 transition-colors duration-300"
+                          >
+                            {/* Card Image Background */}
+                            <div className="absolute inset-0 bg-black">
+                              <img
+                                src={sub.image}
+                                alt={sub.title}
+                                className="w-full h-full object-cover opacity-30 group-hover:scale-105 group-hover:opacity-40 transition-all duration-500"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent" />
+                            </div>
+
+                            {/* Card Content */}
+                            <div className="relative z-10 flex flex-col h-full p-4 justify-end">
+                              <div className="text-[9px] font-bold tracking-widest text-primary uppercase mb-1 flex items-center gap-1">
+                                <MapPin className="h-2.5 w-2.5" />
+                                {sub.region.split(",")[0] || sub.region}
+                              </div>
+                              <h3 className="text-base font-bold uppercase tracking-tight text-white line-clamp-2 leading-tight group-hover:text-primary transition-colors">
+                                {sub.title}
+                              </h3>
+                              <p className="text-xs text-muted-foreground line-clamp-1 mt-1 font-mono uppercase tracking-wider">
+                                {sub.summary}
+                              </p>
+                            </div>
+                          </Link>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    {subProjects.length > 2 && (
+                      <>
+                        <CarouselPrevious className="-left-3 h-8 w-8 rounded-md border border-border bg-card hover:bg-primary hover:text-black transition-colors" />
+                        <CarouselNext className="-right-3 h-8 w-8 rounded-md border border-border bg-card hover:bg-primary hover:text-black transition-colors" />
+                      </>
+                    )}
+                  </Carousel>
+                </div>
+              </motion.section>
+            )}
+
             {project.sections.map((section, index) => (
               <motion.section
                 key={index}

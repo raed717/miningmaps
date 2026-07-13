@@ -356,7 +356,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     ],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/b/b7/City_of_Kamloops.jpg",
-    coordinates: [51.508691, -120.272788],
+    coordinates: [54.901851, -125.133194],
     isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
@@ -1927,7 +1927,7 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
     isForSale: true,
     region: "British Columbia, Canada",
     image: "/images/projects/British-Columbia/lightningPeak.png",
-    coordinates: [0, 0], // TODO: replace with actual lat/long
+    coordinates: [50.08, -118.61], // TODO: replace with actual lat/long
     summary:
       "746.77-hectare polymetallic silver-lead-zinc vein property comprising six documented BC MINFILE occurrences.",
     quickFacts: [
@@ -2027,7 +2027,7 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
     isForSale: true,
     region: "British Columbia, Canada",
     image: "/images/projects/British-Columbia/Babs_Map.jpg",
-    coordinates: [0, 0], // TODO: replace with actual lat/long (near Babine Lake, ~9 km from Granisle Mine)
+    coordinates: [54.91, -125.06], // TODO: replace with actual lat/long (near Babine Lake, ~9 km from Granisle Mine)
     summary:
       "1,395.70-hectare porphyry copper-gold exploration property within the Babine Lake mining camp, 9 km from the former Granisle Mine.",
     quickFacts: [
@@ -2302,6 +2302,176 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         image: "/images/projects/British-Columbia/Polley Property.jpg",
         imageCaption:
           "Polley North and Polley East claim blocks, located between Hydraulic and Likely, BC, near Polley Lake and the Mount Polley Mine.",
+      },
+    ],
+  },
+  {
+    id: "ak-002",
+    title: "Tripple Creek Gold Mine - Nome, Alaska",
+    type: "project",
+    isForSale: true,
+    region: "Alaska, USA",
+    image:
+      "https://fayranches.com/wp-content/uploads/2025/09/alaska-gold-mine-for-sale-tripple-creek-gold-mine.jpg",
+    coordinates: [64.52133, -165.2613], // approximate — Nome, AK area; refine with exact claim location if available
+    summary:
+      "Turnkey patented placer gold mine six miles from Nome, Alaska, with active gold and aggregate production and post-mining subdivision upside.",
+    quickFacts: [
+      { label: "Property", value: "Tripple Creek Gold Mine" },
+      { label: "Location", value: "Nome, Alaska, USA" },
+      { label: "Area", value: "750± acres" },
+      { label: "Asking Price", value: "USD $11,000,000" },
+      {
+        label: "Claim Type",
+        value: "Patented claims (3 recorded, incl. one for antimony)",
+      },
+      {
+        label: "Commodities",
+        value: "Au (placer gold), sand & gravel aggregate",
+      },
+    ],
+    tags: ["Gold", "Placer", "Aggregate", "Alaska"],
+    sections: [
+      {
+        heading: "Property Overview",
+        type: "paragraph",
+        image:
+          "https://fayranches.com/wp-content/uploads/2025/09/alaska-land-for-sale-tripple-creek-gold-mine.jpg",
+        content:
+          "Tripple Creek Gold Mine offers a compelling multi-revenue investment just six miles from Nome, Alaska. The 750± acre patented operation produces coarse, high-purity gold alongside premium sand and gravel aggregate in strong local demand, while post-mining land subdivision has historically sold at $17,500 to $50,000 per acre. With highway access, city power, air freight connections to Anchorage, and equipment resources readily available in Nome, this turnkey mine is primed for continued production and long-term returns.",
+      },
+      {
+        heading: "Property Facts",
+        type: "bullet_list",
+        content: [
+          "750± acres of patented claims located within 6 miles of the city of Nome",
+          "Great access from Nome via Nome-Council Road and Nome-Taylor Highway (Beam Road); both are maintained highways",
+          "The placer gold deposit is composed of 20 to 25 feet of weakly gold-bearing glacial outwash overburden, burying 20 feet of gold-bearing alluvial gravel and marine sands that make up the pay section",
+          "The gold is coarse, 91.5% pure, and easy to recover due to minimal clay and sparse black sands",
+          "Ground conditions are excellent due to easily drained sediment overlying carbonate (marble) bedrock with solution cavities (karst); permafrost is absent to discontinuous",
+          "The sand and gravel aggregate by-product is salable and may be the highest quality aggregate in the Nome area for concrete, bedding, and road/pad construction",
+          "Lands with low mineral potential or post-mining can be subdivided for lot sales, currently selling for $17,500 to $50,000 per acre; on-site gravel is available for building roads and pads",
+          "City power is available from the main intertie along Beam Road",
+          "Anchorage is a 1 hour-20± minute flight from Nome, two flights per day; several air freight companies have regularly scheduled flights from Anchorage to Nome",
+          "Three commercial barging companies and several contracting companies offer barge services from Seattle or Anchorage to Nome for heavy equipment and freight",
+          "Heavy equipment rentals available from two local contracting companies",
+        ],
+      },
+      {
+        heading: "Gold & Production Details",
+        type: "paragraph",
+        content:
+          "The creek originates near Newton Peak and flows across the Nome coastal plain and Nome River floodplain, areas historically mined for gold. Mining in the modern era commenced in ~1997 and has been more or less continuous to the present, with the current operator mining gold and aggregate here since 2015. The gold is coarse and lustrous, with little staining and mostly rounded discoidal shapes; the largest nugget recovered by the current operation is 1.1 ounces. Placer mine tailings extend over 3,000 feet along the creek at elevations between 50 and 150 feet.",
+      },
+      {
+        heading: "Site & Equipment Photos",
+        type: "ImageGallery",
+        images: [
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/gold-production-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Gold production",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/panned-gold-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Panned gold",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/large-excavator-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Large excavator",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/paydirt-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Paydirt",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/mine-site-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Mine site",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/secondary-loader-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Secondary loader",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/overburden-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Overburden",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/pump-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Pump",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/sluicing-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Sluicing",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/summary-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Summary",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/connex-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Connex storage",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/excavator-dozer-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Excavator and dozer",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/containers-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Containers",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/gold-loader-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Gold loader",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/conveyor-alaska-tripple-creek-gold-mne.jpg",
+            alt: "Conveyor",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/dozer-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Dozer",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/cover-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Cover image",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/excavator-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Excavator",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/muskoxen-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Muskoxen near the property",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/lake-in-nome-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Lake in Nome",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/crane-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Crane",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/aerial-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Aerial view",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/gold-investment-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Gold investment",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/mine-camp-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Mine camp",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/forklift-alaska-tripple-creek-gold-mine.jpg",
+            alt: "Forklift",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2025/09/gold-mine-tripple-creek-gold-mine.jpg",
+            alt: "Gold mine",
+          },
+        ],
       },
     ],
   },

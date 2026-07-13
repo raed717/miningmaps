@@ -178,10 +178,14 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <Link
-                  href={`/projects/${project.id}`}
+                <div
                   className="group relative block h-full overflow-hidden border border-accent bg-card transition-colors duration-500 hover:border-primary"
                 >
+                  <Link
+                    href={`/projects/${project.id}`}
+                    aria-label={`View details for ${project.title}`}
+                    className="absolute inset-0 z-10"
+                  />
                   <div className="absolute top-0 right-0 p-3 opacity-10 transition-opacity group-hover:opacity-30">
                     <Cpu className="h-24 w-24" />
                   </div>
@@ -234,7 +238,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
 
                     {project.subProjectIds &&
                       project.subProjectIds.length > 0 && (
-                        <div className="mb-6 border-l-2 border-primary/30 pl-4">
+                        <div className="relative z-20 mb-6 border-l-2 border-primary/30 pl-4">
                           <span
                             className={`mb-2 block text-[9px] uppercase tracking-[0.2em] text-primary ${mono.className}`}
                           >
@@ -246,19 +250,15 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                               if (!sub) return null;
                               return (
                                 <li key={subId}>
-                                  <button
-                                    type="button"
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      router.push(`/projects/${subId}`);
-                                    }}
+                                  <Link
+                                    href={`/projects/${subId}`}
                                     className="group/sub flex w-full items-center gap-2 text-left text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
                                   >
                                     <span className="text-primary/40 transition-colors group-hover/sub:text-primary">
                                       &rsaquo;
                                     </span>
                                     {sub.title}
-                                  </button>
+                                  </Link>
                                 </li>
                               );
                             })}
@@ -289,7 +289,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>
