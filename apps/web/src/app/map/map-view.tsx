@@ -58,17 +58,62 @@ function MapFlyTo({ coordinates }: { coordinates: [number, number] | null }) {
   return null;
 }
 
+const getTagColor = (filter: string | null): string | null => {
+  if (!filter) return null;
+  switch (filter.toLowerCase()) {
+    case "gold":
+      return "#FFD700"; // Metallic Gold
+    case "silver":
+      return "#C0C0C0"; // Metallic Silver
+    case "copper":
+      return "#B87333"; // Copper Bronze
+    case "platinum":
+      return "#E2E8F0"; // Platinum White
+    case "cobalt":
+      return "#00BFFF"; // Cobalt Blue
+    case "nickel":
+      return "#00FF7F"; // Nickel Green
+    case "uranium":
+      return "#39FF14"; // Uranium Neon Lime
+    case "lithium":
+      return "#FF007F"; // Lithium Hot Pink
+    default:
+      return "#FFD700";
+  }
+};
+
 export default function MapView() {
   const [selectedSiteId, setSelectedSiteId] = useState<string | null>(null);
   const [flyToCoords, setFlyToCoords] = useState<[number, number] | null>(null);
   const [showOnlyForSale, setShowOnlyForSale] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+
+  const staticTags = [
+    "Gold",
+    "Silver",
+    "Copper",
+    "Platinum",
+    "Cobalt",
+    "Nickel",
+    "Uranium",
+    "Lithium",
+  ];
+
+  const filterColor = getTagColor(activeFilter);
 
   const selectedSite = projects.find((p) => p.id === selectedSiteId);
 
-  const visibleProjects = projects.filter(
-    (site) => site.type !== "subproject" && (!showOnlyForSale || site.isForSale)
-  );
+  const visibleProjects = projects.filter((site) => {
+    if (site.type === "subproject") return false;
+
+    const matchesSale = showOnlyForSale ? site.isForSale : true;
+    const matchesFilter = activeFilter
+      ? site.tags?.some((t) => t.toLowerCase() === activeFilter.toLowerCase())
+      : true;
+
+    return matchesSale && matchesFilter;
+  });
 
   return (
     <div
@@ -119,7 +164,7 @@ export default function MapView() {
         </div>
 
         {/* Filters */}
-        <div className="p-6 border-b border-border">
+        <div className="p-6 border-b border-border flex flex-col gap-3">
           <label className="flex cursor-pointer items-center justify-between group">
             <div className="flex items-center gap-3">
               <Filter className={`h-4 w-4 ${showOnlyForSale ? "text-secondary" : "text-[#555]"}`} />
@@ -137,6 +182,27 @@ export default function MapView() {
               <div className={`h-3 w-3 bg-white transition-transform ${showOnlyForSale ? "translate-x-5 bg-secondary" : "translate-x-0 bg-[#555]"}`} />
             </div>
           </label>
+
+          {activeFilter && (
+            <div
+              className={`flex items-center justify-between border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] ${mono.className}`}
+              style={{
+                borderColor: filterColor || "#FFD700",
+                backgroundColor: `${filterColor || "#FFD700"}20`,
+                color: filterColor || "#FFD700",
+              }}
+            >
+              <span>FILTER: {activeFilter}</span>
+              <button
+                type="button"
+                onClick={() => setActiveFilter(null)}
+                className="hover:opacity-80 transition-opacity p-0.5"
+                title="Clear tag filter"
+              >
+                <X className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Project List */}
@@ -262,13 +328,19 @@ export default function MapView() {
 
           {visibleProjects.map((project) => {
             const isSelected = selectedSiteId === project.id;
-            const color = project.isForSale ? "#00FF41" : (isSelected ? "#FF3300" : "#888888");
-            
+            const color = filterColor
+              ? filterColor
+              : project.isForSale
+              ? "#00FF41"
+              : isSelected
+              ? "#FF3300"
+              : "#888888";
+
             return (
               <Marker
                 key={project.id}
                 position={project.coordinates}
-                icon={createCustomIcon(color, project.isForSale || isSelected)}
+                icon={createCustomIcon(color, project.isForSale || isSelected || Boolean(activeFilter))}
                 eventHandlers={{
                   click: () => {
                     setSelectedSiteId(project.id);
@@ -277,7 +349,10 @@ export default function MapView() {
                 }}
               >
                 <Popup className="mining-popup" closeButton={false}>
-                  <div className={`font-sans bg-card border border-[${color}] p-1 uppercase tracking-widest ${mono.className}`}>
+                  <div
+                    className={`font-sans bg-card border p-1 uppercase tracking-widest ${mono.className}`}
+                    style={{ borderColor: color }}
+                  >
                     <div className="font-bold text-white text-[10px] border-b border-border pb-1 mb-1">{project.title}</div>
                     <div className="text-[9px] text-muted-foreground">
                       {project.coordinates[0].toFixed(2)}, {project.coordinates[1].toFixed(2)}
@@ -285,21 +360,27 @@ export default function MapView() {
                   </div>
                 </Popup>
               </Marker>
-            )
+            );
           })}
 
           {visibleProjects.map((project) => {
-            const subs = (project.subProjectIds ?? []).map((id) =>
-              projects.find((p) => p.id === id)
-            ).filter(Boolean) as typeof projects;
+            const subs = (project.subProjectIds ?? [])
+              .map((id) => projects.find((p) => p.id === id))
+              .filter(Boolean) as typeof projects;
             return subs.map((sub) => {
               const subSelected = selectedSiteId === project.id;
-              const subColor = sub.isForSale ? "#00FF41" : (subSelected ? "#FF3300" : "#888888");
+              const subColor = filterColor
+                ? filterColor
+                : sub.isForSale
+                ? "#00FF41"
+                : subSelected
+                ? "#FF3300"
+                : "#888888";
               return (
                 <Marker
                   key={`${project.id}-sub-${sub.id}`}
                   position={sub.coordinates}
-                  icon={createCustomIcon(subColor, sub.isForSale || subSelected)}
+                  icon={createCustomIcon(subColor, sub.isForSale || subSelected || Boolean(activeFilter))}
                   eventHandlers={{
                     click: () => {
                       setSelectedSiteId(project.id);
@@ -308,7 +389,10 @@ export default function MapView() {
                   }}
                 >
                   <Popup className="mining-popup" closeButton={false}>
-                    <div className={`font-sans bg-card border border-[${subColor}] p-1 uppercase tracking-widest ${mono.className}`}>
+                    <div
+                      className={`font-sans bg-card border p-1 uppercase tracking-widest ${mono.className}`}
+                      style={{ borderColor: subColor }}
+                    >
                       <div className="font-bold text-white text-[10px] border-b border-border pb-1 mb-1">{sub.title}</div>
                       {sub.isForSale && (
                         <div className="text-secondary text-[8px] border border-secondary bg-secondary/10 px-1 mb-1 inline-block">SALE</div>
@@ -319,19 +403,73 @@ export default function MapView() {
                     </div>
                   </Popup>
                 </Marker>
-              )
-            })
+              );
+            });
           })}
 
         </MapContainer>
 
-        {/* Global styling for Leaflet elements */}
+        {/* Global styling for Leaflet elements & scrollbars */}
         <style>{`
           .leaflet-container { background: #060608 !important; }
           .leaflet-popup-content-wrapper { background: transparent; border: none; box-shadow: none; border-radius: 0; padding: 0; }
           .leaflet-popup-tip-container { display: none; }
           .mining-popup .leaflet-popup-content { margin: 0; }
+          .no-scrollbar::-webkit-scrollbar { display: none; }
+          .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         `}</style>
+
+        {/* Horizontal Bottom Tag Filter Bar */}
+        <div className="pointer-events-none absolute bottom-4 left-1/2 z-1000 flex -translate-x-1/2 justify-center w-[calc(100%-2rem)] max-w-4xl">
+          <div className="pointer-events-auto flex items-center gap-1.5 border border-border bg-card/90 p-2 shadow-[0_0_30px_rgba(0,0,0,0.85)] backdrop-blur-md overflow-x-auto no-scrollbar w-full">
+            <div
+              className={`flex items-center gap-1.5 px-2 text-[10px] font-bold uppercase tracking-[0.2em] text-primary shrink-0 ${mono.className}`}
+            >
+              <Filter className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">TAGS</span>
+            </div>
+            <div className="h-4 w-px bg-border shrink-0" />
+            <button
+              type="button"
+              onClick={() => setActiveFilter(null)}
+              className={`shrink-0 border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] transition-all ${mono.className} ${
+                activeFilter === null
+                  ? "border-primary bg-primary text-black"
+                  : "border-border bg-background/70 text-muted-foreground hover:border-primary hover:text-primary"
+              }`}
+            >
+              ALL
+            </button>
+            {staticTags.map((tag) => {
+              const isActive = activeFilter?.toLowerCase() === tag.toLowerCase();
+              const tagColor = getTagColor(tag);
+              return (
+                <button
+                  key={tag}
+                  type="button"
+                  onClick={() => setActiveFilter(isActive ? null : tag)}
+                  style={
+                    isActive && tagColor
+                      ? {
+                          backgroundColor: tagColor,
+                          borderColor: tagColor,
+                          color: "#000000",
+                          boxShadow: `0 0 12px ${tagColor}`,
+                        }
+                      : {}
+                  }
+                  className={`shrink-0 border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] transition-all ${mono.className} ${
+                    isActive
+                      ? "font-extrabold"
+                      : "border-border bg-background/70 text-muted-foreground hover:border-secondary hover:text-secondary"
+                  }`}
+                >
+                  {tag}
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
         {/* Right Info Panel Overlay - Brutalist Dossier */}
         <AnimatePresence>

@@ -368,6 +368,16 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     ],
     sections: [
       {
+        heading: "Residential Real Estate – British Columbia",
+        type: "bullet_list",
+        content: [
+          "Looking to buy a house, condo, or townhome in British Columbia?",
+          "Contact Adamson Geomatics to be connected with our trusted residential real estate partner broker.",
+          "Buyers referred through us who successfully complete their property purchase with our partner broker may qualify for a bonus rebate payment.",
+          "Contact us for more information.",
+        ],
+      },
+      {
         heading:
           "Little Fort Polymetallic Claim #1106809 Little Fort, B.C - 1 hr drive north of Kamloops. B.C",
         type: "SimpleImage",

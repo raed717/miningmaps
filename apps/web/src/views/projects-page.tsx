@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { projects } from "@/lib/projectData";
+import { PartnerNoticeRotator } from "@/components/partner-notice-rotator";
 
 type ProjectsPageProps = {
   showOnlyForSale?: boolean;
@@ -100,13 +101,15 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
               </Link>
             </div>
-            <div
-              className={`max-w-md text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
-            >
-              {showOnlyForSale
-                ? "Live acquisition-ready mineral properties filtered from the wider Adamson Geomatics project archive."
-                : "Exploring a selection of mapping projects, right-of-way planning, and mineral exploration intel extracted by Adamson Geomatics."}
-            </div>
+            {showOnlyForSale ? (
+              <div
+                className={`max-w-md border border-primary/30 bg-card/80 p-4 backdrop-blur-sm text-xs uppercase tracking-[0.18em] leading-relaxed text-zinc-100 md:text-sm ${mono.className}`}
+              >
+                Live acquisition-ready mineral properties filtered from the wider Adamson Geomatics project archive.
+              </div>
+            ) : (
+              <PartnerNoticeRotator />
+            )}
           </div>
         </header>
 
@@ -178,9 +181,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
               >
-                <div
-                  className="group relative block h-full overflow-hidden border border-accent bg-card transition-colors duration-500 hover:border-primary"
-                >
+                <div className="group relative block h-full overflow-hidden border border-accent bg-card transition-colors duration-500 hover:border-primary">
                   <Link
                     href={`/projects/${project.id}`}
                     aria-label={`View details for ${project.title}`}

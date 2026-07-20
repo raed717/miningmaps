@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { mono } from "@/lib/fonts";
 import { projects } from "@/lib/projectData";
+import { PartnerNoticeRotator } from "@/components/partner-notice-rotator";
 
 const previewProjects = projects.slice(0, 10).map((project) => ({
   ...project,
@@ -139,6 +140,8 @@ export function ProjectPreviewCarouselSection() {
               A fast scan of active regions, available properties, and featured
               cartography before you open each full dossier.
             </p>
+
+            <PartnerNoticeRotator className="mt-6" />
 
             <div className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-3">
               {[

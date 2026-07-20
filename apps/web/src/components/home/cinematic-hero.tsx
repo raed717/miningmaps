@@ -164,6 +164,7 @@ export function CinematicHero() {
                   "Lidar / DEM",
                   "Prospecting",
                   "Permitting",
+                  "zoning applications / subdivisons",
                 ].map((item) => (
                   <div key={item} className="bg-black/70 px-4 py-5 text-center">
                     <div className="text-sm md:text-base font-mono uppercase tracking-[0.2em] text-stone-300">

@@ -20,6 +20,9 @@ const serviceOptions = [
   "Digital Elevation Models (DEM)",
   "Crown Grant / Land Title Research",
   "Tax Appeals",
+  "Property Listing - Commission Basis ($0 Upfront)",
+  "Property Listing - $100/mo Subscription (1st Month Free)",
+  "Company Membership - $150/mo Subscription (1st Month Free)",
   "Other / General",
 ];
 
