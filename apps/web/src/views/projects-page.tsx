@@ -31,12 +31,30 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
   const filteredProjects = projects.filter((project) => {
     if (project.type === "subproject") return false;
 
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.region.toLowerCase().includes(searchQuery.toLowerCase());
+    const query = searchQuery.toLowerCase();
 
-    const matchesFilter = activeFilter ? project.tags?.includes(activeFilter) : true;
+    // Collect subprojects for this parent
+    const subs = (project.subProjectIds || [])
+      .map((id) => projects.find((p) => p.id === id))
+      .filter(Boolean);
+
+    const matchesSearch =
+      project.title.toLowerCase().includes(query) ||
+      project.summary.toLowerCase().includes(query) ||
+      project.region.toLowerCase().includes(query) ||
+      (project.tags || []).some((t) => t.toLowerCase().includes(query)) ||
+      subs.some(
+        (sub) =>
+          sub!.title.toLowerCase().includes(query) ||
+          sub!.summary.toLowerCase().includes(query) ||
+          sub!.region.toLowerCase().includes(query) ||
+          (sub!.tags || []).some((t) => t.toLowerCase().includes(query))
+      );
+
+    const matchesFilter = activeFilter
+      ? project.tags?.includes(activeFilter) ||
+        subs.some((sub) => sub!.tags?.includes(activeFilter))
+      : true;
     const matchesSaleState = showOnlyForSale ? project.isForSale : true;
 
     return matchesSearch && matchesFilter && matchesSaleState;

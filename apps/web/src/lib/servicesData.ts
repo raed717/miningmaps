@@ -109,6 +109,7 @@ export const serviceModules: ServiceModule[] = [
       "Photogrammetry",
       "Aerial photo sourcing and analysis",
       "Terrain modelling for exploration projects",
+      "Virtual Tours (Panoramic Drone Photography) - client partner",
     ],
     deliverables: [
       "Surface models and contours",

@@ -372,23 +372,13 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Copper", "Zinc", "Gold"],
+    tags: ["Gold", "Copper", "Silver", "Placer", "GIS", "Land Management"],
     quickFacts: [
-      { label: "Size", value: "362 Hectares" },
-      { label: "Commodities", value: "Cu, Zn, Au" },
-      { label: "Tenure", value: "Claim #1106809" },
+      { label: "Properties", value: "Multiple" },
+      { label: "Commodities", value: "Au, Cu, Ag, Pb, Zn" },
+      { label: "Services", value: "GIS, Land Management, Mapping" },
     ],
     sections: [
-      {
-        heading: "360° Site Panorama",
-        type: "kuulaFrame",
-        kuulaFrame: {
-          src: "https://kuula.co/share/LZv7Y/collection/7TDcn?logo=1&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1&alpha=0.91",
-          width: 800,
-          height: 600,
-          allowFullScreen: true,
-        },
-      },
       {
         heading: "Residential Real Estate – British Columbia",
         type: "bullet_list",
@@ -400,50 +390,15 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         ],
       },
       {
-        heading:
-          "Little Fort Polymetallic Claim #1106809 Little Fort, B.C - 1 hr drive north of Kamloops. B.C",
-        type: "SimpleImage",
-        image: "/images/projects/British-Columbia/1.jpg",
-        imageCaption: "",
-        links: [
-          {
-            textPreview: "#1106809",
-            description:
-              "View mineral tenure details on Mineral Titles Online BC",
-            url: "https://www.mtonline.gov.bc.ca/mtov/tenureDetailExecute.action?tenureNumberIDParam=1106809",
-          },
-        ],
-      },
-      {
-        heading:
-          "My own claim that I own myself is highly prospective and is for sale. Attached is a PowerPoint report on it (also uploaded here)",
-        type: "bullet_list",
-        content: [
-          "Little Fort Polymetallic claim # 1106809 (good to Oct 15, 2026)362 hectares",
-          "362 hectares",
-          "“Excellent VMS Potential” according to prospector who found prospect on claim (Robert Bourdon with Ministry of Mines)",
-          "Surrounded by New Gold - drilled for 4 grams per ton over 3 metres previously.",
-          "I found a copper zinc anomaly on my claim from review of historical work! ",
-        ],
-      },
-      {
-        heading:
-          "Adamson Geomatics research identified a previously located mapped 10km long copper zinc anomaly identified in 1999 by the Ministry of Mines and two respected prospectors.",
-        type: "SimpleImage",
-        image: "/images/projects/British-Columbia/2.jpg",
-      },
-      {
-        heading: "Goldin Rock Resources Inc. - Mount Burns Property",
+        heading: "Goldin Rock Resources Inc. – Mount Burns Property",
         type: "SimpleImage",
         image: "/images/projects/British-Columbia/3.jpg",
       },
       {
         heading: "",
         type: "paragraph",
-        content: `Prospective Burns Mtn area near Barkerville, B.C.
-* Full 43-101 Geological Evaluation Report available on request.
-* Straddles both north and south sides of Barkerville Hwy 26 between Stanley and Wells, B.C., sites of historic gold rush in the late 1800s to early 1900s.
-* Property includes 7 contiguous claims, all in good standing (MTO link).`,
+        content:
+          "Prospective Burns Mtn area near Barkerville, B.C.\n* Full 43-101 Geological Evaluation Report available on request.\n* Straddles both north and south sides of Barkerville Hwy 26 between Stanley and Wells, B.C., sites of historic gold rush in the late 1800s to early 1900s.\n* Property includes 7 contiguous claims, all in good standing (MTO link).",
       },
       {
         type: "SimpleImage",
@@ -460,35 +415,29 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
       },
       {
         type: "paragraph",
-        content: `
-* 1,100 Hectares of hard rock mineral claims and 131 hectares of placer claims
-  * Historical hard rock and placer gold finds on property
-    * The subject site, Burns Mountain was the first hard rock mine in the 1800's and used a simple 5 stamp mill to crush rock and retrieve the gold in a small-scale operation. The north face of Burns Mountain has not been touched and is ready for productive mining.
-      See report on this property's history, past exploration.Year-round access to Quesnel, major highways via Barkerville Hwy
-* US Listed Public Company in excellent standing can be included in package sale.
-        `,
+        content:
+          "* 1,100 Hectares of hard rock mineral claims and 131 hectares of placer claims\n  * Historical hard rock and placer gold finds on property\n    * The subject site, Burns Mountain was the first hard rock mine in the 1800's and used a simple 5 stamp mill to crush rock and retrieve the gold in a small-scale operation. The north face of Burns Mountain has not been touched and is ready for productive mining.\n      See report on this property's history, past exploration. Year-round access to Quesnel, major highways via Barkerville Hwy\n* US Listed Public Company in excellent standing can be included in package sale.",
       },
       {
-        heading: "Golden Tiger Minerals - Tiger Property",
+        heading: "Golden Tiger Minerals – Tiger Property",
         type: "paragraph",
         image: "/images/projects/British-Columbia/6.jpg",
-        content: `Gold and other precious metal potential.
-Mineralized quartz float and coincidental soil and stream anomalies were discovered on the property in 1991, samples of mineralized vein float up to 0.20 metres in size returning up to 8.23 g/t Au, 249.3 g/t Ag, 844 ppm Cu and 0.41% Pb. Click here to see presentation.`,
+        content:
+          "Gold and other precious metal potential.\nMineralized quartz float and coincidental soil and stream anomalies were discovered on the property in 1991, samples of mineralized vein float up to 0.20 metres in size returning up to 8.23 g/t Au, 249.3 g/t Ag, 844 ppm Cu and 0.41% Pb. Click here to see presentation.",
       },
       {
-        heading: "Golden Tiger Minerals - Sikanni Property",
+        heading: "Golden Tiger Minerals – Sikanni Property",
         type: "paragraph",
         image: "/images/projects/British-Columbia/7.jpg",
-        content: `GOLDEN TRIANGLE AREA GOLD CLAIM!
-In 2021, grades from historical trenching included 4.87% Cu and 64.8 ppm Ag over 0.50 metres and a grab sample of 5.92% Cu and 53.1 ppm Ag.`,
+        content:
+          "GOLDEN TRIANGLE AREA GOLD CLAIM!\nIn 2021, grades from historical trenching included 4.87% Cu and 64.8 ppm Ag over 0.50 metres and a grab sample of 5.92% Cu and 53.1 ppm Ag.",
       },
       {
-        heading: "Golden Tiger Minerals - Millar Property",
+        heading: "Golden Tiger Minerals – Millar Property",
         type: "paragraph",
         image: "/images/projects/British-Columbia/8.jpg",
-        content: `The CY 3 vein features a grab sample returning 2.97 g/t gold from a rusty, siliceous shear zone about 20 metres long, striking 250° with disseminated chalcopyrite and arsenopyrite throughout.
-The Red 23 showing is at the far north claim boundary. This showing is underlain primarily by the Hazelton Group of sedimentary rocks similar to the Eskay Creek package consisting of silicified black argillite with traces of pyrrhotite. The Red 23 showing is within an intense iron oxide alteration containing 3-5% pyrrhotite and pyrite with 1-3 mm wide quartz veinlets. 
-Several projects in Golden Triangle and B.C Interior for sale`,
+        content:
+          "The CY 3 vein features a grab sample returning 2.97 g/t gold from a rusty, siliceous shear zone about 20 metres long, striking 250° with disseminated chalcopyrite and arsenopyrite throughout.\nThe Red 23 showing is at the far north claim boundary. This showing is underlain primarily by the Hazelton Group of sedimentary rocks similar to the Eskay Creek package consisting of silicified black argillite with traces of pyrrhotite. The Red 23 showing is within an intense iron oxide alteration containing 3-5% pyrrhotite and pyrite with 1-3 mm wide quartz veinlets.\nSeveral projects in Golden Triangle and B.C Interior for sale",
         links: [
           {
             textPreview:
@@ -501,7 +450,7 @@ Several projects in Golden Triangle and B.C Interior for sale`,
         heading: "Placer Claim Mapping",
         type: "paragraph",
         image: "/images/projects/British-Columbia/9.jpg",
-        content: "Wells / Barkerville, B.C - Cariboo Region",
+        content: "Wells / Barkerville, B.C – Cariboo Region",
       },
       {
         heading: "Surveyed parcel & mineral claim overlays",
@@ -515,9 +464,8 @@ Several projects in Golden Triangle and B.C Interior for sale`,
       {
         heading: "BC Hydro Monitoring Maps:",
         type: "paragraph",
-        content: `As well as mining property maps, Adamson Geomatics also creates advanced GIS maps for the forestry, oil and gas, transportation, utilities, infrastructure and environmental industries.
-Below are figures for the Whatshan Lake Vegetation Monitoring Reports for 2015 and 2016 that Adamson Geomatics completed for G3 Consulting Ltd. on behalf of BC Hydro.
-Transect mapping was conducted with a GPS, and bathymetry was produced from depth readings obtained from a sonar device. Depth data was processed in ArcGIS and sample points were overlaid. Image classification and NDVI analysis was conducted on satellite imagery.`,
+        content:
+          "As well as mining property maps, Adamson Geomatics also creates advanced GIS maps for the forestry, oil and gas, transportation, utilities, infrastructure and environmental industries.\nBelow are figures for the Whatshan Lake Vegetation Monitoring Reports for 2015 and 2016 that Adamson Geomatics completed for G3 Consulting Ltd. on behalf of BC Hydro.\nTransect mapping was conducted with a GPS, and bathymetry was produced from depth readings obtained from a sonar device. Depth data was processed in ArcGIS and sample points were overlaid. Image classification and NDVI analysis was conducted on satellite imagery.",
         links: [
           {
             textPreview: "2015 Report (maps on pages 65-99)",
@@ -533,7 +481,7 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
       {
         type: "SimpleImage",
         image: "/images/projects/British-Columbia/12.jpg",
-        heading: " Spectral Classification Maps",
+        heading: "Spectral Classification Maps",
       },
       {
         heading: "Land Management & Land Development",
@@ -564,6 +512,70 @@ Transect mapping was conducted with a GPS, and bathymetry was produced from dept
         type: "paragraph",
         content:
           "Mr. Adamson has a Letter of Reference from Barkerville Gold Mines for my work there, and a recommendation from the President of the Company, Chris Lodder who says Mr. Adamson is the “best lands guy in the business”. Along with these accomplishments, Mr. Adamson led the development of major infrastructure projects for the Province of British Columbia and this mining company, including the cell tower and power line right of way projects. For more information, email chris@miningpropertymaps.com.",
+      },
+    ],
+  },
+  // British Columbia - Little Fort Polymetallic Claim
+  {
+    id: "bc-241",
+    title: "Little Fort Polymetallic Claim",
+    summary:
+      "Little Fort Polymetallic Claim #1106809 - 362 hectares of VMS potential, 1 hour north of Kamloops, BC.",
+    region: "British Columbia, Canada",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/The_North_Thompson_River_at_Little_Fort_-_panoramio.jpg",
+    coordinates: [50.809336, -120.406309],
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: ["Copper", "Zinc", "Gold"],
+    quickFacts: [
+      { label: "Size", value: "362 Hectares" },
+      { label: "Commodities", value: "Cu, Zn, Au" },
+      { label: "Tenure", value: "Claim #1106809" },
+    ],
+    sections: [
+      {
+        heading: "360° Site Panorama",
+        type: "kuulaFrame",
+        kuulaFrame: {
+          src: "https://kuula.co/share/LZv7Y/collection/7TDcn?logo=1&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1&alpha=0.91",
+          width: 800,
+          height: 600,
+          allowFullScreen: true,
+        },
+      },
+      {
+        heading:
+          "Little Fort Polymetallic Claim #1106809 - Little Fort, B.C (1 hr drive north of Kamloops)",
+        type: "SimpleImage",
+        image: "/images/projects/British-Columbia/1.jpg",
+        imageCaption: "",
+        links: [
+          {
+            textPreview: "#1106809",
+            description:
+              "View mineral tenure details on Mineral Titles Online BC",
+            url: "https://www.mtonline.gov.bc.ca/mtov/tenureDetailExecute.action?tenureNumberIDParam=1106809",
+          },
+        ],
+      },
+      {
+        heading:
+          "My own claim that I own myself is highly prospective and is for sale. Attached is a PowerPoint report on it (also uploaded here)",
+        type: "bullet_list",
+        content: [
+          "Little Fort Polymetallic claim # 1106809 (good to Oct 15, 2026) - 362 hectares",
+          "“Excellent VMS Potential” according to prospector who found prospect on claim (Robert Bourdon with Ministry of Mines)",
+          "Surrounded by New Gold - drilled for 4 grams per ton over 3 metres previously.",
+          "I found a copper-zinc anomaly on my claim from review of historical work!",
+        ],
+      },
+      {
+        heading:
+          "Adamson Geomatics research identified a previously located mapped 10km long copper-zinc anomaly identified in 1999 by the Ministry of Mines and two respected prospectors.",
+        type: "SimpleImage",
+        image: "/images/projects/British-Columbia/2.jpg",
       },
       {
         type: "PdfDocuments",
@@ -2229,7 +2241,7 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
   {
     id: "sub-007",
     title: "The Polley Property - British Columbia",
-    type: "subproject",
+    type: "project",
     parentProjectId: "bc-005",
     isForSale: true,
     region: "British Columbia, Canada",
