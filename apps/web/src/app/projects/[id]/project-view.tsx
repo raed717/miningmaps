@@ -301,6 +301,21 @@ export default function ProjectDetails({
                   </div>
                 )}
 
+                {section.type === "kuulaFrame" && section.kuulaFrame && (
+                  <div className="overflow-hidden rounded-xl border border-border/50 bg-card relative z-10">
+                    <div className="relative w-full" style={{ paddingBottom: `${(section.kuulaFrame.height / section.kuulaFrame.width) * 100}%` }}>
+                      <iframe
+                        src={section.kuulaFrame.src}
+                        className="absolute inset-0 h-full w-full rounded-xl"
+                        style={{ border: 0 }}
+                        allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
+                        allowFullScreen={section.kuulaFrame.allowFullScreen ?? true}
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                )}
+
                 {section.type === "paragraph" && (
                   <div className="space-y-4">
                     {section.image && (

@@ -12,6 +12,13 @@ export type VideoLink = {
   youtubeUrl?: string;
 };
 
+export type KuulaFrame = {
+  src: string;
+  width: number;
+  height: number;
+  allowFullScreen?: boolean;
+};
+
 export type ProjectSection =
   | {
       heading: string;
@@ -56,6 +63,11 @@ export type ProjectSection =
         fileName?: string;
         description?: string;
       }[];
+    }
+  | {
+      heading?: string;
+      type: "kuulaFrame";
+      kuulaFrame: KuulaFrame;
     };
 
 export type QuickFact = {
@@ -367,6 +379,16 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
       { label: "Tenure", value: "Claim #1106809" },
     ],
     sections: [
+      {
+        heading: "360° Site Panorama",
+        type: "kuulaFrame",
+        kuulaFrame: {
+          src: "https://kuula.co/share/LZv7Y/collection/7TDcn?logo=1&info=0&fs=1&vr=1&sd=1&initload=0&thumbs=1&alpha=0.91",
+          width: 800,
+          height: 600,
+          allowFullScreen: true,
+        },
+      },
       {
         heading: "Residential Real Estate – British Columbia",
         type: "bullet_list",
