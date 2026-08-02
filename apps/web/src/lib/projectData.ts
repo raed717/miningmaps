@@ -365,6 +365,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
       "sub-005",
       "sub-006",
       "sub-007",
+      "sub-008",
     ],
     image:
       "https://upload.wikimedia.org/wikipedia/commons/b/b7/City_of_Kamloops.jpg",
@@ -2287,6 +2288,13 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
           "Prospectors Micheal Langille and Richard Young present The Polley Property, a high-potential copper-gold exploration opportunity positioned in one of British Columbia's recognized mineral belts. The Property consists of three mineral claims totaling 1,100.66 hectares and represents a strategic acquisition opportunity for a private mining company seeking exposure to copper-gold exploration upside in a mature mining jurisdiction. The geological setting is favourable for discovery, with the Property interpreted to share characteristics associated with alkalic porphyry copper-gold systems, including favourable intrusive environments, structural controls, magnetic responses, and geochemical signatures. The Property's proximity to the operating Mount Polley Mine provides a significant strategic advantage. Mount Polley is a producing copper-gold-silver operation and demonstrates the established mineral potential of the surrounding district.",
       },
       {
+        heading: "Mt Polley _ Rick Young property",
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1784905972/Mt_Polley___Rick_Young_property_page-0001_veqv0i.jpg",
+        imageCaption: "Mt Polley _ Rick Young property Claim Area Overview",
+      },
+      {
         heading: "Why Buy The Polley Property Now",
         type: "bullet_list",
         content: [
@@ -2515,6 +2523,110 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
             src: "https://fayranches.com/wp-content/uploads/2025/09/gold-mine-tripple-creek-gold-mine.jpg",
             alt: "Gold mine",
           },
+        ],
+      },
+    ],
+  },
+  {
+    id: "sub-008",
+    title: "Ferroux Property - British Columbia",
+    type: "subproject",
+    parentProjectId: "bc-005",
+    isForSale: true,
+    region: "British Columbia, Canada",
+    // TODO: replace with an actual property photo — reusing parent BC header image as a placeholder
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/b/b7/City_of_Kamloops.jpg",
+    coordinates: [49.5658333333, -119.1455555556],
+    summary:
+      "Gold-silver-copper-zinc vein, breccia and stockwork showing on claim #1136051, located 9.5 km north-northwest of Carmi, BC.",
+    quickFacts: [
+      { label: "Property", value: "Ferroux" },
+      { label: "Claim Number", value: "1136051 (41.91 ha)" },
+      { label: "Mining Division", value: "Greenwood" },
+      { label: "MINFILE Number", value: "082ENW092" },
+      { label: "Status", value: "Showing" },
+      { label: "Commodities", value: "Au, Ag, Cu, Zn" },
+      { label: "Deposit Type", value: "I: Vein, Breccia and Stockwork" },
+      { label: "Owner", value: "Christopher Adamson (100%)" },
+    ],
+    tags: ["Gold", "Silver", "Copper", "Zinc"],
+    sections: [
+      {
+        heading: "Property Overview",
+        type: "paragraph",
+        content:
+          "The Ferroux showing is located on the west side of Ferroux Creek, approximately 9.5 kilometres north-northwest of Carmi, within the Greenwood Mining Division of British Columbia. Claim #1136051 covers 41.91 hectares and hosts a documented gold-silver-copper-zinc vein, breccia and stockwork occurrence associated with a major north-south fault in the Ferroux Creek valley.",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1784912048/Ferroux1_cu6njd.jpg",
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1784912048/Ferroux2_r71efq.jpg",
+      },
+      {
+        heading: "Claim Details",
+        type: "bullet_list",
+        content: [
+          "Name: FERROUX, WT",
+          "Mining Division: Greenwood",
+          "BCGS Map: 082E055 | NTS Map: 082E11E",
+          "Status: Showing",
+          "Latitude: 049° 33' 57'' N | Longitude: 119° 08' 44'' W",
+          "UTM: Zone 11 (NAD 83), Northing 5492571, Easting 344860",
+          "Commodities: Gold, Silver, Copper, Zinc",
+          "Deposit Type: I — Vein, Breccia and Stockwork",
+          "Tectonic Belt: Omineca | Terrane: Plutonic Rocks, Overlap Assemblage",
+        ],
+        links: [
+          {
+            textPreview: "MINFILE 082ENW092 — Ferroux Showing",
+            description:
+              'Gold, Silver, Copper occurrence within claim #1136051 — the "Ferroux" prospect (BC MINFILE summary).',
+            url: "https://minfile.gov.bc.ca/Summary.aspx?minfilno=082ENW092",
+          },
+          {
+            textPreview: "Claim #1136051 — Tenure Details",
+            description:
+              "View mineral tenure details on Mineral Titles Online BC",
+            url: "https://www.mtonline.gov.bc.ca/mtov/tenureDetailExecute.action?tenureNumberIDParam=1136051",
+          },
+          {
+            textPreview: "Claim #1136051 — Claim Map",
+            description: "View the tenure map on Mineral Titles Online BC",
+            url: "https://www.mtonline.gov.bc.ca/mtov/showTenureExecute.action?tenureNumberIDParam=1136051",
+          },
+        ],
+      },
+      {
+        heading: "Capsule Geology",
+        type: "paragraph",
+        content:
+          "The showing occurs in quartz monzonite of the Eocene Coryell Intrusions, underlain by granodiorite of the Cretaceous-Tertiary Okanagan Batholith and overlain to the north by dacite of the Eocene Penticton Group, Marron Formation. A major fault is interpreted in the Ferroux Creek valley, striking north-south. Mineralization is associated with the Ferroux Creek fault where it is cut by east-west faults; within and adjacent to these zones the quartz monzonite is brecciated, silicified and gossanous, with up to 10 per cent disseminated pyrite and minor pyrrhotite. Anomalous gold, silver, copper and zinc assays are associated with the fault structures.",
+      },
+      {
+        heading: "Exploration History",
+        type: "bullet_list",
+        content: [
+          "Discovered in 1988 by Minnova Inc. through heavy mineral sampling techniques.",
+          "Prospecting, geochemical and geological mapping programs followed by trenching in 1989 — 355 metres excavated across 9 trenches.",
+          "Chip samples from the trenches were analysed for gold, silver, copper, lead and zinc.",
+          "Best precious metal values, from trench 89-B, were 0.72 g/t gold and 0.7 g/t silver, with lesser copper and zinc (Assessment Report 20070).",
+        ],
+      },
+      {
+        heading: "Tenure Status",
+        type: "bullet_list",
+        content: [
+          "Title/Application Number: 1136051 — Mineral (M), Claim (C)",
+          "Area: 41.91 hectares",
+          "Mining Division: Greenwood | Map Number: 082E",
+          "Issue Date: 2026/JUL/16 | Good To Date: 2027/JUL/16",
+          "Owner: Christopher Adamson — 100%",
         ],
       },
     ],

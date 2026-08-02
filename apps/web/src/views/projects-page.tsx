@@ -12,6 +12,7 @@ import {
   MapPin,
   Search,
   Target,
+  FolderKanban,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { projects } from "@/lib/projectData";
@@ -118,12 +119,27 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 </div>
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
               </Link>
+              <Link
+                href="/other-projects"
+                className="group mt-5 inline-flex items-center gap-3 border border-primary/40 bg-card/70 px-4 py-3 backdrop-blur-sm transition-all hover:border-primary hover:bg-primary/10"
+              >
+                <div className="flex h-9 w-9 items-center justify-center border border-primary/40 bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-black">
+                  <FolderKanban className="h-4 w-4" />
+                </div>
+                <div>
+                  <div className="mt-1 text-xs font-extrabold uppercase tracking-[0.18em] text-white md:text-sm">
+                    More Projects
+                  </div>
+                </div>
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+              </Link>
             </div>
             {showOnlyForSale ? (
               <div
                 className={`max-w-md border border-primary/30 bg-card/80 p-4 backdrop-blur-sm text-xs uppercase tracking-[0.18em] leading-relaxed text-zinc-100 md:text-sm ${mono.className}`}
               >
-                Live acquisition-ready mineral properties filtered from the wider Adamson Geomatics project archive.
+                Live acquisition-ready mineral properties filtered from the
+                wider Adamson Geomatics project archive.
               </div>
             ) : (
               <PartnerNoticeRotator />

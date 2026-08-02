@@ -1,0 +1,159 @@
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\.agents\skills\frontend-design\LICENSE.txt
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\.agents\skills\frontend-design\SKILL.md
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\CLAUDE.md
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\DESIGN_SYSTEM.md
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\README.md
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\robots.txt
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Barkerville\geologicSummaryOfBarkervilleClaims.pdf
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\Little Fort Report.pdf
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\California\LP_Gold Potential of the Green Mtn Project Area_20251230_v2.pdf
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\California\LP_Gold Potential of the Green Mtn Project Area_v2_20251218.pdf
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\Northumberland Staking Report (2).pdf
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\Northumberland_Geology_Summaryfinal.pdf
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\T13N+R45E-1.pdf
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Wyoming\BLM_06_0220N_0710W - Halleck - BURGEX INC - 20250925.pdf
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Yukon\yukon_W_V2.pdf
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\favicon.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\Real Estate Institute of British Columbia.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\University of British Columbia.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\avatar.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\bannerlogo.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\bannerlogo1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\certifications\esriVideoScreenshot.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\certifications\jd uc25 plenary submission certificates 73_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\certifications\jd uc25 plenary submission certificates 74_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\full-logo.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\logo.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\minLogo.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\minLogo1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\general\oldLogo.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Alaska\1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Alaska\2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Alaska\3.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Alaska\Screenshot 2026-06-12 141901.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Alaska\Screenshot 2026-06-12 144530.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Alberta\1.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Arizona\1.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Australia-New-Zealand\1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Australia-New-Zealand\2.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Australia-New-Zealand\3.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Australia-New-Zealand\4.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Barkerville\BARKERVILLE_MAP_03MAR26.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Barkerville\BGM_Ownership_DRAFT_r1 2-3_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Barkerville\BGM_Ownership_DRAFT_r1 2-3_page-0002.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Barkerville\BGM_Ownership_DRAFT_r1 4-5_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Barkerville\BGM_Ownership_DRAFT_r1 4-5_page-0002.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Barkerville\BGM_Ownership_DRAFT_r11_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Barkerville\SM_BarkervillePlacers_20251115_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Brazil\1.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Brazil\2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Brazil\3.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Brazil\4.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\1.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\10.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\11.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\12.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\3.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\4.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\5.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\6.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\7.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\8.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\9.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\Babs_Map.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\Babs_Regional_Map.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\Inside the Rampalo adit.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\McQuillan.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\Polley Property.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\Silver Spot Tailings2.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\Silver Spot tailings.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\SilverSpotadit.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\TL_GoldinRock_2025111_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\lightningPeak.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\British-Columbia\rampaloAdit.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\California\1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\California\2.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\California\DaveTwp45N_8W_20250713_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\California\LP_GeologyGreenMtn_20251214.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\California\LarryTwp9N_4W_GM1_GM60areamap_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Chile\1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Chile\2.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Europe\1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Lexington\Lexington_GeologicalMap_20251221_v2-1.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Lexington\Lexington_GeologicalMap_20251221_v2-2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Lexington\Lexington_GeologicalMap_20251221_v2-3.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Lexington\Lexington_GeologicalMap_20251221_v2-4.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Lexington\Lexington_GeologicalMap_20251221_v2-5.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Manitoba\1.webp
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\1.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\3.webp
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\4.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\5.webp
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\6.webp
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\7.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\8.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\NT3114.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\NWT.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\NWTprospectsmap.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\Pegs1.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\PlannedStakingArea2.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\Target20230830_2.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\NWT\Target20230830_2_ortho.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\13N 45E Grouped Geology (1)_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\Barrick's Fourmile BLM Updated_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\Barrick's Fourmile Claimants Add 1_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\Barrick's Fourmile project Map v2 (1)_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\CT_Fourmile Open Sections_20260107_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\CT_Northumberland Land Agency Overview V2_20260115_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\CT_Northumberland Open Sections_Updated_20260108_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\KM_Nevada mapping Staking OverviewMap_20251219_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nevada\KM_Nevada_Northumberland_13N 45E Full Geology_20251214_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Newfoundland\1.webp
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Newfoundland\2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Newfoundland\NorthArrowAug30TargetGeol.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Newfoundland\NorthArrowStatusMap.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Newfoundland\NorthArrowTarget1.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nunavut\055MNW0038_Shane Lake Project - Ms Claims_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nunavut\065JNE0019_Nip, Rev (Noranda Expln.)_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nunavut\065JNW0006_Rib & Fst (Noranda)_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nunavut\065NSE0001_Outlet Bay_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nunavut\065OSE0003_Nutarawit Lake_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nunavut\066GSE0001_Lost Lake Deep Rose Project_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Nunavut\066GSE0002_Naujatuuk Lake Deep Rose (Sandhills Project)_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Ontario\1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Ontario\2.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Ontario\3.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Ontario\4.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Ontario\5.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Ontario\6.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Ontario\Ontario Tungsten Open Ground_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\1.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\3.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\4.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\5.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\JamesBayAug21_A_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\LacEwartGraniticPegZoomedGeology_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\LacEwartGraniticPegmatiteOpen_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\mapofazimutopenground\image (2).png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Quebec\mapofazimutopenground\image (3).png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Saskatchewan\1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Saskatchewan\2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Texas\Round Top V1.1 Scale 1_50000 _page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Utah\Quantum_UtahStakingLayout_2025117_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Utah\Quantum_UtahStakingLayout_2025129_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Wyoming\1.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Wyoming\ClaimsWyoming.JPG
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Wyoming\WyomingHalleckCrk_20250906_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Wyoming\WyomingHalleckCrk_20250927_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Yukon\1.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Yukon\2.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Yukon\3.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Yukon\4.png
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Yukon\Yukon Tungsten Open Ground 2_page-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\public\images\projects\Yukon\Yukon with Historical Claims_pages-to-jpg-0001.jpg
+C:\Users\wolow\Desktop\demo_projects\miningmaps\miningmaps\apps\web\src\app\opengraph-image.png

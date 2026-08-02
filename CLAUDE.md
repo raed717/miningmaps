@@ -57,3 +57,7 @@ Keep CLAUDE.md updated when:
 See `DESIGN_SYSTEM.md` in the root directory for the application's aesthetic guidelines (Industrial Cartography / Terminal Brutalism), color variables, and styling instructions for new pages.
 
 AI assistants should suggest updates to this file when they notice relevant changes.
+
+## Accomplished
+
+- **Project detail modal**: Created `ProjectDetailModal.tsx` to replace the inline DOM toggle on the Other Projects page. The modal features a full-screen backdrop overlay, Escape key/click-outside/close button dismissal, AnimatePresence enter/exit animations, and displays all fields (Titles, Owners, Subtypes, Good To, MINFILE Association, Summary) with icon-labeled sections.

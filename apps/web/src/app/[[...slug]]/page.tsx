@@ -43,6 +43,11 @@ const pageMeta: Record<string, Metadata> = {
     description:
       "Interactive map of mining properties, mineral claims, and exploration projects worldwide.",
   },
+  "/other-projects": {
+    title: `Mineral Claim Portfolio — ${siteName}`,
+    description:
+      "Complete inventory of mineral tenures across British Columbia — priority-ranked, commodity-tagged, with NTS mapsheet references and tenure details.",
+  },
   "/dashboard": {
     title: `Dashboard — ${siteName}`,
     description:
@@ -92,10 +97,7 @@ export async function generateMetadata({
   }
 
   // Post detail pages: /post/[id] or /posts/[id]
-  if (
-    (slugArray[0] === "post" || slugArray[0] === "posts") &&
-    slugArray[1]
-  ) {
+  if ((slugArray[0] === "post" || slugArray[0] === "posts") && slugArray[1]) {
     const post = mockPosts.find((p) => p.id === slugArray[1]);
     if (post) {
       return {
@@ -125,6 +127,7 @@ export function generateStaticParams() {
     { slug: ["properties"] },
     { slug: ["map"] },
     { slug: ["dashboard"] },
+    { slug: ["other-projects"] },
     { slug: ["post"] },
     { slug: ["posts"] },
     ...projects.map((project) => ({ slug: ["projects", project.id] })),
