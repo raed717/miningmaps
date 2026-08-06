@@ -144,6 +144,111 @@ export function generateStaticParams() {
   ];
 }
 
-export default function CatchAllPage() {
-  return <ClientPage />;
+const pageLabels: Record<string, string> = {
+  about: "About",
+  services: "Services",
+  contact: "Contact",
+  projects: "Projects",
+  properties: "Properties for Sale",
+  map: "Interactive Map",
+  "other-projects": "Mineral Claim Portfolio",
+  partners: "Partner & Referral Programs",
+  dashboard: "Dashboard",
+  post: "Posts",
+  posts: "Posts",
+};
+
+function buildBreadcrumbJsonLd(slugArray: string[]) {
+  if (slugArray.length === 0) return null;
+
+  const itemListElement = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://miningpropertymaps.com",
+    },
+  ];
+
+  let pathSoFar = "";
+  slugArray.forEach((segment, index) => {
+    pathSoFar += `/${segment}`;
+    const isLast = index === slugArray.length - 1;
+
+    let name = pageLabels[segment];
+    if (!name && isLast) {
+      if (slugArray[0] === "projects" && index === 1) {
+        name = projects.find((p) => p.id === segment)?.title ?? segment;
+      } else if ((slugArray[0] === "post" || slugArray[0] === "posts") && index === 1) {
+        name = mockPosts.find((p) => p.id === segment)?.title ?? segment;
+      }
+    }
+
+    itemListElement.push({
+      "@type": "ListItem",
+      position: index + 2,
+      name: name ?? segment,
+      item: `https://miningpropertymaps.com${pathSoFar}`,
+    });
+  });
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement,
+  };
+}
+
+export default async function CatchAllPage({
+  params,
+}: {
+  params: Promise<{ slug?: string[] }>;
+}) {
+  const { slug } = await params;
+  const slugArray = slug?.filter(Boolean) ?? [];
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(slugArray);
+
+  let contentJsonLd: Record<string, unknown> | null = null;
+  if (slugArray[0] === "projects" && slugArray[1]) {
+    const project = projects.find((p) => p.id === slugArray[1]);
+    if (project) {
+      contentJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: project.title,
+        description: project.summary,
+        image: project.image,
+        about: project.region,
+      };
+    }
+  } else if ((slugArray[0] === "post" || slugArray[0] === "posts") && slugArray[1]) {
+    const post = mockPosts.find((p) => p.id === slugArray[1]);
+    if (post) {
+      contentJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.title,
+        description: post.summary,
+        image: post.previewImage,
+      };
+    }
+  }
+
+  return (
+    <>
+      {breadcrumbJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        />
+      )}
+      {contentJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(contentJsonLd) }}
+        />
+      )}
+      <ClientPage />
+    </>
+  );
 }

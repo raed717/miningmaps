@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     "Professional land and geospatial services in British Columbia. GIS mapping, mineral claim staking, LiDAR, digital elevation models, geological modelling, land valuations, and legal dispute support.",
   icons: {
     icon: [
-      { url: "/images/general/minLogo.ico", sizes: "any", type: "image/x-icon" },
-      { url: "/images/general/minLogo.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/favicon.png", type: "image/png" },
     ],
-    shortcut: "/images/general/minLogo.ico",
-    apple: "/images/general/minLogo.png",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "Adamson Geomatics | GIS & Mineral Claim Services in BC | Chris Adamson, R.I.",
@@ -58,6 +58,14 @@ const jsonLd = {
   ],
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Adamson Geomatics",
+  alternateName: "Mining Property Maps",
+  url: "https://miningpropertymaps.com",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -69,6 +77,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <ThemeProvider
           attribute="class"
