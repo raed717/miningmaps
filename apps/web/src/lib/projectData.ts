@@ -2528,35 +2528,39 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
     ],
   },
   {
+    // TODO: Verify placeholder ID sequence against codebase
     id: "sub-008",
-    title: "Ferroux Property - British Columbia",
     type: "subproject",
-    parentProjectId: "bc-005",
-    isForSale: true,
+    title: "Ferroux Property - British Columbia",
+    summary:
+      "Gold-silver-copper-zinc vein, breccia and stockwork showing on claim #1136051, located on a high-elevation ridge near the Arlington South target between Saunier Creek and the West Kettle River valley, BC.",
     region: "British Columbia, Canada",
-    // TODO: replace with an actual property photo — reusing parent BC header image as a placeholder
+    // TODO: Replace with an actual property photo — reusing parent BC header image as a placeholder
     image:
       "https://upload.wikimedia.org/wikipedia/commons/b/b7/City_of_Kamloops.jpg",
-    coordinates: [49.5658333333, -119.1455555556],
-    summary:
-      "Gold-silver-copper-zinc vein, breccia and stockwork showing on claim #1136051, located 9.5 km north-northwest of Carmi, BC.",
+    coordinates: [49.55861, -119.15392],
+    parentProjectId: "bc-005",
+    isForSale: true,
     quickFacts: [
       { label: "Property", value: "Ferroux" },
       { label: "Claim Number", value: "1136051 (41.91 ha)" },
       { label: "Mining Division", value: "Greenwood" },
-      { label: "MINFILE Number", value: "082ENW092" },
+      { label: "MINFILE Number", value: "082ENW092 / 082ENW119" },
       { label: "Status", value: "Showing" },
       { label: "Commodities", value: "Au, Ag, Cu, Zn" },
-      { label: "Deposit Type", value: "I: Vein, Breccia and Stockwork" },
+      {
+        label: "Deposit Type",
+        value: "Intrusive-Related Vein, Breccia & Stockwork",
+      },
       { label: "Owner", value: "Christopher Adamson (100%)" },
     ],
-    tags: ["Gold", "Silver", "Copper", "Zinc"],
+    tags: ["Gold", "Silver", "Copper", "Zinc", "Intrusive-Related"],
     sections: [
       {
         heading: "Property Overview",
         type: "paragraph",
         content:
-          "The Ferroux showing is located on the west side of Ferroux Creek, approximately 9.5 kilometres north-northwest of Carmi, within the Greenwood Mining Division of British Columbia. Claim #1136051 covers 41.91 hectares and hosts a documented gold-silver-copper-zinc vein, breccia and stockwork occurrence associated with a major north-south fault in the Ferroux Creek valley.",
+          "The Ferroux showing is located on a high-elevation ridge sitting between Saunier Creek and the West Kettle River valley, on the west side of Ferroux Creek, approximately 9.5 kilometres north-northwest of Carmi within the Greenwood Mining Division of British Columbia. Claim #1136051 covers 41.91 hectares and hosts a documented gold-silver-copper-zinc vein, breccia, and stockwork occurrence associated with a major north-south fault in the Ferroux Creek valley.",
       },
       {
         type: "SimpleImage",
@@ -2569,18 +2573,20 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
           "https://res.cloudinary.com/dfytfu2jq/image/upload/v1784912048/Ferroux2_r71efq.jpg",
       },
       {
-        heading: "Claim Details",
+        heading: "Claim Details & Geologic Context",
         type: "bullet_list",
         content: [
           "Name: FERROUX, WT",
           "Mining Division: Greenwood",
           "BCGS Map: 082E055 | NTS Map: 082E11E",
           "Status: Showing",
-          "Latitude: 049° 33' 57'' N | Longitude: 119° 08' 44'' W",
+          "Latitude: 49.55861° N | Longitude: -119.15392° W",
           "UTM: Zone 11 (NAD 83), Northing 5492571, Easting 344860",
           "Commodities: Gold, Silver, Copper, Zinc",
-          "Deposit Type: I — Vein, Breccia and Stockwork",
+          "Deposit Type: Intrusive-related vein, breccia and stockwork system",
           "Tectonic Belt: Omineca | Terrane: Plutonic Rocks, Overlap Assemblage",
+          "Terrain: Moving up steeper ridge slopes, heavily forested with historical logging cutblocks scattered across the zone",
+          "Adjacent Target: Arlington South Target (MINFILE 082ENW119) located right over the crest of the north-south trending ridge to the east",
         ],
         links: [
           {
@@ -2588,6 +2594,12 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
             description:
               'Gold, Silver, Copper occurrence within claim #1136051 — the "Ferroux" prospect (BC MINFILE summary).',
             url: "https://minfile.gov.bc.ca/Summary.aspx?minfilno=082ENW092",
+          },
+          {
+            textPreview: "MINFILE 082ENW119 — Arlington South",
+            description:
+              "MINFILE record for the nearby Arlington South target on the ridge crest.",
+            url: "https://minfile.gov.bc.ca/Summary.aspx?minfilno=082ENW119",
           },
           {
             textPreview: "Claim #1136051 — Tenure Details",
@@ -2603,10 +2615,10 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         ],
       },
       {
-        heading: "Capsule Geology",
+        heading: "Capsule Geology & Structure",
         type: "paragraph",
         content:
-          "The showing occurs in quartz monzonite of the Eocene Coryell Intrusions, underlain by granodiorite of the Cretaceous-Tertiary Okanagan Batholith and overlain to the north by dacite of the Eocene Penticton Group, Marron Formation. A major fault is interpreted in the Ferroux Creek valley, striking north-south. Mineralization is associated with the Ferroux Creek fault where it is cut by east-west faults; within and adjacent to these zones the quartz monzonite is brecciated, silicified and gossanous, with up to 10 per cent disseminated pyrite and minor pyrrhotite. Anomalous gold, silver, copper and zinc assays are associated with the fault structures.",
+          "The property sits directly on the geologic contact line where Jurassic quartz diorite meets Carboniferous-Permian Anarchist Group chlorite-hornblende schists—a contact zone known for causing shearing that forms quartz-calcite veins containing gold, silver, and copper (chalcopyrite). The showing occurs in quartz monzonite of the Eocene Coryell Intrusions, underlain by granodiorite of the Cretaceous-Tertiary Okanagan Batholith and overlain to the north by dacite of the Eocene Penticton Group, Marron Formation.\n\nMineralization is heavily concentrated along the north-south Ferroux Creek fault zone where it intersects smaller east-west cross-faults. Within and adjacent to these structural intersections, the host quartz monzonite is intensely brecciated, silicified, and features a prominent rusty weathering zone (gossan) containing up to 10% disseminated pyrite and minor pyrrhotite. Anomalous gold, silver, copper, and zinc assays are associated with these structural boundaries.",
       },
       {
         heading: "Exploration History",
@@ -2615,6 +2627,7 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
           "Discovered in 1988 by Minnova Inc. through heavy mineral sampling techniques.",
           "Prospecting, geochemical and geological mapping programs followed by trenching in 1989 — 355 metres excavated across 9 trenches.",
           "Chip samples from the trenches were analysed for gold, silver, copper, lead and zinc.",
+          "Exploration uncovered anomalous precious metal assays via trenching across the fault boundary.",
           "Best precious metal values, from trench 89-B, were 0.72 g/t gold and 0.7 g/t silver, with lesser copper and zinc (Assessment Report 20070).",
         ],
       },
@@ -2627,6 +2640,116 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
           "Mining Division: Greenwood | Map Number: 082E",
           "Issue Date: 2026/JUL/16 | Good To Date: 2027/JUL/16",
           "Owner: Christopher Adamson — 100%",
+        ],
+      },
+    ],
+  },
+  {
+    id: "ma-001",
+    type: "project",
+    title: "Prepared Devonian Trilobites - Alnif, Morocco",
+    summary:
+      "Collection of authentic, commercially prepared Devonian trilobite fossils (featuring spiny Dicranurus/odontopleurid and phacopid specimens) from the Anti-Atlas region around Alnif, Morocco.",
+    region: "Drâa-Tafilalet, Morocco",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013588/bfa9f68f-e495-471e-9d41-51c8f24126fe_knvtk9.jpg",
+    coordinates: [31.1141, -5.1715],
+    isForSale: true,
+    quickFacts: [
+      { label: "Product", value: "Prepared Trilobite Fossils" },
+      {
+        label: "Locality",
+        value: "Alnif / Ma'der Basin, Anti-Atlas Mountains",
+      },
+      { label: "Country", value: "Morocco" },
+      { label: "Geologic Era", value: "Devonian (~390 Million Years Old)" },
+      {
+        label: "Primary Taxa",
+        value: "Odontopleurida / Phacopida (Phacops, Reedops, Dicranurus)",
+      },
+      { label: "Matrix Type", value: "Gray / Light-Colored Limestone" },
+      {
+        label: "Preparation Style",
+        value: "Air-Abrasive Lab Prepared (Free-Standing Spines)",
+      },
+    ],
+    tags: ["Fossils", "Trilobites", "Devonian", "Morocco", "For Sale"],
+    sections: [
+      {
+        heading: "Overview & Specimen Authenticity",
+        type: "paragraph",
+        content:
+          "This listing features genuine, lab-prepared Devonian trilobite fossils sourced from the world-famous deposits of the Atlas Mountains near Alnif, Morocco. The collection includes both elaborate, multi-spined specimens (such as Dicranurus, Ceratarges, or Comura) with free-standing thoracic spines freed via meticulous air-abrasive work, as well as classic phacopid specimens (Phacops / Reedops) displaying jet-black mineralized exoskeletons set on natural gray limestone matrix.",
+      },
+      {
+        heading: "Specimen Image Gallery",
+        type: "ImageGallery",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013588/bfa9f68f-e495-471e-9d41-51c8f24126fe_knvtk9.jpg",
+            alt: "Spiny Moroccan Devonian Trilobite on Matrix",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013594/18b8c64f-1b91-4046-b0c0-231c90d88973_vnkvhv.jpg",
+            alt: "Moroccan Trilobite Fossil Specimen",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013593/d1d42dad-a077-4529-9aea-fde0d5c9508f_nykhfq.jpg",
+            alt: "Prepared Trilobite Close-Up Detail",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013592/966e5089-7c48-49a5-8b17-af12c495ab27_aa4gua.jpg",
+            alt: "Phacopid Trilobite Specimen",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013591/f8ed5888-4e7b-4a1b-95f1-a9475ecababb_ecwur5.jpg",
+            alt: "Detailed Exoskeleton and Matrix View",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013591/1cc5a37e-6354-423c-8a08-286c81248d2c_du4zsv.jpg",
+            alt: "Trilobite Thorax and Spine Detail",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013590/3d5704b5-fa5d-4b60-9f7e-d7598f74574f_mn6nkx.jpg",
+            alt: "Preparation Detail on Limestone Base",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013589/0be58dba-3b9e-4461-bc78-bb8e1b1a596e_al5vs5.jpg",
+            alt: "Moroccan Fossil Specimen Overview",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013589/893b6135-2195-48a0-955c-6fc029fc3544_krvv8h.jpg",
+            alt: "Trilobite Cephalon and Segmentation",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013589/1c30d806-405c-44d3-bfd0-33a4a8e5f9b0_oxqvov.jpg",
+            alt: "Fossil Matrix Side View",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786013588/6e4579a0-2d4f-479f-b032-2ef7ec773fbf_ycfjeb.jpg",
+            alt: "Complete Trilobite Specimen",
+          },
+        ],
+      },
+      {
+        heading: "Key Physical & Morphological Features",
+        type: "bullet_list",
+        content: [
+          "Exoskeleton: Jet-black, mineralized calcite exoskeleton characteristic of Devonian fossil beds in the Anti-Atlas region.",
+          "Morphology (Spiny Type): Distinct cephalon with raised eye structures/tubercles, thoracic segments with free-standing curved lateral/pleural spines.",
+          "Morphology (Phacopid Type): Inflated cephalon, clear thoracic segmentation, compact body structure, and short lateral genal spines.",
+          "Matrix: Natural light-gray to brownish Devonian limestone host rock.",
+          "Luster / Gloss: Natural mineral sheen with light post-preparation protective coating (standard practice for preventing spine degradation).",
+        ],
+      },
+      {
+        heading: "Preparation & Authenticity Indicators",
+        type: "bullet_list",
+        content: [
+          "Skilled lab preparation using air-abrasive tools under microscope magnification to isolate delicate spines from the host matrix.",
+          "Spines display natural variation in curvature and thickness rather than synthetic uniformity.",
+          "Consistent matrix composition without artificial glue boundaries or synthetic resin fill lines.",
+          "Hard mineralized shell texture consistent with authentic fossilized calcite.",
         ],
       },
     ],
