@@ -8,11 +8,11 @@ export const metadata: Metadata = {
     "Professional land and geospatial services in British Columbia. GIS mapping, mineral claim staking, LiDAR, digital elevation models, geological modelling, land valuations, and legal dispute support.",
   icons: {
     icon: [
-      { url: "/images/general/miniLogo.ico", sizes: "any" },
-      { url: "/images/general/miniLogo.ico", type: "image/x-icon" },
+      { url: "/images/general/minLogo.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/images/general/minLogo.png", type: "image/png" },
     ],
-    shortcut: "/images/general/miniLogo.ico",
-    apple: "/images/general/miniLogo.ico",
+    shortcut: "/images/general/minLogo.ico",
+    apple: "/images/general/minLogo.png",
   },
   openGraph: {
     title: "Adamson Geomatics | Chris Adamson, R.I.",
