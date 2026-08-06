@@ -2642,6 +2642,22 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
           "Owner: Christopher Adamson — 100%",
         ],
       },
+      {
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786014794/Ferroux_wolj5e.png",
+      },
+      // pdf file
+      {
+        type: "PdfDocuments",
+        heading: "Project Documentation",
+        documents: [
+          {
+            fileUrl: "https://apps.nrs.gov.bc.ca/pub/aris/Report/20070.pdf/",
+            fileName: "20070.pdf",
+          },
+        ],
+      },
     ],
   },
   {
