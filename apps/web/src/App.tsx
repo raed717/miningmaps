@@ -19,6 +19,7 @@ const MapView = dynamic(() => import("@/app/map/map-view"));
 const DashboardView = dynamic(() => import("@/app/dashboard/dashboard-view"));
 const ProjectView = dynamic(() => import("@/app/projects/[id]/project-view"));
 const OtherProjectsPage = dynamic(() => import("@/views/other-projects-page"));
+const PartnersPage = dynamic(() => import("@/views/partners-page"));
 
 function decodeSegment(segment: string) {
   try {
@@ -87,6 +88,8 @@ export default function App() {
     content = <ProjectsPage showOnlyForSale />;
   } else if (normalizedPathname === "/other-projects") {
     content = <OtherProjectsPage />;
+  } else if (normalizedPathname === "/partners") {
+    content = <PartnersPage />;
   } else if (normalizedPathname === "/post" || normalizedPathname === "/posts") {
     content = <PostsPage />;
   } else if (segments[0] === "projects" && segments.length === 2) {

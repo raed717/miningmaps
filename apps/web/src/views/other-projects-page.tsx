@@ -144,6 +144,12 @@ export default function OtherProjectsPage() {
                 Complete inventory of {otherProjects.length} mineral tenures across British Columbia —
                 priority-ranked, commodity-tagged, and ready for due diligence.
               </p>
+              <p
+                className={`mt-2 flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-primary/80 ${mono.className}`}
+              >
+                <FileText className="h-3 w-3" />
+                QP Geological report available on request.
+              </p>
             </div>
           </div>
 

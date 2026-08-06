@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import {
@@ -8,14 +9,18 @@ import {
   Building2,
   Check,
   Globe,
+  Handshake,
   Layers,
   ShieldCheck,
   Sparkles,
   Zap,
 } from "lucide-react";
 import { mono } from "@/lib/fonts";
+import { PartnerProgramsModal } from "@/components/PartnerProgramsModal";
 
 export function ListingMembershipSection() {
+  const [partnerModalOpen, setPartnerModalOpen] = useState(false);
+
   const plans = [
     {
       id: "commission",
@@ -241,12 +246,21 @@ export function ListingMembershipSection() {
                 Who Benefits Most From Subscription Listings?
               </h3>
             </div>
-            <Link
-              href="/contact"
-              className={`inline-flex shrink-0 items-center gap-2 border border-primary/40 bg-primary/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
-            >
-              Discuss Custom Partnership <ArrowRight className="h-4 w-4" />
-            </Link>
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <button
+                type="button"
+                onClick={() => setPartnerModalOpen(true)}
+                className={`inline-flex items-center gap-2 border border-primary/40 bg-primary/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
+              >
+                <Handshake className="h-4 w-4" /> Partner &amp; Referral Programs
+              </button>
+              <Link
+                href="/contact"
+                className={`inline-flex items-center gap-2 border border-primary/40 bg-primary/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
+              >
+                Discuss Custom Partnership <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -268,6 +282,8 @@ export function ListingMembershipSection() {
           </div>
         </div>
       </div>
+
+      <PartnerProgramsModal open={partnerModalOpen} onClose={() => setPartnerModalOpen(false)} />
     </section>
   );
 }

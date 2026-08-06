@@ -48,6 +48,11 @@ const pageMeta: Record<string, Metadata> = {
     description:
       "Complete inventory of mineral tenures across British Columbia — priority-ranked, commodity-tagged, with NTS mapsheet references and tenure details.",
   },
+  "/partners": {
+    title: `Partner & Referral Programs — ${siteName}`,
+    description:
+      "Affiliate and finder's fee programs — earn commission by referring new clients or connecting qualified buyers to our mining projects.",
+  },
   "/dashboard": {
     title: `Dashboard — ${siteName}`,
     description:
@@ -128,6 +133,7 @@ export function generateStaticParams() {
     { slug: ["map"] },
     { slug: ["dashboard"] },
     { slug: ["other-projects"] },
+    { slug: ["partners"] },
     { slug: ["post"] },
     { slug: ["posts"] },
     ...projects.map((project) => ({ slug: ["projects", project.id] })),
