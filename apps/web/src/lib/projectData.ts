@@ -2656,6 +2656,11 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
             fileUrl: "https://apps.nrs.gov.bc.ca/pub/aris/Report/20070.pdf/",
             fileName: "20070.pdf",
           },
+          {
+            fileUrl:
+              "/images/projects/British-Columbia/Ferroux_Property_Opinion_Summary.pdf",
+            fileName: "Ferroux_Property_Opinion_Summary.pdf",
+          },
         ],
       },
     ],
