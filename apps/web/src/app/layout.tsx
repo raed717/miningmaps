@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://miningpropertymaps.com"),
@@ -93,6 +94,7 @@ export default function RootLayout({
         >
           <div id="root">{children}</div>
         </ThemeProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
