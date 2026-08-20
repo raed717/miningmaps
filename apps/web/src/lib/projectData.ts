@@ -547,6 +547,108 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         },
       },
       {
+        heading: "Drone footage image of outcrop",
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229475/WhatsApp_Image_2026-08-18_at_3.46.28_AM_juejfo.jpg",
+        imageCaption:
+          "the slope angle for the outcrop is 36 deg, length is 15.2 m, with 9.2 m height difference",
+      },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787245447/WhatsApp_Image_2026-08-20_at_5.44.00_PM_clzcnk.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229479/WhatsApp_Image_2026-08-18_at_5.45.12_AM_2_ifnwvh.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229480/WhatsApp_Image_2026-08-18_at_5.45.12_AM_p4ixn6.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229479/WhatsApp_Image_2026-08-18_at_5.47.59_AM_1_eeqjhs.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229479/WhatsApp_Image_2026-08-18_at_5.45.12_AM_1_fxzcbs.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229478/WhatsApp_Image_2026-08-18_at_5.45.11_AM_4_cbaogr.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229478/WhatsApp_Image_2026-08-18_at_5.45.12_AM_5_bidnbl.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229478/WhatsApp_Image_2026-08-18_at_5.45.11_AM_1_v8s3r6.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229477/WhatsApp_Image_2026-08-18_at_5.45.11_AM_a6zdhd.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229477/WhatsApp_Image_2026-08-18_at_5.45.11_AM_2_dam7pe.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229476/WhatsApp_Image_2026-08-18_at_5.45.12_AM_4_v3t7u5.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229476/WhatsApp_Image_2026-08-18_at_5.45.12_AM_3_kdljzd.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229476/WhatsApp_Image_2026-08-18_at_5.47.59_AM_bwrgrg.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229475/WhatsApp_Image_2026-08-18_at_5.45.11_AM_3_jsslcq.jpg",
+          },
+        ],
+      },
+      {
+        type: "ImageGallery",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231691/LFCA-005_105757_hw4vfo.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231691/UNK_105754_n3qdtk.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231690/UNK_105753_t0y2pg.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231687/LFCA-009_105761_lffztl.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231684/LFCA-004_105756_jxuvy2.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231681/LFCA-003_105755_sii32v.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231679/LFCA-010_105763_srmwe6.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231674/LFCA-007_105759_dz5eyj.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231668/LFCA-009B_105762_zfd7wl.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231663/LFCA-006_105758_nkscit.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231650/LFCA-008_105760_mnmajk.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231650/LFCA-002_UNK_ytrnj5.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231649/LFCA-002_105752_fg6nh4.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231639/LFCA-001_105751_wvvjaf.jpg",
+          },
+        ],
+      },
+      {
         heading:
           "Little Fort Polymetallic Claim #1106809 - Little Fort, B.C (1 hr drive north of Kamloops)",
         type: "SimpleImage",

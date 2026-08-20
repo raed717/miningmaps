@@ -22,6 +22,27 @@ type ProjectsPageProps = {
   showOnlyForSale?: boolean;
 };
 
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function highlightMatch(text: string, query: string) {
+  if (!query.trim()) return text;
+
+  const parts = text.split(new RegExp(`(${escapeRegExp(query)})`, "gi"));
+  if (parts.length === 1) return text;
+
+  return parts.map((part, index) =>
+    part.toLowerCase() === query.toLowerCase() ? (
+      <mark key={index} className="bg-primary/30 text-inherit">
+        {part}
+      </mark>
+    ) : (
+      <span key={index}>{part}</span>
+    )
+  );
+}
+
 export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPageProps) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
@@ -262,13 +283,13 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
 
                   <div className="relative z-10 flex grow flex-col bg-card p-6">
                     <h3 className="mb-4 text-2xl font-extrabold uppercase tracking-tight leading-none transition-colors group-hover:text-primary">
-                      {project.title}
+                      {highlightMatch(project.title, searchQuery)}
                     </h3>
 
                     <p
                       className={`mb-6 text-sm uppercase leading-relaxed text-muted-foreground ${mono.className}`}
                     >
-                      {project.summary}
+                      {highlightMatch(project.summary, searchQuery)}
                     </p>
 
                     {project.subProjectIds &&
@@ -292,7 +313,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                                     <span className="text-primary/40 transition-colors group-hover/sub:text-primary">
                                       &rsaquo;
                                     </span>
-                                    {sub.title}
+                                    {highlightMatch(sub.title, searchQuery)}
                                   </Link>
                                 </li>
                               );
