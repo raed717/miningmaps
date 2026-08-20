@@ -19,6 +19,8 @@ export type KuulaFrame = {
   allowFullScreen?: boolean;
 };
 
+export type GalleryType = "mosaic" | "mosaique" | "carousel" | "grid" | "masonry";
+
 export type ProjectSection =
   | {
       heading: string;
@@ -46,13 +48,15 @@ export type ProjectSection =
       links?: LinkPreview[];
       VideoLinks?: VideoLink[];
     }
-  // slide show of simple images
+  // slide show or gallery of simple images
   | {
       heading?: string;
       type: "ImageGallery";
+      galleryType?: GalleryType;
       images: {
         src: string;
         alt?: string;
+        caption?: string;
       }[];
     }
   | {
@@ -555,7 +559,9 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
           "the slope angle for the outcrop is 36 deg, length is 15.2 m, with 9.2 m height difference",
       },
       {
+        heading: "Outcrop Field Photos & Topography",
         type: "ImageGallery",
+        galleryType: "mosaic",
         images: [
           {
             src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787245447/WhatsApp_Image_2026-08-20_at_5.44.00_PM_clzcnk.jpg",
@@ -602,7 +608,9 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         ],
       },
       {
+        heading: "Mineral & Geological Core Samples",
         type: "ImageGallery",
+        galleryType: "masonry",
         images: [
           {
             src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231691/LFCA-005_105757_hw4vfo.jpg",
@@ -731,7 +739,9 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         content: "Gold grades of up to 0.1 oz/ton! (3.19 grams/ton).",
       },
       {
+        heading: "California Property Maps & Field Photos",
         type: "ImageGallery",
+        galleryType: "mosaic",
         images: [
           {
             src: "/images/projects/California/1.png",

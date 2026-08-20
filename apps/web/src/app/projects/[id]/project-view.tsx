@@ -18,6 +18,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
+import { ProjectImageGallery } from "@/components/project-image-gallery";
 import {
   Carousel,
   CarouselContent,
@@ -238,38 +239,11 @@ export default function ProjectDetails({
                 )}
 
                 {section.type === "ImageGallery" && section.images && section.images.length > 0 && (
-                  <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 p-4">
-                    <Carousel
-                      opts={{
-                        align: "start",
-                        loop: true,
-                      }}
-                      plugins={[
-                        Autoplay({
-                          delay: 4000,
-                        }),
-                      ]}
-                      className="w-full"
-                    >
-                      <CarouselContent className="-ml-2 md:-ml-4">
-                        {section.images.map((img, i) => (
-                          <CarouselItem key={i} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                            <div className="overflow-hidden rounded-lg relative cursor-zoom-in aspect-square bg-black/5 flex items-center justify-center">
-                              <Zoom zoomMargin={40}>
-                                <img
-                                  src={img.src}
-                                  alt={img.alt || `Gallery image ${i + 1}`}
-                                  className="w-full h-full object-cover rounded-lg"
-                                />
-                              </Zoom>
-                            </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      <CarouselPrevious className="left-2" />
-                      <CarouselNext className="right-2" />
-                    </Carousel>
-                  </div>
+                  <ProjectImageGallery
+                    images={section.images}
+                    heading={section.heading}
+                    galleryType={section.galleryType}
+                  />
                 )}
 
                 {section.type === "PdfDocuments" && (
