@@ -91,12 +91,41 @@ export async function generateMetadata({
     if (project) {
       const location = project.region;
       const tags = project.tags?.join(", ") ?? "";
+      const ogImageUrl = project.image
+        ? project.image.startsWith("http")
+          ? project.image
+          : `https://miningpropertymaps.com${project.image}`
+        : "https://miningpropertymaps.com/opengraph-image.png";
+      const metaTitle = `${project.title} — ${location} | ${siteName}`;
+      const metaDescription =
+        project.summary ||
+        `${project.title} in ${location}. ${tags ? `Commodities: ${tags}.` : ""}`;
+
       return {
-        title: `${project.title} — ${location} | ${siteName}`,
-        description:
-          project.summary ||
-          `${project.title} in ${location}. ${tags ? `Commodities: ${tags}.` : ""}`,
+        title: metaTitle,
+        description: metaDescription,
         alternates: { canonical },
+        openGraph: {
+          title: metaTitle,
+          description: metaDescription,
+          url: canonical,
+          siteName,
+          type: "website",
+          images: [
+            {
+              url: ogImageUrl,
+              width: 1200,
+              height: 630,
+              alt: project.title,
+            },
+          ],
+        },
+        twitter: {
+          card: "summary_large_image",
+          title: metaTitle,
+          description: metaDescription,
+          images: [ogImageUrl],
+        },
       };
     }
   }
@@ -105,10 +134,39 @@ export async function generateMetadata({
   if ((slugArray[0] === "post" || slugArray[0] === "posts") && slugArray[1]) {
     const post = mockPosts.find((p) => p.id === slugArray[1]);
     if (post) {
+      const postTitle = `${post.title} — ${siteName}`;
+      const postDescription = post.summary || `Field report from Adamson Geomatics.`;
+      const postImage = post.previewImage
+        ? post.previewImage.startsWith("http")
+          ? post.previewImage
+          : `https://miningpropertymaps.com${post.previewImage}`
+        : "https://miningpropertymaps.com/opengraph-image.png";
+
       return {
-        title: `${post.title} — ${siteName}`,
-        description: post.summary || `Field report from Adamson Geomatics.`,
+        title: postTitle,
+        description: postDescription,
         alternates: { canonical },
+        openGraph: {
+          title: postTitle,
+          description: postDescription,
+          url: canonical,
+          siteName,
+          type: "article",
+          images: [
+            {
+              url: postImage,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ],
+        },
+        twitter: {
+          card: "summary_large_image",
+          title: postTitle,
+          description: postDescription,
+          images: [postImage],
+        },
       };
     }
   }
