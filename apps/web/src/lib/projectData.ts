@@ -528,7 +528,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
       "Little Fort Polymetallic Claim #1106809 - 362 hectares of VMS potential, 1 hour north of Kamloops, BC.",
     region: "British Columbia, Canada",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/4/41/The_North_Thompson_River_at_Little_Fort_-_panoramio.jpg",
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229477/WhatsApp_Image_2026-08-18_at_5.45.11_AM_a6zdhd.jpg",
     coordinates: [50.809336, -120.406309],
     isForSale: true,
     author: "Adamson Geomatics",
@@ -557,6 +557,17 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
           "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229475/WhatsApp_Image_2026-08-18_at_3.46.28_AM_juejfo.jpg",
         imageCaption:
           "the slope angle for the outcrop is 36 deg, length is 15.2 m, with 9.2 m height difference",
+      },
+      {
+        heading: "Claim Access / Terrain",
+        type: "paragraph",
+        content: "",
+        VideoLinks: [
+          {
+            title: "Claim Access / Terrain (Video)",
+            youtubeUrl: "https://www.youtube.com/watch?v=RhIDh4DvACo",
+          },
+        ],
       },
       {
         heading: "Outcrop Field Photos & Topography",

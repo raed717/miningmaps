@@ -369,7 +369,13 @@ export default function ProjectDetails({
                 )}
 
                 {"VideoLinks" in section && (section as any).VideoLinks && (section as any).VideoLinks.length > 0 && (
-                  <div className="grid gap-6 sm:grid-cols-2 pt-4">
+                  <div
+                    className={
+                      (section as any).VideoLinks.length === 1
+                        ? "flex justify-center pt-4"
+                        : "grid gap-6 sm:grid-cols-2 pt-4"
+                    }
+                  >
                     {(section as any).VideoLinks.map((video: any, idx: number) => {
                       let embedUrl = "";
                       if (video.youtubeUrl) {
@@ -382,7 +388,12 @@ export default function ProjectDetails({
                       }
 
                       return (
-                        <div key={idx} className="flex flex-col overflow-hidden rounded-xl border border-border/50 bg-card">
+                        <div
+                          key={idx}
+                          className={`flex flex-col overflow-hidden rounded-xl border border-border/50 bg-card ${
+                            (section as any).VideoLinks.length === 1 ? "w-full max-w-2xl" : ""
+                          }`}
+                        >
                           <div className="relative aspect-video w-full bg-background/50 border-b border-border/50">
                             {embedUrl ? (
                               <iframe
@@ -412,14 +423,18 @@ export default function ProjectDetails({
                               </div>
                             )}
                           </div>
-                          <div className="p-4">
-                            <h4 className="font-bold text-foreground text-sm uppercase tracking-tight">{video.title}</h4>
-                            {video.description && (
-                              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                                {video.description}
-                              </p>
-                            )}
-                          </div>
+                          {(video.title || video.description) && (
+                            <div className="p-4">
+                              {video.title && (
+                                <h4 className="font-bold text-foreground text-sm uppercase tracking-tight">{video.title}</h4>
+                              )}
+                              {video.description && (
+                                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                                  {video.description}
+                                </p>
+                              )}
+                            </div>
+                          )}
                         </div>
                       );
                     })}
