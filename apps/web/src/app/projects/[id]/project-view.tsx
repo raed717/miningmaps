@@ -385,6 +385,20 @@ export default function ProjectDetails({
                         } else if (video.youtubeUrl.includes("youtube.com/embed/")) {
                           embedUrl = video.youtubeUrl;
                         }
+                      } else if (video.googleDriveUrl || video.driveUrl) {
+                        const rawUrl = video.googleDriveUrl || video.driveUrl;
+                        const driveMatch = rawUrl.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || rawUrl.match(/id=([a-zA-Z0-9_-]+)/);
+                        if (driveMatch && driveMatch[1]) {
+                          embedUrl = `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+                        }
+                      } else if (video.url) {
+                        const ytMatch = video.url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+                        const driveMatch = video.url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || video.url.match(/id=([a-zA-Z0-9_-]+)/);
+                        if (ytMatch && ytMatch[1]) {
+                          embedUrl = `https://www.youtube.com/embed/${ytMatch[1]}`;
+                        } else if (driveMatch && driveMatch[1]) {
+                          embedUrl = `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+                        }
                       }
 
                       return (

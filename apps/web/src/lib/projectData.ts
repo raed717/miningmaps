@@ -10,6 +10,9 @@ export type VideoLink = {
   description?: string;
   vimeoUrl?: string;
   youtubeUrl?: string;
+  googleDriveUrl?: string;
+  driveUrl?: string;
+  url?: string;
 };
 
 export type KuulaFrame = {
@@ -518,6 +521,21 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         content:
           "Mr. Adamson has a Letter of Reference from Barkerville Gold Mines for my work there, and a recommendation from the President of the Company, Chris Lodder who says Mr. Adamson is the “best lands guy in the business”. Along with these accomplishments, Mr. Adamson led the development of major infrastructure projects for the Province of British Columbia and this mining company, including the cell tower and power line right of way projects. For more information, email chris@miningpropertymaps.com.",
       },
+      {
+        heading: "Little Fort Polymetallic Project – Video Overview",
+        type: "paragraph",
+        content:
+          "Aerial drone survey and site access footage for the Little Fort Polymetallic Claim (#1106809).",
+        VideoLinks: [
+          {
+            title: "Little Fort Polymetallic Claim – Drone Survey & Site Access",
+            description:
+              "Aerial perspective, outcrop geology, and terrain survey for Little Fort Polymetallic Claim #1106809.",
+            googleDriveUrl:
+              "https://drive.google.com/file/d/1ZouSU5N_rsUK0T9h5YQsqk8glwFxTpwr/view",
+          },
+        ],
+      },
     ],
   },
   // British Columbia - Little Fort Polymetallic Claim
@@ -559,10 +577,16 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
           "the slope angle for the outcrop is 36 deg, length is 15.2 m, with 9.2 m height difference",
       },
       {
-        heading: "Claim Access / Terrain",
+        heading: "Claim Access & Site Video",
         type: "paragraph",
         content: "",
         VideoLinks: [
+          {
+            title: "Little Fort Drone Survey & Site Access Video",
+            description: "Aerial survey and property access overview.",
+            googleDriveUrl:
+              "https://drive.google.com/file/d/1ZouSU5N_rsUK0T9h5YQsqk8glwFxTpwr/view",
+          },
           {
             title: "Claim Access / Terrain (Video)",
             youtubeUrl: "https://www.youtube.com/watch?v=RhIDh4DvACo",
@@ -2769,6 +2793,21 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         type: "SimpleImage",
         image:
           "https://res.cloudinary.com/dfytfu2jq/image/upload/v1786014794/Ferroux_wolj5e.png",
+      },
+      {
+        heading: "Ferroux Property – Exploration Video",
+        type: "paragraph",
+        content:
+          "Field exploration and terrain overview footage for the Ferroux showing (Claim #1136051).",
+        VideoLinks: [
+          {
+            title: "Ferroux Property – Field & Terrain Video",
+            description:
+              "Field exploration overview and geological terrain footage.",
+            googleDriveUrl:
+              "https://drive.google.com/file/d/1X1w02NabYnJgkVp3wNn6DYD3H2YQk6Ed/view",
+          },
+        ],
       },
       // pdf file
       {

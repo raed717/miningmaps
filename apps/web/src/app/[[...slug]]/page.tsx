@@ -16,7 +16,7 @@ const pageMeta: Record<string, Metadata> = {
   "/about": {
     title: `About — ${siteName}`,
     description:
-      "Chris Adamson is a Registered Inspector (R.I.) providing professional land management, GIS mapping, and geospatial services in British Columbia and beyond.",
+      "Chris Adamson is a Registered Inspector (R.I.) providing professional land management, GIS mapping, and geospatial services in British Columbia and beyond. Fully insured with CAD $2M professional and commercial liability.",
   },
   "/services": {
     title: `Services — ${siteName}`,
