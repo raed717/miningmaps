@@ -330,6 +330,57 @@ export default function ProjectDetails({
                     </ul>
                   )}
 
+                {section.type === "table" && section.headers && section.rows && (
+                  <div className="overflow-hidden rounded-xl border border-border/50 bg-card shadow-sm">
+                    <div className="overflow-x-auto">
+                      <table className="w-full text-left text-sm">
+                        <thead className="border-b border-border/50 bg-muted/50 text-xs font-bold uppercase tracking-wider text-primary">
+                          <tr>
+                            {section.headers.map((header, hIdx) => (
+                              <th
+                                key={hIdx}
+                                className="px-5 py-3.5 whitespace-nowrap"
+                              >
+                                {header}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-border/40 font-mono text-xs">
+                          {section.rows.map((row, rIdx) => (
+                            <tr
+                              key={rIdx}
+                              className="transition-colors hover:bg-muted/30"
+                            >
+                              {row.map((cell, cIdx) => (
+                                <td
+                                  key={cIdx}
+                                  className={`px-5 py-3.5 ${
+                                    cIdx === section.headers.length - 1
+                                      ? "min-w-[280px] max-w-xl whitespace-normal text-muted-foreground leading-relaxed"
+                                      : "whitespace-nowrap text-muted-foreground"
+                                  } ${
+                                    cIdx === 0
+                                      ? "font-sans font-semibold text-foreground"
+                                      : ""
+                                  }`}
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    {section.caption && (
+                      <div className="border-t border-border/50 bg-background/50 px-5 py-2.5 text-center text-xs text-muted-foreground">
+                        {section.caption}
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 {"links" in section && (section as any).links && (section as any).links.length > 0 && (
                   <div className="flex flex-wrap gap-4 pt-2">
                     {(section as any).links.map((link: any, idx: number) => (

@@ -75,6 +75,15 @@ export type ProjectSection =
       heading?: string;
       type: "kuulaFrame";
       kuulaFrame: KuulaFrame;
+    }
+  | {
+      heading?: string;
+      type: "table";
+      caption?: string;
+      headers: string[];
+      rows: (string | number)[][];
+      links?: LinkPreview[];
+      VideoLinks?: VideoLink[];
     };
 
 export type QuickFact = {
@@ -528,7 +537,8 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
           "Aerial drone survey and site access footage for the Little Fort Polymetallic Claim (#1106809).",
         VideoLinks: [
           {
-            title: "Little Fort Polymetallic Claim – Drone Survey & Site Access",
+            title:
+              "Little Fort Polymetallic Claim – Drone Survey & Site Access",
             description:
               "Aerial perspective, outcrop geology, and terrain survey for Little Fort Polymetallic Claim #1106809.",
             googleDriveUrl:
@@ -689,6 +699,163 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
           {
             src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787231639/LFCA-001_105751_wvvjaf.jpg",
           },
+        ],
+      },
+      {
+        heading: "Mineral & Geological Sample Log",
+        type: "table",
+        caption: "Field sample locations, UTM coordinates (Zone 10), sample types, and lithological descriptions for Little Fort Claim #1106809.",
+        headers: [
+          "No",
+          "Location ID",
+          "Sample ID",
+          "X",
+          "Y",
+          "Z",
+          "Sample Type",
+          "Description",
+        ],
+        rows: [
+          [
+            "1",
+            "LFCA-001",
+            "105751",
+            "690126.41",
+            "5709763.121",
+            "1119.433105",
+            "Rock",
+            "Sample from outcrop of vuggy quartz vein within Oxidized outcrop, greenish basaltic host rock, 5 vein per meter, average 1-2 cm thick, trace sulphide",
+          ],
+          [
+            "2",
+            "LFCA-002",
+            "105752",
+            "690180.947",
+            "5709872.72",
+            "1123.411621",
+            "Rock",
+            "Sample of float of highly oxidized greenish basaltic host rock, sphalerite and trace galena",
+          ],
+          [
+            "3",
+            "LFCA-003",
+            "105755",
+            "690251.202",
+            "5710647.169",
+            "1108.560791",
+            "Rock",
+            "Sample of float of highly silicified greenish rock, coarse pyrite along the quartz string",
+          ],
+          [
+            "4",
+            "LFCA-004",
+            "105756",
+            "690236.38",
+            "5710708.965",
+            "1113.407471",
+            "Rock",
+            "Sample of float of very dense banded sulphide rock, disseminated coarse pyrite up to 7%, cut by segmented quartz vein",
+          ],
+          [
+            "5",
+            "LFCA-005",
+            "105757",
+            "689596.755",
+            "5709601.241",
+            "1155.255127",
+            "Rock",
+            "Sample of outcrop silicified greenish schist, found boudinage layer, disseminated fine pyrite 1-3%, trace purplish chalcocite?",
+          ],
+          [
+            "6",
+            "LFCA-006",
+            "105758",
+            "688737.029",
+            "5710078.247",
+            "1157.377563",
+            "Rock",
+            "Sample of float mineralized white color sandstone, disseminated fine pyrite 3-5%, abundance pyrite along the oxidized hairline fracture",
+          ],
+          [
+            "7",
+            "LFCA-007",
+            "105759",
+            "689727.817",
+            "5709773.705",
+            "1144.42041",
+            "Rock",
+            "Sample of sub-outcrop quartz vein with milky to banded texture, cut greenish brecciated proprylitic altered, staining of black metallic mineral",
+          ],
+          [
+            "8",
+            "LFCA-008",
+            "105760",
+            "688641.829",
+            "5709777.767",
+            "1093.07312",
+            "Rock",
+            "Sample of float greenish oxidized rock, disseminated pyrite up to 3%",
+          ],
+          [
+            "9",
+            "LFCA-009",
+            "105761",
+            "688337.489",
+            "5709999.275",
+            "1149.799805",
+            "Rock",
+            "Sample of sub-outcrop highly altered metallic sulphide rock, disseminated pyrite up to 3%",
+          ],
+          [
+            "10",
+            "LFCA-009B",
+            "105762",
+            "688334.991",
+            "5709999.182",
+            "1153.518311",
+            "Rock",
+            "Sample of sub-outcrop highly altered metallic sulphide rock, disseminated pyrite up to 3%",
+          ],
+          [
+            "11",
+            "LFCA-010",
+            "105763",
+            "689616.73",
+            "5710132.301",
+            "1181.739502",
+            "Rock",
+            "Sample of sub-outcrop at small creek, source potentially close, highly altered, disseminated pyrite up to 3%",
+          ],
+          [
+            "12",
+            "LFCA-011",
+            "105754",
+            "TBD",
+            "TBD",
+            "TBD",
+            "Rock",
+            "TBD",
+          ],
+          [
+            "13",
+            "LFCA-012",
+            "105753",
+            "TBD",
+            "TBD",
+            "TBD",
+            "Rock",
+            "TBD",
+          ],
+          [
+            "14",
+            "LFCA-002B",
+            "105752",
+            "690180.947",
+            "5709872.72",
+            "1123.411621",
+            "Rock",
+            "TBD",
+          ],
         ],
       },
       {
@@ -2933,6 +3100,117 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
           "Spines display natural variation in curvature and thickness rather than synthetic uniformity.",
           "Consistent matrix composition without artificial glue boundaries or synthetic resin fill lines.",
           "Hard mineralized shell texture consistent with authentic fossilized calcite.",
+        ],
+      },
+    ],
+  },
+  {
+    // TODO: verify ID sequence for Nevada
+    id: "nv-001",
+    type: "project",
+    title: "Cleveland-Delano Project - Nevada",
+    summary:
+      "A consolidated, district-scale Carbonate Replacement Deposit (CRD) asset unifying approximately 1,000 acres across four historic mining centers. Features historical high-grade production of silver, lead, and zinc with a conceptual target of 5 million tons @ ~50 oz/ton AgEq.",
+    region: "Elko County, Nevada, USA",
+    // TODO: Add actual hero image URL (e.g. site geology map or historical mine photo)
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787499930/Lamoille-1-1024x739_vorz9c.jpg",
+    // TODO: Confirm if you prefer the exact Combined Delano-Cleveland coordinate or the Cleveland Mine specifically
+    coordinates: [41.67167, -114.27333],
+    isForSale: true,
+    author: "Chris Adamson",
+    quickFacts: [
+      {
+        label: "Property",
+        value: "Cleveland-Delano Resources",
+      },
+      {
+        label: "District",
+        value: "Delano Mountains Mining District",
+      },
+      {
+        label: "Area",
+        value: "~1,000 acres",
+      },
+      {
+        label: "Commodities",
+        value: "Ag, Pb, Zn (Secondary Cu, Au)",
+      },
+      {
+        label: "Deposit Type",
+        value: "CRD / Polymetallic Replacement",
+      },
+      {
+        label: "Status",
+        value: "Exploration Stage",
+      },
+    ],
+    tags: [
+      "Silver",
+      "Lead",
+      "Zinc",
+      "CRD",
+      "Polymetallic",
+      "Nevada",
+      "For Sale",
+    ],
+    sections: [
+      {
+        heading: "Executive Summary",
+        type: "paragraph",
+        content:
+          "The Cleveland-Delano Project is a consolidated, district-scale Carbonate Replacement Deposit (CRD) asset situated in Elko County, Nevada. The project unifies approximately 1,000 acres encompassing four historic mining centers (including the Cleveland, Delano, Gold Note, and 86 Mines) into a single contiguous block. Cleveland-Delano offers resource investors an entry point into a large-scale silver-lead-zinc replacement system in a top-tier North American mining jurisdiction.",
+      },
+      {
+        heading: "Geology & Structural Setting",
+        type: "bullet_list",
+        content: [
+          "Host Rocks: Favorable Paleozoic carbonate stratigraphy (Permian Pequop and Grandeur Formations) dominated by reactive limestones and dolomites.",
+          "Structural Architecture: Low-angle thrust faults, bedding-plane shears, and high-angle feeder structures provide primary fluid conduits, creating broad replacement horizons rather than narrow, isolated veins.",
+          "Alteration & Textures: Classic CRD system indicators, including pervasive jasperoid development, decalcification, silica-carbonate replacement textures, and surface gossan/oxide expressions over massive sulfide zones.",
+        ],
+      },
+      {
+        heading: "Historical Grades, Production & Resource Indicators",
+        type: "bullet_list",
+        content: [
+          "Historical Production (1872-1966): Recorded District Output of ~1.5 million oz Ag, 22 million lbs Pb, 1.3 million lbs Zn, and 333 oz Au across regular shipments to Salt Lake Valley smelters.",
+          "Direct Shipping Ore (DSO) Grades: Historical direct-shipping ore averaged 50% Pb and 60 oz/ton Ag.",
+          "Run-of-Mine / Stope Grades: Average mined replacement shoots yielded 20% to 25% Pb and 30 to 35 oz/ton Ag.",
+          "Milling Feed: Historic on-site concentration averaged 15% Pb and 20 oz/ton Ag.",
+          "Historical Resource Estimations: Historical evaluations outlined an unclassified historical block of approximately 240,000 short tons averaging 6.43 opt Ag, 5.6% Pb, and 3.8% Zn at the central mine areas.",
+        ],
+      },
+      {
+        heading: "Exploration Work & Drilling Status",
+        type: "bullet_list",
+        content: [
+          "Modern Drilling Status (Untested Scale): The consolidated land position has seen limited to no modern systematic diamond drilling at depth or along strike.",
+          "Exploration Void: Historical mining ceased primarily due to depth-of-haulage limitations, small-scale workings (inclines up to 1,750 feet), and water table handling rather than the depletion of the mineralizing system.",
+          'Underground Sampling: Continuous channel and stope sampling across 6,200+ linear feet of historical underground workings confirmed broad replacement intervals along the "Upper Bed" limestone.',
+          "Third-Party Data Verification: Independent validation from academic doctoral theses (Olsen, 1960), Nevada Bureau of Mines and Geology reports (1980), and Noranda Exploration internal technical memoranda (1980s) verify system continuity.",
+          "Smelter Returns: Historic smelter receipts from the Delano and Stockdale shipments provide empirical verification of high metal recoveries and standard metallurgy.",
+        ],
+      },
+      {
+        heading: "Key Considerations for Mining Investors",
+        type: "bullet_list",
+        content: [
+          "District-Scale Consolidation: Historic operations were severely fragmented by competing claim owners. Cleveland-Delano has unified four historic mines under one vehicle, enabling a systematic district-wide exploration program.",
+          "Asymmetric Discovery Potential: With a conceptual target of 5 million tons at 50 oz/ton AgEq (~250 million oz AgEq), first-pass modern drilling into identified chimney and manto feeder zones provides direct discovery leverage.",
+          "Established Infrastructure & Access: Situated in Elko County, Nevada, the project benefits from year-round road access, regional power routes, mining supply chains, and an established mining-friendly regulatory framework.",
+          "Favorable Metallurgy: Historical gravity and flotation performance alongside smelter records demonstrate clean, high-recovery separation of lead, zinc, and silver concentrates without complex refractory constraints.",
+          "Turnkey Technical Pathways: The project framework and geological model have been reviewed by a Certified Professional Geologist (CPG Qualified Person), establishing immediate readiness for standard NI 43-101 technical reporting and phased drill targeting.",
+        ],
+      },
+      {
+        heading: "Location & Access",
+        type: "bullet_list",
+        content: [
+          "District: Delano (also known historically as Delno, Goose Creek, or Indian Springs area).",
+          "Setting: Dry Creek Canyon on the west slope of Mine Mountain / northern Delano Mountains (Delano Range), near the Nevada–Utah border.",
+          "Access: Roughly 30-36 miles north of Montello/Tecoma, in a remote area accessible mainly by 4x4 dirt roads.",
+          "Nearby Infrastructure: Ghost town of Delano (post office closed 1927); the site is in the northeastern foothills of the range.",
         ],
       },
     ],
