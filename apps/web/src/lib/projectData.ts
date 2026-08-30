@@ -587,6 +587,25 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
           "the slope angle for the outcrop is 36 deg, length is 15.2 m, with 9.2 m height difference",
       },
       {
+        type: "ImageGallery",
+        galleryType: "mosaic",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788098197/LittleFortMap_aris_geochem_Zn_v1_ibtx77.png",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788098192/LittleFortMap_aris_geochem_Au_v1_nxlyzw.png",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788098182/LittleFortMap_aris_geochem_Pb_v1_gjhhzn.png",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788098178/LittleFortMap_aris_geochem_Cu_v1_uthppj.png",
+          },
+        ],
+        heading: "2026 SAMPLING RESULTS PENDING!",
+      },
+      {
         heading: "Claim Access & Site Video",
         type: "paragraph",
         content: "",
@@ -599,15 +618,23 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
           },
           {
             title: "Claim Access / Terrain (Video)",
-            youtubeUrl: "https://www.youtube.com/watch?v=RhIDh4DvACo",
+            youtubeUrl: "https://www.youtube.com/watch?v=hjHXPOPyptg",
           },
         ],
+      },
+      {
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788098185/image_1_u1k6cf.png",
       },
       {
         heading: "Outcrop Field Photos & Topography",
         type: "ImageGallery",
         galleryType: "mosaic",
         images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229476/WhatsApp_Image_2026-08-18_at_5.45.12_AM_3_kdljzd.jpg",
+          },
           {
             src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787245447/WhatsApp_Image_2026-08-20_at_5.44.00_PM_clzcnk.jpg",
           },
@@ -642,9 +669,6 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
             src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229476/WhatsApp_Image_2026-08-18_at_5.45.12_AM_4_v3t7u5.jpg",
           },
           {
-            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229476/WhatsApp_Image_2026-08-18_at_5.45.12_AM_3_kdljzd.jpg",
-          },
-          {
             src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1787229476/WhatsApp_Image_2026-08-18_at_5.47.59_AM_bwrgrg.jpg",
           },
           {
@@ -653,7 +677,22 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         ],
       },
       {
-        heading: "Mineral & Geological Core Samples",
+        type: "ImageGallery",
+
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788100692/WhatsApp_Image_2026-08-28_at_7.17.34_PM_tm5kdo.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788100692/WhatsApp_Image_2026-08-28_at_7.17.27_PM_ar8n5h.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788100688/WhatsApp_Image_2026-08-28_at_7.17.59_PM_ibrech.jpg",
+          },
+        ],
+      },
+      {
+        heading: "Mineral & Geological Rock Samples",
         type: "ImageGallery",
         galleryType: "masonry",
         images: [
@@ -704,7 +743,8 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
       {
         heading: "Mineral & Geological Sample Log",
         type: "table",
-        caption: "Field sample locations, UTM coordinates (Zone 10), sample types, and lithological descriptions for Little Fort Claim #1106809.",
+        caption:
+          "Field sample locations, UTM coordinates (Zone 10), sample types, and lithological descriptions for Little Fort Claim #1106809.",
         headers: [
           "No",
           "Location ID",
@@ -826,26 +866,8 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
             "Rock",
             "Sample of sub-outcrop at small creek, source potentially close, highly altered, disseminated pyrite up to 3%",
           ],
-          [
-            "12",
-            "LFCA-011",
-            "105754",
-            "TBD",
-            "TBD",
-            "TBD",
-            "Rock",
-            "TBD",
-          ],
-          [
-            "13",
-            "LFCA-012",
-            "105753",
-            "TBD",
-            "TBD",
-            "TBD",
-            "Rock",
-            "TBD",
-          ],
+          ["12", "LFCA-011", "105754", "TBD", "TBD", "TBD", "Rock", "TBD"],
+          ["13", "LFCA-012", "105753", "TBD", "TBD", "TBD", "Rock", "TBD"],
           [
             "14",
             "LFCA-002B",
@@ -903,7 +925,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         ],
       },
     ],
-  },
+  }, // end of Little Fort Polymetallic Claim
   // California
   {
     id: "sk-006",
