@@ -1,8 +1,10 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import {
+  ArrowLeft,
   Search,
   SlidersHorizontal,
   MapPin,
@@ -33,8 +35,18 @@ export default function OtherProjectsPage() {
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
   const [sortKey, setSortKey] = useState<SortKey>("Priority");
   const [sortAsc, setSortAsc] = useState(true);
-  const [showFilters, setShowFilters] = useState(false);
+  const [showFilters, setShowFilters] = useState(true);
   const [selectedProject, setSelectedProject] = useState<OtherProject | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("search") || params.get("q");
+      if (q) {
+        setSearchQuery(q);
+      }
+    }
+  }, []);
 
   const statuses = useMemo(() => {
     const s = new Set(otherProjects.map((p) => p.Status).filter(Boolean));
@@ -123,6 +135,17 @@ export default function OtherProjectsPage() {
       <div className="pointer-events-none fixed inset-0 z-0 opacity-10 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_80%_at_50%_0%,#000_40%,transparent_100%)]" />
 
       <main className="relative z-10 mx-auto max-w-[90rem] px-4 py-12 md:px-10 md:py-16">
+        {/* Back link */}
+        <div className="mb-6">
+          <Link
+            href="/projects"
+            className={`group inline-flex items-center gap-2 border border-border bg-card/70 px-4 py-2.5 text-xs font-bold uppercase tracking-widest text-muted-foreground backdrop-blur-sm transition-all hover:border-primary hover:bg-primary/10 hover:text-primary ${mono.className}`}
+          >
+            <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" />
+            <span>Back to Main Projects</span>
+          </Link>
+        </div>
+
         {/* Header */}
         <header className="mb-8 border-b border-border pb-8 md:mb-10 md:pb-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
@@ -469,12 +492,22 @@ export default function OtherProjectsPage() {
           </div>
         )}
 
-        {/* Footer stat */}
+        {/* Footer stat & bottom navigation */}
         <div
-          className={`mt-8 border-t border-border pt-4 text-[9px] uppercase tracking-[0.2em] text-muted-foreground ${mono.className}`}
+          className={`mt-10 flex flex-col items-start justify-between gap-4 border-t border-border pt-6 md:flex-row md:items-center text-[9px] uppercase tracking-[0.2em] text-muted-foreground ${mono.className}`}
         >
-          Total area displayed: {filtered.reduce((s, p) => s + p.Total_Area_ha, 0).toLocaleString()} hectares
-          &middot; {filtered.reduce((s, p) => s + p.Tenure_Count, 0)} individual tenures
+          <div>
+            Total area displayed: {filtered.reduce((s, p) => s + p.Total_Area_ha, 0).toLocaleString()} hectares
+            &middot; {filtered.reduce((s, p) => s + p.Tenure_Count, 0)} individual tenures
+          </div>
+
+          <Link
+            href="/projects"
+            className="group inline-flex items-center gap-2 border border-border bg-card/60 px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground transition-all hover:border-primary hover:bg-primary/10 hover:text-primary"
+          >
+            <ArrowLeft className="h-3 w-3 transition-transform group-hover:-translate-x-1" />
+            <span>Back to Main Projects</span>
+          </Link>
         </div>
       </main>
     </div>

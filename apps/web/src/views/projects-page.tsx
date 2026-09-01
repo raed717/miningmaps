@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { projects } from "@/lib/projectData";
+import { otherProjects } from "@/lib/otherProjectsData";
 import { PartnerNoticeRotator } from "@/components/partner-notice-rotator";
 
 type ProjectsPageProps = {
@@ -81,6 +82,20 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
 
     return matchesSearch && matchesFilter && matchesSaleState;
   });
+
+  const matchingOtherProjectsCount = useMemo(() => {
+    if (!searchQuery.trim()) return 0;
+    const query = searchQuery.toLowerCase();
+    return otherProjects.filter(
+      (p) =>
+        p["Group Name"]?.toLowerCase().includes(query) ||
+        p["Map Number"]?.toLowerCase().includes(query) ||
+        p["Commodity / Theme"]?.toLowerCase().includes(query) ||
+        p["Brief Project Summary"]?.toLowerCase().includes(query) ||
+        p.Titles?.toLowerCase().includes(query) ||
+        p.Owners?.toLowerCase().includes(query)
+    ).length;
+  }, [searchQuery]);
 
   return (
     <div
@@ -351,26 +366,101 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
           </AnimatePresence>
         </div>
 
+        {filteredProjects.length > 0 && (
+          <div className="mt-14 flex flex-col items-center justify-between gap-6 border border-border bg-card/40 p-6 backdrop-blur-sm md:flex-row md:p-8">
+            <div>
+              <div
+                className={`flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-primary ${mono.className}`}
+              >
+                <FolderKanban className="h-3.5 w-3.5" />
+                EXTENDED ARCHIVE
+              </div>
+              <h4 className="mt-1 text-lg font-extrabold uppercase tracking-tight text-white md:text-xl">
+                Looking for more mineral claims & tenures?
+              </h4>
+              <p
+                className={`mt-1 text-xs uppercase tracking-widest text-muted-foreground ${mono.className}`}
+              >
+                Explore our extended database of {otherProjects.length} mineral projects and claim tenures across BC.
+              </p>
+            </div>
+            <Link
+              href="/other-projects"
+              className={`group inline-flex shrink-0 items-center gap-3 border border-primary bg-primary px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(234,179,8,0.25)] ${mono.className}`}
+            >
+              <FolderKanban className="h-4 w-4" />
+              <span>More Projects</span>
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+        )}
+
         {filteredProjects.length === 0 && (
-          <div className="flex w-full flex-col items-center justify-center border border-border bg-card py-32 text-center">
-            <Target className="mb-6 h-16 w-16 animate-pulse text-[#555]" />
-            <h3 className="mb-2 text-2xl font-bold uppercase tracking-tighter text-muted-foreground">
+          <div className="flex w-full flex-col items-center justify-center border border-border bg-card/60 p-8 py-20 text-center backdrop-blur-sm md:p-12 md:py-28">
+            <div className="relative mb-6 flex h-20 w-20 items-center justify-center border border-dashed border-primary/40 bg-primary/5">
+              <Target className="h-10 w-10 animate-pulse text-primary/70" />
+            </div>
+            <h3 className="mb-3 text-2xl font-extrabold uppercase tracking-tight text-white md:text-3xl">
               No Records Found
             </h3>
-            <p
-              className={`text-sm uppercase tracking-widest text-[#555] ${mono.className}`}
-            >
-              Modify search parameters or clear active filters.
-            </p>
-            <button
-              onClick={() => {
-                setSearchQuery("");
-                setActiveFilter(null);
-              }}
-              className={`mt-8 border border-primary px-6 py-3 text-xs font-bold uppercase tracking-widest text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
-            >
-              RESET_QUERY
-            </button>
+
+            {searchQuery.trim() ? (
+              <div className="max-w-xl space-y-2">
+                <p
+                  className={`text-xs uppercase tracking-widest leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
+                >
+                  No active projects match <span className="text-primary font-bold">"{searchQuery}"</span> in the main portfolio.
+                </p>
+                {matchingOtherProjectsCount > 0 ? (
+                  <p
+                    className={`text-xs uppercase tracking-widest text-secondary font-bold md:text-sm ${mono.className}`}
+                  >
+                    Found {matchingOtherProjectsCount} matching {matchingOtherProjectsCount === 1 ? "record" : "records"} in the Other Projects database.
+                  </p>
+                ) : (
+                  <p
+                    className={`text-xs uppercase tracking-widest text-muted-foreground/80 ${mono.className}`}
+                  >
+                    Check our broader mining tenure database in Other Projects or clear active filters.
+                  </p>
+                )}
+              </div>
+            ) : (
+              <p
+                className={`max-w-md text-xs uppercase tracking-widest leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
+              >
+                Modify search parameters or clear active filters.
+              </p>
+            )}
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href={
+                  searchQuery.trim()
+                    ? `/other-projects?search=${encodeURIComponent(searchQuery.trim())}`
+                    : "/other-projects"
+                }
+                className={`group inline-flex items-center gap-3 border border-primary bg-primary px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(234,179,8,0.25)] ${mono.className}`}
+              >
+                <FolderKanban className="h-4 w-4" />
+                <span>
+                  {searchQuery.trim() && matchingOtherProjectsCount > 0
+                    ? `View ${matchingOtherProjectsCount} in Other Projects`
+                    : "Display Other Projects"}
+                </span>
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setActiveFilter(null);
+                }}
+                className={`border border-border bg-card/80 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-muted-foreground transition-all hover:border-primary hover:text-primary ${mono.className}`}
+              >
+                RESET_QUERY
+              </button>
+            </div>
           </div>
         )}
       </main>
