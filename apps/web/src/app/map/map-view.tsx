@@ -119,9 +119,8 @@ export default function MapView() {
     <div
       className={`flex h-[calc(100svh-4rem)] min-h-[calc(100svh-4rem)] w-full overflow-hidden bg-background text-foreground selection:bg-primary selection:text-white ${inter.className}`}
     >
-      
       {/* GLOBAL NOISE TEXTURE */}
-      <div 
+      <div
         className="pointer-events-none fixed inset-0 z-50 opacity-[0.03] mix-blend-overlay"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
@@ -143,7 +142,6 @@ export default function MapView() {
           mobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        
         {/* Header */}
         <div className="p-6 border-b border-border bg-background">
           <div className="mb-4 flex items-center justify-end md:hidden">
@@ -155,11 +153,15 @@ export default function MapView() {
               <X className="h-4 w-4" />
             </button>
           </div>
-          <div className={`text-primary font-bold tracking-[0.2em] text-[10px] mb-2 flex items-center gap-2 ${mono.className}`}>
+          <div
+            className={`text-primary font-bold tracking-[0.2em] text-[10px] mb-2 flex items-center gap-2 ${mono.className}`}
+          >
             <Database className="h-3 w-3" /> MAP DATABASE
           </div>
           <h2 className="text-3xl font-extrabold uppercase tracking-tighter leading-none">
-            Global<br/>Telemetry
+            Global
+            <br />
+            Telemetry
           </h2>
         </div>
 
@@ -167,8 +169,12 @@ export default function MapView() {
         <div className="p-6 border-b border-border flex flex-col gap-3">
           <label className="flex cursor-pointer items-center justify-between group">
             <div className="flex items-center gap-3">
-              <Filter className={`h-4 w-4 ${showOnlyForSale ? "text-secondary" : "text-[#555]"}`} />
-              <span className={`text-xs font-bold uppercase tracking-widest ${mono.className} ${showOnlyForSale ? "text-secondary" : "text-muted-foreground"}`}>
+              <Filter
+                className={`h-4 w-4 ${showOnlyForSale ? "text-secondary" : "text-[#555]"}`}
+              />
+              <span
+                className={`text-xs font-bold uppercase tracking-widest ${mono.className} ${showOnlyForSale ? "text-secondary" : "text-muted-foreground"}`}
+              >
                 Available Assets Only
               </span>
             </div>
@@ -178,8 +184,12 @@ export default function MapView() {
               checked={showOnlyForSale}
               onChange={() => setShowOnlyForSale(!showOnlyForSale)}
             />
-            <div className={`h-5 w-10 border border-border transition-colors flex items-center px-1 ${showOnlyForSale ? "bg-secondary/20 border-secondary" : "bg-muted"}`}>
-              <div className={`h-3 w-3 bg-white transition-transform ${showOnlyForSale ? "translate-x-5 bg-secondary" : "translate-x-0 bg-[#555]"}`} />
+            <div
+              className={`h-5 w-10 border border-border transition-colors flex items-center px-1 ${showOnlyForSale ? "bg-secondary/20 border-secondary" : "bg-muted"}`}
+            >
+              <div
+                className={`h-3 w-3 bg-white transition-transform ${showOnlyForSale ? "translate-x-5 bg-secondary" : "translate-x-0 bg-[#555]"}`}
+              />
             </div>
           </label>
 
@@ -207,11 +217,13 @@ export default function MapView() {
 
         {/* Project List */}
         <div className="flex-1 flex flex-col">
-          <div className={`px-6 py-3 bg-muted border-b border-border text-[9px] uppercase tracking-widest font-bold text-[#666] ${mono.className} flex justify-between`}>
+          <div
+            className={`px-6 py-3 bg-muted border-b border-border text-[9px] uppercase tracking-widest font-bold text-[#666] ${mono.className} flex justify-between`}
+          >
             <span>IDENTIFIED TARGETS</span>
             <span>[{visibleProjects.length}]</span>
           </div>
-          
+
           <div className="flex-1 overflow-y-auto">
             {visibleProjects.map((p) => {
               const isSelected = selectedSiteId === p.id;
@@ -230,25 +242,39 @@ export default function MapView() {
                       isSelected ? "bg-primary/10" : "hover:bg-muted"
                     }`}
                   >
-                    <div className={`w-1 transition-colors ${isSelected ? "bg-primary" : "bg-transparent group-hover:bg-[#333]"}`} />
-                    
+                    <div
+                      className={`w-1 transition-colors ${isSelected ? "bg-primary" : "bg-transparent group-hover:bg-[#333]"}`}
+                    />
+
                     <div className="flex-1 p-4 flex gap-4">
                       {/* Small Image Thumbnail */}
-                      <div className={`h-16 w-16 shrink-0 overflow-hidden border ${isSelected ? "border-primary" : "border-border grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100"}`}>
-                        <img src={p.image} alt={p.title} className="h-full w-full object-cover" />
+                      <div
+                        className={`h-16 w-16 shrink-0 overflow-hidden border ${isSelected ? "border-primary" : "border-border grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100"}`}
+                      >
+                        <img
+                          src={p.image}
+                          alt={p.title}
+                          className="h-full w-full object-cover"
+                        />
                       </div>
-                      
+
                       <div className="flex-1 min-w-0 flex flex-col justify-center">
-                        <div className={`text-[10px] text-primary tracking-widest font-bold mb-1 flex items-center justify-between ${mono.className}`}>
+                        <div
+                          className={`text-[10px] text-primary tracking-widest font-bold mb-1 flex items-center justify-between ${mono.className}`}
+                        >
                           <span>ID_{p.id}</span>
                           {p.isForSale && (
-                            <span className="text-secondary px-1 border border-secondary bg-secondary/10">SALE</span>
+                            <span className="text-secondary px-1 border border-secondary bg-secondary/10">
+                              SALE
+                            </span>
                           )}
                         </div>
                         <div className="font-bold text-sm uppercase tracking-tight truncate group-hover:text-white transition-colors">
                           {p.title}
                         </div>
-                        <div className={`text-[10px] text-[#666] mt-1 truncate uppercase ${mono.className}`}>
+                        <div
+                          className={`text-[10px] text-[#666] mt-1 truncate uppercase ${mono.className}`}
+                        >
                           LOC: {p.region}
                         </div>
                       </div>
@@ -271,14 +297,22 @@ export default function MapView() {
                               isSubSelected ? "bg-primary/5" : "hover:bg-muted"
                             }`}
                           >
-                            <div className={`w-1 transition-colors ${isSubSelected ? "bg-primary/60" : "bg-transparent group-hover:bg-[#333]"}`} />
+                            <div
+                              className={`w-1 transition-colors ${isSubSelected ? "bg-primary/60" : "bg-transparent group-hover:bg-[#333]"}`}
+                            />
                             <div className="flex-1 py-2 pl-12 pr-4 flex items-center gap-3">
-                              <span className="text-[10px] text-primary/60 font-bold">&rsaquo;</span>
+                              <span className="text-[10px] text-primary/60 font-bold">
+                                &rsaquo;
+                              </span>
                               <div className="flex-1 min-w-0">
-                                <div className={`text-[10px] text-muted-foreground tracking-widest font-bold mb-0.5 ${mono.className}`}>
+                                <div
+                                  className={`text-[10px] text-muted-foreground tracking-widest font-bold mb-0.5 ${mono.className}`}
+                                >
                                   SUB_{sub.id}
                                 </div>
-                                <div className={`text-xs uppercase tracking-tight truncate text-muted-foreground group-hover:text-white transition-colors ${mono.className}`}>
+                                <div
+                                  className={`text-xs uppercase tracking-tight truncate text-muted-foreground group-hover:text-white transition-colors ${mono.className}`}
+                                >
                                   {sub.title}
                                 </div>
                               </div>
@@ -307,8 +341,8 @@ export default function MapView() {
         </button>
 
         {/* Scanning Line overlay */}
-        <motion.div 
-          animate={{ top: ['-10%', '110%'] }}
+        <motion.div
+          animate={{ top: ["-10%", "110%"] }}
           transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
           className="absolute left-0 w-full h-0.5 bg-primary z-10 pointer-events-none shadow-[0_0_15px_var(--color-primary)] opacity-50"
         />
@@ -320,8 +354,8 @@ export default function MapView() {
           zoomControl={false}
         >
           <TileLayer
-            attribution='&copy; projects are displayed not at exact coordinates for security reasons'
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            attribution="&copy; projects are displayed not at exact coordinates for security reasons"
+            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=cb1_2v0i_1_d240e927e07ac30a1bfdf6f6"
           />
 
           <MapFlyTo coordinates={flyToCoords} />
@@ -331,16 +365,19 @@ export default function MapView() {
             const color = filterColor
               ? filterColor
               : project.isForSale
-              ? "#00FF41"
-              : isSelected
-              ? "#FF3300"
-              : "#888888";
+                ? "#00FF41"
+                : isSelected
+                  ? "#FF3300"
+                  : "#888888";
 
             return (
               <Marker
                 key={project.id}
                 position={project.coordinates}
-                icon={createCustomIcon(color, project.isForSale || isSelected || Boolean(activeFilter))}
+                icon={createCustomIcon(
+                  color,
+                  project.isForSale || isSelected || Boolean(activeFilter),
+                )}
                 eventHandlers={{
                   click: () => {
                     setSelectedSiteId(project.id);
@@ -353,9 +390,12 @@ export default function MapView() {
                     className={`font-sans bg-card border p-1 uppercase tracking-widest ${mono.className}`}
                     style={{ borderColor: color }}
                   >
-                    <div className="font-bold text-white text-[10px] border-b border-border pb-1 mb-1">{project.title}</div>
+                    <div className="font-bold text-white text-[10px] border-b border-border pb-1 mb-1">
+                      {project.title}
+                    </div>
                     <div className="text-[9px] text-muted-foreground">
-                      {project.coordinates[0].toFixed(2)}, {project.coordinates[1].toFixed(2)}
+                      {project.coordinates[0].toFixed(2)},{" "}
+                      {project.coordinates[1].toFixed(2)}
                     </div>
                   </div>
                 </Popup>
@@ -372,15 +412,18 @@ export default function MapView() {
               const subColor = filterColor
                 ? filterColor
                 : sub.isForSale
-                ? "#00FF41"
-                : subSelected
-                ? "#FF3300"
-                : "#888888";
+                  ? "#00FF41"
+                  : subSelected
+                    ? "#FF3300"
+                    : "#888888";
               return (
                 <Marker
                   key={`${project.id}-sub-${sub.id}`}
                   position={sub.coordinates}
-                  icon={createCustomIcon(subColor, sub.isForSale || subSelected || Boolean(activeFilter))}
+                  icon={createCustomIcon(
+                    subColor,
+                    sub.isForSale || subSelected || Boolean(activeFilter),
+                  )}
                   eventHandlers={{
                     click: () => {
                       setSelectedSiteId(project.id);
@@ -393,12 +436,17 @@ export default function MapView() {
                       className={`font-sans bg-card border p-1 uppercase tracking-widest ${mono.className}`}
                       style={{ borderColor: subColor }}
                     >
-                      <div className="font-bold text-white text-[10px] border-b border-border pb-1 mb-1">{sub.title}</div>
+                      <div className="font-bold text-white text-[10px] border-b border-border pb-1 mb-1">
+                        {sub.title}
+                      </div>
                       {sub.isForSale && (
-                        <div className="text-secondary text-[8px] border border-secondary bg-secondary/10 px-1 mb-1 inline-block">SALE</div>
+                        <div className="text-secondary text-[8px] border border-secondary bg-secondary/10 px-1 mb-1 inline-block">
+                          SALE
+                        </div>
                       )}
                       <div className="text-[9px] text-muted-foreground">
-                        {sub.coordinates[0].toFixed(2)}, {sub.coordinates[1].toFixed(2)}
+                        {sub.coordinates[0].toFixed(2)},{" "}
+                        {sub.coordinates[1].toFixed(2)}
                       </div>
                     </div>
                   </Popup>
@@ -406,7 +454,6 @@ export default function MapView() {
               );
             });
           })}
-
         </MapContainer>
 
         {/* Global styling for Leaflet elements & scrollbars */}
@@ -441,7 +488,8 @@ export default function MapView() {
               ALL
             </button>
             {staticTags.map((tag) => {
-              const isActive = activeFilter?.toLowerCase() === tag.toLowerCase();
+              const isActive =
+                activeFilter?.toLowerCase() === tag.toLowerCase();
               const tagColor = getTagColor(tag);
               return (
                 <button
@@ -482,7 +530,9 @@ export default function MapView() {
               className="absolute inset-x-3 bottom-3 top-auto z-1000 flex max-h-[68svh] flex-col border border-border bg-card/95 p-0 shadow-[0_0_50px_rgba(0,0,0,0.8)] backdrop-blur-xl md:inset-x-auto md:right-6 md:top-6 md:bottom-6 md:max-h-none md:w-96"
             >
               {/* Header Bar */}
-              <div className={`flex justify-between items-center p-4 border-b border-border bg-background ${mono.className} text-[10px] tracking-widest uppercase`}>
+              <div
+                className={`flex justify-between items-center p-4 border-b border-border bg-background ${mono.className} text-[10px] tracking-widest uppercase`}
+              >
                 <span className="text-primary font-bold flex items-center gap-2">
                   <Activity className="h-3 w-3 animate-pulse" />
                   TARGET LOCKED
@@ -509,29 +559,39 @@ export default function MapView() {
                 </div>
 
                 {selectedSite.isForSale && (
-                  <div className={`mb-3 md:mb-4 inline-block border border-secondary bg-secondary/10 px-3 py-1 text-[10px] font-bold tracking-widest text-secondary uppercase w-fit shadow-[0_0_10px_rgba(0,255,65,0.2)] ${mono.className}`}>
+                  <div
+                    className={`mb-3 md:mb-4 inline-block border border-secondary bg-secondary/10 px-3 py-1 text-[10px] font-bold tracking-widest text-secondary uppercase w-fit shadow-[0_0_10px_rgba(0,255,65,0.2)] ${mono.className}`}
+                  >
                     AVAILABLE FOR ACQUISITION
                   </div>
                 )}
-                
+
                 <h2 className="text-2xl md:text-3xl font-extrabold uppercase leading-none tracking-tighter mb-2">
                   {selectedSite.title}
                 </h2>
-                
-                <div className={`flex flex-col gap-1 mb-5 md:mb-8 text-[10px] tracking-widest uppercase text-muted-foreground ${mono.className}`}>
+
+                <div
+                  className={`flex flex-col gap-1 mb-5 md:mb-8 text-[10px] tracking-widest uppercase text-muted-foreground ${mono.className}`}
+                >
                   <span className="flex items-center gap-2 text-white">
-                    <Target className="h-3 w-3 text-primary" /> ID: {selectedSite.id}
+                    <Target className="h-3 w-3 text-primary" /> ID:{" "}
+                    {selectedSite.id}
                   </span>
                   <span className="flex items-center gap-2">
-                    <MapPin className="h-3 w-3 text-primary" /> REGION: {selectedSite.region}
+                    <MapPin className="h-3 w-3 text-primary" /> REGION:{" "}
+                    {selectedSite.region}
                   </span>
                   <span className="flex items-center gap-2">
-                    <Crosshair className="h-3 w-3 text-primary" /> COORD: {selectedSite.coordinates[0].toFixed(4)}, {selectedSite.coordinates[1].toFixed(4)}
+                    <Crosshair className="h-3 w-3 text-primary" /> COORD:{" "}
+                    {selectedSite.coordinates[0].toFixed(4)},{" "}
+                    {selectedSite.coordinates[1].toFixed(4)}
                   </span>
                 </div>
 
                 <div className="flex-1">
-                  <p className={`text-[11px] md:text-xs text-[#AAA] leading-relaxed uppercase tracking-wide ${mono.className} border-l-2 border-primary pl-4`}>
+                  <p
+                    className={`text-[11px] md:text-xs text-[#AAA] leading-relaxed uppercase tracking-wide ${mono.className} border-l-2 border-primary pl-4`}
+                  >
                     {selectedSite.summary}
                   </p>
                 </div>

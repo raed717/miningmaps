@@ -318,7 +318,7 @@ export default function Dashboard() {
               scrollWheelZoom={false}
               dragging={false}
             >
-              <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" />
+              <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png?key=cb1_2v0i_1_d240e927e07ac30a1bfdf6f6" />
               {propertiesForSale.map((site) => (
                 <Marker
                   key={site.id}

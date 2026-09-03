@@ -141,7 +141,9 @@ export default function ProjectDetails({
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                     <TrendingUp className="h-5 w-5" />
                   </div>
-                  <h2 className="text-2xl font-bold uppercase tracking-tight">Client Projects</h2>
+                  <h2 className="text-2xl font-bold uppercase tracking-tight">
+                    Client Projects
+                  </h2>
                 </div>
 
                 <div className="w-full min-w-0 overflow-hidden rounded-xl border border-border/50 bg-card p-6 relative z-10">
@@ -159,7 +161,10 @@ export default function ProjectDetails({
                   >
                     <CarouselContent className="-ml-4">
                       {subProjects.map((sub) => (
-                        <CarouselItem key={sub.id} className="pl-4 basis-full sm:basis-1/2">
+                        <CarouselItem
+                          key={sub.id}
+                          className="pl-4 basis-full sm:basis-1/2"
+                        >
                           <Link
                             href={`/projects/${sub.id}`}
                             className="group relative flex flex-col h-48 overflow-hidden rounded-lg border border-border/40 bg-background/50 hover:border-primary/50 transition-colors duration-300"
@@ -224,7 +229,11 @@ export default function ProjectDetails({
                     <Zoom zoomMargin={40}>
                       <img
                         src={section.image}
-                        alt={section.heading || section.imageCaption || "Project image"}
+                        alt={
+                          section.heading ||
+                          section.imageCaption ||
+                          "Project image"
+                        }
                         className="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
                       />
                     </Zoom>
@@ -238,18 +247,23 @@ export default function ProjectDetails({
                   </div>
                 )}
 
-                {section.type === "ImageGallery" && section.images && section.images.length > 0 && (
-                  <ProjectImageGallery
-                    images={section.images}
-                    heading={section.heading}
-                    galleryType={section.galleryType}
-                  />
-                )}
+                {section.type === "ImageGallery" &&
+                  section.images &&
+                  section.images.length > 0 && (
+                    <ProjectImageGallery
+                      images={section.images}
+                      heading={section.heading}
+                      galleryType={section.galleryType}
+                    />
+                  )}
 
                 {section.type === "PdfDocuments" && (
                   <div className="flex flex-col gap-8">
                     {section.documents.map((doc, docIdx) => (
-                      <div key={docIdx} className="flex flex-col items-center p-6 border border-border/50 rounded-xl bg-card">
+                      <div
+                        key={docIdx}
+                        className="flex flex-col items-center p-6 border border-border/50 rounded-xl bg-card"
+                      >
                         <div className="w-full overflow-hidden rounded-lg border border-border/50 shadow-sm">
                           <PdfPreview fileUrl={doc.fileUrl} />
                         </div>
@@ -277,13 +291,20 @@ export default function ProjectDetails({
 
                 {section.type === "kuulaFrame" && section.kuulaFrame && (
                   <div className="overflow-hidden rounded-xl border border-border/50 bg-card relative z-10">
-                    <div className="relative w-full" style={{ paddingBottom: `${(section.kuulaFrame.height / section.kuulaFrame.width) * 100}%` }}>
+                    <div
+                      className="relative w-full"
+                      style={{
+                        paddingBottom: `${(section.kuulaFrame.height / section.kuulaFrame.width) * 100}%`,
+                      }}
+                    >
                       <iframe
                         src={section.kuulaFrame.src}
                         className="absolute inset-0 h-full w-full rounded-xl"
                         style={{ border: 0 }}
                         allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
-                        allowFullScreen={section.kuulaFrame.allowFullScreen ?? true}
+                        allowFullScreen={
+                          section.kuulaFrame.allowFullScreen ?? true
+                        }
                         loading="lazy"
                       />
                     </div>
@@ -297,7 +318,11 @@ export default function ProjectDetails({
                         <Zoom zoomMargin={40}>
                           <img
                             src={section.image}
-                            alt={section.heading || section.imageCaption || "Project image"}
+                            alt={
+                              section.heading ||
+                              section.imageCaption ||
+                              "Project image"
+                            }
                             className="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
                           />
                         </Zoom>
@@ -330,181 +355,207 @@ export default function ProjectDetails({
                     </ul>
                   )}
 
-                {section.type === "table" && section.headers && section.rows && (
-                  <div className="overflow-hidden rounded-xl border border-border/50 bg-card shadow-sm">
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-left text-sm">
-                        <thead className="border-b border-border/50 bg-muted/50 text-xs font-bold uppercase tracking-wider text-primary">
-                          <tr>
-                            {section.headers.map((header, hIdx) => (
-                              <th
-                                key={hIdx}
-                                className="px-5 py-3.5 whitespace-nowrap"
-                              >
-                                {header}
-                              </th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-border/40 font-mono text-xs">
-                          {section.rows.map((row, rIdx) => (
-                            <tr
-                              key={rIdx}
-                              className="transition-colors hover:bg-muted/30"
-                            >
-                              {row.map((cell, cIdx) => (
-                                <td
-                                  key={cIdx}
-                                  className={`px-5 py-3.5 ${
-                                    cIdx === section.headers.length - 1
-                                      ? "min-w-[280px] max-w-xl whitespace-normal text-muted-foreground leading-relaxed"
-                                      : "whitespace-nowrap text-muted-foreground"
-                                  } ${
-                                    cIdx === 0
-                                      ? "font-sans font-semibold text-foreground"
-                                      : ""
-                                  }`}
+                {section.type === "table" &&
+                  section.headers &&
+                  section.rows && (
+                    <div className="overflow-hidden rounded-xl border border-border/50 bg-card shadow-sm">
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-left text-sm">
+                          <thead className="border-b border-border/50 bg-muted/50 text-xs font-bold uppercase tracking-wider text-primary">
+                            <tr>
+                              {section.headers.map((header, hIdx) => (
+                                <th
+                                  key={hIdx}
+                                  className="px-5 py-3.5 whitespace-nowrap"
                                 >
-                                  {cell}
-                                </td>
+                                  {header}
+                                </th>
                               ))}
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                    {section.caption && (
-                      <div className="border-t border-border/50 bg-background/50 px-5 py-2.5 text-center text-xs text-muted-foreground">
-                        {section.caption}
-                      </div>
-                    )}
-                  </div>
-                )}
-
-                {"links" in section && (section as any).links && (section as any).links.length > 0 && (
-                  <div className="flex flex-wrap gap-4 pt-2">
-                    {(section as any).links.map((link: any, idx: number) => (
-                      <HoverCard key={idx}>
-                        <HoverCardTrigger asChild>
-                          <a
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary hover:underline font-medium cursor-pointer"
-                          >
-                            {link.textPreview || "See More"}
-                          </a>
-                        </HoverCardTrigger>
-                        <HoverCardContent className="w-80">
-                          <div className="space-y-3">
-                            {link.image && (
-                              <img
-                                src={link.image}
-                                alt="Link preview"
-                                className="w-full h-32 object-cover rounded-md"
-                              />
-                            )}
-                            <div className="space-y-1">
-                              <h4 className="text-sm font-semibold leading-none">{link.url}</h4>
-                              {link.description && (
-                                <p className="text-sm text-muted-foreground">
-                                  {link.description}
-                                </p>
-                              )}
-                            </div>
-                          </div>
-                        </HoverCardContent>
-                      </HoverCard>
-                    ))}
-                  </div>
-                )}
-
-                {"VideoLinks" in section && (section as any).VideoLinks && (section as any).VideoLinks.length > 0 && (
-                  <div
-                    className={
-                      (section as any).VideoLinks.length === 1
-                        ? "flex justify-center pt-4"
-                        : "grid gap-6 sm:grid-cols-2 pt-4"
-                    }
-                  >
-                    {(section as any).VideoLinks.map((video: any, idx: number) => {
-                      let embedUrl = "";
-                      if (video.youtubeUrl) {
-                        const ytMatch = video.youtubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
-                        if (ytMatch && ytMatch[1]) {
-                          embedUrl = `https://www.youtube.com/embed/${ytMatch[1]}`;
-                        } else if (video.youtubeUrl.includes("youtube.com/embed/")) {
-                          embedUrl = video.youtubeUrl;
-                        }
-                      } else if (video.googleDriveUrl || video.driveUrl) {
-                        const rawUrl = video.googleDriveUrl || video.driveUrl;
-                        const driveMatch = rawUrl.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || rawUrl.match(/id=([a-zA-Z0-9_-]+)/);
-                        if (driveMatch && driveMatch[1]) {
-                          embedUrl = `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
-                        }
-                      } else if (video.url) {
-                        const ytMatch = video.url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
-                        const driveMatch = video.url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) || video.url.match(/id=([a-zA-Z0-9_-]+)/);
-                        if (ytMatch && ytMatch[1]) {
-                          embedUrl = `https://www.youtube.com/embed/${ytMatch[1]}`;
-                        } else if (driveMatch && driveMatch[1]) {
-                          embedUrl = `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
-                        }
-                      }
-
-                      return (
-                        <div
-                          key={idx}
-                          className={`flex flex-col overflow-hidden rounded-xl border border-border/50 bg-card ${
-                            (section as any).VideoLinks.length === 1 ? "w-full max-w-2xl" : ""
-                          }`}
-                        >
-                          <div className="relative aspect-video w-full bg-background/50 border-b border-border/50">
-                            {embedUrl ? (
-                              <iframe
-                                src={embedUrl}
-                                title={video.title}
-                                className="absolute inset-0 h-full w-full"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                              />
-                            ) : video.vimeoUrl ? (
-                              <a 
-                                href={video.vimeoUrl} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="group flex h-full w-full flex-col items-center justify-center p-4 text-center hover:bg-primary/5 transition-colors"
+                          </thead>
+                          <tbody className="divide-y divide-border/40 font-mono text-xs">
+                            {section.rows.map((row, rIdx) => (
+                              <tr
+                                key={rIdx}
+                                className="transition-colors hover:bg-muted/30"
                               >
-                                <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary group-hover:bg-primary group-hover:text-black transition-all">
-                                  <PlayCircle className="h-10 w-10" />
-                                </div>
-                                <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary group-hover:underline">
-                                  Watch on Vimeo <ExternalLink className="h-4 w-4" />
-                                </span>
-                              </a>
-                            ) : (
-                              <div className="flex h-full w-full items-center justify-center p-4 text-sm text-muted-foreground text-center">
-                                Invalid video URL or missing provider
-                              </div>
-                            )}
-                          </div>
-                          {(video.title || video.description) && (
-                            <div className="p-4">
-                              {video.title && (
-                                <h4 className="font-bold text-foreground text-sm uppercase tracking-tight">{video.title}</h4>
+                                {row.map((cell, cIdx) => (
+                                  <td
+                                    key={cIdx}
+                                    className={`px-5 py-3.5 ${
+                                      cIdx === section.headers.length - 1
+                                        ? "min-w-[280px] max-w-xl whitespace-normal text-muted-foreground leading-relaxed"
+                                        : "whitespace-nowrap text-muted-foreground"
+                                    } ${
+                                      cIdx === 0
+                                        ? "font-sans font-semibold text-foreground"
+                                        : ""
+                                    }`}
+                                  >
+                                    {cell}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      {section.caption && (
+                        <div className="border-t border-border/50 bg-background/50 px-5 py-2.5 text-center text-xs text-muted-foreground">
+                          {section.caption}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                {"links" in section &&
+                  (section as any).links &&
+                  (section as any).links.length > 0 && (
+                    <div className="flex flex-wrap gap-4 pt-2">
+                      {(section as any).links.map((link: any, idx: number) => (
+                        <HoverCard key={idx}>
+                          <HoverCardTrigger asChild>
+                            <a
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline font-medium cursor-pointer"
+                            >
+                              {link.textPreview || "See More"}
+                            </a>
+                          </HoverCardTrigger>
+                          <HoverCardContent className="w-80">
+                            <div className="space-y-3">
+                              {link.image && (
+                                <img
+                                  src={link.image}
+                                  alt="Link preview"
+                                  className="w-full h-32 object-cover rounded-md"
+                                />
                               )}
-                              {video.description && (
-                                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                                  {video.description}
-                                </p>
+                              <div className="space-y-1">
+                                <h4 className="text-sm font-semibold leading-none">
+                                  {link.url}
+                                </h4>
+                                {link.description && (
+                                  <p className="text-sm text-muted-foreground">
+                                    {link.description}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          </HoverCardContent>
+                        </HoverCard>
+                      ))}
+                    </div>
+                  )}
+
+                {"VideoLinks" in section &&
+                  (section as any).VideoLinks &&
+                  (section as any).VideoLinks.length > 0 && (
+                    <div
+                      className={
+                        (section as any).VideoLinks.length === 1
+                          ? "flex justify-center pt-4"
+                          : "grid gap-6 sm:grid-cols-2 pt-4"
+                      }
+                    >
+                      {(section as any).VideoLinks.map(
+                        (video: any, idx: number) => {
+                          let embedUrl = "";
+                          if (video.youtubeUrl) {
+                            const ytMatch = video.youtubeUrl.match(
+                              /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/,
+                            );
+                            if (ytMatch && ytMatch[1]) {
+                              embedUrl = `https://www.youtube.com/embed/${ytMatch[1]}`;
+                            } else if (
+                              video.youtubeUrl.includes("youtube.com/embed/")
+                            ) {
+                              embedUrl = video.youtubeUrl;
+                            }
+                          } else if (video.googleDriveUrl || video.driveUrl) {
+                            const rawUrl =
+                              video.googleDriveUrl || video.driveUrl;
+                            const driveMatch =
+                              rawUrl.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) ||
+                              rawUrl.match(/id=([a-zA-Z0-9_-]+)/);
+                            if (driveMatch && driveMatch[1]) {
+                              embedUrl = `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+                            }
+                          } else if (video.url) {
+                            const ytMatch = video.url.match(
+                              /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/,
+                            );
+                            const driveMatch =
+                              video.url.match(/\/file\/d\/([a-zA-Z0-9_-]+)/) ||
+                              video.url.match(/id=([a-zA-Z0-9_-]+)/);
+                            if (ytMatch && ytMatch[1]) {
+                              embedUrl = `https://www.youtube.com/embed/${ytMatch[1]}`;
+                            } else if (driveMatch && driveMatch[1]) {
+                              embedUrl = `https://drive.google.com/file/d/${driveMatch[1]}/preview`;
+                            }
+                          }
+
+                          return (
+                            <div
+                              key={idx}
+                              className={`flex flex-col overflow-hidden rounded-xl border border-border/50 bg-card ${
+                                (section as any).VideoLinks.length === 1
+                                  ? "w-full max-w-2xl"
+                                  : ""
+                              }`}
+                            >
+                              <div className="relative aspect-video w-full bg-background/50 border-b border-border/50">
+                                {embedUrl ? (
+                                  <iframe
+                                    src={embedUrl}
+                                    title={video.title}
+                                    className="absolute inset-0 h-full w-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                  />
+                                ) : video.vimeoUrl ? (
+                                  <a
+                                    href={video.vimeoUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group flex h-full w-full flex-col items-center justify-center p-4 text-center hover:bg-primary/5 transition-colors"
+                                  >
+                                    <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary group-hover:bg-primary group-hover:text-black transition-all">
+                                      <PlayCircle className="h-10 w-10" />
+                                    </div>
+                                    <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary group-hover:underline">
+                                      Watch on Vimeo{" "}
+                                      <ExternalLink className="h-4 w-4" />
+                                    </span>
+                                  </a>
+                                ) : (
+                                  <div className="flex h-full w-full items-center justify-center p-4 text-sm text-muted-foreground text-center">
+                                    Invalid video URL or missing provider
+                                  </div>
+                                )}
+                              </div>
+                              {(video.title || video.description) && (
+                                <div className="p-4">
+                                  {video.title && (
+                                    <h4 className="font-bold text-foreground text-sm uppercase tracking-tight">
+                                      {video.title}
+                                    </h4>
+                                  )}
+                                  {video.description && (
+                                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                                      {video.description}
+                                    </p>
+                                  )}
+                                </div>
                               )}
                             </div>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+                          );
+                        },
+                      )}
+                    </div>
+                  )}
               </motion.section>
             ))}
           </div>
@@ -528,7 +579,7 @@ export default function ProjectDetails({
                   scrollWheelZoom={false}
                   dragging={false}
                 >
-                  <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png" />
+                  <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=cb1_2v0i_1_d240e927e07ac30a1bfdf6f6" />
                   <Marker position={mapCoords} icon={createCustomIcon()} />
                 </MapContainer>
               </div>
@@ -550,19 +601,30 @@ export default function ProjectDetails({
               <ul className="space-y-4 text-sm">
                 {project.quickFacts ? (
                   project.quickFacts.map((fact, index) => (
-                    <li key={index} className="flex justify-between border-b border-border/50 pb-2">
-                      <span className="text-muted-foreground">{fact.label}</span>
-                      <span className="font-medium text-foreground">{fact.value}</span>
+                    <li
+                      key={index}
+                      className="flex justify-between border-b border-border/50 pb-2"
+                    >
+                      <span className="text-muted-foreground">
+                        {fact.label}
+                      </span>
+                      <span className="font-medium text-foreground">
+                        {fact.value}
+                      </span>
                     </li>
                   ))
                 ) : (
                   <>
                     <li className="flex justify-between border-b border-border/50 pb-2">
                       <span className="text-muted-foreground">Location</span>
-                      <span className="font-medium text-foreground">{project.region}</span>
+                      <span className="font-medium text-foreground">
+                        {project.region}
+                      </span>
                     </li>
                     <li className="flex justify-between border-b border-border/50 pb-2">
-                      <span className="text-muted-foreground">Availability</span>
+                      <span className="text-muted-foreground">
+                        Availability
+                      </span>
                       <span className="font-medium text-foreground">
                         {project.isForSale ? "For Sale" : "Active"}
                       </span>
@@ -573,46 +635,55 @@ export default function ProjectDetails({
             </div>
 
             {/* Parent / Sub Project Navigation */}
-            {(project.parentProjectId || (project.subProjectIds && project.subProjectIds.length > 0)) && (
+            {(project.parentProjectId ||
+              (project.subProjectIds && project.subProjectIds.length > 0)) && (
               <div className="rounded-xl border border-border/50 bg-card p-6">
                 <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                   Project Relations
                 </h3>
                 <div className="space-y-3 text-sm">
-                  {project.parentProjectId && (() => {
-                    const parent = projects.find((p) => p.id === project.parentProjectId);
-                    return parent ? (
+                  {project.parentProjectId &&
+                    (() => {
+                      const parent = projects.find(
+                        (p) => p.id === project.parentProjectId,
+                      );
+                      return parent ? (
+                        <div className="flex flex-col">
+                          <span className="text-xs text-muted-foreground">
+                            Parent Project
+                          </span>
+                          <Link
+                            href={`/projects/${parent.id}`}
+                            className="font-medium text-primary hover:underline"
+                          >
+                            {parent.title}
+                          </Link>
+                        </div>
+                      ) : null;
+                    })()}
+                  {project.subProjectIds &&
+                    project.subProjectIds.length > 0 && (
                       <div className="flex flex-col">
-                        <span className="text-xs text-muted-foreground">Parent Project</span>
-                        <Link
-                          href={`/projects/${parent.id}`}
-                          className="font-medium text-primary hover:underline"
-                        >
-                          {parent.title}
-                        </Link>
+                        <span className="text-xs text-muted-foreground">
+                          Sub Projects
+                        </span>
+                        <ul className="mt-1 space-y-1">
+                          {project.subProjectIds.map((subId) => {
+                            const sub = projects.find((p) => p.id === subId);
+                            return sub ? (
+                              <li key={subId}>
+                                <Link
+                                  href={`/projects/${sub.id}`}
+                                  className="font-medium text-primary hover:underline"
+                                >
+                                  {sub.title}
+                                </Link>
+                              </li>
+                            ) : null;
+                          })}
+                        </ul>
                       </div>
-                    ) : null;
-                  })()}
-                  {project.subProjectIds && project.subProjectIds.length > 0 && (
-                    <div className="flex flex-col">
-                      <span className="text-xs text-muted-foreground">Sub Projects</span>
-                      <ul className="mt-1 space-y-1">
-                        {project.subProjectIds.map((subId) => {
-                          const sub = projects.find((p) => p.id === subId);
-                          return sub ? (
-                            <li key={subId}>
-                              <Link
-                                href={`/projects/${sub.id}`}
-                                className="font-medium text-primary hover:underline"
-                              >
-                                {sub.title}
-                              </Link>
-                            </li>
-                          ) : null;
-                        })}
-                      </ul>
-                    </div>
-                  )}
+                    )}
                 </div>
               </div>
             )}
@@ -625,34 +696,42 @@ export default function ProjectDetails({
                 <div className="space-y-4 text-sm">
                   {project.author && (
                     <div className="flex flex-col">
-                      <span className="text-xs text-muted-foreground">Author</span>
+                      <span className="text-xs text-muted-foreground">
+                        Author
+                      </span>
                       {project.contactEmail ? (
-                        <a 
-                          href={`mailto:${project.contactEmail}`} 
+                        <a
+                          href={`mailto:${project.contactEmail}`}
                           className="font-medium text-primary hover:underline"
                         >
                           {project.author}
                         </a>
                       ) : (
-                        <span className="font-medium text-foreground">{project.author}</span>
+                        <span className="font-medium text-foreground">
+                          {project.author}
+                        </span>
                       )}
                     </div>
                   )}
                   {project.date && (
                     <div className="flex flex-col">
-                      <span className="text-xs text-muted-foreground">Date</span>
+                      <span className="text-xs text-muted-foreground">
+                        Date
+                      </span>
                       <span className="font-medium text-foreground">
                         {new Date(project.date).toLocaleDateString(undefined, {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
                         })}
                       </span>
                     </div>
                   )}
                   {project.tags && project.tags.length > 0 && (
                     <div className="flex flex-col pt-2">
-                      <span className="text-xs text-muted-foreground mb-2">Tags</span>
+                      <span className="text-xs text-muted-foreground mb-2">
+                        Tags
+                      </span>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, idx) => (
                           <span
