@@ -588,6 +588,34 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
       },
       {
         type: "ImageGallery",
+        galleryType: "masonry",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788441914/WhatsApp_Image_2026-09-02_at_6.11.50_PM_uqtutc.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788441409/1000059230_oevopb.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788441409/1000059226_ijmq12.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788441410/1000059238_gogxal.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788441410/1000059228_ladncl.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788441410/1000059234_cnfmol.jpg",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788441410/1000059224_rta470.jpg",
+          },
+        ],
+        heading: "Visibile Gold",
+      },
+      {
+        type: "ImageGallery",
         galleryType: "mosaic",
         images: [
           {
