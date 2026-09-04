@@ -1033,13 +1033,33 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
       },
       {
         type: "PdfDocuments",
-        heading: "Little Fort Report",
+        heading: "Little Fort Geological Reports (Historical)",
         documents: [
           {
             fileUrl: "/images/projects/British-Columbia/Little Fort Report.pdf",
             fileName: "Little Fort Report.pdf",
             description:
               "Click below to download the report on the Little Fort claim.",
+          },
+          {
+            fileUrl: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/LittleFortProspectorReport_yki5og.pdf",
+            fileName: "LittleFortProspectorReport.pdf",
+            description: "Little Fort Prospector Report.",
+          },
+          {
+            fileUrl: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/ProspectingBCGS_OF2002-04_lfevhe.pdf",
+            fileName: "ProspectingBCGS_OF2002-04.pdf",
+            description: "BCGS Open File 2002-04 — Prospecting report.",
+          },
+          {
+            fileUrl: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/PF883589_LittleFortReport_apsqgd.pdf",
+            fileName: "PF883589_LittleFortReport.pdf",
+            description: "PF883589 Little Fort geological report.",
+          },
+          {
+            fileUrl: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/LittleFortReport_20250916_ksli7s.pdf",
+            fileName: "LittleFortReport_20250916.pdf",
+            description: "Little Fort Report (September 2025).",
           },
         ],
       },
