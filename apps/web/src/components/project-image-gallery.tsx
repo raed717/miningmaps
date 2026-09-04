@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import Zoom from "react-medium-image-zoom";
+import { motion } from "motion/react";
+import { FullscreenImageViewer } from "@/components/fullscreen-image-viewer";
 import {
   Carousel,
   CarouselContent,
@@ -18,8 +18,6 @@ import {
   GalleryHorizontal,
   ChevronLeft,
   ChevronRight,
-  Maximize2,
-  X,
   Layers,
   Sparkles,
 } from "lucide-react";
@@ -210,19 +208,18 @@ export function ProjectImageGallery({
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: i * 0.04 }}
+                  onClick={() => setLightboxIndex(i)}
                   className={`group relative overflow-hidden rounded-xl border border-border/50 bg-black/40 ${getMosaicSpanClass(
                     i,
                     images.length
-                  )} hover:border-primary/60 transition-colors duration-300`}
+                  )} hover:border-primary/60 transition-colors duration-300 cursor-pointer`}
                 >
-                  <Zoom zoomMargin={40}>
-                    <img
-                      src={img.src}
-                      alt={img.alt || `Gallery visual ${i + 1}`}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </Zoom>
+                  <img
+                    src={img.src}
+                    alt={img.alt || `Gallery visual ${i + 1}`}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
 
                   {/* Gradient Vignette */}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
@@ -235,19 +232,6 @@ export function ProjectImageGallery({
                       IMG {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
-
-                  {/* Expand / Lightbox Button */}
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setLightboxIndex(i);
-                    }}
-                    className="absolute top-2.5 right-2.5 z-10 flex h-7 w-7 items-center justify-center rounded-sm border border-border/60 bg-black/70 text-white/80 opacity-0 backdrop-blur-md transition-all duration-200 group-hover:opacity-100 hover:border-primary hover:text-primary"
-                    title="Open Fullscreen Lightbox"
-                  >
-                    <Maximize2 className="h-3.5 w-3.5" />
-                  </button>
 
                   {/* Bottom Caption / Alt Text Overlay */}
                   {(img.alt || img.caption) && (
@@ -318,16 +302,15 @@ export function ProjectImageGallery({
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.25, delay: (i % 12) * 0.03 }}
-              className="group relative aspect-4/3 overflow-hidden rounded-xl border border-border/50 bg-black/40 hover:border-primary/60 transition-colors"
+              onClick={() => setLightboxIndex(i)}
+              className="group relative aspect-4/3 overflow-hidden rounded-xl border border-border/50 bg-black/40 hover:border-primary/60 transition-colors cursor-pointer"
             >
-              <Zoom zoomMargin={40}>
-                <img
-                  src={img.src}
-                  alt={img.alt || `Grid image ${i + 1}`}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </Zoom>
+              <img
+                src={img.src}
+                alt={img.alt || `Grid image ${i + 1}`}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
 
               {/* Badges & Overlays */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-40 group-hover:opacity-80 transition-opacity" />
@@ -338,18 +321,6 @@ export function ProjectImageGallery({
                   #{String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setLightboxIndex(i);
-                }}
-                className="absolute top-2 right-2 z-10 flex h-6 w-6 items-center justify-center rounded-sm border border-border/60 bg-black/70 text-white/80 opacity-0 transition-opacity group-hover:opacity-100 hover:text-primary cursor-pointer"
-                title="Zoom view"
-              >
-                <Maximize2 className="h-3 w-3" />
-              </button>
 
               {img.alt && (
                 <div className="absolute inset-x-0 bottom-0 z-10 p-2.5">
@@ -372,16 +343,15 @@ export function ProjectImageGallery({
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.25, delay: (i % 9) * 0.03 }}
-              className="group relative break-inside-avoid overflow-hidden rounded-xl border border-border/50 bg-black/40 hover:border-primary/60 transition-colors"
+              onClick={() => setLightboxIndex(i)}
+              className="group relative break-inside-avoid overflow-hidden rounded-xl border border-border/50 bg-black/40 hover:border-primary/60 transition-colors cursor-pointer"
             >
-              <Zoom zoomMargin={40}>
-                <img
-                  src={img.src}
-                  alt={img.alt || `Masonry photo ${i + 1}`}
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
-              </Zoom>
+              <img
+                src={img.src}
+                alt={img.alt || `Masonry photo ${i + 1}`}
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
 
               <div className="absolute top-2.5 left-2.5 z-10">
                 <span
@@ -390,17 +360,6 @@ export function ProjectImageGallery({
                   IMG {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setLightboxIndex(i);
-                }}
-                className="absolute top-2.5 right-2.5 z-10 flex h-6 w-6 items-center justify-center rounded-sm border border-border/60 bg-black/70 text-white/80 opacity-0 transition-opacity group-hover:opacity-100 hover:text-primary cursor-pointer"
-              >
-                <Maximize2 className="h-3 w-3" />
-              </button>
 
               {img.alt && (
                 <div className="p-3 bg-card/90 border-t border-border/40">
@@ -433,14 +392,15 @@ export function ProjectImageGallery({
                   key={i}
                   className="pl-3 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
                 >
-                  <div className="group relative overflow-hidden rounded-lg border border-border/40 bg-black/40 aspect-square flex items-center justify-center">
-                    <Zoom zoomMargin={40}>
-                      <img
-                        src={img.src}
-                        alt={img.alt || `Gallery slide ${i + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </Zoom>
+                  <div
+                    onClick={() => setLightboxIndex(i)}
+                    className="group relative overflow-hidden rounded-lg border border-border/40 bg-black/40 aspect-square flex items-center justify-center cursor-pointer hover:border-primary/60 transition-colors"
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.alt || `Gallery slide ${i + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
 
                     {/* Overlay chip */}
                     <div className="absolute top-2 left-2 z-10">
@@ -450,17 +410,6 @@ export function ProjectImageGallery({
                         {String(i + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
                       </span>
                     </div>
-
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setLightboxIndex(i);
-                      }}
-                      className="absolute top-2 right-2 z-10 flex h-6 w-6 items-center justify-center rounded-sm bg-black/80 text-white/80 opacity-0 transition-opacity group-hover:opacity-100 hover:text-primary cursor-pointer"
-                    >
-                      <Maximize2 className="h-3 w-3" />
-                    </button>
 
                     {img.alt && (
                       <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/90 to-transparent p-3">
@@ -483,51 +432,25 @@ export function ProjectImageGallery({
         </div>
       )}
 
-      {/* FULLSCREEN LIGHTBOX MODAL */}
-      <AnimatePresence>
-        {lightboxIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[200] flex flex-col items-center justify-between bg-black/95 p-4 backdrop-blur-md md:p-8 select-none"
-            onClick={() => setLightboxIndex(null)}
-          >
-            {/* Top Toolbar */}
-            <div
-              className="flex w-full max-w-6xl items-center justify-between"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex items-center gap-3">
-                <span
-                  className={`rounded-sm bg-primary/20 px-2.5 py-1 text-xs font-bold uppercase tracking-widest text-primary border border-primary/30 ${mono.className}`}
-                >
-                  IMG {String(lightboxIndex + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
-                </span>
-                {heading && (
-                  <span className="text-sm font-semibold text-white/80 hidden sm:inline">
-                    {heading}
-                  </span>
-                )}
-              </div>
+      {/* FULLSCREEN LIGHTBOX with zoom/pan */}
+      {lightboxIndex !== null && (
+        <div className="fixed inset-0 z-[200] select-none">
+          <FullscreenImageViewer
+            src={images[lightboxIndex].src}
+            alt={
+              images[lightboxIndex].alt ||
+              images[lightboxIndex].caption ||
+              `Image ${lightboxIndex + 1} of ${images.length}`
+            }
+            open={true}
+            onClose={() => setLightboxIndex(null)}
+          />
 
-              <button
-                type="button"
-                onClick={() => setLightboxIndex(null)}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-white/10 text-white transition-colors hover:bg-primary hover:text-black cursor-pointer"
-                title="Close lightbox (Esc)"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-
-            {/* Main Lightbox Image Viewport */}
-            <div
-              className="relative flex h-[70vh] w-full max-w-5xl items-center justify-center py-2"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Previous Button */}
-              {images.length > 1 && (
+          {/* Navigation overlay (prev/next + thumbnails) */}
+          <div className="fixed inset-x-0 bottom-0 z-[10000] pointer-events-none">
+            {/* Prev / Next buttons */}
+            {images.length > 1 && (
+              <>
                 <button
                   type="button"
                   onClick={() =>
@@ -537,35 +460,11 @@ export function ProjectImageGallery({
                         : null
                     )
                   }
-                  className="absolute left-2 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-md transition-all hover:border-primary hover:bg-primary hover:text-black md:-left-6 cursor-pointer"
+                  className="pointer-events-auto fixed left-3 top-1/2 -translate-y-1/2 z-[10001] flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-md transition-all hover:border-primary hover:bg-primary hover:text-black md:left-5 cursor-pointer"
                   title="Previous image"
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </button>
-              )}
-
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={lightboxIndex}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex h-full w-full items-center justify-center"
-                >
-                  <img
-                    src={images[lightboxIndex].src}
-                    alt={
-                      images[lightboxIndex].alt ||
-                      `Lightbox view ${lightboxIndex + 1}`
-                    }
-                    className="max-h-full max-w-full rounded-lg object-contain shadow-2xl"
-                  />
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Next Button */}
-              {images.length > 1 && (
                 <button
                   type="button"
                   onClick={() =>
@@ -573,27 +472,17 @@ export function ProjectImageGallery({
                       prev !== null ? (prev + 1) % images.length : null
                     )
                   }
-                  className="absolute right-2 z-30 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-md transition-all hover:border-primary hover:bg-primary hover:text-black md:-right-6 cursor-pointer"
+                  className="pointer-events-auto fixed right-3 top-1/2 -translate-y-1/2 z-[10001] flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/60 text-white backdrop-blur-md transition-all hover:border-primary hover:bg-primary hover:text-black md:right-5 cursor-pointer"
                   title="Next image"
                 >
                   <ChevronRight className="h-6 w-6" />
                 </button>
-              )}
-            </div>
+              </>
+            )}
 
-            {/* Bottom Info & Thumbnail Strip */}
-            <div
-              className="flex w-full max-w-4xl flex-col items-center gap-3"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {images[lightboxIndex].alt && (
-                <p className="text-center text-sm font-medium text-white/90 max-w-xl">
-                  {images[lightboxIndex].alt}
-                </p>
-              )}
-
-              {/* Thumbnail Strip */}
-              {images.length > 1 && (
+            {/* Thumbnail strip */}
+            {images.length > 1 && (
+              <div className="pointer-events-auto flex justify-center pb-4 pt-2 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="flex max-w-full items-center gap-2 overflow-x-auto p-1 scrollbar-none">
                   {images.map((thumb, idx) => (
                     <button
@@ -614,11 +503,11 @@ export function ProjectImageGallery({
                     </button>
                   ))}
                 </div>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -11,7 +11,7 @@ import { ArrowLeft, MapPin, Target, Lightbulb, TrendingUp, PlayCircle, ExternalL
 import { projects } from "@/lib/projectData";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
-import Zoom from "react-medium-image-zoom";
+import { ImageViewerTrigger } from "@/components/fullscreen-image-viewer";
 
 import {
   HoverCard,
@@ -225,18 +225,17 @@ export default function ProjectDetails({
                 )}
 
                 {section.type === "SimpleImage" && section.image && (
-                  <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 cursor-zoom-in flex flex-col items-center">
-                    <Zoom zoomMargin={40}>
-                      <img
-                        src={section.image}
-                        alt={
-                          section.heading ||
-                          section.imageCaption ||
-                          "Project image"
-                        }
-                        className="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
-                      />
-                    </Zoom>
+                  <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 flex flex-col items-center">
+                    <ImageViewerTrigger
+                      src={section.image}
+                      alt={
+                        section.heading ||
+                        section.imageCaption ||
+                        "Project image"
+                      }
+                      className="w-full flex justify-center"
+                      imageClassName="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
+                    />
                     {section.imageCaption && (
                       <div className="w-full bg-background/90 p-3 text-center border-t border-border/50">
                         <p className="text-sm text-muted-foreground">
@@ -314,18 +313,17 @@ export default function ProjectDetails({
                 {section.type === "paragraph" && (
                   <div className="space-y-4">
                     {section.image && (
-                      <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 cursor-zoom-in flex flex-col items-center">
-                        <Zoom zoomMargin={40}>
-                          <img
-                            src={section.image}
-                            alt={
-                              section.heading ||
-                              section.imageCaption ||
-                              "Project image"
-                            }
-                            className="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
-                          />
-                        </Zoom>
+                      <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 flex flex-col items-center">
+                        <ImageViewerTrigger
+                          src={section.image}
+                          alt={
+                            section.heading ||
+                            section.imageCaption ||
+                            "Project image"
+                          }
+                          className="w-full flex justify-center"
+                          imageClassName="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
+                        />
                         {section.imageCaption && (
                           <div className="w-full bg-background/90 p-3 text-center border-t border-border/50">
                             <p className="text-sm text-muted-foreground">
