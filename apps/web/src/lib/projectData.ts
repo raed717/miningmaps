@@ -236,34 +236,125 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
       },
     ],
   },
-  // Arizona
+  // Arizona – Troy Ranch Cu-Mo Prospect
   {
-    id: "on-003",
-    title: "Arizona",
-    summary: "Prospecting, ownership and infrastructure map",
-    region: "Arizona USA",
+    id: "az-001",
+    title: "TR Copper-Molybdenum Prospect - Arizona",
+    summary:
+      "Troy Ranch Cu-Mo Prospect — a drill-ready porphyry copper-molybdenum target in the Dripping Springs District, Pinal County, Arizona. 5-year lease and exclusive purchase option with 8 identified drill-ready locations. Adjacent to Resolution Copper Mining (Rio Tinto / BHP JV).",
+    region: "Arizona, USA",
     image:
       "https://images.unsplash.com/photo-1549318558-02fe75fc51d2?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    coordinates: [33.4484, -112.074],
+    coordinates: [33.3, -111.1], // TODO: confirm exact coordinates – Dripping Springs District, Pinal County
     isForSale: true,
     author: "Adamson Geomatics",
     contactEmail: "chris@miningpropertymaps.com",
-    tags: ["Gold", "Silver", "Tungsten"],
+    tags: ["Copper", "Molybdenum", "Porphyry", "For Sale"],
     quickFacts: [
-      { label: "Type", value: "Infrastructure Map" },
-      { label: "Location", value: "Arizona, USA" },
+      { label: "Asset Name", value: "TR Copper-Molybdenum Prospect" },
       {
-        label: "Commodity",
-        value: "Gold (Au) Silver (Ag), Tungsten (W)",
+        label: "Location",
+        value: "Dripping Springs District, Pinal County, Arizona, USA",
       },
-      { label: "AREA (HECTARES)", value: "1 700,49" },
+      {
+        label: "Jurisdiction",
+        value: "Tier-1 mining jurisdiction; Arizona copper belt",
+      },
+      {
+        label: "Land Tenure",
+        value:
+          "Arizona State leases & BLM mining claims; drilling permits approved",
+      },
+      { label: "Commodities", value: "Copper (Cu), Molybdenum (Mo)" },
+      { label: "Deposit Style", value: "Porphyry Cu-Mo system" },
+      {
+        label: "Resource Status",
+        value: "No NI 43-101 / JORC compliant resource defined yet",
+      },
+      {
+        label: "Stage",
+        value: "Early-stage exploration / drill-ready delineation",
+      },
     ],
     sections: [
       {
-        heading: "Prospecting, ownership and infrastructure map",
-        type: "paragraph",
+        heading: "Prospecting, Ownership and Infrastructure Map",
+        type: "SimpleImage",
         image: "/images/projects/Arizona/1.jpg",
-        content: "",
+        imageCaption:
+          "Prospecting, ownership and infrastructure map — Troy Ranch Cu-Mo Prospect area",
+      },
+      {
+        heading: "Executive Summary",
+        type: "paragraph",
+        content:
+          "The Troy Ranch Cu-Mo Prospect is an early-stage, drill-ready porphyry copper-molybdenum target located in the Dripping Springs District, Pinal County, Arizona — a Tier-1 mining jurisdiction within the established Arizona copper belt. The property is held under Arizona State leases and BLM mining claims with drilling permits reported as approved. No NI 43-101 or JORC compliant resource has been defined yet, positioning this as a ground-floor exploration opportunity with significant upside potential.",
+      },
+      {
+        heading: "Historical Drilling & Assays",
+        type: "bullet_list",
+        content: [
+          "Phase 1 records indicate continuous mineralization exceeding 0.1% Cu down to approximately 2,000 ft (610 m).",
+          "42 drill samples from historical hole TR-3 averaged approximately 1,250 ppm Cu (0.125% Cu).",
+          "Core observations confirm porphyry-style alteration and sulfide mineralization.",
+        ],
+      },
+      {
+        heading: "Historical Drill Assay Summary",
+        type: "table",
+        caption: "Summary of historical drilling data from the Troy Ranch property.",
+        headers: ["Parameter", "Value"],
+        rows: [
+          ["Drill Hole", "TR-3"],
+          ["Number of Samples", "42"],
+          ["Average Cu Grade", "~1,250 ppm (0.125% Cu)"],
+          ["Mineralization Depth", ">2,000 ft (610 m)"],
+          ["Mineralization Threshold", ">0.1% Cu continuous"],
+          ["Alteration Style", "Porphyry-style alteration & sulfide mineralization"],
+        ],
+      },
+      {
+        heading: "Exploration Completed to Date",
+        type: "bullet_list",
+        content: [
+          "Detailed surface geological mapping, phase mapping, and structural interpretation.",
+          "Geochemical sampling, assay compilation, and petrochemical/pluton-vector studies.",
+          "Induced Polarization (IP) and geophysical interpretations identifying subsurface target zones.",
+        ],
+      },
+      {
+        heading: "Immediate Work Program & Drill Targets",
+        type: "bullet_list",
+        content: [
+          "8 drill-ready locations identified, focusing on mapped structural corridors, diabase units, tension-fracture arrays, and intrusive contact zones.",
+          "Proposed initial budget: $1.0 million drilling and coring campaign under an independent Qualified Person (QP) to delineate grade, continuity, and scale.",
+        ],
+      },
+      {
+        heading: "Transaction Structure & Acquisition Terms",
+        type: "table",
+        caption: "5-year lease and exclusive purchase option terms.",
+        headers: ["Term", "Details"],
+        rows: [
+          ["Structure", "5-year lease and exclusive purchase option"],
+          ["Option Consideration", "$155,000 per year (up to $775,000 over five years)"],
+          ["Work Commitment", "$1.0 million initial drilling and coring program"],
+          ["100% Buyout Price", "$3.0 million cash exercise to acquire 100% asset ownership"],
+          [
+            "Total Indicative Cost",
+            "$4.775 million plus $1.0 million work program (before holding/transaction costs)",
+          ],
+        ],
+      },
+      {
+        heading: "Key Considerations & Catalysts",
+        type: "bullet_list",
+        content: [
+          "Strategic Adjacency: Property located directly adjacent to claims held by Resolution Copper Mining LLC (Rio Tinto 55% / BHP 45% JV), providing major-company validation to the district.",
+          "Asymmetric Risk/Reward: The 5-year option structure allows an incoming investor to test the system and derisk continuity with a modest $1.0M work commitment before committing to the $3.0M buyout.",
+          "Clear Valuation Re-Rating Catalyst: Near-term drilling oriented toward transitioning historical and conceptual mineralization into a Maiden NI 43-101 / S-K 1300 / JORC compliant Mineral Resource Estimate.",
+          "Technical Pedigree: Project targets developed by MagmaChem (co-founded by geologist Stanley B. Keith), whose structural/petrochemical target models are credited with contributions to 20 global discoveries.",
+        ],
       },
     ],
   },

@@ -129,7 +129,7 @@ export default function ProjectDetails({
       <div className="container mx-auto px-4 py-16">
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Main Content */}
-          <div className="w-full min-w-0 lg:col-span-2 space-y-12">
+          <div className="w-full min-w-0 lg:col-span-2 space-y-12 order-2">
             {subProjects.length > 0 && (
               <motion.section
                 initial={{ opacity: 0, y: 20 }}
@@ -561,7 +561,7 @@ export default function ProjectDetails({
           </div>
 
           {/* Sidebar / Map Context */}
-          <div className="space-y-6">
+          <div className="space-y-6 order-1 lg:order-2">
             <div className="rounded-xl border border-border/50 bg-card p-6">
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 Location Context
