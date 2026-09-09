@@ -495,6 +495,12 @@ export default function ProjectDetails({
                             }
                           }
 
+                          const rawUrl = video.url || video.googleDriveUrl || video.driveUrl || "";
+                          const isDirectVideo =
+                            rawUrl.endsWith(".mp4") ||
+                            rawUrl.endsWith(".webm") ||
+                            rawUrl.includes("/video/upload/");
+
                           return (
                             <div
                               key={idx}
@@ -505,7 +511,15 @@ export default function ProjectDetails({
                               }`}
                             >
                               <div className="relative aspect-video w-full bg-background/50 border-b border-border/50">
-                                {embedUrl ? (
+                                {isDirectVideo ? (
+                                  <video
+                                    src={rawUrl}
+                                    title={video.title}
+                                    controls
+                                    playsInline
+                                    className="absolute inset-0 h-full w-full object-contain bg-black"
+                                  />
+                                ) : embedUrl ? (
                                   <iframe
                                     src={embedUrl}
                                     title={video.title}

@@ -3376,4 +3376,98 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       },
     ],
   },
+  // Gemstones - Natural Ruby Mozambique
+  {
+    id: "mz-001", // TODO: verify ID sequence
+    title: "Natural Ruby 2.01ct (Untreated) - Mozambique",
+    summary:
+      "Certified 2.01-carat untreated natural ruby from Mozambique. Exceptional vivid red color and transparency with zero heat or chemical treatment (100% natural). Includes full AIG Gemological Report certification and video inspection.",
+    region: "Mozambique",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788960734/WhatsApp_Image_2026-09-08_at_11.13.14_PM_nfrqgw.jpg",
+    coordinates: [-12.9732, 39.2944], // TODO: confirm exact coordinates (Montepuez ruby belt, Cabo Delgado, Mozambique)
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gemstones",
+      "Ruby",
+      "Corundum",
+      "Untreated",
+      "Certified",
+      "Mozambique",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Variety", value: "Natural Ruby" },
+      { label: "Weight", value: "2.01 Carats" },
+      { label: "Measurements", value: "8 X 6 X 3 mm" },
+      { label: "Color", value: "Vivid Red" },
+      { label: "Transparency", value: "Transparent" },
+      { label: "Origin", value: "Mozambique" },
+      { label: "Treatment", value: "None (100% Natural / Untreated)" },
+      { label: "Certification", value: "AIG Gemological Report Certified ☑️" },
+      { label: "Price", value: "$1,350 USD Total" },
+      { label: "Status", value: "Available For Sale" },
+    ],
+    sections: [
+      {
+        heading: "Executive Overview",
+        type: "paragraph",
+        content:
+          "Offered for direct acquisition: a rare, investment-grade 2.01-carat natural ruby from the premier deposit in Mozambique. Exhibiting a highly coveted vivid red body color and clean transparency, this fine gemstone is 100% natural with zero thermal heating or chemical enhancements. Complete with an official AIG Gemological Report, high-resolution certificate imagery, and macro video verification.",
+      },
+      {
+        heading: "Gemstone Specifications",
+        type: "table",
+        caption: "AIG Certified Physical and Optical Properties",
+        headers: ["Parameter", "Specification"],
+        rows: [
+          ["Gemstone Variety", "Natural Ruby (Corundum)"],
+          ["Carat Weight", "2.01 carats"],
+          ["Dimensions", "8.0 X 6.0 X 3.0 mm"],
+          ["Color Grade", "Vivid Red"],
+          ["Transparency", "Transparent"],
+          ["Cut / Shape", "Faceted Oval / Mixed Cut"],
+          ["Treatment / Enhancement", "None (100% Natural, No Heat / No Chemical)"],
+          ["Geographic Origin", "Mozambique"],
+          ["Certification", "AIG Gemological Report"],
+          ["Total Asking Price", "$1,350 USD"],
+        ],
+      },
+      {
+        heading: "AIG Gemstone Report & Certificate",
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788960734/WhatsApp_Image_2026-09-08_at_11.13.14_PM_nfrqgw.jpg",
+        imageCaption:
+          "Official AIG Gemological Report certifying authenticity, 2.01 ct weight, and untreated status.",
+      },
+      {
+        heading: "Video Inspection & Luster Showcase",
+        type: "paragraph",
+        content:
+          "Watch the direct high-definition macro video of the 2.01ct Mozambique ruby under natural and direct light displaying brilliance, color saturation, and facet fire.",
+        VideoLinks: [
+          {
+            title: "2.01ct Mozambique Natural Ruby — Video Inspection",
+            description:
+              "A close-up footage showcasing color depth, transparency, and sparkle.",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1788960735/WhatsApp_Video_2026-09-08_at_11.13.48_PM_moumsb.mp4",
+          },
+        ],
+      },
+      {
+        heading: "Key Highlights & Buyer Value",
+        type: "bullet_list",
+        content: [
+          "100% Untreated Corundum: Less than 1% of gem-quality rubies recovered worldwide are unheated, making this untreated 2.01-carat specimen highly collectible.",
+          "Classic Mozambique Provenance: Mozambique is renowned internationally as the leading source of top-tier rubies displaying intense red hue and high clarity.",
+          "Full Third-Party Authentication: Backed by an independent AIG laboratory report confirming natural origin, physical dimensions, and lack of treatment.",
+          "Attractive Wholesale Valuation: Competitively offered at $1,350 USD total (~$671/ct) representing substantial wholesale value for unheated certified rough/cut red ruby.",
+        ],
+      },
+    ],
+  },
 ];
+
