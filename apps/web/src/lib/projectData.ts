@@ -302,7 +302,8 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
       {
         heading: "Historical Drill Assay Summary",
         type: "table",
-        caption: "Summary of historical drilling data from the Troy Ranch property.",
+        caption:
+          "Summary of historical drilling data from the Troy Ranch property.",
         headers: ["Parameter", "Value"],
         rows: [
           ["Drill Hole", "TR-3"],
@@ -310,7 +311,10 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
           ["Average Cu Grade", "~1,250 ppm (0.125% Cu)"],
           ["Mineralization Depth", ">2,000 ft (610 m)"],
           ["Mineralization Threshold", ">0.1% Cu continuous"],
-          ["Alteration Style", "Porphyry-style alteration & sulfide mineralization"],
+          [
+            "Alteration Style",
+            "Porphyry-style alteration & sulfide mineralization",
+          ],
         ],
       },
       {
@@ -337,9 +341,18 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         headers: ["Term", "Details"],
         rows: [
           ["Structure", "5-year lease and exclusive purchase option"],
-          ["Option Consideration", "$155,000 per year (up to $775,000 over five years)"],
-          ["Work Commitment", "$1.0 million initial drilling and coring program"],
-          ["100% Buyout Price", "$3.0 million cash exercise to acquire 100% asset ownership"],
+          [
+            "Option Consideration",
+            "$155,000 per year (up to $775,000 over five years)",
+          ],
+          [
+            "Work Commitment",
+            "$1.0 million initial drilling and coring program",
+          ],
+          [
+            "100% Buyout Price",
+            "$3.0 million cash exercise to acquire 100% asset ownership",
+          ],
           [
             "Total Indicative Cost",
             "$4.775 million plus $1.0 million work program (before holding/transaction costs)",
@@ -1042,22 +1055,26 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
               "Click below to download the report on the Little Fort claim.",
           },
           {
-            fileUrl: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/LittleFortProspectorReport_yki5og.pdf",
+            fileUrl:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/LittleFortProspectorReport_yki5og.pdf",
             fileName: "LittleFortProspectorReport.pdf",
             description: "Little Fort Prospector Report.",
           },
           {
-            fileUrl: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/ProspectingBCGS_OF2002-04_lfevhe.pdf",
+            fileUrl:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/ProspectingBCGS_OF2002-04_lfevhe.pdf",
             fileName: "ProspectingBCGS_OF2002-04.pdf",
             description: "BCGS Open File 2002-04 — Prospecting report.",
           },
           {
-            fileUrl: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/PF883589_LittleFortReport_apsqgd.pdf",
+            fileUrl:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/PF883589_LittleFortReport_apsqgd.pdf",
             fileName: "PF883589_LittleFortReport.pdf",
             description: "PF883589 Little Fort geological report.",
           },
           {
-            fileUrl: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/LittleFortReport_20250916_ksli7s.pdf",
+            fileUrl:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1788513385/LittleFortReport_20250916_ksli7s.pdf",
             fileName: "LittleFortReport_20250916.pdf",
             description: "Little Fort Report (September 2025).",
           },
@@ -3429,7 +3446,10 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
           ["Color Grade", "Vivid Red"],
           ["Transparency", "Transparent"],
           ["Cut / Shape", "Faceted Oval / Mixed Cut"],
-          ["Treatment / Enhancement", "None (100% Natural, No Heat / No Chemical)"],
+          [
+            "Treatment / Enhancement",
+            "None (100% Natural, No Heat / No Chemical)",
+          ],
           ["Geographic Origin", "Mozambique"],
           ["Certification", "AIG Gemological Report"],
           ["Total Asking Price", "$1,350 USD"],
@@ -3469,5 +3489,522 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       },
     ],
   },
+  // Brazil - BHA Gold Project
+  {
+    id: "br-001", // TODO: verify ID sequence
+    title: "BHA Gold Project - Bahia, Brazil",
+    summary:
+      "Advanced-stage shovel-ready orogenic gold and industrial quartz asset in Brazil's prolific Jacobina Mountain Gold Belt. Fully gazetted, homologated mining concession on 100% freehold land (300 ha) with 68 tonnes (~2.186M oz Au) homologated reserve certified by CBPM. Located 17 km along trend from Yamana Gold Complex (Pan American Silver).",
+    region: "Bahia, Brazil",
+    image:
+      "https://www.mining-technology.com/wp-content/uploads/sites/19/2023/02/quarry-g31b59a8f8_1920.jpg",
+    coordinates: [-11.1833, -40.5167], // TODO: confirm exact coordinates (Jacobina Mountain Gold Belt, Bahia, Brazil)
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gold",
+      "Quartz",
+      "Orogenic Gold",
+      "Reserve",
+      "Shovel Ready",
+      "Open Pit",
+      "Underground",
+      "Brazil",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Asset Name", value: "BHA Gold Project" },
+      {
+        label: "Location",
+        value:
+          "Jacobina Mountain Gold Belt, Bahia, Brazil (~380 km from Salvador)",
+      },
+      {
+        label: "Land Tenure",
+        value:
+          "300.00 ha fully gazetted homologated mining concession (SIGMINE registered, 100% freehold)",
+      },
+      {
+        label: "Primary Commodities",
+        value: "Gold (Au) with high-purity industrial quartz co-product",
+      },
+      {
+        label: "Contained Gold",
+        value:
+          "68 tonnes (~2,186,000 oz Au) homologated reserve (CBPM certified)",
+      },
+      {
+        label: "Resource Classes",
+        value:
+          "Measured: 263k oz | Indicated: 257k oz | Inferred: 838k oz | Proven: 2.186M oz",
+      },
+      {
+        label: "Grades",
+        value:
+          "Regional Host: 2.0–3.0 g/t | Shoots: Up to 5.0 g/t | Pilot Head Grade: 9.44 g/t Au",
+      },
+      {
+        label: "Strategic Adjacency",
+        value: "17 km from Yamana Gold Complex (Pan American Silver) on strike",
+      },
+      {
+        label: "Asking Price",
+        value: "US$ 130M (~2.48% of gross in-situ gold value)",
+      },
+      { label: "Status", value: "Shovel-Ready / Fully Gazetted Concession" },
+    ],
+    sections: [
+      {
+        heading: "Resource & Reserve Inventory",
+        type: "table",
+        caption:
+          "Homologated Gold Reserves and Resources certified by the State Geological Survey (CBPM) and gazetted in the Federal Official Gazette.",
+        headers: [
+          "Category",
+          "Tonnes Gold (t Au)",
+          "Contained Ounces (oz Au)",
+          "Classification Authority",
+        ],
+        rows: [
+          ["Measured Resource", "8.191 t", "263,345 oz", "CBPM Certified"],
+          ["Indicated Resource", "8.000 t", "257,205 oz", "CBPM Certified"],
+          ["Inferred Resource", "26.052 t", "837,585 oz", "CBPM Certified"],
+          [
+            "Proven / Homologated Reserve",
+            "68.000 t",
+            "2,186,000 oz",
+            "Federal Official Gazette Gazetted",
+          ],
+        ],
+      },
+      {
+        heading: "Project Specifications & Technical Parameters",
+        type: "table",
+        caption:
+          "BHA Gold Project — Technical, Geological, and Operational Summary",
+        headers: ["Parameter", "Project Specifications"],
+        rows: [
+          [
+            "Location & Setting",
+            "Jacobina Mountain Gold Belt, Bahia, Brazil; ~380 km from Salvador via BR-324/116/BA-131; 17 km from Yamana Gold Complex",
+          ],
+          [
+            "Property Size & Rights",
+            "300.00 continuous hectares in SIGMINE; 100% owned freehold rural property with zero third-party royalties or lease liabilities",
+          ],
+          [
+            "Commodities",
+            "Gold (Au) primary metal with high-purity industrial quartz as secondary co-product",
+          ],
+          [
+            "Regional Host Grade",
+            "2.0 to 3.0 g/t Au (regional host quartzite/conglomerate)",
+          ],
+          [
+            "High-Grade Shoots",
+            "Up to 5.0 g/t Au in structured quartz-mylonite vein shoots",
+          ],
+          [
+            "Underground Channel Assays",
+            "4.50 to 16.97 g/t Au raw mean (3.40 to 15.40 g/t Au capped at 50 ppm)",
+          ],
+          ["Bulk Pilot Head Grade", "9.44 g/t Au run-of-mine recovery"],
+          [
+            "Drilling Campaign",
+            "CBPM diamond rotary core drilling to >300 m; >1,145 fire assays; 89%–100% recovery; 100% core library intact on-site",
+          ],
+          [
+            "Exploration Completed",
+            "Stratigraphic mapping (Rio do Ouro & Serra do Córrego formations), deep core drilling, underground galleries/shafts channel sampling, bulk pilot",
+          ],
+          [
+            "Metallurgical Validation",
+            "30-tonne (30,000 kg) ROM pilot sample yielded 283.2 g fine gold via gravity + cyanidation; simple non-refractory free-milling ore",
+          ],
+        ],
+      },
+      {
+        heading: "Key Mining Considerations & Project Upside",
+        type: "bullet_list",
+        content: [
+          "Turnkey Regulatory De-Risking: Full Mining Concession Decree officially gazetted and in full force, eliminating licensing bottlenecks. Up-to-date Annual Mining Reports (RAL) and fully approved Municipal Land Use permits.",
+          "Significant M&A Arbitrage: Asking price of US$ 130M represents ~2.48% of gross in-situ value (US$ 5.24B base at US$ 2,400/oz Au), offering tremendous valuation re-rating potential.",
+          "Dual-Method Mining Flexibility: Licensed for both open-pit extraction (shallow supergene/oxidized ore with a low 2.0:1 strip ratio) and selective underground mechanized stoping (Cut-and-Fill / Sublevel Stoping) in competent quartzite country rock.",
+          "Modern Flowsheet with Zero Tailings Dams: Engineered for a modular 300 to 1,000 tpd Gravity + CIL/CIP plant achieving >92–94% gold recoveries. Incorporates filter presses and dry-stack tailings, completely bypassing geotechnical and regulatory dam liabilities.",
+          "Exceptional Exploration Expansion: Current 68 t reserve is strictly delineated within the upper 300 m. Regional deposits on the Jacobina belt routinely continue past 1,000 m depth. A proposed 10,000 m Phase 1 drilling program (3,000 m infill, 5,000 m deep step-out, 2,000 m strike) is scoped to upgrade reserves to NI 43-101 / JORC standards.",
+          "Turnkey Infrastructure & Fleet: Site includes debt-free earthmoving fleet (hydraulic excavators and dump trucks), established base camp buildings, access roads, perennial river water concessions, and nearby high-voltage grid power.",
+        ],
+      },
+    ],
+  },
+  // Oregon - Elk Creek Gold Placer Claims
+  {
+    id: "or-001", // TODO: verify ID sequence
+    title: "Elk Creek Gold Placer Claims - Baker County, Oregon",
+    summary:
+      "40 acres of active gold placer ground on Elk Creek in the historic Auburn mining district, Baker County, Oregon. Comprising two adjoining 20-acre BLM claims (Elk Creek 1 & Pig Head Placer) on a documented commercial gold producer with extensive historic dragline cuts, coarse nugget history, and good road access.",
+    region: "Oregon, USA",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c5/Elk_Creek_Dam.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+    coordinates: [44.7125, -117.995], // TODO: confirm exact coordinates (Elk Creek, Auburn District, Baker County, OR)
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gold",
+      "Placer Gold",
+      "Nuggets",
+      "Oregon",
+      "Baker County",
+      "Auburn District",
+      "BLM Claims",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Property Name", value: "Elk Creek Gold Placer Claims" },
+      {
+        label: "Total Acreage",
+        value: "40.00 Acres (Two adjoining 20-acre claims)",
+      },
+      { label: "Claim 1", value: "ELK CREEK 1 (OR106786339) — 20 Acres" },
+      { label: "Claim 2", value: "PIG HEAD PLACER (OR106786338) — 20 Acres" },
+      {
+        label: "Mining District",
+        value: "Historic Auburn District, Baker County, OR",
+      },
+      {
+        label: "Commodity",
+        value: "Placer Gold (Nuggets, Flakes & Fine Gold)",
+      },
+      {
+        label: "Historic Grade",
+        value: "~$0.50/yd³ at $35/oz Au (~0.44 g/yd³ from top to bottom)",
+      },
+      {
+        label: "Historic Cleanup",
+        value: "~16 oz nuggets & fine gold recovered in a single day (1938)",
+      },
+      {
+        label: "Purchase Price",
+        value: "$11,600 Total (Both Claims / 40 Acres)",
+      },
+      { label: "Status", value: "Active BLM Placer Claims For Sale" },
+    ],
+    sections: [
+      {
+        heading: "Executive Overview",
+        type: "paragraph",
+        content:
+          "Available for acquisition: two adjoining active 20-acre federal placer claims totaling 40 acres along Elk Creek in the historic Auburn mining district west of Baker City, Baker County, Oregon. Elk Creek is a documented commercial gold placer producer with extensive historic dragline cuts, rich unworked gravels, and strong USGS/DOGAMI archival backing.",
+      },
+      {
+        heading: "Documented Historic Commercial Production",
+        type: "bullet_list",
+        content: [
+          "Documented Producer: Historic Norman Parker commercial dragline placer operation documented in contemporary 1937–1938 state mining records.",
+          "Consistent Tested Grade: Parker tested gravel from top to bottom at approximately $0.50/yd³ at the historic $35/oz gold price — equivalent to approximately 0.44 grams of gold per cubic yard.",
+          "Early Operating Yield: Approximately 20 ounces of placer gold recovered during an early operating period.",
+          "High-Yield Single-Day Cleanup: A June 1938 report documented a single day's cleanup yielding approximately 16 ounces of coarse nuggets and fine gold.",
+          "Mechanized Operation Scale: Operation employed two dragline shovels — one stripping overburden and the second feeding pay gravel into an on-site washing plant.",
+          "Historic Placer Cut Dimensions: Open placer cut measured approximately 50 feet wide, 10–15 feet deep, and roughly 1/4 mile long.",
+          "Pay Gravel Extent: Placer ground described in DOGAMI records as approximately 75 to 200 feet wide and ~15 feet deep.",
+        ],
+      },
+      {
+        heading: "Claim Details & Tenure Schedule",
+        type: "table",
+        caption: "Active Federal BLM Mining Claims — Baker County, Oregon",
+        headers: [
+          "Claim Name",
+          "BLM Serial Number",
+          "Acreage",
+          "Drainage / District",
+          "County / State",
+        ],
+        rows: [
+          [
+            "ELK CREEK 1",
+            "OR106786339",
+            "20 Acres",
+            "Elk Creek / Auburn District",
+            "Baker County, Oregon",
+          ],
+          [
+            "PIG HEAD PLACER",
+            "OR106786338",
+            "20 Acres",
+            "Elk Creek / Auburn District",
+            "Baker County, Oregon",
+          ],
+        ],
+      },
+      {
+        heading: "Geological Setting & District Dynamics",
+        type: "paragraph",
+        content:
+          "The Auburn/Baker mining district is notable because historical geologists determined its prolific placer gold was derived from thousands of small gold-bearing quartz seams and veinlets distributed throughout the surrounding Elkhorn Ridge. This geological architecture distributed coarse nuggets, flakes, and fine gold across multiple tributary catchments in the Elk Creek system, creating extensive alluvial pay horizons rather than a single restricted channel.",
+      },
+      {
+        heading: "Property Highlights & Exploration Potential",
+        type: "bullet_list",
+        content: [
+          "40 contiguous acres across two active federal claims with verified BLM standing.",
+          "Both coarse nuggets and fine placer gold historically documented and recovered.",
+          "Extensive unmined virgin bench and elevated high-gravel exploration targets bordering the main cut.",
+          "Multiple mapped USGS/MRDS gold occurrences and dedicated DOGAMI Elk Creek–Wilson Creek placer mapping.",
+          "Direct, well-maintained road access suitable for conventional equipment transport.",
+          "Offered with written One-Year Mineral Rights Guarantee provided directly by claim locator.",
+        ],
+      },
+      {
+        heading: "Acquisition Terms",
+        type: "paragraph",
+        content:
+          "Asking price: $11,600 USD total for both active claims (40 acres combined). All transfer paperwork and BLM quitclaim deed documentation provided with sale. Serious inquiries welcome.",
+      },
+    ],
+  },
+  // Oregon - Burnt River Gold Placer Claims
+  {
+    id: "or-002", // TODO: verify ID sequence
+    title: "Burnt River Gold Placer Claims - Baker County, Oregon",
+    summary:
+      "40 acres of active Burnt River gold placer ground in Baker County, Oregon (Split Burnt Gold & Big Gold #1). Features direct USGS/DOGAMI Oregon Mining Company gold occurrence mapped on claim, 50-60 historic drill holes, exposed bedrock traps, coarse 850 fine gold, and July 31–Oct 31 dredging authorization.",
+    region: "Oregon, USA",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.01_PM_1_be6fy6.jpg",
+    coordinates: [44.5167, -117.6833], // TODO: confirm exact coordinates (T12S, R41E, Sec 3 & 4, Burnt River, Baker County, OR)
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gold",
+      "Placer Gold",
+      "Burnt River",
+      "Coarse Gold",
+      "Dredging",
+      "Bedrock Traps",
+      "Oregon",
+      "Baker County",
+      "BLM Claims",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Property Name", value: "Burnt River Gold Placer Claims" },
+      {
+        label: "Total Acreage",
+        value: "40.00 Acres (Two adjoining 20-acre claims)",
+      },
+      {
+        label: "Claim 1",
+        value: "SPLIT BURNT GOLD (OR106701451) — T12S, R41E, Sec 3 (20 ac)",
+      },
+      {
+        label: "Claim 2",
+        value: "BIG GOLD #1 (OR106701450) — T12S, R41E, Sec 4 (20 ac)",
+      },
+      {
+        label: "County & Jurisdiction",
+        value: "Baker County, Oregon (BLM-managed land)",
+      },
+      {
+        label: "River Frontage",
+        value: "Burnt River frontage with inside-bend gravel bars",
+      },
+      {
+        label: "Historic Drill Testing",
+        value: "50–60 placer drill holes & 7 caisson verification pits",
+      },
+      {
+        label: "Historic Grade",
+        value: "Test average ~0.31 g fine Au/yd³ (850 fine coarse gold)",
+      },
+      {
+        label: "Historic Production",
+        value: "300+ oz reported from single 8-day cleanup",
+      },
+      {
+        label: "Dredging Season",
+        value: "700-PM Dredging authorized: July 31 through October 31",
+      },
+      {
+        label: "Purchase Price",
+        value: "$11,400 Total (Both Claims / 40 Acres)",
+      },
+    ],
+    sections: [
+      {
+        heading: "Executive Overview",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.01_PM_1_be6fy6.jpg",
+        imageCaption:
+          "Burnt River Gold Placer Claims — Claim boundary overview showing Split Burnt Gold, Big Gold #1, and active operations.",
+        content:
+          "Offered for sale: two adjoining 20-acre active federal placer claims totaling 40 acres along the gold-bearing Burnt River in Baker County, Oregon (T12S, R41E, Sections 3 & 4). The property features direct USGS and DOGAMI documented gold occurrences mapped on Split Burnt Gold, extensive historic drilling and caisson verification by the Oregon Mining Company, substantial exposed bedrock natural gold traps, and authorized suction dredging season.",
+      },
+      {
+        heading: "Claim Maps & District Operations",
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.02_PM_w3hqkj.jpg",
+        imageCaption:
+          "District overview map: The Dry Horseshoe Placer mine is located just below the circle; an active commercial placer operation is circled in production currently upstream.",
+      },
+      {
+        heading: "Photo Gallery & Field Documentation",
+        type: "ImageGallery",
+        galleryType: "mosaic",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.01_PM_1_be6fy6.jpg",
+            alt: "Burnt River claim boundaries & access corridor",
+            caption:
+              "Topographic & satellite overlay outlining the 40 acres of active placer ground.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.02_PM_w3hqkj.jpg",
+            alt: "District map showing active operation and Dry Horseshoe placer",
+            caption:
+              "The Dry Horseshoe placer mine is just below circle; active placer operation in production currently.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.02_PM_3_gvzirs.jpg",
+            alt: "Burnt River canyon terrain & alluvial gravel bars",
+            caption:
+              "Burnt River canyon showing broad gravel bars and inside-bend deposition zones.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.02_PM_1_s7j6k3.jpg",
+            alt: "Exposed bedrock crevices and natural gold traps",
+            caption:
+              "Exposed bedrock along the river channel with natural riffles and crevices.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.02_PM_2_k1cb2u.jpg",
+            alt: "Burnt River riverbank and road access point",
+            caption:
+              "Direct road access and river frontage on BLM ground with flat staging areas.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.01_PM_qhk15x.jpg",
+            alt: "USGS recorded gold occurrences on Burnt River",
+            caption:
+              "USGS recorded gold deposits (orange dots); one occurrence is mapped directly on the Split Burnt claim.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.01_PM_2_gbl5pi.jpg",
+            alt: "Alluvial gravel profile and ancient river bench terrace",
+            caption:
+              "Elevated river gravel terrace indicating prospective ancient channel deposits.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789037744/WhatsApp_Image_2026-09-09_at_7.13.01_PM_3_u7at51.jpg",
+            alt: "Burnt River active dredging watercourse",
+            caption:
+              "Active river reach authorized for 700-PM suction dredging (July 31 – October 31).",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789038386/WhatsApp_Image_2026-09-09_at_7.14.22_PM_vxuvjw.jpg",
+            alt: "Burnt River claim topography and access points",
+            caption:
+              "Detailed topographical claim map showing river corridor and claim boundaries.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789038503/WhatsApp_Image_2026-09-09_at_7.18.09_PM_wucx4t.jpg",
+            alt: "USGS recorded gold deposits map - regional view",
+            caption:
+              "USGS recorded deposits of gold (orange dots); documented placer gold occurrence located directly on the Split Burnt claim.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789038503/WhatsApp_Image_2026-09-09_at_7.18.09_PM_2_w8ogmn.jpg",
+            alt: "USGS gold deposit occurrences on Burnt River corridor",
+            caption:
+              "Close-up of USGS recorded gold deposit distribution along the Burnt River drainage.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789038503/WhatsApp_Image_2026-09-09_at_7.18.09_PM_1_brhueb.jpg",
+            alt: "USGS deposit overlay with section grid",
+            caption:
+              "Section-level cadastral overlay showing USGS gold deposit points across T12S, R41E.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789038503/WhatsApp_Image_2026-09-09_at_7.18.09_PM_3_su3fvh.jpg",
+            alt: "USGS recorded gold deposits on Split Burnt Gold",
+            caption:
+              "Detailed USGS occurrence record verifying gold mineralization directly within the Split Burnt claim boundaries.",
+          },
+        ],
+      },
+      {
+        heading: "USGS Recorded Gold Deposits (MRDS Overlay)",
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789038503/WhatsApp_Image_2026-09-09_at_7.18.09_PM_wucx4t.jpg",
+        imageCaption:
+          "USGS Mineral Resources Data System (MRDS) map: Orange dots indicate officially recorded gold deposits. One of these documented deposits sits directly within the Split Burnt claim.",
+      },
+      {
+        heading: "Documented Historic Oregon Mining Company Records",
+        type: "bullet_list",
+        content: [
+          "Extensive Drill Testing: 50 to 60 placer drill holes and 7 caisson verification pits completed along the river corridor.",
+          "Verified Alluvial Grade: Historic testing averaged equivalent to approximately 0.31 grams of fine gold per cubic yard.",
+          "High Purity & Coarseness: Placer gold described as very coarse with an average fineness of approximately 850 fine.",
+          "Concentration on Bedrock: Most gold reported within 5 feet of bedrock, with approximately 50% sitting directly on the bedrock contact.",
+          "Proven Channel Strike: Approximately 1-1/4 miles of placer channel historically reported as proven by drilling and shaft sinking.",
+          "High-Yield Cleanup: Over 300 ounces of gold documented from a single 8-day cleanup during historical operations.",
+        ],
+      },
+      {
+        heading: "Claim Details & Legal Description",
+        type: "table",
+        caption:
+          "Active Federal BLM Placer Claims — Burnt River, Baker County, OR",
+        headers: [
+          "Claim Name",
+          "BLM Serial Number",
+          "Acreage",
+          "Township / Range / Section",
+          "Authorized Dredging Season",
+        ],
+        rows: [
+          [
+            "SPLIT BURNT GOLD",
+            "OR106701451",
+            "20 Acres",
+            "T12S, R41E, Section 3",
+            "July 31 – October 31 (700-PM)",
+          ],
+          [
+            "BIG GOLD #1",
+            "OR106701450",
+            "20 Acres",
+            "T12S, R41E, Section 4",
+            "July 31 – October 31 (700-PM)",
+          ],
+        ],
+      },
+      {
+        heading: "Property Features & Natural Placer Traps",
+        type: "bullet_list",
+        content: [
+          "Direct Burnt River Frontage: Encompasses active river channel, gravel bars, and inside-bend deposition zones.",
+          "Exposed Bedrock Traps: Substantial exposed and shallow bedrock with deep transverse cracks, crevices, and potholes acting as natural catchments for coarse gold.",
+          "Ancient High-Channel Target: The Upper Burnt River is recognized for older, elevated gravel benches above the modern river level (evidenced by the nearby historic Dry Horseshoe Placer and high river cobble terraces), presenting a prime untested bulk target on Split Burnt Gold.",
+          "Active Mining District: An active commercial placer mining operation is currently in production immediately upstream.",
+          "Convenient Access & Camping: Excellent road access directly to the claims with large, flat camping areas on BLM ground.",
+        ],
+      },
+      {
+        heading: "Acquisition Terms & Guarantee",
+        type: "paragraph",
+        content:
+          "Priced at $11,400 USD total for both active claims (40 acres combined). Sale includes a written One-Year Mineral Rights Guarantee provided directly by the locator, complete quitclaim documentation, and BLM filing support. Serious inquiries welcome.",
+      },
+    ],
+  },
 ];
+
 
