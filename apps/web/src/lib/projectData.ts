@@ -501,14 +501,10 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     ],
     sections: [
       {
-        heading: "Residential Real Estate – British Columbia",
-        type: "bullet_list",
-        content: [
-          "Looking to buy a house, condo, or townhome in British Columbia?",
-          "Contact Adamson Geomatics to be connected with our trusted residential real estate partner broker.",
-          "Buyers referred through us who successfully complete their property purchase with our partner broker may qualify for a bonus rebate payment.",
-          "Contact us for more information.",
-        ],
+        heading: "Residential & Rural Real Estate – British Columbia",
+        type: "paragraph",
+        content:
+          "Looking for B.C Real Estate? We work with several realtors, mortgage brokers and surveyors. We can direct you to knowledgeable professionals with proven track records no matter what your B.C Real estate needs are. This includes non mining properties such as vacant rural land, which Adamson Geomatics specializes in, and also residential real estate throughout B.C - for which we refer clients to our partner realtors.\n\nFor clients who prefer to buy direct from owner, Adamson Geomatics has closed over a dozen residential and commercial purchase and sale agreements and can assist with review of property disclosure statements, title searches, survey plans and order land title documents and submit Land Title Office forms. Note a notary would be required to sign off.",
       },
       {
         heading: "Goldin Rock Resources Inc. – Mount Burns Property",
@@ -583,7 +579,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         image: "/images/projects/British-Columbia/11.jpg",
       },
       {
-        heading: "BC Hydro Monitoring Maps:",
+        heading: "Remote Sensing / Satellite Imagery Analysis:",
         type: "paragraph",
         content:
           "As well as mining property maps, Adamson Geomatics also creates advanced GIS maps for the forestry, oil and gas, transportation, utilities, infrastructure and environmental industries.\nBelow are figures for the Whatshan Lake Vegetation Monitoring Reports for 2015 and 2016 that Adamson Geomatics completed for G3 Consulting Ltd. on behalf of BC Hydro.\nTransect mapping was conducted with a GPS, and bathymetry was produced from depth readings obtained from a sonar device. Depth data was processed in ArcGIS and sample points were overlaid. Image classification and NDVI analysis was conducted on satellite imagery.",

@@ -4,22 +4,48 @@ import { useEffect, useMemo } from "react";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import Header from "@/components/header";
+import NavigationProgressBar from "@/components/navigation-progress-bar";
+import Loader from "@/components/loader";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next";
 
-const HomePage = dynamic(() => import("@/views/home-page"));
-const AboutPage = dynamic(() => import("@/views/about-page"));
-const ServicesPage = dynamic(() => import("@/views/services-page"));
-const ContactPage = dynamic(() => import("@/views/contact-page"));
-const ProjectsPage = dynamic(() => import("@/views/projects-page"));
-const PostsPage = dynamic(() => import("@/views/posts-page"));
-const PostDetailPage = dynamic(() => import("@/views/post-detail-page"));
+const HomePage = dynamic(() => import("@/views/home-page"), {
+  loading: () => <Loader message="Loading Home..." />,
+});
+const AboutPage = dynamic(() => import("@/views/about-page"), {
+  loading: () => <Loader message="Loading About..." />,
+});
+const ServicesPage = dynamic(() => import("@/views/services-page"), {
+  loading: () => <Loader message="Loading Services..." />,
+});
+const ContactPage = dynamic(() => import("@/views/contact-page"), {
+  loading: () => <Loader message="Loading Contact..." />,
+});
+const ProjectsPage = dynamic(() => import("@/views/projects-page"), {
+  loading: () => <Loader message="Loading Projects..." />,
+});
+const PostsPage = dynamic(() => import("@/views/posts-page"), {
+  loading: () => <Loader message="Loading Posts..." />,
+});
+const PostDetailPage = dynamic(() => import("@/views/post-detail-page"), {
+  loading: () => <Loader message="Loading Article..." />,
+});
 const NotFoundPage = dynamic(() => import("@/views/not-found-page"));
-const MapView = dynamic(() => import("@/app/map/map-view"));
-const DashboardView = dynamic(() => import("@/app/dashboard/dashboard-view"));
-const ProjectView = dynamic(() => import("@/app/projects/[id]/project-view"));
-const OtherProjectsPage = dynamic(() => import("@/views/other-projects-page"));
-const PartnersPage = dynamic(() => import("@/views/partners-page"));
+const MapView = dynamic(() => import("@/app/map/map-view"), {
+  loading: () => <Loader message="Initializing Interactive Map..." />,
+});
+const DashboardView = dynamic(() => import("@/app/dashboard/dashboard-view"), {
+  loading: () => <Loader message="Loading Dashboard..." />,
+});
+const ProjectView = dynamic(() => import("@/app/projects/[id]/project-view"), {
+  loading: () => <Loader message="Loading Project Dossier..." />,
+});
+const OtherProjectsPage = dynamic(() => import("@/views/other-projects-page"), {
+  loading: () => <Loader message="Loading Portfolio..." />,
+});
+const PartnersPage = dynamic(() => import("@/views/partners-page"), {
+  loading: () => <Loader message="Loading Partners..." />,
+});
 
 function decodeSegment(segment: string) {
   try {
@@ -103,6 +129,7 @@ export default function App() {
 
   return (
     <div className="grid min-h-svh grid-rows-[auto_1fr]">
+      <NavigationProgressBar />
       <Header />
       <Analytics />
       <div className="h-full min-h-0 flex flex-col">{content}</div>

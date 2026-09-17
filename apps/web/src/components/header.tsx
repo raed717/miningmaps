@@ -1,14 +1,15 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Facebook, Linkedin } from "lucide-react";
+import { usePathname, useRouter } from "next/navigation";
+import { Facebook, Linkedin, Loader2 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
+import { startGlobalProgress } from "./navigation-progress-bar";
 
 export default function Header() {
+  const router = useRouter();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [navigatingTo, setNavigatingTo] = useState<string | null>(null);
   const links = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
@@ -21,7 +22,25 @@ export default function Header() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    setNavigatingTo(null);
   }, [pathname]);
+
+  const handleNavClick = (to: string, isMobile: boolean) => {
+    if (to === pathname) {
+      if (isMobile) setMobileMenuOpen(false);
+      return;
+    }
+
+    setNavigatingTo(to);
+    startGlobalProgress();
+
+    if (isMobile) {
+      // Small 150ms delay so touch confirmation and loading badge are visibly seen before drawer slides up
+      setTimeout(() => {
+        setMobileMenuOpen(false);
+      }, 150);
+    }
+  };
 
   return (
     <header
@@ -54,11 +73,20 @@ export default function Header() {
           {links.map(({ to, label }) => {
             const isActive =
               to === "/" ? pathname === "/" : pathname.startsWith(to);
+            const isPending = navigatingTo === to;
             return (
               <Link
                 key={to}
                 href={to}
-                className={`relative px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+                onPointerDown={() => {
+                  if (to !== pathname) {
+                    try {
+                      router.prefetch(to);
+                    } catch {}
+                  }
+                }}
+                onClick={() => handleNavClick(to, false)}
+                className={`relative flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
                   isActive
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-white hover:bg-muted"
@@ -66,6 +94,9 @@ export default function Header() {
               >
                 {isActive && (
                   <span className="absolute top-0 left-0 w-full h-px bg-primary" />
+                )}
+                {isPending && (
+                  <Loader2 className="h-3 w-3 animate-spin text-primary" />
                 )}
                 {label}
               </Link>
@@ -141,24 +172,46 @@ export default function Header() {
 
       <div
         id="mobile-navigation"
-        className={`md:hidden overflow-hidden border-t border-border bg-background/98 transition-[max-height,opacity] duration-300 ${mobileMenuOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"}`}
+        className={`md:hidden overflow-hidden border-t border-border bg-background/98 transition-all duration-200 ease-out ${
+          mobileMenuOpen
+            ? "max-h-[32rem] opacity-100 visible"
+            : "max-h-0 opacity-0 invisible pointer-events-none"
+        }`}
       >
         <nav className="container mx-auto flex flex-col px-4 py-4">
           {links.map(({ to, label }) => {
             const isActive =
               to === "/" ? pathname === "/" : pathname.startsWith(to);
+            const isPending = navigatingTo === to;
 
             return (
               <Link
                 key={to}
                 href={to}
-                className={`border-b border-border/70 px-1 py-3 text-xs font-bold uppercase tracking-[0.28em] transition-colors last:border-b-0 ${
-                  isActive
+                prefetch={false}
+                onPointerDown={() => {
+                  if (to !== pathname) {
+                    try {
+                      router.prefetch(to);
+                    } catch {}
+                  }
+                }}
+                onClick={() => handleNavClick(to, true)}
+                className={`flex items-center justify-between border-b border-border/70 px-3 py-3.5 text-xs font-bold uppercase tracking-[0.28em] transition-all last:border-b-0 select-none ${
+                  isPending
+                    ? "bg-primary/20 text-primary border-primary/50"
+                    : isActive
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-white"
+                    : "text-muted-foreground hover:text-white active:bg-primary/15 active:text-primary"
                 }`}
               >
-                {label}
+                <span>{label}</span>
+                {isPending && (
+                  <span className="flex items-center gap-1.5 text-[10px] text-primary tracking-widest font-mono font-bold animate-pulse">
+                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                    <span>LOADING...</span>
+                  </span>
+                )}
               </Link>
             );
           })}
