@@ -1,13 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
 const PdfPreview = dynamic(() => import("@/components/pdf-preview"), { ssr: false });
 
 import { motion } from "motion/react";
-import { ArrowLeft, MapPin, Target, Lightbulb, TrendingUp, PlayCircle, ExternalLink, Download } from "lucide-react";
+import {
+  ArrowLeft,
+  MapPin,
+  Target,
+  Lightbulb,
+  TrendingUp,
+  PlayCircle,
+  ExternalLink,
+  Download,
+  FileText,
+  ChevronRight,
+  ChevronDown,
+} from "lucide-react";
 import { projects } from "@/lib/projectData";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
@@ -43,11 +55,97 @@ export default function ProjectDetails({
   projectId: string;
 }) {
   const [showFloatingBack, setShowFloatingBack] = useState(false);
+  const [activeHeadingId, setActiveHeadingId] = useState<string | null>(null);
+  const [highlightedHeadingId, setHighlightedHeadingId] = useState<string | null>(null);
+  const [mobileOutlineOpen, setMobileOutlineOpen] = useState(false);
+  const highlightTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const activeHeadingIdRef = useRef<string | null>(null);
+
   const project = projects.find((p) => p.id === projectId);
 
   const subProjects = (project?.subProjectIds || [])
     .map((subId) => projects.find((p) => p.id === subId))
     .filter((sub): sub is typeof projects[number] => !!sub);
+
+  const documentHeadings = useMemo(() => {
+    return (project?.sections || [])
+      .map((section, index) => ({
+        id: `section-heading-${index}`,
+        index,
+        title: section.heading?.trim() || "",
+        type: section.type,
+      }))
+      .filter((item) => item.title.length > 0);
+  }, [project?.sections]);
+
+  const currentHeading =
+    documentHeadings.find((h) => h.id === activeHeadingId) ||
+    documentHeadings[0];
+
+  const scrollToHeading = (id: string) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+
+    setActiveHeadingId(id);
+    activeHeadingIdRef.current = id;
+    setHighlightedHeadingId(id);
+
+    if (highlightTimerRef.current) {
+      clearTimeout(highlightTimerRef.current);
+    }
+    highlightTimerRef.current = setTimeout(() => {
+      setHighlightedHeadingId(null);
+    }, 1700);
+
+    // Header (64px) + mobile sticky dossier bar (~48px) = ~112px.
+    // We add a clean 14px breathing room -> 126px on mobile.
+    // On desktop, header is 64px + 20px breathing room -> 84px.
+    const stickyOffset = window.innerWidth < 1024 ? 126 : 84;
+    const targetTop =
+      target.getBoundingClientRect().top + window.scrollY - stickyOffset;
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    if (documentHeadings.length === 0) return;
+
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPos =
+            window.scrollY + (window.innerWidth < 1024 ? 136 : 94);
+          let currentActive = documentHeadings[0]?.id || null;
+
+          for (const h of documentHeadings) {
+            const el = document.getElementById(h.id);
+            if (el) {
+              const top = el.getBoundingClientRect().top + window.scrollY;
+              if (scrollPos >= top) {
+                currentActive = h.id;
+              }
+            }
+          }
+
+          if (currentActive && currentActive !== activeHeadingIdRef.current) {
+            activeHeadingIdRef.current = currentActive;
+            setActiveHeadingId(currentActive);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [documentHeadings]);
 
   if (!project) {
     return (
@@ -77,7 +175,7 @@ export default function ProjectDetails({
   }, []);
 
   return (
-    <div className="flex-1 overflow-y-auto bg-background relative">
+    <div className="flex-1 bg-background relative w-full max-w-full overflow-x-clip">
       {/* Header Banner */}
       <div className="relative h-[40vh] min-h-[18.75rem] w-full overflow-hidden">
         <img
@@ -105,13 +203,97 @@ export default function ProjectDetails({
                 <MapPin className="mr-1.5 h-3 w-3" />
                 {project.region}
               </div>
-              <h1 className="max-w-4xl text-4xl font-extrabold tracking-tight md:text-6xl text-white">
+              <h1 className="max-w-4xl text-2xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white break-words">
                 {project.title}
               </h1>
             </motion.div>
           </div>
         </div>
       </div>
+
+      {/* Mobile Document Tab / Dropdown */}
+      {documentHeadings.length >= 2 && (
+        <div className="sticky top-16 z-30 w-full max-w-full border-b border-border/80 bg-background/95 backdrop-blur-md px-4 py-2.5 lg:hidden transform-gpu will-change-transform">
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => setMobileOutlineOpen((prev) => !prev)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setMobileOutlineOpen((prev) => !prev);
+              }
+            }}
+            className="flex w-full min-w-0 max-w-full cursor-pointer items-center justify-between rounded-lg border border-primary/30 bg-card/90 px-3.5 py-2 text-xs font-medium text-foreground shadow-sm transition-all hover:border-primary active:scale-[0.99]"
+            aria-expanded={mobileOutlineOpen}
+            aria-label="Toggle document outline"
+          >
+            <div className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden pr-2">
+              <FileText className="h-4 w-4 shrink-0 text-primary" />
+              <span className="shrink-0 font-mono text-[10px] font-bold uppercase tracking-wider text-primary">
+                DOSSIER:
+              </span>
+              <span className="block min-w-0 flex-1 truncate text-xs font-semibold text-white">
+                {currentHeading?.title || "Document Sections"}
+              </span>
+            </div>
+            <div className="flex shrink-0 items-center gap-1.5 border-l border-border/60 pl-2">
+              <span className="rounded bg-primary/15 px-1.5 py-0.5 font-mono text-[9px] font-bold text-primary">
+                {documentHeadings.length}
+              </span>
+              <ChevronDown
+                className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${
+                  mobileOutlineOpen ? "rotate-180 text-primary" : ""
+                }`}
+              />
+            </div>
+          </div>
+
+          {/* Expanded Mobile Section List - Absolute Overlay to avoid pushing page down */}
+          {mobileOutlineOpen && (
+            <>
+              {/* Dimmed backdrop to close on outside click */}
+              <div
+                className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[2px]"
+                onClick={() => setMobileOutlineOpen(false)}
+              />
+              <div className="absolute top-full left-4 right-4 mt-1.5 max-h-72 w-auto overflow-y-auto overflow-x-hidden rounded-xl border border-border/80 bg-card/98 p-2.5 shadow-2xl backdrop-blur-xl z-50 animate-in fade-in-50 slide-in-from-top-1">
+                <div className="mb-1.5 border-b border-border/50 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                  Jump to Section
+                </div>
+                <div className="space-y-1 w-full min-w-0">
+                  {documentHeadings.map((h, i) => {
+                    const isActive = activeHeadingId === h.id;
+                    return (
+                      <button
+                        key={h.id}
+                        type="button"
+                        onClick={() => {
+                          setMobileOutlineOpen(false);
+                          scrollToHeading(h.id);
+                        }}
+                        className={`flex w-full min-w-0 max-w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-xs transition-colors ${
+                          isActive
+                            ? "border-l-2 border-primary bg-primary/20 font-bold text-primary"
+                            : "text-muted-foreground hover:bg-muted/60 hover:text-white"
+                        }`}
+                      >
+                        <div className="flex min-w-0 flex-1 items-center gap-2 mr-2 overflow-hidden">
+                          <span className="shrink-0 font-mono text-[10px] opacity-70">
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span className="block min-w-0 flex-1 truncate">{h.title}</span>
+                        </div>
+                        <ChevronRight className="h-3.5 w-3.5 shrink-0 opacity-50" />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      )}
 
       {/* Floating Back Button — visible when hero is scrolled past */}
       <Link
@@ -126,10 +308,59 @@ export default function ProjectDetails({
         Back
       </Link>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid gap-12 lg:grid-cols-3">
+      <div className="container mx-auto px-4 py-16 w-full max-w-full min-w-0">
+        <div className="grid gap-12 lg:grid-cols-3 w-full min-w-0">
           {/* Main Content */}
           <div className="w-full min-w-0 lg:col-span-2 space-y-12 order-2">
+            {/* Document Dossier Summary Card */}
+            {documentHeadings.length >= 2 && (
+              <div className="rounded-xl border border-border/70 bg-card/70 p-5 space-y-4 shadow-sm">
+                <div className="flex items-center justify-between pb-3 border-b border-border/50">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20">
+                      <FileText className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-white">
+                        Document Dossier Summary
+                      </h3>
+                      <p className="text-[10px] font-mono text-muted-foreground tracking-widest">
+                        EXECUTIVE CONTENT OVERVIEW
+                      </p>
+                    </div>
+                  </div>
+                  <span className="rounded border border-primary/30 bg-primary/10 px-2 py-0.5 font-mono text-[10px] font-bold text-primary">
+                    {documentHeadings.length} SECTIONS
+                  </span>
+                </div>
+
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  Select any section below to jump directly to detailed findings:
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full min-w-0">
+                  {documentHeadings.map((h, i) => (
+                    <button
+                      key={h.id}
+                      type="button"
+                      onClick={() => scrollToHeading(h.id)}
+                      className="group flex w-full min-w-0 max-w-full items-center justify-between rounded-lg border border-border/50 bg-background/50 p-3 text-left transition-all hover:border-primary/50 hover:bg-primary/5 active:scale-[0.99] overflow-hidden"
+                    >
+                      <div className="flex min-w-0 flex-1 items-center gap-2.5 mr-2 overflow-hidden">
+                        <span className="font-mono text-[10px] font-bold text-primary shrink-0">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span className="text-xs font-medium text-foreground group-hover:text-white line-clamp-2 break-words min-w-0 flex-1">
+                          {h.title}
+                        </span>
+                      </div>
+                      <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground opacity-50 group-hover:opacity-100 group-hover:text-primary transition-all" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {subProjects.length > 0 && (
               <motion.section
                 initial={{ opacity: 0, y: 20 }}
@@ -207,22 +438,41 @@ export default function ProjectDetails({
               </motion.section>
             )}
 
-            {project.sections.map((section, index) => (
-              <motion.section
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                {section.heading && (
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                      <Target className="h-5 w-5" />
+            {project.sections.map((section, index) => {
+              const sectionId = section.heading
+                ? `section-heading-${index}`
+                : undefined;
+              const isHighlighted =
+                sectionId && highlightedHeadingId === sectionId;
+
+              return (
+                <motion.section
+                  key={index}
+                  id={sectionId}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="relative space-y-6 scroll-mt-32"
+                >
+                  {sectionId && (
+                    <div
+                      aria-hidden="true"
+                      className={`absolute -inset-1.5 sm:-inset-3 rounded-2xl pointer-events-none transition-all duration-700 z-0 ${
+                        isHighlighted
+                          ? "opacity-100 scale-100 ring-2 ring-primary/90 bg-primary/[0.06] shadow-[0_0_35px_rgba(255,215,0,0.25)]"
+                          : "opacity-0 scale-[0.99] ring-0"
+                      }`}
+                    />
+                  )}
+
+                  {section.heading && (
+                    <div className="relative z-10 flex items-center gap-3 w-full min-w-0">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <Target className="h-5 w-5" />
+                      </div>
+                      <h2 className="text-xl sm:text-2xl font-bold break-words min-w-0 flex-1">{section.heading}</h2>
                     </div>
-                    <h2 className="text-2xl font-bold">{section.heading}</h2>
-                  </div>
-                )}
+                  )}
 
                 {section.type === "SimpleImage" && section.image && (
                   <div className="overflow-hidden rounded-xl border border-border/50 bg-background/50 relative z-10 flex flex-col items-center">
@@ -569,16 +819,17 @@ export default function ProjectDetails({
                     </div>
                   )}
               </motion.section>
-            ))}
+            );
+          })}
           </div>
 
           {/* Sidebar / Map Context */}
-          <div className="space-y-6 order-1 lg:order-2">
+          <div className="space-y-6 order-1 lg:order-2 w-full min-w-0">
             <div className="rounded-xl border border-border/50 bg-card p-6">
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 Location Context
               </h3>
-              <div className="relative h-[18.75rem] w-full overflow-hidden rounded-lg border border-border/50">
+              <div className="relative z-0 isolate h-[18.75rem] w-full overflow-hidden rounded-lg border border-border/50">
                 <MapContainer
                   center={mapCoords}
                   zoom={5}
@@ -586,6 +837,7 @@ export default function ProjectDetails({
                     height: "100%",
                     width: "100%",
                     background: "#0B0F14",
+                    zIndex: 0,
                   }}
                   zoomControl={false}
                   scrollWheelZoom={false}

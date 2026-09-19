@@ -308,12 +308,12 @@ export default function Dashboard() {
               View Full Map
             </button>
           </div>
-          <div className="relative h-[18.75rem] w-full overflow-hidden rounded-lg border border-border/50">
+          <div className="relative z-0 isolate h-[18.75rem] w-full overflow-hidden rounded-lg border border-border/50">
             {/* Using a non-interactive minimap for the dashboard */}
             <MapContainer
               center={[20, 0]}
               zoom={1.5}
-              style={{ height: "100%", width: "100%", background: "#0B0F14" }}
+              style={{ height: "100%", width: "100%", background: "#0B0F14", zIndex: 0 }}
               zoomControl={false}
               scrollWheelZoom={false}
               dragging={false}

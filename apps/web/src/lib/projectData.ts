@@ -501,12 +501,6 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     ],
     sections: [
       {
-        heading: "Residential & Rural Real Estate – British Columbia",
-        type: "paragraph",
-        content:
-          "Looking for B.C Real Estate? We work with several realtors, mortgage brokers and surveyors. We can direct you to knowledgeable professionals with proven track records no matter what your B.C Real estate needs are. This includes non mining properties such as vacant rural land, which Adamson Geomatics specializes in, and also residential real estate throughout B.C - for which we refer clients to our partner realtors.\n\nFor clients who prefer to buy direct from owner, Adamson Geomatics has closed over a dozen residential and commercial purchase and sale agreements and can assist with review of property disclosure statements, title searches, survey plans and order land title documents and submit Land Title Office forms. Note a notary would be required to sign off.",
-      },
-      {
         heading: "Goldin Rock Resources Inc. – Mount Burns Property",
         type: "SimpleImage",
         image: "/images/projects/British-Columbia/3.jpg",
@@ -645,6 +639,12 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
               "https://drive.google.com/file/d/1ZouSU5N_rsUK0T9h5YQsqk8glwFxTpwr/view",
           },
         ],
+      },
+      {
+        heading: "Residential & Rural Real Estate – British Columbia",
+        type: "paragraph",
+        content:
+          "Looking for B.C Real Estate? We work with several realtors, mortgage brokers and surveyors. We can direct you to knowledgeable professionals with proven track records no matter what your B.C Real estate needs are. This includes non mining properties such as vacant rural land, which Adamson Geomatics specializes in, and also residential real estate throughout B.C - for which we refer clients to our partner realtors.\n\nFor clients who prefer to buy direct from owner, Adamson Geomatics has closed over a dozen residential and commercial purchase and sale agreements and can assist with review of property disclosure statements, title searches, survey plans and order land title documents and submit Land Title Office forms. Note a notary would be required to sign off.",
       },
     ],
   },
@@ -3758,6 +3758,158 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         type: "paragraph",
         content:
           "Asking price: $11,600 USD total for both active claims (40 acres combined). All transfer paperwork and BLM quitclaim deed documentation provided with sale. Serious inquiries welcome.",
+      },
+    ],
+  },
+  // Newfoundland - Sword & Gossan
+  {
+    id: "nl-001",
+    title: "Sword & Gossan - Newfoundland",
+    summary:
+      "Early-stage Gold (Au), Copper (Cu), Nickel (Ni), Cobalt (Co), and PGE exploration property spanning 3,900.00 hectares (9,636.90 acres / 39.00 sq km) in Newfoundland and Labrador. Features exceptional surface grab sample assays from Gossan 115 and Sword Far North grading up to 1.33% Ni, 1.62% Cu, and 0.233% Co.",
+    region: "Newfoundland, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789822620/SwordAndGossan_coordinates_tgkbzx.jpg",
+    coordinates: [54.348082, -63.850644],
+    isForSale: true,
+    author: "Stephen Stockley",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gold",
+      "Copper",
+      "Nickel",
+      "Cobalt",
+      "Platinum",
+      "PGE",
+      "Newfoundland",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Property Name", value: "Sword & Gossan" },
+      {
+        label: "Commodity",
+        value: "Gold (Au), Copper (Cu), Nickel (Ni), Cobalt (Co), PGE",
+      },
+      { label: "Location", value: "Newfoundland, Canada" },
+      { label: "NTS Map Sheets", value: "13L05, 13M01" },
+      { label: "Stage", value: "Early" },
+      { label: "Area (Hectares)", value: "3,900.00 ha" },
+      { label: "Area (Acres)", value: "9,636.90 Acres" },
+      { label: "Area (Sq Km)", value: "39.00 km²" },
+      { label: "Seller / Agent", value: "Stephen Stockley" },
+      { label: "Commission", value: "NO" },
+      { label: "AG Commission", value: "NO" },
+      { label: "Commission NSR", value: "NO" },
+      {
+        label: "Report",
+        value: "Available on request (chris@miningpropertymaps.com)",
+      },
+    ],
+    sections: [
+      {
+        heading: "Executive Summary",
+        type: "paragraph",
+        content:
+          "The Sword & Gossan property represents a significant 3,900.00-hectare (9,636.90 acres / 39.00 sq km) early-stage mineral exploration opportunity situated in Newfoundland and Labrador. Targeted for polymetallic magmatic and structural mineralization, the project encompasses prospective horizons hosting Gold (Au), Copper (Cu), Nickel (Ni), Cobalt (Co), and Platinum Group Elements (PGE). High-grade surface grab and channel sampling programs across Gossan 115 and Sword Far North have confirmed multiple robust mineralized zones ready for systematic drill testing.",
+      },
+      {
+        heading: "Property & Tenure Specifications",
+        type: "table",
+        caption: "Sword & Gossan — Land Package & Commercial Terms",
+        headers: ["Parameter", "Details"],
+        rows: [
+          ["Project Name", "Sword & Gossan"],
+          [
+            "Primary Commodities",
+            "Gold (Au), Copper (Cu), Nickel (Ni), Cobalt (Co), PGE",
+          ],
+          ["Location", "Newfoundland, Canada"],
+          ["NTS Map Sheets", "13L05, 13M01"],
+          ["Exploration Stage", "Early Stage"],
+          ["Total Area (Hectares)", "3,900.00 ha"],
+          ["Total Area (Acres)", "9,636.90 Acres"],
+          ["Total Area (Sq Km)", "39.00 km²"],
+          ["Seller / Selling Agent", "Stephen Stockley"],
+          ["Buyer Commission", "NO"],
+          ["AG Commission", "NO"],
+          ["Commission NSR", "NO"],
+          ["Status", "Available for Acquisition / Option"],
+        ],
+      },
+      {
+        heading: "Claim Block Breakdown & NTS Locations",
+        type: "table",
+        caption: "Sword & Gossan — Claim Block Area Breakdown by NTS Map Sheet",
+        headers: ["NTS / Location", "Area (Hectares)", "Approx. Area (Acres)"],
+        rows: [
+          ["13L05", "275 ha", "679.5 Acres"],
+          ["13L05", "75 ha", "185.3 Acres"],
+          ["13L05", "25 ha", "61.8 Acres"],
+          ["13L05", "50 ha", "123.6 Acres"],
+          ["13L05", "325 ha", "803.1 Acres"],
+          ["13L05", "125 ha", "308.9 Acres"],
+          ["13L05", "550 ha", "1,359.1 Acres"],
+          ["13M01", "150 ha", "370.7 Acres"],
+          ["13M01", "2,050 ha", "5,065.7 Acres"],
+          ["13M01", "275 ha", "679.5 Acres"],
+          ["Total (13L05 & 13M01)", "3,900.00 ha", "9,636.90 Acres"],
+        ],
+      },
+      {
+        heading: "Exploration Highlights",
+        type: "bullet_list",
+        content: [
+          "GOSSAN 115 Showing: Five (5) grab samples returned an impressive average of 1.14% Ni, 0.67% Cu, with one peak sample grading 1.62% Cu, and 0.194% Co.",
+          "SWORD FAR NORTH Showing: High-grade Ni-Cu-Co-PGE analytical results returning up to 1.33% Ni, 1.62% Cu, and 0.233% Co across multiple independent assay points.",
+          "Polymetallic Suite: Synergistic base and precious metal endowment combining high-tenor copper and nickel sulfides with cobalt, gold, and PGE credits.",
+          "Expansive Scale: 39.00 sq km consolidated land package offering extensive untested strike potential along prospective geologic contacts.",
+          "Clean Commercial Terms: Zero buyer commission, zero AG commission, and zero NSR royalty encumbrances.",
+        ],
+      },
+      {
+        heading: "Analytical Sample Assays",
+        type: "table",
+        caption: "Sword Far North & Gossan 115 Significant Assay Results",
+        headers: [
+          "Sample / Zone ID",
+          "Nickel (Ni)",
+          "Copper (Cu)",
+          "Cobalt (Co)",
+          "Target Area",
+        ],
+        rows: [
+          ["06RCP300", "1.28%", "0.43%", "0.213%", "Sword Far North"],
+          ["06RCP301", "0.74%", "0.88%", "0.124%", "Sword Far North"],
+          ["06RCP302", "1.07%", "0.33%", "0.178%", "Sword Far North"],
+          ["06RCP303", "1.33%", "0.07%", "0.222%", "Sword Far North"],
+          ["06RCP304", "1.28%", "1.62%", "0.233%", "Sword Far North"],
+          [
+            "GOSSAN 115 (5 Grabs Avg)",
+            "1.14%",
+            "0.67%",
+            "0.194%",
+            "Gossan 115 (Peak sample to 1.62% Cu)",
+          ],
+        ],
+      },
+      {
+        heading: "Geological Setting & Prospectivity",
+        type: "paragraph",
+        content:
+          "The property is characterized by prominent gossanous surface expressions resulting from the weathering and oxidation of primary sulfide-bearing host rocks. In Newfoundland and Labrador's mineralized terranes, these gossans frequently cap magmatic nickel-copper-cobalt-PGE systems and structurally controlled copper-gold deposits. The high nickel, copper, and cobalt tenors identified in surface sampling indicate high-sulfide carrying capacities in the parent intrusions, providing prime geophysical and drill targets for massive sulfide lenses at depth.",
+      },
+      {
+        heading: "Claim Coordinates & Boundary Map",
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789822620/SwordAndGossan_coordinates_tgkbzx.jpg",
+        imageCaption: "SwordAndGossan_coordinates.JPG",
+      },
+      {
+        heading: "Technical Reports & Inquiries",
+        type: "paragraph",
+        content:
+          "Comprehensive exploration reports, assay certificates, GIS claim boundaries, and historical technical documentation are available upon request. For further details, technical evaluations, or acquisition discussions, please contact Stephen Stockley or email chris@miningpropertymaps.com.",
       },
     ],
   },

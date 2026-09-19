@@ -124,3 +124,18 @@
     transform: translateX(-50%);
   }
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ensure Leaflet map instances stay within their own stacking context and don't bleed over headers or modals */
+.leaflet-container {
+  isolation: isolate;
+  z-index: 0 !important;
+}
+

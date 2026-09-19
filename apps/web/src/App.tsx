@@ -128,11 +128,11 @@ export default function App() {
   }
 
   return (
-    <div className="grid min-h-svh grid-rows-[auto_1fr]">
+    <div className="grid min-h-svh grid-rows-[auto_1fr] w-full max-w-full overflow-x-clip">
       <NavigationProgressBar />
       <Header />
       <Analytics />
-      <div className="h-full min-h-0 flex flex-col">{content}</div>
+      <div className="h-full min-h-0 flex flex-col w-full max-w-full overflow-x-clip">{content}</div>
       <Toaster richColors />
     </div>
   );
