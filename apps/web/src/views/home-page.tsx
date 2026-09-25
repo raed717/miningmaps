@@ -8,6 +8,7 @@ import { ProjectPreviewCarouselSection } from "@/components/home/project-preview
 import { ServiceRegistrySection } from "@/components/home/service-registry-section";
 import { ListingMembershipSection } from "@/components/home/listing-membership-section";
 import { AccomplishmentsSection } from "@/components/home/accomplishments-section";
+import { PastClientsPreviewSection } from "@/components/home/past-clients-preview-section";
 import { CertificationsSection } from "@/components/home/certifications-section";
 import { PartnerProgramsTickerBanner } from "@/components/PartnerProgramsTickerBanner";
 import Footer from "@/components/footer";
@@ -38,6 +39,7 @@ export default function HomePage() {
       </div>
       <ListingMembershipSection />
       <AccomplishmentsSection />
+      <PastClientsPreviewSection />
       <GlobalTelemetrySection />
       <CertificationsSection />
      

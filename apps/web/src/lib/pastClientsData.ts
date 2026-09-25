@@ -2,20 +2,39 @@ export type PastClient = {
   name: string;
   notes?: string;
   url?: string;
+  logo?: string;
+  image?: string;
 };
 
 export const pastClients: PastClient[] = [
-  { name: "JDS Mining", url: "https://www.jdsmining.ca/" },
+  {
+    name: "JDS Mining",
+    url: "https://www.jdsmining.ca/",
+    logo: "https://images.squarespace-cdn.com/content/v1/69374981c217436964ab61e9/224c8b13-9cf9-40ac-8c0d-ebffb3419b8f/JDS+Full+Logo+-+Blue+RGB.png?format=1500w",
+  },
   {
     name: "Barkerville Gold Mines (Osisko Development Corp)",
     url: "https://osiskodev.com/",
+    logo: "https://www.osiskogold.ca/_templates/1/source/img/osisko-logo-white.svg?v=092508",
+  },
+  {
+    name: "University of Victoria",
+    notes: "Helped connect their geology team with tour of Phoenix pit",
+    url: "https://www.uvic.ca/",
+    logo: "https://www.uvic.ca/assets/core-4-0/img/uvic-wordmark-colour.svg",
+    image:
+      "https://www.uvic.ca/news-management/stories/2023/active-transport/photos/cycling-uvic.jpg",
   },
   {
     name: "Quantum Critical Metals Corp",
     url: "https://www.quantumcriticalmetals.com/",
+    logo: "https://www.quantumcriticalmetals.com/images/qcm-logo-horizontal.webp",
   },
   { name: "BC Copper Company", url: "" },
-  { name: "Silver Spruce Resources", url: "https://silverspruceresources.com/" },
+  {
+    name: "Silver Spruce Resources",
+    url: "https://silverspruceresources.com/",
+  },
   { name: "Perry English", url: "" },
   { name: "Steven Scott", url: "" },
   { name: "Tony Derrien", url: "" },
@@ -24,6 +43,7 @@ export const pastClients: PastClient[] = [
     name: "B.C Hydro",
     notes: "Reservoir monitoring reportS",
     url: "https://www.bchydro.com/index.html",
+    logo: "https://www.bchydro.com/content/experience-fragments/bchydro-web/header/master/_jcr_content/root/container/container/image.coreimg.svg/1723787760686/logo-bchydro.svg",
   },
   {
     name: "TELUS",
@@ -35,6 +55,7 @@ export const pastClients: PastClient[] = [
     name: "The City of Coquitlam",
     notes: "Produced stream monitoring maps in partnership with B.C Hydro",
     url: "https://www.coquitlam.ca/",
+    logo: "https://www.otcmarkets.com/company-otcapi/company/logo/ATOXF",
   },
   { name: "The City of Chilliwack", url: "" },
   {
@@ -53,6 +74,7 @@ export const pastClients: PastClient[] = [
     notes:
       "Worked on complex Crown Grant transfers and parcel mapping in Barkerville and Wells, B.C.",
     url: "https://www.dentons.com/en/",
+    logo: "https://www.dentons.com/-/media/images/website/logos/logos_svg/dentons-hong-kong-logo-rgb.ashx",
   },
   {
     name: "District of Wells",
@@ -64,6 +86,7 @@ export const pastClients: PastClient[] = [
     name: "University of Waterloo",
     notes: "Wildfire mitigation modeling consulting",
     url: "https://uwaterloo.ca/",
+    logo: "https://ssc.ca/sites/default/files/styles/max_1300x1300/public/imce/liaison/abkashlak/waterloo.png?itok=ikVCUvQb",
   },
   { name: "Many others not listed", url: "" },
 ];

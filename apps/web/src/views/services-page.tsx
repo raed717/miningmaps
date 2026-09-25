@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import {
@@ -41,6 +41,22 @@ const workflow = [
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState<"services" | "clients">("services");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const search = window.location.search;
+      const hash = window.location.hash;
+      if (search.includes("tab=clients") || hash === "#clients") {
+        setActiveTab("clients");
+        setTimeout(() => {
+          const tabSection = document.getElementById("services-tabs");
+          if (tabSection) {
+            tabSection.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      }
+    }
+  }, []);
 
   return (
     <div className={`min-h-screen w-full bg-background text-foreground ${inter.className}`}>
@@ -96,7 +112,7 @@ export default function ServicesPage() {
           </div>
         </header>
 
-        <section className="mt-16">
+        <section className="mt-16" id="services-tabs">
           <div className="mb-6 flex flex-wrap gap-3 border-b border-border pb-4">
             {[
               { id: "services", label: "Services" },
@@ -242,13 +258,34 @@ export default function ServicesPage() {
                         {String(index + 1).padStart(2, "0")}
                       </div>
                       <div>
-                        <div className="text-lg font-extrabold uppercase tracking-tight text-white md:text-xl">
-                          {client.name}
+                        <div className="flex flex-wrap items-center gap-3">
+                          <span className="text-lg font-extrabold uppercase tracking-tight text-white md:text-xl">
+                            {client.name}
+                          </span>
+                          {client.logo && (
+                            <span className="inline-flex items-center rounded bg-white px-2.5 py-1 shadow-xs">
+                              <img
+                                src={client.logo}
+                                alt={`${client.name} logo`}
+                                className="h-4 max-w-[120px] object-contain"
+                              />
+                            </span>
+                          )}
                         </div>
                         {client.notes && (
                           <p className={`mt-2 text-xs uppercase tracking-[0.15em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}>
                             {client.notes}
                           </p>
+                        )}
+                        {client.image && (
+                          <div className="mt-3 overflow-hidden rounded-lg border border-border/60 max-w-sm">
+                            <img
+                              src={client.image}
+                              alt={client.name}
+                              className="h-32 w-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
                         )}
                       </div>
                       <div className="flex items-start md:justify-end">

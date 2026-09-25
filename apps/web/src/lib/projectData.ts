@@ -3913,6 +3913,181 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       },
     ],
   },
+  // Alaska - Mertz Island Private Island Retreat
+  {
+    id: "ak-003",
+    title: "Mertz Island - Sitka Sound, Alaska",
+    summary:
+      "Rare 4± acre private island retreat in Alaska's renowned Sitka Sound, just 10 minutes by boat from Sitka. Features two turnkey residences accommodating up to 16 guests, secure private deep-water dock, robust off-grid solar and generator infrastructure, and panoramic views of open coastal waters and protected coves.",
+    region: "Alaska, USA",
+    image:
+      "https://fayranches.com/wp-content/uploads/2026/08/alaska-property-with-land-for-sale-mertz-island.jpg",
+    coordinates: [57.0008, -135.3536],
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Alaska",
+      "Private Island",
+      "Waterfront",
+      "Sitka Sound",
+      "Off-Grid",
+      "Turnkey",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Property Name", value: "Mertz Island" },
+      { label: "Location", value: "Sitka Sound, Sitka, Alaska, USA" },
+      { label: "Asking Price", value: "USD $3,000,000" },
+      { label: "Total Acreage", value: "4.00± Acres (Entire Private Island)" },
+      { label: "Main Residence", value: "1,556± SF Custom Pan Abode Home" },
+      { label: "Guest Cabin", value: "1,013± SF Waterfront Guest Cabin" },
+      { label: "Total Capacity", value: "Accommodates up to 16 guests" },
+      { label: "Boat Access", value: "10± minutes from Sitka (~3 miles SW)" },
+      {
+        label: "Marine Facilities",
+        value: "Private deep-water dock, boat ramp & 1,000-lb davit",
+      },
+      {
+        label: "Power System",
+        value: "Solar array, battery bank, Victron inverters & 15 kW Generac",
+      },
+      {
+        label: "Water System",
+        value: "6,000-gal filtered rainwater cistern + full plumbing",
+      },
+      { label: "Connectivity", value: "High-speed Starlink satellite internet" },
+      { label: "Status", value: "Active Listing — Fully Turnkey" },
+    ],
+    sections: [
+      {
+        heading: "Executive Overview",
+        type: "paragraph",
+        content:
+          "Mertz Island is an extraordinary 4± acre private island retreat positioned in the heart of Alaska's renowned Sitka Sound, approximately 3 miles southwest of Sitka (a quick 10± minute boat ride). Combining rugged coastal natural beauty with self-sufficient modern engineering, this rare Pacific Northwest offering features two distinctive turnkey residences, an expansive deep-water dock, full utilities, and dual water outlooks over open ocean swells and a tranquil protected cove.",
+      },
+      {
+        heading: "Turnkey Residential Compound",
+        type: "paragraph",
+        content:
+          "The property comfortably hosts up to sixteen guests across two thoughtfully crafted homes offered 100% turnkey with custom furnishings, linens, kitchenware, laundry facilities, maintenance equipment, and professional tools. The custom-built 1,556± SF Pan Abode main residence sits elevated above the shoreline, framed by warm natural cedar finishes and dual panoramic vistas. Below, nestled steps from the boat dock, sits the 1,013± SF private waterfront guest cabin with direct views across the calm inner bay.",
+      },
+      {
+        heading: "Island & Improvement Specifications",
+        type: "table",
+        caption: "Mertz Island — Property Attributes & Structural Metrics",
+        headers: ["Feature / Metric", "Specification"],
+        rows: [
+          ["Land Area", "4.00± Acres (Entire Island)"],
+          ["Jurisdiction", "Sitka Borough, Alaska, USA"],
+          ["Asking Price", "USD $3,000,000"],
+          ["Main House Dimensions", "1,556± SF (Pan Abode Cedar Construction)"],
+          ["Guest Cabin Dimensions", "1,013± SF (Waterfront Log Cabin)"],
+          ["Total Sleeping Capacity", "Up to 16 Guests"],
+          [
+            "Dock Infrastructure",
+            "Heavy-duty private dock with boat ramp & 1,000-lb equipment davit",
+          ],
+          [
+            "Off-Grid Power Generation",
+            "15 kW Generac generator, backup Honda generators, solar panels, battery bank & Victron inverters",
+          ],
+          [
+            "Heating & Climate",
+            "36,000-BTU multi-zone heat pump & high-efficiency wood stoves",
+          ],
+          [
+            "Water & Waste Infrastructure",
+            "6,000-gallon filtered rainwater cistern, dishwasher, hot showers, flush toilets & septic field",
+          ],
+          ["Communications", "High-speed Starlink satellite broadband"],
+          [
+            "Outbuildings",
+            "Two dedicated maintenance, tool & storage workshops",
+          ],
+        ],
+      },
+      {
+        heading: "Off-Grid Infrastructure & Self-Sufficiency",
+        type: "bullet_list",
+        content: [
+          "Robust Power Grid: Engineered with a hybrid solar panel array, dedicated deep-cycle battery storage bank, Victron energy inverters, an automatic 15 kW Generac primary generator, and secondary Honda backup units.",
+          "Abundant Fresh Water: 6,000-gallon multi-stage filtered rainwater cistern plumbed directly into residential kitchen and bathroom fixtures.",
+          "Year-Round Thermal Comfort: High-efficiency wood-burning stove paired with a modern 36,000-BTU heat pump system delivering reliable heating in all Alaskan seasons.",
+          "Complete Domestic Conveniences: Full indoor plumbing, hot showers, modern flush toilets, residential laundry (washer & dryer), and certified septic systems.",
+          "High-Speed Connectivity: Low-latency Starlink satellite internet facilitating remote executive work, communications, and streaming.",
+          "Workshops & Logistics: Dual outbuildings for equipment storage, tool staging, and a shoreline 1,000-pound motorized davit crane for handling skiffs and freight.",
+        ],
+      },
+      {
+        heading: "Coastal Ecosystem, Wildlife & Marine Setting",
+        type: "paragraph",
+        content:
+          "Surrounded by old-growth Sitka spruce and western hemlock forest, Mertz Island offers an authentic immersion in Southeast Alaska's coastal ecosystem. Intertidal paths and cedar boardwalks encircle the property, providing front-row access to humpback whales, sea otters, harbor seals, Steller sea lions, Sitka black-tailed deer, and nesting bald eagles. The waters of Sitka Sound are world-renowned for king salmon, silver salmon, halibut, rockfish, and Dungeness crab fishing.",
+      },
+      {
+        heading: "Property Gallery & Visual Survey",
+        type: "ImageGallery",
+        galleryType: "grid",
+        images: [
+          {
+            src: "https://fayranches.com/wp-content/uploads/2026/08/alaska-property-with-land-for-sale-mertz-island.jpg",
+            alt: "Mertz Island Aerial Overview",
+            caption:
+              "Aerial view of Mertz Island and surrounding Sitka Sound waters.",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2026/08/cove-alaska-mertz-island.jpg",
+            alt: "Protected Cove and Mooring",
+            caption:
+              "Tranquil protected cove with calm waters and shoreline boardwalk.",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2026/08/calm-waters-alaska-mertz-island.jpg",
+            alt: "Waterfront Views",
+            caption:
+              "Panoramic vistas across the pristine Southeast Alaska archipelago.",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2026/08/cedar-walk-alaska-mertz-island.jpg",
+            alt: "Cedar Boardwalk",
+            caption:
+              "Handcrafted cedar boardwalks linking the main residence and waterfront cabin.",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2026/08/main-house-alaska-mertz-island.jpg",
+            alt: "Pan Abode Main Residence",
+            caption:
+              "1,556± SF custom Pan Abode cedar home overlooking Sitka Sound.",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2026/08/cabin-alaska-mertz-island.jpg",
+            alt: "Waterfront Guest Cabin",
+            caption:
+              "1,013± SF guest cabin situated steps from the private dock.",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2026/08/main-house-view-alaska-mertz-island.jpg",
+            alt: "Interior Ocean View",
+            caption:
+              "Vaulted living room with expansive picture windows facing the sound.",
+          },
+          {
+            src: "https://fayranches.com/wp-content/uploads/2026/08/sunset-alaska-mertz-island.jpg",
+            alt: "Sitka Sound Sunset",
+            caption:
+              "Spectacular evening sunsets over the Pacific coastal waters.",
+          },
+        ],
+      },
+      {
+        heading: "Inquiries & Acquisition Details",
+        type: "paragraph",
+        content:
+          "Offered at USD $3,000,000 fully turnkey. Comprehensive property documentation, utility schematics, and private showing coordination are available upon request. For inquiries, please contact chris@miningpropertymaps.com.",
+      },
+    ],
+  },
 ];
 
 
