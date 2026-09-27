@@ -83,6 +83,7 @@ export function ServiceRegistrySection() {
                     <Link
                       key={module.id}
                       href={`/services#${module.id}`}
+                      aria-label={`View ${module.title} service specifications`}
                       className="group bg-card px-4 py-4 transition-colors hover:bg-background"
                     >
                       <div

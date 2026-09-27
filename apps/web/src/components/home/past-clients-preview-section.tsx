@@ -206,7 +206,8 @@ export function PastClientsPreviewSection() {
                     <a
                       href={client.url}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
+                      aria-label={`Visit ${client.name} official website`}
                       className={`inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-white ${mono.className}`}
                     >
                       Website <ArrowUpRight className="h-3 w-3 text-primary" />

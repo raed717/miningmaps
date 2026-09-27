@@ -4,7 +4,7 @@ const config = {
   generateRobotsTxt: false,
   changefreq: 'weekly',
   priority: 0.7,
-  exclude: ['/dashboard', '/dashboard/*', '/opengraph-image.png'],
+  exclude: ['/dashboard', '/dashboard/*', '/opengraph-image.png', '/post', '/post/*'],
 };
 
 export default config;

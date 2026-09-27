@@ -39,125 +39,134 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "@id": "https://www.miningpropertymaps.com/#organization",
-  name: "Adamson Geomatics",
-  alternateName: "Mining Property Maps",
-  url: "https://www.miningpropertymaps.com",
-  image: "https://www.miningpropertymaps.com/opengraph-image.png",
-  logo: "https://www.miningpropertymaps.com/images/general/logo.png",
-  description:
-    "Professional land and geospatial services in British Columbia. GIS mapping, mineral claim staking, LiDAR, digital elevation models, geological modelling, land valuations, and legal dispute support.",
-  email: "chris@miningpropertymaps.com",
-  areaServed: [
+  "@graph": [
     {
-      "@type": "State",
-      name: "British Columbia",
-    },
-    {
-      "@type": "Country",
-      name: "Canada",
-    },
-  ],
-  founder: {
-    "@type": "Person",
-    "@id": "https://www.miningpropertymaps.com/#chris-adamson",
-    name: "Chris Adamson",
-    jobTitle: "Registered Inspector (R.I.) & Geospatial Consultant",
-    knowsAbout: [
-      "Mineral Claim Staking",
-      "GIS Cartography",
-      "LiDAR Point Cloud Processing",
-      "Leapfrog 3D Geological Modelling",
-      "Digital Elevation Models (DEM)",
-      "Mineral Titles Online (MTO)",
-      "Cadastral Surveys",
-    ],
-    sameAs: [
-      "https://www.linkedin.com/in/chris-adamson-ri/",
-      "https://x.com/Christalball93",
-    ],
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Geomatics & Mineral Exploration Services",
-    itemListElement: [
-      {
+      "@type": "Organization",
+      "@id": "https://www.miningpropertymaps.com/#organization",
+      name: "Adamson Geomatics",
+      alternateName: "Mining Property Maps",
+      url: "https://www.miningpropertymaps.com",
+      image: "https://www.miningpropertymaps.com/opengraph-image.png",
+      logo: "https://www.miningpropertymaps.com/images/general/logo.png",
+      description:
+        "Professional land and geospatial services in British Columbia. GIS mapping, mineral claim staking, LiDAR, digital elevation models, geological modelling, land valuations, and legal dispute support.",
+      email: "chris@miningpropertymaps.com",
+      areaServed: [
+        {
+          "@type": "State",
+          name: "British Columbia",
+        },
+        {
+          "@type": "Country",
+          name: "Canada",
+        },
+      ],
+      founder: {
+        "@id": "https://www.miningpropertymaps.com/#chris-adamson",
+      },
+      hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Mineral Claim Staking & Boundary Surveys",
+        name: "Geomatics & Mineral Exploration Services",
         itemListElement: [
           {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Mineral Claim Staking",
-              description:
-                "Acquisition, physical boundary blazing, and MTO registration of mineral tenures in British Columbia.",
-            },
+            "@type": "OfferCatalog",
+            name: "Mineral Claim Staking & Boundary Surveys",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Mineral Claim Staking",
+                  description:
+                    "Acquisition, physical boundary blazing, and MTO registration of mineral tenures in British Columbia.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "Tenure Maintenance & Assessment Work",
+                  description:
+                    "Preparation and submission of technical exploration statements and assessment reports.",
+                },
+              },
+            ],
           },
           {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Tenure Maintenance & Assessment Work",
-              description:
-                "Preparation and submission of technical exploration statements and assessment reports.",
-            },
+            "@type": "OfferCatalog",
+            name: "GIS Mapping & Remote Sensing",
+            itemListElement: [
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "LiDAR & Bare-Earth DEM Processing",
+                  description:
+                    "Airborne and drone LiDAR canopy penetration, high-resolution contour generation, and lineament mapping.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "3D Geological Modelling (Leapfrog)",
+                  description:
+                    "Subsurface lithology, alteration, and structural modeling for mineral exploration and drill targeting.",
+                },
+              },
+              {
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: "NI 43-101 Technical Cartography",
+                  description:
+                    "Publication-ready compliant exploration, geophysical, and geological maps for technical reports.",
+                },
+              },
+            ],
           },
         ],
       },
-      {
-        "@type": "OfferCatalog",
-        name: "GIS Mapping & Remote Sensing",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "LiDAR & Bare-Earth DEM Processing",
-              description:
-                "Airborne and drone LiDAR canopy penetration, high-resolution contour generation, and lineament mapping.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "3D Geological Modelling (Leapfrog)",
-              description:
-                "Subsurface lithology, alteration, and structural modeling for mineral exploration and drill targeting.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "NI 43-101 Technical Cartography",
-              description:
-                "Publication-ready compliant exploration, geophysical, and geological maps for technical reports.",
-            },
-          },
-        ],
+      sameAs: [
+        "https://www.linkedin.com/company/adamson-geomatics/",
+        "https://www.facebook.com/profile.php?id=61561908187975",
+        "https://x.com/Christalball93",
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.miningpropertymaps.com/#chris-adamson",
+      name: "Chris Adamson",
+      jobTitle: "Registered Inspector (R.I.) & Geospatial Consultant",
+      worksFor: {
+        "@id": "https://www.miningpropertymaps.com/#organization",
       },
-    ],
-  },
-  sameAs: [
-    "https://www.linkedin.com/company/adamson-geomatics/",
-    "https://www.facebook.com/profile.php?id=61561908187975",
-    "https://x.com/Christalball93",
+      url: "https://www.miningpropertymaps.com/about",
+      sameAs: [
+        "https://www.linkedin.com/in/chris-adamson-ri/",
+        "https://x.com/Christalball93",
+      ],
+      knowsAbout: [
+        "Mineral Claim Staking",
+        "GIS Cartography",
+        "LiDAR Point Cloud Processing",
+        "Leapfrog 3D Geological Modelling",
+        "Digital Elevation Models (DEM)",
+        "Mineral Titles Online (MTO)",
+        "Cadastral Surveys",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.miningpropertymaps.com/#website",
+      name: "Adamson Geomatics",
+      alternateName: "Mining Property Maps",
+      url: "https://www.miningpropertymaps.com",
+      publisher: {
+        "@id": "https://www.miningpropertymaps.com/#organization",
+      },
+    },
   ],
-};
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://www.miningpropertymaps.com/#website",
-  name: "Adamson Geomatics",
-  alternateName: "Mining Property Maps",
-  url: "https://www.miningpropertymaps.com",
-  publisher: {
-    "@id": "https://www.miningpropertymaps.com/#organization",
-  },
 };
 
 export default function RootLayout({
@@ -171,10 +180,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <ThemeProvider
           attribute="class"

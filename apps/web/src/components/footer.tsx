@@ -30,7 +30,19 @@ export default function Footer() {
 
         {/* Center Links */}
         <div className="flex flex-col items-center gap-8">
-          <div className="flex flex-wrap items-center justify-center gap-8 font-bold">
+          <div className="flex flex-wrap items-center justify-center gap-6 font-bold">
+            <Link
+              href="/about"
+              className="hover:text-primary transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/services"
+              className="hover:text-primary transition-colors"
+            >
+              Services
+            </Link>
             <Link
               href="/projects"
               className="hover:text-primary transition-colors"
@@ -46,12 +58,24 @@ export default function Footer() {
             >
               Properties
             </Link>
-            <a
-              href="mailto:chris@miningpropertymaps.com"
+            <Link
+              href="/partners"
+              className="hover:text-primary transition-colors"
+            >
+              Partners
+            </Link>
+            <Link
+              href="/posts"
+              className="hover:text-primary transition-colors"
+            >
+              Field Reports
+            </Link>
+            <Link
+              href="/contact"
               className="text-primary hover:text-white transition-colors"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -60,7 +84,8 @@ export default function Footer() {
           <a
             href="https://www.linkedin.com/company/adamson-geomatics/"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer nofollow"
+            aria-label="Adamson Geomatics on LinkedIn"
             className="hover:text-primary border border-border px-3 py-1 hover:border-primary transition-all"
           >
             LinkedIn
@@ -68,7 +93,8 @@ export default function Footer() {
           <a
             href="https://www.facebook.com/profile.php?id=61561908187975"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer nofollow"
+            aria-label="Adamson Geomatics on Facebook"
             className="hover:text-primary border border-border px-3 py-1 hover:border-primary transition-all"
           >
             Facebook

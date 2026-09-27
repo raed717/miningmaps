@@ -231,6 +231,7 @@ export function ProjectPreviewCarouselSection() {
                 <Link
                   key={project.id}
                   href={`/projects/${project.id}`}
+                  aria-label={`View dossier for ${project.title}`}
                   data-project-card
                   className="group relative block w-[84vw] max-w-[22rem] shrink-0 snap-center overflow-hidden border border-border bg-black sm:w-[24rem] sm:max-w-none lg:w-[28rem]"
                 >
