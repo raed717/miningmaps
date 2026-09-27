@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
@@ -13,6 +13,7 @@ import {
   Search,
   Target,
   FolderKanban,
+  Tag,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { projects } from "@/lib/projectData";
@@ -48,6 +49,27 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [forSaleOnly, setForSaleOnly] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("forSale") === "true" || params.get("filter") === "for-sale") {
+        setForSaleOnly(true);
+      }
+    }
+  }, []);
+
+  const totalForSaleCount = useMemo(() => {
+    return projects.filter(
+      (p) =>
+        p.type !== "subproject" &&
+        (p.isForSale ||
+          (p.subProjectIds || []).some(
+            (id) => projects.find((sub) => sub.id === id)?.isForSale
+          ))
+    ).length;
+  }, []);
 
   const staticTags = ["Gold", "Silver", "Copper", "Platinum", "Cobalt", "Nickel"];
 
@@ -78,7 +100,10 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
       ? project.tags?.includes(activeFilter) ||
         subs.some((sub) => sub!.tags?.includes(activeFilter))
       : true;
-    const matchesSaleState = showOnlyForSale ? project.isForSale : true;
+    const matchesSaleState =
+      showOnlyForSale || forSaleOnly
+        ? project.isForSale || subs.some((sub) => sub!.isForSale)
+        : true;
 
     return matchesSearch && matchesFilter && matchesSaleState;
   });
@@ -202,20 +227,49 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
             )}
           </div>
 
-          <div className="flex flex-wrap gap-2 lg:w-2/3 lg:justify-end">
+          <div className="flex flex-wrap items-center gap-2 lg:w-2/3 lg:justify-end">
             <button
-              onClick={() => setActiveFilter(null)}
+              type="button"
+              onClick={() => {
+                setActiveFilter(null);
+                setForSaleOnly(false);
+              }}
               className={`px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
-                activeFilter === null
+                activeFilter === null && !forSaleOnly
                   ? "border-primary bg-primary text-black"
                   : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
               } border`}
             >
               ALL
             </button>
+            {!showOnlyForSale && (
+              <button
+                type="button"
+                onClick={() => setForSaleOnly((prev) => !prev)}
+                className={`inline-flex items-center gap-1.5 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
+                  forSaleOnly
+                    ? "border-secondary bg-secondary text-black shadow-[0_0_12px_rgba(0,255,65,0.4)]"
+                    : "border-secondary/40 bg-secondary/10 text-secondary hover:border-secondary hover:bg-secondary/20"
+                } border`}
+                title={forSaleOnly ? "Show all projects" : "Filter projects available for sale"}
+              >
+                <Tag className="h-3 w-3" />
+                <span>FOR SALE</span>
+                <span
+                  className={`ml-0.5 px-1.5 py-0.2 text-[9px] font-extrabold ${
+                    forSaleOnly
+                      ? "bg-black text-secondary"
+                      : "border border-secondary/40 bg-secondary/20 text-secondary"
+                  }`}
+                >
+                  {totalForSaleCount}
+                </span>
+              </button>
+            )}
             {staticTags.map((tag) => (
               <button
                 key={tag}
+                type="button"
                 onClick={() =>
                   setActiveFilter(tag === activeFilter ? null : tag)
                 }
@@ -232,9 +286,38 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
         </section>
 
         <div
-          className={`mb-6 flex justify-between border-b border-border pb-3 text-[10px] tracking-[0.18em] uppercase text-[#666] md:text-xs ${mono.className}`}
+          className={`mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3 text-[10px] tracking-[0.18em] uppercase text-[#666] md:text-xs ${mono.className}`}
         >
-          <span>Displaying {filteredProjects.length} Records</span>
+          <div className="flex flex-wrap items-center gap-2">
+            <span>Displaying {filteredProjects.length} Records</span>
+            {forSaleOnly && (
+              <span className="inline-flex items-center gap-1.5 border border-secondary/50 bg-secondary/15 px-2 py-0.5 text-[9px] font-bold text-secondary">
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
+                FOR SALE ONLY
+                <button
+                  type="button"
+                  onClick={() => setForSaleOnly(false)}
+                  className="ml-1 text-secondary/70 hover:text-white transition-colors"
+                  title="Remove filter"
+                >
+                  ×
+                </button>
+              </span>
+            )}
+            {activeFilter && (
+              <span className="inline-flex items-center gap-1.5 border border-primary/50 bg-primary/15 px-2 py-0.5 text-[9px] font-bold text-primary">
+                TAG: {activeFilter}
+                <button
+                  type="button"
+                  onClick={() => setActiveFilter(null)}
+                  className="ml-1 text-primary/70 hover:text-white transition-colors"
+                  title="Remove filter"
+                >
+                  ×
+                </button>
+              </span>
+            )}
+          </div>
           <span>
             SYSTEM STATUS: {filteredProjects.length > 0 ? "ONLINE" : "NO_MATCH"}
           </span>
@@ -452,9 +535,11 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
               </Link>
 
               <button
+                type="button"
                 onClick={() => {
                   setSearchQuery("");
                   setActiveFilter(null);
+                  setForSaleOnly(false);
                 }}
                 className={`border border-border bg-card/80 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-muted-foreground transition-all hover:border-primary hover:text-primary ${mono.className}`}
               >

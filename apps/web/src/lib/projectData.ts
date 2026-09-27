@@ -377,7 +377,7 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
     title: "Australia / New Zealand",
     summary: "",
     region: "Australia / New Zealand",
-    image: "https://hydrosmart.com.au/wp-content/uploads/Mining-2.jpg",
+    image: "/images/projects/Australia-New-Zealand/1.png",
     coordinates: [-25.2744, 133.7751],
     isForSale: true,
     author: "Adamson Geomatics",
@@ -408,37 +408,22 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         ],
       },
       {
-        heading: "1) COPPER - MT. WELLS",
-        type: "paragraph",
-        image: "/images/projects/Australia-New-Zealand/1.png",
-        imageCaption:
-          "High grade copper mineralization at Mt. Wells, Australia",
-        //image: "/images/projects/Australia-New-Zealand/2.png",
-        content: "CLICK LINK FOR FULL PROJECT DETAILS",
-      },
-      {
-        heading: "2) LITHIUM, NICKEL, COPPER, URANIUM, GOLD - PROJECT K",
-        type: "paragraph",
-        image: "/images/projects/Australia-New-Zealand/1ad.png",
-        content: "Summary coming soon!",
-      },
-      {
-        heading: "3) NICKEL - GAZELLE",
-        type: "paragraph",
-        image: "/images/projects/Australia-New-Zealand/1ad.png",
-        content: "Summary coming soon!",
-      },
-      {
-        heading: "4) URANIUM, GOLD - PROJECT Y",
-        type: "paragraph",
-        image: "/images/projects/Australia-New-Zealand/1az.png",
-        content: "Summary coming soon!",
-      },
-      {
-        heading: "5) GOLD - WETHERSTONES, NEW ZEALAND",
-        type: "paragraph",
-        image: "/images/projects/Australia-New-Zealand/3.png",
-        content: "BONANZA GRADE DRILL RESULTS!",
+        type: "ImageGallery",
+        galleryType: "masonry",
+        images: [
+          {
+            src: "/images/projects/Australia-New-Zealand/1.png",
+          },
+          {
+            src: "/images/projects/Australia-New-Zealand/2.png",
+          },
+          {
+            src: "/images/projects/Australia-New-Zealand/3.png",
+          },
+          {
+            src: "/images/projects/Australia-New-Zealand/4.png",
+          },
+        ],
       },
       {
         heading: "HIGH GRADE GOLD DEPOSIT",
@@ -462,13 +447,6 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
           "The project area has substantial potential for associated hard rock deposits",
           "Previous exploration so far has discovered numerous gold deposits in the region around OUM's tenement east of Wetherstones (up to 1,200 oz Au at 13 to 20g/t).",
         ],
-      },
-      {
-        heading:
-          "The Golden Crescent Sluicing Company constructed a 234 metre long inclined exploration tunnel, and samples were collected along the tunnel. Results confirmed the presence of a potentially substantial high grade gold deposit. Assay results, plotted on a cross section of the tunnel, are shown below.",
-        type: "SimpleImage",
-        image: "/images/projects/Australia-New-Zealand/4.png",
-        imageCaption: "Section Showing Assays Along the Golden Crescent Tunnel",
       },
     ],
   },
@@ -3956,7 +3934,10 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         label: "Water System",
         value: "6,000-gal filtered rainwater cistern + full plumbing",
       },
-      { label: "Connectivity", value: "High-speed Starlink satellite internet" },
+      {
+        label: "Connectivity",
+        value: "High-speed Starlink satellite internet",
+      },
       { label: "Status", value: "Active Listing — Fully Turnkey" },
     ],
     sections: [
@@ -4088,6 +4069,295 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       },
     ],
   },
+  // Arizona - Vicksburg Patented Gold & Metals Mine
+  {
+    id: "az-002",
+    title: "Arizona Patented Gold & Metals Mine - La Paz County",
+    summary:
+      "Historic 50-acre patented mining estate near Vicksburg, La Paz County, Arizona. Includes 3 patented claims (fee simple title), 2 on-site water wells, established underground & surface infrastructure, 30,000 tons of existing surface ore piles, and an estimated 700,000 tons of proven reserves alongside 3 million tons of unproven metal potential. Offered as an estate sale at $3,000,000.",
+    region: "Arizona, USA",
+    image:
+      "https://i0.wp.com/seeworldnotseaworld.blog/wp-content/uploads/2021/03/phonto.jpg?resize=640%2C467&ssl=1",
+    coordinates: [33.729, -113.754],
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gold",
+      "Silver",
+      "Patented Claims",
+      "Arizona",
+      "La Paz County",
+      "Estate Sale",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Property Name", value: "Arizona Mine (Vicksburg)" },
+      { label: "Location", value: "La Paz County, Arizona, near Vicksburg" },
+      { label: "Asking Price", value: "USD $3,000,000" },
+      { label: "Sale Type", value: "Estate Sale" },
+      { label: "Total Acreage", value: "50 Total Acres" },
+      {
+        label: "Tenure Type",
+        value: "3 Patented Claims (1 Placer, 2 Lode — Fee Simple)",
+      },
+      { label: "Water Rights/Source", value: "2 Water wells on-site" },
+      {
+        label: "Existing Infrastructure",
+        value: "Existing shafts, adits, and open cuts",
+      },
+      {
+        label: "Mining History",
+        value: "Historic producer (operated until 1950)",
+      },
+      { label: "Surface Ore Piles", value: "30,000 tons on-site" },
+      { label: "Proven Reserves", value: "700,000 tons of metals" },
+      { label: "Unproven Reserves", value: "3,000,000 tons of metals" },
+      {
+        label: "Commodities",
+        value: "Gold (Au), Silver (Ag) & Polymetallic Metals",
+      },
+    ],
+    sections: [
+      {
+        heading: "Executive Overview",
+        type: "paragraph",
+        content:
+          "This historic, infrastructure-equipped, and reserve-rich mining property in La Paz County near Vicksburg, Arizona, represents a rare opportunity to acquire 50 total acres of patented mineral land through a motivated estate sale. Unlike unpatented claims subject to federal maintenance and regulatory restrictions, this property encompasses three patented claims (one placer and two lode), conveying deeded fee-simple ownership of both the surface ground and all underlying mineral rights.",
+      },
+      {
+        heading: "Property & Tenure Specifications",
+        type: "table",
+        caption: "Arizona Patented Mine — Key Property & Transaction Metrics",
+        headers: ["Category", "Detail"],
+        rows: [
+          ["Location", "La Paz County, Arizona, near Vicksburg"],
+          ["Size", "50 total acres"],
+          [
+            "Claims",
+            "3 patented mining claims (1 placer, 2 lode) — Fee Simple Title",
+          ],
+          ["Water", "2 water wells on-site"],
+          ["Infrastructure", "Existing shafts, adits, and open cuts"],
+          ["History", "Operated until 1950 (rich mining legacy)"],
+          ["Existing Ore Piles", "30,000 tons on-site"],
+          ["Proven Reserves", "700,000 tons of metals"],
+          ["Unproven Reserves", "3 million tons of metals"],
+          ["Sale Type", "Estate Sale"],
+          ["Asking Price", "USD $3,000,000"],
+        ],
+      },
+      {
+        heading: "Key Investment Highlights",
+        type: "bullet_list",
+        content: [
+          "Patented Claims (Fee Simple Title): Deeded fee simple ownership over both surface ground and mineral rights, granting unencumbered private property rights without annual BLM claim maintenance fees or federal Bureau of Land Management extraction royalties.",
+          "Established Historical Infrastructure: The property features multiple existing vertical shafts, horizontal adits, and open-cut excavations from commercial production that operated until 1950, significantly reducing initial capital development expenditures and timeline.",
+          "Valuable Surface Stockpile: An estimated 30,000 tons of existing ore piles sit readily accessible on the surface, offering near-term processing and cash flow potential substantially higher than the asking price.",
+          "High-Tenor Resource Potential: Historical estimates indicate 700,000 tons of proven metal reserves and 3,000,000 tons of unproven exploration upside (subject to independent verification and modern NI 43-101 technical reporting).",
+          "Secured Water Supply: Two dedicated on-site water wells provide vital operational water in the arid desert Southwest, a critical asset for heap leach, gravity, or milling circuits.",
+          "Compelling Estate Valuation: Offered as an estate sale at an aggressive $3,000,000 purchase price relative to stated in-situ mineral asset valuations.",
+        ],
+      },
+      {
+        heading: "Geological Setting & Mining Heritage",
+        type: "paragraph",
+        content:
+          "Situated in the prolific mineral belts of west-central Arizona, the Vicksburg / Plomosa / Harquahala district is famous for high-grade epithermal quartz veins, shear-hosted gold mineralization, and rich placer gravels. The mine operated commercially until 1950, leaving behind substantial underground developments, extensive open-cut workings, and surface ore dumps. The dual presence of both lode vein structures and placer alluvial ground across the patented acreage provides diverse exploration and extraction avenues.",
+      },
+      {
+        heading: "Reserve & Stockpile Summary",
+        type: "table",
+        caption: "Summary of Mineral Stockpiles & Reserve Estimates",
+        headers: ["Classification", "Tonnage", "Status / Development State"],
+        rows: [
+          [
+            "Existing Surface Ore Piles",
+            "30,000 Tons",
+            "Mined & stockpiled on surface; immediate processing potential",
+          ],
+          [
+            "Proven Metal Reserves",
+            "700,000 Tons",
+            "Delineated historically via underground workings & test cuts",
+          ],
+          [
+            "Unproven Exploration Upside",
+            "3,000,000 Tons",
+            "Open along strike and at depth across lode structures",
+          ],
+        ],
+      },
+      {
+        heading: "Acquisition & Inquiry Details",
+        type: "paragraph",
+        content:
+          "The property is offered as an estate sale at an asking price of USD $3,000,000. All historical maps, claim records, water well data, and site inspection arrangements are available to qualified buyers. For confidentiality, technical documentation, or purchase inquiries, please contact chris@miningpropertymaps.com.",
+      },
+    ],
+  },
+  // Yukon - 8 Above Pup Placer Gold Claims (Last Chance Creek, Dawson City)
+  {
+    id: "yt-001",
+    title: "8 Above Pup Placer Gold Claims - Dawson City, Yukon",
+    summary:
+      "Turnkey 34-claim Klondike placer gold package on 8 Above Pup (Last Chance Creek), just 20 minutes from Dawson City with full cell reception and excellent road access. Features a Class 4 water license (28 claims covered), confirmed bulk sample recovery of 1.1 oz/100 in the creek, bench gold with 1.4 oz/100 at 7m in historical drilling, and virgin ground alongside extensive old workings. Asking $15K per claim OBO ($510,000 total), sold as a group.",
+    region: "Yukon, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790503353/WhatsApp_Image_2026-09-22_at_5.57.49_PM_s08qdg.jpg",
+    coordinates: [64.017, -139.2],
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gold",
+      "Placer Gold",
+      "Yukon",
+      "Klondike",
+      "Dawson City",
+      "Water License",
+      "Bulk Sampling",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Property Name", value: "8 Above Pup (Last Chance Creek)" },
+      {
+        label: "Mining District",
+        value: "Dawson Mining District, Klondike, Yukon",
+      },
+      { label: "Total Claims", value: "34 Claims (Sold as a group)" },
+      { label: "Asking Price", value: "$15,000 / Claim OBO ($510,000 Total)" },
+      {
+        label: "Water License",
+        value:
+          "Class 4 Water License (28 claims covered; 10-yr renewal pending)",
+      },
+      {
+        label: "Permitted Operations",
+        value: "Fording, in-creek containment, creek relocation & settling",
+      },
+      { label: "Distance from Town", value: "20 minutes from Dawson City" },
+      { label: "Cellular Service", value: "Full cell service on claims" },
+      { label: "Road Access", value: "Maintained roads and existing trails" },
+      {
+        label: "Bulk Sampling Yield",
+        value: "1.1 oz / 100 in creek (3 bulk samples completed)",
+      },
+      {
+        label: "Bench Drill Hole (1980s)",
+        value: "1.4 oz / 100 on bench at 7 meters depth",
+      },
+      { label: "Ground Status", value: "Virgin ground + historic hand shafts" },
+      {
+        label: "Inspection / Testing",
+        value: "Vendor welcomes pre-purchase testing",
+      },
+    ],
+    sections: [
+      {
+        heading: "Executive Overview",
+        type: "paragraph",
+        content:
+          "Available for acquisition: a contiguous 34-claim placer gold property located on 8 Above Pup along Last Chance Creek in the historic Klondike mining district, approximately 20 minutes from Dawson City, Yukon. The ground offers an ideal combination of active permitting, proven pay gravels, excellent infrastructure, and strong logistics, including year-round road access and full cellular telephone coverage right on the claims.",
+      },
+      {
+        heading: "Tenure & Licensing Specifications",
+        type: "table",
+        caption: "8 Above Pup — Property Specifications & Water Rights",
+        headers: ["Parameter", "Details"],
+        rows: [
+          ["Property Name", "8 Above Pup Claims"],
+          [
+            "Location / Drainage",
+            "8 Above Pup, Last Chance Creek (tributary to Hunker Creek)",
+          ],
+          ["Mining District", "Dawson Mining District, Yukon, Canada"],
+          ["Total Placer Claims", "34 Claims (Sold as a single group)"],
+          ["Asking Price", "$15,000 CAD per claim OBO ($510,000 Total)"],
+          [
+            "Water License Status",
+            "Class 4 Water License (28 claims active under license)",
+          ],
+          [
+            "License Term",
+            "Extended 1-year interim while standard 10-year renewal processes",
+          ],
+          [
+            "Permitted Authorizations",
+            "Fording, in-creek water containment, creek relocation, monitoring & settling",
+          ],
+          [
+            "Road Access",
+            "High-grade road and trail network suitable for heavy mining equipment",
+          ],
+          [
+            "Connectivity",
+            "Direct cellular service available across the claims",
+          ],
+          [
+            "Neighboring Activity",
+            "Active commercial placer mining operations on adjacent drainages",
+          ],
+        ],
+      },
+      {
+        heading: "Bulk Sampling, Testing & Grade Verification",
+        type: "bullet_list",
+        content: [
+          "Creek Bulk Sampling: Three (3) dedicated bulk samples excavated in the creek produced a proven recovery grade of 1.1 ounces of gold per hundred (oz/100).",
+          "Bench Exploration Testing: Systematic small-scale test pits confirmed the continuation of gold-bearing pay gravels onto the elevated bench formations.",
+          "Documented Historical Drilling: A public-release exploration drill hole from the 1980s intersected high-grade bench gravels returning 1.4 ounces per hundred (oz/100) at a depth of 7 meters.",
+          "Long Tom Surface Sampling: Hands-on Long Tom testing across the property has verified coarse and fine placer gold distribution across multiple target areas.",
+          "Virgin Ground & Historic Shafts: The ground features extensive unmined virgin cuts alongside early hand shafts from early Klondike prospectors, indicating localized high-grade pay runs.",
+          "Pre-Purchase Testing Welcomed: The owner welcomes independent ground truthing, sampling, and mechanical test holes by serious prospective buyers.",
+        ],
+      },
+      {
+        heading: "Class 4 Water License & Environmental Approvals",
+        type: "paragraph",
+        content:
+          "Water licensing is one of the most critical and time-intensive hurdles in Yukon placer operations. This property comes equipped with a valuable Class 4 Water License covering 28 claims. The license has already been granted a 1-year operational extension while the comprehensive 10-year renewal is completed through YESAB and the Yukon Water Board. The license authorizes fording, in-creek water containment, creek relocation, and requested monitoring with in-stream settling ponds, enabling immediate operational readiness.",
+      },
+      {
+        heading: "Logistics, Infrastructure & Operational Setting",
+        type: "paragraph",
+        content:
+          "Unlike remote fly-in or winter-road only placer properties, 8 Above Pup is located just a 20-minute drive from Dawson City via well-established roads and access trails. The presence of full cell service directly on the claims provides exceptional safety, logistics coordination, and operational efficiency. The surrounding Last Chance and Hunker Creek valleys host active, commercial placer operations with ready access to heavy equipment mechanics, fuel delivery, welding services, and mining supply depots in Dawson.",
+      },
+      {
+        heading: "Claim Maps & Spatial Survey",
+        type: "ImageGallery",
+        galleryType: "grid",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790503353/WhatsApp_Image_2026-09-22_at_5.57.49_PM_s08qdg.jpg",
+            alt: "8 Above Pup Claim Boundary Map",
+            caption:
+              "Yukon Mining Recorder claim map detailing the 8 Above Pup claim block (claims 8A 1 to 8A 10 and adjoining tenure).",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790503353/WhatsApp_Image_2026-09-22_at_5.57.36_PM_e4z9wz.jpg",
+            alt: "Last Chance Creek Regional Placer Context",
+            caption:
+              "Regional map showing the 8 Above Pup claim block in cyan relative to Hunker Creek, Unexpected, and Temperance Hill.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790503353/WhatsApp_Image_2026-09-22_at_5.57.29_PM_q9qzna.jpg",
+            alt: "Dawson City & Tintina Fault Mining District",
+            caption:
+              "Broad district-scale geological and placer map highlighting proximity to Dawson City, King Solomon Dome, and Tintina Fault.",
+          },
+        ],
+      },
+      {
+        heading: "Acquisition Terms & Inspection Inquiries",
+        type: "paragraph",
+        content:
+          "Asking price is $15,000 CAD per claim OBO ($510,000 total). All 34 claims must be acquired together as a single block. Title transfers, water license assignment paperwork, and pre-purchase testing arrangements are available upon contact. For further details, inspection dates, or acquisition discussions, please contact chris@miningpropertymaps.com.",
+      },
+    ],
+  },
 ];
+
 
 
