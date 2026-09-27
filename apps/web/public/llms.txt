@@ -1,0 +1,23 @@
+# Adamson Geomatics
+
+> Professional land and geospatial services in British Columbia, Canada. Specializing in GIS mapping, mineral claim staking, LiDAR surveys, digital elevation models (DEM), 3D geological modelling, property boundary surveys, and mineral tenure brokerage. Founded by Chris Adamson, Registered Inspector (R.I.).
+
+## Core Services
+
+- [Services](https://www.miningpropertymaps.com/services): Comprehensive geospatial consulting, claim staking, LiDAR acquisition, and 3D Leapfrog modelling.
+- [Mineral Claim Staking](https://www.miningpropertymaps.com/services): Turnkey mineral tenure acquisition, staking, and regulatory compliance in British Columbia.
+- [LiDAR & DEM Mapping](https://www.miningpropertymaps.com/services): High-resolution airborne and drone LiDAR processing, bare-earth DEM extraction, and contour generation.
+- [Geological & Subsurface Modelling](https://www.miningpropertymaps.com/services): Leapfrog 3D implicit geological modelling, drill hole targeting, and structural analysis.
+
+## Properties & Exploration
+
+- [Projects](https://www.miningpropertymaps.com/projects): Mineral exploration projects, technical dossiers, and properties available for sale or investment.
+- [Interactive Map](https://www.miningpropertymaps.com/map): Web-based interactive GIS viewer displaying mineral claims, geology, and infrastructure data.
+- [Mineral Claim Portfolio](https://www.miningpropertymaps.com/other-projects): Priority-ranked inventory of mineral tenures across British Columbia with NTS mapsheet references.
+
+## Company & Credentials
+
+- [About](https://www.miningpropertymaps.com/about): Background on Chris Adamson, R.I., credentials, and CAD $2M professional and commercial liability insurance.
+- [Contact](https://www.miningpropertymaps.com/contact): Direct contact channels, quotation requests, and technical consultation.
+- [Partners & Referrals](https://www.miningpropertymaps.com/partners): Finders fee programs and referral commissions for mining deals and client introductions.
+- [Field Reports & Posts](https://www.miningpropertymaps.com/posts): Technical articles, case studies, and field observations.

@@ -1,0 +1,46 @@
+# Adamson Geomatics — Full Documentation
+
+> Adamson Geomatics (operated by Chris Adamson, R.I.) provides premier geospatial, GIS mapping, and land tenure services in British Columbia, Canada, and internationally.
+
+## Executive Profile
+- Principal: Chris Adamson, Registered Inspector (R.I.)
+- Insurance: CAD $2,000,000 professional & commercial general liability coverage
+- Jurisdiction: British Columbia, Yukon, Northwest Territories, Canada, and international consulting
+- Official Website: https://www.miningpropertymaps.com
+
+## Detailed Service Catalog
+
+### 1. GIS Mapping & Spatial Analysis
+- Cartographic production for NI 43-101 technical reports
+- Multi-layer spatial analysis incorporating regional geology, geophysics, geochemistry, and topography
+- Cadastral property boundary mapping, right-of-way planning, and access corridor design
+
+### 2. Mineral Claim Staking & Tenure Management
+- Mineral tenure registration and maintenance via Mineral Titles Online (MTO)
+- Physical claim staking, boundary blazing, witness posting, and GPS tenure verification
+- Assessment work reporting (Statement of Work) to keep claims in good standing
+
+### 3. LiDAR, DEM & Remote Sensing
+- Airborne and UAV LiDAR survey planning, point cloud classification, and bare-earth digital elevation models (DEM)
+- Slope stability, fault trace, and structural lineament detection beneath dense forest canopy
+- High-precision contour generation, hydrology modeling, and watershed analysis
+
+### 4. 3D Geological & Resource Modelling
+- Leapfrog Geo/Edge 3D implicit modeling of lithology, alteration zones, and vein geometries
+- Drill hole planning, cross-section generation, and 3D subsurface visualization
+- Historic data digitization and validation from legacy mining archives
+
+### 5. Property Brokerage & Deal Facilitation
+- Turnkey mining property dossiers with geological summaries, tenure data, and assay histories
+- Connecting qualified exploration companies and private investors with vetted claims and mineral assets
+
+## Key Pages & Navigation
+- Home: https://www.miningpropertymaps.com/
+- About: https://www.miningpropertymaps.com/about
+- Services: https://www.miningpropertymaps.com/services
+- Projects: https://www.miningpropertymaps.com/projects
+- Interactive Map: https://www.miningpropertymaps.com/map
+- Mineral Claim Portfolio: https://www.miningpropertymaps.com/other-projects
+- Partners & Referrals: https://www.miningpropertymaps.com/partners
+- Field Reports: https://www.miningpropertymaps.com/posts
+- Contact: https://www.miningpropertymaps.com/contact

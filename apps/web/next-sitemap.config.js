@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
-  siteUrl: 'https://miningpropertymaps.com',
+  siteUrl: 'https://www.miningpropertymaps.com',
   generateRobotsTxt: false,
   changefreq: 'weekly',
   priority: 0.7,

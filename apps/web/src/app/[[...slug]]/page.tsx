@@ -77,7 +77,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const path = slug ? `/${slug.join("/")}` : "/";
-  const canonical = `https://miningpropertymaps.com${path === "/" ? "" : path}`;
+  const canonical = `https://www.miningpropertymaps.com${path === "/" ? "" : path}`;
 
   // Static pages
   if (pageMeta[path]) {
@@ -94,8 +94,8 @@ export async function generateMetadata({
       const ogImageUrl = project.image
         ? project.image.startsWith("http")
           ? project.image
-          : `https://miningpropertymaps.com${project.image}`
-        : "https://miningpropertymaps.com/opengraph-image.png";
+          : `https://www.miningpropertymaps.com${project.image}`
+        : "https://www.miningpropertymaps.com/opengraph-image.png";
       const metaTitle = `${project.title} — ${location} | ${siteName}`;
       const metaDescription =
         project.summary ||
@@ -139,8 +139,8 @@ export async function generateMetadata({
       const postImage = post.previewImage
         ? post.previewImage.startsWith("http")
           ? post.previewImage
-          : `https://miningpropertymaps.com${post.previewImage}`
-        : "https://miningpropertymaps.com/opengraph-image.png";
+          : `https://www.miningpropertymaps.com${post.previewImage}`
+        : "https://www.miningpropertymaps.com/opengraph-image.png";
 
       return {
         title: postTitle,
@@ -173,7 +173,7 @@ export async function generateMetadata({
 
   // Fallback to home
   return {
-    title: `${siteName} | Chris Adamson, R.I.`,
+    title: `${siteName} | GIS & Mineral Claim Services in BC`,
     description:
       "Professional land and geospatial services — GIS mapping, mineral claim staking, LiDAR, and geological modelling.",
     alternates: { canonical },
@@ -224,7 +224,7 @@ function buildBreadcrumbJsonLd(slugArray: string[]) {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://miningpropertymaps.com",
+      item: "https://www.miningpropertymaps.com",
     },
   ];
 
@@ -246,7 +246,7 @@ function buildBreadcrumbJsonLd(slugArray: string[]) {
       "@type": "ListItem",
       position: index + 2,
       name: name ?? segment,
-      item: `https://miningpropertymaps.com${pathSoFar}`,
+      item: `https://www.miningpropertymaps.com${pathSoFar}`,
     });
   });
 
@@ -270,24 +270,70 @@ export default async function CatchAllPage({
   if (slugArray[0] === "projects" && slugArray[1]) {
     const project = projects.find((p) => p.id === slugArray[1]);
     if (project) {
+      const imageUrl = project.image
+        ? project.image.startsWith("http")
+          ? project.image
+          : `https://www.miningpropertymaps.com${project.image}`
+        : "https://www.miningpropertymaps.com/opengraph-image.png";
+
       contentJsonLd = {
         "@context": "https://schema.org",
         "@type": "Article",
+        "@id": `https://www.miningpropertymaps.com/projects/${project.id}`,
         headline: project.title,
-        description: project.summary,
-        image: project.image,
-        about: project.region,
+        description: project.summary || `${project.title} in ${project.region}.`,
+        image: imageUrl,
+        about: {
+          "@type": "Place",
+          name: project.region,
+        },
+        keywords: project.tags?.join(", "),
+        author: {
+          "@type": "Person",
+          "@id": "https://www.miningpropertymaps.com/#chris-adamson",
+          name: "Chris Adamson",
+          jobTitle: "Registered Inspector (R.I.)",
+        },
+        publisher: {
+          "@type": "Organization",
+          "@id": "https://www.miningpropertymaps.com/#organization",
+          name: "Adamson Geomatics",
+          url: "https://www.miningpropertymaps.com",
+          logo: "https://www.miningpropertymaps.com/images/general/logo.png",
+        },
+        mainEntityOfPage: `https://www.miningpropertymaps.com/projects/${project.id}`,
       };
     }
   } else if ((slugArray[0] === "post" || slugArray[0] === "posts") && slugArray[1]) {
     const post = mockPosts.find((p) => p.id === slugArray[1]);
     if (post) {
+      const imageUrl = post.previewImage
+        ? post.previewImage.startsWith("http")
+          ? post.previewImage
+          : `https://www.miningpropertymaps.com${post.previewImage}`
+        : "https://www.miningpropertymaps.com/opengraph-image.png";
+
       contentJsonLd = {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": "BlogPosting",
+        "@id": `https://www.miningpropertymaps.com/posts/${post.id}`,
         headline: post.title,
-        description: post.summary,
-        image: post.previewImage,
+        description: post.summary || `Field report from Adamson Geomatics.`,
+        image: imageUrl,
+        author: {
+          "@type": "Person",
+          "@id": "https://www.miningpropertymaps.com/#chris-adamson",
+          name: "Chris Adamson",
+          jobTitle: "Registered Inspector (R.I.)",
+        },
+        publisher: {
+          "@type": "Organization",
+          "@id": "https://www.miningpropertymaps.com/#organization",
+          name: "Adamson Geomatics",
+          url: "https://www.miningpropertymaps.com",
+          logo: "https://www.miningpropertymaps.com/images/general/logo.png",
+        },
+        mainEntityOfPage: `https://www.miningpropertymaps.com/posts/${post.id}`,
       };
     }
   }

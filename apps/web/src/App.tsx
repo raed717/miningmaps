@@ -33,12 +33,15 @@ const PostDetailPage = dynamic(() => import("@/views/post-detail-page"), {
 const NotFoundPage = dynamic(() => import("@/views/not-found-page"));
 const MapView = dynamic(() => import("@/app/map/map-view"), {
   loading: () => <Loader message="Initializing Interactive Map..." />,
+  ssr: false,
 });
 const DashboardView = dynamic(() => import("@/app/dashboard/dashboard-view"), {
   loading: () => <Loader message="Loading Dashboard..." />,
+  ssr: false,
 });
 const ProjectView = dynamic(() => import("@/app/projects/[id]/project-view"), {
   loading: () => <Loader message="Loading Project Dossier..." />,
+  ssr: false,
 });
 const OtherProjectsPage = dynamic(() => import("@/views/other-projects-page"), {
   loading: () => <Loader message="Loading Portfolio..." />,
