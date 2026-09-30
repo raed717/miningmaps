@@ -12,7 +12,8 @@
     "check-types": "turbo check-types",
     "dev:native": "turbo -F native dev",
     "dev:web": "turbo -F web dev",
-    "test": "playwright test"
+    "test": "playwright test",
+    "seo": "python .agents/skills/seo/scripts/generate_report.py https://www.miningpropertymaps.com/ --output SEO-REPORT.html"
   },
   "dependencies": {
     "@miningmaps/env": "*",

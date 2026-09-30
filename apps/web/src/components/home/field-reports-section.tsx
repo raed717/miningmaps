@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { motion } from "motion/react";
 import { mono } from "@/lib/fonts";
 
@@ -28,6 +31,76 @@ Congratulations on having your image selected
   },
 ];
 
+function FieldReportItem({
+  report,
+  index,
+}: {
+  report: (typeof fieldReports)[number];
+  index: number;
+}) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const cleanText = report.text.trim().replace(/\s+/g, " ");
+  const isLong = cleanText.length > 280;
+
+  const displayText =
+    isLong && !isExpanded
+      ? (() => {
+          const slice = cleanText.slice(0, 260);
+          const lastSpace = slice.lastIndexOf(" ");
+          const trimmed = (lastSpace > 0 ? slice.slice(0, lastSpace) : slice).replace(
+            /\.+$/,
+            ""
+          );
+          return `${trimmed}...`;
+        })()
+      : cleanText;
+
+  return (
+    <motion.div
+      key={report.author}
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+      className="flex flex-col justify-between border-l-4 border-primary py-2 pl-6"
+    >
+      <div>
+        <p className="mb-2 text-lg font-medium leading-relaxed text-zinc-100 md:text-xl">
+          "{displayText}"
+        </p>
+        {isLong && (
+          <button
+            type="button"
+            onClick={() => setIsExpanded(!isExpanded)}
+            className={`mb-6 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.18em] text-primary transition-colors hover:text-white focus:outline-none ${mono.className}`}
+          >
+            {isExpanded ? "read less" : "read more.."}
+          </button>
+        )}
+      </div>
+
+      <div className={!isLong ? "mt-4" : ""}>
+        <div
+          className={`text-xs uppercase tracking-widest text-[#666] ${mono.className}`}
+        >
+          <strong className="mb-1 block text-white">{report.author}</strong>
+          {report.role}
+        </div>
+        {report.link && (
+          <a
+            href={report.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-primary hover:text-primary/80 transition-colors"
+          >
+            Jack Dangermond's Plenary Presentation.
+          </a>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
 export function FieldReportsSection() {
   return (
     <section className="relative z-10 bg-background px-4 py-32 md:px-12 lg:px-24">
@@ -48,36 +121,11 @@ export function FieldReportsSection() {
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:col-span-2">
           {fieldReports.map((report, index) => (
-            <motion.div
+            <FieldReportItem
               key={report.author}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="border-l-4 border-primary py-2 pl-6"
-            >
-              <p className="mb-6 text-lg font-medium leading-relaxed md:text-xl">
-                "{report.text}"
-              </p>
-              <div
-                className={`text-xs uppercase tracking-widest text-[#666] ${mono.className}`}
-              >
-                <strong className="mb-1 block text-white">
-                  {report.author}
-                </strong>
-                {report.role}
-              </div>
-              {report.link && (
-                <a
-                  href={report.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block text-primary hover:text-primary/80"
-                >
-                  Jack Dangermond's Plenary Presentation.
-                </a>
-              )}
-            </motion.div>
+              report={report}
+              index={index}
+            />
           ))}
         </div>
       </div>
