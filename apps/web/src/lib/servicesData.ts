@@ -1,3 +1,11 @@
+export type ServiceSampleCase = {
+  title: string;
+  description: string;
+  image: string;
+  linkUrl?: string;
+  linkLabel?: string;
+};
+
 export type ServiceModule = {
   id: string;
   code: string;
@@ -6,6 +14,7 @@ export type ServiceModule = {
   services: string[];
   deliverables: string[];
   outcome: string;
+  sampleCases?: ServiceSampleCase[];
 };
 
 export const serviceModules: ServiceModule[] = [
@@ -99,12 +108,12 @@ export const serviceModules: ServiceModule[] = [
   {
     id: "terrain-imagery",
     code: "OPS_05",
-    title: "Terrain & Imagery",
+    title: "Terrain, Remote Sensing & LiDAR",
     summary:
-      "Translate topography and remote imagery into planning layers that improve terrain understanding before field deployment.",
+      "Translate topography, satellite spectral imagery, and LiDAR into planning layers that improve terrain and alteration understanding before field deployment.",
     services: [
-      "Digital elevation models (DEM)",
-      "LiDAR analysis",
+      "Remote sensing and satellite spectral analysis (Sentinel NDVI, Iron Oxide B4/B2)",
+      "LiDAR analysis and Digital Terrain Models (DTM / DEM)",
       "Topographic and contour mapping",
       "Photogrammetry",
       "Aerial photo sourcing and analysis",
@@ -112,12 +121,42 @@ export const serviceModules: ServiceModule[] = [
       "Virtual Tours (Panoramic Drone Photography) - client partner",
     ],
     deliverables: [
-      "Surface models and contours",
+      "Spectral alteration & NDVI maps",
+      "LiDAR DTM / DEM surface models",
       "Orthomosaic imagery",
       "Aerial interpretation layers",
     ],
     outcome:
-      "Terrain context becomes clearer for planning access, logistics, and technical review.",
+      "Terrain context and spectral alteration targets become clearer for planning access, prospecting, and technical review.",
+    sampleCases: [
+      {
+        title: "NDVI Spectral Analysis — Sentinel Imagery",
+        description:
+          "Normalized Difference Vegetation Index (NDVI) derived from Sentinel satellite imagery. Greener areas indicate healthy, dense vegetation cover.",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
+        linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+        linkLabel: "BC MINFILE 082JSW018",
+      },
+      {
+        title: "Iron Oxide Spectral Analysis (B4/B2) — Sentinel Imagery",
+        description:
+          "Band ratio (B4/B2) spectral analysis derived from Sentinel satellite imagery. Red zones highlight areas where iron oxide alteration is showing up strongest.",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
+        linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+        linkLabel: "BC MINFILE 082JSW018",
+      },
+      {
+        title: "Digital Terrain Model (DTM) — LiDAR Derived",
+        description:
+          "High-resolution bare-earth Digital Terrain Model (DTM) derived from LiDAR data for structural and topographic visualization.",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
+        linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
+        linkLabel: "BC MINFILE 093F 037",
+      },
+    ],
   },
   {
     id: "property-valuation",

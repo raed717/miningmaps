@@ -573,6 +573,47 @@ The property is located near Stanley, British Columbia, approximately 4 km from 
         heading: "Spectral Classification Maps",
       },
       {
+        heading: "Remote Sensing — Spectral Analysis & LiDAR Sample Cases",
+        type: "paragraph",
+        content:
+          "Examples of Remote Sensing — Spectral Analysis (Sentinel Satellite Imagery) and LiDAR Digital Terrain Modelling (DTM) completed across British Columbia mineral occurrences:\n• NDVI derived from Sentinel Imagery (greener areas indicate healthier vegetation cover) — BC MINFILE 082JSW018.\n• Iron Oxide spectral analysis (Band Ratio B4/B2) derived from Sentinel Imagery (red areas highlight where iron oxide alteration is showing up strongest) — BC MINFILE 082JSW018.\n• Digital Terrain Model (DTM) derived from LiDAR for bare-earth structural and topographic visualization — BC MINFILE 093F 037.",
+        links: [
+          {
+            textPreview: "BC MINFILE 082JSW018 (Spectral Analysis Location)",
+            url: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+          },
+          {
+            textPreview: "BC MINFILE 093F 037 (LiDAR DTM Location)",
+            url: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
+          },
+        ],
+      },
+      {
+        heading: "Sentinel Spectral Analysis (NDVI & Iron Oxide) & LiDAR DTM",
+        type: "ImageGallery",
+        galleryType: "grid",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
+            alt: "NDVI derived from Sentinel Imagery (MINFILE 082JSW018)",
+            caption:
+              "NDVI derived from Sentinel Imagery — more green indicates healthy vegetation (BC MINFILE 082JSW018).",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
+            alt: "Iron Oxide Spectral Analysis (B4/B2) derived from Sentinel Imagery (MINFILE 082JSW018)",
+            caption:
+              "Iron Oxide spectral analysis (B4/B2) derived from Sentinel Imagery — red areas show where iron oxide alteration is strongest (BC MINFILE 082JSW018).",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
+            alt: "Digital Terrain Model (DTM) derived from LiDAR (MINFILE 093F 037)",
+            caption:
+              "Digital Terrain Model (DTM) derived from LiDAR for terrain and structural visualization (BC MINFILE 093F 037).",
+          },
+        ],
+      },
+      {
         heading: "Land Management & Land Development",
         type: "paragraph",
         content:
@@ -4357,7 +4398,343 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       },
     ],
   },
+  {
+    id: "ma-002",
+    type: "project",
+    title: "Morocco Agates - Ahouli, Midelt",
+    summary:
+      "Natural Moroccan agate specimens from Ahouli near the city of Midelt, Drâa-Tafilalet region, Morocco. Formed approximately 150 million years ago during the Jurassic period. Specific location coordinates and full technical details to come.",
+    region: "Drâa-Tafilalet, Morocco",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756531/WhatsApp_Video_2026-09-29_at_12.47.08_AM_cqjlhp.jpg",
+    coordinates: [32.8167, -4.6167],
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Agates",
+      "Gemstones",
+      "Minerals",
+      "Ahouli",
+      "Midelt",
+      "Morocco",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Material / Specimen", value: "Moroccan Agates" },
+      { label: "Locality", value: "Ahouli, City of Midelt" },
+      { label: "Region", value: "Drâa-Tafilalet, Morocco" },
+      { label: "Formation Age", value: "~150 Million Years Old" },
+      { label: "Status", value: "Specific location & details to come" },
+    ],
+    sections: [
+      {
+        heading: "Overview & Geological Origin",
+        type: "paragraph",
+        content:
+          "These natural agate samples originate from Ahouli near the city of Midelt in the Drâa-Tafilalet region of Morocco. The geological formation of this type of agate specimen dates back approximately 150 million years. Specific location details and comprehensive technical specifications are forthcoming.",
+      },
+      {
+        heading: "Key Details",
+        type: "bullet_list",
+        content: [
+          "Origin: Ahouli, City of Midelt, Drâa-Tafilalet region, Morocco.",
+          "Geological Age: Approximately 150 million years old (Late Jurassic formation).",
+          "Update Notice: Specific location data and further project details to come.",
+        ],
+      },
+      {
+        heading: "Specimen Video Inspection Gallery",
+        type: "paragraph",
+        content:
+          "Video documentation of the Moroccan agate samples from Ahouli, Midelt:",
+        VideoLinks: [
+          {
+            title: "Morocco Agate Sample — Video 1",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756531/WhatsApp_Video_2026-09-29_at_12.47.08_AM_cqjlhp.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 2",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756524/WhatsApp_Video_2026-09-29_at_12.46.44_AM_ofrgsn.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 3",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756522/WhatsApp_Video_2026-09-29_at_12.46.52_AM_glscev.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 4",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756522/WhatsApp_Video_2026-09-29_at_12.41.12_AM_3_magf4p.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 5",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756521/WhatsApp_Video_2026-09-29_at_12.47.08_AM_1_dhanos.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 6",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756521/WhatsApp_Video_2026-09-29_at_12.47.08_AM_3_kfimpc.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 7",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756520/WhatsApp_Video_2026-09-29_at_12.41.12_AM_2_zfg252.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 8",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756520/WhatsApp_Video_2026-09-29_at_12.41.12_AM_1_ulrxap.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 9",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756520/WhatsApp_Video_2026-09-29_at_12.47.08_AM_2_hqhivr.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 10",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756518/WhatsApp_Video_2026-09-29_at_12.47.08_AM_4_qfeonp.mp4",
+          },
+          {
+            title: "Morocco Agate Sample — Video 11",
+            url: "https://res.cloudinary.com/dfytfu2jq/video/upload/v1790756516/WhatsApp_Video_2026-09-29_at_12.41.12_AM_rtzhqy.mp4",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "bc-006",
+    type: "project",
+    title: "Remote Sensing - Spectral Analysis / LiDAR (Sample Cases)",
+    summary:
+      "Sample cases demonstrating Remote Sensing — Spectral Analysis (NDVI and Iron Oxide B4/B2 band ratio derived from Sentinel satellite imagery at BC MINFILE 082JSW018) and LiDAR-derived Digital Terrain Modelling (DTM at BC MINFILE 093F 037) in British Columbia.",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
+    coordinates: [53.184, -124.868],
+    isForSale: false,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Remote Sensing",
+      "Spectral Analysis",
+      "LiDAR",
+      "Sentinel Imagery",
+      "NDVI",
+      "Iron Oxide",
+      "DTM",
+      "GIS",
+    ],
+    quickFacts: [
+      { label: "Category", value: "Remote Sensing — Spectral Analysis / LiDAR" },
+      { label: "Satellite Sensor", value: "Sentinel Imagery (NDVI & B4/B2)" },
+      { label: "Spectral Location", value: "BC MINFILE 082JSW018" },
+      { label: "Terrain Model", value: "Digital Terrain Model (DTM) from LiDAR" },
+      { label: "LiDAR Location", value: "BC MINFILE 093F 037" },
+    ],
+    sections: [
+      {
+        heading: "Overview — Remote Sensing, Spectral Analysis & LiDAR",
+        type: "paragraph",
+        content:
+          "Sample cases illustrating Adamson Geomatics' capabilities in satellite-based spectral analysis and airborne LiDAR terrain modelling across mineral occurrences in British Columbia.",
+        links: [
+          {
+            textPreview: "BC MINFILE 082JSW018 — Spectral Analysis Location Details",
+            url: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+          },
+          {
+            textPreview: "BC MINFILE 093F 037 — LiDAR DTM Location Details",
+            url: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
+          },
+        ],
+      },
+      {
+        heading: "Sample Deliverables & Technical Breakdown",
+        type: "bullet_list",
+        content: [
+          "NDVI Derived from Sentinel Imagery (BC MINFILE 082JSW018): Normalized Difference Vegetation Index where greener areas indicate healthy vegetation density.",
+          "Iron Oxide Spectral Analysis (B4/B2) Derived from Sentinel Imagery (BC MINFILE 082JSW018): Band ratio B4/B2 highlighting hydrothermal alteration and gossanous zones where red areas show strongest iron oxide response.",
+          "Digital Terrain Model (DTM) Derived from LiDAR (BC MINFILE 093F 037): High-resolution bare-earth terrain visualization revealing underlying structural lineaments and topography.",
+        ],
+      },
+      {
+        heading: "NDVI Derived from Sentinel Imagery (MINFILE 082JSW018)",
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
+        imageCaption:
+          "Screenshot of NDVI derived from Sentinel Imagery (more green means healthy vegetation). Location: BC MINFILE 082JSW018.",
+        links: [
+          {
+            textPreview: "View Location Detail — BC MINFILE 082JSW018",
+            url: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+          },
+        ],
+      },
+      {
+        heading: "Iron Oxide Spectral Analysis (B4/B2) — Sentinel Imagery (MINFILE 082JSW018)",
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
+        imageCaption:
+          "Screenshot of Iron Oxide spectral analysis (B4/B2) derived from Sentinel Imagery (red areas are where iron oxide is showing up strongest). Location: BC MINFILE 082JSW018.",
+        links: [
+          {
+            textPreview: "View Location Detail — BC MINFILE 082JSW018",
+            url: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+          },
+        ],
+      },
+      {
+        heading: "Digital Terrain Model (DTM) Derived from LiDAR (MINFILE 093F 037)",
+        type: "SimpleImage",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
+        imageCaption:
+          "DTM derived from LiDAR for bare-earth topographic and structural visualization. Location: BC MINFILE 093F 037.",
+        links: [
+          {
+            textPreview: "View Location Detail — BC MINFILE 093F 037",
+            url: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "bc-007",
+    type: "project",
+    title: "Similkameen River Gold Claim - Princeton, BC (Claim #1113180)",
+    summary:
+      "200-acre placer gold property (4 cells) situated along the historic Similkameen River just upstream of the Copper Mountain Mine near Princeton, BC. Features extensive virgin ground yielding nuggets and coarse pickers, excellent backcountry Jeep/ATV road access just kilometers from the highway, established campsites, and outstanding hunting and fishing. Asking $7,500 CAD for the entire 200 acres.",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790761075/772956438_1054338653840667_2331272559754756874_n_jhjivn.jpg",
+    coordinates: [49.335, -120.535],
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gold",
+      "Placer Gold",
+      "Similkameen River",
+      "Princeton",
+      "Copper Mountain",
+      "BC Placer",
+      "For Sale",
+    ],
+    quickFacts: [
+      { label: "Property Name", value: "Similkameen River Placer Gold Claim" },
+      { label: "Tenure Number", value: "Claim #1113180" },
+      { label: "Location", value: "Similkameen River, near Princeton, BC" },
+      { label: "Landmark", value: "Just above Copper Mountain Mine" },
+      { label: "Claim Size", value: "4 Cells (approx. 200 Acres total)" },
+      { label: "Asking Price", value: "$7,500 CAD for all 200 acres" },
+      { label: "Gold Character", value: "Nuggets and coarse pickers reported" },
+      { label: "Ground Status", value: "Abundant virgin placer ground" },
+      { label: "Access", value: "Jeep / ATV backcountry road, few km off highway" },
+      { label: "Camp & Recreation", value: "Multiple campsites, prime fishing & hunting" },
+    ],
+    sections: [
+      {
+        heading: "Executive Summary",
+        type: "paragraph",
+        content:
+          "Available for acquisition: a 200-acre placer gold property comprising four (4) mineral cells (Claim #1113180) located on the renowned Similkameen River just above the active Copper Mountain Mine near Princeton, British Columbia. The ground offers an exceptional combination of authentic placer gold production potential with nuggets and pickers, abundant virgin gravel bars, convenient backcountry vehicle access only a few kilometers off the highway, and established campsite infrastructure in a world-class recreational corridor.",
+      },
+      {
+        heading: "Tenure & Property Specifications",
+        type: "table",
+        caption: "Similkameen River Placer Claim #1113180 — Tenure Overview",
+        headers: ["Parameter", "Specification"],
+        rows: [
+          ["Tenure Number", "Claim #1113180"],
+          ["Location", "Similkameen River, Princeton, British Columbia"],
+          ["Relative Position", "Directly upstream / just above Copper Mountain Mine"],
+          ["Cell Configuration", "4 Mineral Cells (each cell approx. 50 acres)"],
+          ["Total Area", "Approximately 200 Acres (81 Hectares)"],
+          ["Asking Price", "$7,500 CAD (Full ownership of all 4 cells / 200 acres)"],
+          ["Mineral Rights", "Placer Gold rights in good standing with Mineral Titles Online (MTO)"],
+          ["Ground Condition", "Significant virgin ground with unworked river bars and benches"],
+          ["Gold Occurrence", "Coarse nuggets, pickers, and flood gold"],
+          ["Access", "Jeep, truck, or ATV trail, located a few kilometers off main highway"],
+          ["Camping Infrastructure", "Multiple established campsites directly on or adjacent to claims"],
+          ["Recreational Amenities", "World-class trout fishing and big-game hunting"],
+        ],
+      },
+      {
+        heading: "Gold Potential & Ground Conditions",
+        type: "bullet_list",
+        content: [
+          "Proven Historic River: The Similkameen River is celebrated in British Columbia mining history for yielding both coarse placer gold and platinum.",
+          "Nuggets and Pickers: Sampling on the claim and surrounding river gravels has yielded coarse gold nuggets and heavy pickers suitable for hand panning, sluicing, and highbanking.",
+          "Abundant Virgin Ground: Extensive sections of the 200-acre package contain unworked river benches, inside gravel bars, and bedrock crevices that have never been commercially worked.",
+          "Favorable Deposition: Located along natural hydraulic drop zones and bends just upstream of Copper Mountain, creating continuous seasonal replenishment during spring freshet.",
+        ],
+      },
+      {
+        heading: "Backcountry Access, Camping & Recreation",
+        type: "paragraph",
+        content:
+          "The claim is readily accessible just a few kilometers off the main highway via a good backcountry road suitable for a 4x4 Jeep, pickup truck, or ATV. Multiple natural camping clearings are situated right near the river, making it ideal for extended prospecting trips, summer family camping, or seasonal base operations. The Similkameen corridor is renowned for premier rainbow trout fishing, outdoor hiking, and fall hunting.",
+      },
+      {
+        heading: "Field Photography & Claim Gallery",
+        type: "ImageGallery",
+        galleryType: "grid",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790761075/772956438_1054338653840667_2331272559754756874_n_jhjivn.jpg",
+            alt: "Similkameen River Placer Claim Overview",
+            caption:
+              "Scenic river gravels and valley setting along the Similkameen River above Copper Mountain Mine.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790761076/769051833_1350275163902189_4441383600101370129_n_chodpy.jpg",
+            alt: "Placer Gravel Bars and Stream Channel",
+            caption:
+              "Active river bar and gravel deposits with unworked pay gravels along the claim.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790761076/772697730_2389414464916275_2033782215873486245_n_jhpfzp.jpg",
+            alt: "River Bedrock & Gold Traps",
+            caption:
+              "Bedrock crevices and natural gold traps exposed along the river bank.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790761077/771796440_2122062322020464_4559100326425158528_n_r830bp.jpg",
+            alt: "Panning and Sampling Spot",
+            caption:
+              "Sampling and panning location along the Similkameen claim area.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790761078/771751647_1043551218034549_8376066125530878117_n_aieqkt.jpg",
+            alt: "Backcountry Road and Campsite Access",
+            caption:
+              "Backcountry Jeep/ATV trail access leading directly into the property and camp clearings.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790761078/773950294_2113097152951955_1238438227905465339_n_in4xm5.jpg",
+            alt: "Camping Area on Claim",
+            caption:
+              "Campsite location with riverfront views on Claim #1113180.",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790761079/772327682_1801385857686243_6087897977477144810_n_nhwtoz.jpg",
+            alt: "Claim Map & MTO Cells (Claim #1113180)",
+            caption:
+              "Mineral Titles Online (MTO) map layout showing the 4 claim cells along the Similkameen River.",
+          },
+        ],
+      },
+      {
+        heading: "Acquisition Terms & Transfer Details",
+        type: "paragraph",
+        content:
+          "The asking price is $7,500 CAD for the entire 200-acre (4 cells) property (Claim #1113180). Transfer of ownership is conducted seamlessly through the British Columbia Mineral Titles Online (MTO) registry system. For purchase inquiries, claim transfer details, or site access coordinates, please contact chris@miningpropertymaps.com.",
+      },
+    ],
+  },
 ];
+
+
+
 
 
 

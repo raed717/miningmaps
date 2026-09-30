@@ -9,6 +9,7 @@ import {
   BriefcaseBusiness,
   Building2,
   Crosshair,
+  ExternalLink,
   FileText,
   Mail,
   Mountain,
@@ -206,6 +207,65 @@ export default function ServicesPage() {
                             ))}
                           </div>
                         </div>
+
+                        {module.sampleCases && module.sampleCases.length > 0 && (
+                          <div className="border-t border-border/70 pt-6 xl:col-span-2">
+                            <div className="flex items-center justify-between">
+                              <div
+                                className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}
+                              >
+                                Sample Work & Technical Case Studies
+                              </div>
+                              <span
+                                className={`border border-primary/40 bg-primary/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.2em] text-primary ${mono.className}`}
+                              >
+                                Real Field Data
+                              </span>
+                            </div>
+                            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                              {module.sampleCases.map((item, cIdx) => (
+                                <div
+                                  key={cIdx}
+                                  className="group/case relative flex flex-col overflow-hidden border border-border bg-background/60 transition-all hover:border-primary/80"
+                                >
+                                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
+                                    <img
+                                      src={item.image}
+                                      alt={item.title}
+                                      className="h-full w-full object-cover transition-transform duration-500 group-hover/case:scale-105"
+                                    />
+                                    <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
+                                  </div>
+                                  <div className="flex flex-1 flex-col justify-between p-4">
+                                    <div>
+                                      <h4 className="text-xs font-bold uppercase tracking-tight text-white transition-colors group-hover/case:text-primary">
+                                        {item.title}
+                                      </h4>
+                                      <p
+                                        className={`mt-2 text-[10px] uppercase tracking-[0.14em] leading-relaxed text-muted-foreground ${mono.className}`}
+                                      >
+                                        {item.description}
+                                      </p>
+                                    </div>
+                                    {item.linkUrl && (
+                                      <a
+                                        href={item.linkUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`mt-4 inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.18em] text-primary hover:underline ${mono.className}`}
+                                      >
+                                        <span>
+                                          {item.linkLabel || "View Record"}
+                                        </span>
+                                        <ExternalLink className="h-3 w-3" />
+                                      </a>
+                                    )}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </motion.article>
