@@ -750,6 +750,9 @@ export default function ProjectDetails({
                             rawUrl.endsWith(".mp4") ||
                             rawUrl.endsWith(".webm") ||
                             rawUrl.includes("/video/upload/");
+                          const posterUrl = rawUrl.includes("/video/upload/")
+                            ? rawUrl.replace(/\.mp4$/i, ".jpg")
+                            : undefined;
 
                           return (
                             <div
@@ -764,9 +767,11 @@ export default function ProjectDetails({
                                 {isDirectVideo ? (
                                   <video
                                     src={rawUrl}
+                                    poster={posterUrl}
                                     title={video.title}
                                     controls
                                     playsInline
+                                    preload="metadata"
                                     className="absolute inset-0 h-full w-full object-contain bg-black"
                                   />
                                 ) : embedUrl ? (
