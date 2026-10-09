@@ -128,6 +128,51 @@ export default function Footer() {
         </div>
         <p>© 2026 ADAMSON_GEOMATICS. ALL_RIGHTS_RESERVED.</p>
       </div>
+
+      <div className="container mx-auto px-4 mt-6 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] uppercase tracking-widest text-muted-foreground/80">
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
+          <span>PLATFORM ARCHITECT & DEV:</span>
+          <a
+            href="https://raed.guembri.tn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-foreground hover:text-primary transition-colors underline underline-offset-4 decoration-primary/50"
+          >
+            RAED GUEMBRI
+          </a>
+          <span className="text-muted-foreground/40">//</span>
+          <span className="text-primary font-semibold">SOFTWARE ARCHITECT ENGINEER</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://raed.guembri.tn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            PORTFOLIO
+          </a>
+          <span className="text-muted-foreground/30">•</span>
+          <a
+            href="https://github.com/raed717"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            GITHUB
+          </a>
+          <span className="text-muted-foreground/30">•</span>
+          <a
+            href="https://www.linkedin.com/in/raed-guembri"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            LINKEDIN
+          </a>
+        </div>
+      </div>
     </footer>
   );
 }

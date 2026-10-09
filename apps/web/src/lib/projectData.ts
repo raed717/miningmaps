@@ -3790,7 +3790,7 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
     image:
       "https://res.cloudinary.com/dfytfu2jq/image/upload/v1789822620/SwordAndGossan_coordinates_tgkbzx.jpg",
     coordinates: [54.348082, -63.850644],
-    isForSale: true,
+    isForSale: false,
     author: "Stephen Stockley",
     contactEmail: "chris@miningpropertymaps.com",
     tags: [

@@ -24,6 +24,10 @@ import {
   X,
   Eye,
   FileCheck,
+  Code2,
+  Github,
+  Linkedin,
+  Mail,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 
@@ -674,6 +678,146 @@ export default function AboutPage() {
                 </div>
               );
             })}
+          </div>
+        </motion.div>
+
+        {/* Platform Architecture & Software Engineering */}
+        <motion.div
+          id="platform-engineering"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 md:mt-24 border-t border-border pt-12"
+        >
+          <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <Code2 className="h-5 w-5 text-primary" />
+              <h2
+                className={`text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
+              >
+                PLATFORM_ARCHITECTURE // SOFTWARE_ENGINEERING
+              </h2>
+            </div>
+            <span
+              className={`inline-flex items-center gap-1.5 border border-primary/40 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary ${mono.className}`}
+            >
+              CORE_DEVELOPER_DOSSIER
+            </span>
+          </div>
+
+          <div className="group relative overflow-hidden border border-border bg-card/60 p-6 md:p-8 backdrop-blur-sm transition-all duration-300 hover:border-primary/50">
+            <div className="absolute top-0 right-0 p-4 opacity-10 transition-opacity group-hover:opacity-20 pointer-events-none">
+              <Cpu className="h-32 w-32" />
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-[220px_1fr] items-start">
+              {/* Avatar Column */}
+              <div className="flex flex-col items-center lg:items-start gap-4">
+                <div className="relative aspect-square w-44 md:w-52 overflow-hidden border-2 border-border bg-black/80 shadow-lg transition-transform duration-500 group-hover:scale-[1.02] group-hover:border-primary/60">
+                  <img
+                    src="https://res.cloudinary.com/dfytfu2jq/image/upload/v1791286564/wmremove-transformed_mz3jhx.png"
+                    alt="Raed Guembri - Software Architect Engineer"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
+                </div>
+
+                <div
+                  className={`flex items-center gap-2 border border-secondary/40 bg-secondary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-secondary ${mono.className}`}
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
+                  AVAILABLE_FOR_WORK
+                </div>
+              </div>
+
+              {/* Details Column */}
+              <div className="flex flex-col justify-between h-full">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span
+                      className={`text-[10px] font-bold uppercase tracking-[0.22em] text-primary ${mono.className}`}
+                    >
+                      PLATFORM_ARCHITECT
+                    </span>
+                  </div>
+
+                  <h3 className="mt-2 text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-white">
+                    Raed Guembri
+                  </h3>
+
+                  <p
+                    className={`mt-1 text-xs font-semibold uppercase tracking-wider text-primary ${mono.className}`}
+                  >
+                    Software Architect Engineer
+                  </p>
+
+                  <div className="mt-4 border-l-2 border-primary/60 pl-4 py-2 bg-background/50">
+                    <p
+                      className={`text-xs md:text-sm font-medium italic leading-relaxed text-zinc-200 ${mono.className}`}
+                    >
+                      "I design and ship full-stack systems where architecture, interface motion, and developer discipline work like one instrument."
+                    </p>
+                  </div>
+
+                  <p className="mt-4 text-xs md:text-sm leading-relaxed text-muted-foreground">
+                    From Web GIS platforms and AI-assisted recruitment tools to dashboards, automated quality systems, VPS deployments, and data-heavy products, I build software that feels fast, legible, observable, and ready to scale.
+                  </p>
+
+                  <div className="mt-5 rounded-md border border-secondary/30 bg-secondary/10 p-3">
+                    <div
+                      className={`text-[10px] font-bold uppercase tracking-wider text-secondary mb-1 flex items-center gap-1.5 ${mono.className}`}
+                    >
+                      <CheckCircle2 className="h-3.5 w-3.5" /> AVAILABILITY
+                    </div>
+                    <p className="text-xs text-foreground/90">
+                      Open to software engineering, architecture, QA automation, and AI-integrated product work.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Social & Contact Buttons */}
+                <div className="mt-6 pt-6 border-t border-border flex flex-wrap gap-2.5">
+                  <a
+                    href="https://raed.guembri.tn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 border border-primary bg-primary px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-black transition-all hover:bg-transparent hover:text-primary ${mono.className}`}
+                  >
+                    <Globe className="h-3.5 w-3.5" />
+                    Portfolio
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+
+                  <a
+                    href="https://github.com/raed717"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 border border-border bg-card px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:border-primary hover:text-white ${mono.className}`}
+                  >
+                    <Github className="h-3.5 w-3.5 text-primary" />
+                    GitHub
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/raed-guembri"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 border border-border bg-card px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:border-primary hover:text-white ${mono.className}`}
+                  >
+                    <Linkedin className="h-3.5 w-3.5 text-primary" />
+                    LinkedIn
+                  </a>
+
+                  <a
+                    href="mailto:raed.guembri99@gmail.com"
+                    className={`inline-flex items-center gap-2 border border-border bg-card px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:border-secondary hover:text-secondary ${mono.className}`}
+                  >
+                    <Mail className="h-3.5 w-3.5 text-secondary" />
+                    raed.guembri99@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
