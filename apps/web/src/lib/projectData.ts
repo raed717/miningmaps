@@ -4731,7 +4731,147 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       },
     ],
   },
+  {
+    id: "za-001",
+    type: "project",
+    title: "Stibium Mining Opportunity - Limpopo, South Africa (Gold & Antimony)",
+    summary:
+      "Producing gold and critical-mineral antimony asset covering ~9,500 hectares in the Murchison Greenstone Belt, Limpopo Province, South Africa. Boasts 50+ years of operational history with active tailings mining at 60 ktpm, JORC-compliant resources of ~1.0 Moz Gold and ~280,000 tonnes Antimony (~10% of global known reserves), and an aggressive exploration campaign targeting up to 1.0 Mt Sb. Seeking US$80M primary capital on an estimated US$450M going-concern valuation, with a clear path to a secondary exit of up to US$250M for up to a 74% stake.",
+    region: "Limpopo, South Africa",
+    image:
+      "https://wildsafariguide.com/wp-content/uploads/2021/01/limpopo_great-limpopo--scaled.jpg",
+    coordinates: [-23.95, 30.61],
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gold",
+      "Antimony",
+      "Critical Minerals",
+      "South Africa",
+      "Limpopo",
+      "Murchison Belt",
+      "JORC Resource",
+      "Producing Mine",
+      "For Sale",
+      "Investment Opportunity",
+    ],
+    quickFacts: [
+      { label: "Location", value: "Limpopo Province, South Africa" },
+      { label: "Geological Belt", value: "Murchison Greenstone Belt" },
+      { label: "Property Size", value: "Approx. 9,500 Hectares (Mining Lease)" },
+      { label: "Commodities", value: "Gold (Au) & Antimony (Sb)" },
+      { label: "Development Stage", value: "Producing Asset (50+ Years History)" },
+      { label: "Current Mining Rate", value: "60,000 tonnes / month (TF2 Dump)" },
+      { label: "JORC Gold Resource", value: "~1,000,000 ounces (~1.0 Moz Au)" },
+      { label: "JORC Antimony Resource", value: "~280,000 tonnes Sb (~10% global reserves)" },
+      { label: "Exploration Target", value: "Expanding Sb to 1,000,000 tonnes (1.0 Mt)" },
+      { label: "2024 EBITDA", value: "> US$10 Million (Record gold production)" },
+      { label: "Antimony EBITDA Upside", value: "+US$70M to US$80M annual EBITDA projected" },
+      { label: "Going-Concern Valuation", value: "~US$450 Million (5x EBITDA multiple)" },
+      { label: "Capital Raise Structure", value: "Seeking US$80M (Equity ~18% or loan + offtake)" },
+      { label: "Exit Horizon", value: "Secondary exit up to US$250M (up to 74% stake)" },
+      { label: "Ownership Structure", value: "74% Seller-Owned / 26% BEE Partner Trust" },
+    ],
+    sections: [
+      {
+        heading: "Executive Investment Overview",
+        type: "paragraph",
+        content:
+          "The Stibium Mining Opportunity represents a rare, brownfield producing mining complex located within the renowned Murchison Greenstone Belt in Limpopo Province, South Africa. Encompassing approximately 9,500 hectares of contiguous mining lease, the property pairs an established gold production base (50+ years operational history) with a world-scale antimony endowment comprising ~10% of total known global reserves. With antimony now classified worldwide as an urgent, strategic critical mineral (essential for defense, munitions, solar glass, and grid-scale liquid metal batteries), this asset provides immediate positive cash flow alongside extraordinary geopolitical and commercial leverage.",
+      },
+      {
+        heading: "Project Key Metrics & JORC Resource Endowment",
+        type: "table",
+        caption: "Stibium Mining Project — Key Metrics & Resource Specifications",
+        headers: ["Metric", "Details"],
+        rows: [
+          ["Location", "Limpopo Province, South Africa (Murchison Greenstone Belt)"],
+          ["Property Size", "Approximately 9,500 hectares (active mining lease area)"],
+          ["Primary Commodities", "Gold (Au) and Antimony (Sb)"],
+          ["Development Stage", "Producing gold asset with 50+ years operational history; active underground & surface operations"],
+          ["Current Production Rate", "TF2 tailings dump mining at 60,000 tonnes per month (60 ktpm)"],
+          ["JORC Compliant Resource (Gold)", "~1,000,000 ounces (~1.0 Moz Au)"],
+          ["JORC Compliant Resource (Antimony)", "~280,000 tonnes Sb (~10% of global known reserves)"],
+          ["Exploration Target", "Expanding the antimony resource up to 1,000,000 tonnes (1.0 Mt Sb)"],
+          ["Resource Head Grades", "Specific in-situ g/t and % head grades pending release of updated JORC technical report"],
+          ["Permitting & Tenure", "Fully permitted and licensed for both underground operations and tailings retreatment"],
+          ["Current Ownership", "74% Seller-Owned, 26% Broad-Based BEE Partner Trust"],
+        ],
+      },
+      {
+        heading: "Exploration & Drilling Summary",
+        type: "bullet_list",
+        content: [
+          "Extensive Historical Work: Deep underground infrastructure, shafts, and processing history spanning more than five decades in the mineralized Murchison Greenstone Belt.",
+          "Aggressive Active Campaign: Ongoing exploration programme comprising high-resolution ground and airborne geophysics coupled with systematic diamond core drilling.",
+          "Drill Holes & Assay Status: Active diamond drilling is focused on expanding antimony resources toward the 1.0 Mt milestone while updating gold block models. Individual drill hole intervals and assay tables are being compiled into a revised JORC-compliant resource statement currently underway.",
+          "Rehabilitation & Shaft Access: Dedicated capital is allocated to re-opening historical gold and antimony shafts, granting direct access to delineated open-pit and underground reserves.",
+        ],
+      },
+      {
+        heading: "Mining, Processing & Financial Highlights",
+        type: "bullet_list",
+        content: [
+          "Established Cash Flow Base: Achieved record gold production in 2024, delivering annual EBITDA in excess of US$10 million.",
+          "Critical Mineral Upside: Developing the large-scale antimony asset provides substantial strategic commodity exposure, projected to add an estimated US$70M to US$80M to annual EBITDA.",
+          "Proprietary Processing Technology: In-house tailings/slag extraction technology engineered to increase metallurgical recovery rates from the historical industry benchmark of ~35% to 55%+.",
+          "Security of Tenure: Mining rights and environmental authorizations are fully active, compliant, and in good standing with South African regulatory authorities.",
+          "Valuation & Entry Multiple: Going-concern valuation estimated at ~US$450 million based on an attractive 5x EBITDA multiple (excluding extensive in-situ mineral resource valuation).",
+          "Exit Horizon & Secondary Path: Clear pathway to a secondary liquidity exit of up to US$250 million for up to a 74% controlling equity stake.",
+        ],
+      },
+      {
+        heading: "Capital Raise Structure & Use of Proceeds",
+        type: "table",
+        caption: "Stibium Mining — US$80M Capital Raise Allocation",
+        headers: ["Allocation Tranche", "Amount (USD)", "Strategic Objective"],
+        rows: [
+          [
+            "Longwall Shaft Development",
+            "US$60,000,000",
+            "Development of open-pit and high-grade underground reserves via Longwall shaft infrastructure",
+          ],
+          [
+            "Exploration & Shaft Rehabilitation",
+            "US$10,000,000",
+            "Diamond drilling to expand Sb resource to 1 Mt and re-opening historical production shafts",
+          ],
+          [
+            "Proprietary Extraction Tech",
+            "US$10,000,000",
+            "Refining and patenting proprietary tailings recovery technology (55%+ recovery benchmark)",
+          ],
+          [
+            "Total Capital Raise",
+            "US$80,000,000",
+            "Minority equity (~18%) or repayable debt structure with commercial offtake rights",
+          ],
+        ],
+      },
+      {
+        heading: "Project Imagery",
+        type: "ImageGallery",
+        galleryType: "grid",
+        images: [
+          {
+            src: "https://wildsafariguide.com/wp-content/uploads/2021/01/limpopo_great-limpopo--scaled.jpg",
+            alt: "Limpopo Province Regional Setting",
+            caption:
+              "Regional setting of Limpopo Province, South Africa, home to the mineral-rich Murchison Greenstone Belt.",
+          },
+          {
+            src: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/46/7e/fd/caption.jpg?w=500&h=400&s=1",
+            alt: "Limpopo Province Terrain and Mining Corridor",
+            caption:
+              "Limpopo mining corridor landscape, regional infrastructure, and logistics setting.",
+          },
+        ],
+      },
+    ],
+  },
 ];
+
 
 
 

@@ -13,6 +13,8 @@
     "dev:native": "turbo -F native dev",
     "dev:web": "turbo -F web dev",
     "test": "playwright test",
+    "export:csv": "node --experimental-strip-types toolbox/generate_projects_csv.mjs",
+    "export:sql": "node --experimental-strip-types toolbox/generate_projects_migration.mjs",
     "seo": "python .agents/skills/seo/scripts/generate_report.py https://www.miningpropertymaps.com/ --output SEO-REPORT.html"
   },
   "dependencies": {
