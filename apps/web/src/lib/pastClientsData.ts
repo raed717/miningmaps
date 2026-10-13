@@ -70,11 +70,23 @@ export const pastClients: PastClient[] = [
     url: "https://www.linkedin.com/company/aquaterra-environmental-ltd-/",
   },
   {
+    name: "Bennett Jones",
+    notes:
+      "Recommended for mining law & title issues. Longstanding trusted legal collaboration across complex resource and land matters.",
+    url: "https://www.bennettjones.com/",
+  },
+  {
     name: "Dentons LLC",
     notes:
-      "Worked on complex Crown Grant transfers and parcel mapping in Barkerville and Wells, B.C.",
+      "Recommended for mining law & title issues. Worked on complex Crown Grant transfers and parcel mapping in Barkerville and Wells, B.C.",
     url: "https://www.dentons.com/en/",
     logo: "https://www.dentons.com/-/media/images/website/logos/logos_svg/dentons-hong-kong-logo-rgb.ashx",
+  },
+  {
+    name: "McCarthy Tétrault",
+    notes:
+      "Recommended for mining law & title issues. Nationally recognized counsel for mineral exploration, resource transactions, and title matters.",
+    url: "https://www.mccarthy.ca/",
   },
   {
     name: "District of Wells",

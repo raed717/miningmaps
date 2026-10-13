@@ -33,6 +33,15 @@ const messages: NoticeMessage[] = [
     linkHref: "/contact",
     afterLink: " to discuss your project and learn more.",
   },
+  {
+    id: "legal",
+    label: "MINING LAW & TITLE",
+    beforeLink:
+      "For mineral title issues, Crown Grant transfers, and resource transactions, we recommend leading mining law firms Bennett Jones, Dentons, and McCarthy Tétrault. ",
+    linkText: "Contact us",
+    linkHref: "/contact",
+    afterLink: " or explore our legal network.",
+  },
 ];
 
 export function PartnerNoticeRotator({ className = "" }: { className?: string }) {

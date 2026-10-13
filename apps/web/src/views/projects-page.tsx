@@ -14,6 +14,7 @@ import {
   Target,
   FolderKanban,
   Tag,
+  Gem,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { projects } from "@/lib/projectData";
@@ -45,6 +46,10 @@ function highlightMatch(text: string, query: string) {
   );
 }
 
+const COMMODITY_TAGS = ["Gold", "Silver", "Copper", "Platinum", "Cobalt", "Nickel"];
+const SPECIMEN_TAGS = ["Fossils", "Agates", "Gemstones"];
+const FOSSILS_GEMSTONES_TYPE = "Fossils, Agates & Gemstones";
+
 export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPageProps) {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
@@ -56,6 +61,21 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
       const params = new URLSearchParams(window.location.search);
       if (params.get("forSale") === "true" || params.get("filter") === "for-sale") {
         setForSaleOnly(true);
+      }
+      const typeParam = params.get("type")?.toLowerCase();
+      if (
+        typeParam === "fossils-agates-gemstones" ||
+        typeParam === "specimens" ||
+        typeParam === "fossils" ||
+        typeParam === "agates" ||
+        typeParam === "gemstones"
+      ) {
+        if (typeParam === "fossils-agates-gemstones" || typeParam === "specimens") {
+          setActiveFilter(FOSSILS_GEMSTONES_TYPE);
+        } else {
+          const matchedTag = SPECIMEN_TAGS.find((t) => t.toLowerCase() === typeParam);
+          if (matchedTag) setActiveFilter(matchedTag);
+        }
       }
     }
   }, []);
@@ -71,7 +91,20 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
     ).length;
   }, []);
 
-  const staticTags = ["Gold", "Silver", "Copper", "Platinum", "Cobalt", "Nickel"];
+  const totalSpecimensCount = useMemo(() => {
+    const specimenTagSet = new Set(SPECIMEN_TAGS.map((t) => t.toLowerCase()));
+    return projects.filter((project) => {
+      if (project.type === "subproject") return false;
+      const subs = (project.subProjectIds || [])
+        .map((id) => projects.find((p) => p.id === id))
+        .filter(Boolean);
+      const allTags = [
+        ...(project.tags || []),
+        ...subs.flatMap((s) => s?.tags || []),
+      ].map((t) => t.toLowerCase());
+      return allTags.some((t) => specimenTagSet.has(t));
+    }).length;
+  }, []);
 
   const filteredProjects = projects.filter((project) => {
     if (project.type === "subproject") return false;
@@ -96,10 +129,25 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
           (sub!.tags || []).some((t) => t.toLowerCase().includes(query))
       );
 
-    const matchesFilter = activeFilter
-      ? project.tags?.includes(activeFilter) ||
-        subs.some((sub) => sub!.tags?.includes(activeFilter))
-      : true;
+    let matchesFilter = true;
+    if (activeFilter) {
+      if (activeFilter === FOSSILS_GEMSTONES_TYPE) {
+        const specimenTagSet = new Set(SPECIMEN_TAGS.map((t) => t.toLowerCase()));
+        const allTags = [
+          ...(project.tags || []),
+          ...subs.flatMap((s) => s?.tags || []),
+        ].map((t) => t.toLowerCase());
+        matchesFilter = allTags.some((t) => specimenTagSet.has(t));
+      } else {
+        const filterLower = activeFilter.toLowerCase();
+        const allTags = [
+          ...(project.tags || []),
+          ...subs.flatMap((s) => s?.tags || []),
+        ].map((t) => t.toLowerCase());
+        matchesFilter = allTags.includes(filterLower);
+      }
+    }
+
     const matchesSaleState =
       showOnlyForSale || forSaleOnly
         ? project.isForSale || subs.some((sub) => sub!.isForSale)
@@ -266,7 +314,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 </span>
               </button>
             )}
-            {staticTags.map((tag) => (
+            {COMMODITY_TAGS.map((tag) => (
               <button
                 key={tag}
                 type="button"
@@ -277,6 +325,54 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                   activeFilter === tag
                     ? "border-secondary bg-secondary text-black"
                     : "border-border bg-card text-muted-foreground hover:border-secondary hover:text-secondary"
+                } border`}
+              >
+                {tag}
+              </button>
+            ))}
+
+            <span className="hidden h-5 w-[1px] bg-border sm:inline-block mx-0.5" aria-hidden="true" />
+
+            <button
+              type="button"
+              onClick={() =>
+                setActiveFilter(
+                  activeFilter === FOSSILS_GEMSTONES_TYPE
+                    ? null
+                    : FOSSILS_GEMSTONES_TYPE
+                )
+              }
+              className={`inline-flex items-center gap-1.5 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
+                activeFilter === FOSSILS_GEMSTONES_TYPE
+                  ? "border-primary bg-primary text-black shadow-[0_0_12px_rgba(234,179,8,0.35)]"
+                  : "border-primary/40 bg-primary/10 text-primary hover:border-primary hover:bg-primary/20"
+              } border`}
+              title="Filter Fossils, Agates & Gemstones"
+            >
+              <Gem className="h-3 w-3" />
+              <span>FOSSILS, AGATES & GEMS</span>
+              <span
+                className={`ml-0.5 px-1.5 py-0.2 text-[9px] font-extrabold ${
+                  activeFilter === FOSSILS_GEMSTONES_TYPE
+                    ? "bg-black text-primary"
+                    : "border border-primary/40 bg-primary/20 text-primary"
+                }`}
+              >
+                {totalSpecimensCount}
+              </span>
+            </button>
+
+            {SPECIMEN_TAGS.map((tag) => (
+              <button
+                key={tag}
+                type="button"
+                onClick={() =>
+                  setActiveFilter(tag === activeFilter ? null : tag)
+                }
+                className={`px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
+                  activeFilter === tag
+                    ? "border-primary bg-primary text-black"
+                    : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
                 } border`}
               >
                 {tag}
@@ -306,7 +402,9 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
             )}
             {activeFilter && (
               <span className="inline-flex items-center gap-1.5 border border-primary/50 bg-primary/15 px-2 py-0.5 text-[9px] font-bold text-primary">
-                TAG: {activeFilter}
+                {activeFilter === FOSSILS_GEMSTONES_TYPE
+                  ? "TYPE: FOSSILS, AGATES & GEMSTONES"
+                  : `TAG: ${activeFilter}`}
                 <button
                   type="button"
                   onClick={() => setActiveFilter(null)}

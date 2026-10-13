@@ -61,7 +61,7 @@ const spotlightClients: SpotlightClient[] = [
   {
     name: "Dentons LLC",
     category: "LEGAL & LAND TITLE",
-    note: "Complex Crown Grant transfers, historical parcel boundary research, and title mapping",
+    note: "Recommended for mining law & title issues. Complex Crown Grant transfers, historical parcel research, and title mapping.",
     url: "https://www.dentons.com/en/",
     logo:"https://www.dentons.com/-/media/images/website/logos/logos_svg/dentons-hong-kong-logo-rgb.ashx",
     icon: Scale,

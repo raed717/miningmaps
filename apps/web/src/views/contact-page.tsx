@@ -3,12 +3,14 @@
 import { motion } from "motion/react";
 import {
   ArrowUpRight,
+  Building2,
   Facebook,
   Gem,
   Linkedin,
   Mail,
   Map,
   PenLine,
+  Scale,
   ShieldAlert,
   Terminal,
 } from "lucide-react";
@@ -195,6 +197,101 @@ export default function ContactPage() {
             })}
           </div>
         </div>
+
+        {/* Recommended Mining Law & Title Issues Counsel */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.55 }}
+          className="mt-12 border border-border bg-card/70 backdrop-blur-sm p-6 md:p-8"
+        >
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-border pb-4">
+            <div>
+              <div
+                className={`flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
+              >
+                <Scale className="h-4 w-4" /> RECOMMENDED LEGAL COUNSEL
+              </div>
+              <h3 className="mt-2 text-xl font-black uppercase tracking-tight text-white md:text-2xl">
+                Mining Law &amp; Title Issues
+              </h3>
+            </div>
+            <span
+              className={`inline-flex items-center gap-1.5 self-start sm:self-auto border border-secondary/40 bg-secondary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-secondary ${mono.className}`}
+            >
+              TRUSTED COLLABORATORS
+            </span>
+          </div>
+
+          <p
+            className={`mt-4 text-xs uppercase tracking-[0.16em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
+          >
+            Adamson Geomatics frequently works alongside and highly recommends
+            these leading Canadian and global law firms for complex mineral
+            title research, Crown Grant conveyancing, tenure disputes, and mining
+            transactions.
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                name: "Bennett Jones",
+                focus: "Recommended for Mining Law & Title Issues",
+                desc: "Longstanding collaboration on complex mining transactions, resource development, and title diligence.",
+                href: "https://www.bennettjones.com/",
+              },
+              {
+                name: "Dentons LLC",
+                focus: "Recommended for Mining Law & Title Issues",
+                desc: "Trusted counsel on complex Crown Grant transfers, historical parcel research, and boundary mappings.",
+                href: "https://www.dentons.com/en/",
+              },
+              {
+                name: "McCarthy Tétrault",
+                focus: "Recommended for Mining Law & Title Issues",
+                desc: "Top-tier global metals & mining group advising on mineral tenure, acquisitions, and regulatory matters.",
+                href: "https://www.mccarthy.ca/",
+              },
+            ].map((firm) => (
+              <a
+                key={firm.name}
+                href={firm.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col justify-between border border-border bg-background/80 p-5 transition-all hover:border-primary hover:bg-card"
+              >
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span
+                      className={`text-[10px] font-bold uppercase tracking-[0.2em] text-primary ${mono.className}`}
+                    >
+                      LAW FIRM
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+                  </div>
+                  <h4 className="mt-3 text-lg font-black uppercase tracking-tight text-white group-hover:text-primary transition-colors">
+                    {firm.name}
+                  </h4>
+                  <div
+                    className={`mt-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-secondary ${mono.className}`}
+                  >
+                    {firm.focus}
+                  </div>
+                  <p
+                    className={`mt-3 text-xs leading-relaxed text-muted-foreground ${mono.className}`}
+                  >
+                    {firm.desc}
+                  </p>
+                </div>
+                <div
+                  className={`mt-5 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-primary group-hover:underline ${mono.className}`}
+                >
+                  Visit Official Site &rsaquo;
+                </div>
+              </a>
+            ))}
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
