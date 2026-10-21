@@ -4870,11 +4870,122 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       },
     ],
   },
+  {
+    id: "or-002",
+    type: "project",
+    title: "Burnt River Gold Placer Claims - Baker County, Oregon",
+    summary:
+      "40 acres of active gold placer ground on the Burnt River in Baker County, Oregon, comprising two adjoining 20-acre BLM claims (Split Burnt Gold & Big Gold #1). Features USGS/DOGAMI Oregon Mining Company gold occurrence mapped directly on the claim, historic testing averaging ~0.31 g fine Au/yd³ (850 fine coarse gold), extensive river frontage, shallow bedrock traps, and an ancient high-channel placer exploration target. 700-PM suction dredging permitted July 31 through October 31.",
+    region: "Oregon, USA",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/d/d3/Burnt_River_Canyon_%28Baker_County%2C_Oregon_scenic_images%29_%28bakDA0050a%29.jpg",
+    coordinates: [44.55, -117.62],
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    tags: [
+      "Gold",
+      "Placer Gold",
+      "Coarse Gold",
+      "Oregon",
+      "Baker County",
+      "Burnt River",
+      "BLM Claims",
+      "For Sale",
+      "Suction Dredging",
+    ],
+    quickFacts: [
+      { label: "Property Name", value: "Burnt River Gold Placer Claims" },
+      { label: "Total Acreage", value: "40.00 Acres (Two adjoining 20-acre claims)" },
+      { label: "Claim 1", value: "SPLIT BURNT GOLD (OR106701451) — 20 Acres (T12S, R41E, Sec 3)" },
+      { label: "Claim 2", value: "BIG GOLD #1 (OR106701450) — 20 Acres (T12S, R41E, Sec 4)" },
+      { label: "Location", value: "Upper Burnt River, Baker County, Oregon" },
+      { label: "Land Management", value: "Bureau of Land Management (BLM)" },
+      { label: "Commodity", value: "Placer Gold (Very coarse nuggets, pickers & fine gold)" },
+      { label: "Gold Purity", value: "Approximately 850 Fine" },
+      { label: "Historic Grade", value: "Approx. 0.31 g fine gold / yd³ (historic test average)" },
+      { label: "Historic Production", value: "300+ oz reported from single 8-day cleanup" },
+      { label: "Dredging Window", value: "700-PM Dredging: July 31 - October 31 Season" },
+      { label: "Purchase Price", value: "$88,000 Total for Both Claims (40 Acres)" },
+      { label: "Guarantee", value: "One-Year Written Mineral Rights Guarantee" },
+      { label: "Status", value: "Active BLM Placer Claims For Sale" },
+    ],
+    sections: [
+      {
+        heading: "Property & Acquisition Overview",
+        type: "paragraph",
+        content:
+          "Offered at $88,000 for both claims totaling 40 acres, the Burnt River Gold Placer package consists of two contiguous, active 20-acre federal placer mining claims located on BLM-managed land in Baker County, Oregon. Split Burnt Gold (OR106701451; T12S, R41E, Section 3) and Big Gold #1 (OR106701450; T12S, R41E, Section 4) cover proven alluvial ground along the prolific Burnt River corridor, directly encompassing a documented USGS/DOGAMI Oregon Mining Company gold occurrence. The property benefits from 700-PM suction dredging authorization with an active seasonal window running from July 31 through October 31.",
+      },
+      {
+        heading: "Historic Oregon Mining Company Records & Drilling",
+        type: "table",
+        caption: "Historic Oregon Mining Company Testing & Exploration Records",
+        headers: ["Parameter / Metric", "Documented Historic Record"],
+        rows: [
+          ["Historic Drill Holes", "50-60 placer drill holes completed across the deposit"],
+          ["Verification Caissons", "7 caisson verification test pits sunk to bedrock"],
+          ["Historic Drill Test Grade", "Equivalent to approximately 0.31 grams fine gold per cubic yard"],
+          ["Gold Fineness & Character", "Very coarse gold — approximately 850 fine"],
+          ["Bedrock Gold Distribution", "Most gold reported within 5 ft of bedrock; ~50% directly on bedrock"],
+          ["Proven Strike Length", "Approximately 1¼ miles historically reported as proven by drilling and shafts"],
+          ["Peak Cleanup Record", "300+ ounces of gold reported from one historic 8-day cleanup"],
+          ["Active Neighbor Operations", "Commercial active placer mining operation immediately upstream"],
+        ],
+      },
+      {
+        heading: "Geological Setting & Key Property Features",
+        type: "bullet_list",
+        content: [
+          "Direct USGS/DOGAMI Mapped Occurrence: The official USGS/DOGAMI Oregon Mining Company gold occurrence is mapped directly on Split Burnt Gold in Section 3.",
+          "Substantial Exposed Bedrock: Excellent stretch of the Burnt River featuring exposed and shallow bedrock with extensive cracks, crevices, potholes, and natural hydraulic gold traps.",
+          "Inside-Bend Placer Ground: Classic hydrodynamic inside river bends coupled with wider alluvial bars that decelerate gold-bearing gravels and concentrate heavy precious metals.",
+          "Proven Coarse Gold Character: Historic records describe heavy, coarse placer gold with roughly 50% sitting directly on the bedrock surface and the remainder concentrated in the lowest 5 feet.",
+          "Ancient High-Channel Exploration Target: The Upper Burnt River is documented for elevated older/terrace river channels situated above the modern drainage. Nearby historic operations such as the Dry Horseshoe Placer and elevated river cobbles along the canyon provide strong evidence of high-terrace gold gravels across the upper bench of Split Burnt Gold.",
+          "River Frontage & Accessibility: Direct river frontage with excellent road access suitable for standard 4x4 vehicles, trucks, and recreational gear, alongside a large, level camping clearing directly on BLM land.",
+        ],
+      },
+      {
+        heading: "Suction Dredging & Regulatory Framework",
+        type: "paragraph",
+        content:
+          "The claims are situated in Oregon's designated 700-PM suction dredging zone, providing an established annual dredging season from July 31 through October 31. This allows permitted suction dredge operators to vacuum exposed bedrock crevices, gravel bars, and deep river pockets during peak low-water summer and autumn conditions.",
+      },
+      {
+        heading: "Experience, Services & Mineral Rights Guarantee",
+        type: "bullet_list",
+        content: [
+          "One-Year Mineral Rights Guarantee: Every mining claim sold includes a written One-Year Mineral Rights Guarantee (full terms provided upon transfer).",
+          "Decades of Practical Expertise: The claim locator was raised on a California hard-rock gold mine, has panned and prospected gold since age five, and possesses eight years of specialized mining law study.",
+          "Turnkey Mining Services: Staking, location documentation, corner and boundary monumentation, claim leasing, and guided mining adventures are available.",
+          "Regulatory Notice: Historical drilling, testing, and production figures are cited directly from historic Oregon Mining Company archives. Because the individual historic drill-hole assay collar sheet has not been located, historic grades are provided for historical context and are not represented as modern NI 43-101 compliant reserve estimates.",
+        ],
+      },
+      {
+        heading: "Field & Regional Imagery",
+        type: "ImageGallery",
+        galleryType: "grid",
+        images: [
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Burnt_River_Canyon_%28Baker_County%2C_Oregon_scenic_images%29_%28bakDA0050a%29.jpg",
+            alt: "Burnt River Canyon, Baker County, Oregon",
+            caption:
+              "Scenic Burnt River Canyon in Baker County, Oregon, showing bedrock exposures and placer gravel settings along the river corridor.",
+          },
+          {
+            src: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Burnt_River_dam.jpg",
+            alt: "Upper Burnt River Reservoir & Watershed Setting",
+            caption:
+              "Upper Burnt River watershed and valley terrain upstream in Baker County, Oregon.",
+          },
+        ],
+      },
+      {
+        heading: "Purchase & Inquiries",
+        type: "paragraph",
+        content:
+          "Offered at $88,000 for both 20-acre claims (40 acres total: Split Burnt Gold OR106701451 & Big Gold #1 OR106701450). For purchase inquiries, BLM assignment documentation, claim transfer paperwork, or GPS coordinates, please contact chris@miningpropertymaps.com. Serious inquiries welcome.",
+      },
+    ],
+  },
 ];
-
-
-
-
-
-
-
