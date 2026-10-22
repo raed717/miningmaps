@@ -30,8 +30,8 @@
     "semantic_hash": ""
   },
   "apps/web/next.config.mjs": {
-    "mtime": 1792676780.7443848,
-    "ast_hash": "a4e148d876b3aad74563b889d2f04ccb",
+    "mtime": 1792682464.6092682,
+    "ast_hash": "b2b114f36b2a1f38ec1b50a1b053a5ae",
     "semantic_hash": ""
   },
   "apps/web/package.json": {
@@ -395,9 +395,9 @@
     "semantic_hash": "cc595046ce71069c065e0d21ed9f8540"
   },
   "turbo.json": {
-    "mtime": 1776000177.4016285,
-    "ast_hash": "f6c265efd8dcd569cd55da91a5eb3818",
-    "semantic_hash": "f6c265efd8dcd569cd55da91a5eb3818"
+    "mtime": 1792682465.7057235,
+    "ast_hash": "44a5c33aa4ec23ca9319d0ae0651b062",
+    "semantic_hash": ""
   },
   "update_colors.cjs": {
     "mtime": 1775549068.149092,

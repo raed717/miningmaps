@@ -285,8 +285,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/views/contact-page.tsx": {
-    "mtime": 1791878031.6102412,
-    "ast_hash": "46951b0e2769b4ce0f72ef9224006992",
+    "mtime": 1792681063.7975833,
+    "ast_hash": "6d0b88b5a5b020a090a634aa5565c56e",
     "semantic_hash": ""
   },
   "apps/web/src/views/home-page.tsx": {
@@ -935,8 +935,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/NewsletterForm.tsx": {
-    "mtime": 1792676810.8604674,
-    "ast_hash": "db63bc85b86bf3c0d04b181f76a79029",
+    "mtime": 1792677499.838555,
+    "ast_hash": "8769140bf765a81d07e6d0c1001e6b54",
     "semantic_hash": ""
   },
   "apps/web/src/components/PartnerProgramsModal.tsx": {

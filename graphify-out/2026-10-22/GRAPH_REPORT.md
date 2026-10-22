@@ -1,11 +1,11 @@
 # Graph Report - miningmaps  (2026-10-22)
 
 ## Corpus Check
-- 106 files · ~10,817,097 words
+- 106 files · ~10,817,216 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 750 nodes · 859 edges · 130 communities (57 shown, 73 thin omitted)
+- 750 nodes · 861 edges · 129 communities (56 shown, 73 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 26 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
@@ -69,7 +69,7 @@
 - @hookform/resolvers
 - leaflet
 - lucide-react
-- page.tsx
+- @base-ui/react
 - motion
 - next
 - next-themes
@@ -89,17 +89,16 @@
 - Adamson Geomatics Minimal Logo Variant 1
 - Real Estate Institute of British Columbia Logo
 - Fraser Plateau Topographic Claim Map Screenshot 141901
-- fonts.ts
+- about-page.tsx
 - 1. Database Migration Tool (`generate_projects_migration.mjs`)
 - Detailed Task Tracker
 - past-clients-preview-section.tsx
 - accomplishments-section.tsx
-- mono
-- partners-page.tsx
+- fonts.ts
+- inter
 - Full Audit Report
 - Action Plan
 - newsletter/route.ts
-- @fontsource/jetbrains-mono
 - @neondatabase/serverless
 - react-medium-image-zoom
 - @vercel/speed-insights
@@ -168,7 +167,7 @@
 - **Barkerville Gold Camp Placer-Lode System** — apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_mosquito_creek_claim, apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_lowhee_cow_mountain_claim, apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_ballarat_claim [EXTRACTED 1.00]
 - **Northumberland Deposit Geological and Staking Framework** — apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_report, apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_rationale, apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_newmont_northumberland_memo, apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_northumberland_deposits [EXTRACTED 1.00]
 
-## Communities (130 total, 73 thin omitted)
+## Communities (129 total, 73 thin omitted)
 
 ### Community 0 - "projects-page.tsx"
 Cohesion: 0.14
@@ -207,16 +206,16 @@ Cohesion: 0.10
 Nodes (20): ^build, ^check-types, dist/**, .env*, ^lint, $TURBO_DEFAULT$, dependsOn, inputs (+12 more)
 
 ### Community 9 - "services-page.tsx"
-Cohesion: 0.15
-Nodes (13): outputFeed, serviceAccentColors, serviceFeed, serviceIcons, ServiceRegistrySection(), serviceDeliverables, serviceMetrics, ServiceModule (+5 more)
+Cohesion: 0.17
+Nodes (12): outputFeed, serviceAccentColors, serviceFeed, serviceIcons, serviceDeliverables, serviceMetrics, ServiceModule, serviceModules (+4 more)
 
 ### Community 10 - "env/package.json"
 Cohesion: 0.11
 Nodes (18): dotenv, dependencies, dotenv, @t3-oss/env-core, zod, devDependencies, @miningmaps/config, typescript (+10 more)
 
 ### Community 11 - "App.tsx"
-Cohesion: 0.10
-Nodes (20): AboutPage, App(), ContactPage, DashboardView, decodeSegment(), HomePage, MapView, NotFoundPage (+12 more)
+Cohesion: 0.06
+Nodes (27): AboutPage, App(), ContactPage, DashboardView, decodeSegment(), HomePage, MapView, NotFoundPage (+19 more)
 
 ### Community 12 - "Adamson Geomatics"
 Cohesion: 0.26
@@ -316,23 +315,19 @@ Nodes (3): Green Mountain Gold, PGE & REE Assessment (Dec 30), Green Mountain Li
 
 ### Community 46 - "dependencies"
 Cohesion: 0.22
-Nodes (9): dependencies, @base-ui/react, clsx, @miningmaps/env, zod, @miningmaps/env, zod, @base-ui/react (+1 more)
+Nodes (9): dependencies, clsx, @fontsource/jetbrains-mono, @miningmaps/env, zod, @miningmaps/env, zod, clsx (+1 more)
 
 ### Community 48 - "Field-Mapping Rules"
 Cohesion: 0.10
 Nodes (20): 360° Virtual Tours (`kuulaFrame`), `coordinates`, Field-Mapping Rules, `id`, `image`, `isForSale`, Output Format, PDF Documents (`PdfDocuments`) (+12 more)
 
-### Community 54 - "page.tsx"
-Cohesion: 0.14
-Nodes (9): ClientPage(), buildBreadcrumbJsonLd(), CatchAllPage(), pageLabels, pageMeta, mockPosts, Post, PostSection (+1 more)
-
 ### Community 69 - "home-page.tsx"
 Cohesion: 0.17
-Nodes (8): Footer(), CinematicHero(), fieldReports, FieldReportsSection(), GlobalTelemetrySection(), telemetryNodes, NewsletterForm(), PartnerProgramsTickerBanner()
+Nodes (8): CinematicHero(), fieldReports, FieldReportsSection(), GlobalTelemetrySection(), telemetryNodes, ListingMembershipSection(), ServiceRegistrySection(), PartnerProgramsTickerBanner()
 
-### Community 74 - "fonts.ts"
-Cohesion: 0.20
-Nodes (7): ContactForm(), inter, certifications, education, expertiseAreas, insuranceDetails, ContactRoute
+### Community 74 - "about-page.tsx"
+Cohesion: 0.33
+Nodes (4): certifications, education, expertiseAreas, insuranceDetails
 
 ### Community 75 - "1. Database Migration Tool (`generate_projects_migration.mjs`)"
 Cohesion: 0.20
@@ -350,13 +345,13 @@ Nodes (5): PastClientsPreviewSection(), SpotlightClient, spotlightClients, PastC
 Cohesion: 0.40
 Nodes (4): AccomplishmentsSection(), icons, Accomplishment, accomplishments
 
-### Community 79 - "mono"
-Cohesion: 0.47
-Nodes (4): ListingMembershipSection(), PartnerProgramsModal(), PartnerProgramsModalProps, mono
+### Community 79 - "fonts.ts"
+Cohesion: 0.24
+Nodes (7): ContactForm(), Footer(), NewsletterForm(), PartnerProgramsModal(), PartnerProgramsModalProps, mono, ContactRoute
 
-### Community 80 - "partners-page.tsx"
-Cohesion: 0.33
-Nodes (4): affiliateEligibility, affiliateTerms, finderEligibility, finderTerms
+### Community 80 - "inter"
+Cohesion: 0.22
+Nodes (7): Header(), startGlobalProgress(), inter, affiliateEligibility, affiliateTerms, finderEligibility, finderTerms
 
 ### Community 81 - "Full Audit Report"
 Cohesion: 0.40
@@ -370,7 +365,7 @@ Nodes (4): Findings, Full Audit Report, Measurement Notes, Score Card
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `carousel.tsx`, `devDependencies`, `embla-carousel-react`, `class-variance-authority`, `embla-carousel-autoplay`, `@fontsource-variable/inter`, `@hookform/resolvers`, `leaflet`, `lucide-react`, `motion`, `next`, `next-themes`, `radix-ui`, `react-dom`, `react-leaflet`, `recharts`, `shadcn`, `sonner`, `tailwind-merge`, `@tailwindcss/postcss`, `@tanstack/react-form`, `tw-animate-css`, `@types/leaflet`, `@fontsource/jetbrains-mono`, `@neondatabase/serverless`, `react-medium-image-zoom`, `@vercel/speed-insights`?**
+- **Why does `dependencies` connect `dependencies` to `carousel.tsx`, `devDependencies`, `embla-carousel-react`, `class-variance-authority`, `embla-carousel-autoplay`, `@fontsource-variable/inter`, `@hookform/resolvers`, `leaflet`, `lucide-react`, `@base-ui/react`, `motion`, `next`, `next-themes`, `radix-ui`, `react-dom`, `react-leaflet`, `recharts`, `shadcn`, `sonner`, `tailwind-merge`, `@tailwindcss/postcss`, `@tanstack/react-form`, `tw-animate-css`, `@types/leaflet`, `@neondatabase/serverless`, `react-medium-image-zoom`, `@vercel/speed-insights`?**
   _High betweenness centrality (0.084) - this node is a cross-community bridge._
 - **Why does `react` connect `carousel.tsx` to `dependencies`?**
   _High betweenness centrality (0.073) - this node is a cross-community bridge._

@@ -524,8 +524,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "apps_web_package_dependencies_base_ui_react",
-      "community": 46,
-      "community_name": "dependencies",
+      "community": 54,
+      "community_name": "@base-ui/react",
       "norm_label": "@base-ui/react"
     },
     {
@@ -535,8 +535,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "base_ui_react",
-      "community": 46,
-      "community_name": "dependencies",
+      "community": 54,
+      "community_name": "@base-ui/react",
       "norm_label": "@base-ui/react"
     },
     {
@@ -568,8 +568,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_web_package_dependencies_fontsource_jetbrains_mono",
-      "community": 84,
-      "community_name": "@fontsource/jetbrains-mono",
+      "community": 46,
+      "community_name": "dependencies",
       "norm_label": "@fontsource/jetbrains-mono"
     },
     {
@@ -579,8 +579,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "fontsource_jetbrains_mono",
-      "community": 84,
-      "community_name": "@fontsource/jetbrains-mono",
+      "community": 46,
+      "community_name": "dependencies",
       "norm_label": "@fontsource/jetbrains-mono"
     },
     {
@@ -1580,8 +1580,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_client",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "client.tsx"
     },
     {
@@ -1591,8 +1591,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_client_clientpage",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "clientpage()"
     },
     {
@@ -1602,8 +1602,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "page.tsx"
     },
     {
@@ -1613,8 +1613,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_pagemeta",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "pagemeta"
     },
     {
@@ -1624,8 +1624,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_generatemetadata",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "generatemetadata()"
     },
     {
@@ -1635,8 +1635,8 @@
       "source_location": "L183",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_generatestaticparams",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "generatestaticparams()"
     },
     {
@@ -1646,8 +1646,8 @@
       "source_location": "L205",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_pagelabels",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "pagelabels"
     },
     {
@@ -1657,8 +1657,8 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_buildbreadcrumbjsonld",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "buildbreadcrumbjsonld()"
     },
     {
@@ -1668,8 +1668,8 @@
       "source_location": "L260",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_catchallpage",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "catchallpage()"
     },
     {
@@ -1976,7 +1976,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "apps_web_src_components_contactform_contactform",
-      "community": 74,
+      "community": 79,
       "community_name": "fonts.ts",
       "norm_label": "contactform()"
     },
@@ -1998,8 +1998,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_web_src_components_newsletterform_newsletterform",
-      "community": 69,
-      "community_name": "home-page.tsx",
+      "community": 79,
+      "community_name": "fonts.ts",
       "norm_label": "newsletterform()"
     },
     {
@@ -2010,7 +2010,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_partnerprogramsmodal",
       "community": 79,
-      "community_name": "mono",
+      "community_name": "fonts.ts",
       "norm_label": "partnerprogramsmodal.tsx"
     },
     {
@@ -2021,7 +2021,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_partnerprogramsmodal_partnerprogramsmodalprops",
       "community": 79,
-      "community_name": "mono",
+      "community_name": "fonts.ts",
       "norm_label": "partnerprogramsmodalprops"
     },
     {
@@ -2032,7 +2032,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_partnerprogramsmodal_partnerprogramsmodal",
       "community": 79,
-      "community_name": "mono",
+      "community_name": "fonts.ts",
       "norm_label": "partnerprogramsmodal()"
     },
     {
@@ -2130,8 +2130,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_footer",
-      "community": 69,
-      "community_name": "home-page.tsx",
+      "community": 79,
+      "community_name": "fonts.ts",
       "norm_label": "footer.tsx"
     },
     {
@@ -2141,8 +2141,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "apps_web_src_components_footer_footer",
-      "community": 69,
-      "community_name": "home-page.tsx",
+      "community": 79,
+      "community_name": "fonts.ts",
       "norm_label": "footer()"
     },
     {
@@ -2207,8 +2207,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_header",
-      "community": 11,
-      "community_name": "App.tsx",
+      "community": 80,
+      "community_name": "inter",
       "norm_label": "header.tsx"
     },
     {
@@ -2218,8 +2218,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_web_src_components_header_header",
-      "community": 11,
-      "community_name": "App.tsx",
+      "community": 80,
+      "community_name": "inter",
       "norm_label": "header()"
     },
     {
@@ -2439,7 +2439,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_listing_membership_section",
       "community": 79,
-      "community_name": "mono",
+      "community_name": "fonts.ts",
       "norm_label": "listing-membership-section.tsx"
     },
     {
@@ -2449,8 +2449,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "apps_web_src_components_home_listing_membership_section_listingmembershipsection",
-      "community": 79,
-      "community_name": "mono",
+      "community": 69,
+      "community_name": "home-page.tsx",
       "norm_label": "listingmembershipsection()"
     },
     {
@@ -2614,8 +2614,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "apps_web_src_components_home_service_registry_section_serviceregistrysection",
-      "community": 9,
-      "community_name": "services-page.tsx",
+      "community": 69,
+      "community_name": "home-page.tsx",
       "norm_label": "serviceregistrysection()"
     },
     {
@@ -2680,8 +2680,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "apps_web_src_components_navigation_progress_bar_startglobalprogress",
-      "community": 11,
-      "community_name": "App.tsx",
+      "community": 80,
+      "community_name": "inter",
       "norm_label": "startglobalprogress()"
     },
     {
@@ -3219,7 +3219,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_fonts",
-      "community": 74,
+      "community": 79,
       "community_name": "fonts.ts",
       "norm_label": "fonts.ts"
     },
@@ -3230,8 +3230,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_fonts_inter",
-      "community": 74,
-      "community_name": "fonts.ts",
+      "community": 80,
+      "community_name": "inter",
       "norm_label": "inter"
     },
     {
@@ -3242,7 +3242,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_fonts_mono",
       "community": 79,
-      "community_name": "mono",
+      "community_name": "fonts.ts",
       "norm_label": "mono"
     },
     {
@@ -3340,8 +3340,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_postdata",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "postdata.ts"
     },
     {
@@ -3351,8 +3351,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_postdata_postsection",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "postsection"
     },
     {
@@ -3362,8 +3362,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "apps_web_src_lib_postdata_post",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "post"
     },
     {
@@ -3373,8 +3373,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "apps_web_src_lib_postdata_mockposts",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "mockposts"
     },
     {
@@ -3649,7 +3649,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page",
       "community": 74,
-      "community_name": "fonts.ts",
+      "community_name": "about-page.tsx",
       "norm_label": "about-page.tsx"
     },
     {
@@ -3660,7 +3660,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_expertiseareas",
       "community": 74,
-      "community_name": "fonts.ts",
+      "community_name": "about-page.tsx",
       "norm_label": "expertiseareas"
     },
     {
@@ -3671,7 +3671,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_education",
       "community": 74,
-      "community_name": "fonts.ts",
+      "community_name": "about-page.tsx",
       "norm_label": "education"
     },
     {
@@ -3682,7 +3682,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_insurancedetails",
       "community": 74,
-      "community_name": "fonts.ts",
+      "community_name": "about-page.tsx",
       "norm_label": "insurancedetails"
     },
     {
@@ -3693,7 +3693,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_certifications",
       "community": 74,
-      "community_name": "fonts.ts",
+      "community_name": "about-page.tsx",
       "norm_label": "certifications"
     },
     {
@@ -3704,7 +3704,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_aboutpage",
       "community": 74,
-      "community_name": "fonts.ts",
+      "community_name": "about-page.tsx",
       "norm_label": "aboutpage()"
     },
     {
@@ -3714,7 +3714,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_views_contact_page",
-      "community": 74,
+      "community": 79,
       "community_name": "fonts.ts",
       "norm_label": "contact-page.tsx"
     },
@@ -3722,10 +3722,10 @@
       "label": "ContactRoute",
       "file_type": "code",
       "source_file": "apps/web/src/views/contact-page.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "apps_web_src_views_contact_page_contactroute",
-      "community": 74,
+      "community": 79,
       "community_name": "fonts.ts",
       "norm_label": "contactroute"
     },
@@ -3733,10 +3733,10 @@
       "label": "ContactPage()",
       "file_type": "code",
       "source_file": "apps/web/src/views/contact-page.tsx",
-      "source_location": "L70",
+      "source_location": "L72",
       "_origin": "ast",
       "id": "apps_web_src_views_contact_page_contactpage",
-      "community": 74,
+      "community": 79,
       "community_name": "fonts.ts",
       "norm_label": "contactpage()"
     },
@@ -3847,7 +3847,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page",
       "community": 80,
-      "community_name": "partners-page.tsx",
+      "community_name": "inter",
       "norm_label": "partners-page.tsx"
     },
     {
@@ -3858,7 +3858,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_affiliateterms",
       "community": 80,
-      "community_name": "partners-page.tsx",
+      "community_name": "inter",
       "norm_label": "affiliateterms"
     },
     {
@@ -3869,7 +3869,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_affiliateeligibility",
       "community": 80,
-      "community_name": "partners-page.tsx",
+      "community_name": "inter",
       "norm_label": "affiliateeligibility"
     },
     {
@@ -3880,7 +3880,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_finderterms",
       "community": 80,
-      "community_name": "partners-page.tsx",
+      "community_name": "inter",
       "norm_label": "finderterms"
     },
     {
@@ -3891,7 +3891,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_findereligibility",
       "community": 80,
-      "community_name": "partners-page.tsx",
+      "community_name": "inter",
       "norm_label": "findereligibility"
     },
     {
@@ -3902,7 +3902,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_partnerspage",
       "community": 80,
-      "community_name": "partners-page.tsx",
+      "community_name": "inter",
       "norm_label": "partnerspage()"
     },
     {
@@ -3912,8 +3912,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_views_post_detail_page",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "post-detail-page.tsx"
     },
     {
@@ -3923,8 +3923,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_web_src_views_post_detail_page_postdetailpageprops",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "postdetailpageprops"
     },
     {
@@ -3934,8 +3934,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "apps_web_src_views_post_detail_page_postdetailpage",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "postdetailpage()"
     },
     {
@@ -3945,8 +3945,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_views_posts_page",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "posts-page.tsx"
     },
     {
@@ -3956,8 +3956,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_web_src_views_posts_page_postspage",
-      "community": 54,
-      "community_name": "page.tsx",
+      "community": 11,
+      "community_name": "App.tsx",
       "norm_label": "postspage()"
     },
     {
@@ -6688,8 +6688,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "apache license 2.0",
-      "id": "_agents_skills_frontend_design_license_apache_2_0",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "_agents_skills_frontend_design_license_apache_2_0"
     },
     {
       "label": "Frontend Design Skill",
@@ -6702,8 +6702,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "frontend design skill",
-      "id": "_agents_skills_frontend_design_skill_frontend_design",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "_agents_skills_frontend_design_skill_frontend_design"
     },
     {
       "label": "Design Thinking Framework",
@@ -6716,8 +6716,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "design thinking framework",
-      "id": "_agents_skills_frontend_design_skill_design_thinking",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "_agents_skills_frontend_design_skill_design_thinking"
     },
     {
       "label": "Frontend Aesthetics Guidelines",
@@ -6730,8 +6730,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "frontend aesthetics guidelines",
-      "id": "_agents_skills_frontend_design_skill_frontend_aesthetics_guidelines",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "_agents_skills_frontend_design_skill_frontend_aesthetics_guidelines"
     },
     {
       "label": "MiningMaps Project Guidelines",
@@ -6744,8 +6744,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "miningmaps project guidelines",
-      "id": "claude_miningmaps_project",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "claude_miningmaps_project"
     },
     {
       "label": "Next.js Vite Migration Baseline",
@@ -6758,8 +6758,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "next.js vite migration baseline",
-      "id": "claude_nextjs_vite_migration",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "claude_nextjs_vite_migration"
     },
     {
       "label": "ProjectDetailModal Component",
@@ -6772,8 +6772,8 @@
       "contributor": null,
       "community": 151,
       "norm_label": "projectdetailmodal component",
-      "id": "claude_project_detail_modal",
-      "community_name": "ProjectDetailModal Component"
+      "community_name": "ProjectDetailModal Component",
+      "id": "claude_project_detail_modal"
     },
     {
       "label": "Industrial Cartography / Terminal Brutalism",
@@ -6786,8 +6786,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "industrial cartography / terminal brutalism",
-      "id": "design_system_industrial_cartography",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "design_system_industrial_cartography"
     },
     {
       "label": "MiningMaps Color Palette",
@@ -6800,8 +6800,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "miningmaps color palette",
-      "id": "design_system_color_palette",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "design_system_color_palette"
     },
     {
       "label": "MiningMaps Typography Rules",
@@ -6814,8 +6814,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "miningmaps typography rules",
-      "id": "design_system_typography",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "design_system_typography"
     },
     {
       "label": "UI Borders, Geometry & Effects",
@@ -6828,8 +6828,8 @@
       "contributor": null,
       "community": 13,
       "norm_label": "ui borders, geometry & effects",
-      "id": "design_system_ui_geometry_effects",
-      "community_name": "Industrial Cartography / Terminal Brutalism"
+      "community_name": "Industrial Cartography / Terminal Brutalism",
+      "id": "design_system_ui_geometry_effects"
     },
     {
       "label": "Adamson Geomatics Firm Overview",
@@ -6842,8 +6842,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "adamson geomatics firm overview",
-      "id": "readme_adamson_geomatics",
-      "community_name": "Adamson Geomatics Firm Overview"
+      "community_name": "Adamson Geomatics Firm Overview",
+      "id": "readme_adamson_geomatics"
     },
     {
       "label": "Geospatial Services Offered",
@@ -6856,8 +6856,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "geospatial services offered",
-      "id": "readme_services_offered",
-      "community_name": "Adamson Geomatics Firm Overview"
+      "community_name": "Adamson Geomatics Firm Overview",
+      "id": "readme_services_offered"
     },
     {
       "label": "Mineral Properties Marketplace",
@@ -6870,8 +6870,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "mineral properties marketplace",
-      "id": "readme_mineral_properties_for_sale",
-      "community_name": "Adamson Geomatics Firm Overview"
+      "community_name": "Adamson Geomatics Firm Overview",
+      "id": "readme_mineral_properties_for_sale"
     },
     {
       "label": "Cinematic Scroll Landing Page",
@@ -6884,8 +6884,8 @@
       "contributor": null,
       "community": 153,
       "norm_label": "cinematic scroll landing page",
-      "id": "readme_cinematic_scroll_landing_page",
-      "community_name": "Cinematic Scroll Landing Page"
+      "community_name": "Cinematic Scroll Landing Page",
+      "id": "readme_cinematic_scroll_landing_page"
     },
     {
       "label": "Interactive Global Map Component",
@@ -6898,8 +6898,8 @@
       "contributor": null,
       "community": 35,
       "norm_label": "interactive global map component",
-      "id": "readme_interactive_global_map",
-      "community_name": "Adamson Geomatics Firm Overview"
+      "community_name": "Adamson Geomatics Firm Overview",
+      "id": "readme_interactive_global_map"
     },
     {
       "label": "Robots Crawler Policy",
@@ -6912,8 +6912,8 @@
       "contributor": null,
       "community": 150,
       "norm_label": "robots crawler policy",
-      "id": "apps_web_public_robots_bot_access_policy",
-      "community_name": "Robots Crawler Policy"
+      "community_name": "Robots Crawler Policy",
+      "id": "apps_web_public_robots_bot_access_policy"
     },
     {
       "label": "Barkerville Claims Geologic Summary",
@@ -6926,8 +6926,8 @@
       "contributor": null,
       "community": 30,
       "norm_label": "barkerville claims geologic summary",
-      "id": "apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_barkerville_claims_summary",
-      "community_name": "Barkerville Claims Geologic Summary"
+      "community_name": "Barkerville Claims Geologic Summary",
+      "id": "apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_barkerville_claims_summary"
     },
     {
       "label": "Mosquito Creek Claim #1117244",
@@ -6940,8 +6940,8 @@
       "contributor": null,
       "community": 30,
       "norm_label": "mosquito creek claim #1117244",
-      "id": "apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_mosquito_creek_claim",
-      "community_name": "Barkerville Claims Geologic Summary"
+      "community_name": "Barkerville Claims Geologic Summary",
+      "id": "apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_mosquito_creek_claim"
     },
     {
       "label": "Lowhee Cow Mountain Claim #1114560",
@@ -6954,8 +6954,8 @@
       "contributor": null,
       "community": 30,
       "norm_label": "lowhee cow mountain claim #1114560",
-      "id": "apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_lowhee_cow_mountain_claim",
-      "community_name": "Barkerville Claims Geologic Summary"
+      "community_name": "Barkerville Claims Geologic Summary",
+      "id": "apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_lowhee_cow_mountain_claim"
     },
     {
       "label": "Ballarat Claim #1112033",
@@ -6968,8 +6968,8 @@
       "contributor": null,
       "community": 30,
       "norm_label": "ballarat claim #1112033",
-      "id": "apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_ballarat_claim",
-      "community_name": "Barkerville Claims Geologic Summary"
+      "community_name": "Barkerville Claims Geologic Summary",
+      "id": "apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_ballarat_claim"
     },
     {
       "label": "Little Fort Polymetallic Property Report",
@@ -6982,8 +6982,8 @@
       "contributor": null,
       "community": 32,
       "norm_label": "little fort polymetallic property report",
-      "id": "apps_web_public_images_projects_british_columbia_little_fort_report_little_fort_polymetallic_property",
-      "community_name": "Little Fort Polymetallic Property Report"
+      "community_name": "Little Fort Polymetallic Property Report",
+      "id": "apps_web_public_images_projects_british_columbia_little_fort_report_little_fort_polymetallic_property"
     },
     {
       "label": "Quesnel Terrane Regional Setting",
@@ -6996,8 +6996,8 @@
       "contributor": null,
       "community": 32,
       "norm_label": "quesnel terrane regional setting",
-      "id": "apps_web_public_images_projects_british_columbia_little_fort_report_quesnel_terrane",
-      "community_name": "Little Fort Polymetallic Property Report"
+      "community_name": "Little Fort Polymetallic Property Report",
+      "id": "apps_web_public_images_projects_british_columbia_little_fort_report_quesnel_terrane"
     },
     {
       "label": "Little Fort Copper Exploration Context",
@@ -7010,8 +7010,8 @@
       "contributor": null,
       "community": 32,
       "norm_label": "little fort copper exploration context",
-      "id": "apps_web_public_images_projects_british_columbia_little_fort_report_little_fort_copper_exploration",
-      "community_name": "Little Fort Polymetallic Property Report"
+      "community_name": "Little Fort Polymetallic Property Report",
+      "id": "apps_web_public_images_projects_british_columbia_little_fort_report_little_fort_copper_exploration"
     },
     {
       "label": "Little Fort Gold & Silver Alteration Indicators",
@@ -7024,8 +7024,8 @@
       "contributor": null,
       "community": 32,
       "norm_label": "little fort gold & silver alteration indicators",
-      "id": "apps_web_public_images_projects_british_columbia_little_fort_report_little_fort_gold_silver_indicators",
-      "community_name": "Little Fort Polymetallic Property Report"
+      "community_name": "Little Fort Polymetallic Property Report",
+      "id": "apps_web_public_images_projects_british_columbia_little_fort_report_little_fort_gold_silver_indicators"
     },
     {
       "label": "Green Mountain Gold, PGE & REE Assessment (Dec 30)",
@@ -7038,8 +7038,8 @@
       "contributor": null,
       "community": 40,
       "norm_label": "green mountain gold, pge & ree assessment (dec 30)",
-      "id": "apps_web_public_images_projects_california_lp_gold_potential_of_the_green_mtn_project_area_20251230_v2_green_mountain_assessment_dec30",
-      "community_name": "Green Mountain Gold, PGE & REE Assessment (Dec 30)"
+      "community_name": "Green Mountain Gold, PGE & REE Assessment (Dec 30)",
+      "id": "apps_web_public_images_projects_california_lp_gold_potential_of_the_green_mtn_project_area_20251230_v2_green_mountain_assessment_dec30"
     },
     {
       "label": "Green Mountain Lithologic Units (gb, GrMz, Mv)",
@@ -7052,8 +7052,8 @@
       "contributor": null,
       "community": 40,
       "norm_label": "green mountain lithologic units (gb, grmz, mv)",
-      "id": "apps_web_public_images_projects_california_lp_gold_potential_of_the_green_mtn_project_area_20251230_v2_green_mountain_lithology_units",
-      "community_name": "Green Mountain Gold, PGE & REE Assessment (Dec 30)"
+      "community_name": "Green Mountain Gold, PGE & REE Assessment (Dec 30)",
+      "id": "apps_web_public_images_projects_california_lp_gold_potential_of_the_green_mtn_project_area_20251230_v2_green_mountain_lithology_units"
     },
     {
       "label": "Green Mountain Gold Potential Assessment (Dec 18)",
@@ -7066,8 +7066,8 @@
       "contributor": null,
       "community": 40,
       "norm_label": "green mountain gold potential assessment (dec 18)",
-      "id": "apps_web_public_images_projects_california_lp_gold_potential_of_the_green_mtn_project_area_v2_20251218_green_mountain_assessment_dec18",
-      "community_name": "Green Mountain Gold, PGE & REE Assessment (Dec 30)"
+      "community_name": "Green Mountain Gold, PGE & REE Assessment (Dec 30)",
+      "id": "apps_web_public_images_projects_california_lp_gold_potential_of_the_green_mtn_project_area_v2_20251218_green_mountain_assessment_dec18"
     },
     {
       "label": "Northumberland Staking Report",
@@ -7080,8 +7080,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "northumberland staking report",
-      "id": "apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_report",
-      "community_name": "Northumberland Staking Report"
+      "community_name": "Northumberland Staking Report",
+      "id": "apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_report"
     },
     {
       "label": "Northumberland Staking Rationale",
@@ -7094,8 +7094,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "northumberland staking rationale",
-      "id": "apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_rationale",
-      "community_name": "Northumberland Staking Report"
+      "community_name": "Northumberland Staking Report",
+      "id": "apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_rationale"
     },
     {
       "label": "Newmont Northumberland Geological Memo",
@@ -7108,8 +7108,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "newmont northumberland geological memo",
-      "id": "apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_newmont_northumberland_memo",
-      "community_name": "Northumberland Staking Report"
+      "community_name": "Northumberland Staking Report",
+      "id": "apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_newmont_northumberland_memo"
     },
     {
       "label": "Northumberland Gold-Silver Deposits",
@@ -7122,8 +7122,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "northumberland gold-silver deposits",
-      "id": "apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_northumberland_deposits",
-      "community_name": "Northumberland Staking Report"
+      "community_name": "Northumberland Staking Report",
+      "id": "apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_northumberland_deposits"
     },
     {
       "label": "Township 13 North Range 45 East Mining Claims Plat",
@@ -7136,8 +7136,8 @@
       "contributor": null,
       "community": 23,
       "norm_label": "township 13 north range 45 east mining claims plat",
-      "id": "apps_web_public_images_projects_nevada_t13n_r45e_1_t13n_r45e_township_plat_map",
-      "community_name": "Northumberland Staking Report"
+      "community_name": "Northumberland Staking Report",
+      "id": "apps_web_public_images_projects_nevada_t13n_r45e_1_t13n_r45e_township_plat_map"
     },
     {
       "label": "BLM Mining Claim Customer Info - Halleck (BURGEX INC)",
@@ -7150,8 +7150,8 @@
       "contributor": null,
       "community": 149,
       "norm_label": "blm mining claim customer info - halleck (burgex inc)",
-      "id": "apps_web_public_images_projects_wyoming_blm_06_0220n_0710w_halleck_burgex_inc_20250925_burgex_halleck_mining_claims",
-      "community_name": "BLM Mining Claim Customer Info - Halleck (BURGEX INC)"
+      "community_name": "BLM Mining Claim Customer Info - Halleck (BURGEX INC)",
+      "id": "apps_web_public_images_projects_wyoming_blm_06_0220n_0710w_halleck_burgex_inc_20250925_burgex_halleck_mining_claims"
     },
     {
       "label": "Yukon MINFILE Tungsten Showings",
@@ -7164,8 +7164,8 @@
       "contributor": null,
       "community": 119,
       "norm_label": "yukon minfile tungsten showings",
-      "id": "apps_web_public_images_projects_yukon_yukon_w_v2_yukon_minfile_tungsten_showings",
-      "community_name": "Mt Billings Batholith Skarn Mineralization"
+      "community_name": "Mt Billings Batholith Skarn Mineralization",
+      "id": "apps_web_public_images_projects_yukon_yukon_w_v2_yukon_minfile_tungsten_showings"
     },
     {
       "label": "Mt Billings Batholith Skarn Mineralization",
@@ -7178,8 +7178,8 @@
       "contributor": null,
       "community": 119,
       "norm_label": "mt billings batholith skarn mineralization",
-      "id": "apps_web_public_images_projects_yukon_yukon_w_v2_mt_billings_batholith_skarn",
-      "community_name": "Mt Billings Batholith Skarn Mineralization"
+      "community_name": "Mt Billings Batholith Skarn Mineralization",
+      "id": "apps_web_public_images_projects_yukon_yukon_w_v2_mt_billings_batholith_skarn"
     },
     {
       "label": "Real Estate Institute of British Columbia Logo",
@@ -7192,8 +7192,8 @@
       "contributor": null,
       "community": 72,
       "norm_label": "real estate institute of british columbia logo",
-      "id": "apps_web_public_images_general_real_estate_institute_of_british_columbia_logo",
-      "community_name": "Real Estate Institute of British Columbia Logo"
+      "community_name": "Real Estate Institute of British Columbia Logo",
+      "id": "apps_web_public_images_general_real_estate_institute_of_british_columbia_logo"
     },
     {
       "label": "University of British Columbia Campus Photo",
@@ -7206,8 +7206,8 @@
       "contributor": null,
       "community": 72,
       "norm_label": "university of british columbia campus photo",
-      "id": "apps_web_public_images_general_university_of_british_columbia_campus",
-      "community_name": "Real Estate Institute of British Columbia Logo"
+      "community_name": "Real Estate Institute of British Columbia Logo",
+      "id": "apps_web_public_images_general_university_of_british_columbia_campus"
     },
     {
       "label": "Chris Adamson Avatar Headshot",
@@ -7220,8 +7220,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "chris adamson avatar headshot",
-      "id": "apps_web_public_images_general_avatar_photo",
-      "community_name": "Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map"
+      "community_name": "Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map",
+      "id": "apps_web_public_images_general_avatar_photo"
     },
     {
       "label": "Adamson Geomatics Banner Logo",
@@ -7234,8 +7234,8 @@
       "contributor": null,
       "community": 70,
       "norm_label": "adamson geomatics banner logo",
-      "id": "apps_web_public_images_general_bannerlogo_brand",
-      "community_name": "Adamson Geomatics Banner Logo Variant 1"
+      "community_name": "Adamson Geomatics Banner Logo Variant 1",
+      "id": "apps_web_public_images_general_bannerlogo_brand"
     },
     {
       "label": "Adamson Geomatics Banner Logo Variant 1",
@@ -7248,8 +7248,8 @@
       "contributor": null,
       "community": 70,
       "norm_label": "adamson geomatics banner logo variant 1",
-      "id": "apps_web_public_images_general_bannerlogo1_brand",
-      "community_name": "Adamson Geomatics Banner Logo Variant 1"
+      "community_name": "Adamson Geomatics Banner Logo Variant 1",
+      "id": "apps_web_public_images_general_bannerlogo1_brand"
     },
     {
       "label": "Esri Video Screenshot - Natural Resources Mapping",
@@ -7262,8 +7262,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "esri video screenshot - natural resources mapping",
-      "id": "apps_web_public_images_general_certifications_esrivideoscreenshot_plenary",
-      "community_name": "Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map"
+      "community_name": "Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map",
+      "id": "apps_web_public_images_general_certifications_esrivideoscreenshot_plenary"
     },
     {
       "label": "Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map",
@@ -7276,8 +7276,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "esri uc 2025 plenary certificate - golden triangle geology map",
-      "id": "apps_web_public_images_general_certifications_jd_uc25_plenary_submission_certificates_73_page_0001_cert",
-      "community_name": "Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map"
+      "community_name": "Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map",
+      "id": "apps_web_public_images_general_certifications_jd_uc25_plenary_submission_certificates_73_page_0001_cert"
     },
     {
       "label": "Esri UC 2025 Plenary Certificate - Little Fort Polymetallic Property Map",
@@ -7290,8 +7290,8 @@
       "contributor": null,
       "community": 29,
       "norm_label": "esri uc 2025 plenary certificate - little fort polymetallic property map",
-      "id": "apps_web_public_images_general_certifications_jd_uc25_plenary_submission_certificates_74_page_0001_cert",
-      "community_name": "Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map"
+      "community_name": "Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map",
+      "id": "apps_web_public_images_general_certifications_jd_uc25_plenary_submission_certificates_74_page_0001_cert"
     },
     {
       "label": "Adamson Geomatics Full Logo",
@@ -7304,8 +7304,8 @@
       "contributor": null,
       "community": 28,
       "norm_label": "adamson geomatics full logo",
-      "id": "apps_web_public_images_general_full_logo_brand",
-      "community_name": "Adamson Geomatics Main Logo"
+      "community_name": "Adamson Geomatics Main Logo",
+      "id": "apps_web_public_images_general_full_logo_brand"
     },
     {
       "label": "Adamson Geomatics Main Logo",
@@ -7318,8 +7318,8 @@
       "contributor": null,
       "community": 28,
       "norm_label": "adamson geomatics main logo",
-      "id": "apps_web_public_images_general_logo_brand",
-      "community_name": "Adamson Geomatics Main Logo"
+      "community_name": "Adamson Geomatics Main Logo",
+      "id": "apps_web_public_images_general_logo_brand"
     },
     {
       "label": "Adamson Geomatics Minimal Logo",
@@ -7332,8 +7332,8 @@
       "contributor": null,
       "community": 71,
       "norm_label": "adamson geomatics minimal logo",
-      "id": "apps_web_public_images_general_minlogo_brand",
-      "community_name": "Adamson Geomatics Minimal Logo Variant 1"
+      "community_name": "Adamson Geomatics Minimal Logo Variant 1",
+      "id": "apps_web_public_images_general_minlogo_brand"
     },
     {
       "label": "Adamson Geomatics Minimal Logo Variant 1",
@@ -7346,8 +7346,8 @@
       "contributor": null,
       "community": 71,
       "norm_label": "adamson geomatics minimal logo variant 1",
-      "id": "apps_web_public_images_general_minlogo1_brand",
-      "community_name": "Adamson Geomatics Minimal Logo Variant 1"
+      "community_name": "Adamson Geomatics Minimal Logo Variant 1",
+      "id": "apps_web_public_images_general_minlogo1_brand"
     },
     {
       "label": "Adamson Geomatics Legacy Logo",
@@ -7360,8 +7360,8 @@
       "contributor": null,
       "community": 28,
       "norm_label": "adamson geomatics legacy logo",
-      "id": "apps_web_public_images_general_oldlogo_brand",
-      "community_name": "Adamson Geomatics Main Logo"
+      "community_name": "Adamson Geomatics Main Logo",
+      "id": "apps_web_public_images_general_oldlogo_brand"
     },
     {
       "label": "Nikolai Project 2024 Mineral Resource Estimate Chart",
@@ -7374,8 +7374,8 @@
       "contributor": null,
       "community": 36,
       "norm_label": "nikolai project 2024 mineral resource estimate chart",
-      "id": "apps_web_public_images_projects_alaska_1_mre",
-      "community_name": "Port Snettisham Magnetic Variation Chart"
+      "community_name": "Port Snettisham Magnetic Variation Chart",
+      "id": "apps_web_public_images_projects_alaska_1_mre"
     },
     {
       "label": "Port Snettisham Magnetic Variation Chart",
@@ -7388,8 +7388,8 @@
       "contributor": null,
       "community": 36,
       "norm_label": "port snettisham magnetic variation chart",
-      "id": "apps_web_public_images_projects_alaska_2_magnetic_map",
-      "community_name": "Port Snettisham Magnetic Variation Chart"
+      "community_name": "Port Snettisham Magnetic Variation Chart",
+      "id": "apps_web_public_images_projects_alaska_2_magnetic_map"
     },
     {
       "label": "Port Snettisham Claim Grid Satellite Map",
@@ -7402,8 +7402,8 @@
       "contributor": null,
       "community": 36,
       "norm_label": "port snettisham claim grid satellite map",
-      "id": "apps_web_public_images_projects_alaska_3_claim_map",
-      "community_name": "Port Snettisham Magnetic Variation Chart"
+      "community_name": "Port Snettisham Magnetic Variation Chart",
+      "id": "apps_web_public_images_projects_alaska_3_claim_map"
     },
     {
       "label": "Fraser Plateau Topographic Claim Map Screenshot 141901",
@@ -7416,8 +7416,8 @@
       "contributor": null,
       "community": 73,
       "norm_label": "fraser plateau topographic claim map screenshot 141901",
-      "id": "apps_web_public_images_projects_alaska_screenshot_2026_06_12_141901_topomap",
-      "community_name": "Fraser Plateau Topographic Claim Map Screenshot 141901"
+      "community_name": "Fraser Plateau Topographic Claim Map Screenshot 141901",
+      "id": "apps_web_public_images_projects_alaska_screenshot_2026_06_12_141901_topomap"
     },
     {
       "label": "Fraser Plateau Topographic Claim Map Screenshot 144530",
@@ -7430,8 +7430,8 @@
       "contributor": null,
       "community": 73,
       "norm_label": "fraser plateau topographic claim map screenshot 144530",
-      "id": "apps_web_public_images_projects_alaska_screenshot_2026_06_12_144530_topomap",
-      "community_name": "Fraser Plateau Topographic Claim Map Screenshot 141901"
+      "community_name": "Fraser Plateau Topographic Claim Map Screenshot 141901",
+      "id": "apps_web_public_images_projects_alaska_screenshot_2026_06_12_144530_topomap"
     },
     {
       "label": "Athabasca Uranium Occurrences & Claims NTS74L Geological Map",
@@ -7444,8 +7444,8 @@
       "contributor": null,
       "community": 133,
       "norm_label": "athabasca uranium occurrences & claims nts74l geological map",
-      "id": "apps_web_public_images_projects_alberta_1_uranium_map",
-      "community_name": "Athabasca Uranium Occurrences & Claims NTS74L Geological Map"
+      "community_name": "Athabasca Uranium Occurrences & Claims NTS74L Geological Map",
+      "id": "apps_web_public_images_projects_alberta_1_uranium_map"
     },
     {
       "label": "Little Fort Polymetallic Property Map 1",
@@ -7458,8 +7458,8 @@
       "contributor": null,
       "community": 31,
       "norm_label": "little fort polymetallic property map 1",
-      "id": "apps_web_public_images_projects_british_columbia_1_image",
-      "community_name": "Little Fort Polymetallic Property"
+      "community_name": "Little Fort Polymetallic Property",
+      "id": "apps_web_public_images_projects_british_columbia_1_image"
     },
     {
       "label": "Little Fort Polymetallic Property",
@@ -7472,8 +7472,8 @@
       "contributor": null,
       "community": 31,
       "norm_label": "little fort polymetallic property",
-      "id": "apps_web_public_images_projects_british_columbia_1_little_fort_property",
-      "community_name": "Little Fort Polymetallic Property"
+      "community_name": "Little Fort Polymetallic Property",
+      "id": "apps_web_public_images_projects_british_columbia_1_little_fort_property"
     },
     {
       "label": "Welcome North Capital Corp",
@@ -7486,8 +7486,8 @@
       "contributor": null,
       "community": 31,
       "norm_label": "welcome north capital corp",
-      "id": "apps_web_public_images_projects_british_columbia_1_welcome_north_capital",
-      "community_name": "Little Fort Polymetallic Property"
+      "community_name": "Little Fort Polymetallic Property",
+      "id": "apps_web_public_images_projects_british_columbia_1_welcome_north_capital"
     },
     {
       "label": "Trailbreaker Resources Ltd",
@@ -7500,8 +7500,8 @@
       "contributor": null,
       "community": 31,
       "norm_label": "trailbreaker resources ltd",
-      "id": "apps_web_public_images_projects_british_columbia_1_trailbreaker_resources",
-      "community_name": "Little Fort Polymetallic Property"
+      "community_name": "Little Fort Polymetallic Property",
+      "id": "apps_web_public_images_projects_british_columbia_1_trailbreaker_resources"
     },
     {
       "label": "Little Fort Polymetallic Property Map 2",
@@ -7514,8 +7514,8 @@
       "contributor": null,
       "community": 37,
       "norm_label": "little fort polymetallic property map 2",
-      "id": "apps_web_public_images_projects_british_columbia_2_image",
-      "community_name": "Little Fort Polymetallic Property Map 2"
+      "community_name": "Little Fort Polymetallic Property Map 2",
+      "id": "apps_web_public_images_projects_british_columbia_2_image"
     },
     {
       "label": "Newmac Molybdenum Inc",
@@ -7528,8 +7528,8 @@
       "contributor": null,
       "community": 37,
       "norm_label": "newmac molybdenum inc",
-      "id": "apps_web_public_images_projects_british_columbia_2_newmac_molybdenum",
-      "community_name": "Little Fort Polymetallic Property Map 2"
+      "community_name": "Little Fort Polymetallic Property Map 2",
+      "id": "apps_web_public_images_projects_british_columbia_2_newmac_molybdenum"
     },
     {
       "label": "Tilava Mining Corporation",
@@ -7542,8 +7542,8 @@
       "contributor": null,
       "community": 37,
       "norm_label": "tilava mining corporation",
-      "id": "apps_web_public_images_projects_british_columbia_2_tilava_mining",
-      "community_name": "Little Fort Polymetallic Property Map 2"
+      "community_name": "Little Fort Polymetallic Property Map 2",
+      "id": "apps_web_public_images_projects_british_columbia_2_tilava_mining"
     },
     {
       "label": "Goldin Rock Satellite Overview Map",
@@ -7556,8 +7556,8 @@
       "contributor": null,
       "community": 38,
       "norm_label": "goldin rock satellite overview map",
-      "id": "apps_web_public_images_projects_british_columbia_3_image",
-      "community_name": "Goldin Rock Location"
+      "community_name": "Goldin Rock Location",
+      "id": "apps_web_public_images_projects_british_columbia_3_image"
     },
     {
       "label": "Goldin Rock Location",
@@ -7570,8 +7570,8 @@
       "contributor": null,
       "community": 38,
       "norm_label": "goldin rock location",
-      "id": "apps_web_public_images_projects_british_columbia_3_goldin_rock",
-      "community_name": "Goldin Rock Location"
+      "community_name": "Goldin Rock Location",
+      "id": "apps_web_public_images_projects_british_columbia_3_goldin_rock"
     },
     {
       "label": "Wells and Barkerville Area",
@@ -7584,8 +7584,8 @@
       "contributor": null,
       "community": 38,
       "norm_label": "wells and barkerville area",
-      "id": "apps_web_public_images_projects_british_columbia_3_wells_barkerville",
-      "community_name": "Goldin Rock Location"
+      "community_name": "Goldin Rock Location",
+      "id": "apps_web_public_images_projects_british_columbia_3_wells_barkerville"
     },
     {
       "label": "Santa Fe 2 Gold Mine Promotional Image",
@@ -7598,8 +7598,8 @@
       "contributor": null,
       "community": 39,
       "norm_label": "santa fe 2 gold mine promotional image",
-      "id": "apps_web_public_images_projects_california_1_image",
-      "community_name": "Santa Fe 2 Gold Mine"
+      "community_name": "Santa Fe 2 Gold Mine",
+      "id": "apps_web_public_images_projects_california_1_image"
     },
     {
       "label": "Santa Fe 2 Gold Mine",
@@ -7612,8 +7612,8 @@
       "contributor": null,
       "community": 39,
       "norm_label": "santa fe 2 gold mine",
-      "id": "apps_web_public_images_projects_california_1_santa_fe_2_mine",
-      "community_name": "Santa Fe 2 Gold Mine"
+      "community_name": "Santa Fe 2 Gold Mine",
+      "id": "apps_web_public_images_projects_california_1_santa_fe_2_mine"
     },
     {
       "label": "California Historic Rand Mining District",
@@ -7626,8 +7626,8 @@
       "contributor": null,
       "community": 39,
       "norm_label": "california historic rand mining district",
-      "id": "apps_web_public_images_projects_california_1_rand_mining_district",
-      "community_name": "Santa Fe 2 Gold Mine"
+      "community_name": "Santa Fe 2 Gold Mine",
+      "id": "apps_web_public_images_projects_california_1_rand_mining_district"
     },
     {
       "label": "NWT/1.jpg",
@@ -7640,8 +7640,8 @@
       "contributor": null,
       "community": 108,
       "norm_label": "nwt/1.jpg",
-      "id": "apps_web_public_images_projects_nwt_1_jpg",
-      "community_name": "NWT/1.jpg"
+      "community_name": "NWT/1.jpg",
+      "id": "apps_web_public_images_projects_nwt_1_jpg"
     },
     {
       "label": "NWT Project Map",
@@ -7654,8 +7654,8 @@
       "contributor": null,
       "community": 108,
       "norm_label": "nwt project map",
-      "id": "apps_web_public_images_projects_nwt_1_jpg_nwt_project_map",
-      "community_name": "NWT/1.jpg"
+      "community_name": "NWT/1.jpg",
+      "id": "apps_web_public_images_projects_nwt_1_jpg_nwt_project_map"
     },
     {
       "label": "NWT/2.jpg",
@@ -7668,8 +7668,8 @@
       "contributor": null,
       "community": 109,
       "norm_label": "nwt/2.jpg",
-      "id": "apps_web_public_images_projects_nwt_2_jpg",
-      "community_name": "NWT/2.jpg"
+      "community_name": "NWT/2.jpg",
+      "id": "apps_web_public_images_projects_nwt_2_jpg"
     },
     {
       "label": "NWT Project Map",
@@ -7682,8 +7682,8 @@
       "contributor": null,
       "community": 109,
       "norm_label": "nwt project map",
-      "id": "apps_web_public_images_projects_nwt_2_jpg_nwt_project_map",
-      "community_name": "NWT/2.jpg"
+      "community_name": "NWT/2.jpg",
+      "id": "apps_web_public_images_projects_nwt_2_jpg_nwt_project_map"
     },
     {
       "label": "4.jpg (NWT Project Image)",
@@ -7696,8 +7696,8 @@
       "contributor": null,
       "community": 137,
       "norm_label": "4.jpg (nwt project image)",
-      "id": "apps_web_public_images_projects_nwt_4",
-      "community_name": "4.jpg (NWT Project Image)"
+      "community_name": "4.jpg (NWT Project Image)",
+      "id": "apps_web_public_images_projects_nwt_4"
     },
     {
       "label": "8.jpg (NWT Project Image)",
@@ -7710,8 +7710,8 @@
       "contributor": null,
       "community": 141,
       "norm_label": "8.jpg (nwt project image)",
-      "id": "apps_web_public_images_projects_nwt_8",
-      "community_name": "8.jpg (NWT Project Image)"
+      "community_name": "8.jpg (NWT Project Image)",
+      "id": "apps_web_public_images_projects_nwt_8"
     },
     {
       "label": "NT3114.JPG (NWT Project Map)",
@@ -7724,8 +7724,8 @@
       "contributor": null,
       "community": 142,
       "norm_label": "nt3114.jpg (nwt project map)",
-      "id": "apps_web_public_images_projects_nwt_nt3114",
-      "community_name": "NT3114.JPG (NWT Project Map)"
+      "community_name": "NT3114.JPG (NWT Project Map)",
+      "id": "apps_web_public_images_projects_nwt_nt3114"
     },
     {
       "label": "NWT.JPG (Northwest Territories Overview Map)",
@@ -7738,8 +7738,8 @@
       "contributor": null,
       "community": 33,
       "norm_label": "nwt.jpg (northwest territories overview map)",
-      "id": "apps_web_public_images_projects_nwt_nwt",
-      "community_name": "NWT.JPG (Northwest Territories Overview Map)"
+      "community_name": "NWT.JPG (Northwest Territories Overview Map)",
+      "id": "apps_web_public_images_projects_nwt_nwt"
     },
     {
       "label": "NWTprospectsmap.JPG (NWT Prospects Map)",
@@ -7752,8 +7752,8 @@
       "contributor": null,
       "community": 33,
       "norm_label": "nwtprospectsmap.jpg (nwt prospects map)",
-      "id": "apps_web_public_images_projects_nwt_nwtprospectsmap",
-      "community_name": "NWT.JPG (Northwest Territories Overview Map)"
+      "community_name": "NWT.JPG (Northwest Territories Overview Map)",
+      "id": "apps_web_public_images_projects_nwt_nwtprospectsmap"
     },
     {
       "label": "Pegs1.JPG (NWT Pegmatites Map)",
@@ -7766,8 +7766,8 @@
       "contributor": null,
       "community": 33,
       "norm_label": "pegs1.jpg (nwt pegmatites map)",
-      "id": "apps_web_public_images_projects_nwt_pegs1",
-      "community_name": "NWT.JPG (Northwest Territories Overview Map)"
+      "community_name": "NWT.JPG (Northwest Territories Overview Map)",
+      "id": "apps_web_public_images_projects_nwt_pegs1"
     },
     {
       "label": "PlannedStakingArea2.JPG (NWT Planned Staking Area Map)",
@@ -7780,8 +7780,8 @@
       "contributor": null,
       "community": 33,
       "norm_label": "plannedstakingarea2.jpg (nwt planned staking area map)",
-      "id": "apps_web_public_images_projects_nwt_plannedstakingarea2",
-      "community_name": "NWT.JPG (Northwest Territories Overview Map)"
+      "community_name": "NWT.JPG (Northwest Territories Overview Map)",
+      "id": "apps_web_public_images_projects_nwt_plannedstakingarea2"
     },
     {
       "label": "Target20230830_2.JPG (NWT Target Map)",
@@ -7794,8 +7794,8 @@
       "contributor": null,
       "community": 110,
       "norm_label": "target20230830_2.jpg (nwt target map)",
-      "id": "apps_web_public_images_projects_nwt_target20230830_2",
-      "community_name": "Target20230830_2.JPG (NWT Target Map)"
+      "community_name": "Target20230830_2.JPG (NWT Target Map)",
+      "id": "apps_web_public_images_projects_nwt_target20230830_2"
     },
     {
       "label": "Target20230830_2_ortho.JPG (NWT Target Orthophoto Map)",
@@ -7808,8 +7808,8 @@
       "contributor": null,
       "community": 110,
       "norm_label": "target20230830_2_ortho.jpg (nwt target orthophoto map)",
-      "id": "apps_web_public_images_projects_nwt_target20230830_2_ortho",
-      "community_name": "Target20230830_2.JPG (NWT Target Map)"
+      "community_name": "Target20230830_2.JPG (NWT Target Map)",
+      "id": "apps_web_public_images_projects_nwt_target20230830_2_ortho"
     },
     {
       "label": "1.png (Nevada Project Image)",
@@ -7822,8 +7822,8 @@
       "contributor": null,
       "community": 134,
       "norm_label": "1.png (nevada project image)",
-      "id": "apps_web_public_images_projects_nevada_1",
-      "community_name": "1.png (Nevada Project Image)"
+      "community_name": "1.png (Nevada Project Image)",
+      "id": "apps_web_public_images_projects_nevada_1"
     },
     {
       "label": "13N 45E Grouped Geology (1)_page-0001.jpg (Nevada 13N 45E Grouped Geology Map)",
@@ -7836,8 +7836,8 @@
       "contributor": null,
       "community": 21,
       "norm_label": "13n 45e grouped geology (1)_page-0001.jpg (nevada 13n 45e grouped geology map)",
-      "id": "apps_web_public_images_projects_nevada_13n_45e_grouped_geology_1_page_0001",
-      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)"
+      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)",
+      "id": "apps_web_public_images_projects_nevada_13n_45e_grouped_geology_1_page_0001"
     },
     {
       "label": "2.jpg (Nevada Project Image)",
@@ -7850,8 +7850,8 @@
       "contributor": null,
       "community": 135,
       "norm_label": "2.jpg (nevada project image)",
-      "id": "apps_web_public_images_projects_nevada_2",
-      "community_name": "2.jpg (Nevada Project Image)"
+      "community_name": "2.jpg (Nevada Project Image)",
+      "id": "apps_web_public_images_projects_nevada_2"
     },
     {
       "label": "Barrick's Fourmile BLM Updated_page-0001.jpg (Barrick's Fourmile BLM Claims Map)",
@@ -7864,8 +7864,8 @@
       "contributor": null,
       "community": 21,
       "norm_label": "barrick's fourmile blm updated_page-0001.jpg (barrick's fourmile blm claims map)",
-      "id": "apps_web_public_images_projects_nevada_barrick_s_fourmile_blm_updated_page_0001",
-      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)"
+      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)",
+      "id": "apps_web_public_images_projects_nevada_barrick_s_fourmile_blm_updated_page_0001"
     },
     {
       "label": "Barrick's Fourmile Claimants Add 1_page-0001.jpg (Barrick's Fourmile Claimants Map)",
@@ -7878,8 +7878,8 @@
       "contributor": null,
       "community": 21,
       "norm_label": "barrick's fourmile claimants add 1_page-0001.jpg (barrick's fourmile claimants map)",
-      "id": "apps_web_public_images_projects_nevada_barrick_s_fourmile_claimants_add_1_page_0001",
-      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)"
+      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)",
+      "id": "apps_web_public_images_projects_nevada_barrick_s_fourmile_claimants_add_1_page_0001"
     },
     {
       "label": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)",
@@ -7892,8 +7892,8 @@
       "contributor": null,
       "community": 21,
       "norm_label": "barrick's fourmile project map v2 (1)_page-0001.jpg (barrick's fourmile project map)",
-      "id": "apps_web_public_images_projects_nevada_barrick_s_fourmile_project_map_v2_1_page_0001",
-      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)"
+      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)",
+      "id": "apps_web_public_images_projects_nevada_barrick_s_fourmile_project_map_v2_1_page_0001"
     },
     {
       "label": "CT_Fourmile Open Sections_20260107_page-0001.jpg (Fourmile Open Sections Map)",
@@ -7906,8 +7906,8 @@
       "contributor": null,
       "community": 21,
       "norm_label": "ct_fourmile open sections_20260107_page-0001.jpg (fourmile open sections map)",
-      "id": "apps_web_public_images_projects_nevada_ct_fourmile_open_sections_20260107_page_0001",
-      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)"
+      "community_name": "Barrick's Fourmile project Map v2 (1)_page-0001.jpg (Barrick's Fourmile Project Map)",
+      "id": "apps_web_public_images_projects_nevada_ct_fourmile_open_sections_20260107_page_0001"
     },
     {
       "label": "CT_Northumberland Land Agency Overview V2_20260115_page-0001.jpg",
@@ -7920,8 +7920,8 @@
       "contributor": null,
       "community": 22,
       "norm_label": "ct_northumberland land agency overview v2_20260115_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nevada_ct_northumberland_land_agency_overview_v2_20260115_page_0001",
-      "community_name": "Nevada Northumberland Project Area"
+      "community_name": "Nevada Northumberland Project Area",
+      "id": "apps_web_public_images_projects_nevada_ct_northumberland_land_agency_overview_v2_20260115_page_0001"
     },
     {
       "label": "CT_Northumberland Open Sections_Updated_20260108_page-0001.jpg",
@@ -7934,8 +7934,8 @@
       "contributor": null,
       "community": 22,
       "norm_label": "ct_northumberland open sections_updated_20260108_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nevada_ct_northumberland_open_sections_updated_20260108_page_0001",
-      "community_name": "Nevada Northumberland Project Area"
+      "community_name": "Nevada Northumberland Project Area",
+      "id": "apps_web_public_images_projects_nevada_ct_northumberland_open_sections_updated_20260108_page_0001"
     },
     {
       "label": "KM_Nevada mapping Staking OverviewMap_20251219_page-0001.jpg",
@@ -7948,8 +7948,8 @@
       "contributor": null,
       "community": 22,
       "norm_label": "km_nevada mapping staking overviewmap_20251219_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nevada_km_nevada_mapping_staking_overviewmap_20251219_page_0001",
-      "community_name": "Nevada Northumberland Project Area"
+      "community_name": "Nevada Northumberland Project Area",
+      "id": "apps_web_public_images_projects_nevada_km_nevada_mapping_staking_overviewmap_20251219_page_0001"
     },
     {
       "label": "KM_Nevada_Northumberland_13N 45E Full Geology_20251214_page-0001.jpg",
@@ -7962,8 +7962,8 @@
       "contributor": null,
       "community": 22,
       "norm_label": "km_nevada_northumberland_13n 45e full geology_20251214_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nevada_km_nevada_northumberland_13n_45e_full_geology_20251214_page_0001",
-      "community_name": "Nevada Northumberland Project Area"
+      "community_name": "Nevada Northumberland Project Area",
+      "id": "apps_web_public_images_projects_nevada_km_nevada_northumberland_13n_45e_full_geology_20251214_page_0001"
     },
     {
       "label": "1.webp",
@@ -7976,8 +7976,8 @@
       "contributor": null,
       "community": 17,
       "norm_label": "1.webp",
-      "id": "apps_web_public_images_projects_newfoundland_1",
-      "community_name": "Newfoundland Mining Projects"
+      "community_name": "Newfoundland Mining Projects",
+      "id": "apps_web_public_images_projects_newfoundland_1"
     },
     {
       "label": "Newfoundland/2.jpg",
@@ -7990,8 +7990,8 @@
       "contributor": null,
       "community": 17,
       "norm_label": "newfoundland/2.jpg",
-      "id": "apps_web_public_images_projects_newfoundland_2",
-      "community_name": "Newfoundland Mining Projects"
+      "community_name": "Newfoundland Mining Projects",
+      "id": "apps_web_public_images_projects_newfoundland_2"
     },
     {
       "label": "NorthArrowAug30TargetGeol.JPG",
@@ -8004,8 +8004,8 @@
       "contributor": null,
       "community": 17,
       "norm_label": "northarrowaug30targetgeol.jpg",
-      "id": "apps_web_public_images_projects_newfoundland_northarrowaug30targetgeol",
-      "community_name": "Newfoundland Mining Projects"
+      "community_name": "Newfoundland Mining Projects",
+      "id": "apps_web_public_images_projects_newfoundland_northarrowaug30targetgeol"
     },
     {
       "label": "NorthArrowStatusMap.JPG",
@@ -8018,8 +8018,8 @@
       "contributor": null,
       "community": 17,
       "norm_label": "northarrowstatusmap.jpg",
-      "id": "apps_web_public_images_projects_newfoundland_northarrowstatusmap",
-      "community_name": "Newfoundland Mining Projects"
+      "community_name": "Newfoundland Mining Projects",
+      "id": "apps_web_public_images_projects_newfoundland_northarrowstatusmap"
     },
     {
       "label": "NorthArrowTarget1.JPG",
@@ -8032,8 +8032,8 @@
       "contributor": null,
       "community": 17,
       "norm_label": "northarrowtarget1.jpg",
-      "id": "apps_web_public_images_projects_newfoundland_northarrowtarget1",
-      "community_name": "Newfoundland Mining Projects"
+      "community_name": "Newfoundland Mining Projects",
+      "id": "apps_web_public_images_projects_newfoundland_northarrowtarget1"
     },
     {
       "label": "055MNW0038_Shane Lake Project - Ms Claims_page-0001.jpg",
@@ -8046,8 +8046,8 @@
       "contributor": null,
       "community": 15,
       "norm_label": "055mnw0038_shane lake project - ms claims_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nunavut_055mnw0038_shane_lake_project_ms_claims_page_0001",
-      "community_name": "Nunavut Mining Projects"
+      "community_name": "Nunavut Mining Projects",
+      "id": "apps_web_public_images_projects_nunavut_055mnw0038_shane_lake_project_ms_claims_page_0001"
     },
     {
       "label": "065JNE0019_Nip, Rev (Noranda Expln.)_page-0001.jpg",
@@ -8060,8 +8060,8 @@
       "contributor": null,
       "community": 15,
       "norm_label": "065jne0019_nip, rev (noranda expln.)_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nunavut_065jne0019_nip_rev_noranda_expln_page_0001",
-      "community_name": "Nunavut Mining Projects"
+      "community_name": "Nunavut Mining Projects",
+      "id": "apps_web_public_images_projects_nunavut_065jne0019_nip_rev_noranda_expln_page_0001"
     },
     {
       "label": "065JNW0006_Rib & Fst (Noranda)_page-0001.jpg",
@@ -8074,8 +8074,8 @@
       "contributor": null,
       "community": 15,
       "norm_label": "065jnw0006_rib & fst (noranda)_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nunavut_065jnw0006_rib_fst_noranda_page_0001",
-      "community_name": "Nunavut Mining Projects"
+      "community_name": "Nunavut Mining Projects",
+      "id": "apps_web_public_images_projects_nunavut_065jnw0006_rib_fst_noranda_page_0001"
     },
     {
       "label": "065NSE0001_Outlet Bay_page-0001.jpg",
@@ -8088,8 +8088,8 @@
       "contributor": null,
       "community": 15,
       "norm_label": "065nse0001_outlet bay_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nunavut_065nse0001_outlet_bay_page_0001",
-      "community_name": "Nunavut Mining Projects"
+      "community_name": "Nunavut Mining Projects",
+      "id": "apps_web_public_images_projects_nunavut_065nse0001_outlet_bay_page_0001"
     },
     {
       "label": "065OSE0003_Nutarawit Lake_page-0001.jpg",
@@ -8102,8 +8102,8 @@
       "contributor": null,
       "community": 15,
       "norm_label": "065ose0003_nutarawit lake_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nunavut_065ose0003_nutarawit_lake_page_0001",
-      "community_name": "Nunavut Mining Projects"
+      "community_name": "Nunavut Mining Projects",
+      "id": "apps_web_public_images_projects_nunavut_065ose0003_nutarawit_lake_page_0001"
     },
     {
       "label": "066GSE0001_Lost Lake Deep Rose Project_page-0001.jpg",
@@ -8116,8 +8116,8 @@
       "contributor": null,
       "community": 15,
       "norm_label": "066gse0001_lost lake deep rose project_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nunavut_066gse0001_lost_lake_deep_rose_project_page_0001",
-      "community_name": "Nunavut Mining Projects"
+      "community_name": "Nunavut Mining Projects",
+      "id": "apps_web_public_images_projects_nunavut_066gse0001_lost_lake_deep_rose_project_page_0001"
     },
     {
       "label": "066GSE0002_Naujatuuk Lake Deep Rose (Sandhills Project)_page-0001.jpg",
@@ -8130,8 +8130,8 @@
       "contributor": null,
       "community": 15,
       "norm_label": "066gse0002_naujatuuk lake deep rose (sandhills project)_page-0001.jpg",
-      "id": "apps_web_public_images_projects_nunavut_066gse0002_naujatuuk_lake_deep_rose_sandhills_project_page_0001",
-      "community_name": "Nunavut Mining Projects"
+      "community_name": "Nunavut Mining Projects",
+      "id": "apps_web_public_images_projects_nunavut_066gse0002_naujatuuk_lake_deep_rose_sandhills_project_page_0001"
     },
     {
       "label": "1.png",
@@ -8144,8 +8144,8 @@
       "contributor": null,
       "community": 24,
       "norm_label": "1.png",
-      "id": "apps_web_public_images_projects_ontario_1",
-      "community_name": "Ontario Mining Projects"
+      "community_name": "Ontario Mining Projects",
+      "id": "apps_web_public_images_projects_ontario_1"
     },
     {
       "label": "2.png",
@@ -8158,8 +8158,8 @@
       "contributor": null,
       "community": 24,
       "norm_label": "2.png",
-      "id": "apps_web_public_images_projects_ontario_2",
-      "community_name": "Ontario Mining Projects"
+      "community_name": "Ontario Mining Projects",
+      "id": "apps_web_public_images_projects_ontario_2"
     },
     {
       "label": "Ontario/3.jpg",
@@ -8172,8 +8172,8 @@
       "contributor": null,
       "community": 24,
       "norm_label": "ontario/3.jpg",
-      "id": "apps_web_public_images_projects_ontario_3",
-      "community_name": "Ontario Mining Projects"
+      "community_name": "Ontario Mining Projects",
+      "id": "apps_web_public_images_projects_ontario_3"
     },
     {
       "label": "Ontario/4.jpg",
@@ -8186,8 +8186,8 @@
       "contributor": null,
       "community": 24,
       "norm_label": "ontario/4.jpg",
-      "id": "apps_web_public_images_projects_ontario_4",
-      "community_name": "Ontario Mining Projects"
+      "community_name": "Ontario Mining Projects",
+      "id": "apps_web_public_images_projects_ontario_4"
     },
     {
       "label": "Nevada Northumberland Project Area",
@@ -8200,8 +8200,8 @@
       "contributor": null,
       "community": 22,
       "norm_label": "nevada northumberland project area",
-      "id": "concept_nevada_northumberland_project",
-      "community_name": "Nevada Northumberland Project Area"
+      "community_name": "Nevada Northumberland Project Area",
+      "id": "concept_nevada_northumberland_project"
     },
     {
       "label": "Newfoundland Mining Projects",
@@ -8214,8 +8214,8 @@
       "contributor": null,
       "community": 17,
       "norm_label": "newfoundland mining projects",
-      "id": "concept_newfoundland_mining_projects",
-      "community_name": "Newfoundland Mining Projects"
+      "community_name": "Newfoundland Mining Projects",
+      "id": "concept_newfoundland_mining_projects"
     },
     {
       "label": "Nunavut Mining Projects",
@@ -8228,8 +8228,8 @@
       "contributor": null,
       "community": 15,
       "norm_label": "nunavut mining projects",
-      "id": "concept_nunavut_mining_projects",
-      "community_name": "Nunavut Mining Projects"
+      "community_name": "Nunavut Mining Projects",
+      "id": "concept_nunavut_mining_projects"
     },
     {
       "label": "Ontario Mining Projects",
@@ -8242,8 +8242,8 @@
       "contributor": null,
       "community": 24,
       "norm_label": "ontario mining projects",
-      "id": "concept_ontario_mining_projects",
-      "community_name": "Ontario Mining Projects"
+      "community_name": "Ontario Mining Projects",
+      "id": "concept_ontario_mining_projects"
     },
     {
       "label": "Ontario Mining Claims & Properties Map (5.jpg)",
@@ -8256,8 +8256,8 @@
       "contributor": null,
       "community": 111,
       "norm_label": "ontario mining claims & properties map (5.jpg)",
-      "id": "apps_web_public_images_projects_ontario_5",
-      "community_name": "Ontario Mining Claims & Properties Map (5.jpg)"
+      "community_name": "Ontario Mining Claims & Properties Map (5.jpg)",
+      "id": "apps_web_public_images_projects_ontario_5"
     },
     {
       "label": "Red Lake Claim Distribution Map (6.jpg)",
@@ -8270,8 +8270,8 @@
       "contributor": null,
       "community": 111,
       "norm_label": "red lake claim distribution map (6.jpg)",
-      "id": "apps_web_public_images_projects_ontario_6",
-      "community_name": "Ontario Mining Claims & Properties Map (5.jpg)"
+      "community_name": "Ontario Mining Claims & Properties Map (5.jpg)",
+      "id": "apps_web_public_images_projects_ontario_6"
     },
     {
       "label": "Ontario Tungsten Open Ground Map (2026)",
@@ -8284,8 +8284,8 @@
       "contributor": null,
       "community": 143,
       "norm_label": "ontario tungsten open ground map (2026)",
-      "id": "apps_web_public_images_projects_ontario_ontario_tungsten_open_ground_page_0001",
-      "community_name": "Ontario Tungsten Open Ground Map (2026)"
+      "community_name": "Ontario Tungsten Open Ground Map (2026)",
+      "id": "apps_web_public_images_projects_ontario_ontario_tungsten_open_ground_page_0001"
     },
     {
       "label": "Stelmine Trieste Target Project Location Map (1.jpg)",
@@ -8298,8 +8298,8 @@
       "contributor": null,
       "community": 144,
       "norm_label": "stelmine trieste target project location map (1.jpg)",
-      "id": "apps_web_public_images_projects_quebec_1",
-      "community_name": "Stelmine Trieste Target Project Location Map (1.jpg)"
+      "community_name": "Stelmine Trieste Target Project Location Map (1.jpg)",
+      "id": "apps_web_public_images_projects_quebec_1"
     },
     {
       "label": "Greenstone Target & Purple Belt Map (2.jpg)",
@@ -8312,8 +8312,8 @@
       "contributor": null,
       "community": 145,
       "norm_label": "greenstone target & purple belt map (2.jpg)",
-      "id": "apps_web_public_images_projects_quebec_2",
-      "community_name": "Greenstone Target & Purple Belt Map (2.jpg)"
+      "community_name": "Greenstone Target & Purple Belt Map (2.jpg)",
+      "id": "apps_web_public_images_projects_quebec_2"
     },
     {
       "label": "Bull Run Lithium Project Regional Greenstones Map (3.jpg)",
@@ -8326,8 +8326,8 @@
       "contributor": null,
       "community": 146,
       "norm_label": "bull run lithium project regional greenstones map (3.jpg)",
-      "id": "apps_web_public_images_projects_quebec_3",
-      "community_name": "Bull Run Lithium Project Regional Greenstones Map (3.jpg)"
+      "community_name": "Bull Run Lithium Project Regional Greenstones Map (3.jpg)",
+      "id": "apps_web_public_images_projects_quebec_3"
     },
     {
       "label": "Hump Zone & Roberts Lake Unstaked Areas Map (4.jpg)",
@@ -8340,8 +8340,8 @@
       "contributor": null,
       "community": 112,
       "norm_label": "hump zone & roberts lake unstaked areas map (4.jpg)",
-      "id": "apps_web_public_images_projects_quebec_4",
-      "community_name": "Hump Zone & Roberts Lake Unstaked Areas Map (4.jpg)"
+      "community_name": "Hump Zone & Roberts Lake Unstaked Areas Map (4.jpg)",
+      "id": "apps_web_public_images_projects_quebec_4"
     },
     {
       "label": "Ungava Bay Iron Formations Area Map (5.jpg)",
@@ -8354,8 +8354,8 @@
       "contributor": null,
       "community": 112,
       "norm_label": "ungava bay iron formations area map (5.jpg)",
-      "id": "apps_web_public_images_projects_quebec_5",
-      "community_name": "Hump Zone & Roberts Lake Unstaked Areas Map (4.jpg)"
+      "community_name": "Hump Zone & Roberts Lake Unstaked Areas Map (4.jpg)",
+      "id": "apps_web_public_images_projects_quebec_5"
     },
     {
       "label": "JB Lithium Target 1 Project Location Map",
@@ -8368,8 +8368,8 @@
       "contributor": null,
       "community": 147,
       "norm_label": "jb lithium target 1 project location map",
-      "id": "apps_web_public_images_projects_quebec_jamesbayaug21_a_page_0001",
-      "community_name": "JB Lithium Target 1 Project Location Map"
+      "community_name": "JB Lithium Target 1 Project Location Map",
+      "id": "apps_web_public_images_projects_quebec_jamesbayaug21_a_page_0001"
     },
     {
       "label": "Eleonore Target Lac Ewart Zoomed Geology Map",
@@ -8382,8 +8382,8 @@
       "contributor": null,
       "community": 113,
       "norm_label": "eleonore target lac ewart zoomed geology map",
-      "id": "apps_web_public_images_projects_quebec_lacewartgraniticpegzoomedgeology_page_0001",
-      "community_name": "Eleonore Target Lac Ewart Granitic Pegmatite Open Map"
+      "community_name": "Eleonore Target Lac Ewart Granitic Pegmatite Open Map",
+      "id": "apps_web_public_images_projects_quebec_lacewartgraniticpegzoomedgeology_page_0001"
     },
     {
       "label": "Eleonore Target Lac Ewart Granitic Pegmatite Open Map",
@@ -8396,8 +8396,8 @@
       "contributor": null,
       "community": 113,
       "norm_label": "eleonore target lac ewart granitic pegmatite open map",
-      "id": "apps_web_public_images_projects_quebec_lacewartgraniticpegmatiteopen_page_0001",
-      "community_name": "Eleonore Target Lac Ewart Granitic Pegmatite Open Map"
+      "community_name": "Eleonore Target Lac Ewart Granitic Pegmatite Open Map",
+      "id": "apps_web_public_images_projects_quebec_lacewartgraniticpegmatiteopen_page_0001"
     },
     {
       "label": "GESTIM Azimut Open Ground Favorable Areas Screenshot (image 2.png)",
@@ -8410,8 +8410,8 @@
       "contributor": null,
       "community": 114,
       "norm_label": "gestim azimut open ground favorable areas screenshot (image 2.png)",
-      "id": "apps_web_public_images_projects_quebec_mapofazimutopenground_image_2",
-      "community_name": "GESTIM Azimut Open Ground Favorable Areas Screenshot (image 2.png)"
+      "community_name": "GESTIM Azimut Open Ground Favorable Areas Screenshot (image 2.png)",
+      "id": "apps_web_public_images_projects_quebec_mapofazimutopenground_image_2"
     },
     {
       "label": "GESTIM Azimut Open Ground Geology Screenshot (image 3.png)",
@@ -8424,8 +8424,8 @@
       "contributor": null,
       "community": 114,
       "norm_label": "gestim azimut open ground geology screenshot (image 3.png)",
-      "id": "apps_web_public_images_projects_quebec_mapofazimutopenground_image_3",
-      "community_name": "GESTIM Azimut Open Ground Favorable Areas Screenshot (image 2.png)"
+      "community_name": "GESTIM Azimut Open Ground Favorable Areas Screenshot (image 2.png)",
+      "id": "apps_web_public_images_projects_quebec_mapofazimutopenground_image_3"
     },
     {
       "label": "Athabasca & Thelon Basins Regional Map (1.png)",
@@ -8438,8 +8438,8 @@
       "contributor": null,
       "community": 115,
       "norm_label": "athabasca & thelon basins regional map (1.png)",
-      "id": "apps_web_public_images_projects_saskatchewan_1",
-      "community_name": "Athabasca & Thelon Basins Regional Map (1.png)"
+      "community_name": "Athabasca & Thelon Basins Regional Map (1.png)",
+      "id": "apps_web_public_images_projects_saskatchewan_1"
     },
     {
       "label": "NTS 74F Geology and Dispositions Map (2.jpg)",
@@ -8452,8 +8452,8 @@
       "contributor": null,
       "community": 115,
       "norm_label": "nts 74f geology and dispositions map (2.jpg)",
-      "id": "apps_web_public_images_projects_saskatchewan_2",
-      "community_name": "Athabasca & Thelon Basins Regional Map (1.png)"
+      "community_name": "Athabasca & Thelon Basins Regional Map (1.png)",
+      "id": "apps_web_public_images_projects_saskatchewan_2"
     },
     {
       "label": "Mineral Claims & Occurrences Round Top Mine Map",
@@ -8466,8 +8466,8 @@
       "contributor": null,
       "community": 148,
       "norm_label": "mineral claims & occurrences round top mine map",
-      "id": "apps_web_public_images_projects_texas_round_top_v1_1_scale_1_50000_page_0001",
-      "community_name": "Mineral Claims & Occurrences Round Top Mine Map"
+      "community_name": "Mineral Claims & Occurrences Round Top Mine Map",
+      "id": "apps_web_public_images_projects_texas_round_top_v1_1_scale_1_50000_page_0001"
     },
     {
       "label": "Quantum Utah Staking Layout Map (2025-11-17)",
@@ -8480,8 +8480,8 @@
       "contributor": null,
       "community": 116,
       "norm_label": "quantum utah staking layout map (2025-11-17)",
-      "id": "apps_web_public_images_projects_utah_quantum_utahstakinglayout_2025117_page_0001",
-      "community_name": "Quantum Utah Staking Layout Map (2025-11-17)"
+      "community_name": "Quantum Utah Staking Layout Map (2025-11-17)",
+      "id": "apps_web_public_images_projects_utah_quantum_utahstakinglayout_2025117_page_0001"
     },
     {
       "label": "Quantum Utah Staking Layout Land Ownership Map (2025-11-17)",
@@ -8494,8 +8494,8 @@
       "contributor": null,
       "community": 116,
       "norm_label": "quantum utah staking layout land ownership map (2025-11-17)",
-      "id": "apps_web_public_images_projects_utah_quantum_utahstakinglayout_2025129_page_0001",
-      "community_name": "Quantum Utah Staking Layout Map (2025-11-17)"
+      "community_name": "Quantum Utah Staking Layout Map (2025-11-17)",
+      "id": "apps_web_public_images_projects_utah_quantum_utahstakinglayout_2025129_page_0001"
     },
     {
       "label": "ArcMap Bald Mountain Thorium Wyoming Layers Screenshot (1.png)",
@@ -8508,8 +8508,8 @@
       "contributor": null,
       "community": 117,
       "norm_label": "arcmap bald mountain thorium wyoming layers screenshot (1.png)",
-      "id": "apps_web_public_images_projects_wyoming_1",
-      "community_name": "ArcMap Bald Mountain Thorium Wyoming Layers Screenshot (1.png)"
+      "community_name": "ArcMap Bald Mountain Thorium Wyoming Layers Screenshot (1.png)",
+      "id": "apps_web_public_images_projects_wyoming_1"
     },
     {
       "label": "CLAIMS Location Array Interactive Map Service Wyoming Screenshot",
@@ -8522,8 +8522,8 @@
       "contributor": null,
       "community": 117,
       "norm_label": "claims location array interactive map service wyoming screenshot",
-      "id": "apps_web_public_images_projects_wyoming_claimswyoming",
-      "community_name": "ArcMap Bald Mountain Thorium Wyoming Layers Screenshot (1.png)"
+      "community_name": "ArcMap Bald Mountain Thorium Wyoming Layers Screenshot (1.png)",
+      "id": "apps_web_public_images_projects_wyoming_claimswyoming"
     },
     {
       "label": "Wyoming Halleck Creek Mining Claims Map (2025-09-06)",
@@ -8536,8 +8536,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "wyoming halleck creek mining claims map (2025-09-06)",
-      "id": "apps_web_public_images_projects_wyoming_wyominghalleckcrk_20250906_page_0001",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "apps_web_public_images_projects_wyoming_wyominghalleckcrk_20250906_page_0001"
     },
     {
       "label": "Wyoming Halleck Creek Geological and Land Ownership Map (2025-09-27)",
@@ -8550,8 +8550,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "wyoming halleck creek geological and land ownership map (2025-09-27)",
-      "id": "apps_web_public_images_projects_wyoming_wyominghalleckcrk_20250927_page_0001",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "apps_web_public_images_projects_wyoming_wyominghalleckcrk_20250927_page_0001"
     },
     {
       "label": "Yukon Claim Map - Snowline Gold Corp. (2023-12-08)",
@@ -8564,8 +8564,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "yukon claim map - snowline gold corp. (2023-12-08)",
-      "id": "apps_web_public_images_projects_yukon_1",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "apps_web_public_images_projects_yukon_1"
     },
     {
       "label": "Yukon Claim and Geologic Formation Map - Snowline Gold Corp. (2023-12-08)",
@@ -8578,8 +8578,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "yukon claim and geologic formation map - snowline gold corp. (2023-12-08)",
-      "id": "apps_web_public_images_projects_yukon_2",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "apps_web_public_images_projects_yukon_2"
     },
     {
       "label": "Sidney Creek & Togsquanga Mineral Occurrences, Infrastructure and Geology Map",
@@ -8592,8 +8592,8 @@
       "contributor": null,
       "community": 118,
       "norm_label": "sidney creek & togsquanga mineral occurrences, infrastructure and geology map",
-      "id": "apps_web_public_images_projects_yukon_3",
-      "community_name": "Sidney Creek & Togsquanga Mineral Occurrences, Infrastructure and Geology Map"
+      "community_name": "Sidney Creek & Togsquanga Mineral Occurrences, Infrastructure and Geology Map",
+      "id": "apps_web_public_images_projects_yukon_3"
     },
     {
       "label": "Yukon Tungsten Open Ground Map (2026)",
@@ -8606,8 +8606,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "yukon tungsten open ground map (2026)",
-      "id": "apps_web_public_images_projects_yukon_4",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "apps_web_public_images_projects_yukon_4"
     },
     {
       "label": "Yukon Tungsten Open Ground Map Page 2 (2026)",
@@ -8620,8 +8620,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "yukon tungsten open ground map page 2 (2026)",
-      "id": "apps_web_public_images_projects_yukon_yukon_tungsten_open_ground_2_page_0001",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "apps_web_public_images_projects_yukon_yukon_tungsten_open_ground_2_page_0001"
     },
     {
       "label": "Yukon Tungsten Open Ground with Historical Claims Map (2026)",
@@ -8634,8 +8634,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "yukon tungsten open ground with historical claims map (2026)",
-      "id": "apps_web_public_images_projects_yukon_yukon_with_historical_claims_pages_to_jpg_0001",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "apps_web_public_images_projects_yukon_yukon_with_historical_claims_pages_to_jpg_0001"
     },
     {
       "label": "Adamson Geomatics Open Graph Social Preview Image",
@@ -8648,8 +8648,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "adamson geomatics open graph social preview image",
-      "id": "apps_web_src_app_opengraph_image",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "apps_web_src_app_opengraph_image"
     },
     {
       "label": "Halleck Creek Rare Earths Project (Wyoming)",
@@ -8662,8 +8662,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "halleck creek rare earths project (wyoming)",
-      "id": "node_project_wyoming_halleck_creek",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "node_project_wyoming_halleck_creek"
     },
     {
       "label": "Snowline Gold Corp Yukon Project",
@@ -8676,8 +8676,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "snowline gold corp yukon project",
-      "id": "node_project_yukon_snowline_gold",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "node_project_yukon_snowline_gold"
     },
     {
       "label": "Yukon Tungsten Open Ground Exploration Project",
@@ -8690,8 +8690,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "yukon tungsten open ground exploration project",
-      "id": "node_project_yukon_tungsten",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "node_project_yukon_tungsten"
     },
     {
       "label": "Sidney Creek & Togsquanga Mineral Exploration Project",
@@ -8704,8 +8704,8 @@
       "contributor": null,
       "community": 118,
       "norm_label": "sidney creek & togsquanga mineral exploration project",
-      "id": "node_project_yukon_sidney_creek",
-      "community_name": "Sidney Creek & Togsquanga Mineral Occurrences, Infrastructure and Geology Map"
+      "community_name": "Sidney Creek & Togsquanga Mineral Occurrences, Infrastructure and Geology Map",
+      "id": "node_project_yukon_sidney_creek"
     },
     {
       "label": "Adamson Geomatics",
@@ -8718,8 +8718,8 @@
       "contributor": null,
       "community": 12,
       "norm_label": "adamson geomatics",
-      "id": "node_brand_adamson_geomatics",
-      "community_name": "Adamson Geomatics"
+      "community_name": "Adamson Geomatics",
+      "id": "node_brand_adamson_geomatics"
     }
   ],
   "links": [
@@ -11284,7 +11284,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/contact-page.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_contact_page",
@@ -11296,7 +11296,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/contact-page.tsx",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_contact_page",
@@ -11375,6 +11375,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/views/contact-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_contact_page",
+      "target": "apps_web_src_components_newsletterform",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -11383,6 +11395,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_footer",
+      "target": "apps_web_src_components_newsletterform_newsletterform",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/views/contact-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_contact_page",
       "target": "apps_web_src_components_newsletterform_newsletterform",
       "confidence_score": 1.0
     },
@@ -13738,7 +13762,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/contact-page.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_contact_page",
@@ -13822,7 +13846,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/contact-page.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_contact_page",
@@ -13906,7 +13930,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/contact-page.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_contact_page",
@@ -14627,7 +14651,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/contact-page.tsx",
-      "source_location": "L70",
+      "source_location": "L72",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_contact_page",
@@ -14638,7 +14662,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/contact-page.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_contact_page",
