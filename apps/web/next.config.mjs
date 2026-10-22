@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // No `output: "export"`: API routes (/api/contact, /api/newsletter) need a
+  // server runtime. Pages are still prerendered via generateStaticParams.
   ...(process.env.NODE_ENV === "production"
     ? {
         distDir: "./dist",
-        output: "export",
       }
     : {}),
   async headers() {

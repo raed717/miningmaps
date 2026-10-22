@@ -10,12 +10,14 @@ import {
   Mail,
   Map,
   PenLine,
+  Radio,
   Scale,
   ShieldAlert,
   Terminal,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import ContactForm from "@/components/ContactForm";
+import NewsletterForm from "@/components/NewsletterForm";
 
 type ContactRoute = {
   id: string;
@@ -113,11 +115,11 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Form */}
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mt-16 border border-border bg-card/70 backdrop-blur-sm"
+          className="mb-12 border border-border bg-card/70 backdrop-blur-sm"
         >
           <div className="border-b border-border px-5 py-4 md:px-8">
             <div
@@ -135,7 +137,7 @@ export default function ContactPage() {
           <div className="px-5 py-6 md:px-8 md:py-8">
             <ContactForm />
           </div>
-        </motion.div> */}
+        </motion.div>
 
         <div className="border border-border bg-card/70 backdrop-blur-sm">
           <div className="grid gap-px bg-border">
@@ -197,6 +199,38 @@ export default function ContactPage() {
             })}
           </div>
         </div>
+
+        {/* Newsletter */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-12 border border-border bg-card/70 backdrop-blur-sm p-6 md:p-8"
+        >
+          <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-center">
+            <div>
+              <div
+                className={`flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
+              >
+                <Radio className="h-4 w-4" /> NEWSLETTER_FEED
+              </div>
+              <h3 className="mt-2 text-xl font-black uppercase tracking-tight text-white md:text-2xl">
+                Not ready to reach out yet?
+              </h3>
+              <p
+                className={`mt-3 text-xs uppercase tracking-[0.16em] leading-relaxed text-muted-foreground ${mono.className}`}
+              >
+                Get field reports, new mining properties, and project updates
+                delivered to your inbox. Unsubscribe anytime.
+              </p>
+            </div>
+            <div
+              className={`text-xs uppercase tracking-widest text-muted-foreground ${mono.className}`}
+            >
+              <NewsletterForm source="contact" showIntro={false} />
+            </div>
+          </div>
+        </motion.div>
 
         {/* Recommended Mining Law & Title Issues Counsel */}
         <motion.div

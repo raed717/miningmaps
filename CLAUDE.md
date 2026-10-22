@@ -43,6 +43,14 @@ miningmaps/
 
 The web app currently follows the official Next.js Vite migration baseline: a catch-all App Router entry renders a client-only app shell, and `generateStaticParams()` must be updated whenever a new client route is added.
 
+The production build no longer uses `output: "export"` so that API routes (`/api/contact`, `/api/newsletter`) run as serverless functions on Vercel; pages are still prerendered.
+
+## Database
+
+- Neon Postgres via `@neondatabase/serverless` (HTTP driver), configured with `DATABASE_URL` (pooled connection string).
+- SQL migrations live in `migrations/` (run with the direct, non `-pooler` connection string).
+- `newsletter_subscribers` table (`migrations/002_newsletter_subscribers.sql`) is written by `apps/web/src/app/api/newsletter/route.ts`; the signup UI is `apps/web/src/components/NewsletterForm.tsx`, rendered in the footer.
+
 ## Maintenance
 
 Keep CLAUDE.md updated when:
