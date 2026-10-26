@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "apps/web/src/app/api/contact/route.ts": {
-    "mtime": 1783100284.369054,
-    "ast_hash": "3b56785e0035b2fff347eb53844eb31a",
-    "semantic_hash": "3b56785e0035b2fff347eb53844eb31a"
+    "mtime": 1793002091.7057543,
+    "ast_hash": "43d9fcc6e6420abb53bbb7bdd6e2f896",
+    "semantic_hash": ""
   },
   "apps/web/src/app/dashboard/dashboard-view.tsx": {
     "mtime": 1789821752.9258814,
@@ -85,9 +85,9 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/ContactForm.tsx": {
-    "mtime": 1784541075.8662674,
-    "ast_hash": "83b0ad27659aefb4c497abf441b50c54",
-    "semantic_hash": "83b0ad27659aefb4c497abf441b50c54"
+    "mtime": 1793002094.4093192,
+    "ast_hash": "e32a9ec92798b445fe865f8644ce434e",
+    "semantic_hash": ""
   },
   "apps/web/src/components/ProjectDetailModal.tsx": {
     "mtime": 1785419895.204527,
@@ -395,8 +395,8 @@
     "semantic_hash": "cc595046ce71069c065e0d21ed9f8540"
   },
   "turbo.json": {
-    "mtime": 1792682465.7057235,
-    "ast_hash": "44a5c33aa4ec23ca9319d0ae0651b062",
+    "mtime": 1792682739.9224958,
+    "ast_hash": "a724c4e020d864141325bd555a08fef3",
     "semantic_hash": ""
   },
   "update_colors.cjs": {
@@ -930,13 +930,13 @@
     "semantic_hash": ""
   },
   "apps/web/src/app/api/newsletter/route.ts": {
-    "mtime": 1792676757.796302,
-    "ast_hash": "7b28483d6e4ace7077e9619428e74a5f",
+    "mtime": 1793002119.3371103,
+    "ast_hash": "36687e163d1ce6f67ccf6df53e3e7d9c",
     "semantic_hash": ""
   },
   "apps/web/src/components/NewsletterForm.tsx": {
-    "mtime": 1792677499.838555,
-    "ast_hash": "8769140bf765a81d07e6d0c1001e6b54",
+    "mtime": 1793002122.04438,
+    "ast_hash": "0d49bad4b069b1c79b6dcb2643de635a",
     "semantic_hash": ""
   },
   "apps/web/src/components/PartnerProgramsModal.tsx": {
@@ -1357,6 +1357,11 @@
   "apps/web/public/opengraph-image.png": {
     "mtime": 1790508427.04858,
     "ast_hash": "08b33afd1960e3e8d37e726c10122ee3",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/spamGuard.ts": {
+    "mtime": 1793002116.7287827,
+    "ast_hash": "9f7f67ee76d1d9418366298c4d90cb15",
     "semantic_hash": ""
   }
 }

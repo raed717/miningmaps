@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 import EmailTemplate from "@/components/emails/EmailTemplate";
+import { detectSpam } from "@/lib/spamGuard";
 
 const schema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -9,6 +10,9 @@ const schema = z.object({
   phone: z.string().optional(),
   service: z.string().min(1, "Service is required"),
   message: z.string().min(1, "Message is required"),
+  // Bot signals (see lib/spamGuard.ts)
+  website: z.string().optional(),
+  elapsedMs: z.number().optional(),
 });
 
 export async function POST(request: NextRequest) {
@@ -41,7 +45,14 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { name, email, phone, service, message } = parsed.data;
+  const { name, email, phone, service, message, website, elapsedMs } = parsed.data;
+
+  const spamReason = detectSpam({ honeypot: website, elapsedMs, text: [message] });
+  if (spamReason) {
+    // Pretend success so bots don't retry or adapt.
+    console.warn(`Dropped contact submission (${spamReason})`);
+    return NextResponse.json({ success: true }, { status: 200 });
+  }
 
   try {
     const resend = new Resend(resendApiKey);

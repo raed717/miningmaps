@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Mail, CheckCircle, AlertCircle } from "lucide-react";
@@ -14,6 +14,12 @@ export default function NewsletterForm({
 }) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  // When the form appeared; the server rejects impossibly fast submissions.
+  const mountedAt = useRef(0);
+
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,6 +31,7 @@ export default function NewsletterForm({
     const body = {
       email: form.get("email") as string,
       company: form.get("company") as string,
+      elapsedMs: Date.now() - mountedAt.current,
       source,
     };
 

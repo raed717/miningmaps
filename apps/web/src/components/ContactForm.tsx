@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select } from "@/components/ui/select";
@@ -29,6 +29,12 @@ const serviceOptions = [
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  // When the form appeared; the server rejects impossibly fast submissions.
+  const mountedAt = useRef(0);
+
+  useEffect(() => {
+    mountedAt.current = Date.now();
+  }, []);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -42,6 +48,8 @@ export default function ContactForm() {
       phone: form.get("phone") as string,
       service: form.get("service") as string,
       message: form.get("message") as string,
+      website: form.get("website") as string,
+      elapsedMs: Date.now() - mountedAt.current,
     };
 
     try {
@@ -127,6 +135,16 @@ export default function ContactForm() {
             placeholder="Describe your project or inquiry..."
           />
         </div>
+
+        {/* Honeypot: hidden from humans, filled by bots */}
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute -left-[9999px] h-0 w-0 opacity-0"
+        />
       </div>
 
       <div className="space-y-3">

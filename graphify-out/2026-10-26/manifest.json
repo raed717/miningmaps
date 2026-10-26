@@ -1,0 +1,1362 @@
+{
+  ".claude/settings.local.json": {
+    "mtime": 1784906765.1523309,
+    "ast_hash": "02511d40813e78aba5334a03e3aea194",
+    "semantic_hash": "02511d40813e78aba5334a03e3aea194"
+  },
+  "add_nwt_project.cjs": {
+    "mtime": 1775484947.6083481,
+    "ast_hash": "4cd9f79662376f3de68796c422a12e55",
+    "semantic_hash": "4cd9f79662376f3de68796c422a12e55"
+  },
+  "apps/web/components.json": {
+    "mtime": 1774861226.362641,
+    "ast_hash": "9f714d667d19f72a3db16115df181bd6",
+    "semantic_hash": "9f714d667d19f72a3db16115df181bd6"
+  },
+  "apps/web/e2e/projects.spec.ts": {
+    "mtime": 1783729167.1949217,
+    "ast_hash": "2de93ce559d11e4a2b553bfdd4447d94",
+    "semantic_hash": "2de93ce559d11e4a2b553bfdd4447d94"
+  },
+  "apps/web/e2e/smoke.spec.ts": {
+    "mtime": 1776001721.9806278,
+    "ast_hash": "02585399f7ff3a13211e84f818724111",
+    "semantic_hash": "02585399f7ff3a13211e84f818724111"
+  },
+  "apps/web/next-sitemap.config.js": {
+    "mtime": 1790523222.3563373,
+    "ast_hash": "75d6789b6a41ba52b90e993cbcfe0f72",
+    "semantic_hash": ""
+  },
+  "apps/web/next.config.mjs": {
+    "mtime": 1792682464.6092682,
+    "ast_hash": "b2b114f36b2a1f38ec1b50a1b053a5ae",
+    "semantic_hash": ""
+  },
+  "apps/web/package.json": {
+    "mtime": 1792676785.7736564,
+    "ast_hash": "9cf63743c7c1764d9370e3d71f4a482c",
+    "semantic_hash": ""
+  },
+  "apps/web/postcss.config.mjs": {
+    "mtime": 1775315131.605199,
+    "ast_hash": "0f8aa602547b154dc06be77b007c51d2",
+    "semantic_hash": "0f8aa602547b154dc06be77b007c51d2"
+  },
+  "apps/web/src/App.tsx": {
+    "mtime": 1790507754.3646872,
+    "ast_hash": "09ef953c47313ba03f4de591d9160fe3",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/[[...slug]]/client.tsx": {
+    "mtime": 1790507757.5265503,
+    "ast_hash": "bd2398e4c994033845e663158df76df0",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/[[...slug]]/page.tsx": {
+    "mtime": 1790508469.8279235,
+    "ast_hash": "013b3ddaa783a38c4cc39a2bb5387d9b",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/api/contact/route.ts": {
+    "mtime": 1783100284.369054,
+    "ast_hash": "3b56785e0035b2fff347eb53844eb31a",
+    "semantic_hash": "3b56785e0035b2fff347eb53844eb31a"
+  },
+  "apps/web/src/app/dashboard/dashboard-view.tsx": {
+    "mtime": 1789821752.9258814,
+    "ast_hash": "1f0c68bed3a1cb28b4f922bd4cdf79ad",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/layout.tsx": {
+    "mtime": 1790522969.6355631,
+    "ast_hash": "fa2519e0e4541b346363edf8eb97c4d7",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/map/map-view.tsx": {
+    "mtime": 1788445981.784052,
+    "ast_hash": "9067b808bfc286c6018678a806a5a7da",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/projects/[id]/project-view.tsx": {
+    "mtime": 1790852941.1053095,
+    "ast_hash": "885ba04fce8e56115a93cf622d9d061e",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/ContactForm.tsx": {
+    "mtime": 1784541075.8662674,
+    "ast_hash": "83b0ad27659aefb4c497abf441b50c54",
+    "semantic_hash": "83b0ad27659aefb4c497abf441b50c54"
+  },
+  "apps/web/src/components/ProjectDetailModal.tsx": {
+    "mtime": 1785419895.204527,
+    "ast_hash": "c80b35cf729cbe95c0888b1c214b2ed7",
+    "semantic_hash": "c80b35cf729cbe95c0888b1c214b2ed7"
+  },
+  "apps/web/src/components/emails/EmailTemplate.tsx": {
+    "mtime": 1783100271.792835,
+    "ast_hash": "6625423c2c41f8afb677cabde2b15f14",
+    "semantic_hash": "6625423c2c41f8afb677cabde2b15f14"
+  },
+  "apps/web/src/components/footer.tsx": {
+    "mtime": 1792676813.0041385,
+    "ast_hash": "7a79728c4c6de0c390e4cff5cf545906",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/header.tsx": {
+    "mtime": 1789660193.752107,
+    "ast_hash": "5f2fe3e26260dad7f11916a6b34c4a6d",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/home/accomplishments-section.tsx": {
+    "mtime": 1781261141.1710458,
+    "ast_hash": "e0777cc2696a46079295b059cf80c9d6",
+    "semantic_hash": "e0777cc2696a46079295b059cf80c9d6"
+  },
+  "apps/web/src/components/home/certifications-section.tsx": {
+    "mtime": 1781102999.10854,
+    "ast_hash": "edb2975b524d295f467176a63c8c243c",
+    "semantic_hash": "edb2975b524d295f467176a63c8c243c"
+  },
+  "apps/web/src/components/home/cinematic-hero.tsx": {
+    "mtime": 1784540714.5533915,
+    "ast_hash": "a2b90ef291c9be46fc8493dd952f768b",
+    "semantic_hash": "a2b90ef291c9be46fc8493dd952f768b"
+  },
+  "apps/web/src/components/home/demo-preview-section.tsx": {
+    "mtime": 1775562153.5031986,
+    "ast_hash": "f699e2397e073cf4978c37c0fb50824d",
+    "semantic_hash": "f699e2397e073cf4978c37c0fb50824d"
+  },
+  "apps/web/src/components/home/features-section.tsx": {
+    "mtime": 1775314926.888988,
+    "ast_hash": "1f68e312e094c79b126b41db6f78e07b",
+    "semantic_hash": "1f68e312e094c79b126b41db6f78e07b"
+  },
+  "apps/web/src/components/home/field-reports-section.tsx": {
+    "mtime": 1790582562.379138,
+    "ast_hash": "3fb1d2b5ca2c98d3927e3bd1c26d16dd",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/home/global-telemetry-section.tsx": {
+    "mtime": 1776032249.9994836,
+    "ast_hash": "0ac04fad89ba8cc38a33375cc8761c4d",
+    "semantic_hash": "0ac04fad89ba8cc38a33375cc8761c4d"
+  },
+  "apps/web/src/components/home/listing-membership-section.tsx": {
+    "mtime": 1785916208.990469,
+    "ast_hash": "85716cb760a0977c1e4953e50d912c5e",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/home/project-preview-carousel-section.tsx": {
+    "mtime": 1790582404.784964,
+    "ast_hash": "eb69ae4426045a8923f17bda37381ba2",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/home/properties-section.tsx": {
+    "mtime": 1775315434.703024,
+    "ast_hash": "230c28ed00844724ceec4ae97aa6fa8f",
+    "semantic_hash": "230c28ed00844724ceec4ae97aa6fa8f"
+  },
+  "apps/web/src/components/home/service-registry-section.tsx": {
+    "mtime": 1790523081.3302984,
+    "ast_hash": "d8619ad50f38cc3c329517fbb459676b",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/home/testimonials-section.tsx": {
+    "mtime": 1775314926.889989,
+    "ast_hash": "c313aaee4a2c86ce5a37090ca7a0a439",
+    "semantic_hash": "c313aaee4a2c86ce5a37090ca7a0a439"
+  },
+  "apps/web/src/components/loader.tsx": {
+    "mtime": 1789660164.023381,
+    "ast_hash": "b1a12356c06170b20d8f3e0cd3595f50",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/partner-notice-rotator.tsx": {
+    "mtime": 1791878001.8702393,
+    "ast_hash": "15a70bcc5b3f294ac6f4a417af4138cf",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/pdf-preview.tsx": {
+    "mtime": 1778683914.5993474,
+    "ast_hash": "63e0c2c679cceaec2f6101df4189e16c",
+    "semantic_hash": "63e0c2c679cceaec2f6101df4189e16c"
+  },
+  "apps/web/src/components/theme-provider.tsx": {
+    "mtime": 1775314825.6174064,
+    "ast_hash": "61a8f83ced82efc0c55f00209cc39d97",
+    "semantic_hash": "61a8f83ced82efc0c55f00209cc39d97"
+  },
+  "apps/web/src/components/ui/button.tsx": {
+    "mtime": 1778680351.3277142,
+    "ast_hash": "daafd007acc8e344a1c557ae9287fe14",
+    "semantic_hash": "daafd007acc8e344a1c557ae9287fe14"
+  },
+  "apps/web/src/components/ui/carousel.tsx": {
+    "mtime": 1778680351.6330023,
+    "ast_hash": "0b7274573150b4f688ec302dd31ba2ce",
+    "semantic_hash": "0b7274573150b4f688ec302dd31ba2ce"
+  },
+  "apps/web/src/components/ui/hover-card.tsx": {
+    "mtime": 1775381160.2457335,
+    "ast_hash": "0b50b761a73500e6716cec9aad55d93e",
+    "semantic_hash": "0b50b761a73500e6716cec9aad55d93e"
+  },
+  "apps/web/src/components/ui/input.tsx": {
+    "mtime": 1782726224.4563262,
+    "ast_hash": "6a551b447eb540dec4d514c12d42fa2e",
+    "semantic_hash": "6a551b447eb540dec4d514c12d42fa2e"
+  },
+  "apps/web/src/components/ui/label.tsx": {
+    "mtime": 1782726234.43721,
+    "ast_hash": "924c3d79e4c3e2650b052b11a9e90f1b",
+    "semantic_hash": "924c3d79e4c3e2650b052b11a9e90f1b"
+  },
+  "apps/web/src/components/ui/select.tsx": {
+    "mtime": 1782726240.8048606,
+    "ast_hash": "f6c45732dfb5360374e024729a0576f6",
+    "semantic_hash": "f6c45732dfb5360374e024729a0576f6"
+  },
+  "apps/web/src/components/ui/sonner.tsx": {
+    "mtime": 1776000177.3936286,
+    "ast_hash": "eb50941ba362d3211816c0afd110a2c6",
+    "semantic_hash": "eb50941ba362d3211816c0afd110a2c6"
+  },
+  "apps/web/src/components/ui/textarea.tsx": {
+    "mtime": 1782726228.5153024,
+    "ast_hash": "ead31ef0f2c4f4b39910f5372e1cd081",
+    "semantic_hash": "ead31ef0f2c4f4b39910f5372e1cd081"
+  },
+  "apps/web/src/lib/Book1.json": {
+    "mtime": 1785417653.6533978,
+    "ast_hash": "4059a895e3672273bb8519c2df8f6aa5",
+    "semantic_hash": "4059a895e3672273bb8519c2df8f6aa5"
+  },
+  "apps/web/src/lib/accomplishmentsData.ts": {
+    "mtime": 1781260941.9631846,
+    "ast_hash": "4a625c1af5a4402e58fc155e01d99053",
+    "semantic_hash": "4a625c1af5a4402e58fc155e01d99053"
+  },
+  "apps/web/src/lib/fonts.ts": {
+    "mtime": 1776004734.849589,
+    "ast_hash": "0010b945be9258afd0bb2e1871f71d53",
+    "semantic_hash": "0010b945be9258afd0bb2e1871f71d53"
+  },
+  "apps/web/src/lib/otherProjectsData.ts": {
+    "mtime": 1785418358.4359334,
+    "ast_hash": "5a880968a6e8f95759e6fe0a2d5fdc80",
+    "semantic_hash": "5a880968a6e8f95759e6fe0a2d5fdc80"
+  },
+  "apps/web/src/lib/pastClientsData.ts": {
+    "mtime": 1791877986.6066234,
+    "ast_hash": "3742eb1179ffc20b32b7d796dd305f80",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/postData.ts": {
+    "mtime": 1775036666.0650158,
+    "ast_hash": "ec7ca2b01bb3aa27421ea9e558d01f92",
+    "semantic_hash": "ec7ca2b01bb3aa27421ea9e558d01f92"
+  },
+  "apps/web/src/lib/projectData.ts": {
+    "mtime": 1792573689.578282,
+    "ast_hash": "4721c713f22c3883c0bf91cde55e37d0",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/servicesData.ts": {
+    "mtime": 1790758854.6776757,
+    "ast_hash": "41dfe976870291da3b573ead00f5fa4a",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/utils.ts": {
+    "mtime": 1774861226.3575923,
+    "ast_hash": "d9837f38cc05303254571985e3164050",
+    "semantic_hash": "d9837f38cc05303254571985e3164050"
+  },
+  "apps/web/src/types/modules.d.ts": {
+    "mtime": 1776001721.97763,
+    "ast_hash": "8190f94984f9b4391f3f625cee26ff85",
+    "semantic_hash": "8190f94984f9b4391f3f625cee26ff85"
+  },
+  "apps/web/src/views/about-page.tsx": {
+    "mtime": 1791557768.8671875,
+    "ast_hash": "0c453fe09ca51b9187b454fc1414bfff",
+    "semantic_hash": ""
+  },
+  "apps/web/src/views/contact-page.tsx": {
+    "mtime": 1792681063.7975833,
+    "ast_hash": "6d0b88b5a5b020a090a634aa5565c56e",
+    "semantic_hash": ""
+  },
+  "apps/web/src/views/home-page.tsx": {
+    "mtime": 1790325842.3159556,
+    "ast_hash": "c069fbc1b2d541a718456eff5946c938",
+    "semantic_hash": ""
+  },
+  "apps/web/src/views/not-found-page.tsx": {
+    "mtime": 1776001601.1850243,
+    "ast_hash": "bd0a2d775688a1d57277bef0a24599e9",
+    "semantic_hash": "bd0a2d775688a1d57277bef0a24599e9"
+  },
+  "apps/web/src/views/other-projects-page.tsx": {
+    "mtime": 1788261906.4120312,
+    "ast_hash": "7e7a69efa78054a8da9162f2b6a1c91a",
+    "semantic_hash": ""
+  },
+  "apps/web/src/views/post-detail-page.tsx": {
+    "mtime": 1776001475.5764718,
+    "ast_hash": "71202bc9548433014d3b951854829d42",
+    "semantic_hash": "71202bc9548433014d3b951854829d42"
+  },
+  "apps/web/src/views/posts-page.tsx": {
+    "mtime": 1776001475.5694847,
+    "ast_hash": "c3f6327077214d9fb4220b1f60099327",
+    "semantic_hash": "c3f6327077214d9fb4220b1f60099327"
+  },
+  "apps/web/src/views/projects-page.tsx": {
+    "mtime": 1791798397.4780965,
+    "ast_hash": "cdd3722f706748d6d85a3197eeeb11d8",
+    "semantic_hash": ""
+  },
+  "apps/web/src/views/services-page.tsx": {
+    "mtime": 1790758890.8548424,
+    "ast_hash": "c120055cbfc374c9c32726ff4983426e",
+    "semantic_hash": ""
+  },
+  "apps/web/tsconfig.json": {
+    "mtime": 1776001668.5280097,
+    "ast_hash": "b9547ac9419180286a45020d1b99c2cb",
+    "semantic_hash": "b9547ac9419180286a45020d1b99c2cb"
+  },
+  "opencode.json": {
+    "mtime": 1775467410.1097195,
+    "ast_hash": "5f6fe1f808d6c1f4d09dff66f9221187",
+    "semantic_hash": "5f6fe1f808d6c1f4d09dff66f9221187"
+  },
+  "package.json": {
+    "mtime": 1791795522.3196855,
+    "ast_hash": "18eab0d2685a5393c9ad07daebbd8e2f",
+    "semantic_hash": ""
+  },
+  "packages/config/package.json": {
+    "mtime": 1774861226.367641,
+    "ast_hash": "d5938d61e8200490e7344f97e204e33c",
+    "semantic_hash": "d5938d61e8200490e7344f97e204e33c"
+  },
+  "packages/config/tsconfig.base.json": {
+    "mtime": 1774861226.8954487,
+    "ast_hash": "e5876d637cc0a50b51525587f55c7594",
+    "semantic_hash": "e5876d637cc0a50b51525587f55c7594"
+  },
+  "packages/env/package.json": {
+    "mtime": 1774861226.8954487,
+    "ast_hash": "35b0728de5dff9b8a55c3ce4bc49a4df",
+    "semantic_hash": "35b0728de5dff9b8a55c3ce4bc49a4df"
+  },
+  "packages/env/src/native.ts": {
+    "mtime": 1774861226.739924,
+    "ast_hash": "3bf5d6ea462fd8c03a937012af584c5b",
+    "semantic_hash": "3bf5d6ea462fd8c03a937012af584c5b"
+  },
+  "packages/env/src/server.ts": {
+    "mtime": 1774861226.739924,
+    "ast_hash": "cf18516eade5126c69896abf89821feb",
+    "semantic_hash": "cf18516eade5126c69896abf89821feb"
+  },
+  "packages/env/src/web.ts": {
+    "mtime": 1776001557.3579617,
+    "ast_hash": "a51d28c95b86d0872ca072661f378700",
+    "semantic_hash": "a51d28c95b86d0872ca072661f378700"
+  },
+  "packages/env/tsconfig.json": {
+    "mtime": 1774861226.8954487,
+    "ast_hash": "cc595046ce71069c065e0d21ed9f8540",
+    "semantic_hash": "cc595046ce71069c065e0d21ed9f8540"
+  },
+  "playwright.config.ts": {
+    "mtime": 1790755942.0855603,
+    "ast_hash": "6367963a91ad642aa8aaeabc2500160a",
+    "semantic_hash": ""
+  },
+  "skills-lock.json": {
+    "mtime": 1774861737.861524,
+    "ast_hash": "37b8786453724768a733bcd0938dca0c",
+    "semantic_hash": "37b8786453724768a733bcd0938dca0c"
+  },
+  "swap_phases.cjs": {
+    "mtime": 1775558454.5650148,
+    "ast_hash": "2b20f3327f23f4a8e60e97043793e9ac",
+    "semantic_hash": "2b20f3327f23f4a8e60e97043793e9ac"
+  },
+  "tsconfig.json": {
+    "mtime": 1774861226.8954487,
+    "ast_hash": "cc595046ce71069c065e0d21ed9f8540",
+    "semantic_hash": "cc595046ce71069c065e0d21ed9f8540"
+  },
+  "turbo.json": {
+    "mtime": 1792682465.7057235,
+    "ast_hash": "44a5c33aa4ec23ca9319d0ae0651b062",
+    "semantic_hash": ""
+  },
+  "update_colors.cjs": {
+    "mtime": 1775549068.149092,
+    "ast_hash": "2ead49fcbe6bdb5a8b6eb6d5e4ff2f4c",
+    "semantic_hash": "2ead49fcbe6bdb5a8b6eb6d5e4ff2f4c"
+  },
+  "update_projects.cjs": {
+    "mtime": 1775468422.2427638,
+    "ast_hash": "ff5ccff88485658260173dff9f0fe74b",
+    "semantic_hash": "ff5ccff88485658260173dff9f0fe74b"
+  },
+  "CLAUDE.md": {
+    "mtime": 1792676891.2173605,
+    "ast_hash": "3adb5c643109c09256bacb453686a9d0",
+    "semantic_hash": ""
+  },
+  "DESIGN_SYSTEM.md": {
+    "mtime": 1775558628.7492385,
+    "ast_hash": "d2571ed5acce5f7ed5cf65e1da6e46c2",
+    "semantic_hash": "d2571ed5acce5f7ed5cf65e1da6e46c2"
+  },
+  "README.md": {
+    "mtime": 1782213002.1317058,
+    "ast_hash": "57ee08b0e60cd9743e022f2731f642a7",
+    "semantic_hash": "57ee08b0e60cd9743e022f2731f642a7"
+  },
+  "apps/web/public/robots.txt": {
+    "mtime": 1790507608.5179465,
+    "ast_hash": "3ab0995435e04c081d61bea4c6a5908c",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Barkerville/geologicSummaryOfBarkervilleClaims.pdf": {
+    "mtime": 1778175990.0,
+    "ast_hash": "145605faf40ca39928ee68029f379308",
+    "semantic_hash": "145605faf40ca39928ee68029f379308"
+  },
+  "apps/web/public/images/projects/British-Columbia/Little Fort Report.pdf": {
+    "mtime": 1778176227.0,
+    "ast_hash": "1934c3626a9439aa4918432e8f09b3d6",
+    "semantic_hash": "1934c3626a9439aa4918432e8f09b3d6"
+  },
+  "apps/web/public/images/projects/California/LP_Gold Potential of the Green Mtn Project Area_20251230_v2.pdf": {
+    "mtime": 1778175866.0,
+    "ast_hash": "6297766352b8d274ca2020e7bc1d19a5",
+    "semantic_hash": "6297766352b8d274ca2020e7bc1d19a5"
+  },
+  "apps/web/public/images/projects/California/LP_Gold Potential of the Green Mtn Project Area_v2_20251218.pdf": {
+    "mtime": 1778175866.0,
+    "ast_hash": "d1f7876bcb876e740f3071a4390f204e",
+    "semantic_hash": "d1f7876bcb876e740f3071a4390f204e"
+  },
+  "apps/web/public/images/projects/Nevada/Northumberland Staking Report (2).pdf": {
+    "mtime": 1778175827.0,
+    "ast_hash": "00b5d15a9f5413da3fa887596a29e4ef",
+    "semantic_hash": "00b5d15a9f5413da3fa887596a29e4ef"
+  },
+  "apps/web/public/images/projects/Nevada/Northumberland_Geology_Summaryfinal.pdf": {
+    "mtime": 1778175828.0,
+    "ast_hash": "50a18fbd6c5083ab349e5f0bcd502c3f",
+    "semantic_hash": "50a18fbd6c5083ab349e5f0bcd502c3f"
+  },
+  "apps/web/public/images/projects/Nevada/T13N+R45E-1.pdf": {
+    "mtime": 1778175831.0,
+    "ast_hash": "6ab1bfbedc3d3821b5ae6c3f43daae97",
+    "semantic_hash": "6ab1bfbedc3d3821b5ae6c3f43daae97"
+  },
+  "apps/web/public/images/projects/Wyoming/BLM_06_0220N_0710W - Halleck - BURGEX INC - 20250925.pdf": {
+    "mtime": 1778228253.8012097,
+    "ast_hash": "04e4541b6ce187fcc3d497181d404380",
+    "semantic_hash": "04e4541b6ce187fcc3d497181d404380"
+  },
+  "apps/web/public/images/projects/Yukon/yukon_W_V2.pdf": {
+    "mtime": 1778228046.7380238,
+    "ast_hash": "728ada1b865ed1f418cf47dfdd94ba79",
+    "semantic_hash": "728ada1b865ed1f418cf47dfdd94ba79"
+  },
+  "apps/web/public/images/general/Real Estate Institute of British Columbia.png": {
+    "mtime": 1781976790.0869887,
+    "ast_hash": "5d085ab2a4b4273ad4871d436a09dafb",
+    "semantic_hash": "5d085ab2a4b4273ad4871d436a09dafb"
+  },
+  "apps/web/public/images/general/University of British Columbia.jpg": {
+    "mtime": 1781976634.5200498,
+    "ast_hash": "10e94eb3e85fa84117370c1d9a94a76c",
+    "semantic_hash": "10e94eb3e85fa84117370c1d9a94a76c"
+  },
+  "apps/web/public/images/general/avatar.jpg": {
+    "mtime": 1781975392.6756191,
+    "ast_hash": "7552d7ce51738aa00d7b214684cba9de",
+    "semantic_hash": "7552d7ce51738aa00d7b214684cba9de"
+  },
+  "apps/web/public/images/general/bannerlogo.png": {
+    "mtime": 1780160223.621006,
+    "ast_hash": "ea8e15d1303cae4ec1bb88b1c340aeaa",
+    "semantic_hash": "ea8e15d1303cae4ec1bb88b1c340aeaa"
+  },
+  "apps/web/public/images/general/bannerlogo1.png": {
+    "mtime": 1779110866.0,
+    "ast_hash": "cd4a86d4a0cc647010de94de65114ec8",
+    "semantic_hash": "cd4a86d4a0cc647010de94de65114ec8"
+  },
+  "apps/web/public/images/general/certifications/esriVideoScreenshot.png": {
+    "mtime": 1781102006.015944,
+    "ast_hash": "9dc7fc4692b6529eea204bc4d78b03e7",
+    "semantic_hash": "9dc7fc4692b6529eea204bc4d78b03e7"
+  },
+  "apps/web/public/images/general/certifications/jd uc25 plenary submission certificates 73_page-0001.jpg": {
+    "mtime": 1781102249.6559663,
+    "ast_hash": "1597d0f4bcf04ca591353dd336db480b",
+    "semantic_hash": "1597d0f4bcf04ca591353dd336db480b"
+  },
+  "apps/web/public/images/general/certifications/jd uc25 plenary submission certificates 74_page-0001.jpg": {
+    "mtime": 1781102216.7803862,
+    "ast_hash": "969fd24197e595908053b3591ceb7904",
+    "semantic_hash": "969fd24197e595908053b3591ceb7904"
+  },
+  "apps/web/public/images/general/full-logo.png": {
+    "mtime": 1775763369.1962183,
+    "ast_hash": "acfc4a3376aa26ae893ea6baeb270c0d",
+    "semantic_hash": "acfc4a3376aa26ae893ea6baeb270c0d"
+  },
+  "apps/web/public/images/general/logo.png": {
+    "mtime": 1776251241.3830588,
+    "ast_hash": "bb5d0899c38e113a4e9828488d75416a",
+    "semantic_hash": "bb5d0899c38e113a4e9828488d75416a"
+  },
+  "apps/web/public/images/general/minLogo.png": {
+    "mtime": 1779110798.0,
+    "ast_hash": "9c5ab30b6a4139eeb9c9a0f601c8618f",
+    "semantic_hash": "9c5ab30b6a4139eeb9c9a0f601c8618f"
+  },
+  "apps/web/public/images/general/minLogo1.png": {
+    "mtime": 1779178230.0,
+    "ast_hash": "ed964422ab29589e1e054ff8320d8417",
+    "semantic_hash": "ed964422ab29589e1e054ff8320d8417"
+  },
+  "apps/web/public/images/general/oldLogo.png": {
+    "mtime": 1777562467.5880797,
+    "ast_hash": "e5895596dd32c9bf2fb5ec3caedee7f4",
+    "semantic_hash": "e5895596dd32c9bf2fb5ec3caedee7f4"
+  },
+  "apps/web/public/images/projects/Alaska/1.png": {
+    "mtime": 1722047503.0,
+    "ast_hash": "5024366e97a69b1555da2570eef86f9e",
+    "semantic_hash": "5024366e97a69b1555da2570eef86f9e"
+  },
+  "apps/web/public/images/projects/Alaska/2.jpg": {
+    "mtime": 1333642634.0,
+    "ast_hash": "539472c183d4c03713bf12df27b31b70",
+    "semantic_hash": "539472c183d4c03713bf12df27b31b70"
+  },
+  "apps/web/public/images/projects/Alaska/3.png": {
+    "mtime": 1721859522.0,
+    "ast_hash": "24f10ed1f4fb3f0c855b1f2b6d8c6eca",
+    "semantic_hash": "24f10ed1f4fb3f0c855b1f2b6d8c6eca"
+  },
+  "apps/web/public/images/projects/Alaska/Screenshot 2026-06-12 141901.png": {
+    "mtime": 1781270346.4465806,
+    "ast_hash": "5cd45cd6d4205428818f6f71ed173f43",
+    "semantic_hash": "5cd45cd6d4205428818f6f71ed173f43"
+  },
+  "apps/web/public/images/projects/Alaska/Screenshot 2026-06-12 144530.png": {
+    "mtime": 1781271937.8205833,
+    "ast_hash": "6d9f656c090b0d002daa68fd7c5ff563",
+    "semantic_hash": "6d9f656c090b0d002daa68fd7c5ff563"
+  },
+  "apps/web/public/images/projects/Alberta/1.jpg": {
+    "mtime": 1775315131.9249313,
+    "ast_hash": "805e832c8016c2fafc37999fb98a07a0",
+    "semantic_hash": "805e832c8016c2fafc37999fb98a07a0"
+  },
+  "apps/web/public/images/projects/British-Columbia/1.jpg": {
+    "mtime": 1775315375.4762528,
+    "ast_hash": "b1c4a9e99410a2ab531b5e8e67ab812e",
+    "semantic_hash": "b1c4a9e99410a2ab531b5e8e67ab812e"
+  },
+  "apps/web/public/images/projects/British-Columbia/2.jpg": {
+    "mtime": 1775315394.707428,
+    "ast_hash": "c16033fe3b81919baf42dceb5eb616b8",
+    "semantic_hash": "c16033fe3b81919baf42dceb5eb616b8"
+  },
+  "apps/web/public/images/projects/British-Columbia/3.jpg": {
+    "mtime": 1775315403.4568427,
+    "ast_hash": "2eaf0077f177e4eaa62de98cd22f314c",
+    "semantic_hash": "2eaf0077f177e4eaa62de98cd22f314c"
+  },
+  "apps/web/public/images/projects/California/1.png": {
+    "mtime": 1775315574.7044294,
+    "ast_hash": "78a3922364b6725c80e0e47af5d600a2",
+    "semantic_hash": "78a3922364b6725c80e0e47af5d600a2"
+  },
+  "apps/web/public/images/projects/NWT/1.jpg": {
+    "mtime": 1775485007.9186218,
+    "ast_hash": "ca7e920f5912130ea68733212e7f9a4b",
+    "semantic_hash": "ca7e920f5912130ea68733212e7f9a4b"
+  },
+  "apps/web/public/images/projects/NWT/2.jpg": {
+    "mtime": 1775485019.6688082,
+    "ast_hash": "14eadf26713d5f2c5aecedd099523e75",
+    "semantic_hash": "14eadf26713d5f2c5aecedd099523e75"
+  },
+  "apps/web/public/images/projects/NWT/4.jpg": {
+    "mtime": 1775485041.82753,
+    "ast_hash": "85043199f087a4302c810ce53fe38985",
+    "semantic_hash": "85043199f087a4302c810ce53fe38985"
+  },
+  "apps/web/public/images/projects/NWT/8.jpg": {
+    "mtime": 1775485089.124742,
+    "ast_hash": "519e8830c496c5991bfd7b01d860a802",
+    "semantic_hash": "519e8830c496c5991bfd7b01d860a802"
+  },
+  "apps/web/public/images/projects/NWT/NT3114.JPG": {
+    "mtime": 1778176053.0,
+    "ast_hash": "07bae11ee16fb4e31d50944bd16c715e",
+    "semantic_hash": "07bae11ee16fb4e31d50944bd16c715e"
+  },
+  "apps/web/public/images/projects/NWT/NWT.JPG": {
+    "mtime": 1778176053.0,
+    "ast_hash": "273d3e8089432a1a2f93d28e446c6eb8",
+    "semantic_hash": "273d3e8089432a1a2f93d28e446c6eb8"
+  },
+  "apps/web/public/images/projects/NWT/NWTprospectsmap.JPG": {
+    "mtime": 1778176054.0,
+    "ast_hash": "73cf5f908255aff6d1a59264b1d7debc",
+    "semantic_hash": "73cf5f908255aff6d1a59264b1d7debc"
+  },
+  "apps/web/public/images/projects/NWT/Pegs1.JPG": {
+    "mtime": 1778176055.0,
+    "ast_hash": "39c8e77fdb102a7497e72f83c39a1b66",
+    "semantic_hash": "39c8e77fdb102a7497e72f83c39a1b66"
+  },
+  "apps/web/public/images/projects/NWT/PlannedStakingArea2.JPG": {
+    "mtime": 1778176055.0,
+    "ast_hash": "69ef3b40a6f7047301cef75ff82e71a0",
+    "semantic_hash": "69ef3b40a6f7047301cef75ff82e71a0"
+  },
+  "apps/web/public/images/projects/NWT/Target20230830_2.JPG": {
+    "mtime": 1778176057.0,
+    "ast_hash": "82b1ec389c4d8f6842ab9b573506aea9",
+    "semantic_hash": "82b1ec389c4d8f6842ab9b573506aea9"
+  },
+  "apps/web/public/images/projects/NWT/Target20230830_2_ortho.JPG": {
+    "mtime": 1778176057.0,
+    "ast_hash": "eff3e3f71bb9ecc632a0a3a200214923",
+    "semantic_hash": "eff3e3f71bb9ecc632a0a3a200214923"
+  },
+  "apps/web/public/images/projects/Nevada/1.png": {
+    "mtime": 1721272397.0,
+    "ast_hash": "7a55513913020ac82f2d9c3c13b4d2c3",
+    "semantic_hash": "7a55513913020ac82f2d9c3c13b4d2c3"
+  },
+  "apps/web/public/images/projects/Nevada/13N 45E Grouped Geology (1)_page-0001.jpg": {
+    "mtime": 1778771174.5195475,
+    "ast_hash": "b2638e47b8907b0918178b91237ddb56",
+    "semantic_hash": "b2638e47b8907b0918178b91237ddb56"
+  },
+  "apps/web/public/images/projects/Nevada/2.jpg": {
+    "mtime": 1720465943.0,
+    "ast_hash": "fca09af8c60f4739c8e602a8d842190f",
+    "semantic_hash": "fca09af8c60f4739c8e602a8d842190f"
+  },
+  "apps/web/public/images/projects/Nevada/Barrick's Fourmile BLM Updated_page-0001.jpg": {
+    "mtime": 1778771357.4741523,
+    "ast_hash": "72cdba5c4c00d339939f430de059c351",
+    "semantic_hash": "72cdba5c4c00d339939f430de059c351"
+  },
+  "apps/web/public/images/projects/Nevada/Barrick's Fourmile Claimants Add 1_page-0001.jpg": {
+    "mtime": 1778771415.8759801,
+    "ast_hash": "fe3a9c097a0a0be4906c692c07c9615b",
+    "semantic_hash": "fe3a9c097a0a0be4906c692c07c9615b"
+  },
+  "apps/web/public/images/projects/Nevada/Barrick's Fourmile project Map v2 (1)_page-0001.jpg": {
+    "mtime": 1778771480.2880108,
+    "ast_hash": "b6f466ae32ca1dbe4a91ff3742c02554",
+    "semantic_hash": "b6f466ae32ca1dbe4a91ff3742c02554"
+  },
+  "apps/web/public/images/projects/Nevada/CT_Fourmile Open Sections_20260107_page-0001.jpg": {
+    "mtime": 1778771505.888644,
+    "ast_hash": "600db3195de0b54cd6685f154bf3f9f7",
+    "semantic_hash": "600db3195de0b54cd6685f154bf3f9f7"
+  },
+  "apps/web/public/images/projects/Nevada/CT_Northumberland Land Agency Overview V2_20260115_page-0001.jpg": {
+    "mtime": 1778771528.9421835,
+    "ast_hash": "130b85a66540494a819f8fa1c7aa464b",
+    "semantic_hash": "130b85a66540494a819f8fa1c7aa464b"
+  },
+  "apps/web/public/images/projects/Nevada/CT_Northumberland Open Sections_Updated_20260108_page-0001.jpg": {
+    "mtime": 1778771556.4548855,
+    "ast_hash": "1ad281fa7a7bd5e1c0355783903b09e9",
+    "semantic_hash": "1ad281fa7a7bd5e1c0355783903b09e9"
+  },
+  "apps/web/public/images/projects/Nevada/KM_Nevada mapping Staking OverviewMap_20251219_page-0001.jpg": {
+    "mtime": 1778771620.8154075,
+    "ast_hash": "6659fe8bd6446dfa04848799c3c0281f",
+    "semantic_hash": "6659fe8bd6446dfa04848799c3c0281f"
+  },
+  "apps/web/public/images/projects/Nevada/KM_Nevada_Northumberland_13N 45E Full Geology_20251214_page-0001.jpg": {
+    "mtime": 1778771640.971352,
+    "ast_hash": "286e8758aec194363f9d574bff290684",
+    "semantic_hash": "286e8758aec194363f9d574bff290684"
+  },
+  "apps/web/public/images/projects/Newfoundland/1.webp": {
+    "mtime": 1780305402.0988064,
+    "ast_hash": "8e19355c351a8871a110228f4dd5bc2c",
+    "semantic_hash": "8e19355c351a8871a110228f4dd5bc2c"
+  },
+  "apps/web/public/images/projects/Newfoundland/2.jpg": {
+    "mtime": 1775466253.502131,
+    "ast_hash": "24a2709e66c456e52b2752deee0a4302",
+    "semantic_hash": "24a2709e66c456e52b2752deee0a4302"
+  },
+  "apps/web/public/images/projects/Newfoundland/NorthArrowAug30TargetGeol.JPG": {
+    "mtime": 1778176052.0,
+    "ast_hash": "e54f5895ed57089da6945b03bd7aad1e",
+    "semantic_hash": "e54f5895ed57089da6945b03bd7aad1e"
+  },
+  "apps/web/public/images/projects/Newfoundland/NorthArrowStatusMap.JPG": {
+    "mtime": 1778176052.0,
+    "ast_hash": "e5b9e5062e7cefa9ba987033f8f2fe79",
+    "semantic_hash": "e5b9e5062e7cefa9ba987033f8f2fe79"
+  },
+  "apps/web/public/images/projects/Newfoundland/NorthArrowTarget1.JPG": {
+    "mtime": 1778176054.0,
+    "ast_hash": "1cff3dafa334fa75bc5788b6df5bbbec",
+    "semantic_hash": "1cff3dafa334fa75bc5788b6df5bbbec"
+  },
+  "apps/web/public/images/projects/Nunavut/055MNW0038_Shane Lake Project - Ms Claims_page-0001.jpg": {
+    "mtime": 1778228729.5321941,
+    "ast_hash": "f5f7e0e4b6869600f70a58f60505ecf1",
+    "semantic_hash": "f5f7e0e4b6869600f70a58f60505ecf1"
+  },
+  "apps/web/public/images/projects/Nunavut/065JNE0019_Nip, Rev (Noranda Expln.)_page-0001.jpg": {
+    "mtime": 1778228781.0,
+    "ast_hash": "b238b448b019fcd306af0a79110107c8",
+    "semantic_hash": "b238b448b019fcd306af0a79110107c8"
+  },
+  "apps/web/public/images/projects/Nunavut/065JNW0006_Rib & Fst (Noranda)_page-0001.jpg": {
+    "mtime": 1778228781.0,
+    "ast_hash": "ef7a634a28966eb3b80d1558585982e8",
+    "semantic_hash": "ef7a634a28966eb3b80d1558585982e8"
+  },
+  "apps/web/public/images/projects/Nunavut/065NSE0001_Outlet Bay_page-0001.jpg": {
+    "mtime": 1778228947.0,
+    "ast_hash": "2f4d5dc841955dae300a757c3802d2de",
+    "semantic_hash": "2f4d5dc841955dae300a757c3802d2de"
+  },
+  "apps/web/public/images/projects/Nunavut/065OSE0003_Nutarawit Lake_page-0001.jpg": {
+    "mtime": 1778228946.0,
+    "ast_hash": "78bc47273de41aa236b407a91cb3b639",
+    "semantic_hash": "78bc47273de41aa236b407a91cb3b639"
+  },
+  "apps/web/public/images/projects/Nunavut/066GSE0001_Lost Lake Deep Rose Project_page-0001.jpg": {
+    "mtime": 1778229214.0,
+    "ast_hash": "99aad6a93eb65345e9f96628a153a088",
+    "semantic_hash": "99aad6a93eb65345e9f96628a153a088"
+  },
+  "apps/web/public/images/projects/Nunavut/066GSE0002_Naujatuuk Lake Deep Rose (Sandhills Project)_page-0001.jpg": {
+    "mtime": 1778229214.0,
+    "ast_hash": "9176465677bffd469577f4d3d6ad091b",
+    "semantic_hash": "9176465677bffd469577f4d3d6ad091b"
+  },
+  "apps/web/public/images/projects/Ontario/1.png": {
+    "mtime": 1775486406.077437,
+    "ast_hash": "8e33ba223ef10bbc26524046f22569c8",
+    "semantic_hash": "8e33ba223ef10bbc26524046f22569c8"
+  },
+  "apps/web/public/images/projects/Ontario/2.png": {
+    "mtime": 1775486419.624468,
+    "ast_hash": "6dcfafce1327497655e07f4af1192f29",
+    "semantic_hash": "6dcfafce1327497655e07f4af1192f29"
+  },
+  "apps/web/public/images/projects/Ontario/3.jpg": {
+    "mtime": 1775486502.0795922,
+    "ast_hash": "186ad17d883521e2c52c3f74b6ab415e",
+    "semantic_hash": "186ad17d883521e2c52c3f74b6ab415e"
+  },
+  "apps/web/public/images/projects/Ontario/4.jpg": {
+    "mtime": 1775486532.7427654,
+    "ast_hash": "8cc045dd2b3be6b5a7a67bb7c147f024",
+    "semantic_hash": "8cc045dd2b3be6b5a7a67bb7c147f024"
+  },
+  "apps/web/public/images/projects/Ontario/5.jpg": {
+    "mtime": 1775486564.9799328,
+    "ast_hash": "253ac069a654823211ff1bc45fa47cfd",
+    "semantic_hash": "253ac069a654823211ff1bc45fa47cfd"
+  },
+  "apps/web/public/images/projects/Ontario/6.jpg": {
+    "mtime": 1775486579.9562094,
+    "ast_hash": "22471a64a76c98cf73333a93fd88c511",
+    "semantic_hash": "22471a64a76c98cf73333a93fd88c511"
+  },
+  "apps/web/public/images/projects/Ontario/Ontario Tungsten Open Ground_page-0001.jpg": {
+    "mtime": 1778228539.5877545,
+    "ast_hash": "18f128ce40fba3ca50f61057977e66a7",
+    "semantic_hash": "18f128ce40fba3ca50f61057977e66a7"
+  },
+  "apps/web/public/images/projects/Quebec/1.jpg": {
+    "mtime": 1775487167.4041824,
+    "ast_hash": "8cf2a15c194cc29c906c978245b0e800",
+    "semantic_hash": "8cf2a15c194cc29c906c978245b0e800"
+  },
+  "apps/web/public/images/projects/Quebec/2.jpg": {
+    "mtime": 1775487179.6786792,
+    "ast_hash": "b54d5961ba9b7a816d23ccf144577da1",
+    "semantic_hash": "b54d5961ba9b7a816d23ccf144577da1"
+  },
+  "apps/web/public/images/projects/Quebec/3.jpg": {
+    "mtime": 1775487190.2062356,
+    "ast_hash": "f725e7d7429bc1b13a27086848876891",
+    "semantic_hash": "f725e7d7429bc1b13a27086848876891"
+  },
+  "apps/web/public/images/projects/Quebec/4.jpg": {
+    "mtime": 1775487227.2161658,
+    "ast_hash": "5d8e05b7ffa1bd75fbbd86a74585c2ec",
+    "semantic_hash": "5d8e05b7ffa1bd75fbbd86a74585c2ec"
+  },
+  "apps/web/public/images/projects/Quebec/5.jpg": {
+    "mtime": 1775487242.4707818,
+    "ast_hash": "2d0d9d681d01f3d8305fb256191dcb8d",
+    "semantic_hash": "2d0d9d681d01f3d8305fb256191dcb8d"
+  },
+  "apps/web/public/images/projects/Quebec/JamesBayAug21_A_page-0001.jpg": {
+    "mtime": 1780307390.4010468,
+    "ast_hash": "36964dde075c63ee7d51763d6687ee15",
+    "semantic_hash": "36964dde075c63ee7d51763d6687ee15"
+  },
+  "apps/web/public/images/projects/Quebec/LacEwartGraniticPegZoomedGeology_page-0001.jpg": {
+    "mtime": 1780307425.6754572,
+    "ast_hash": "f27f006b1c3de6205e60f6494d1e9b00",
+    "semantic_hash": "f27f006b1c3de6205e60f6494d1e9b00"
+  },
+  "apps/web/public/images/projects/Quebec/LacEwartGraniticPegmatiteOpen_page-0001.jpg": {
+    "mtime": 1780307415.3830895,
+    "ast_hash": "0e7d6c90d18e2b7e565157254a319c9d",
+    "semantic_hash": "0e7d6c90d18e2b7e565157254a319c9d"
+  },
+  "apps/web/public/images/projects/Quebec/mapofazimutopenground/image (2).png": {
+    "mtime": 1779960144.0,
+    "ast_hash": "7d8766ce8bf3fcf9f459a671cb837052",
+    "semantic_hash": "7d8766ce8bf3fcf9f459a671cb837052"
+  },
+  "apps/web/public/images/projects/Quebec/mapofazimutopenground/image (3).png": {
+    "mtime": 1779960144.0,
+    "ast_hash": "5b14e5d889679bb4ee1866d583f174a7",
+    "semantic_hash": "5b14e5d889679bb4ee1866d583f174a7"
+  },
+  "apps/web/public/images/projects/Saskatchewan/1.png": {
+    "mtime": 1775488077.3896298,
+    "ast_hash": "b879910816f2b151c2b562c927e41aba",
+    "semantic_hash": "b879910816f2b151c2b562c927e41aba"
+  },
+  "apps/web/public/images/projects/Saskatchewan/2.jpg": {
+    "mtime": 1775488089.515899,
+    "ast_hash": "106aaf56eaa2521a60824513d419cae0",
+    "semantic_hash": "106aaf56eaa2521a60824513d419cae0"
+  },
+  "apps/web/public/images/projects/Texas/Round Top V1.1 Scale 1_50000 _page-0001.jpg": {
+    "mtime": 1780307850.2259462,
+    "ast_hash": "7b231662ea3169d1c817671c3a073261",
+    "semantic_hash": "7b231662ea3169d1c817671c3a073261"
+  },
+  "apps/web/public/images/projects/Utah/Quantum_UtahStakingLayout_2025117_page-0001.jpg": {
+    "mtime": 1778228366.3140712,
+    "ast_hash": "ba89acfbfc7b8ffd073b3613e51f75d6",
+    "semantic_hash": "ba89acfbfc7b8ffd073b3613e51f75d6"
+  },
+  "apps/web/public/images/projects/Utah/Quantum_UtahStakingLayout_2025129_page-0001.jpg": {
+    "mtime": 1778228428.3808866,
+    "ast_hash": "0fe51ccb1de296c4325d907184a6fadf",
+    "semantic_hash": "0fe51ccb1de296c4325d907184a6fadf"
+  },
+  "apps/web/public/images/projects/Wyoming/1.png": {
+    "mtime": 1775644506.0084713,
+    "ast_hash": "132fb0676f2c09b5dcd6533d9b85cf0d",
+    "semantic_hash": "132fb0676f2c09b5dcd6533d9b85cf0d"
+  },
+  "apps/web/public/images/projects/Wyoming/ClaimsWyoming.JPG": {
+    "mtime": 1779987536.0,
+    "ast_hash": "39818d0eb16e55dfb0aa86b15e327926",
+    "semantic_hash": "39818d0eb16e55dfb0aa86b15e327926"
+  },
+  "apps/web/public/images/projects/Wyoming/WyomingHalleckCrk_20250906_page-0001.jpg": {
+    "mtime": 1778228160.1645586,
+    "ast_hash": "f7bd669628cf933bc8fb858078530da7",
+    "semantic_hash": "f7bd669628cf933bc8fb858078530da7"
+  },
+  "apps/web/public/images/projects/Wyoming/WyomingHalleckCrk_20250927_page-0001.jpg": {
+    "mtime": 1778228203.8435273,
+    "ast_hash": "e35ddc0c1f09276a1a28d989a78ed798",
+    "semantic_hash": "e35ddc0c1f09276a1a28d989a78ed798"
+  },
+  "apps/web/public/images/projects/Yukon/1.jpg": {
+    "mtime": 1775644843.1554952,
+    "ast_hash": "2dcc24ae2b39774c8294a441474916e6",
+    "semantic_hash": "2dcc24ae2b39774c8294a441474916e6"
+  },
+  "apps/web/public/images/projects/Yukon/2.jpg": {
+    "mtime": 1775644861.0269399,
+    "ast_hash": "efe0e1a229a8f2b971c399759458a9a9",
+    "semantic_hash": "efe0e1a229a8f2b971c399759458a9a9"
+  },
+  "apps/web/public/images/projects/Yukon/3.jpg": {
+    "mtime": 1775644892.0000951,
+    "ast_hash": "d290294484cc543d8ab948447e5f217b",
+    "semantic_hash": "d290294484cc543d8ab948447e5f217b"
+  },
+  "apps/web/public/images/projects/Yukon/4.png": {
+    "mtime": 1778227216.461399,
+    "ast_hash": "61b355b6cbc55228de873b04c195ebac",
+    "semantic_hash": "61b355b6cbc55228de873b04c195ebac"
+  },
+  "apps/web/public/images/projects/Yukon/Yukon Tungsten Open Ground 2_page-0001.jpg": {
+    "mtime": 1780308865.7933366,
+    "ast_hash": "fd7e8d22ba37b65b8ff5b6de8b3caffe",
+    "semantic_hash": "fd7e8d22ba37b65b8ff5b6de8b3caffe"
+  },
+  "apps/web/public/images/projects/Yukon/Yukon with Historical Claims_pages-to-jpg-0001.jpg": {
+    "mtime": 1778227835.3835032,
+    "ast_hash": "ac36f87494c55699946b95c1074ff3a6",
+    "semantic_hash": "ac36f87494c55699946b95c1074ff3a6"
+  },
+  "apps/web/src/app/opengraph-image.png": {
+    "mtime": 1790508427.04858,
+    "ast_hash": "08b33afd1960e3e8d37e726c10122ee3",
+    "semantic_hash": ""
+  },
+  ".claude/settings.json": {
+    "mtime": 1792676249.5509398,
+    "ast_hash": "48f0845fba419fe6af6460a3d711a9c6",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/api/newsletter/route.ts": {
+    "mtime": 1792676757.796302,
+    "ast_hash": "7b28483d6e4ace7077e9619428e74a5f",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/NewsletterForm.tsx": {
+    "mtime": 1792677499.838555,
+    "ast_hash": "8769140bf765a81d07e6d0c1001e6b54",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/PartnerProgramsModal.tsx": {
+    "mtime": 1785916126.7195861,
+    "ast_hash": "7f87afdb98aaf1e6c0a2a172a8d6c972",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/PartnerProgramsTickerBanner.tsx": {
+    "mtime": 1785916889.6547918,
+    "ast_hash": "4e1ce96f89b6939b9b71b6ff72cf8d2d",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/fullscreen-image-viewer.tsx": {
+    "mtime": 1788518027.4038348,
+    "ast_hash": "7a1b24ec92b66be48d93d1499dceccf1",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/home/past-clients-preview-section.tsx": {
+    "mtime": 1791877994.0668988,
+    "ast_hash": "acc5b2fd92dc53b041e29d1d402a2b1b",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/navigation-progress-bar.tsx": {
+    "mtime": 1789660160.147893,
+    "ast_hash": "a9d8b9118e299da9109e5a350754265b",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/project-image-gallery.tsx": {
+    "mtime": 1788518069.133823,
+    "ast_hash": "1b02eb8a319d6eb6987747383fb2cedf",
+    "semantic_hash": ""
+  },
+  "apps/web/src/views/partners-page.tsx": {
+    "mtime": 1785916640.9789348,
+    "ast_hash": "62d69023f78d64fc0c37e13413a2179c",
+    "semantic_hash": ""
+  },
+  "apps/web/vercel.json": {
+    "mtime": 1790852921.036125,
+    "ast_hash": "7cdc880a59d2fc84a3b1d32bfa37f539",
+    "semantic_hash": ""
+  },
+  "migrations/001_projects_seed.sql": {
+    "mtime": 1792573392.9355042,
+    "ast_hash": "2bf91dfc718220e3c144bcd4921c279f",
+    "semantic_hash": ""
+  },
+  "migrations/002_newsletter_subscribers.sql": {
+    "mtime": 1792676741.8392446,
+    "ast_hash": "8014c776776be53d81844be9a940f9b1",
+    "semantic_hash": ""
+  },
+  "toolbox/generate_projects_csv.mjs": {
+    "mtime": 1791795509.4606197,
+    "ast_hash": "53e75ef477adf11ae7c043a759e428ff",
+    "semantic_hash": ""
+  },
+  "toolbox/generate_projects_migration.mjs": {
+    "mtime": 1791795503.4861374,
+    "ast_hash": "5d0f381ab1efea5635f8eef5d94dc26b",
+    "semantic_hash": ""
+  },
+  "toolbox/migrations/001_projects_seed.sql": {
+    "mtime": 1792573392.9355042,
+    "ast_hash": "2bf91dfc718220e3c144bcd4921c279f",
+    "semantic_hash": ""
+  },
+  "ACTION-PLAN.md": {
+    "mtime": 1790524621.6618254,
+    "ast_hash": "8b1b15c6c3552f9ebb6633f97a72b5e8",
+    "semantic_hash": ""
+  },
+  "FULL-AUDIT-REPORT.md": {
+    "mtime": 1790524621.6608267,
+    "ast_hash": "b0effa67fd5f3f24634813cffe1b9739",
+    "semantic_hash": ""
+  },
+  "SEO-PROGRESS.md": {
+    "mtime": 1790524376.1136603,
+    "ast_hash": "d662a53c2859a4820d4237d3daf19d71",
+    "semantic_hash": ""
+  },
+  "SEO-REPORT.html": {
+    "mtime": 1790524621.6608267,
+    "ast_hash": "5dfb8c3e8aea2887119c6f19f60479d6",
+    "semantic_hash": ""
+  },
+  "apps/web/public/llms-full.txt": {
+    "mtime": 1790507711.2845805,
+    "ast_hash": "b24c581e9f876de5ac07d8aae081306e",
+    "semantic_hash": ""
+  },
+  "apps/web/public/llms.txt": {
+    "mtime": 1790507703.0080984,
+    "ast_hash": "2235a170f587507b88a8298647735b60",
+    "semantic_hash": ""
+  },
+  "diagrams/webgis-platform-architecture.html": {
+    "mtime": 1791882267.5616403,
+    "ast_hash": "0269fff85284648522ba404b1db1b9f6",
+    "semantic_hash": ""
+  },
+  "projectdataPrep.md": {
+    "mtime": 1787500424.3043869,
+    "ast_hash": "922c6f7d61e840186603289cbafd0a42",
+    "semantic_hash": ""
+  },
+  "toolbox/README.md": {
+    "mtime": 1791795516.8532324,
+    "ast_hash": "455aa09bb9e6b4d39e1934d3089aed0a",
+    "semantic_hash": ""
+  },
+  "apps/web/public/documents/20260817 QUOTE 7693234.Pdf": {
+    "mtime": 1787496446.3170907,
+    "ast_hash": "0bbd1e72b0fbfeb01319805c10e27c2b",
+    "semantic_hash": ""
+  },
+  "apps/web/public/documents/Zensurance.pdf": {
+    "mtime": 1787496447.9355936,
+    "ast_hash": "480ad8e4896afee3cecdf9e725dd0c8c",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/Ferroux_Property_Opinion_Summary.pdf": {
+    "mtime": 1786373353.0869718,
+    "ast_hash": "23638c5f94422323f186821bbee4f306",
+    "semantic_hash": ""
+  },
+  "apps/web/public/icon.svg": {
+    "mtime": 1790522123.3193188,
+    "ast_hash": "89fa3cbbf65a03e569019a6d7980e47d",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Arizona/1.jpg": {
+    "mtime": 1775315204.1499548,
+    "ast_hash": "c8a006deaee5472bca0ca890cab1c3ca",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Australia-New-Zealand/1.png": {
+    "mtime": 1775315260.97573,
+    "ast_hash": "65de99dea275e020c006ec437ecd4ccb",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Australia-New-Zealand/2.png": {
+    "mtime": 1775336214.646676,
+    "ast_hash": "db593fc372e2a9cb86126456ead1f7f4",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Australia-New-Zealand/3.png": {
+    "mtime": 1775315279.7908716,
+    "ast_hash": "76b09b0b8e582df7d3f8922c6ed5bed6",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Australia-New-Zealand/4.png": {
+    "mtime": 1775315287.5570087,
+    "ast_hash": "d022bbeae08c5120de6f9983aafa31a9",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Barkerville/BARKERVILLE_MAP_03MAR26.jpg": {
+    "mtime": 1779275179.266541,
+    "ast_hash": "71095e7e4bdd9861242fae605878a466",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Barkerville/BGM_Ownership_DRAFT_r1 2-3_page-0001.jpg": {
+    "mtime": 1779008756.0,
+    "ast_hash": "cbe05afd883cc9d60d782af00f669abd",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Barkerville/BGM_Ownership_DRAFT_r1 2-3_page-0002.jpg": {
+    "mtime": 1779008757.0,
+    "ast_hash": "0b0fb0df5e9f7e401f596d577e49f551",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Barkerville/BGM_Ownership_DRAFT_r1 4-5_page-0001.jpg": {
+    "mtime": 1779008969.0,
+    "ast_hash": "ebad77f74c91313d90a16e473748c844",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Barkerville/BGM_Ownership_DRAFT_r1 4-5_page-0002.jpg": {
+    "mtime": 1779008969.0,
+    "ast_hash": "5ad86d650fb56d35574c0c0cce26879f",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Barkerville/BGM_Ownership_DRAFT_r11_page-0001.jpg": {
+    "mtime": 1779008630.9152155,
+    "ast_hash": "5ce82d639c06d96488d1802cb0cf4159",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Barkerville/SM_BarkervillePlacers_20251115_page-0001.jpg": {
+    "mtime": 1779275634.1425233,
+    "ast_hash": "4e85463d92ee0f7101f52db1575d6c31",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Brazil/1.jpg": {
+    "mtime": 1775638014.0606432,
+    "ast_hash": "9f6a2576d9419ced3ba56c28ab307f81",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Brazil/2.jpg": {
+    "mtime": 1775641327.3173995,
+    "ast_hash": "ad8dc106074aa0e0418961b1964eeccd",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Brazil/3.jpg": {
+    "mtime": 1775641357.3086233,
+    "ast_hash": "4716ca1a9dacba6a3831b01f286521cc",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Brazil/4.jpg": {
+    "mtime": 1775641374.886514,
+    "ast_hash": "529e189b239a0710b041bd8b51a5e33f",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/10.jpg": {
+    "mtime": 1775315463.570405,
+    "ast_hash": "93b54bac605aa2c1db8955a197717f48",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/11.jpg": {
+    "mtime": 1775315469.5405736,
+    "ast_hash": "52ed4f2fae237b29d23d5544311deef2",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/12.jpg": {
+    "mtime": 1775315487.2207632,
+    "ast_hash": "5fbda8ca7e4e2b164796831c954853fa",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/4.jpg": {
+    "mtime": 1775460854.7313254,
+    "ast_hash": "e7e8837ba195ae58606d99d5a0ab6a6d",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/5.jpg": {
+    "mtime": 1775315411.4155104,
+    "ast_hash": "109b2be49f9155319dda2392d9f70cfa",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/6.jpg": {
+    "mtime": 1775315420.540226,
+    "ast_hash": "7188e849dcf376eab58db290d18da637",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/7.jpg": {
+    "mtime": 1775315426.4624004,
+    "ast_hash": "1cd115ac389f2438d5ec5d74b6be1beb",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/8.jpg": {
+    "mtime": 1775315439.4294875,
+    "ast_hash": "36283f9ed4c3f0d3c164769b40acc94b",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/9.jpg": {
+    "mtime": 1775315456.2725441,
+    "ast_hash": "c6edd03c267ebe82df61e8bf0489185e",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/Babs_Map.jpg": {
+    "mtime": 1783503828.753567,
+    "ast_hash": "9cdd116f8e7e7543499e18c11c8399cc",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/Babs_Regional_Map.jpg": {
+    "mtime": 1783503889.2512813,
+    "ast_hash": "41da950ef207bc3d3481a3dad242fecf",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/Inside the Rampalo adit.png": {
+    "mtime": 1783500929.3028536,
+    "ast_hash": "d392e462e97b7512e2533ddb1e252756",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/McQuillan.png": {
+    "mtime": 1783497015.2819586,
+    "ast_hash": "a52552713ae8eccc41287676c3be22ae",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/Polley Property.jpg": {
+    "mtime": 1783505201.2907338,
+    "ast_hash": "99557c724e9dc5210d65eba6e6a2f302",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/Silver Spot Tailings2.png": {
+    "mtime": 1783501047.1951976,
+    "ast_hash": "ddf105c57a0466f54e69bc2f5a6817d4",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/Silver Spot tailings.png": {
+    "mtime": 1783500982.1069288,
+    "ast_hash": "950952b0dfb2e7efd629166f2b4d66f8",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/SilverSpotadit.png": {
+    "mtime": 1783500817.8074172,
+    "ast_hash": "5c690afc9e953872304d4b0aa79c1947",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/TL_GoldinRock_2025111_page-0001.jpg": {
+    "mtime": 1781778073.9090145,
+    "ast_hash": "3d780ce507b1076217fe37fdc3bb36b4",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/lightningPeak.png": {
+    "mtime": 1783499812.3453772,
+    "ast_hash": "4ee662bf051d6ccf671b9a0e87e417c0",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/British-Columbia/rampaloAdit.png": {
+    "mtime": 1783500683.3011913,
+    "ast_hash": "c21e5db4dbb3fe0855999673698d2d87",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/California/2.png": {
+    "mtime": 1775315587.5837493,
+    "ast_hash": "645b3c7f96a950a8f94594c1ef2f6660",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/California/DaveTwp45N_8W_20250713_page-0001.jpg": {
+    "mtime": 1778680794.0,
+    "ast_hash": "69227b890fa3b98ca6daedf5c549bd78",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/California/LP_GeologyGreenMtn_20251214.jpg": {
+    "mtime": 1778175806.0,
+    "ast_hash": "9c2383f9d4e55db01f424af7a9940b8b",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/California/LarryTwp9N_4W_GM1_GM60areamap_page-0001.jpg": {
+    "mtime": 1778680794.0,
+    "ast_hash": "41c2a556a660ca4095b73c2561e3161c",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Chile/1.png": {
+    "mtime": 1775637971.5659034,
+    "ast_hash": "3b200204da87c19d3b22366701005960",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Chile/2.png": {
+    "mtime": 1775638003.3186555,
+    "ast_hash": "3489331b09df9ec86cb9ce8e19f428f3",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Europe/1.png": {
+    "mtime": 1775315678.213523,
+    "ast_hash": "0ea6db1205a01534e39f4f198a113d03",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-1.jpg": {
+    "mtime": 1779009921.227368,
+    "ast_hash": "fbeb98e19aafeb9ff15e5d19a1e73035",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-2.jpg": {
+    "mtime": 1779009921.4873662,
+    "ast_hash": "379131e3d4c4e8a9a11128002b4e6648",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-3.jpg": {
+    "mtime": 1779009921.7313645,
+    "ast_hash": "326ae4d6712461bf2f730f238d797384",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-4.jpg": {
+    "mtime": 1779009921.9913626,
+    "ast_hash": "efdfa68417795441c12c516b26f53fed",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Lexington/Lexington_GeologicalMap_20251221_v2-5.jpg": {
+    "mtime": 1779009922.2353606,
+    "ast_hash": "1e487d84feae7753db260406df67272f",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Manitoba/1.webp": {
+    "mtime": 1775464525.3612778,
+    "ast_hash": "021b2183dfd6116e602bc01c1a48a35e",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/NWT/3.webp": {
+    "mtime": 1775485030.3954158,
+    "ast_hash": "f38c57efb1985e73174c68c42dcfb899",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/NWT/5.webp": {
+    "mtime": 1775485053.706288,
+    "ast_hash": "cf7b2a3b6f475777cb5548c5b8be2cef",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/NWT/6.webp": {
+    "mtime": 1775485064.6040828,
+    "ast_hash": "e4e2ec53410d13f29c5c9100e3d70606",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/NWT/7.png": {
+    "mtime": 1775485082.6318574,
+    "ast_hash": "e83edc9df2d8f12bb8419b4e4588b2a9",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Newfoundland/SwordAndGossan_coordinates.jpg": {
+    "mtime": 1789822714.1889603,
+    "ast_hash": "c5308c88593ea954ccf0ee2f66a79ddc",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Yukon/last_chance_creek_1.jpg": {
+    "mtime": 1790503432.307201,
+    "ast_hash": "3f21f492cf1d04183c3b58e7ae4e38c5",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Yukon/last_chance_creek_2.jpg": {
+    "mtime": 1790503432.8148744,
+    "ast_hash": "fec01d6944dc6d09497ec1f34af94c7c",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/projects/Yukon/last_chance_creek_3.jpg": {
+    "mtime": 1790503433.3000417,
+    "ast_hash": "4c5d5d4e717a7eba58b936edd0cc99c8",
+    "semantic_hash": ""
+  },
+  "apps/web/public/opengraph-image.png": {
+    "mtime": 1790508427.04858,
+    "ast_hash": "08b33afd1960e3e8d37e726c10122ee3",
+    "semantic_hash": ""
+  }
+}

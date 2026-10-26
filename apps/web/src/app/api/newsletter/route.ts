@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 import { z } from "zod";
+import { detectSpam } from "@/lib/spamGuard";
 
 const schema = z.object({
   email: z.string().trim().toLowerCase().email("Invalid email address").max(254),
   source: z.string().max(64).optional(),
-  // Honeypot: real users never see or fill this field.
+  // Bot signals (see lib/spamGuard.ts)
   company: z.string().optional(),
+  elapsedMs: z.number().optional(),
 });
 
 export async function POST(request: NextRequest) {
@@ -37,10 +39,13 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const { email, source, company } = parsed.data;
+  const { email, source, company, elapsedMs } = parsed.data;
 
-  // Bots fill the honeypot; pretend success so they don't retry.
-  if (company) {
+  // A single email field can be autofilled quickly, so allow a shorter fill time.
+  const spamReason = detectSpam({ honeypot: company, elapsedMs, minFillMs: 1500 });
+  if (spamReason) {
+    // Pretend success so bots don't retry or adapt.
+    console.warn(`Dropped newsletter signup (${spamReason})`);
     return NextResponse.json({ success: true }, { status: 200 });
   }
 
