@@ -77,6 +77,13 @@ export default function Footer() {
             >
               Contact
             </Link>
+            {/* /account redirects signed-out visitors to /sign-in */}
+            <Link
+              href="/account"
+              className="hover:text-primary transition-colors"
+            >
+              Client Portal
+            </Link>
           </div>
         </div>
 

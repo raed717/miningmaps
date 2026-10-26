@@ -13,6 +13,18 @@ import ClientPage from "./client";
 const siteName = "Adamson Geomatics";
 
 const pageMeta: Record<string, Metadata> = {
+  "/sign-up": {
+    title: `Create Account — ${siteName}`,
+    robots: { index: false, follow: false },
+  },
+  "/sign-in": {
+    title: `Sign In — ${siteName}`,
+    robots: { index: false, follow: false },
+  },
+  "/account": {
+    title: `Account — ${siteName}`,
+    robots: { index: false, follow: false },
+  },
   "/about": {
     title: `About — ${siteName}`,
     description:
@@ -194,6 +206,9 @@ export function generateStaticParams() {
     { slug: ["partners"] },
     { slug: ["post"] },
     { slug: ["posts"] },
+    { slug: ["sign-up"] },
+    { slug: ["sign-in"] },
+    { slug: ["account"] },
     ...projects.map((project) => ({ slug: ["projects", project.id] })),
     ...mockPosts.flatMap((post) => [
       { slug: ["post", post.id] },

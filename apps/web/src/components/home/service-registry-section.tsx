@@ -45,15 +45,17 @@ export function ServiceRegistrySection() {
       <div className="absolute inset-y-0 right-0 w-1/3 bg-[radial-gradient(circle_at_top_right,rgb(255,215,0),transparent_55%)] opacity-60" />
 
       <div className="relative border border-border bg-background/70 backdrop-blur-sm">
-        <div className="grid gap-px bg-border xl:grid-cols-[minmax(280px,0.9fr)_minmax(0,1.35fr)_minmax(260px,0.75fr)] xl:items-start">
+        {/* Columns stretch to equal height: bg-border is only meant to show through the 1px gaps. */}
+        <div className="grid gap-px bg-border xl:grid-cols-[minmax(280px,0.9fr)_minmax(0,1.35fr)_minmax(260px,0.75fr)]">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             className="bg-background p-6 md:p-8 xl:p-10"
           >
+            {/* xl cap is 54rem minus this column's xl:p-10 padding, so all three columns end at 54rem. */}
             <div
-              className={`relative overflow-hidden ${!leftExpanded ? "max-h-[26rem] xl:max-h-[54rem] xl:overflow-y-auto xl:scrollbar-thin" : ""}`}
+              className={`relative overflow-hidden ${!leftExpanded ? "max-h-[26rem] xl:max-h-[calc(54rem-5rem)] xl:overflow-y-auto xl:scrollbar-thin" : ""}`}
             >
               <div
                 className={`mb-4 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
@@ -235,7 +237,7 @@ export function ServiceRegistrySection() {
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
-            className="xl:max-h-216 xl:overflow-y-auto xl:scrollbar-thin"
+            className="bg-background xl:max-h-216 xl:overflow-y-auto xl:scrollbar-thin"
           >
             <div className={`relative overflow-hidden grid gap-px bg-border ${rightExpanded ? "" : "max-h-104 xl:max-h-none"}`}>
               <div className="bg-background p-6 md:p-8">

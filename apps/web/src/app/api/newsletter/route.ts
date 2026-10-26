@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 import { z } from "zod";
 import { detectSpam } from "@/lib/spamGuard";
+import { subscribeToNewsletter } from "@/lib/newsletter";
 
 const schema = z.object({
   email: z.string().trim().toLowerCase().email("Invalid email address").max(254),
@@ -50,16 +51,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const sql = neon(databaseUrl);
-    // Re-subscribing a previously unsubscribed address reactivates it;
-    // subscribing twice is a silent no-op so we never leak who is on the list.
-    await sql`
-      INSERT INTO newsletter_subscribers (email, source)
-      VALUES (${email}, ${source ?? null})
-      ON CONFLICT ((lower(email))) DO UPDATE
-        SET unsubscribed_at = NULL
-        WHERE newsletter_subscribers.unsubscribed_at IS NOT NULL
-    `;
+    await subscribeToNewsletter(neon(databaseUrl), email, source ?? null);
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {

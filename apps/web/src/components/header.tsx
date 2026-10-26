@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { Facebook, Linkedin, Loader2 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { startGlobalProgress } from "./navigation-progress-bar";
+import { HeaderAuthDesktop, HeaderAuthMobile } from "./header-auth";
 
 export default function Header() {
   const router = useRouter();
@@ -86,7 +87,7 @@ export default function Header() {
                   }
                 }}
                 onClick={() => handleNavClick(to, false)}
-                className={`relative flex items-center gap-1.5 px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
+                className={`relative flex items-center gap-1.5 whitespace-nowrap px-2.5 lg:px-3 xl:px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
                   isActive
                     ? "text-primary bg-primary/10"
                     : "text-muted-foreground hover:text-white hover:bg-muted"
@@ -104,9 +105,11 @@ export default function Header() {
           })}
         </nav>
 
-        {/* SOCIAL LINKS */}
+        {/* AUTH + SOCIAL LINKS */}
         <div className="flex items-center space-x-4">
-          <div className="hidden md:flex items-center gap-1">
+          <HeaderAuthDesktop />
+          {/* Hidden below xl to leave room for auth controls; still in the mobile menu and footer */}
+          <div className="hidden xl:flex items-center gap-1">
             <a
               href="https://www.linkedin.com/company/adamson-geomatics/"
               target="_blank"
@@ -215,6 +218,8 @@ export default function Header() {
               </Link>
             );
           })}
+
+          <HeaderAuthMobile />
 
           <div className="mt-4 flex items-center gap-2">
             <a

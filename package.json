@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@miningmaps/env": "*",
+    "@neon/config": "^1.9.4",
+    "@neon/env": "^1.6.5",
     "@react-email/render": "^2.0.9",
     "@vercel/analytics": "^2.0.1",
     "react-intersection-observer": "^10.0.3",
@@ -31,6 +33,9 @@
     "next-sitemap": "^4.2.3",
     "turbo": "^2.6.3",
     "typescript": "^5"
+  },
+  "overrides": {
+    "next": "15.0.8"
   },
   "packageManager": "npm@10.9.2"
 }

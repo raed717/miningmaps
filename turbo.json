@@ -5,7 +5,13 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "env": ["DATABASE_URL", "RESEND_API_KEY", "RESEND_FROM_EMAIL", "RESEND_TO_EMAIL"],
+      "env": [
+        "DATABASE_URL",
+        "RESEND_API_KEY",
+        "RESEND_FROM_EMAIL",
+        "RESEND_TO_EMAIL",
+        "NEXT_PUBLIC_NEON_AUTH_URL"
+      ],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "lint": {

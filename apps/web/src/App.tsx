@@ -30,6 +30,14 @@ const PostsPage = dynamic(() => import("@/views/posts-page"), {
 const PostDetailPage = dynamic(() => import("@/views/post-detail-page"), {
   loading: () => <Loader message="Loading Article..." />,
 });
+const AuthPage = dynamic(() => import("@/views/auth-page"), {
+  loading: () => <Loader message="Loading..." />,
+  ssr: false,
+});
+const AccountPage = dynamic(() => import("@/views/account-page"), {
+  loading: () => <Loader message="Loading Account..." />,
+  ssr: false,
+});
 const NotFoundPage = dynamic(() => import("@/views/not-found-page"));
 const MapView = dynamic(() => import("@/app/map/map-view"), {
   loading: () => <Loader message="Initializing Interactive Map..." />,
@@ -119,6 +127,12 @@ export default function App() {
     content = <OtherProjectsPage />;
   } else if (normalizedPathname === "/partners") {
     content = <PartnersPage />;
+  } else if (normalizedPathname === "/sign-up") {
+    content = <AuthPage mode="sign-up" />;
+  } else if (normalizedPathname === "/sign-in") {
+    content = <AuthPage mode="sign-in" />;
+  } else if (normalizedPathname === "/account") {
+    content = <AccountPage />;
   } else if (normalizedPathname === "/post" || normalizedPathname === "/posts") {
     content = <PostsPage />;
   } else if (segments[0] === "projects" && segments.length === 2) {
