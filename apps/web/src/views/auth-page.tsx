@@ -23,10 +23,10 @@ export default function AuthPage({ mode }: { mode: Mode }) {
   const [errorMsg, setErrorMsg] = useState("");
   const isSignUp = mode === "sign-up";
 
-  // Already signed in: go straight to the account page.
+  // Already signed in: go straight to the community page (the post-sign-in landing page).
   useEffect(() => {
     authClient.getSession().then(({ data }) => {
-      if (data?.user) router.replace("/account");
+      if (data?.user) router.replace("/community");
     });
   }, [router]);
 
@@ -49,7 +49,7 @@ export default function AuthPage({ mode }: { mode: Mode }) {
         const { error } = await authClient.signIn.email({ email, password });
         if (error) return fail(error.message || "Invalid email or password");
         notifyAuthChanged();
-        router.push("/account");
+        router.push("/community");
         return;
       }
 
@@ -85,7 +85,7 @@ export default function AuthPage({ mode }: { mode: Mode }) {
         return fail(data.error || "Account created, but saving your profile failed");
       }
 
-      router.push("/account");
+      router.push("/community");
     } catch (err) {
       // The SDK throws (rather than returning `error`) for some HTTP failures, e.g. a wrong password.
       fail(isAuthError(err) && err.message ? err.message : "Network error. Please try again.");

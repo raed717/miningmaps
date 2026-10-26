@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/app/[[...slug]]/page.tsx": {
-    "mtime": 1793023653.7328317,
-    "ast_hash": "6717df61d56547d8d1f67a60978b9c4d",
+    "mtime": 1793025788.6667845,
+    "ast_hash": "241050163f835715550bed4b66450a17",
     "semantic_hash": ""
   },
   "apps/web/src/app/api/contact/route.ts": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/app/layout.tsx": {
-    "mtime": 1790522969.6355631,
-    "ast_hash": "fa2519e0e4541b346363edf8eb97c4d7",
+    "mtime": 1793025789.6100256,
+    "ast_hash": "6e3ce56ad3ed4d73c5d4d26626c6ace2",
     "semantic_hash": ""
   },
   "apps/web/src/app/map/map-view.tsx": {
@@ -325,8 +325,8 @@
     "semantic_hash": ""
   },
   "apps/web/tsconfig.json": {
-    "mtime": 1793023940.2957263,
-    "ast_hash": "9c5519d6f49468c6628ce4050ec63ef1",
+    "mtime": 1793025849.7867358,
+    "ast_hash": "319f003e66d510ed28a680c9c3f154fd",
     "semantic_hash": ""
   },
   "opencode.json": {
@@ -410,8 +410,8 @@
     "semantic_hash": "ff5ccff88485658260173dff9f0fe74b"
   },
   "CLAUDE.md": {
-    "mtime": 1793024361.6194909,
-    "ast_hash": "90f8e1d12883b5fa5564e7352dbd16e4",
+    "mtime": 1793025974.7544894,
+    "ast_hash": "625a5608ce5cce0e69e584bbdfb37c7e",
     "semantic_hash": ""
   },
   "DESIGN_SYSTEM.md": {
@@ -1447,6 +1447,16 @@
   "migrations/004_projects_sort_order.sql": {
     "mtime": 1793023474.4743567,
     "ast_hash": "90d07ac7c76d73bbbd5d6b6e9f4950c5",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/not-found.tsx": {
+    "mtime": 1793025799.2852767,
+    "ast_hash": "745d0fd41c03637c6b2c4f217adc6fe0",
+    "semantic_hash": ""
+  },
+  "migrations/005_projects_updated_at_trigger.sql": {
+    "mtime": 1793025725.9183612,
+    "ast_hash": "084e8f56a3c94c045bf909899d8aa62e",
     "semantic_hash": ""
   }
 }

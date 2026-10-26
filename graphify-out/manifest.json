@@ -25,8 +25,8 @@
     "semantic_hash": "02585399f7ff3a13211e84f818724111"
   },
   "apps/web/next-sitemap.config.js": {
-    "mtime": 1793024239.2800438,
-    "ast_hash": "27cebd8a3f40e8fcc25ed698c6fe6259",
+    "mtime": 1793026446.88045,
+    "ast_hash": "3b97446e61c0805422b1f67ff767d63d",
     "semantic_hash": ""
   },
   "apps/web/next.config.mjs": {
@@ -45,8 +45,8 @@
     "semantic_hash": "0f8aa602547b154dc06be77b007c51d2"
   },
   "apps/web/src/App.tsx": {
-    "mtime": 1793023687.6260414,
-    "ast_hash": "243006355e844dc1216549350ce6bee1",
+    "mtime": 1793026444.0011456,
+    "ast_hash": "4a83303fee8c4a847e049ad76c7b7b7a",
     "semantic_hash": ""
   },
   "apps/web/src/app/[[...slug]]/client.tsx": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/app/[[...slug]]/page.tsx": {
-    "mtime": 1793025788.6667845,
-    "ast_hash": "241050163f835715550bed4b66450a17",
+    "mtime": 1793026445.8789115,
+    "ast_hash": "839ada31a1e0c3e591ed7369fd82e9c2",
     "semantic_hash": ""
   },
   "apps/web/src/app/api/contact/route.ts": {
@@ -325,7 +325,7 @@
     "semantic_hash": ""
   },
   "apps/web/tsconfig.json": {
-    "mtime": 1793025849.7867358,
+    "mtime": 1793026536.2711442,
     "ast_hash": "319f003e66d510ed28a680c9c3f154fd",
     "semantic_hash": ""
   },
@@ -410,8 +410,8 @@
     "semantic_hash": "ff5ccff88485658260173dff9f0fe74b"
   },
   "CLAUDE.md": {
-    "mtime": 1793025974.7544894,
-    "ast_hash": "625a5608ce5cce0e69e584bbdfb37c7e",
+    "mtime": 1793026594.6537237,
+    "ast_hash": "5428217218f079322295686be45baea6",
     "semantic_hash": ""
   },
   "DESIGN_SYSTEM.md": {
@@ -1390,8 +1390,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/views/auth-page.tsx": {
-    "mtime": 1793009468.3128083,
-    "ast_hash": "2f015ebb2c86fac2370221c71ac277f9",
+    "mtime": 1793026467.13416,
+    "ast_hash": "3c56597654751666e8fd4245a1bfa27a",
     "semantic_hash": ""
   },
   "migrations/003_user_profiles.sql": {
@@ -1405,8 +1405,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/header-auth.tsx": {
-    "mtime": 1793023899.5928507,
-    "ast_hash": "80f15ba766594b827ef409e350510c5c",
+    "mtime": 1793026469.521703,
+    "ast_hash": "d969c15950a232fe4c29ed694f7cb34d",
     "semantic_hash": ""
   },
   "apps/web/src/lib/useAuthSession.ts": {
@@ -1457,6 +1457,11 @@
   "migrations/005_projects_updated_at_trigger.sql": {
     "mtime": 1793025725.9183612,
     "ast_hash": "084e8f56a3c94c045bf909899d8aa62e",
+    "semantic_hash": ""
+  },
+  "apps/web/src/views/community-page.tsx": {
+    "mtime": 1793026428.6957023,
+    "ast_hash": "cde19f4c239ce869c9343620c65ef156",
     "semantic_hash": ""
   }
 }

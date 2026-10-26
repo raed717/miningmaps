@@ -1,16 +1,16 @@
 # Graph Report - miningmaps  (2026-10-26)
 
 ## Corpus Check
-- 126 files · ~10,822,910 words
+- 127 files · ~10,824,155 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 840 nodes · 1061 edges · 133 communities (58 shown, 75 thin omitted)
+- 847 nodes · 1076 edges · 136 communities (60 shown, 76 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 28 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ae9b7aaa`
+- Built from commit: `2afb9f95`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -23,7 +23,7 @@
 - compilerOptions
 - compilerOptions
 - components.json
-- layout.tsx
+- env
 - home-page.tsx
 - env/package.json
 - App.tsx
@@ -92,7 +92,7 @@
 - fonts.ts
 - 1. Database Migration Tool (`generate_projects_migration.mjs`)
 - Detailed Task Tracker
-- about-page.tsx
+- postData.ts
 - partners-page.tsx
 - past-clients-preview-section.tsx
 - Full Audit Report
@@ -106,6 +106,9 @@
 - embla-carousel-react
 - project-location-map.tsx
 - @fontsource/jetbrains-mono
+- layout.tsx
+- mono
+- project-preview-carousel-section.tsx
 - NWT/1.jpg
 - NWT/2.jpg
 - Target20230830_2.JPG (NWT Target Map)
@@ -140,12 +143,12 @@
 - Cinematic Scroll Landing Page
 
 ## God Nodes (most connected - your core abstractions)
-1. `mono` - 27 edges
+1. `mono` - 28 edges
 2. `cn()` - 19 edges
 3. `compilerOptions` - 18 edges
 4. `compilerOptions` - 17 edges
 5. `Field-Mapping Rules` - 16 edges
-6. `inter` - 12 edges
+6. `inter` - 13 edges
 7. `scripts` - 10 edges
 8. `Button()` - 8 edges
 9. `Carousel()` - 7 edges
@@ -170,7 +173,7 @@
 - **Barkerville Gold Camp Placer-Lode System** — apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_mosquito_creek_claim, apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_lowhee_cow_mountain_claim, apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_ballarat_claim [EXTRACTED 1.00]
 - **Northumberland Deposit Geological and Staking Framework** — apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_report, apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_rationale, apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_newmont_northumberland_memo, apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_northumberland_deposits [EXTRACTED 1.00]
 
-## Communities (133 total, 75 thin omitted)
+## Communities (136 total, 76 thin omitted)
 
 ### Community 0 - "map-view.tsx"
 Cohesion: 0.24
@@ -178,14 +181,14 @@ Nodes (8): activityData, createCustomIcon(), Dashboard(), resourceData, createCu
 
 ### Community 1 - "auth-page.tsx"
 Cohesion: 0.08
-Nodes (41): react, PdfPreview, ProjectDetails(), ProjectLocationMap, serviceOptions, FullscreenImageViewer(), FullscreenImageViewerProps, ImageViewerTrigger() (+33 more)
+Nodes (39): react, PdfPreview, ProjectDetails(), ProjectLocationMap, serviceOptions, FullscreenImageViewer(), FullscreenImageViewerProps, ImageViewerTrigger() (+31 more)
 
 ### Community 2 - "dependencies"
 Cohesion: 0.04
 Nodes (47): @neon/config, @neon/env, next-sitemap, dependencies, @miningmaps/env, @neon/config, @neon/env, @react-email/render (+39 more)
 
 ### Community 3 - "page.tsx"
-Cohesion: 0.05
+Cohesion: 0.06
 Nodes (48): metadata, GET(), revalidate, ClientPage(), buildBreadcrumbJsonLd(), CatchAllPage(), generateMetadata(), generateStaticParams() (+40 more)
 
 ### Community 4 - "devDependencies"
@@ -204,21 +207,21 @@ Nodes (21): compilerOptions, allowSyntheticDefaultImports, esModuleInterop, forc
 Cohesion: 0.10
 Nodes (20): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+12 more)
 
-### Community 8 - "layout.tsx"
-Cohesion: 0.06
-Nodes (31): jsonLd, metadata, ThemeProvider(), ^build, ^check-types, DATABASE_URL, dist/**, .env* (+23 more)
+### Community 8 - "env"
+Cohesion: 0.08
+Nodes (24): ^build, ^check-types, DATABASE_URL, .env*, ^lint, NEXT_PUBLIC_NEON_AUTH_URL, RESEND_API_KEY, RESEND_FROM_EMAIL (+16 more)
 
 ### Community 9 - "home-page.tsx"
-Cohesion: 0.16
-Nodes (9): CinematicHero(), fieldReports, FieldReportsSection(), GlobalTelemetrySection(), telemetryNodes, ListingMembershipSection(), ProjectPreviewCarouselSection(), PartnerProgramsTickerBanner() (+1 more)
+Cohesion: 0.15
+Nodes (9): certifications, CertificationsSection(), CinematicHero(), fieldReports, FieldReportsSection(), GlobalTelemetrySection(), telemetryNodes, ListingMembershipSection() (+1 more)
 
 ### Community 10 - "env/package.json"
 Cohesion: 0.11
 Nodes (18): dotenv, dependencies, dotenv, @t3-oss/env-core, zod, devDependencies, @miningmaps/config, typescript (+10 more)
 
 ### Community 11 - "App.tsx"
-Cohesion: 0.07
-Nodes (36): AboutPage, AccountPage, App(), AuthPage, ContactPage, DashboardView, decodeSegment(), HomePage (+28 more)
+Cohesion: 0.06
+Nodes (41): AboutPage, AccountPage, App(), AuthPage, CommunityPage, ContactPage, DashboardView, decodeSegment() (+33 more)
 
 ### Community 12 - "Adamson Geomatics"
 Cohesion: 0.26
@@ -333,8 +336,8 @@ Cohesion: 0.25
 Nodes (9): messages, NoticeMessage, PartnerNoticeRotator(), COMMODITY_TAGS, escapeRegExp(), highlightMatch(), ProjectsPage(), ProjectsPageProps (+1 more)
 
 ### Community 74 - "fonts.ts"
-Cohesion: 0.23
-Nodes (8): ContactForm(), Footer(), NewsletterForm(), PartnerProgramsModal(), PartnerProgramsModalProps, inter, mono, ContactRoute
+Cohesion: 0.16
+Nodes (9): ContactForm(), Footer(), NewsletterForm(), inter, certifications, education, expertiseAreas, insuranceDetails (+1 more)
 
 ### Community 75 - "1. Database Migration Tool (`generate_projects_migration.mjs`)"
 Cohesion: 0.20
@@ -344,9 +347,9 @@ Nodes (9): 1. Database Migration Tool (`generate_projects_migration.mjs`), 2. CS
 Cohesion: 0.25
 Nodes (7): Detailed Task Tracker, Phase 1: Critical Fixes, Phase 2: Quick Wins, Phase 3: Strategic SEO & Polish, Progress Overview, SEO Implementation & Progress Tracker, Verification & Execution Log
 
-### Community 78 - "about-page.tsx"
-Cohesion: 0.33
-Nodes (4): certifications, education, expertiseAreas, insuranceDetails
+### Community 78 - "postData.ts"
+Cohesion: 0.28
+Nodes (4): mockPosts, Post, PostSection, PostDetailPageProps
 
 ### Community 79 - "partners-page.tsx"
 Cohesion: 0.33
@@ -364,10 +367,18 @@ Nodes (4): Findings, Full Audit Report, Measurement Notes, Score Card
 Cohesion: 0.40
 Nodes (4): AccomplishmentsSection(), icons, Accomplishment, accomplishments
 
+### Community 92 - "layout.tsx"
+Cohesion: 0.40
+Nodes (3): jsonLd, metadata, ThemeProvider()
+
+### Community 93 - "mono"
+Cohesion: 0.60
+Nodes (3): PartnerProgramsModal(), PartnerProgramsModalProps, mono
+
 ## Knowledge Gaps
-- **410 isolated node(s):** `fs`, `path`, `filePath`, `content`, `$schema` (+405 more)
+- **415 isolated node(s):** `fs`, `path`, `filePath`, `content`, `$schema` (+410 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **75 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **76 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -376,13 +387,13 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.100) - this node is a cross-community bridge._
 - **Why does `react` connect `auth-page.tsx` to `dependencies`?**
   _High betweenness centrality (0.091) - this node is a cross-community bridge._
+- **Why does `Carousel()` connect `auth-page.tsx` to `home-page.tsx`?**
+  _High betweenness centrality (0.088) - this node is a cross-community bridge._
 - **What connects `fs`, `path`, `filePath` to the rest of the system?**
-  _410 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _415 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `auth-page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.07894736842105263 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08385744234800839 - nodes in this community are weakly interconnected._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
 - **Should `page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.05110809588421529 - nodes in this community are weakly interconnected._
-- **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05605499735589635 - nodes in this community are weakly interconnected._

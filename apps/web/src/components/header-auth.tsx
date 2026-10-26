@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDown, LogIn, LogOut, UserPlus, UserRound } from "lucide-react";
+import { ChevronDown, LogIn, LogOut, UserPlus, UserRound, Users } from "lucide-react";
 import { getInitials, loadAuthClient, notifyAuthChanged, useAuthSession } from "@/lib/useAuthSession";
 
 function useSignOut() {
@@ -103,9 +103,20 @@ export function HeaderAuthDesktop() {
             <div className="mt-1 truncate text-[10px] tracking-wider text-muted-foreground">{email}</div>
           </div>
           <Link
-            href="/account"
+            href="/community"
             role="menuitem"
             className="flex items-center gap-2 px-4 py-3 text-xs font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:bg-muted hover:text-white"
+          >
+            <Users className="h-3.5 w-3.5" />
+            Community
+            <span className="ml-auto border border-secondary/40 bg-secondary/10 px-1.5 py-0.5 text-[9px] tracking-[0.18em] text-secondary">
+              SOON
+            </span>
+          </Link>
+          <Link
+            href="/account"
+            role="menuitem"
+            className="flex items-center gap-2 border-t border-border px-4 py-3 text-xs font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:bg-muted hover:text-white"
           >
             <UserRound className="h-3.5 w-3.5" />
             Account
@@ -166,6 +177,18 @@ export function HeaderAuthMobile() {
           <div className="truncate text-[10px] tracking-wider text-muted-foreground">{email}</div>
         </div>
       </div>
+      <Link
+        href="/community"
+        className="flex items-center justify-between gap-2 border-b border-border px-3 py-3 text-xs font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:text-white"
+      >
+        <span className="flex items-center gap-2">
+          <Users className="h-4 w-4" />
+          Community
+        </span>
+        <span className="border border-secondary/40 bg-secondary/10 px-1.5 py-0.5 text-[9px] tracking-[0.18em] text-secondary">
+          SOON
+        </span>
+      </Link>
       <div className="grid grid-cols-2">
         <Link
           href="/account"

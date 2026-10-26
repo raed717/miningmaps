@@ -27,6 +27,7 @@ const STATIC_PAGES = [
   "sign-up",
   "sign-in",
   "account",
+  "community",
 ];
 
 /** Whether a path has real content; anything else gets a true 404 (not a "not found" page with 200). */
@@ -79,6 +80,11 @@ const pageMeta: Record<string, Metadata> = {
   },
   "/account": {
     title: `Account — ${siteName}`,
+    robots: { index: false, follow: false },
+  },
+  // Members-only "coming soon" page shown after sign-in.
+  "/community": {
+    title: `Community (Coming Soon) — ${siteName}`,
     robots: { index: false, follow: false },
   },
   "/about": {

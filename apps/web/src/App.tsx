@@ -38,6 +38,10 @@ const AccountPage = dynamic(() => import("@/views/account-page"), {
   loading: () => <Loader message="Loading Account..." />,
   ssr: false,
 });
+const CommunityPage = dynamic(() => import("@/views/community-page"), {
+  loading: () => <Loader message="Opening Community Hub..." />,
+  ssr: false,
+});
 const NotFoundPage = dynamic(() => import("@/views/not-found-page"));
 const MapView = dynamic(() => import("@/app/map/map-view"), {
   loading: () => <Loader message="Initializing Interactive Map..." />,
@@ -133,6 +137,8 @@ export default function App() {
     content = <AuthPage mode="sign-in" />;
   } else if (normalizedPathname === "/account") {
     content = <AccountPage />;
+  } else if (normalizedPathname === "/community") {
+    content = <CommunityPage />;
   } else if (normalizedPathname === "/post" || normalizedPathname === "/posts") {
     content = <PostsPage />;
   } else if (segments[0] === "projects" && segments.length === 2) {

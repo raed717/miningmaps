@@ -72,6 +72,7 @@ The production build no longer uses `output: "export"` so that API routes (`/api
 - The SDK's Next.js server helpers (`/next`, `/next/server`) require Next 16; this app is on Next 15, so it uses the plain browser client. Root `package.json` `overrides` pins `next` to 15.0.8 because the SDK's optional Next 16 peer otherwise gets hoisted. Remove the override when upgrading to Next 16.
 - API routes authenticate with `Authorization: Bearer <jwt>` verified against the Auth URL's JWKS (`apps/web/src/lib/authServer.ts`). Get the JWT client-side with `getAuthToken()` (reads `session.token`; `authClient.token()` is unreliable because the SDK dedupes it with cached `getSession`).
 - Routes: `/sign-up`, `/sign-in`, `/account` (`src/views/auth-page.tsx`, `src/views/account-page.tsx`), profile API at `/api/profile`.
+- `/community` (`src/views/community-page.tsx`) is the members-only "coming soon" landing page shown after sign-in and sign-up (and when a signed-in user opens `/sign-in`); signed-out visitors are redirected to `/sign-in`. It's `noindex` and excluded from the sitemap. Linked from the header account menu with a "Soon" badge.
 
 ## Maintenance
 

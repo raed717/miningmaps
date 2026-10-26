@@ -8,7 +8,7 @@ const config = {
   // so they're excluded here to avoid duplicates and build-time-only lists.
   exclude: [
     '/dashboard', '/dashboard/*', '/opengraph-image.png', '/post', '/post/*',
-    '/sign-up', '/sign-in', '/account',
+    '/sign-up', '/sign-in', '/account', '/community',
     '/projects/*', '/sitemap-projects.xml',
   ],
   robotsTxtOptions: {
