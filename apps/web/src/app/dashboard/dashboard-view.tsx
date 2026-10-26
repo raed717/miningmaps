@@ -12,7 +12,7 @@ import {
   LineChart,
   Line,
 } from "recharts";
-import { projects } from "@/lib/projectData";
+import { useProjectSummaries } from "@/lib/projectDataContext";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import L from "leaflet";
 import { Map, Activity, Layers, DollarSign } from "lucide-react";
@@ -84,6 +84,7 @@ function MeasuredChart({
 }
 
 export default function Dashboard() {
+  const projects = useProjectSummaries();
   const propertiesForSale = projects.filter((p) => p.isForSale);
 
   return (

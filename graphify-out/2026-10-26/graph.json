@@ -898,7 +898,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "apps_web_package_dependencies_lucide_react",
-      "community": 89,
+      "community": 92,
       "community_name": "lucide-react",
       "norm_label": "lucide-react"
     },
@@ -909,7 +909,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "lucide_react",
-      "community": 89,
+      "community": 92,
       "community_name": "lucide-react",
       "norm_label": "lucide-react"
     },
@@ -1588,7 +1588,7 @@
       "label": "ProjectView",
       "file_type": "code",
       "source_file": "apps/web/src/App.tsx",
-      "source_location": "L50",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "apps_web_src_app_projectview",
       "community": 11,
@@ -1646,7 +1646,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_client",
-      "community": 16,
+      "community": 3,
       "community_name": "page.tsx",
       "norm_label": "client.tsx"
     },
@@ -1654,10 +1654,10 @@
       "label": "ClientPage()",
       "file_type": "code",
       "source_file": "apps/web/src/app/[[...slug]]/client.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_client_clientpage",
-      "community": 16,
+      "community": 3,
       "community_name": "page.tsx",
       "norm_label": "clientpage()"
     },
@@ -1668,18 +1668,40 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page",
-      "community": 16,
+      "community": 3,
       "community_name": "page.tsx",
       "norm_label": "page.tsx"
+    },
+    {
+      "label": "revalidate",
+      "file_type": "code",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "apps_web_src_app_slug_page_revalidate",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "revalidate"
+    },
+    {
+      "label": "getPageData()",
+      "file_type": "code",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "apps_web_src_app_slug_page_getpagedata",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "getpagedata()"
     },
     {
       "label": "pageMeta",
       "file_type": "code",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L15",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_pagemeta",
-      "community": 16,
+      "community": 3,
       "community_name": "page.tsx",
       "norm_label": "pagemeta"
     },
@@ -1687,10 +1709,10 @@
       "label": "generateMetadata()",
       "file_type": "code",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L85",
+      "source_location": "L117",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_generatemetadata",
-      "community": 16,
+      "community": 3,
       "community_name": "page.tsx",
       "norm_label": "generatemetadata()"
     },
@@ -1698,10 +1720,10 @@
       "label": "generateStaticParams()",
       "file_type": "code",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L195",
+      "source_location": "L227",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_generatestaticparams",
-      "community": 16,
+      "community": 3,
       "community_name": "page.tsx",
       "norm_label": "generatestaticparams()"
     },
@@ -1709,10 +1731,10 @@
       "label": "pageLabels",
       "file_type": "code",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L220",
+      "source_location": "L253",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_pagelabels",
-      "community": 16,
+      "community": 3,
       "community_name": "page.tsx",
       "norm_label": "pagelabels"
     },
@@ -1720,10 +1742,10 @@
       "label": "buildBreadcrumbJsonLd()",
       "file_type": "code",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L234",
+      "source_location": "L267",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_buildbreadcrumbjsonld",
-      "community": 16,
+      "community": 3,
       "community_name": "page.tsx",
       "norm_label": "buildbreadcrumbjsonld()"
     },
@@ -1731,10 +1753,10 @@
       "label": "CatchAllPage()",
       "file_type": "code",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L275",
+      "source_location": "L308",
       "_origin": "ast",
       "id": "apps_web_src_app_slug_page_catchallpage",
-      "community": 16,
+      "community": 3,
       "community_name": "page.tsx",
       "norm_label": "catchallpage()"
     },
@@ -1746,7 +1768,7 @@
       "_origin": "ast",
       "id": "apps_web_src_app_api_contact_route",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "contact/route.ts"
     },
     {
@@ -1757,7 +1779,7 @@
       "_origin": "ast",
       "id": "apps_web_src_app_api_contact_route_schema",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "schema"
     },
     {
@@ -1768,7 +1790,7 @@
       "_origin": "ast",
       "id": "apps_web_src_app_api_contact_route_post",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "post()"
     },
     {
@@ -1779,29 +1801,29 @@
       "_origin": "ast",
       "id": "apps_web_src_app_api_newsletter_route",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "newsletter/route.ts"
     },
     {
       "label": "schema",
       "file_type": "code",
       "source_file": "apps/web/src/app/api/newsletter/route.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "apps_web_src_app_api_newsletter_route_schema",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "schema"
     },
     {
       "label": "POST()",
       "file_type": "code",
       "source_file": "apps/web/src/app/api/newsletter/route.ts",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "apps_web_src_app_api_newsletter_route_post",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "post()"
     },
     {
@@ -1811,7 +1833,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_app_api_profile_route",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "profile/route.ts"
     },
@@ -1819,10 +1841,10 @@
       "label": "schema",
       "file_type": "code",
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "apps_web_src_app_api_profile_route_schema",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "schema"
     },
@@ -1830,21 +1852,32 @@
       "label": "getSql()",
       "file_type": "code",
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L14",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "apps_web_src_app_api_profile_route_getsql",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "getsql()"
+    },
+    {
+      "label": "getAccountEmail()",
+      "file_type": "code",
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "apps_web_src_app_api_profile_route_getaccountemail",
+      "community": 18,
+      "community_name": "profile/route.ts",
+      "norm_label": "getaccountemail()"
     },
     {
       "label": "GET()",
       "file_type": "code",
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L20",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "apps_web_src_app_api_profile_route_get",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "get()"
     },
@@ -1852,10 +1885,10 @@
       "label": "POST()",
       "file_type": "code",
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L42",
+      "source_location": "L54",
       "_origin": "ast",
       "id": "apps_web_src_app_api_profile_route_post",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "post()"
     },
@@ -1866,8 +1899,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_app_dashboard_dashboard_view",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "dashboard-view.tsx"
     },
     {
@@ -1877,8 +1910,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "apps_web_src_app_dashboard_dashboard_view_createcustomicon",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "createcustomicon()"
     },
     {
@@ -1888,8 +1921,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "apps_web_src_app_dashboard_dashboard_view_resourcedata",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "resourcedata"
     },
     {
@@ -1899,8 +1932,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "apps_web_src_app_dashboard_dashboard_view_activitydata",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "activitydata"
     },
     {
@@ -1910,8 +1943,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "apps_web_src_app_dashboard_dashboard_view_measuredchart",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "measuredchart()"
     },
     {
@@ -1921,8 +1954,8 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "apps_web_src_app_dashboard_dashboard_view_dashboard",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "dashboard()"
     },
     {
@@ -1976,8 +2009,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_app_map_map_view",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "map-view.tsx"
     },
     {
@@ -1987,8 +2020,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "apps_web_src_app_map_map_view_createcustomicon",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "createcustomicon()"
     },
     {
@@ -1998,8 +2031,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "apps_web_src_app_map_map_view_mapflyto",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "mapflyto()"
     },
     {
@@ -2009,8 +2042,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "apps_web_src_app_map_map_view_gettagcolor",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "gettagcolor()"
     },
     {
@@ -2020,8 +2053,8 @@
       "source_location": "L85",
       "_origin": "ast",
       "id": "apps_web_src_app_map_map_view_mapview",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 0,
+      "community_name": "projects-page.tsx",
       "norm_label": "mapview()"
     },
     {
@@ -2047,26 +2080,59 @@
       "norm_label": "pdfpreview"
     },
     {
-      "label": "createCustomIcon()",
+      "label": "ProjectLocationMap",
       "file_type": "code",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L43",
+      "source_location": "L27",
       "_origin": "ast",
-      "id": "apps_web_src_app_projects_id_project_view_createcustomicon",
+      "id": "apps_web_src_app_projects_id_project_view_projectlocationmap",
       "community": 1,
       "community_name": "auth-page.tsx",
-      "norm_label": "createcustomicon()"
+      "norm_label": "projectlocationmap"
     },
     {
       "label": "ProjectDetails()",
       "file_type": "code",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L52",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "apps_web_src_app_projects_id_project_view_projectdetails",
       "community": 1,
       "community_name": "auth-page.tsx",
       "norm_label": "projectdetails()"
+    },
+    {
+      "label": "sitemap-projects.xml/route.ts",
+      "file_type": "code",
+      "source_file": "apps/web/src/app/sitemap-projects.xml/route.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_app_sitemap_projects_xml_route",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "sitemap-projects.xml/route.ts"
+    },
+    {
+      "label": "revalidate",
+      "file_type": "code",
+      "source_file": "apps/web/src/app/sitemap-projects.xml/route.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "apps_web_src_app_sitemap_projects_xml_route_revalidate",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "revalidate"
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "apps/web/src/app/sitemap-projects.xml/route.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "apps_web_src_app_sitemap_projects_xml_route_get",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "get()"
     },
     {
       "label": "ContactForm.tsx",
@@ -2097,8 +2163,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "apps_web_src_components_contactform_contactform",
-      "community": 1,
-      "community_name": "auth-page.tsx",
+      "community": 74,
+      "community_name": "fonts.ts",
       "norm_label": "contactform()"
     },
     {
@@ -2119,8 +2185,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_web_src_components_newsletterform_newsletterform",
-      "community": 1,
-      "community_name": "auth-page.tsx",
+      "community": 74,
+      "community_name": "fonts.ts",
       "norm_label": "newsletterform()"
     },
     {
@@ -2130,7 +2196,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_partnerprogramsmodal",
-      "community": 9,
+      "community": 74,
       "community_name": "fonts.ts",
       "norm_label": "partnerprogramsmodal.tsx"
     },
@@ -2141,7 +2207,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "apps_web_src_components_partnerprogramsmodal_partnerprogramsmodalprops",
-      "community": 9,
+      "community": 74,
       "community_name": "fonts.ts",
       "norm_label": "partnerprogramsmodalprops"
     },
@@ -2152,7 +2218,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "apps_web_src_components_partnerprogramsmodal_partnerprogramsmodal",
-      "community": 9,
+      "community": 74,
       "community_name": "fonts.ts",
       "norm_label": "partnerprogramsmodal()"
     },
@@ -2164,7 +2230,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_partnerprogramstickerbanner",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "partnerprogramstickerbanner.tsx"
     },
     {
@@ -2175,7 +2241,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_partnerprogramstickerbanner_partnerprogramstickerbanner",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "partnerprogramstickerbanner()"
     },
     {
@@ -2186,7 +2252,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_projectdetailmodal",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "projectdetailmodal.tsx"
     },
     {
@@ -2197,7 +2263,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_projectdetailmodal_projectdetailmodalprops",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "projectdetailmodalprops"
     },
     {
@@ -2208,7 +2274,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_projectdetailmodal_projectdetailmodal",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "projectdetailmodal()"
     },
     {
@@ -2219,7 +2285,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_emails_emailtemplate",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "emailtemplate.tsx"
     },
     {
@@ -2230,7 +2296,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_emails_emailtemplate_emailtemplateprops",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "emailtemplateprops"
     },
     {
@@ -2241,7 +2307,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_emails_emailtemplate_emailtemplate",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "emailtemplate()"
     },
     {
@@ -2251,7 +2317,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_footer",
-      "community": 9,
+      "community": 74,
       "community_name": "fonts.ts",
       "norm_label": "footer.tsx"
     },
@@ -2262,7 +2328,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "apps_web_src_components_footer_footer",
-      "community": 9,
+      "community": 74,
       "community_name": "fonts.ts",
       "norm_label": "footer()"
     },
@@ -2336,7 +2402,7 @@
       "label": "useSignOut()",
       "file_type": "code",
       "source_file": "apps/web/src/components/header-auth.tsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "apps_web_src_components_header_auth_usesignout",
       "community": 11,
@@ -2449,8 +2515,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "apps_web_src_components_home_certifications_section_certificationssection",
-      "community": 9,
-      "community_name": "fonts.ts",
+      "community": 1,
+      "community_name": "auth-page.tsx",
       "norm_label": "certificationssection()"
     },
     {
@@ -2461,7 +2527,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_cinematic_hero",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "cinematic-hero.tsx"
     },
     {
@@ -2472,7 +2538,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_cinematic_hero_cinematichero",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "cinematichero()"
     },
     {
@@ -2527,7 +2593,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_field_reports_section",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "field-reports-section.tsx"
     },
     {
@@ -2538,7 +2604,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_field_reports_section_fieldreports",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "fieldreports"
     },
     {
@@ -2549,7 +2615,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_field_reports_section_fieldreportitem",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "fieldreportitem()"
     },
     {
@@ -2560,7 +2626,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_field_reports_section_fieldreportssection",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "fieldreportssection()"
     },
     {
@@ -2571,7 +2637,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_global_telemetry_section",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "global-telemetry-section.tsx"
     },
     {
@@ -2582,7 +2648,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_global_telemetry_section_telemetrynodes",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "telemetrynodes"
     },
     {
@@ -2593,7 +2659,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_global_telemetry_section_globaltelemetrysection",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "globaltelemetrysection()"
     },
     {
@@ -2603,7 +2669,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_home_listing_membership_section",
-      "community": 9,
+      "community": 74,
       "community_name": "fonts.ts",
       "norm_label": "listing-membership-section.tsx"
     },
@@ -2615,7 +2681,7 @@
       "_origin": "ast",
       "id": "apps_web_src_components_home_listing_membership_section_listingmembershipsection",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "listingmembershipsection()"
     },
     {
@@ -2669,30 +2735,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_home_project_preview_carousel_section",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 89,
+      "community_name": "project-preview-carousel-section.tsx",
       "norm_label": "project-preview-carousel-section.tsx"
-    },
-    {
-      "label": "previewProjects",
-      "file_type": "code",
-      "source_file": "apps/web/src/components/home/project-preview-carousel-section.tsx",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "apps_web_src_components_home_project_preview_carousel_section_previewprojects",
-      "community": 3,
-      "community_name": "projectData.ts",
-      "norm_label": "previewprojects"
     },
     {
       "label": "ProjectPreviewCarouselSection()",
       "file_type": "code",
       "source_file": "apps/web/src/components/home/project-preview-carousel-section.tsx",
-      "source_location": "L27",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "apps_web_src_components_home_project_preview_carousel_section_projectpreviewcarouselsection",
-      "community": 3,
-      "community_name": "projectData.ts",
+      "community": 89,
+      "community_name": "project-preview-carousel-section.tsx",
       "norm_label": "projectpreviewcarouselsection()"
     },
     {
@@ -2779,8 +2834,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "apps_web_src_components_home_service_registry_section_serviceregistrysection",
-      "community": 25,
-      "community_name": "services-page.tsx",
+      "community": 9,
+      "community_name": "home-page.tsx",
       "norm_label": "serviceregistrysection()"
     },
     {
@@ -2878,7 +2933,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_partner_notice_rotator",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "partner-notice-rotator.tsx"
     },
@@ -2889,7 +2944,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_web_src_components_partner_notice_rotator_noticemessage",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "noticemessage"
     },
@@ -2900,7 +2955,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "apps_web_src_components_partner_notice_rotator_messages",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "messages"
     },
@@ -2911,7 +2966,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "apps_web_src_components_partner_notice_rotator_partnernoticerotator",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "partnernoticerotator()"
     },
@@ -2980,6 +3035,39 @@
       "community": 1,
       "community_name": "auth-page.tsx",
       "norm_label": "projectimagegallery()"
+    },
+    {
+      "label": "project-location-map.tsx",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/project-location-map.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_components_project_location_map",
+      "community": 90,
+      "community_name": "project-location-map.tsx",
+      "norm_label": "project-location-map.tsx"
+    },
+    {
+      "label": "markerIcon",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/project-location-map.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "apps_web_src_components_project_location_map_markericon",
+      "community": 90,
+      "community_name": "project-location-map.tsx",
+      "norm_label": "markericon"
+    },
+    {
+      "label": "ProjectLocationMap()",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/project-location-map.tsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "apps_web_src_components_project_location_map_projectlocationmap",
+      "community": 90,
+      "community_name": "project-location-map.tsx",
+      "norm_label": "projectlocationmap()"
     },
     {
       "label": "theme-provider.tsx",
@@ -3417,7 +3505,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_authserver",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "authserver.ts"
     },
@@ -3428,7 +3516,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_web_src_lib_authserver_authuser",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "authuser"
     },
@@ -3439,7 +3527,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "apps_web_src_lib_authserver_getrequestuser",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "getrequestuser()"
     },
@@ -3450,7 +3538,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_fonts",
-      "community": 9,
+      "community": 74,
       "community_name": "fonts.ts",
       "norm_label": "fonts.ts"
     },
@@ -3461,8 +3549,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_fonts_inter",
-      "community": 78,
-      "community_name": "inter",
+      "community": 74,
+      "community_name": "fonts.ts",
       "norm_label": "inter"
     },
     {
@@ -3472,9 +3560,42 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "apps_web_src_lib_fonts_mono",
-      "community": 9,
+      "community": 74,
       "community_name": "fonts.ts",
       "norm_label": "mono"
+    },
+    {
+      "label": "newsletter.ts",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/newsletter.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_newsletter",
+      "community": 18,
+      "community_name": "profile/route.ts",
+      "norm_label": "newsletter.ts"
+    },
+    {
+      "label": "subscribeToNewsletter()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/newsletter.ts",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_newsletter_subscribetonewsletter",
+      "community": 18,
+      "community_name": "profile/route.ts",
+      "norm_label": "subscribetonewsletter()"
+    },
+    {
+      "label": "isSubscribed()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/newsletter.ts",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_newsletter_issubscribed",
+      "community": 18,
+      "community_name": "profile/route.ts",
+      "norm_label": "issubscribed()"
     },
     {
       "label": "otherProjectsData.ts",
@@ -3484,7 +3605,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_otherprojectsdata",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "otherprojectsdata.ts"
     },
     {
@@ -3495,7 +3616,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_otherprojectsdata_otherproject",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "otherproject"
     },
     {
@@ -3506,7 +3627,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_otherprojectsdata_otherprojects",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "otherprojects"
     },
     {
@@ -3517,7 +3638,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_otherprojectsdata_getcommoditycategory",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "getcommoditycategory()"
     },
     {
@@ -3528,7 +3649,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_otherprojectsdata_commoditycategories",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "commoditycategories"
     },
     {
@@ -3572,7 +3693,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_postdata",
       "community": 16,
-      "community_name": "page.tsx",
+      "community_name": "postData.ts",
       "norm_label": "postdata.ts"
     },
     {
@@ -3583,7 +3704,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_postdata_postsection",
       "community": 16,
-      "community_name": "page.tsx",
+      "community_name": "postData.ts",
       "norm_label": "postsection"
     },
     {
@@ -3594,7 +3715,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_postdata_post",
       "community": 16,
-      "community_name": "page.tsx",
+      "community_name": "postData.ts",
       "norm_label": "post"
     },
     {
@@ -3605,7 +3726,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_postdata_mockposts",
       "community": 16,
-      "community_name": "page.tsx",
+      "community_name": "postData.ts",
       "norm_label": "mockposts"
     },
     {
@@ -3615,7 +3736,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_profileoptions",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "profileoptions.ts"
     },
@@ -3626,7 +3747,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "apps_web_src_lib_profileoptions_regionoptions",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "regionoptions"
     },
@@ -3637,7 +3758,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "apps_web_src_lib_profileoptions_referraloptions",
-      "community": 74,
+      "community": 18,
       "community_name": "profile/route.ts",
       "norm_label": "referraloptions"
     },
@@ -3649,7 +3770,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "projectdata.ts"
     },
     {
@@ -3660,7 +3781,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_linkpreview",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "linkpreview"
     },
     {
@@ -3671,7 +3792,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_videolink",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "videolink"
     },
     {
@@ -3682,7 +3803,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_kuulaframe",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "kuulaframe"
     },
     {
@@ -3704,7 +3825,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_projectsection",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "projectsection"
     },
     {
@@ -3715,7 +3836,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_quickfact",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "quickfact"
     },
     {
@@ -3726,7 +3847,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_project",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "project"
     },
     {
@@ -3737,7 +3858,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_projects",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "projects"
     },
     {
@@ -3748,7 +3869,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_rationale_3038",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "todo: verify placeholder id sequence against codebase"
     },
     {
@@ -3759,7 +3880,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_rationale_3045",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "todo: replace with an actual property photo \u2014 reusing parent bc header image as..."
     },
     {
@@ -3770,7 +3891,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_rationale_3301",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "todo: verify id sequence for nevada"
     },
     {
@@ -3781,7 +3902,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_rationale_3308",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "todo: add actual hero image url (e.g. site geology map or historical mine photo)"
     },
     {
@@ -3792,8 +3913,206 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdata_rationale_3311",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "todo: confirm if you prefer the exact combined delano-cleveland coordinate or..."
+    },
+    {
+      "label": "projectDataContext.tsx",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectdatacontext",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "projectdatacontext.tsx"
+    },
+    {
+      "label": "ProjectDataContext",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectdatacontext_projectdatacontext",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "projectdatacontext"
+    },
+    {
+      "label": "ProjectDataProvider()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectdatacontext_projectdataprovider",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "projectdataprovider()"
+    },
+    {
+      "label": "useProjectSummaries()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectdatacontext_useprojectsummaries",
+      "community": 0,
+      "community_name": "projects-page.tsx",
+      "norm_label": "useprojectsummaries()"
+    },
+    {
+      "label": "useProjectDetail()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectdatacontext_useprojectdetail",
+      "community": 1,
+      "community_name": "auth-page.tsx",
+      "norm_label": "useprojectdetail()"
+    },
+    {
+      "label": "useHomePreview()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectdatacontext_usehomepreview",
+      "community": 89,
+      "community_name": "project-preview-carousel-section.tsx",
+      "norm_label": "usehomepreview()"
+    },
+    {
+      "label": "projectTypes.ts",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projecttypes",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "projecttypes.ts"
+    },
+    {
+      "label": "ProjectSummary",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projecttypes_projectsummary",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "projectsummary"
+    },
+    {
+      "label": "ProjectPageData",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projecttypes_projectpagedata",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "projectpagedata"
+    },
+    {
+      "label": "projectsRepo.ts",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectsrepo",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "projectsrepo.ts"
+    },
+    {
+      "label": "ProjectRow",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectsrepo_projectrow",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "projectrow"
+    },
+    {
+      "label": "optionalList()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectsrepo_optionallist",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "optionallist()"
+    },
+    {
+      "label": "rowToProject()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectsrepo_rowtoproject",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "rowtoproject()"
+    },
+    {
+      "label": "toSummary()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectsrepo_tosummary",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "tosummary()"
+    },
+    {
+      "label": "getProjects",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L63",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectsrepo_getprojects",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "getprojects"
+    },
+    {
+      "label": "getProjectSitemapEntries()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectsrepo_getprojectsitemapentries",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "getprojectsitemapentries()"
+    },
+    {
+      "label": "getProjectSummaries()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectsrepo_getprojectsummaries",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "getprojectsummaries()"
+    },
+    {
+      "label": "getProject()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectsrepo_getproject",
+      "community": 3,
+      "community_name": "page.tsx",
+      "norm_label": "getproject()"
     },
     {
       "label": "servicesData.ts",
@@ -3869,7 +4188,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_spamguard",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "spamguard.ts"
     },
     {
@@ -3880,7 +4199,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_spamguard_spamsignals",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "spamsignals"
     },
     {
@@ -3891,7 +4210,7 @@
       "_origin": "ast",
       "id": "apps_web_src_lib_spamguard_detectspam",
       "community": 18,
-      "community_name": "contact/route.ts",
+      "community_name": "profile/route.ts",
       "norm_label": "detectspam()"
     },
     {
@@ -3906,10 +4225,21 @@
       "norm_label": "useauthsession.ts"
     },
     {
+      "label": "loadAuthClient()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/useAuthSession.ts",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_useauthsession_loadauthclient",
+      "community": 11,
+      "community_name": "App.tsx",
+      "norm_label": "loadauthclient()"
+    },
+    {
       "label": "notifyAuthChanged()",
       "file_type": "code",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L10",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "apps_web_src_lib_useauthsession_notifyauthchanged",
       "community": 11,
@@ -3920,7 +4250,7 @@
       "label": "AuthUser",
       "file_type": "code",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L14",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "apps_web_src_lib_useauthsession_authuser",
       "community": 11,
@@ -3931,7 +4261,7 @@
       "label": "AuthSession",
       "file_type": "code",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L16",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "apps_web_src_lib_useauthsession_authsession",
       "community": 11,
@@ -3942,7 +4272,7 @@
       "label": "useAuthSession()",
       "file_type": "code",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L25",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "apps_web_src_lib_useauthsession_useauthsession",
       "community": 11,
@@ -3953,7 +4283,7 @@
       "label": "getInitials()",
       "file_type": "code",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L59",
+      "source_location": "L66",
       "_origin": "ast",
       "id": "apps_web_src_lib_useauthsession_getinitials",
       "community": 11,
@@ -4012,7 +4342,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page",
       "community": 78,
-      "community_name": "inter",
+      "community_name": "about-page.tsx",
       "norm_label": "about-page.tsx"
     },
     {
@@ -4023,7 +4353,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_expertiseareas",
       "community": 78,
-      "community_name": "inter",
+      "community_name": "about-page.tsx",
       "norm_label": "expertiseareas"
     },
     {
@@ -4034,7 +4364,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_education",
       "community": 78,
-      "community_name": "inter",
+      "community_name": "about-page.tsx",
       "norm_label": "education"
     },
     {
@@ -4045,7 +4375,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_insurancedetails",
       "community": 78,
-      "community_name": "inter",
+      "community_name": "about-page.tsx",
       "norm_label": "insurancedetails"
     },
     {
@@ -4056,7 +4386,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_certifications",
       "community": 78,
-      "community_name": "inter",
+      "community_name": "about-page.tsx",
       "norm_label": "certifications"
     },
     {
@@ -4067,7 +4397,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_about_page_aboutpage",
       "community": 78,
-      "community_name": "inter",
+      "community_name": "about-page.tsx",
       "norm_label": "aboutpage()"
     },
     {
@@ -4154,8 +4484,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_views_contact_page",
-      "community": 1,
-      "community_name": "auth-page.tsx",
+      "community": 74,
+      "community_name": "fonts.ts",
       "norm_label": "contact-page.tsx"
     },
     {
@@ -4165,8 +4495,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "apps_web_src_views_contact_page_contactroute",
-      "community": 1,
-      "community_name": "auth-page.tsx",
+      "community": 74,
+      "community_name": "fonts.ts",
       "norm_label": "contactroute"
     },
     {
@@ -4176,8 +4506,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "apps_web_src_views_contact_page_contactpage",
-      "community": 1,
-      "community_name": "auth-page.tsx",
+      "community": 74,
+      "community_name": "fonts.ts",
       "norm_label": "contactpage()"
     },
     {
@@ -4188,7 +4518,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_home_page",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "home-page.tsx"
     },
     {
@@ -4199,7 +4529,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_home_page_homepage",
       "community": 9,
-      "community_name": "fonts.ts",
+      "community_name": "home-page.tsx",
       "norm_label": "homepage()"
     },
     {
@@ -4243,7 +4573,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_other_projects_page",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "other-projects-page.tsx"
     },
     {
@@ -4254,7 +4584,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_other_projects_page_prioritylevels",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "prioritylevels"
     },
     {
@@ -4265,7 +4595,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_other_projects_page_sortkey",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "sortkey"
     },
     {
@@ -4276,7 +4606,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_other_projects_page_otherprojectspage",
       "community": 0,
-      "community_name": "other-projects-page.tsx",
+      "community_name": "projects-page.tsx",
       "norm_label": "otherprojectspage()"
     },
     {
@@ -4286,8 +4616,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page",
-      "community": 78,
-      "community_name": "inter",
+      "community": 79,
+      "community_name": "partners-page.tsx",
       "norm_label": "partners-page.tsx"
     },
     {
@@ -4297,8 +4627,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_affiliateterms",
-      "community": 78,
-      "community_name": "inter",
+      "community": 79,
+      "community_name": "partners-page.tsx",
       "norm_label": "affiliateterms"
     },
     {
@@ -4308,8 +4638,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_affiliateeligibility",
-      "community": 78,
-      "community_name": "inter",
+      "community": 79,
+      "community_name": "partners-page.tsx",
       "norm_label": "affiliateeligibility"
     },
     {
@@ -4319,8 +4649,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_finderterms",
-      "community": 78,
-      "community_name": "inter",
+      "community": 79,
+      "community_name": "partners-page.tsx",
       "norm_label": "finderterms"
     },
     {
@@ -4330,8 +4660,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_findereligibility",
-      "community": 78,
-      "community_name": "inter",
+      "community": 79,
+      "community_name": "partners-page.tsx",
       "norm_label": "findereligibility"
     },
     {
@@ -4341,8 +4671,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_partnerspage",
-      "community": 78,
-      "community_name": "inter",
+      "community": 79,
+      "community_name": "partners-page.tsx",
       "norm_label": "partnerspage()"
     },
     {
@@ -4353,7 +4683,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_post_detail_page",
       "community": 16,
-      "community_name": "page.tsx",
+      "community_name": "postData.ts",
       "norm_label": "post-detail-page.tsx"
     },
     {
@@ -4364,7 +4694,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_post_detail_page_postdetailpageprops",
       "community": 16,
-      "community_name": "page.tsx",
+      "community_name": "postData.ts",
       "norm_label": "postdetailpageprops"
     },
     {
@@ -4375,7 +4705,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_post_detail_page_postdetailpage",
       "community": 16,
-      "community_name": "page.tsx",
+      "community_name": "postData.ts",
       "norm_label": "postdetailpage()"
     },
     {
@@ -4386,7 +4716,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_posts_page",
       "community": 16,
-      "community_name": "page.tsx",
+      "community_name": "postData.ts",
       "norm_label": "posts-page.tsx"
     },
     {
@@ -4397,7 +4727,7 @@
       "_origin": "ast",
       "id": "apps_web_src_views_posts_page_postspage",
       "community": 16,
-      "community_name": "page.tsx",
+      "community_name": "postData.ts",
       "norm_label": "postspage()"
     },
     {
@@ -4407,7 +4737,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "projects-page.tsx"
     },
@@ -4418,7 +4748,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_projectspageprops",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "projectspageprops"
     },
@@ -4429,7 +4759,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_escaperegexp",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "escaperegexp()"
     },
@@ -4440,7 +4770,7 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_highlightmatch",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "highlightmatch()"
     },
@@ -4451,7 +4781,7 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_commodity_tags",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "commodity_tags"
     },
@@ -4462,7 +4792,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_specimen_tags",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "specimen_tags"
     },
@@ -4473,7 +4803,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_projectspage",
-      "community": 79,
+      "community": 0,
       "community_name": "projects-page.tsx",
       "norm_label": "projectspage()"
     },
@@ -4797,6 +5127,17 @@
       "norm_label": "**/*.tsx"
     },
     {
+      "label": "./dist/types/**/*.ts",
+      "file_type": "concept",
+      "source_file": "apps/web/tsconfig.json",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "ref_dist_types_ts",
+      "community": 5,
+      "community_name": "compilerOptions",
+      "norm_label": "./dist/types/**/*.ts"
+    },
+    {
       "label": ".next/types/**/*.ts",
       "file_type": "concept",
       "source_file": "apps/web/tsconfig.json",
@@ -4819,21 +5160,21 @@
       "norm_label": "next-env.d.ts"
     },
     {
-      "label": "./dist/types/**/*.ts",
+      "label": "dist/check-build/types/**/*.ts",
       "file_type": "concept",
       "source_file": "apps/web/tsconfig.json",
       "source_location": "L32",
       "_origin": "ast",
-      "id": "ref_dist_types_ts",
+      "id": "ref_dist_check_build_types_ts",
       "community": 5,
       "community_name": "compilerOptions",
-      "norm_label": "./dist/types/**/*.ts"
+      "norm_label": "dist/check-build/types/**/*.ts"
     },
     {
       "label": "exclude",
       "file_type": "code",
       "source_file": "apps/web/tsconfig.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "apps_web_tsconfig_exclude",
       "community": 5,
@@ -4844,7 +5185,7 @@
       "label": "node_modules",
       "file_type": "concept",
       "source_file": "apps/web/tsconfig.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "_origin": "ast",
       "id": "ref_node_modules",
       "community": 5,
@@ -6179,7 +6520,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_csv",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "generate_projects_csv.mjs"
     },
     {
@@ -6190,7 +6531,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_csv_escapecsv",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "escapecsv()"
     },
     {
@@ -6201,7 +6542,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_csv_header",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "header"
     },
     {
@@ -6212,7 +6553,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_csv_rows",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "rows"
     },
     {
@@ -6223,7 +6564,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_csv_csvcontent",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "csvcontent"
     },
     {
@@ -6234,7 +6575,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_migration",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "generate_projects_migration.mjs"
     },
     {
@@ -6245,7 +6586,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_migration_escapesql",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "escapesql()"
     },
     {
@@ -6256,7 +6597,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_migration_escapejson",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "escapejson()"
     },
     {
@@ -6267,7 +6608,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_migration_insertstatements",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "insertstatements"
     },
     {
@@ -6278,7 +6619,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_migration_outputdir",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "outputdir"
     },
     {
@@ -6289,7 +6630,7 @@
       "_origin": "ast",
       "id": "toolbox_generate_projects_migration_outputpath",
       "community": 3,
-      "community_name": "projectData.ts",
+      "community_name": "page.tsx",
       "norm_label": "outputpath"
     },
     {
@@ -10882,7 +11223,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/App.tsx",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app",
@@ -11036,7 +11377,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/client.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_client",
@@ -11047,8 +11388,56 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_client",
+      "target": "apps_web_src_lib_projectdatacontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/client.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_client",
+      "target": "apps_web_src_lib_projectdatacontext_projectdataprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/client.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_client",
+      "target": "apps_web_src_lib_projecttypes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/client.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_client",
+      "target": "apps_web_src_lib_projecttypes_projectpagedata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
@@ -11060,7 +11449,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
@@ -11071,7 +11460,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L234",
+      "source_location": "L267",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
@@ -11082,7 +11471,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L275",
+      "source_location": "L308",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
@@ -11093,7 +11482,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L85",
+      "source_location": "L117",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
@@ -11104,7 +11493,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L195",
+      "source_location": "L227",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
@@ -11115,7 +11504,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L220",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page",
+      "target": "apps_web_src_app_slug_page_getpagedata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L253",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
@@ -11126,11 +11526,22 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L15",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
       "target": "apps_web_src_app_slug_page_pagemeta",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page",
+      "target": "apps_web_src_app_slug_page_revalidate",
       "confidence_score": 1.0
     },
     {
@@ -11166,7 +11577,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
-      "target": "apps_web_src_lib_projectdata",
+      "target": "apps_web_src_lib_projectsrepo",
       "confidence_score": 1.0
     },
     {
@@ -11178,7 +11589,67 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page",
-      "target": "apps_web_src_lib_projectdata_projects",
+      "target": "apps_web_src_lib_projectsrepo_getproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page",
+      "target": "apps_web_src_lib_projectsrepo_getprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page",
+      "target": "apps_web_src_lib_projectsrepo_getprojectsummaries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page",
+      "target": "apps_web_src_lib_projectsrepo_tosummary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page",
+      "target": "apps_web_src_lib_projecttypes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page",
+      "target": "apps_web_src_lib_projecttypes_projectpagedata",
       "confidence_score": 1.0
     },
     {
@@ -11198,7 +11669,91 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
-      "source_location": "L282",
+      "source_location": "L315",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page_catchallpage",
+      "target": "apps_web_src_app_slug_page_getpagedata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page_getpagedata",
+      "target": "apps_web_src_lib_projectsrepo_getproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page_getpagedata",
+      "target": "apps_web_src_lib_projectsrepo_getprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page_getpagedata",
+      "target": "apps_web_src_lib_projectsrepo_getprojectsummaries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page_getpagedata",
+      "target": "apps_web_src_lib_projectsrepo_tosummary"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page_generatemetadata",
+      "target": "apps_web_src_lib_projectsrepo_getproject"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L228",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_slug_page_generatestaticparams",
+      "target": "apps_web_src_lib_projectsrepo_getprojects"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/[[...slug]]/page.tsx",
+      "source_location": "L316",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_slug_page_catchallpage",
@@ -11303,7 +11858,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/api/newsletter/route.ts",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_api_newsletter_route",
@@ -11314,11 +11869,35 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/api/newsletter/route.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_api_newsletter_route",
       "target": "apps_web_src_app_api_newsletter_route_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/api/newsletter/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_newsletter_route",
+      "target": "apps_web_src_lib_newsletter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/api/newsletter/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_newsletter_route",
+      "target": "apps_web_src_lib_newsletter_subscribetonewsletter",
       "confidence_score": 1.0
     },
     {
@@ -11351,7 +11930,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/app/api/newsletter/route.ts",
-      "source_location": "L45",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_newsletter_route_post",
+      "target": "apps_web_src_lib_newsletter_subscribetonewsletter"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/app/api/newsletter/route.ts",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_api_newsletter_route_post",
@@ -11361,7 +11952,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L20",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_api_profile_route",
@@ -11372,7 +11963,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L14",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_profile_route",
+      "target": "apps_web_src_app_api_profile_route_getaccountemail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_api_profile_route",
@@ -11383,7 +11985,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L42",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_api_profile_route",
@@ -11394,7 +11996,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_api_profile_route",
@@ -11423,6 +12025,42 @@
       "_origin": "ast",
       "source": "apps_web_src_app_api_profile_route",
       "target": "apps_web_src_lib_authserver_getrequestuser",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_profile_route",
+      "target": "apps_web_src_lib_newsletter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_profile_route",
+      "target": "apps_web_src_lib_newsletter_issubscribed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_profile_route",
+      "target": "apps_web_src_lib_newsletter_subscribetonewsletter",
       "confidence_score": 1.0
     },
     {
@@ -11466,7 +12104,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L26",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_api_profile_route_get",
@@ -11477,24 +12115,72 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_profile_route_post",
+      "target": "apps_web_src_app_api_profile_route_getsql",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_profile_route_get",
+      "target": "apps_web_src_app_api_profile_route_getaccountemail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_profile_route_post",
+      "target": "apps_web_src_app_api_profile_route_getaccountemail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_profile_route_get",
+      "target": "apps_web_src_lib_authserver_getrequestuser"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "apps/web/src/app/api/profile/route.ts",
       "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "apps_web_src_app_api_profile_route_post",
-      "target": "apps_web_src_app_api_profile_route_getsql",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L21",
-      "weight": 1.0,
-      "_origin": "ast",
       "source": "apps_web_src_app_api_profile_route_get",
+      "target": "apps_web_src_lib_newsletter_issubscribed"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/app/api/profile/route.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_api_profile_route_post",
       "target": "apps_web_src_lib_authserver_getrequestuser"
     },
     {
@@ -11503,11 +12189,11 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/app/api/profile/route.ts",
-      "source_location": "L43",
+      "source_location": "L96",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_api_profile_route_post",
-      "target": "apps_web_src_lib_authserver_getrequestuser"
+      "target": "apps_web_src_lib_newsletter_subscribetonewsletter"
     },
     {
       "relation": "contains",
@@ -11573,7 +12259,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_dashboard_dashboard_view",
-      "target": "apps_web_src_lib_projectdata",
+      "target": "apps_web_src_lib_projectdatacontext",
       "confidence_score": 1.0
     },
     {
@@ -11585,7 +12271,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_dashboard_dashboard_view",
-      "target": "apps_web_src_lib_projectdata_projects",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectsummaries",
       "confidence_score": 1.0
     },
     {
@@ -11593,12 +12279,24 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/dashboard/dashboard-view.tsx",
-      "source_location": "L326",
+      "source_location": "L327",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_dashboard_dashboard_view_dashboard",
       "target": "apps_web_src_app_dashboard_dashboard_view_createcustomicon",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/app/dashboard/dashboard-view.tsx",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_dashboard_dashboard_view_dashboard",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectsummaries"
     },
     {
       "relation": "contains",
@@ -11758,7 +12456,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_map_map_view",
-      "target": "apps_web_src_lib_projectdata",
+      "target": "apps_web_src_lib_projectdatacontext",
       "confidence_score": 1.0
     },
     {
@@ -11770,7 +12468,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_map_map_view",
-      "target": "apps_web_src_lib_projectdata_projects",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectsummaries",
       "confidence_score": 1.0
     },
     {
@@ -11778,7 +12476,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/map/map-view.tsx",
-      "source_location": "L377",
+      "source_location": "L378",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_map_map_view_mapview",
@@ -11790,7 +12488,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/map/map-view.tsx",
-      "source_location": "L103",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_map_map_view_mapview",
@@ -11798,15 +12496,16 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L43",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/app/map/map-view.tsx",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "apps_web_src_app_projects_id_project_view",
-      "target": "apps_web_src_app_projects_id_project_view_createcustomicon",
-      "confidence_score": 1.0
+      "source": "apps_web_src_app_map_map_view_mapview",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectsummaries"
     },
     {
       "relation": "contains",
@@ -11823,7 +12522,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L52",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11831,11 +12530,22 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_projects_id_project_view",
+      "target": "apps_web_src_app_projects_id_project_view_projectlocationmap",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L26",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11847,7 +12557,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L26",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11859,7 +12569,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L33",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11871,7 +12581,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L33",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11883,7 +12593,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L34",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11895,7 +12605,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L34",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11907,7 +12617,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L34",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11919,7 +12629,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L34",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11931,7 +12641,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L34",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11943,7 +12653,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L34",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11955,7 +12665,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11967,7 +12677,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11979,7 +12689,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -11991,7 +12701,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
@@ -12007,7 +12717,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
-      "target": "apps_web_src_lib_projectdata",
+      "target": "apps_web_src_lib_projectdatacontext",
       "confidence_score": 1.0
     },
     {
@@ -12019,20 +12729,78 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view",
-      "target": "apps_web_src_lib_projectdata_projects",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectdetail",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "apps/web/src/app/projects/[id]/project-view.tsx",
-      "source_location": "L852",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_app_projects_id_project_view_projectdetails",
-      "target": "apps_web_src_app_projects_id_project_view_createcustomicon",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectdetail"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/sitemap-projects.xml/route.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_sitemap_projects_xml_route",
+      "target": "apps_web_src_app_sitemap_projects_xml_route_get",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/sitemap-projects.xml/route.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_sitemap_projects_xml_route",
+      "target": "apps_web_src_app_sitemap_projects_xml_route_revalidate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/sitemap-projects.xml/route.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_sitemap_projects_xml_route",
+      "target": "apps_web_src_lib_projectsrepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/app/sitemap-projects.xml/route.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_sitemap_projects_xml_route",
+      "target": "apps_web_src_lib_projectsrepo_getprojectsitemapentries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/app/sitemap-projects.xml/route.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_app_sitemap_projects_xml_route_get",
+      "target": "apps_web_src_lib_projectsrepo_getprojectsitemapentries"
     },
     {
       "relation": "contains",
@@ -12753,7 +13521,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/components/header-auth.tsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_header_auth",
@@ -12769,7 +13537,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_header_auth",
-      "target": "apps_web_src_lib_authclient",
+      "target": "apps_web_src_lib_useauthsession",
       "confidence_score": 1.0
     },
     {
@@ -12781,30 +13549,6 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_header_auth",
-      "target": "apps_web_src_lib_authclient_authclient",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/src/components/header-auth.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_src_components_header_auth",
-      "target": "apps_web_src_lib_useauthsession",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/src/components/header-auth.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_src_components_header_auth",
       "target": "apps_web_src_lib_useauthsession_getinitials",
       "confidence_score": 1.0
     },
@@ -12813,7 +13557,19 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/components/header-auth.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_header_auth",
+      "target": "apps_web_src_lib_useauthsession_loadauthclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/header-auth.tsx",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_header_auth",
@@ -12825,7 +13581,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/components/header-auth.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_header_auth",
@@ -12854,6 +13610,18 @@
       "_origin": "ast",
       "source": "apps_web_src_components_header_auth_headerauthmobile",
       "target": "apps_web_src_components_header_auth_usesignout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/header-auth.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_header_auth_usesignout",
+      "target": "apps_web_src_lib_useauthsession_loadauthclient",
       "confidence_score": 1.0
     },
     {
@@ -13611,18 +14379,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/components/home/project-preview-carousel-section.tsx",
-      "source_location": "L17",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_src_components_home_project_preview_carousel_section",
-      "target": "apps_web_src_components_home_project_preview_carousel_section_previewprojects",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/src/components/home/project-preview-carousel-section.tsx",
-      "source_location": "L27",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_home_project_preview_carousel_section",
@@ -13662,7 +14419,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_home_project_preview_carousel_section",
-      "target": "apps_web_src_lib_projectdata",
+      "target": "apps_web_src_lib_projectdatacontext",
       "confidence_score": 1.0
     },
     {
@@ -13674,7 +14431,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_home_project_preview_carousel_section",
-      "target": "apps_web_src_lib_projectdata_projects",
+      "target": "apps_web_src_lib_projectdatacontext_usehomepreview",
       "confidence_score": 1.0
     },
     {
@@ -13688,6 +14445,18 @@
       "source": "apps_web_src_views_home_page",
       "target": "apps_web_src_components_home_project_preview_carousel_section",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/components/home/project-preview-carousel-section.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_home_project_preview_carousel_section_projectpreviewcarouselsection",
+      "target": "apps_web_src_lib_projectdatacontext_usehomepreview"
     },
     {
       "relation": "imports",
@@ -14176,18 +14945,6 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/src/components/project-image-gallery.tsx",
-      "source_location": "L25",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_src_components_project_image_gallery",
-      "target": "apps_web_src_lib_projectdata",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -14200,6 +14957,18 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/project-image-gallery.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_project_image_gallery",
+      "target": "apps_web_src_lib_projecttypes",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "context": "field",
       "confidence": "EXTRACTED",
@@ -14209,6 +14978,28 @@
       "_origin": "ast",
       "source": "apps_web_src_components_project_image_gallery_projectimagegalleryprops",
       "target": "apps_web_src_lib_projectdata_gallerytype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/project-location-map.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_project_location_map",
+      "target": "apps_web_src_components_project_location_map_markericon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/project-location-map.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_project_location_map",
+      "target": "apps_web_src_components_project_location_map_projectlocationmap",
       "confidence_score": 1.0
     },
     {
@@ -15038,12 +15829,13 @@
     {
       "relation": "imports_from",
       "context": "import",
+      "deferred": true,
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L5",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "apps_web_src_lib_useauthsession",
+      "source": "apps_web_src_lib_useauthsession_loadauthclient",
       "target": "apps_web_src_lib_authclient",
       "confidence_score": 1.0
     },
@@ -15069,18 +15861,6 @@
       "_origin": "ast",
       "source": "apps_web_src_views_auth_page",
       "target": "apps_web_src_lib_authclient",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_src_lib_useauthsession",
-      "target": "apps_web_src_lib_authclient_authclient",
       "confidence_score": 1.0
     },
     {
@@ -15497,6 +16277,28 @@
       "_origin": "ast",
       "source": "apps_web_src_views_services_page",
       "target": "apps_web_src_lib_fonts_mono",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/newsletter.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_newsletter",
+      "target": "apps_web_src_lib_newsletter_issubscribed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/newsletter.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_newsletter",
+      "target": "apps_web_src_lib_newsletter_subscribetonewsletter",
       "confidence_score": 1.0
     },
     {
@@ -15968,14 +16770,14 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
+      "relation": "re_exports",
+      "context": "export",
       "confidence": "EXTRACTED",
-      "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L20",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "apps_web_src_views_projects_page",
+      "source": "apps_web_src_lib_projecttypes",
       "target": "apps_web_src_lib_projectdata",
       "confidence_score": 1.0
     },
@@ -16004,15 +16806,123 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projecttypes",
+      "target": "apps_web_src_lib_projectdata_linkpreview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projecttypes",
+      "target": "apps_web_src_lib_projectdata_videolink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projecttypes",
+      "target": "apps_web_src_lib_projectdata_kuulaframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projecttypes",
+      "target": "apps_web_src_lib_projectdata_gallerytype",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L20",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "apps_web_src_views_projects_page",
-      "target": "apps_web_src_lib_projectdata_projects",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectdata_projectsection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projecttypes",
+      "target": "apps_web_src_lib_projectdata_projectsection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectdata_quickfact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projecttypes",
+      "target": "apps_web_src_lib_projectdata_quickfact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectdata_project",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "re_exports",
+      "context": "re-export",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projecttypes",
+      "target": "apps_web_src_lib_projectdata_project",
       "confidence_score": 1.0
     },
     {
@@ -16037,6 +16947,315 @@
       "_origin": "ast",
       "source": "toolbox_generate_projects_migration",
       "target": "apps_web_src_lib_projectdata_projects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectdatacontext",
+      "target": "apps_web_src_lib_projectdatacontext_projectdatacontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectdatacontext",
+      "target": "apps_web_src_lib_projectdatacontext_projectdataprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectdatacontext",
+      "target": "apps_web_src_lib_projectdatacontext_usehomepreview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectdatacontext",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectdetail",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectdatacontext",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectsummaries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectdatacontext",
+      "target": "apps_web_src_lib_projecttypes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectdatacontext",
+      "target": "apps_web_src_lib_projecttypes_projectpagedata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectDataContext.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectdatacontext",
+      "target": "apps_web_src_lib_projecttypes_projectsummary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page",
+      "target": "apps_web_src_lib_projectdatacontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectsummaries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page_projectspage",
+      "target": "apps_web_src_lib_projectdatacontext_useprojectsummaries"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projecttypes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projecttypes",
+      "target": "apps_web_src_lib_projecttypes_projectpagedata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectTypes.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projecttypes",
+      "target": "apps_web_src_lib_projecttypes_projectsummary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projecttypes_projectsummary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectsrepo_getproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectsrepo_getprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectsrepo_getprojectsitemapentries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectsrepo_getprojectsummaries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectsrepo_optionallist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectsrepo_projectrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectsrepo_rowtoproject",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo",
+      "target": "apps_web_src_lib_projectsrepo_tosummary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo_rowtoproject",
+      "target": "apps_web_src_lib_projectsrepo_optionallist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo_getprojectsummaries",
+      "target": "apps_web_src_lib_projectsrepo_tosummary",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L92",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo_getproject",
+      "target": "apps_web_src_lib_projectsrepo_getprojects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsRepo.ts",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectsrepo_getprojectsummaries",
+      "target": "apps_web_src_lib_projectsrepo_getprojects",
       "confidence_score": 1.0
     },
     {
@@ -16168,7 +17387,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L16",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_lib_useauthsession",
@@ -16179,7 +17398,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L14",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_lib_useauthsession",
@@ -16190,7 +17409,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L59",
+      "source_location": "L66",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_lib_useauthsession",
@@ -16201,7 +17420,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L10",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_useauthsession",
+      "target": "apps_web_src_lib_useauthsession_loadauthclient",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/useAuthSession.ts",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_lib_useauthsession",
@@ -16212,7 +17442,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/lib/useAuthSession.ts",
-      "source_location": "L25",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_lib_useauthsession",
@@ -16241,6 +17471,18 @@
       "_origin": "ast",
       "source": "apps_web_src_views_auth_page",
       "target": "apps_web_src_lib_useauthsession",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/useAuthSession.ts",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_useauthsession_useauthsession",
+      "target": "apps_web_src_lib_useauthsession_loadauthclient",
       "confidence_score": 1.0
     },
     {
@@ -16658,7 +17900,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L482",
+      "source_location": "L483",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_projectspage",
@@ -16671,7 +17913,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L76",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_projectspage",
@@ -16736,7 +17978,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/tsconfig.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_tsconfig",
@@ -16975,6 +18217,18 @@
       "context": "import",
       "_origin": "ast",
       "source": "apps_web_tsconfig_include",
+      "target": "ref_dist_check_build_types_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/tsconfig.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
+      "source": "apps_web_tsconfig_include",
       "target": "ref_dist_types_ts",
       "confidence_score": 1.0
     },
@@ -17030,7 +18284,7 @@
       "relation": "extends",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/tsconfig.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -20354,5 +21608,5 @@
       "source_file": "apps/web/public/images/projects/Nevada/Northumberland Staking Report (2).pdf"
     }
   ],
-  "built_at_commit": "7cc651ed67305bb753921072730d45e408dd5e10"
+  "built_at_commit": "ae9b7aaa276a51a29b8ea1b6475051b29959f114"
 }

@@ -10,24 +10,14 @@ import {
   Radar,
 } from "lucide-react";
 import { mono } from "@/lib/fonts";
-import { projects } from "@/lib/projectData";
-
-const PREVIEW_COUNT = 6;
-
-const previewProjects = projects
-  .filter((p) => p.type !== "subproject")
-  .slice(0, PREVIEW_COUNT)
-  .map((project) => ({
-    ...project,
-    previewImage:
-      (project.sections.find((section: any) => section.image) as any)?.image ??
-      project.image,
-  }));
+import { useHomePreview } from "@/lib/projectDataContext";
 
 export function ProjectPreviewCarouselSection() {
+  // First top-level projects (with previewImage) and the total, loaded on the server.
+  const { projects: previewProjects, totalCount } = useHomePreview();
   const forSaleCount = useMemo(
     () => previewProjects.filter((p) => p.isForSale).length,
-    [],
+    [previewProjects],
   );
 
   return (
@@ -79,7 +69,7 @@ export function ProjectPreviewCarouselSection() {
         >
           <span>
             Showing {previewProjects.length} of{" "}
-            {projects.filter((p) => p.type !== "subproject").length} Projects
+            {totalCount} Projects
           </span>
           <span className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />

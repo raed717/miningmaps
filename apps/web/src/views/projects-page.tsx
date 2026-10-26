@@ -17,7 +17,7 @@ import {
   Gem,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
-import { projects } from "@/lib/projectData";
+import { useProjectSummaries } from "@/lib/projectDataContext";
 import { otherProjects } from "@/lib/otherProjectsData";
 import { PartnerNoticeRotator } from "@/components/partner-notice-rotator";
 
@@ -51,6 +51,7 @@ const SPECIMEN_TAGS = ["Fossils", "Agates", "Gemstones"];
 const FOSSILS_GEMSTONES_TYPE = "Fossils, Agates & Gemstones";
 
 export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPageProps) {
+  const projects = useProjectSummaries();
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);

@@ -1,16 +1,72 @@
-import "@fontsource-variable/inter";
-import "@fontsource/jetbrains-mono/400.css";
-import "@fontsource/jetbrains-mono/500.css";
-import "@fontsource/jetbrains-mono/700.css";
-import "../globals.css";
-import "leaflet/dist/leaflet.css";
-import "react-medium-image-zoom/dist/styles.css";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { mockPosts } from "@/lib/postData";
-import { projects } from "@/lib/projectData";
+import { getProject, getProjects, getProjectSummaries, toSummary } from "@/lib/projectsRepo";
+import type { ProjectPageData } from "@/lib/projectTypes";
 import ClientPage from "./client";
 
+// Projects come from Neon. Pages are prerendered and regenerated in the background
+// at most once an hour, so database edits go live without a redeploy.
+export const revalidate = 3600;
+
 const siteName = "Adamson Geomatics";
+
+/** Single-segment routes the client app shell (App.tsx) renders. Keep in sync with App.tsx. */
+const STATIC_PAGES = [
+  "about",
+  "services",
+  "contact",
+  "projects",
+  "properties",
+  "map",
+  "dashboard",
+  "other-projects",
+  "partners",
+  "post",
+  "posts",
+  "sign-up",
+  "sign-in",
+  "account",
+];
+
+/** Whether a path has real content; anything else gets a true 404 (not a "not found" page with 200). */
+async function routeExists(slugArray: string[]): Promise<boolean> {
+  const [section, id] = slugArray;
+  if (slugArray.length === 0) return true;
+  if (slugArray.length === 1) return STATIC_PAGES.includes(section);
+  if (slugArray.length === 2) {
+    if (section === "projects") return !!(await getProject(id));
+    if (section === "post" || section === "posts") return mockPosts.some((p) => p.id === id);
+  }
+  return false;
+}
+
+/** Only the project data this route renders, so pages don't ship the whole catalog. */
+async function getPageData(slugArray: string[]): Promise<ProjectPageData> {
+  const [section, id] = slugArray;
+
+  if (section === "projects" && id) {
+    const project = await getProject(id);
+    if (!project) return {};
+    const relatedIds = new Set([project.parentProjectId, ...(project.subProjectIds ?? [])]);
+    const related = (await getProjects()).filter((p) => relatedIds.has(p.id)).map(toSummary);
+    return { project, related };
+  }
+
+  if (
+    slugArray.length === 1 &&
+    (section === "projects" || section === "properties" || section === "map" || section === "dashboard")
+  ) {
+    return { summaries: await getProjectSummaries() };
+  }
+
+  if (slugArray.length === 0) {
+    const topLevel = (await getProjectSummaries()).filter((p) => p.type !== "subproject");
+    return { homePreview: { projects: topLevel.slice(0, 6), totalCount: topLevel.length } };
+  }
+
+  return {};
+}
 
 const pageMeta: Record<string, Metadata> = {
   "/sign-up": {
@@ -88,6 +144,7 @@ export async function generateMetadata({
   params: Promise<{ slug?: string[] }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (!(await routeExists(slug?.filter(Boolean) ?? []))) notFound();
   const path = slug ? `/${slug.join("/")}` : "/";
   const canonical = `https://www.miningpropertymaps.com${path === "/" ? "" : path}`;
 
@@ -99,7 +156,7 @@ export async function generateMetadata({
   // Project detail pages: /projects/[id]
   const slugArray = slug ?? [];
   if (slugArray[0] === "projects" && slugArray[1]) {
-    const project = projects.find((p) => p.id === slugArray[1]);
+    const project = await getProject(slugArray[1]);
     if (project) {
       const location = project.region;
       const tags = project.tags?.join(", ") ?? "";
@@ -192,23 +249,11 @@ export async function generateMetadata({
   };
 }
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const projects = await getProjects();
   return [
     { slug: [""] },
-    { slug: ["about"] },
-    { slug: ["services"] },
-    { slug: ["contact"] },
-    { slug: ["projects"] },
-    { slug: ["properties"] },
-    { slug: ["map"] },
-    { slug: ["dashboard"] },
-    { slug: ["other-projects"] },
-    { slug: ["partners"] },
-    { slug: ["post"] },
-    { slug: ["posts"] },
-    { slug: ["sign-up"] },
-    { slug: ["sign-in"] },
-    { slug: ["account"] },
+    ...STATIC_PAGES.map((page) => ({ slug: [page] })),
     ...projects.map((project) => ({ slug: ["projects", project.id] })),
     ...mockPosts.flatMap((post) => [
       { slug: ["post", post.id] },
@@ -231,7 +276,7 @@ const pageLabels: Record<string, string> = {
   posts: "Posts",
 };
 
-function buildBreadcrumbJsonLd(slugArray: string[]) {
+function buildBreadcrumbJsonLd(slugArray: string[], projectTitle?: string) {
   if (slugArray.length === 0) return null;
 
   const itemListElement = [
@@ -251,7 +296,7 @@ function buildBreadcrumbJsonLd(slugArray: string[]) {
     let name = pageLabels[segment];
     if (!name && isLast) {
       if (slugArray[0] === "projects" && index === 1) {
-        name = projects.find((p) => p.id === segment)?.title ?? segment;
+        name = projectTitle ?? segment;
       } else if ((slugArray[0] === "post" || slugArray[0] === "posts") && index === 1) {
         name = mockPosts.find((p) => p.id === segment)?.title ?? segment;
       }
@@ -279,11 +324,13 @@ export default async function CatchAllPage({
 }) {
   const { slug } = await params;
   const slugArray = slug?.filter(Boolean) ?? [];
-  const breadcrumbJsonLd = buildBreadcrumbJsonLd(slugArray);
+  if (!(await routeExists(slugArray))) notFound();
+  const pageData = await getPageData(slugArray);
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd(slugArray, pageData.project?.title);
 
   let contentJsonLd: Record<string, unknown> | null = null;
   if (slugArray[0] === "projects" && slugArray[1]) {
-    const project = projects.find((p) => p.id === slugArray[1]);
+    const project = pageData.project;
     if (project) {
       const imageUrl = project.image
         ? project.image.startsWith("http")
@@ -367,7 +414,7 @@ export default async function CatchAllPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(contentJsonLd) }}
         />
       )}
-      <ClientPage />
+      <ClientPage data={pageData} />
     </>
   );
 }

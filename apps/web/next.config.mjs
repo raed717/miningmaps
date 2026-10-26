@@ -3,6 +3,8 @@ const nextConfig = {
   // No `output: "export"`: API routes (/api/contact, /api/newsletter) need a
   // server runtime. Pages are still prerendered via generateStaticParams.
   // Keep the default `.next` distDir — Vercel and next-sitemap both read from it.
+  // NEXT_DIST_DIR lets a local check build run beside `next dev` without sharing `.next`.
+  ...(process.env.NEXT_DIST_DIR ? { distDir: process.env.NEXT_DIST_DIR } : {}),
   async headers() {
     return [
       {

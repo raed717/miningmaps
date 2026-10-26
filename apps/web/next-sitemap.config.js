@@ -4,7 +4,17 @@ const config = {
   generateRobotsTxt: false,
   changefreq: 'weekly',
   priority: 0.7,
-  exclude: ['/dashboard', '/dashboard/*', '/opengraph-image.png', '/post', '/post/*', '/sign-up', '/sign-in', '/account'],
+  // Project detail URLs come from Neon via /sitemap-projects.xml (see src/app/sitemap-projects.xml/route.ts),
+  // so they're excluded here to avoid duplicates and build-time-only lists.
+  exclude: [
+    '/dashboard', '/dashboard/*', '/opengraph-image.png', '/post', '/post/*',
+    '/sign-up', '/sign-in', '/account',
+    '/projects/*', '/sitemap-projects.xml',
+  ],
+  robotsTxtOptions: {
+    // Adds the projects sitemap to the /sitemap.xml index (robots.txt itself is hand-written).
+    additionalSitemaps: ['https://www.miningpropertymaps.com/sitemap-projects.xml'],
+  },
 };
 
 export default config;

@@ -22,7 +22,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { mono } from "@/lib/fonts";
-import type { GalleryType } from "@/lib/projectData";
+import type { GalleryType } from "@/lib/projectTypes";
 
 export interface GalleryImage {
   src: string;

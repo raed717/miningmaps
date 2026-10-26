@@ -2,9 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { authClient } from "@/lib/authClient";
 
 const AUTH_CHANGED = "auth-changed";
+
+/**
+ * Loads the Neon Auth SDK on demand. The header is on every page, so importing the SDK
+ * statically would add it (better-auth, auth-js, jose, zod) to every page's initial JS.
+ */
+export function loadAuthClient() {
+  return import("@/lib/authClient").then((m) => m.authClient);
+}
 
 /** Call after sign-in, sign-up or sign-out so mounted UI (e.g. the header) refreshes. */
 export function notifyAuthChanged() {
@@ -35,8 +42,8 @@ export function useAuthSession(): AuthSession {
 
   useEffect(() => {
     let cancelled = false;
-    authClient
-      .getSession()
+    loadAuthClient()
+      .then((authClient) => authClient.getSession())
       .then(({ data }) => {
         if (cancelled) return;
         setSession(

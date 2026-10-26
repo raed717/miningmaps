@@ -20,10 +20,14 @@ import {
   ChevronRight,
   ChevronDown,
 } from "lucide-react";
-import { projects } from "@/lib/projectData";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import L from "leaflet";
+import { useProjectDetail } from "@/lib/projectDataContext";
 import { ImageViewerTrigger } from "@/components/fullscreen-image-viewer";
+
+// Browser-only (Leaflet); everything else on this page is server-rendered.
+const ProjectLocationMap = dynamic(() => import("@/components/project-location-map"), {
+  ssr: false,
+  loading: () => <div className="h-full w-full bg-[#0B0F14]" />,
+});
 
 import {
   HoverCard,
@@ -40,15 +44,6 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-const createCustomIcon = () => {
-  return L.divIcon({
-    className: "custom-div-icon",
-    html: `<div style="background-color: #F97316; width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 15px #F97316; border: 2px solid #0B0F14"></div>`,
-    iconSize: [12, 12],
-    iconAnchor: [6, 6],
-  });
-};
-
 export default function ProjectDetails({
   projectId,
 }: {
@@ -61,11 +56,14 @@ export default function ProjectDetails({
   const highlightTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const activeHeadingIdRef = useRef<string | null>(null);
 
-  const project = projects.find((p) => p.id === projectId);
+  // Loaded on the server for this route; `related` holds the parent and sub-projects.
+  const { project: loadedProject, related } = useProjectDetail();
+  const project = loadedProject?.id === projectId ? loadedProject : undefined;
+  const findRelated = (id: string) => related.find((p) => p.id === id);
 
   const subProjects = (project?.subProjectIds || [])
-    .map((subId) => projects.find((p) => p.id === subId))
-    .filter((sub): sub is typeof projects[number] => !!sub);
+    .map(findRelated)
+    .filter((sub): sub is NonNullable<typeof sub> => !!sub);
 
   const documentHeadings = useMemo(() => {
     return (project?.sections || [])
@@ -835,22 +833,7 @@ export default function ProjectDetails({
                 Location Context
               </h3>
               <div className="relative z-0 isolate h-[18.75rem] w-full overflow-hidden rounded-lg border border-border/50">
-                <MapContainer
-                  center={mapCoords}
-                  zoom={5}
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    background: "#0B0F14",
-                    zIndex: 0,
-                  }}
-                  zoomControl={false}
-                  scrollWheelZoom={false}
-                  dragging={false}
-                >
-                  <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=cb1_2v0i_1_d240e927e07ac30a1bfdf6f6" />
-                  <Marker position={mapCoords} icon={createCustomIcon()} />
-                </MapContainer>
+                <ProjectLocationMap coordinates={mapCoords} />
               </div>
               <a
                 href={`https://www.google.com/maps?q=${project.coordinates[0]},${project.coordinates[1]}`}
@@ -913,9 +896,7 @@ export default function ProjectDetails({
                 <div className="space-y-3 text-sm">
                   {project.parentProjectId &&
                     (() => {
-                      const parent = projects.find(
-                        (p) => p.id === project.parentProjectId,
-                      );
+                      const parent = findRelated(project.parentProjectId);
                       return parent ? (
                         <div className="flex flex-col">
                           <span className="text-xs text-muted-foreground">
@@ -938,7 +919,7 @@ export default function ProjectDetails({
                         </span>
                         <ul className="mt-1 space-y-1">
                           {project.subProjectIds.map((subId) => {
-                            const sub = projects.find((p) => p.id === subId);
+                            const sub = findRelated(subId);
                             return sub ? (
                               <li key={subId}>
                                 <Link

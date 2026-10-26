@@ -47,9 +47,9 @@ const DashboardView = dynamic(() => import("@/app/dashboard/dashboard-view"), {
   loading: () => <Loader message="Loading Dashboard..." />,
   ssr: false,
 });
+// Server-rendered so crawlers get the full project content (its Leaflet map is browser-only).
 const ProjectView = dynamic(() => import("@/app/projects/[id]/project-view"), {
   loading: () => <Loader message="Loading Project Dossier..." />,
-  ssr: false,
 });
 const OtherProjectsPage = dynamic(() => import("@/views/other-projects-page"), {
   loading: () => <Loader message="Loading Portfolio..." />,

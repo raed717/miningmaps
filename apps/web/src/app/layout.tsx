@@ -1,3 +1,11 @@
+// Global styles live in the root layout so both the catch-all page and not-found.tsx get them.
+import "@fontsource-variable/inter";
+import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource/jetbrains-mono/500.css";
+import "@fontsource/jetbrains-mono/700.css";
+import "./globals.css";
+import "leaflet/dist/leaflet.css";
+import "react-medium-image-zoom/dist/styles.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";

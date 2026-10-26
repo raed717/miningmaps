@@ -16,7 +16,7 @@ import {
   Cpu,
   Database,
 } from "lucide-react";
-import { projects } from "@/lib/projectData";
+import { useProjectSummaries } from "@/lib/projectDataContext";
 import Link from "next/link";
 import { inter, mono } from "@/lib/fonts";
 
@@ -83,6 +83,7 @@ const getTagColor = (filter: string | null): string | null => {
 };
 
 export default function MapView() {
+  const projects = useProjectSummaries();
   const [selectedSiteId, setSelectedSiteId] = useState<string | null>(null);
   const [flyToCoords, setFlyToCoords] = useState<[number, number] | null>(null);
   const [showOnlyForSale, setShowOnlyForSale] = useState(false);

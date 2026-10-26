@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown, LogIn, LogOut, UserPlus, UserRound } from "lucide-react";
-import { authClient } from "@/lib/authClient";
-import { getInitials, notifyAuthChanged, useAuthSession } from "@/lib/useAuthSession";
+import { getInitials, loadAuthClient, notifyAuthChanged, useAuthSession } from "@/lib/useAuthSession";
 
 function useSignOut() {
   const router = useRouter();
   const pathname = usePathname();
   return async () => {
+    const authClient = await loadAuthClient();
     await authClient.signOut();
     notifyAuthChanged();
     if (pathname === "/account") router.replace("/sign-in");

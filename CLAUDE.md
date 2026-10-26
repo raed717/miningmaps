@@ -51,6 +51,18 @@ The production build no longer uses `output: "export"` so that API routes (`/api
 - SQL migrations live in `migrations/` (run with the direct, non `-pooler` connection string).
 - `newsletter_subscribers` table (`migrations/002_newsletter_subscribers.sql`) is written by `apps/web/src/app/api/newsletter/route.ts`; the signup UI is `apps/web/src/components/NewsletterForm.tsx`, rendered in the footer.
 
+## Projects data (Neon)
+
+- Projects are read from the Neon `projects` table on the server (`src/lib/projectsRepo.ts`), ordered by `sort_order` (`migrations/004_projects_sort_order.sql`; new rows without one are listed last). The catch-all page uses ISR (`revalidate = 3600`), so DB edits go live within the hour without a redeploy.
+- `src/lib/projectData.ts` is kept as a backup/draft only. Never import its data at runtime; import types via `src/lib/projectTypes.ts` (type-only re-exports).
+- `[[...slug]]/page.tsx` sends each route only what it needs (`getPageData`): full project + related summaries on `/projects/[id]`, summaries (no `sections`) on list/map/dashboard, 6 previews on home. Client components read it via hooks in `src/lib/projectDataContext.tsx`.
+- Project detail pages are server-rendered for SEO; only the Leaflet map (`src/components/project-location-map.tsx`) is browser-only.
+- `projects.updated_at` is maintained by the `projects_set_updated_at` trigger (`migrations/005_projects_updated_at_trigger.sql`); it feeds sitemap `<lastmod>`.
+- Unknown paths return a real 404: `routeExists()` in `[[...slug]]/page.tsx` checks `STATIC_PAGES`, the DB (projects) and `mockPosts`, then calls `notFound()`; `src/app/not-found.tsx` renders the app shell's not-found view. Add new single-segment routes to `STATIC_PAGES` (it also drives `generateStaticParams()`) as well as `App.tsx`. Global CSS is imported in `src/app/layout.tsx`.
+- Project URLs are in `/sitemap-projects.xml` (`src/app/sitemap-projects.xml/route.ts`, from the DB, hourly); next-sitemap excludes `/projects/*` and lists that sitemap in the `/sitemap.xml` index.
+- The header loads the auth SDK lazily (`loadAuthClient()` in `src/lib/useAuthSession.ts`) to keep it out of every page's initial JS.
+- `NEXT_DIST_DIR=dist/check-build npx next build` builds into a separate folder so it doesn't clash with a running `next dev` (both otherwise use `.next`).
+
 ## Auth (Neon Managed Better Auth)
 
 - Neon CLI is linked via `.neon` (project `AdamsonGeomatics`, branch `production`); `neon.ts` declares `auth: true`. `neon env pull` writes to the root `.env.local`; the Next app reads its own `apps/web/.env*`.
