@@ -119,19 +119,13 @@ ${insertStatements.join("\n\n")}
 COMMIT;
 `;
 
-const outputDir = path.join("toolbox", "migrations");
+// All migrations live in the root migrations/ folder.
+const outputDir = "migrations";
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
 const outputPath = path.join(outputDir, "001_projects_seed.sql");
 fs.writeFileSync(outputPath, sqlContent, "utf8");
-
-// Also keep a copy in migrations/ for direct tooling compatibility
-const rootMigrationDir = "migrations";
-if (!fs.existsSync(rootMigrationDir)) {
-  fs.mkdirSync(rootMigrationDir, { recursive: true });
-}
-fs.writeFileSync(path.join(rootMigrationDir, "001_projects_seed.sql"), sqlContent, "utf8");
 
 console.log(`Successfully generated SQL migration: ${outputPath} (${projects.length} projects, ${(Buffer.byteLength(sqlContent) / 1024).toFixed(2)} KB)`);

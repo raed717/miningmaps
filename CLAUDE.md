@@ -54,6 +54,7 @@ The production build no longer uses `output: "export"` so that API routes (`/api
 ## Projects data (Neon)
 
 - Projects are read from the Neon `projects` table on the server (`src/lib/projectsRepo.ts`), ordered by `sort_order` (`migrations/004_projects_sort_order.sql`; new rows without one are listed last). The catch-all page uses ISR (`revalidate = 3600`), so DB edits go live within the hour without a redeploy.
+- To add projects: declare them in `toolbox/NewProjects.ts` (typed `Project[]`) and run `npm run export:sql:new`. It errors if an id exists (projectData.ts or DB), appends the source to `projectData.ts` (via the TypeScript AST), writes `migrations/NNN_add_<id>_<title>.sql` (new ids get the last `sort_order`), and regenerates `migrations/001_projects_seed.sql` + the CSVs. Then run the new file in the Neon SQL Editor. All migrations live in the root `migrations/` folder. See `toolbox/README.md`.
 - `src/lib/projectData.ts` is kept as a backup/draft only. Never import its data at runtime; import types via `src/lib/projectTypes.ts` (type-only re-exports).
 - `[[...slug]]/page.tsx` sends each route only what it needs (`getPageData`): full project + related summaries on `/projects/[id]`, summaries (no `sections`) on list/map/dashboard, 6 previews on home. Client components read it via hooks in `src/lib/projectDataContext.tsx`.
 - Project detail pages are server-rendered for SEO; only the Leaflet map (`src/components/project-location-map.tsx`) is browser-only.

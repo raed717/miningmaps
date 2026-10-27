@@ -1,7 +1,7 @@
 -- =====================================================================
 -- Migration: Create projects schema and seed data from projectData.ts
 -- Total records: 45 projects
--- Generated at: 2026-10-26T11:51:14.499Z
+-- Generated at: 2026-10-27T09:42:56.802Z
 -- Compatible with: PostgreSQL / Neon / Supabase / AWS RDS / CockroachDB
 -- =====================================================================
 

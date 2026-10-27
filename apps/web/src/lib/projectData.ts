@@ -4521,10 +4521,16 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       "GIS",
     ],
     quickFacts: [
-      { label: "Category", value: "Remote Sensing — Spectral Analysis / LiDAR" },
+      {
+        label: "Category",
+        value: "Remote Sensing — Spectral Analysis / LiDAR",
+      },
       { label: "Satellite Sensor", value: "Sentinel Imagery (NDVI & B4/B2)" },
       { label: "Spectral Location", value: "BC MINFILE 082JSW018" },
-      { label: "Terrain Model", value: "Digital Terrain Model (DTM) from LiDAR" },
+      {
+        label: "Terrain Model",
+        value: "Digital Terrain Model (DTM) from LiDAR",
+      },
       { label: "LiDAR Location", value: "BC MINFILE 093F 037" },
     ],
     sections: [
@@ -4535,7 +4541,8 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
           "Sample cases illustrating Adamson Geomatics' capabilities in satellite-based spectral analysis and airborne LiDAR terrain modelling across mineral occurrences in British Columbia.",
         links: [
           {
-            textPreview: "BC MINFILE 082JSW018 — Spectral Analysis Location Details",
+            textPreview:
+              "BC MINFILE 082JSW018 — Spectral Analysis Location Details",
             url: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
           },
           {
@@ -4568,7 +4575,8 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         ],
       },
       {
-        heading: "Iron Oxide Spectral Analysis (B4/B2) — Sentinel Imagery (MINFILE 082JSW018)",
+        heading:
+          "Iron Oxide Spectral Analysis (B4/B2) — Sentinel Imagery (MINFILE 082JSW018)",
         type: "SimpleImage",
         image:
           "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
@@ -4582,7 +4590,8 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         ],
       },
       {
-        heading: "Digital Terrain Model (DTM) Derived from LiDAR (MINFILE 093F 037)",
+        heading:
+          "Digital Terrain Model (DTM) Derived from LiDAR (MINFILE 093F 037)",
         type: "SimpleImage",
         image:
           "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
@@ -4628,8 +4637,14 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       { label: "Asking Price", value: "$7,500 CAD for all 200 acres" },
       { label: "Gold Character", value: "Nuggets and coarse pickers reported" },
       { label: "Ground Status", value: "Abundant virgin placer ground" },
-      { label: "Access", value: "Jeep / ATV backcountry road, few km off highway" },
-      { label: "Camp & Recreation", value: "Multiple campsites, prime fishing & hunting" },
+      {
+        label: "Access",
+        value: "Jeep / ATV backcountry road, few km off highway",
+      },
+      {
+        label: "Camp & Recreation",
+        value: "Multiple campsites, prime fishing & hunting",
+      },
     ],
     sections: [
       {
@@ -4646,16 +4661,40 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         rows: [
           ["Tenure Number", "Claim #1113180"],
           ["Location", "Similkameen River, Princeton, British Columbia"],
-          ["Relative Position", "Directly upstream / just above Copper Mountain Mine"],
-          ["Cell Configuration", "4 Mineral Cells (each cell approx. 50 acres)"],
+          [
+            "Relative Position",
+            "Directly upstream / just above Copper Mountain Mine",
+          ],
+          [
+            "Cell Configuration",
+            "4 Mineral Cells (each cell approx. 50 acres)",
+          ],
           ["Total Area", "Approximately 200 Acres (81 Hectares)"],
-          ["Asking Price", "$7,500 CAD (Full ownership of all 4 cells / 200 acres)"],
-          ["Mineral Rights", "Placer Gold rights in good standing with Mineral Titles Online (MTO)"],
-          ["Ground Condition", "Significant virgin ground with unworked river bars and benches"],
+          [
+            "Asking Price",
+            "$7,500 CAD (Full ownership of all 4 cells / 200 acres)",
+          ],
+          [
+            "Mineral Rights",
+            "Placer Gold rights in good standing with Mineral Titles Online (MTO)",
+          ],
+          [
+            "Ground Condition",
+            "Significant virgin ground with unworked river bars and benches",
+          ],
           ["Gold Occurrence", "Coarse nuggets, pickers, and flood gold"],
-          ["Access", "Jeep, truck, or ATV trail, located a few kilometers off main highway"],
-          ["Camping Infrastructure", "Multiple established campsites directly on or adjacent to claims"],
-          ["Recreational Amenities", "World-class trout fishing and big-game hunting"],
+          [
+            "Access",
+            "Jeep, truck, or ATV trail, located a few kilometers off main highway",
+          ],
+          [
+            "Camping Infrastructure",
+            "Multiple established campsites directly on or adjacent to claims",
+          ],
+          [
+            "Recreational Amenities",
+            "World-class trout fishing and big-game hunting",
+          ],
         ],
       },
       {
@@ -4734,7 +4773,8 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
   {
     id: "za-001",
     type: "project",
-    title: "Stibium Mining Opportunity - Limpopo, South Africa (Gold & Antimony)",
+    title:
+      "Stibium Mining Opportunity - Limpopo, South Africa (Gold & Antimony)",
     summary:
       "Producing gold and critical-mineral antimony asset covering ~9,500 hectares in the Murchison Greenstone Belt, Limpopo Province, South Africa. Boasts 50+ years of operational history with active tailings mining at 60 ktpm, JORC-compliant resources of ~1.0 Moz Gold and ~280,000 tonnes Antimony (~10% of global known reserves), and an aggressive exploration campaign targeting up to 1.0 Mt Sb. Seeking US$80M primary capital on an estimated US$450M going-concern valuation, with a clear path to a secondary exit of up to US$250M for up to a 74% stake.",
     region: "Limpopo, South Africa",
@@ -4759,19 +4799,52 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
     quickFacts: [
       { label: "Location", value: "Limpopo Province, South Africa" },
       { label: "Geological Belt", value: "Murchison Greenstone Belt" },
-      { label: "Property Size", value: "Approx. 9,500 Hectares (Mining Lease)" },
+      {
+        label: "Property Size",
+        value: "Approx. 9,500 Hectares (Mining Lease)",
+      },
       { label: "Commodities", value: "Gold (Au) & Antimony (Sb)" },
-      { label: "Development Stage", value: "Producing Asset (50+ Years History)" },
-      { label: "Current Mining Rate", value: "60,000 tonnes / month (TF2 Dump)" },
+      {
+        label: "Development Stage",
+        value: "Producing Asset (50+ Years History)",
+      },
+      {
+        label: "Current Mining Rate",
+        value: "60,000 tonnes / month (TF2 Dump)",
+      },
       { label: "JORC Gold Resource", value: "~1,000,000 ounces (~1.0 Moz Au)" },
-      { label: "JORC Antimony Resource", value: "~280,000 tonnes Sb (~10% global reserves)" },
-      { label: "Exploration Target", value: "Expanding Sb to 1,000,000 tonnes (1.0 Mt)" },
-      { label: "2024 EBITDA", value: "> US$10 Million (Record gold production)" },
-      { label: "Antimony EBITDA Upside", value: "+US$70M to US$80M annual EBITDA projected" },
-      { label: "Going-Concern Valuation", value: "~US$450 Million (5x EBITDA multiple)" },
-      { label: "Capital Raise Structure", value: "Seeking US$80M (Equity ~18% or loan + offtake)" },
-      { label: "Exit Horizon", value: "Secondary exit up to US$250M (up to 74% stake)" },
-      { label: "Ownership Structure", value: "74% Seller-Owned / 26% BEE Partner Trust" },
+      {
+        label: "JORC Antimony Resource",
+        value: "~280,000 tonnes Sb (~10% global reserves)",
+      },
+      {
+        label: "Exploration Target",
+        value: "Expanding Sb to 1,000,000 tonnes (1.0 Mt)",
+      },
+      {
+        label: "2024 EBITDA",
+        value: "> US$10 Million (Record gold production)",
+      },
+      {
+        label: "Antimony EBITDA Upside",
+        value: "+US$70M to US$80M annual EBITDA projected",
+      },
+      {
+        label: "Going-Concern Valuation",
+        value: "~US$450 Million (5x EBITDA multiple)",
+      },
+      {
+        label: "Capital Raise Structure",
+        value: "Seeking US$80M (Equity ~18% or loan + offtake)",
+      },
+      {
+        label: "Exit Horizon",
+        value: "Secondary exit up to US$250M (up to 74% stake)",
+      },
+      {
+        label: "Ownership Structure",
+        value: "74% Seller-Owned / 26% BEE Partner Trust",
+      },
     ],
     sections: [
       {
@@ -4783,20 +4856,48 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       {
         heading: "Project Key Metrics & JORC Resource Endowment",
         type: "table",
-        caption: "Stibium Mining Project — Key Metrics & Resource Specifications",
+        caption:
+          "Stibium Mining Project — Key Metrics & Resource Specifications",
         headers: ["Metric", "Details"],
         rows: [
-          ["Location", "Limpopo Province, South Africa (Murchison Greenstone Belt)"],
-          ["Property Size", "Approximately 9,500 hectares (active mining lease area)"],
+          [
+            "Location",
+            "Limpopo Province, South Africa (Murchison Greenstone Belt)",
+          ],
+          [
+            "Property Size",
+            "Approximately 9,500 hectares (active mining lease area)",
+          ],
           ["Primary Commodities", "Gold (Au) and Antimony (Sb)"],
-          ["Development Stage", "Producing gold asset with 50+ years operational history; active underground & surface operations"],
-          ["Current Production Rate", "TF2 tailings dump mining at 60,000 tonnes per month (60 ktpm)"],
+          [
+            "Development Stage",
+            "Producing gold asset with 50+ years operational history; active underground & surface operations",
+          ],
+          [
+            "Current Production Rate",
+            "TF2 tailings dump mining at 60,000 tonnes per month (60 ktpm)",
+          ],
           ["JORC Compliant Resource (Gold)", "~1,000,000 ounces (~1.0 Moz Au)"],
-          ["JORC Compliant Resource (Antimony)", "~280,000 tonnes Sb (~10% of global known reserves)"],
-          ["Exploration Target", "Expanding the antimony resource up to 1,000,000 tonnes (1.0 Mt Sb)"],
-          ["Resource Head Grades", "Specific in-situ g/t and % head grades pending release of updated JORC technical report"],
-          ["Permitting & Tenure", "Fully permitted and licensed for both underground operations and tailings retreatment"],
-          ["Current Ownership", "74% Seller-Owned, 26% Broad-Based BEE Partner Trust"],
+          [
+            "JORC Compliant Resource (Antimony)",
+            "~280,000 tonnes Sb (~10% of global known reserves)",
+          ],
+          [
+            "Exploration Target",
+            "Expanding the antimony resource up to 1,000,000 tonnes (1.0 Mt Sb)",
+          ],
+          [
+            "Resource Head Grades",
+            "Specific in-situ g/t and % head grades pending release of updated JORC technical report",
+          ],
+          [
+            "Permitting & Tenure",
+            "Fully permitted and licensed for both underground operations and tailings retreatment",
+          ],
+          [
+            "Current Ownership",
+            "74% Seller-Owned, 26% Broad-Based BEE Partner Trust",
+          ],
         ],
       },
       {
@@ -4896,18 +4997,45 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
     ],
     quickFacts: [
       { label: "Property Name", value: "Burnt River Gold Placer Claims" },
-      { label: "Total Acreage", value: "40.00 Acres (Two adjoining 20-acre claims)" },
-      { label: "Claim 1", value: "SPLIT BURNT GOLD (OR106701451) — 20 Acres (T12S, R41E, Sec 3)" },
-      { label: "Claim 2", value: "BIG GOLD #1 (OR106701450) — 20 Acres (T12S, R41E, Sec 4)" },
+      {
+        label: "Total Acreage",
+        value: "40.00 Acres (Two adjoining 20-acre claims)",
+      },
+      {
+        label: "Claim 1",
+        value: "SPLIT BURNT GOLD (OR106701451) — 20 Acres (T12S, R41E, Sec 3)",
+      },
+      {
+        label: "Claim 2",
+        value: "BIG GOLD #1 (OR106701450) — 20 Acres (T12S, R41E, Sec 4)",
+      },
       { label: "Location", value: "Upper Burnt River, Baker County, Oregon" },
       { label: "Land Management", value: "Bureau of Land Management (BLM)" },
-      { label: "Commodity", value: "Placer Gold (Very coarse nuggets, pickers & fine gold)" },
+      {
+        label: "Commodity",
+        value: "Placer Gold (Very coarse nuggets, pickers & fine gold)",
+      },
       { label: "Gold Purity", value: "Approximately 850 Fine" },
-      { label: "Historic Grade", value: "Approx. 0.31 g fine gold / yd³ (historic test average)" },
-      { label: "Historic Production", value: "300+ oz reported from single 8-day cleanup" },
-      { label: "Dredging Window", value: "700-PM Dredging: July 31 - October 31 Season" },
-      { label: "Purchase Price", value: "$88,000 Total for Both Claims (40 Acres)" },
-      { label: "Guarantee", value: "One-Year Written Mineral Rights Guarantee" },
+      {
+        label: "Historic Grade",
+        value: "Approx. 0.31 g fine gold / yd³ (historic test average)",
+      },
+      {
+        label: "Historic Production",
+        value: "300+ oz reported from single 8-day cleanup",
+      },
+      {
+        label: "Dredging Window",
+        value: "700-PM Dredging: July 31 - October 31 Season",
+      },
+      {
+        label: "Purchase Price",
+        value: "$88,000 Total for Both Claims (40 Acres)",
+      },
+      {
+        label: "Guarantee",
+        value: "One-Year Written Mineral Rights Guarantee",
+      },
       { label: "Status", value: "Active BLM Placer Claims For Sale" },
     ],
     sections: [
@@ -4923,14 +5051,38 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         caption: "Historic Oregon Mining Company Testing & Exploration Records",
         headers: ["Parameter / Metric", "Documented Historic Record"],
         rows: [
-          ["Historic Drill Holes", "50-60 placer drill holes completed across the deposit"],
-          ["Verification Caissons", "7 caisson verification test pits sunk to bedrock"],
-          ["Historic Drill Test Grade", "Equivalent to approximately 0.31 grams fine gold per cubic yard"],
-          ["Gold Fineness & Character", "Very coarse gold — approximately 850 fine"],
-          ["Bedrock Gold Distribution", "Most gold reported within 5 ft of bedrock; ~50% directly on bedrock"],
-          ["Proven Strike Length", "Approximately 1¼ miles historically reported as proven by drilling and shafts"],
-          ["Peak Cleanup Record", "300+ ounces of gold reported from one historic 8-day cleanup"],
-          ["Active Neighbor Operations", "Commercial active placer mining operation immediately upstream"],
+          [
+            "Historic Drill Holes",
+            "50-60 placer drill holes completed across the deposit",
+          ],
+          [
+            "Verification Caissons",
+            "7 caisson verification test pits sunk to bedrock",
+          ],
+          [
+            "Historic Drill Test Grade",
+            "Equivalent to approximately 0.31 grams fine gold per cubic yard",
+          ],
+          [
+            "Gold Fineness & Character",
+            "Very coarse gold — approximately 850 fine",
+          ],
+          [
+            "Bedrock Gold Distribution",
+            "Most gold reported within 5 ft of bedrock; ~50% directly on bedrock",
+          ],
+          [
+            "Proven Strike Length",
+            "Approximately 1¼ miles historically reported as proven by drilling and shafts",
+          ],
+          [
+            "Peak Cleanup Record",
+            "300+ ounces of gold reported from one historic 8-day cleanup",
+          ],
+          [
+            "Active Neighbor Operations",
+            "Commercial active placer mining operation immediately upstream",
+          ],
         ],
       },
       {
@@ -4985,6 +5137,347 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
         type: "paragraph",
         content:
           "Offered at $88,000 for both 20-acre claims (40 acres total: Split Burnt Gold OR106701451 & Big Gold #1 OR106701450). For purchase inquiries, BLM assignment documentation, claim transfer paperwork, or GPS coordinates, please contact chris@miningpropertymaps.com. Serious inquiries welcome.",
+      },
+    ],
+  },
+  {
+    id: "bc-008",
+    type: "project",
+    title: "Howe Copper Property - British Columbia",
+    summary:
+      "The Howe Copper Property is a 334.29-hectare historic copper-silver-gold-molybdenum-bismuth exploration property on Mount Donaldson, on British Columbia's Sunshine Coast, approximately 55 km northwest of Vancouver. The property encompasses the Howe Copper, Howe Copper North West (Slippery Lake), and HCM 1 mineral occurrences. It hosts an approximately 500 m diameter mineralized muscovite-granite porphyry stock, at least 11 historically explored quartz-vein systems, underground workings, surface trenches, and historical diamond drilling. Reported historical results include 8.26% Cu, 99.5 g/t Ag, and 0.10% Mo over an average vein width of approximately 0.84 m, alongside select samples exceeding 50% Cu and locally exceeding 900 g/t Ag. The property offers complementary porphyry-style and structurally controlled high-grade vein exploration targets, together with potential for collectible quartz and sulphide mineral specimens.",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793094568/W4_IMG_0121_pqkjih.jpg",
+    coordinates: [49.75, -123.7],
+    isForSale: true,
+    author: "Aurora Gold and Gravels Inc.",
+    contactEmail: undefined, // No email address provided in the source
+    date: undefined,
+    tags: [
+      "Copper",
+      "Silver",
+      "Gold",
+      "Molybdenum",
+      "Bismuth",
+      "Porphyry",
+      "Quartz Veins",
+      "Polymetallic",
+      "Mineral Specimens",
+      "Exploration Property",
+      "For Sale",
+    ],
+    quickFacts: [
+      {
+        label: "Property",
+        value: "Howe Copper Property",
+      },
+      {
+        label: "Property Area",
+        value: "334.29 hectares",
+      },
+      {
+        label: "Location",
+        value: "Mount Donaldson, Sunshine Coast, British Columbia",
+      },
+      {
+        label: "Distance from Vancouver",
+        value: "Approximately 55 km northwest",
+      },
+      {
+        label: "Distance from Squamish",
+        value: "Approximately 25 km",
+      },
+      {
+        label: "Mining Division",
+        value: "Not specified in the source",
+      },
+      {
+        label: "MINFILE Number",
+        value: "Not provided; verify official records",
+      },
+      {
+        label: "Commodities",
+        value: "Cu, Ag, Au, Mo, Bi",
+      },
+      {
+        label: "Deposit Type",
+        value: "L04 Porphyry Cu ± Mo ± Au; polymetallic quartz veins",
+      },
+      {
+        label: "Mineral Occurrences",
+        value: "Howe Copper, Howe Copper North West (Slippery Lake), HCM 1",
+      },
+      {
+        label: "Porphyry Stock",
+        value: "Approximately 500 m diameter",
+      },
+      {
+        label: "Explored Vein Systems",
+        value: "At least 11",
+      },
+      {
+        label: "Historical Drilling",
+        value: "Approximately 2,532 ft in five vertical holes (1966–1967)",
+      },
+      {
+        label: "Historical Discovery",
+        value: "1874",
+      },
+      {
+        label: "Vendor",
+        value: "Aurora Gold and Gravels Inc.",
+      },
+      {
+        label: "Contact",
+        value: "Micheal Scott Langille",
+      },
+      {
+        label: "Transaction",
+        value: "Outright acquisition or staged option; terms negotiable",
+      },
+      {
+        label: "Proposed NSR",
+        value: "Potential 2% NSR; subject to negotiation",
+      },
+    ],
+    sections: [
+      {
+        heading: "Property Overview",
+        type: "paragraph",
+        content:
+          "The Howe Copper Property is a historic copper-silver-gold-molybdenum-bismuth exploration project situated on Mount Donaldson on British Columbia's Sunshine Coast. The property covers approximately 334.29 hectares and encompasses three mineral occurrences: Howe Copper, Howe Copper North West (Slippery Lake), and HCM 1. The project combines two complementary exploration styles: L04 Porphyry Cu ± Mo ± Au mineralization and structurally controlled high-grade polymetallic quartz-vein mineralization. Historical exploration identified a mineralized muscovite-granite porphyry stock approximately 500 metres in diameter and at least 11 vein systems investigated through surface trenches and short underground workings. The property also has potential for collectible quartz crystals and mineral specimens, including bornite, tetrahedrite, and molybdenite.",
+      },
+      {
+        heading: "Location and Access",
+        type: "bullet_list",
+        content: [
+          "Located near the summit of Mount Donaldson on the Sechelt Peninsula, between Clowhom Lake and Sechelt Lake.",
+          "Approximately 55 km northwest of Vancouver and approximately 25 km from Squamish, according to the supplied property proposal.",
+          "The historic main adit is situated at approximately 1,431 metres elevation.",
+          "Helicopter access has historically provided the most practical means of reaching the workings.",
+          "Assessment Report 29487 notes that logging-road construction had advanced to within a few kilometres of the historic mine workings.",
+          "The property's proximity to the Lower Mainland and Sunshine Coast may provide logistical advantages compared with more remote British Columbia exploration projects.",
+        ],
+      },
+      {
+        heading: "Geological Setting",
+        type: "paragraph",
+        content:
+          "The property is predominantly underlain by biotite and hornblende-biotite granite of the Jurassic to Cretaceous Coast Plutonic Complex. These rocks are intruded by a distinctive, sugary-textured, fine- to medium-grained vuggy muscovite granite dated at approximately 83 Ma (Late Cretaceous). Drusy quartz crystals commonly line cavities within the intrusive rock. A potassium-feldspar-rich dyke system cuts the older rocks and is associated with quartz + muscovite + copper + molybdenum + gold + silver mineralization. The principal porphyry-style target is associated with a mineralized muscovite-granite porphyry stock approximately 500 metres in diameter. Historical interpretation suggested that this body could have a pipe-like geometry, although modern exploration is required to test this interpretation. Quartz masses and veins extensively crosscut the intrusive rocks, with at least three principal vein orientations recognized.",
+      },
+      {
+        heading: "Mineralization and Deposit Model",
+        type: "bullet_list",
+        content: [
+          "Principal mineral assemblage: bornite, chalcopyrite, tetrahedrite, chalcocite, and molybdenite.",
+          "Secondary copper minerals include cuprite, malachite, and azurite.",
+          "Massive bornite and chalcopyrite occur in quartz veins and locally as blebs within vugs of the muscovite granite.",
+          "Molybdenite occurs as flakes and locally in spectacular concentrations; tetrahedrite and chalcocite have also been identified.",
+          "The official BC MINFILE classification cited in the supplied proposal is L04 Porphyry Cu ± Mo ± Au.",
+          "Documented mineralization styles include vein, massive, disseminated, and stockwork mineralization.",
+          "Howe Copper North West and HCM 1 provide additional exploration targets beyond the immediate historic main-adit area.",
+          "The principal exploration concept is to test whether the high-grade veins represent peripheral or structurally focused expressions of a larger intrusive-hydrothermal Cu-Mo-Au system.",
+        ],
+      },
+      {
+        heading: "Historical High-Grade Assay Results",
+        type: "table",
+        caption:
+          "Historical sampling results transcribed from the supplied Howe Copper property acquisition and option proposal. Sample types, intervals, and qualifiers are retained where reported. These historical results are not presented as verified mineral resources or reserves.",
+        headers: [
+          "Occurrence",
+          "Year",
+          "Sample / Interval",
+          "Cu",
+          "Ag (g/t)",
+          "Au (g/t)",
+          "Mo",
+          "Bi",
+        ],
+        rows: [
+          [
+            "Howe Copper",
+            1965,
+            "7 samples over 26.4 m along the main vein in the adit; average vein width approximately 0.84 m",
+            "8.26%",
+            "99.5",
+            "Not reported",
+            "0.10%",
+            "Not reported",
+          ],
+          [
+            "Howe Copper",
+            1983,
+            "Main adit sample",
+            "15.16%",
+            "194.8",
+            "Not reported",
+            "Not reported",
+            "Not reported",
+          ],
+          [
+            "Howe Copper",
+            1983,
+            "Nearby molybdenite-bearing quartz vein",
+            "Not reported",
+            "Not reported",
+            "Not reported",
+            "Approximately 0.13%",
+            "Not reported",
+          ],
+          [
+            "Howe Copper",
+            2005,
+            "Select sample of bornite vein material from the main adit dump",
+            ">50%",
+            "603",
+            "0.98",
+            "Not reported",
+            "Not reported",
+          ],
+          [
+            "Howe Copper",
+            2006,
+            "0.5 m chip sample from the adit portal vein",
+            "48.7%",
+            "931",
+            "0.52",
+            "Not reported",
+            "0.521%",
+          ],
+          [
+            "Howe Copper North West (Slippery Lake)",
+            1983,
+            "Sample from quartz-muscovite-feldspar veins",
+            "56.59%",
+            "833.5",
+            "Not reported",
+            "Not reported",
+            "Not reported",
+          ],
+          [
+            "Howe Copper North West (Slippery Lake)",
+            1991,
+            "Trench sample",
+            ">1%",
+            ">200",
+            "0.70",
+            "Not reported",
+            "Not reported",
+          ],
+          [
+            "HCM 1",
+            2006,
+            "0.5 m grab sample, as described in the source",
+            "10.7%",
+            "25",
+            "Not reported",
+            "0.064%",
+            "Not reported",
+          ],
+        ],
+      },
+      {
+        heading: "Historical Diamond Drilling",
+        type: "paragraph",
+        content:
+          "Approximately 2,532 feet of diamond drilling in five vertical holes was completed during the 1966–1967 program. The supplied property proposal reports the following copper intersections. Corresponding gold and silver values were not provided in the source. Hole identifiers, interval lengths, and grades are transcribed as reported.",
+      },
+      {
+        heading: "Historical Drill Intersections",
+        type: "table",
+        caption:
+          "Historical 1966–1967 drilling results. These intervals should not be interpreted as current mineral resources or reserves.",
+        headers: ["Drill Hole", "Reported Interval (ft)", "Cu (%)"],
+        rows: [
+          ["DDH 67-1", "98", "Approximately 0.30"],
+          ["DDH 67-1", "287", "Approximately 0.12"],
+          ["DDH 67-2", "29", "0.55"],
+          ["DDH 67-2", "2.5", "3.07"],
+          ["DDH 67-2", "2.0", "1.52"],
+          ["DDH 67-2", "9.0", "0.30"],
+          ["DDH 67-4", "39", "Approximately 0.38"],
+        ],
+      },
+      {
+        heading: "Howe Copper North West (Slippery Lake)",
+        type: "paragraph",
+        content:
+          "The Howe Copper North West occurrence is situated approximately 700 metres northwest of the principal Howe Copper occurrence. Historical trenching exposed quartz-muscovite-feldspar veins containing tetrahedrite, chalcopyrite, bornite, and chalcocite. Reported historical samples include 56.59% Cu and 833.5 g/t Ag in 1983, followed by a 1991 trench sample returning >1% Cu, >200 g/t Ag, and 0.70 g/t Au. These results provide evidence of high-grade mineralization beyond the main historic workings.",
+      },
+      {
+        heading: "HCM 1 Occurrence",
+        type: "paragraph",
+        content:
+          "The HCM 1 occurrence is located approximately 300 metres north of Howe Copper and provides an additional exploration target. Its quartz-vein mineralization contains chalcopyrite with minor molybdenite. A 2006 sample described in the supplied proposal as a 0.5-metre grab sample reportedly returned 10.7% Cu, 25 g/t Ag, and 0.064% Mo.",
+      },
+      {
+        heading: "Historical Exploration",
+        type: "bullet_list",
+        content: [
+          "Copper mineralization was discovered in 1874, followed by early underground development and reported shipments of mineralized material during the 1870s.",
+          "Historical work includes underground adit development, trenching, stripping, geological mapping, and geochemical sampling.",
+          "Geophysical programs included induced-polarization surveys, airborne magnetic and electromagnetic surveys, and ground magnetic and electromagnetic surveys.",
+          "Diamond drilling, metallurgical testing, prospecting, and mineral-specimen evaluation were also conducted.",
+          "Historical operators listed in the supplied property summary include Pacific Copper Mines, Bralorne Pioneer Mines, Grasset Lake Mines, Athena Mines, and Seatac Resources.",
+          "Despite its long exploration history, the property has reportedly received relatively limited modern systematic exploration.",
+        ],
+      },
+      {
+        heading: "Geophysical Targeting",
+        type: "paragraph",
+        content:
+          "Historical airborne geophysical work reportedly identified a relationship between known Cu-Au-Ag-Mo mineralization and magnetic-low responses, including areas where magnetic lows coincide with elevated electromagnetic responses. Historical interpretations recommended further field investigation of these anomalies and potential extensions of mineralization along strike. Modern high-resolution magnetic surveys, induced polarization/resistivity, and potentially electromagnetic surveying could help reassess the intrusive and vein systems. The effectiveness of these methods and the significance of the historical anomalies remain to be tested.",
+      },
+      {
+        heading: "Mineral Specimen and Quartz Crystal Potential",
+        type: "paragraph",
+        content:
+          "The vuggy muscovite granite contains drusy quartz crystals, and previous exploration specifically investigated the property for valuable mineral specimens. Assessment Report 29487 documented quartz crystal development within the vuggy granite and quartz masses, including clear to milky material and unusual crystal forms. The supplied proposal also identifies potentially collectible bornite, chalcopyrite, molybdenite, tetrahedrite, chalcocite, malachite, and azurite specimens. Commercial specimen recovery would require appropriate permitting and evaluation. This represents a potential secondary opportunity alongside conventional mineral exploration; no commercial recovery valuation is established by the supplied source.",
+      },
+      {
+        heading: "Exploration Opportunity",
+        type: "bullet_list",
+        content: [
+          "Evaluate the historical L04 Cu-Mo-Au porphyry target.",
+          "Test the approximately 500 m diameter mineralized muscovite-granite porphyry stock and its possible geometry.",
+          "Map and sample the high-grade Cu-Ag-Au-Mo-Bi quartz-vein systems.",
+          "Investigate at least 11 historically explored vein systems and their structural controls.",
+          "Reassess the historic adits, surface trenches, and other workings.",
+          "Compile historical drill logs and validate the reported copper intersections.",
+          "Reinterpret historical magnetic-low and electromagnetic anomalies.",
+          "Use modern geological mapping, geochemistry, geophysics, and appropriately designed drilling to test the porphyry and vein targets.",
+          "Investigate the spatial relationships between Howe Copper, Howe Copper North West, and HCM 1.",
+          "Evaluate the potential for collectible quartz crystals and sulphide specimens subject to permitting and commercial assessment.",
+          "Assess access requirements and the potential use of logging-road infrastructure.",
+        ],
+      },
+      {
+        heading: "Property Acquisition and Option Terms",
+        type: "paragraph",
+        content:
+          "Aurora Gold and Gravels Inc. is seeking a company capable of advancing the Howe Copper Property through systematic modern exploration and eventual drill testing. The vendors are open to an outright cash and/or share acquisition, a staged option-to-purchase agreement, or another mutually acceptable transaction structure. Under an outright purchase, a buyer could negotiate the acquisition of 100% of the property subject to a retained Net Smelter Return (NSR) royalty. Under an option agreement, a company may earn up to 100% ownership through staged cash payments, company shares, and exploration expenditures. The vendors wish to retain an NSR interest; a potential 2% NSR has been discussed, with final royalty terms and any buyback provisions subject to negotiation. All purchase consideration, exploration commitments, and payment schedules remain negotiable and subject to a definitive agreement.",
+      },
+      {
+        heading: "Vendor Contact",
+        type: "bullet_list",
+        content: [
+          "Contact: Micheal Scott Langille.",
+          "Company: Aurora Gold and Gravels Inc.",
+          "Location: Bella Coola, British Columbia, Canada.",
+          "Email: Not provided in the supplied proposal.",
+          "Transaction interest: Outright acquisition, staged option agreement, or another mutually acceptable arrangement.",
+        ],
+      },
+      {
+        heading: "Supporting Technical Documentation",
+        type: "bullet_list",
+        content: [
+          "Assessment Report 29487 is referenced in the supplied proposal for historical exploration, access, and quartz-crystal information.",
+          "Official BC MINFILE records are referenced for the Howe Copper mineral occurrence and historical assay information.",
+          "The source does not provide direct URLs to the assessment report, MINFILE records, claim tenure records, or original assay certificates. These documents should be obtained and verified before publication.",
+        ],
       },
     ],
   },

@@ -1,8 +1,8 @@
 {
   ".claude/settings.local.json": {
-    "mtime": 1784906765.1523309,
-    "ast_hash": "02511d40813e78aba5334a03e3aea194",
-    "semantic_hash": "02511d40813e78aba5334a03e3aea194"
+    "mtime": 1793027522.321219,
+    "ast_hash": "830f64f95c056752ce16ea0fa9377f01",
+    "semantic_hash": ""
   },
   "add_nwt_project.cjs": {
     "mtime": 1775484947.6083481,
@@ -260,8 +260,8 @@
     "semantic_hash": "ec7ca2b01bb3aa27421ea9e558d01f92"
   },
   "apps/web/src/lib/projectData.ts": {
-    "mtime": 1792573689.578282,
-    "ast_hash": "4721c713f22c3883c0bf91cde55e37d0",
+    "mtime": 1793096011.1478267,
+    "ast_hash": "38e64c2c12ba1f810891c59ad1294046",
     "semantic_hash": ""
   },
   "apps/web/src/lib/servicesData.ts": {
@@ -335,8 +335,8 @@
     "semantic_hash": "5f6fe1f808d6c1f4d09dff66f9221187"
   },
   "package.json": {
-    "mtime": 1793007892.9954286,
-    "ast_hash": "a20277334769fb22910b62b1ced06f6a",
+    "mtime": 1793094294.4051511,
+    "ast_hash": "cce083a58be63b3a07a1e773ca56e39e",
     "semantic_hash": ""
   },
   "packages/config/package.json": {
@@ -410,8 +410,8 @@
     "semantic_hash": "ff5ccff88485658260173dff9f0fe74b"
   },
   "CLAUDE.md": {
-    "mtime": 1793026594.6537237,
-    "ast_hash": "5428217218f079322295686be45baea6",
+    "mtime": 1793096071.3904502,
+    "ast_hash": "3a7dfa86e08d71b5032a8d6cdf32d6b6",
     "semantic_hash": ""
   },
   "DESIGN_SYSTEM.md": {
@@ -980,8 +980,8 @@
     "semantic_hash": ""
   },
   "migrations/001_projects_seed.sql": {
-    "mtime": 1793015474.5045817,
-    "ast_hash": "d5c5a240d621b77a58a280155db1691c",
+    "mtime": 1793096011.1771822,
+    "ast_hash": "89e6fb0f14f36791f55ca745b2023bba",
     "semantic_hash": ""
   },
   "migrations/002_newsletter_subscribers.sql": {
@@ -995,33 +995,8 @@
     "semantic_hash": ""
   },
   "toolbox/generate_projects_migration.mjs": {
-    "mtime": 1791795503.4861374,
-    "ast_hash": "5d0f381ab1efea5635f8eef5d94dc26b",
-    "semantic_hash": ""
-  },
-  "toolbox/migrations/001_projects_seed.sql": {
-    "mtime": 1793015474.503515,
-    "ast_hash": "d5c5a240d621b77a58a280155db1691c",
-    "semantic_hash": ""
-  },
-  "ACTION-PLAN.md": {
-    "mtime": 1790524621.6618254,
-    "ast_hash": "8b1b15c6c3552f9ebb6633f97a72b5e8",
-    "semantic_hash": ""
-  },
-  "FULL-AUDIT-REPORT.md": {
-    "mtime": 1790524621.6608267,
-    "ast_hash": "b0effa67fd5f3f24634813cffe1b9739",
-    "semantic_hash": ""
-  },
-  "SEO-PROGRESS.md": {
-    "mtime": 1790524376.1136603,
-    "ast_hash": "d662a53c2859a4820d4237d3daf19d71",
-    "semantic_hash": ""
-  },
-  "SEO-REPORT.html": {
-    "mtime": 1790524621.6608267,
-    "ast_hash": "5dfb8c3e8aea2887119c6f19f60479d6",
+    "mtime": 1793095902.9298494,
+    "ast_hash": "aca71db4ede77e58ff68630520628a90",
     "semantic_hash": ""
   },
   "apps/web/public/llms-full.txt": {
@@ -1045,8 +1020,8 @@
     "semantic_hash": ""
   },
   "toolbox/README.md": {
-    "mtime": 1791795516.8532324,
-    "ast_hash": "455aa09bb9e6b4d39e1934d3089aed0a",
+    "mtime": 1793096070.509137,
+    "ast_hash": "e37d4acd7dfa5f591d1c98995019978d",
     "semantic_hash": ""
   },
   "apps/web/public/documents/20260817 QUOTE 7693234.Pdf": {
@@ -1462,6 +1437,21 @@
   "apps/web/src/views/community-page.tsx": {
     "mtime": 1793026428.6957023,
     "ast_hash": "cde19f4c239ce869c9343620c65ef156",
+    "semantic_hash": ""
+  },
+  "migrations/006_add_project_bc-008.sql": {
+    "mtime": 1793094381.8112276,
+    "ast_hash": "c89a4d0a2be9c5927fc3e42c2fd6baa1",
+    "semantic_hash": ""
+  },
+  "toolbox/NewProjects.ts": {
+    "mtime": 1793094810.7238834,
+    "ast_hash": "10a4aed41eeee1a7609866bd1d28fd19",
+    "semantic_hash": ""
+  },
+  "toolbox/generate_new_projects_migration.mjs": {
+    "mtime": 1793095854.1409922,
+    "ast_hash": "38a95a0b47d682116cd250bea9d8d0a9",
     "semantic_hash": ""
   }
 }
