@@ -1,8 +1,8 @@
 import { getProjectSitemapEntries } from "@/lib/projectsRepo";
 
-// Project URLs come from Neon, so projects added after a deploy are listed within the hour.
-// Static pages stay in next-sitemap's sitemap-0.xml; both are listed in /sitemap.xml.
-export const revalidate = 3600;
+// Project URLs come from Neon, so projects added after a deploy are listed within 5 minutes
+// (same window as the pages). Static pages stay in next-sitemap's sitemap-0.xml; both are listed in /sitemap.xml.
+export const revalidate = 300;
 
 const siteUrl = "https://www.miningpropertymaps.com";
 

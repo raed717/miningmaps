@@ -5481,4 +5481,376 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       },
     ],
   },
+  {
+    id: "bc-009",
+    type: "project",
+    title: "Mike Property - Babine Region, British Columbia",
+    summary:
+      "The Mike Property is an early-stage copper exploration project covering approximately 36.89 hectares in the Babine region of north-central British Columbia, within the Omineca Mining Division. The property contains the documented Mike mineral occurrence (MINFILE 093N 232), classified as an L03 Alkalic Porphyry Cu-Au target. Mineralization occurs within diorite breccia fragments enclosed in a monzonitic intrusive body associated with multiple phases of the Hogem batholith. Chalcopyrite and bornite are the principal documented copper minerals. Regional exploration on the nearby Majazz property identified copper-molybdenum soil geochemical anomalism, including a reported 800 × 400 metre anomalous zone in its southwestern portion. The property offers a compact exploration opportunity focused on evaluating whether the known mineralized intrusive breccia represents a localized occurrence or part of a larger porphyry copper-gold system.",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793096459/Babine_Region_jpsblx.jpg",
+    coordinates: [55.15, -125.15],
+    isForSale: true,
+    author: "Aurora Gold and Gravels Inc.",
+    tags: [
+      "Copper",
+      "Gold",
+      "Porphyry",
+      "Alkalic Porphyry",
+      "Intrusive Breccia",
+      "Chalcopyrite",
+      "Bornite",
+      "British Columbia",
+      "Mineral Exploration",
+      "For Sale",
+    ],
+    quickFacts: [
+      {
+        label: "Property",
+        value: "Mike Property",
+      },
+      {
+        label: "Property Area",
+        value: "36.89 hectares",
+      },
+      {
+        label: "Location",
+        value: "Babine region, north-central British Columbia",
+      },
+      {
+        label: "Mining Division",
+        value: "Omineca",
+      },
+      {
+        label: "MINFILE Number",
+        value: "093N 232",
+      },
+      {
+        label: "Commodities",
+        value: "Copper (Cu); gold is a secondary exploration target",
+      },
+      {
+        label: "Deposit Type",
+        value: "L03 – Alkalic Porphyry Cu-Au",
+      },
+      {
+        label: "Host Intrusive Rocks",
+        value: "Monzonite and diorite breccia",
+      },
+      {
+        label: "Geological Setting",
+        value: "Hogem batholith; Intermontane tectonic belt",
+      },
+      {
+        label: "Principal Copper Minerals",
+        value: "Chalcopyrite and bornite",
+      },
+      {
+        label: "Discovery Year",
+        value: "1999",
+      },
+      {
+        label: "Discovery",
+        value: "Lorne and Chris Warren",
+      },
+      {
+        label: "Access",
+        value: "T-Road resource-road corridor",
+      },
+      {
+        label: "Nearby Regional Target",
+        value: "Majazz property Cu-Mo soil anomaly, approximately 800 × 400 m",
+      },
+      {
+        label: "Owner / Vendor",
+        value: "Aurora Gold and Gravels Inc. (proposal contact)",
+      },
+      {
+        label: "Contact",
+        value: "Micheal Scott Langille",
+      },
+      {
+        label: "Transaction",
+        value: "Outright acquisition or staged option; terms negotiable",
+      },
+      {
+        label: "Proposed NSR",
+        value: "Potential 2% NSR, subject to negotiation",
+      },
+    ],
+    sections: [
+      {
+        heading: "Property Overview",
+        type: "paragraph",
+        content:
+          "The Mike Property is an early-stage copper exploration project situated in the Babine region of north-central British Columbia, within the Omineca Mining Division. Covering approximately 36.89 hectares, the property contains the documented Mike mineral occurrence (MINFILE 093N 232). The showing is associated with a monzonite-to-diorite brecciated intrusive body containing chalcopyrite and bornite mineralization. The occurrence is classified as an L03 Alkalic Porphyry Cu-Au deposit type. Its geological setting, characterized by intrusive brecciation, copper sulphides, and multiple phases of the Hogem batholith, provides a geological basis for additional porphyry-style exploration.",
+      },
+      {
+        heading: "Location and Regional Setting",
+        type: "bullet_list",
+        content: [
+          "Located in the Babine region of north-central British Columbia, within the Omineca Mining Division.",
+          "The occurrence is described as being approximately 22.7 kilometres along the T-Road, where a rock pit on the north side of the road exposes the mineralized intrusive body.",
+          "Situated within the Intermontane tectonic belt, near the geological boundary between rocks assigned to the Quesnel and Cache Creek terranes.",
+          "The known showing is associated with a pre-existing rock pit along an established resource-road corridor.",
+          "The location may offer practical access advantages for an early-stage exploration project compared with a remote backcountry occurrence.",
+        ],
+      },
+      {
+        type: "SimpleImage",
+        image:"https://res.cloudinary.com/dfytfu2jq/image/upload/v1793096561/Babine_Region_map.jpg_xyx1pg.png",
+      },
+      {
+        heading: "Geological Setting",
+        type: "paragraph",
+        content:
+          "The region surrounding the Mike occurrence is underlain by two phases of the Hogem batholith, which intruded Upper Triassic sedimentary rocks of the Inzana Lake Formation of the Takla Group. One intrusive phase consists of Late Triassic to Early Jurassic gabbroic-to-dioritic rocks, while a second phase consists of Early Jurassic quartz monzonitic-to-monzogranitic intrusive rocks. The known showing occurs where a rock pit exposes a monzonite-to-diorite brecciated intrusive body. Mineralization occurs within fragments of diorite breccia contained within the monzonitic body. This relationship between different intrusive phases, brecciation, and copper sulphides provides the principal geological target for continued exploration.",
+      },
+      {
+        heading: "Deposit Type and Exploration Model",
+        type: "bullet_list",
+        content: [
+          "Official deposit classification stated in the supplied property description: L03 – Alkalic Porphyry Cu-Au.",
+          "The geological association at Mike comprises monzonite, diorite, intrusive brecciation, chalcopyrite, and bornite.",
+          "Porphyry-style mineralization may occur as disseminations, fractures, veinlets, and breccia-hosted sulphides.",
+          "The main exploration objective is to determine whether the exposed mineralized breccia represents a small isolated occurrence or the surface expression of a larger mineralized intrusive-hydrothermal system.",
+          "Although copper is the principal documented commodity, future analytical work should include gold and a broader porphyry pathfinder suite in line with the assigned Cu-Au deposit model.",
+        ],
+      },
+      {
+        heading: "Known Mineralization",
+        type: "paragraph",
+        content:
+          "The Mike showing is exposed within a rock pit on the north side of the T-Road. The pit exposes a monzonite-to-diorite brecciated intrusive body, with copper mineralization consisting principally of chalcopyrite and bornite. The sulphides occur within diorite breccia fragments enclosed by the monzonite body. Several additional small subcrop exposures are reportedly scattered across the bottom of the rock pit. The supplied MINFILE information does not provide assay values for the original Mike discovery. Consequently, the documented mineralization establishes a geological exploration target but does not, by itself, establish economic grade or tonnage.",
+      },
+      {
+        heading: "Discovery and Historical Exploration",
+        type: "bullet_list",
+        content: [
+          "The Mike showing was discovered in 1999 by Lorne and Chris Warren while prospecting in the area.",
+          "The known showing appears to have received comparatively limited direct systematic exploration since its discovery.",
+          "Regional exploration on the nearby Majazz property provides additional geological and geochemical context.",
+          "In 2015, Pacific Empire Minerals Corporation conducted exploration on the Majazz property.",
+          "The 2015 program collected 351 soil samples at approximately 100-metre intervals along lines spaced approximately 200 metres apart.",
+          "Soil samples were collected from the B horizon using a soil auger.",
+          "One rock sample was collected from an outcrop exhibiting saussurite alteration and chalcopyrite mineralization.",
+          "The regional work documents additional hydrothermal alteration and copper mineralization in the surrounding exploration area, but it should not be interpreted as direct assay evidence for the Mike showing.",
+        ],
+      },
+      {
+        heading: "Regional Soil Geochemistry",
+        type: "paragraph",
+        content:
+          "Follow-up exploration during 2016 included a soil-geochemical program consisting of approximately 35 soil samples followed by XRF analysis. The supplied property description reports that the program confirmed copper and molybdenum in soils in the southwestern portion of the nearby Majazz property. The anomalous zone was reported to measure approximately 800 metres × 400 metres. This regional Cu-Mo geochemical anomaly provides exploration context for the Mike Property, but it is located on the nearby Majazz property and must not be represented as a confirmed geochemical anomaly within the 36.89-hectare Mike tenure.",
+      },
+      {
+        heading: "Breccia-Hosted Copper Target",
+        type: "paragraph",
+        content:
+          "The most compelling geological feature at Mike is the association between copper mineralization and intrusive brecciation. Breccias can provide important fluid pathways within porphyry systems, particularly where multiple intrusive phases interact with faults, fractures, and hydrothermal fluids. At Mike, chalcopyrite and bornite occur within diorite breccia fragments enclosed by a monzonitic intrusive body. Further mapping, sampling, and geophysical work would be required to establish the extent, continuity, and significance of the mineralized breccia.",
+      },
+      {
+        heading: "Porphyry Exploration Potential",
+        type: "bullet_list",
+        content: [
+          "Hogem batholith intrusive rocks.",
+          "Multiple intrusive phases.",
+          "Monzonitic and dioritic rocks.",
+          "Mineralized intrusive brecciation.",
+          "Documented chalcopyrite and bornite.",
+          "Multiple small subcrop exposures within the historic rock pit.",
+          "Established T-Road access to the known occurrence.",
+          "Nearby saussurite alteration and chalcopyrite mineralization.",
+          "Historical regional soil geochemistry on the Majazz property.",
+          "Reported regional copper-molybdenum soil anomalism, including an approximately 800 × 400 metre zone on Majazz.",
+          "Comparatively limited documented modern systematic exploration directly on the Mike showing.",
+          "Potential to apply modern porphyry exploration methods to test the extent of the known mineralized intrusive target.",
+        ],
+      },
+      {
+        heading: "Exploration Opportunity",
+        type: "paragraph",
+        content:
+          "The 36.89-hectare Mike Property provides a compact exploration opportunity centered on a documented alkalic porphyry Cu-Au occurrence. Its attraction is the ability to focus exploration on a known chalcopyrite-bornite-bearing intrusive breccia within the Hogem batholith geological environment. Initial work could include compilation of historical information, geological mapping, systematic rock and soil sampling, multi-element geochemical analysis, and appropriate geophysical surveys. Follow-up drilling should be designed only after the target's geometry, alteration, mineralization, and surface geochemical or geophysical responses have been assessed. The supplied information does not establish a mineral resource, reserve, economic grade, or defined drill target.",
+      },
+      {
+        heading: "Acquisition and Option Terms",
+        type: "paragraph",
+        content:
+          "Aurora Gold and Gravels Inc. is seeking a company capable of advancing the Mike Property through systematic exploration and eventual drill testing. The vendors are open to an outright cash and/or share acquisition, a staged option-to-purchase agreement, or another mutually acceptable transaction structure, provided that the vendors retain a Net Smelter Return (NSR) interest. An outright purchase could involve a negotiated cash and/or share payment for 100% acquisition, subject to a retained NSR royalty. Under an option agreement, a company may earn up to 100% ownership through staged cash payments, company shares, and exploration expenditures. A potential 2% NSR has been discussed, with the final royalty and any buyback provisions subject to negotiation. All purchase consideration, exploration commitments, payment schedules, and other commercial terms remain negotiable and subject to execution of a definitive agreement.",
+      },
+      {
+        heading: "Vendor Contact",
+        type: "bullet_list",
+        content: [
+          "Contact: Micheal Scott Langille.",
+          "Company: Aurora Gold and Gravels Inc.",
+          "Location: Bella Coola, British Columbia, Canada.",
+          "Email and telephone: Not provided in the supplied property description.",
+          "Transaction interest: Outright acquisition, staged option agreement, or another mutually acceptable arrangement.",
+        ],
+      },
+      {
+        heading: "Supporting Documentation",
+        type: "bullet_list",
+        content: [
+          "BC MINFILE occurrence 093N 232 is identified as the documented Mike mineral occurrence.",
+          "The supplied property description references regional exploration on the nearby Majazz property, including 2015 soil and rock sampling and a 2016 soil-geochemical program.",
+          "Direct URLs to the official MINFILE record, assessment reports, geochemical maps, original assay certificates, and current tenure records were not supplied.",
+          "Obtain the original technical records and verify current tenure boundaries, ownership, and access before relying on the information for an acquisition decision.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "bc-010",
+    type: "project",
+    title: "Excelda / Thunderbird Property - British Columbia",
+    summary:
+      "A 535.27-hectare polymetallic Ag-Au-Pb-Zn-Cu acquisition opportunity in the Golden Mining Division (East Kootenays). Encompasses multiple historic high-grade prospects (Excelda, Kootenay Queen, High Eagle) hosted in Proterozoic Purcell and Windermere carbonate-clastic strata with historical assays up to 100 g/t Au, 2,571 g/t Ag, and 22.7% Pb.",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793098125/east_kootenays_bc_cv9hzs.jpg",
+    coordinates: [50.4833, -116.3833], // TODO: confirm exact coordinates (approx. 1 km SW of Sultana Peak / Delphine Creek area, Golden Mining Division)
+    isForSale: true,
+    author:
+      "Micheal Scott Langille (VP Exploration, Aurora Gold and Gravels Inc.)",
+    quickFacts: [
+      { label: "Property", value: "Excelda / Thunderbird" },
+      { label: "Mining Division", value: "Golden" },
+      { label: "Area", value: "535.27 Hectares" },
+      { label: "Primary Commodities", value: "Ag, Au, Pb, Zn, Cu" },
+      {
+        label: "Deposit Type",
+        value: "I05 – Polymetallic Veins Ag-Pb-Zn ± Au",
+      },
+      {
+        label: "Status",
+        value: "Past Producer / Advanced Exploration Prospects",
+      },
+      {
+        label: "Key Occurrences",
+        value: "Excelda, Kootenay Queen, High Eagle / Washburn",
+      },
+      { label: "Owner / Vendor", value: "Aurora Gold and Gravels Inc." },
+    ],
+    tags: [
+      "Silver",
+      "Gold",
+      "Lead",
+      "Zinc",
+      "Copper",
+      "Polymetallic Veins",
+      "East Kootenays",
+      "Purcell Supergroup",
+      "For Sale",
+      "Option Available",
+    ],
+    sections: [
+      {
+        heading: "Property Overview & Regional Setting",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793098209/East_KootenaysMap_mjajw2.png",
+        imageCaption:
+          "Regional setting and project location map in the East Kootenays, BC.",
+        content:
+          "The Excelda / Thunderbird Property is a polymetallic precious- and base-metal exploration project situated in the East Kootenay region of southeastern British Columbia, within the Golden Mining Division. Covering approximately 535.27 hectares, the consolidated land package encompasses a significant cluster of historic mineral occurrences, including the Excelda, Kootenay Queen, and High Eagle prospects. The property lies within the Omineca tectonic belt and is underlain by ancestral North American sedimentary strata. The principal Excelda occurrence sits at an elevation of ~2,591 metres, approximately 1 kilometre southwest of Sultana Peak.",
+      },
+      {
+        heading: "Key Project Highlights",
+        type: "bullet_list",
+        content: [
+          "Substantial 535.27-hectare contiguous land position providing district-scale exploration upside beyond historic underground workings.",
+          "High-grade polymetallic exposure across Silver (Ag), Gold (Au), Lead (Pb), Zinc (Zn), and Copper (Cu).",
+          "Exceptional historical sampling at Excelda returning 100 g/t Au, 2,571 g/t Ag, 22.7% Pb, 1.9% Zn, and 1.0% Cu across a 5-cm massive sulphide vein.",
+          "Documented silver-rich galena (1,090 g/t Ag, 64.6% Pb) and argentiferous tetrahedrite (9–10% Ag) at Kootenay Queen.",
+          "Gold-copper showing at High Eagle returning historic grab assays of up to 7 g/t Au in a 3-metre-wide quartz vein structure.",
+          "Extensive historical underground infrastructure in place, including adits, trenches, and shaft developments facilitating direct structural evaluation.",
+          "Opportunity to evaluate whether isolated high-grade veins connect into major regional structural shear corridors and multi-vein systems.",
+        ],
+      },
+      {
+        heading: "Geological & Structural Architecture",
+        type: "paragraph",
+        content:
+          "The project is underlain by Proterozoic clastic sedimentary rocks of the Purcell and Windermere supergroups, alongside Lower Paleozoic Beaverfoot and Mount Forster formations. Purcell stratigraphy includes the Aldridge, Creston, Kitchener, Dutch Creek, and Mount Nelson formations. Within the property bounds, Kitchener and Dutch Creek strata have been subdivided into the Van Creek and Gateway formations. The Mount Nelson Formation features multiple distinct carbonate and quartzite units (lower quartzite through upper dolomite). Regionally, rocks have undergone regional metamorphism to greenschist facies and complex folding, with upper Dutch Creek and lower Mount Nelson units thrust over Horsethief Creek, Beaverfoot, and Mount Forster formations. Mineralization is strongly localized along tight quartz-filled fracture networks, secondary faulting, and lithological contacts with reactive dolomites.",
+      },
+      {
+        heading: "Deposit Model: I05 Polymetallic Veins Ag-Pb-Zn ± Au",
+        type: "paragraph",
+        content:
+          "The target occurrences conform to the BC MINFILE I05 deposit model: structurally controlled epigenetic hydrothermal veins carrying silver, lead, zinc, gold, and copper. The dominant hypogene sulphide assemblage includes galena, sphalerite, argentiferous tetrahedrite, chalcopyrite, pyrite, and chalcocite, with surface copper carbonates (malachite and azurite). Tetrahedrite is the primary driver of the system's ultra-high silver tenor.",
+      },
+      {
+        heading: "Significant Historical Assay & Sampling Results",
+        type: "table",
+        caption:
+          "Historical high-grade sampling across principal prospects. Note: Narrow vein chip and mineral-specific analyses reflect local tenor rather than representative bulk mining widths.",
+        headers: [
+          "Prospect / Target",
+          "Sample / Structure Type",
+          "Au",
+          "Ag",
+          "Pb",
+          "Zn",
+          "Cu",
+        ],
+        rows: [
+          [
+            "Excelda",
+            "5-cm massive sulphide chip",
+            "100 g/t",
+            "2,571 g/t",
+            "22.7%",
+            "1.9%",
+            "1.0%",
+          ],
+          [
+            "Kootenay Queen",
+            "Pure galena separate",
+            "—",
+            "1,090 g/t",
+            "64.6%",
+            "—",
+            "—",
+          ],
+          [
+            "Kootenay Queen",
+            "Tetrahedrite mineral analysis",
+            "—",
+            "90,000–100,000 g/t (9–10%)",
+            "—",
+            "—",
+            "—",
+          ],
+          [
+            "High Eagle / Washburn",
+            "Quartz vein grab sample",
+            "7.0 g/t",
+            "—",
+            "—",
+            "—",
+            "Cu-bearing",
+          ],
+        ],
+      },
+      {
+        heading: "Target Prospects & Historical Workings",
+        type: "bullet_list",
+        content: [
+          "Excelda Prospect: Hosted within dolomitic limestone, quartzite, and argillite of the lower Mount Nelson dolomite. Cut by southeast-striking, northeast-dipping reverse faults and tight fracture systems filled with quartz-galena-sphalerite-tetrahedrite-pyrite. Explored historically via adits and surface trenches.",
+          "Kootenay Queen Prospect: Situated in a cirque on the south side of Delphine Creek (~1,980 m elevation). Features a 43-metre-long adit driven along an approximately 30-centimetre-wide quartz-galena-tetrahedrite-sphalerite vein hosted in upper Mount Nelson dolomite beneath the Windermere unconformity.",
+          "High Eagle / Washburn Prospect: Centered on an approximately 3-metre-wide quartz vein with pyrite, minor chalcocite, malachite, and azurite at the contact of orange-weathering dolomite and Gateway Formation argillite. Developed via a 20-metre adit and a 5-metre shaft.",
+        ],
+      },
+      {
+        heading: "Commercial Terms & Acquisition Framework",
+        type: "paragraph",
+        content:
+          "Aurora Gold and Gravels Inc. is offering the 535.27-hectare Excelda / Thunderbird Property for outright purchase or option/earn-in. The vendors are flexible on deal structure to accommodate an exploration group committed to systematically evaluating and drill-testing the system. Proposed structures include: (1) Outright 100% Acquisition via cash and/or equity consideration subject to a retained 2% NSR royalty; or (2) Staged Option Agreement to earn 100% interest through milestone-based cash payments, share issuances, and exploration commitments. Royalty terms and buyback provisions remain negotiable. Inquiries should be directed to Micheal Scott Langille, VP Exploration (Bella Coola, BC).",
+      },
+    ],
+  },
 ];

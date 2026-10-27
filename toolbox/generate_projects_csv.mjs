@@ -32,8 +32,7 @@ const rows = projects.map((p) => {
 
 const csvContent = [header.map(h => `"${h}"`).join(","), ...rows].join("\r\n");
 
-fs.writeFileSync("projects.csv", csvContent, "utf8");
-fs.writeFileSync("apps/web/public/projects.csv", csvContent, "utf8");
+// Single copy, kept in the toolbox.
 fs.writeFileSync("toolbox/projects.csv", csvContent, "utf8");
 
-console.log(`Generated projects.csv with ${projects.length} projects successfully.`);
+console.log(`Generated toolbox/projects.csv with ${projects.length} projects successfully.`);

@@ -6,8 +6,9 @@ import type { ProjectPageData } from "@/lib/projectTypes";
 import ClientPage from "./client";
 
 // Projects come from Neon. Pages are prerendered and regenerated in the background
-// at most once an hour, so database edits go live without a redeploy.
-export const revalidate = 3600;
+// at most every 5 minutes, so database edits (and new projects) go live without a redeploy.
+// Also bounds how long a 404 for a not-yet-added project stays cached.
+export const revalidate = 300;
 
 const siteName = "Adamson Geomatics";
 

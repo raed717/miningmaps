@@ -301,5 +301,5 @@ console.log(`✔ ${runNodeScript("toolbox/generate_projects_csv.mjs")}`);
 
 console.log(`
 Next steps:
-  1. Run ${migrationPath} in the Neon SQL Editor (the site shows it within the hour).
+  1. Run ${migrationPath} in the Neon SQL Editor (the site shows it within ~5 minutes).
   2. Clear the NewProjects array in ${INPUT_FILE} before drafting the next project.`);

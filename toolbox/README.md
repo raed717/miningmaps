@@ -42,7 +42,7 @@ node --experimental-strip-types toolbox/generate_projects_migration.mjs
 ```bash
 npm run export:sql:new
 ```
-3. Paste the new migration file into the **Neon SQL Editor** and click **Run**. The website shows the project within the hour (pages refresh hourly).
+3. Paste the new migration file into the **Neon SQL Editor** and click **Run**. The website shows the project within about 5 minutes (pages refresh every 5 minutes).
 4. Empty the `NewProjects` array before drafting the next project.
 
 ### What it does, in order:
@@ -66,6 +66,4 @@ node --experimental-strip-types toolbox/generate_projects_csv.mjs
 ```
 
 ### Outputs:
-- `projects.csv` (root directory)
-- `apps/web/public/projects.csv` (accessible via `https://www.miningpropertymaps.com/projects.csv`)
-- `toolbox/projects.csv`
+- `toolbox/projects.csv` (the only copy)
