@@ -3,8 +3,11 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { Pickaxe, TrendingUp, ShieldCheck, Map } from "lucide-react";
+import { useI18n } from "@/lib/i18n/context";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 export function PropertiesSection() {
+  const { locale } = useI18n();
   const properties = [
     {
       title: "Gold & Silver Targets",
@@ -48,7 +51,7 @@ export function PropertiesSection() {
           </p>
         </div>
         <Link
-          href="/properties"
+          href={getLocalizedPath("/properties", locale)}
           className="inline-flex h-10 items-center justify-center rounded-md bg-secondary px-6 text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
         >
           View All Listings

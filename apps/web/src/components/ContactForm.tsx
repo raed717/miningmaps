@@ -8,25 +8,15 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { mono } from "@/lib/fonts";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import { useI18n } from "@/lib/i18n/context";
+import { contactTranslations } from "@/lib/i18n/translations/contact";
+import type { Locale } from "@/lib/i18n/types";
 
-const serviceOptions = [
-  "GIS Mapping",
-  "Claim Staking",
-  "LiDAR Surveys",
-  "Leapfrog 3D Modelling",
-  "Geological Mapping / Geological Opinions (QP Geo)",
-  "Mining Property Maps",
-  "Property Appraisals",
-  "Digital Elevation Models (DEM)",
-  "Crown Grant / Land Title Research",
-  "Tax Appeals",
-  "Property Listing - Commission Basis ($0 Upfront)",
-  "Property Listing - $100/mo Subscription (1st Month Free)",
-  "Company Membership - $150/mo Subscription (1st Month Free)",
-  "Other / General",
-];
+export default function ContactForm({ locale: overrideLocale }: { locale?: Locale }) {
+  const { locale: contextLocale } = useI18n();
+  const locale = overrideLocale || contextLocale || "en";
+  const t = (contactTranslations[locale] || contactTranslations.en).form;
 
-export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   // When the form appeared; the server rejects impossibly fast submissions.
@@ -63,12 +53,12 @@ export default function ContactForm() {
         setStatus("success");
         (e.target as HTMLFormElement).reset();
       } else {
-        const data = await res.json();
-        setErrorMsg(data.error || "Something went wrong");
+        const data = await res.json().catch(() => ({}));
+        setErrorMsg(data.error || t.status.errorDefault);
         setStatus("error");
       }
     } catch {
-      setErrorMsg("Network error. Please try again.");
+      setErrorMsg(t.status.errorNetwork);
       setStatus("error");
     }
   }
@@ -78,48 +68,48 @@ export default function ContactForm() {
       <div className="space-y-5">
         {/* Name */}
         <div className="space-y-1.5">
-          <Label htmlFor="contact-name">Name *</Label>
+          <Label htmlFor="contact-name">{t.labels.name}</Label>
           <Input
             id="contact-name"
             name="name"
             required
-            placeholder="Your full name"
+            placeholder={t.placeholders.name}
           />
         </div>
 
         {/* Email */}
         <div className="space-y-1.5">
-          <Label htmlFor="contact-email">Email *</Label>
+          <Label htmlFor="contact-email">{t.labels.email}</Label>
           <Input
             id="contact-email"
             name="email"
             type="email"
             required
-            placeholder="you@example.com"
+            placeholder={t.placeholders.email}
           />
         </div>
 
         {/* Phone */}
         <div className="space-y-1.5">
-          <Label htmlFor="contact-phone">Phone</Label>
+          <Label htmlFor="contact-phone">{t.labels.phone}</Label>
           <Input
             id="contact-phone"
             name="phone"
             type="tel"
-            placeholder="+1 (555) 000-0000"
+            placeholder={t.placeholders.phone}
           />
         </div>
 
         {/* Service */}
         <div className="space-y-1.5">
-          <Label htmlFor="contact-service">Service *</Label>
+          <Label htmlFor="contact-service">{t.labels.service}</Label>
           <Select id="contact-service" name="service" required defaultValue="">
             <option value="" disabled>
-              Select a service...
+              {t.placeholders.serviceSelect}
             </option>
-            {serviceOptions.map((opt) => (
-              <option key={opt} value={opt}>
-                {opt}
+            {t.services.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
               </option>
             ))}
           </Select>
@@ -127,12 +117,12 @@ export default function ContactForm() {
 
         {/* Message */}
         <div className="space-y-1.5">
-          <Label htmlFor="contact-message">Message *</Label>
+          <Label htmlFor="contact-message">{t.labels.message}</Label>
           <Textarea
             id="contact-message"
             name="message"
             required
-            placeholder="Describe your project or inquiry..."
+            placeholder={t.placeholders.message}
           />
         </div>
 
@@ -156,12 +146,12 @@ export default function ContactForm() {
           {status === "loading" ? (
             <>
               <span className="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-current border-t-transparent" />
-              Sending...
+              {t.buttons.sending}
             </>
           ) : (
             <>
               <Send className="h-3.5 w-3.5" />
-              Send Inquiry
+              {t.buttons.submit}
             </>
           )}
         </Button>
@@ -169,14 +159,14 @@ export default function ContactForm() {
         {status === "success" && (
           <div className="flex items-center gap-2 border border-secondary/40 bg-secondary/10 px-4 py-3 text-xs font-bold uppercase tracking-widest text-secondary">
             <CheckCircle className="h-4 w-4 shrink-0" />
-            Message sent successfully. We&rsquo;ll be in touch soon.
+            {t.status.success}
           </div>
         )}
 
         {status === "error" && (
           <div className="flex items-center gap-2 border border-primary/40 bg-primary/10 px-4 py-3 text-xs font-bold uppercase tracking-widest text-primary">
             <AlertCircle className="h-4 w-4 shrink-0" />
-            {errorMsg || "Failed to send. Please try again."}
+            {errorMsg || t.status.errorDefault}
           </div>
         )}
       </div>
@@ -184,8 +174,7 @@ export default function ContactForm() {
       <p
         className={`text-[9px] uppercase tracking-[0.2em] text-muted-foreground ${mono.className}`}
       >
-        All fields marked with * are required. Your data is transmitted securely
-        and will only be used to respond to your inquiry.
+        {t.labels.requiredNote}
       </p>
     </form>
   );

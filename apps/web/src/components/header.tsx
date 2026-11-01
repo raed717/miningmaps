@@ -5,21 +5,38 @@ import { Facebook, Linkedin, Loader2 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { startGlobalProgress } from "./navigation-progress-bar";
 import { HeaderAuthDesktop, HeaderAuthMobile } from "./header-auth";
+import { LanguageSwitcher } from "./language-switcher";
+import { parseLocaleFromPath, getLocalizedPath } from "@/lib/i18n/navigation";
 
 export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navigatingTo, setNavigatingTo] = useState<string | null>(null);
+
+  const { locale: currentLocale } = parseLocaleFromPath(pathname ?? "/");
+
+  const navLabels: Record<string, { en: string; es: string; fr: string }> = {
+    "/": { en: "Home", es: "Inicio", fr: "Accueil" },
+    "/about": { en: "About", es: "Acerca de", fr: "À propos" },
+    "/services": { en: "Services", es: "Servicios", fr: "Services" },
+    "/projects": { en: "Projects", es: "Proyectos", fr: "Projets" },
+    "/map": { en: "Map View", es: "Mapa", fr: "Carte" },
+    "/contact": { en: "Contact", es: "Contacto", fr: "Contact" },
+  };
+
   const links = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/services", label: "Services" },
-    { to: "/projects", label: "Projects" },
-    { to: "/map", label: "Map View" },
-    // { to: "/dashboard", label: "Insights" },
-    { to: "/contact", label: "Contact" },
-  ] as const;
+    { to: "/", label: navLabels["/"][currentLocale] || "Home" },
+    { to: "/about", label: navLabels["/about"][currentLocale] || "About" },
+    { to: "/services", label: navLabels["/services"][currentLocale] || "Services" },
+    { to: "/projects", label: navLabels["/projects"][currentLocale] || "Projects" },
+    { to: "/map", label: navLabels["/map"][currentLocale] || "Map View" },
+    { to: "/contact", label: navLabels["/contact"][currentLocale] || "Contact" },
+  ];
+
+  const getNavDestination = (to: string) => {
+    return getLocalizedPath(to, currentLocale);
+  };
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -49,7 +66,7 @@ export default function Header() {
     >
       <div className="container mx-auto flex h-16 items-center px-4 md:px-8 justify-between">
         {/* LOGO */}
-        <Link href="/" className="flex items-center space-x-3 group">
+        <Link href={getLocalizedPath("/", currentLocale)} className="flex items-center space-x-3 group">
           <div className="relative flex items-center justify-center h-12 w-12">
             <img
               src="/images/general/minLogo.png"
@@ -72,21 +89,24 @@ export default function Header() {
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex flex-1 items-center justify-center space-x-1">
           {links.map(({ to, label }) => {
+            const dest = getNavDestination(to);
             const isActive =
-              to === "/" ? pathname === "/" : pathname.startsWith(to);
-            const isPending = navigatingTo === to;
+              to === "/"
+                ? pathname === "/" || pathname === `/${currentLocale}`
+                : pathname === dest || pathname.startsWith(`${dest}/`);
+            const isPending = navigatingTo === dest;
             return (
               <Link
                 key={to}
-                href={to}
+                href={dest}
                 onPointerDown={() => {
-                  if (to !== pathname) {
+                  if (dest !== pathname) {
                     try {
-                      router.prefetch(to);
+                      router.prefetch(dest);
                     } catch {}
                   }
                 }}
-                onClick={() => handleNavClick(to, false)}
+                onClick={() => handleNavClick(dest, false)}
                 className={`relative flex items-center gap-1.5 whitespace-nowrap px-2.5 lg:px-3 xl:px-4 py-2 text-xs font-bold uppercase tracking-widest transition-all duration-300 ${
                   isActive
                     ? "text-primary bg-primary/10"
@@ -105,8 +125,9 @@ export default function Header() {
           })}
         </nav>
 
-        {/* AUTH + SOCIAL LINKS */}
-        <div className="flex items-center space-x-4">
+        {/* AUTH + LANG + SOCIAL LINKS */}
+        <div className="flex items-center space-x-3">
+          <LanguageSwitcher />
           <HeaderAuthDesktop />
           {/* Hidden below xl to leave room for auth controls; still in the mobile menu and footer */}
           <div className="hidden xl:flex items-center gap-1">
@@ -182,24 +203,30 @@ export default function Header() {
         }`}
       >
         <nav className="container mx-auto flex flex-col px-4 py-4">
+          <div className="mb-3">
+            <LanguageSwitcher isMobile />
+          </div>
           {links.map(({ to, label }) => {
+            const dest = getNavDestination(to);
             const isActive =
-              to === "/" ? pathname === "/" : pathname.startsWith(to);
-            const isPending = navigatingTo === to;
+              to === "/"
+                ? pathname === "/" || pathname === `/${currentLocale}`
+                : pathname === dest || pathname.startsWith(`${dest}/`);
+            const isPending = navigatingTo === dest;
 
             return (
               <Link
                 key={to}
-                href={to}
+                href={dest}
                 prefetch={false}
                 onPointerDown={() => {
-                  if (to !== pathname) {
+                  if (dest !== pathname) {
                     try {
-                      router.prefetch(to);
+                      router.prefetch(dest);
                     } catch {}
                   }
                 }}
-                onClick={() => handleNavClick(to, true)}
+                onClick={() => handleNavClick(dest, true)}
                 className={`flex items-center justify-between border-b border-border/70 px-3 py-3.5 text-xs font-bold uppercase tracking-[0.28em] transition-all last:border-b-0 select-none ${
                   isPending
                     ? "bg-primary/20 text-primary border-primary/50"

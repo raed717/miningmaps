@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
 import {
@@ -17,12 +17,11 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
-import {
-  serviceDeliverables,
-  serviceMetrics,
-  serviceModules,
-} from "@/lib/servicesData";
 import { pastClients } from "@/lib/pastClientsData";
+import { useI18n } from "@/lib/i18n/context";
+import { servicesTranslations } from "@/lib/i18n/translations/services";
+import type { Locale } from "@/lib/i18n/types";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 const serviceIcons = [ShieldCheck, BriefcaseBusiness, Crosshair, FileText, Mountain];
 const serviceAccentColors = [
@@ -33,14 +32,11 @@ const serviceAccentColors = [
   "var(--color-chart-5)",
 ];
 
-const workflow = [
-  "Define land status, tenure history, and immediate field objective.",
-  "Assemble the required GIS, imagery, terrain, and regulatory inputs.",
-  "Produce mapped outputs, filing packages, and investor-facing material.",
-  "Deliver a clean operating package for review, circulation, or submission.",
-];
+export default function ServicesPage({ locale: overrideLocale }: { locale?: Locale }) {
+  const { locale: contextLocale } = useI18n();
+  const locale = overrideLocale || contextLocale || "en";
+  const t = servicesTranslations[locale] || servicesTranslations.en;
 
-export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState<"services" | "clients">("services");
 
   useEffect(() => {
@@ -59,6 +55,23 @@ export default function ServicesPage() {
     }
   }, []);
 
+  const serviceMetrics = useMemo(() => {
+    const moduleCount = t.modules.length;
+    const serviceLineCount = t.modules.reduce(
+      (total, module) => total + module.services.length,
+      0,
+    );
+    const deliverables = Array.from(
+      new Set(t.modules.flatMap((module) => module.deliverables)),
+    );
+    return {
+      moduleCount,
+      serviceLineCount,
+      deliverables,
+      deliverableCount: deliverables.length,
+    };
+  }, [t.modules]);
+
   return (
     <div className={`min-h-screen w-full bg-background text-foreground ${inter.className}`}>
       <div
@@ -73,34 +86,33 @@ export default function ServicesPage() {
       <main className="relative z-10 mx-auto max-w-7xl px-4 py-24 md:px-12">
         <header className="border-b border-border pb-16">
           <Link
-            href="/"
+            href={getLocalizedPath("/", locale)}
             className={`inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-primary ${mono.className}`}
           >
             <ArrowLeft className="h-4 w-4" />
-            Return to Platform
+            {t.header.returnLink}
           </Link>
 
           <div className="mt-10 grid gap-10 xl:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] xl:items-end">
             <div>
               <div className={`mb-4 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}>
-                <ShieldAlert className="h-4 w-4" /> SERVICE_REGISTRY
+                <ShieldAlert className="h-4 w-4" /> {t.header.badge}
               </div>
               <h1 className="max-w-5xl text-5xl font-extrabold uppercase tracking-tighter leading-[0.85] md:text-8xl">
-                Full GIS
+                {t.header.title}
                 <br />
-                Service Registry
+                {t.header.titleHighlight}
               </h1>
               <p className={`mt-8 max-w-3xl text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}>
-                A field-ops view of the services available across tenure management,
-                acquisition, mapping, permitting, terrain modeling, and investor support.
+                {t.header.description}
               </p>
             </div>
 
             <div className="grid gap-px border border-border bg-border sm:grid-cols-3 xl:grid-cols-1 xl:grid-rows-3">
               {[
-                { label: "Modules", value: String(serviceMetrics.moduleCount).padStart(2, "0") },
-                { label: "Service Lines", value: String(serviceMetrics.serviceLineCount).padStart(2, "0") },
-                { label: "Outputs", value: String(serviceMetrics.deliverableCount).padStart(2, "0") },
+                { label: t.header.metrics.modules, value: String(serviceMetrics.moduleCount).padStart(2, "0") },
+                { label: t.header.metrics.serviceLines, value: String(serviceMetrics.serviceLineCount).padStart(2, "0") },
+                { label: t.header.metrics.outputs, value: String(serviceMetrics.deliverableCount).padStart(2, "0") },
               ].map((metric) => (
                 <div key={metric.label} className="bg-card p-5">
                   <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
@@ -116,8 +128,8 @@ export default function ServicesPage() {
         <section className="mt-16" id="services-tabs">
           <div className="mb-6 flex flex-wrap gap-3 border-b border-border pb-4">
             {[
-              { id: "services", label: "Services" },
-              { id: "clients", label: "Past Clients" },
+              { id: "services", label: t.tabs.services },
+              { id: "clients", label: t.tabs.clients },
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -136,7 +148,7 @@ export default function ServicesPage() {
 
           {activeTab === "services" ? (
             <div className="grid gap-6">
-              {serviceModules.map((module, index) => {
+              {t.modules.map((module, index) => {
                 const Icon = serviceIcons[index % serviceIcons.length];
                 const accentColor = serviceAccentColors[index % serviceAccentColors.length];
 
@@ -155,7 +167,7 @@ export default function ServicesPage() {
                       <div className="border-b border-border bg-background/80 p-6 md:p-8 lg:border-r lg:border-b-0">
                         <div className={`flex items-center justify-between text-[10px] uppercase tracking-[0.22em] ${mono.className}`}>
                           <span style={{ color: accentColor }}>{module.code}</span>
-                          <span className="text-muted-foreground">{String(module.services.length).padStart(2, "0")}_LINES</span>
+                          <span className="text-muted-foreground">{String(module.services.length).padStart(2, "0")}{t.modulesSection.linesSuffix}</span>
                         </div>
 
                         <div className="mt-8 flex h-14 w-14 items-center justify-center border border-border bg-card" style={{ color: accentColor }}>
@@ -171,7 +183,7 @@ export default function ServicesPage() {
 
                         <div className="mt-8 border-t border-border pt-4">
                           <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
-                            Outcome
+                            {t.modulesSection.outcomeLabel}
                           </div>
                           <p className="mt-3 text-sm leading-relaxed text-foreground/85">{module.outcome}</p>
                         </div>
@@ -180,7 +192,7 @@ export default function ServicesPage() {
                       <div className="grid gap-8 p-6 md:p-8 xl:grid-cols-[minmax(0,1.25fr)_minmax(220px,0.75fr)]">
                         <div>
                           <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
-                            Service Lines
+                            {t.modulesSection.serviceLinesLabel}
                           </div>
                           <div className="mt-5 grid gap-3">
                             {module.services.map((service) => (
@@ -194,7 +206,7 @@ export default function ServicesPage() {
 
                         <div>
                           <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
-                            Typical Outputs
+                            {t.modulesSection.typicalOutputsLabel}
                           </div>
                           <div className="mt-5 flex flex-wrap gap-2">
                             {module.deliverables.map((deliverable) => (
@@ -214,12 +226,12 @@ export default function ServicesPage() {
                               <div
                                 className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}
                               >
-                                Sample Work & Technical Case Studies
+                                {t.modulesSection.sampleWorkTitle}
                               </div>
                               <span
                                 className={`border border-primary/40 bg-primary/10 px-2 py-0.5 text-[9px] uppercase tracking-[0.2em] text-primary ${mono.className}`}
                               >
-                                Real Field Data
+                                {t.modulesSection.realFieldDataBadge}
                               </span>
                             </div>
                             <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -255,7 +267,7 @@ export default function ServicesPage() {
                                         className={`mt-4 inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.18em] text-primary hover:underline ${mono.className}`}
                                       >
                                         <span>
-                                          {item.linkLabel || "View Record"}
+                                          {item.linkLabel || t.modulesSection.viewRecord}
                                         </span>
                                         <ExternalLink className="h-3 w-3" />
                                       </a>
@@ -281,19 +293,19 @@ export default function ServicesPage() {
               <div className="grid gap-px bg-border lg:grid-cols-[minmax(280px,0.82fr)_minmax(0,1.18fr)]">
                 <div className="bg-background/80 p-6 md:p-8">
                   <div className={`flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
-                    <Building2 className="h-4 w-4" /> CLIENT_ARCHIVE
+                    <Building2 className="h-4 w-4" /> {t.clientsSection.badge}
                   </div>
                   <h2 className="mt-6 text-4xl font-extrabold uppercase tracking-tight leading-none md:text-5xl">
-                    Past Clients
+                    {t.clientsSection.title}
                   </h2>
                   <p className={`mt-5 text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}>
-                    Selected companies, municipalities, institutions, and private clients supported across GIS, mapping, land, and reporting work.
+                    {t.clientsSection.description}
                   </p>
 
                   <div className="mt-8 grid gap-px border border-border bg-border sm:grid-cols-2">
                     <div className="bg-card p-4">
                       <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
-                        Listed Clients
+                        {t.clientsSection.listedClientsLabel}
                       </div>
                       <div className="mt-2 text-3xl font-extrabold tracking-tight">
                         + {String(pastClients.length).padStart(2, "0")}
@@ -301,71 +313,78 @@ export default function ServicesPage() {
                     </div>
                     <div className="bg-card p-4">
                       <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
-                        Website Field
+                        {t.clientsSection.websiteFieldLabel}
                       </div>
-                      <div className="mt-2 text-3xl font-extrabold tracking-tight">READY</div>
+                      <div className="mt-2 text-3xl font-extrabold tracking-tight">
+                        {t.clientsSection.websiteFieldStatus}
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="grid gap-px bg-border">
-                  {pastClients.map((client, index) => (
-                    <div
-                      key={client.name}
-                      className="grid gap-4 bg-card px-5 py-5 md:grid-cols-[72px_minmax(0,1fr)_auto] md:px-6"
-                    >
-                      <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
-                        {String(index + 1).padStart(2, "0")}
-                      </div>
-                      <div>
-                        <div className="flex flex-wrap items-center gap-3">
-                          <span className="text-lg font-extrabold uppercase tracking-tight text-white md:text-xl">
-                            {client.name}
-                          </span>
-                          {client.logo && (
-                            <span className="inline-flex items-center rounded bg-white px-2.5 py-1 shadow-xs">
+                  {pastClients.map((client, index) => {
+                    const localizedNotes =
+                      t.clientsSection.clientNotes?.[client.name] || client.notes;
+
+                    return (
+                      <div
+                        key={client.name}
+                        className="grid gap-4 bg-card px-5 py-5 md:grid-cols-[72px_minmax(0,1fr)_auto] md:px-6"
+                      >
+                        <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
+                          {String(index + 1).padStart(2, "0")}
+                        </div>
+                        <div>
+                          <div className="flex flex-wrap items-center gap-3">
+                            <span className="text-lg font-extrabold uppercase tracking-tight text-white md:text-xl">
+                              {client.name}
+                            </span>
+                            {client.logo && (
+                              <span className="inline-flex items-center rounded bg-white px-2.5 py-1 shadow-xs">
+                                <img
+                                  src={client.logo}
+                                  alt={`${client.name} logo`}
+                                  className="h-4 max-w-[120px] object-contain"
+                                />
+                              </span>
+                            )}
+                          </div>
+                          {localizedNotes && (
+                            <p className={`mt-2 text-xs uppercase tracking-[0.15em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}>
+                              {localizedNotes}
+                            </p>
+                          )}
+                          {client.image && (
+                            <div className="mt-3 overflow-hidden rounded-lg border border-border/60 max-w-sm">
                               <img
-                                src={client.logo}
-                                alt={`${client.name} logo`}
-                                className="h-4 max-w-[120px] object-contain"
+                                src={client.image}
+                                alt={client.name}
+                                className="h-32 w-full object-cover"
+                                loading="lazy"
                               />
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex items-start md:justify-end">
+                          {client.url ? (
+                            <a
+                              href={client.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`inline-flex items-center gap-2 border border-primary px-3 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
+                            >
+                              {t.clientsSection.visitButton} <ArrowUpRight className="h-4 w-4" />
+                            </a>
+                          ) : (
+                            <span className={`inline-flex items-center border border-border px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
+                              {t.clientsSection.linkPending}
                             </span>
                           )}
                         </div>
-                        {client.notes && (
-                          <p className={`mt-2 text-xs uppercase tracking-[0.15em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}>
-                            {client.notes}
-                          </p>
-                        )}
-                        {client.image && (
-                          <div className="mt-3 overflow-hidden rounded-lg border border-border/60 max-w-sm">
-                            <img
-                              src={client.image}
-                              alt={client.name}
-                              className="h-32 w-full object-cover"
-                              loading="lazy"
-                            />
-                          </div>
-                        )}
                       </div>
-                      <div className="flex items-start md:justify-end">
-                        {client.url ? (
-                          <a
-                            href={client.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`inline-flex items-center gap-2 border border-primary px-3 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
-                          >
-                            Visit <ArrowUpRight className="h-4 w-4" />
-                          </a>
-                        ) : (
-                          <span className={`inline-flex items-center border border-border px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
-                            Link Pending
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </motion.section>
@@ -375,13 +394,13 @@ export default function ServicesPage() {
         <section className="mt-16 grid gap-6 xl:grid-cols-[minmax(0,1fr)_340px]">
           <div className="border border-border bg-card p-6 md:p-8">
             <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
-              Delivery Chain
+              {t.operationalFlow.tag}
             </div>
             <h2 className="mt-4 text-3xl font-extrabold uppercase tracking-tight">
-              Operational Flow
+              {t.operationalFlow.title}
             </h2>
             <div className="mt-8 grid gap-3">
-              {workflow.map((step, index) => (
+              {t.operationalFlow.steps.map((step, index) => (
                 <div key={step} className="flex items-start gap-4 border-t border-border pt-4 first:border-t-0 first:pt-0">
                   <div className={`min-w-12 text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
                     {String(index + 1).padStart(2, "0")}
@@ -394,10 +413,10 @@ export default function ServicesPage() {
 
           <div className="border border-border bg-background p-6 md:p-8">
             <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
-              Output Index
+              {t.nextAction.indexTag}
             </div>
             <div className="mt-5 flex flex-wrap gap-2">
-              {serviceDeliverables.map((deliverable) => (
+              {serviceMetrics.deliverables.map((deliverable) => (
                 <span
                   key={deliverable}
                   className={`border border-border px-3 py-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}
@@ -409,19 +428,17 @@ export default function ServicesPage() {
 
             <div className="mt-10 border-t border-border pt-6">
               <div className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
-                Next Action
+                {t.nextAction.actionTag}
               </div>
               <p className="mt-4 text-sm leading-relaxed text-foreground/85">
-                Need a tailored scope, a property review, or a field-ready mapping
-                package? Open a direct channel and outline the land position, region,
-                or exploration objective.
+                {t.nextAction.description}
               </p>
               <Link
-                href="/contact"
+                href={getLocalizedPath("/contact", locale)}
                 className="mt-6 inline-flex items-center gap-3 border border-primary px-4 py-3 text-sm font-bold uppercase tracking-wider text-primary transition-colors hover:bg-primary hover:text-black"
               >
                 <Mail className="h-4 w-4" />
-                Start Contact Protocol
+                {t.nextAction.button}
                 <ArrowUpRight className="h-4 w-4" />
               </Link>
             </div>

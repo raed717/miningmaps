@@ -8,100 +8,33 @@ import {
   BadgeDollarSign,
   Building2,
   Check,
-  Globe,
   Handshake,
   Layers,
-  ShieldCheck,
   Sparkles,
   Zap,
 } from "lucide-react";
 import { mono } from "@/lib/fonts";
 import { PartnerProgramsModal } from "@/components/PartnerProgramsModal";
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
+
+const planIcons: Record<string, typeof BadgeDollarSign> = {
+  commission: BadgeDollarSign,
+  "subscription-listing": Zap,
+  "company-membership": Building2,
+};
+
+const planHighlightColors: Record<string, string> = {
+  commission: "border-border",
+  "subscription-listing": "border-primary shadow-[0_0_25px_rgba(0,229,255,0.15)]",
+  "company-membership": "border-secondary/60 shadow-[0_0_25px_rgba(255,176,0,0.12)]",
+};
 
 export function ListingMembershipSection() {
+  const { locale } = useI18n();
+  const t = (homeTranslations[locale] || homeTranslations.en).listingMembership;
   const [partnerModalOpen, setPartnerModalOpen] = useState(false);
-
-  const plans = [
-    {
-      id: "commission",
-      name: "Commission-Based Listing",
-      tag: "ZERO UPFRONT COST",
-      price: "$0",
-      period: "upfront",
-      popular: false,
-      badge: "No Risk Entry",
-      description:
-        "List your property for free. We handle marketing and technical exposure, earning a commission only when a successful sale completes.",
-      idealFor: "Property owners looking to minimize upfront listing costs.",
-      features: [
-        "No upfront listing fee",
-        "Full marketing & property exposure",
-        "Technical GIS map & dossier setup",
-        "Commission paid only upon successful sale",
-        "Standard buyer inquiry routing",
-      ],
-      ctaText: "Contact Us",
-      ctaHref: "/contact?plan=commission",
-      icon: BadgeDollarSign,
-      highlightColor: "border-border",
-    },
-    {
-      id: "subscription-listing",
-      name: "Subscription Listing",
-      tag: "100% SALE RETENTION",
-      price: "$100",
-      period: "/ month",
-      promoBadge: "FIRST MONTH FREE",
-      popular: true,
-      badge: "RECOMMENDED FOR OWNERS",
-      description:
-        "Keep 100% of your sale proceeds with a flat monthly listing fee. Full control over photos, maps, PDFs, and seller contact details.",
-      idealFor: "Sellers wanting predictable costs and 0% commission.",
-      features: [
-        "Keep 100% of sale proceeds (0% commission)",
-        "First month completely FREE",
-        "Edit & update listing details anytime",
-        "Photos, spatial maps, PDFs & contacts included",
-        "Direct buyer inquiries routed to you",
-      ],
-      ctaText: "Start Free Trial",
-      ctaHref: "/contact?plan=subscription-listing",
-      icon: Zap,
-      highlightColor: "border-primary shadow-[0_0_25px_rgba(0,229,255,0.15)]",
-    },
-    {
-      id: "company-membership",
-      name: "Company Membership",
-      tag: "FULL PROMOTIONAL SUITE",
-      price: "$150",
-      period: "/ month",
-      promoBadge: "FIRST MONTH FREE",
-      popular: false,
-      badge: "FOR INDUSTRY PROFESSIONALS",
-      description:
-        "Comprehensive branding and unlimited listings for junior mining companies, prospectors, consultants, and land developers.",
-      idealFor: "Junior miners, prospectors, consultants & developers.",
-      features: [
-        "Dedicated Company Profile page & logo",
-        "Direct link back to your company website",
-        "Unlimited property & claim listings",
-        "Featured exposure across registry & map search",
-        "Direct client lead & inquiry distribution",
-        "First month completely FREE",
-      ],
-      ctaText: "Become a Member",
-      ctaHref: "/contact?plan=company-membership",
-      icon: Building2,
-      highlightColor: "border-secondary/60 shadow-[0_0_25px_rgba(255,176,0,0.12)]",
-    },
-  ];
-
-  const targetAudiences = [
-    { role: "Junior Mining Companies", benefit: "Full company profile, logo, website backlinks, & unlimited asset listings." },
-    { role: "Prospectors & Claim Holders", benefit: "Showcase mineral claims to active buyers with 0% sales commission options." },
-    { role: "Geological Consultants", benefit: "Promote expert advisory services and land records investigation capabilities." },
-    { role: "Land Developers & Brokers", benefit: "Showcase multi-unit residential, commercial, or vacant land portfolios." },
-  ];
 
   return (
     <section className="relative z-10 overflow-hidden border-t border-border bg-background px-4 py-24 md:px-10 md:py-32">
@@ -114,24 +47,28 @@ export function ListingMembershipSection() {
           <div
             className={`inline-flex items-center gap-2 border border-primary/30 bg-primary/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-primary backdrop-blur-sm ${mono.className}`}
           >
-            <Layers className="h-3.5 w-3.5" /> LISTING MODELS // MEMBERSHIP
+            <Layers className="h-3.5 w-3.5" /> {t.badge}
           </div>
 
           <h2 className="mt-6 text-3xl font-extrabold uppercase tracking-tighter leading-none text-white sm:text-5xl md:text-6xl">
-            List Your Property &amp;
+            {t.title}
             <br />
-            Promote Your Business
+            {t.titleHighlight}
           </h2>
 
           <p className="mt-6 text-sm uppercase tracking-wide leading-relaxed text-muted-foreground md:text-base">
-            Choose the listing model or company membership package that fits your goals. From zero-upfront commission options to flat-rate unlimited listing subscriptions.
+            {t.description}
           </p>
         </div>
 
         {/* Pricing Cards Grid */}
         <div className="mt-16 grid gap-8 lg:grid-cols-3">
-          {plans.map((plan, index) => {
-            const Icon = plan.icon;
+          {t.plans.map((plan, index) => {
+            const Icon = planIcons[plan.id] || BadgeDollarSign;
+            const highlightColor = planHighlightColors[plan.id] || "border-border";
+            const isPopular = plan.id === "subscription-listing";
+            const ctaHref = `/contact?plan=${plan.id}`;
+
             return (
               <motion.div
                 key={plan.id}
@@ -139,7 +76,7 @@ export function ListingMembershipSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.45, delay: index * 0.1 }}
-                className={`relative flex flex-col justify-between overflow-hidden border bg-card/80 p-6 backdrop-blur-sm transition-all duration-300 md:p-8 ${plan.highlightColor} hover:translate-y-[-2px]`}
+                className={`relative flex flex-col justify-between overflow-hidden border bg-card/80 p-6 backdrop-blur-sm transition-all duration-300 md:p-8 ${highlightColor} hover:translate-y-[-2px]`}
               >
                 {/* Top Promo Banner */}
                 {plan.promoBadge && (
@@ -186,7 +123,7 @@ export function ListingMembershipSection() {
                     <span
                       className={`block text-[9px] font-bold uppercase tracking-[0.2em] text-primary ${mono.className}`}
                     >
-                      BEST FOR
+                      {t.bestForLabel}
                     </span>
                     <span className="text-xs uppercase text-muted-foreground">
                       {plan.idealFor}
@@ -198,7 +135,7 @@ export function ListingMembershipSection() {
                     <div
                       className={`mb-4 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 ${mono.className}`}
                     >
-                      Included Features:
+                      {t.featuresLabel}
                     </div>
                     <ul className="space-y-3">
                       {plan.features.map((feature) => (
@@ -217,9 +154,9 @@ export function ListingMembershipSection() {
                 {/* Call to Action Button */}
                 <div className="mt-10 pt-4">
                   <Link
-                    href={plan.ctaHref}
+                    href={getLocalizedPath(ctaHref, locale)}
                     className={`group flex w-full items-center justify-center gap-2 border px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all md:text-sm ${
-                      plan.popular
+                      isPopular
                         ? "border-primary bg-primary text-black hover:bg-transparent hover:text-primary"
                         : "border-border bg-background text-white hover:border-primary hover:text-primary"
                     } ${mono.className}`}
@@ -240,10 +177,10 @@ export function ListingMembershipSection() {
               <div
                 className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary ${mono.className}`}
               >
-                <Sparkles className="h-4 w-4" /> NETWORK_PARTNERSHIPS
+                <Sparkles className="h-4 w-4" /> {t.partnersBanner.badge}
               </div>
               <h3 className="mt-2 text-2xl font-black uppercase tracking-tight text-white md:text-3xl">
-                Who Benefits Most From Subscription Listings?
+                {t.partnersBanner.title}
               </h3>
             </div>
             <div className="flex shrink-0 flex-wrap gap-3">
@@ -252,19 +189,19 @@ export function ListingMembershipSection() {
                 onClick={() => setPartnerModalOpen(true)}
                 className={`inline-flex items-center gap-2 border border-primary/40 bg-primary/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
               >
-                <Handshake className="h-4 w-4" /> Partner &amp; Referral Programs
+                <Handshake className="h-4 w-4" /> {t.partnersBanner.ctaPartner}
               </button>
               <Link
-                href="/contact"
+                href={getLocalizedPath("/contact", locale)}
                 className={`inline-flex items-center gap-2 border border-primary/40 bg-primary/10 px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
               >
-                Discuss Custom Partnership <ArrowRight className="h-4 w-4" />
+                {t.partnersBanner.ctaDiscuss} <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {targetAudiences.map((item) => (
+            {t.partnersBanner.targetAudiences.map((item) => (
               <div
                 key={item.role}
                 className="border border-border/80 bg-background/60 p-4 transition-colors hover:border-primary/50"

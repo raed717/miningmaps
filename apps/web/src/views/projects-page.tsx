@@ -20,9 +20,14 @@ import { inter, mono } from "@/lib/fonts";
 import { useProjectSummaries } from "@/lib/projectDataContext";
 import { otherProjects } from "@/lib/otherProjectsData";
 import { PartnerNoticeRotator } from "@/components/partner-notice-rotator";
+import { useI18n } from "@/lib/i18n/context";
+import { projectsTranslations } from "@/lib/i18n/translations/projects";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
+import type { Locale } from "@/lib/i18n/types";
 
 type ProjectsPageProps = {
   showOnlyForSale?: boolean;
+  locale?: Locale;
 };
 
 function escapeRegExp(value: string) {
@@ -50,7 +55,11 @@ const COMMODITY_TAGS = ["Gold", "Silver", "Copper", "Platinum", "Cobalt", "Nicke
 const SPECIMEN_TAGS = ["Fossils", "Agates", "Gemstones"];
 const FOSSILS_GEMSTONES_TYPE = "Fossils, Agates & Gemstones";
 
-export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPageProps) {
+export default function ProjectsPage({ showOnlyForSale = false, locale: propLocale }: ProjectsPageProps) {
+  const { locale: ctxLocale } = useI18n();
+  const locale = propLocale || ctxLocale;
+  const t = projectsTranslations[locale] || projectsTranslations.en;
+
   const projects = useProjectSummaries();
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
@@ -192,26 +201,26 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 className={`mb-3 flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-primary ${mono.className}`}
               >
                 <Database className="h-3 w-3" />
-                {showOnlyForSale ? "PROPERTY_REGISTRY" : "ASSET DATABASE"}
+                {showOnlyForSale ? t.header.propertyRegistry : t.header.assetDatabase}
               </div>
               <h1 className="text-3xl font-extrabold uppercase tracking-tighter leading-[0.88] md:text-5xl xl:text-6xl">
                 {showOnlyForSale ? (
                   <>
-                    Available
+                    {t.header.propertiesTitleLine1}
                     <br />
-                    Properties
+                    {t.header.propertiesTitleLine2}
                   </>
                 ) : (
                   <>
-                    Project
+                    {t.header.projectsTitleLine1}
                     <br />
-                    Portfolio
+                    {t.header.projectsTitleLine2}
                   </>
                 )}
               </h1>
 
               <Link
-                href="/map"
+                href={getLocalizedPath("/map", locale)}
                 className="group mt-5 inline-flex items-center gap-3 border border-primary/40 bg-card/70 px-4 py-3 backdrop-blur-sm transition-all hover:border-primary hover:bg-primary/10"
               >
                 <div className="flex h-9 w-9 items-center justify-center border border-primary/40 bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-black">
@@ -221,16 +230,16 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                   <div
                     className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}
                   >
-                    Spatial Access
+                    {t.header.spatialAccess}
                   </div>
                   <div className="mt-1 text-xs font-extrabold uppercase tracking-[0.18em] text-white md:text-sm">
-                    View on Map
+                    {t.header.viewOnMap}
                   </div>
                 </div>
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
               </Link>
               <Link
-                href="/other-projects"
+                href={getLocalizedPath("/other-projects", locale)}
                 className="group mt-5 inline-flex items-center gap-3 border border-primary/40 bg-card/70 px-4 py-3 backdrop-blur-sm transition-all hover:border-primary hover:bg-primary/10"
               >
                 <div className="flex h-9 w-9 items-center justify-center border border-primary/40 bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-black">
@@ -238,7 +247,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 </div>
                 <div>
                   <div className="mt-1 text-xs font-extrabold uppercase tracking-[0.18em] text-white md:text-sm">
-                    More Projects
+                    {t.header.moreProjects}
                   </div>
                 </div>
                 <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
@@ -248,8 +257,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
               <div
                 className={`max-w-md border border-primary/30 bg-card/80 p-4 backdrop-blur-sm text-xs uppercase tracking-[0.18em] leading-relaxed text-zinc-100 md:text-sm ${mono.className}`}
               >
-                Live acquisition-ready mineral properties filtered from the
-                wider Adamson Geomatics project archive.
+                {t.header.propertiesSubtitle}
               </div>
             ) : (
               <PartnerNoticeRotator />
@@ -264,7 +272,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
             </div>
             <input
               type="text"
-              placeholder="SEARCH ASSETS / REGIONS / IDS..."
+              placeholder={t.controls.searchPlaceholder}
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
               className={`w-full border border-border bg-card py-3 pr-4 pl-12 text-xs tracking-[0.18em] text-white uppercase placeholder-[#555] transition-all focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none md:text-sm ${mono.className}`}
@@ -289,7 +297,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                   : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
               } border`}
             >
-              ALL
+              {t.controls.all}
             </button>
             {!showOnlyForSale && (
               <button
@@ -303,7 +311,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 title={forSaleOnly ? "Show all projects" : "Filter projects available for sale"}
               >
                 <Tag className="h-3 w-3" />
-                <span>FOR SALE</span>
+                <span>{t.controls.forSale}</span>
                 <span
                   className={`ml-0.5 px-1.5 py-0.2 text-[9px] font-extrabold ${
                     forSaleOnly
@@ -351,7 +359,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
               title="Filter Fossils, Agates & Gemstones"
             >
               <Gem className="h-3 w-3" />
-              <span>FOSSILS, AGATES & GEMS</span>
+              <span>{t.controls.fossilsAgatesGems}</span>
               <span
                 className={`ml-0.5 px-1.5 py-0.2 text-[9px] font-extrabold ${
                   activeFilter === FOSSILS_GEMSTONES_TYPE
@@ -386,11 +394,13 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
           className={`mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3 text-[10px] tracking-[0.18em] uppercase text-[#666] md:text-xs ${mono.className}`}
         >
           <div className="flex flex-wrap items-center gap-2">
-            <span>Displaying {filteredProjects.length} Records</span>
+            <span>
+              {t.controls.displayingRecords.replace("{count}", String(filteredProjects.length))}
+            </span>
             {forSaleOnly && (
               <span className="inline-flex items-center gap-1.5 border border-secondary/50 bg-secondary/15 px-2 py-0.5 text-[9px] font-bold text-secondary">
                 <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
-                FOR SALE ONLY
+                {t.controls.forSaleOnlyBadge}
                 <button
                   type="button"
                   onClick={() => setForSaleOnly(false)}
@@ -404,8 +414,8 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
             {activeFilter && (
               <span className="inline-flex items-center gap-1.5 border border-primary/50 bg-primary/15 px-2 py-0.5 text-[9px] font-bold text-primary">
                 {activeFilter === FOSSILS_GEMSTONES_TYPE
-                  ? "TYPE: FOSSILS, AGATES & GEMSTONES"
-                  : `TAG: ${activeFilter}`}
+                  ? `${t.controls.typePrefix} ${t.controls.fossilsAgatesGems}`
+                  : `${t.controls.tagPrefix} ${activeFilter}`}
                 <button
                   type="button"
                   onClick={() => setActiveFilter(null)}
@@ -418,7 +428,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
             )}
           </div>
           <span>
-            SYSTEM STATUS: {filteredProjects.length > 0 ? "ONLINE" : "NO_MATCH"}
+            SYSTEM STATUS: {filteredProjects.length > 0 ? t.controls.systemStatusOnline : t.controls.systemStatusNoMatch}
           </span>
         </div>
 
@@ -435,7 +445,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
               >
                 <div className="group relative block h-full overflow-hidden border border-accent bg-card transition-colors duration-500 hover:border-primary">
                   <Link
-                    href={`/projects/${project.id}`}
+                    href={getLocalizedPath(`/projects/${project.id}`, locale)}
                     aria-label={`View details for ${project.title}`}
                     className="absolute inset-0 z-10"
                   />
@@ -471,8 +481,8 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                         } ${mono.className}`}
                       >
                         {project.isForSale
-                          ? "AVAILABLE FOR ACQUISITION"
-                          : "ACQUIRED"}
+                          ? t.card.availableForAcquisition
+                          : t.card.acquired}
                       </div>
                     </div>
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(255,255,255,0.05)_50%)] bg-[length:100%_4px] mix-blend-overlay" />
@@ -495,7 +505,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                           <span
                             className={`mb-2 block text-[9px] uppercase tracking-[0.2em] text-primary ${mono.className}`}
                           >
-                            CLIENT PROJECTS
+                            {t.card.clientProjects}
                           </span>
                           <ul className="space-y-1.5">
                             {project.subProjectIds.map((subId) => {
@@ -504,7 +514,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                               return (
                                 <li key={subId}>
                                   <Link
-                                    href={`/projects/${subId}`}
+                                    href={getLocalizedPath(`/projects/${subId}`, locale)}
                                     className="group/sub flex w-full items-center gap-2 text-left text-xs uppercase tracking-[0.15em] text-muted-foreground transition-colors hover:text-primary"
                                   >
                                     <span className="text-primary/40 transition-colors group-hover/sub:text-primary">
@@ -555,23 +565,23 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 className={`flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-primary ${mono.className}`}
               >
                 <FolderKanban className="h-3.5 w-3.5" />
-                EXTENDED ARCHIVE
+                {t.extendedArchive.badge}
               </div>
               <h4 className="mt-1 text-lg font-extrabold uppercase tracking-tight text-white md:text-xl">
-                Looking for more mineral claims & tenures?
+                {t.extendedArchive.heading}
               </h4>
               <p
                 className={`mt-1 text-xs uppercase tracking-widest text-muted-foreground ${mono.className}`}
               >
-                Explore our extended database of {otherProjects.length} mineral projects and claim tenures across BC.
+                {t.extendedArchive.description.replace("{count}", String(otherProjects.length))}
               </p>
             </div>
             <Link
-              href="/other-projects"
+              href={getLocalizedPath("/other-projects", locale)}
               className={`group inline-flex shrink-0 items-center gap-3 border border-primary bg-primary px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(234,179,8,0.25)] ${mono.className}`}
             >
               <FolderKanban className="h-4 w-4" />
-              <span>More Projects</span>
+              <span>{t.extendedArchive.buttonText}</span>
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
           </div>
@@ -583,7 +593,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
               <Target className="h-10 w-10 animate-pulse text-primary/70" />
             </div>
             <h3 className="mb-3 text-2xl font-extrabold uppercase tracking-tight text-white md:text-3xl">
-              No Records Found
+              {t.noResults.heading}
             </h3>
 
             {searchQuery.trim() ? (
@@ -591,19 +601,34 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 <p
                   className={`text-xs uppercase tracking-widest leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
                 >
-                  No active projects match <span className="text-primary font-bold">"{searchQuery}"</span> in the main portfolio.
+                  {t.noResults.noMatch.replace("{query}", searchQuery)}
                 </p>
                 {matchingOtherProjectsCount > 0 ? (
                   <p
                     className={`text-xs uppercase tracking-widest text-secondary font-bold md:text-sm ${mono.className}`}
                   >
-                    Found {matchingOtherProjectsCount} matching {matchingOtherProjectsCount === 1 ? "record" : "records"} in the Other Projects database.
+                    {t.noResults.matchingInOther
+                      .replace("{count}", String(matchingOtherProjectsCount))
+                      .replace(
+                        "{recordsText}",
+                        matchingOtherProjectsCount === 1
+                          ? locale === "fr"
+                            ? "dossier"
+                            : locale === "es"
+                            ? "registro"
+                            : "record"
+                          : locale === "fr"
+                          ? "dossiers"
+                          : locale === "es"
+                          ? "registros"
+                          : "records"
+                      )}
                   </p>
                 ) : (
                   <p
                     className={`text-xs uppercase tracking-widest text-muted-foreground/80 ${mono.className}`}
                   >
-                    Check our broader mining tenure database in Other Projects or clear active filters.
+                    {t.noResults.checkBroader}
                   </p>
                 )}
               </div>
@@ -611,7 +636,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
               <p
                 className={`max-w-md text-xs uppercase tracking-widest leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
               >
-                Modify search parameters or clear active filters.
+                {t.noResults.modifySearch}
               </p>
             )}
 
@@ -619,16 +644,16 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
               <Link
                 href={
                   searchQuery.trim()
-                    ? `/other-projects?search=${encodeURIComponent(searchQuery.trim())}`
-                    : "/other-projects"
+                    ? getLocalizedPath(`/other-projects?search=${encodeURIComponent(searchQuery.trim())}`, locale)
+                    : getLocalizedPath("/other-projects", locale)
                 }
                 className={`group inline-flex items-center gap-3 border border-primary bg-primary px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(234,179,8,0.25)] ${mono.className}`}
               >
                 <FolderKanban className="h-4 w-4" />
                 <span>
                   {searchQuery.trim() && matchingOtherProjectsCount > 0
-                    ? `View ${matchingOtherProjectsCount} in Other Projects`
-                    : "Display Other Projects"}
+                    ? t.noResults.viewInOther.replace("{count}", String(matchingOtherProjectsCount))
+                    : t.noResults.displayOther}
                 </span>
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
@@ -642,7 +667,7 @@ export default function ProjectsPage({ showOnlyForSale = false }: ProjectsPagePr
                 }}
                 className={`border border-border bg-card/80 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-muted-foreground transition-all hover:border-primary hover:text-primary ${mono.className}`}
               >
-                RESET_QUERY
+                {t.noResults.resetQuery}
               </button>
             </div>
           </div>

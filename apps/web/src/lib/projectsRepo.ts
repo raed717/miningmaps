@@ -2,6 +2,7 @@
 import { cache } from "react";
 import { neon } from "@neondatabase/serverless";
 import type { Project, ProjectSection, ProjectSummary, QuickFact } from "@/lib/projectTypes";
+import { projects as fallbackProjects } from "./projectData";
 
 type ProjectRow = {
   id: string;
@@ -59,29 +60,54 @@ export function toSummary({ sections, ...rest }: Project): ProjectSummary {
   return { ...rest, previewImage: rest.image };
 }
 
+let lastSuccessfulProjects: Project[] | null = null;
+
 /** All projects in display order. Cached per request (generateMetadata + page share it). */
 export const getProjects = cache(async (): Promise<Project[]> => {
   const databaseUrl = process.env.DATABASE_URL;
   if (!databaseUrl) throw new Error("DATABASE_URL is not set");
   const sql = neon(databaseUrl);
-  const rows = (await sql`
-    SELECT id, type, title, summary, region, image, latitude, longitude, is_for_sale,
-           date, author, contact_email, parent_project_id, tags, sub_project_ids,
-           quick_facts, sections
-    FROM projects
-    ORDER BY sort_order NULLS LAST, created_at, id
-  `) as ProjectRow[];
-  return rows.map(rowToProject);
+  let attempts = 0;
+  while (true) {
+    try {
+      attempts++;
+      const rows = (await sql`
+        SELECT id, type, title, summary, region, image, latitude, longitude, is_for_sale,
+               date, author, contact_email, parent_project_id, tags, sub_project_ids,
+               quick_facts, sections
+        FROM projects
+        ORDER BY sort_order NULLS LAST, created_at, id
+      `) as ProjectRow[];
+      const res = rows.map(rowToProject);
+      lastSuccessfulProjects = res;
+      return res;
+    } catch (err) {
+      if (attempts >= 3) {
+        if (lastSuccessfulProjects) {
+          console.warn("Neon connection failed after 3 attempts, using last cached projects", err);
+          return lastSuccessfulProjects;
+        }
+        console.warn("Neon connection failed after 3 attempts, using local fallback projects", err);
+        return fallbackProjects as unknown as Project[];
+      }
+      await new Promise((r) => setTimeout(r, 400 * attempts));
+    }
+  }
 });
 
 /** Lightweight id + last-modified list for the projects sitemap. */
 export async function getProjectSitemapEntries(): Promise<{ id: string; updatedAt: Date }[]> {
-  const databaseUrl = process.env.DATABASE_URL;
-  if (!databaseUrl) throw new Error("DATABASE_URL is not set");
-  const rows = await neon(databaseUrl)`
-    SELECT id, updated_at FROM projects ORDER BY sort_order NULLS LAST, created_at, id
-  `;
-  return rows.map((r) => ({ id: r.id as string, updatedAt: new Date(r.updated_at as string) }));
+  try {
+    const databaseUrl = process.env.DATABASE_URL;
+    if (!databaseUrl) throw new Error("DATABASE_URL is not set");
+    const rows = await neon(databaseUrl)`
+      SELECT id, updated_at FROM projects ORDER BY sort_order NULLS LAST, created_at, id
+    `;
+    return rows.map((r) => ({ id: r.id as string, updatedAt: new Date(r.updated_at as string) }));
+  } catch (err) {
+    console.warn("Failed to fetch sitemap entries from Neon, using fallback", err);
+    return fallbackProjects.map((p) => ({ id: p.id, updatedAt: new Date() }));
+  }
 }
 
 export async function getProjectSummaries(): Promise<ProjectSummary[]> {

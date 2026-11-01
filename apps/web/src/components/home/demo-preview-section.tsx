@@ -3,8 +3,11 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
+import { useI18n } from "@/lib/i18n/context";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 export function DemoPreviewSection() {
+  const { locale } = useI18n();
   return (
     <section className="container mx-auto px-4 py-24">
       <div className="mb-12 flex flex-col items-center justify-between gap-6 md:flex-row">
@@ -15,7 +18,7 @@ export function DemoPreviewSection() {
           </p>
         </div>
         <Link
-          href="/map"
+          href={getLocalizedPath("/map", locale)}
           className="inline-flex items-center text-sm font-medium text-primary hover:underline"
         >
           View Full Portfolio <ArrowRight className="ml-1 h-4 w-4" />

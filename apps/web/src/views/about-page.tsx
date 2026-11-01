@@ -11,165 +11,41 @@ import {
   Terminal,
   Cpu,
   ShieldCheck,
-  FileText,
   Download,
   ExternalLink,
   Award,
   CheckCircle2,
   Globe,
   Building2,
-  Lock,
   Scale,
   Car,
   X,
   Eye,
-  FileCheck,
   Code2,
   Github,
   Linkedin,
   Mail,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
+import { useI18n } from "@/lib/i18n/context";
+import { aboutTranslations } from "@/lib/i18n/translations/about";
+import type { Locale } from "@/lib/i18n/types";
 
-const expertiseAreas = [
-  "Geographic Information Systems (GIS)",
-  "Property Valuation & Assessment Appeals",
-  "Property Due Diligence",
-  "Title Searches & Ownership Research",
-  "Boundary Disputes & Parcel Corrections",
-  "Mineral Claim Research & Staking Support",
-  "Geological & Exploration Mapping",
-  "LiDAR and Terrain Analysis",
-  "Survey Plan Interpretation & Georeferencing",
-  "Technical Mapping & Reporting",
+const CERT_IMAGES = [
+  "/images/general/certifications/jd uc25 plenary submission certificates 74_page-0001.jpg",
+  "/images/general/certifications/esriVideoScreenshot.png",
+  "/images/general/certifications/jd uc25 plenary submission certificates 73_page-0001.jpg",
 ];
 
-const education = [
-  {
-    institution: "University of British Columbia (UBC)",
-    degree: "UBC degree Geography (GIS) 2006",
-    image: "/images/general/University%20of%20British%20Columbia.jpg",
-    url: "https://www.ubc.ca/",
-  },
-  {
-    institution: "Real Estate Institute of British Columbia (RIBC)",
-    degree: "Professional Studies",
-    image:
-      "/images/general/Real%20Estate%20Institute%20of%20British%20Columbia.png",
-    url: "https://www.reibc.org/",
-  },
-];
+const COVERAGE_ICONS = [ShieldCheck, Building2, Globe, Car];
 
-const insuranceDetails = {
-  policyHolder: "Adamson Geomatics Ltd",
-  broker: "Zensurance Inc.",
-  underwriter: "CFC Underwriting Limited (100% Lloyd's Underwriters)",
-  referenceNumber: "7693234",
-  territorialScope: "Worldwide",
-  coverageHighlights: [
-    {
-      title: "Professional Liability (E&O)",
-      limit: "CAD $2,000,000",
-      subtext: "Per claim & in the aggregate",
-      desc: "Full civil liability and errors & omissions protection including contract breach, sub-contractor vicarious liability, and worldwide legal defense.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Commercial General Liability (CGL)",
-      limit: "CAD $2,000,000",
-      subtext: "Per occurrence & in the aggregate",
-      desc: "Comprehensive coverage for third-party bodily injury, property damage, completed operations, and personal/advertising liability.",
-      icon: Building2,
-    },
-    {
-      title: "Pollution & Environmental Liability",
-      limit: "CAD $2,000,000",
-      subtext: "Sudden, accidental & gradual coverage",
-      desc: "Full pollution liability coverage arising from professional geospatial, mineral tenure, and land consultation advice.",
-      icon: Globe,
-    },
-    {
-      title: "Non-Owned & Hired Automobile (SPF No. 6)",
-      limit: "CAD $1,000,000",
-      subtext: "Third-party liability + hired auto damage",
-      desc: "Legal protection for vehicles operated under contract or hired during field operations across Canada and the USA.",
-      icon: Car,
-    },
-  ],
-  coveredItems: [
-    {
-      title: "Errors & Omissions (E&O)",
-      limit: "CAD $2,000,000",
-      detail: "Full civil liability cover defending claims brought anywhere in the world.",
-    },
-    {
-      title: "Contractual Liability",
-      limit: "CAD $2,000,000",
-      detail: "Unambiguous protection for voluntary contracts and service agreements.",
-    },
-    {
-      title: "Sub-Contractor Vicarious Liability",
-      limit: "CAD $2,000,000",
-      detail: "Coverage extends to field partners and specialized sub-contractors.",
-    },
-    {
-      title: "Intellectual Property Rights Infringement",
-      limit: "CAD $2,000,000",
-      detail: "Legal costs, damages, and settlements for copyright/trademark claims.",
-    },
-    {
-      title: "Regulatory Costs & Legal Fines",
-      limit: "CAD $2,000,000",
-      detail: "Coverage for statutory compliance inquiries, formal hearings, and defense.",
-    },
-    {
-      title: "Loss Mitigation & Court Costs",
-      limit: "CAD $2,000,000 / $100k",
-      detail: "Direct loss mitigation expenses and expert witness / court attendance allowances.",
-    },
-  ],
-  documents: [
-    {
-      title: "CFC & Lloyd's Underwriters Policy Quote & Terms",
-      filename: "20260817 QUOTE 7693234.Pdf",
-      url: "/documents/20260817%20QUOTE%207693234.Pdf",
-      size: "211 KB",
-      description: "Full terms, declarations, and coverage limits for Adamson Geomatics Ltd underwritten by 100% Lloyd's of London Underwriters.",
-      type: "Policy Declarations",
-    },
-    {
-      title: "Zensurance Confirmation of Active Coverage",
-      filename: "Zensurance.pdf",
-      url: "/documents/Zensurance.pdf",
-      size: "88 KB",
-      description: "Payment and policy activation certificate issued via Zensurance (Quote ID: 25442617).",
-      type: "Broker Confirmation",
-    },
-  ],
-};
+const APPROACH_ICONS = [MapPin, Map, ShieldCheck];
 
-const certifications = [
-  {
-    src: "/images/general/certifications/jd uc25 plenary submission certificates 74_page-0001.jpg",
-    title: "Esri Technical Certification",
-    issuer: "Esri (Environmental Systems Research Institute)",
-    description: "Industry-standard certification in advanced geospatial analysis, cartographic design, and enterprise GIS implementations.",
-  },
-  {
-    src: "/images/general/certifications/esriVideoScreenshot.png",
-    title: "2025 Esri User Conference Plenary Presentation",
-    issuer: "Featured in Jack Dangermond's Plenary Address",
-    description: "Geospatial mapping and analytical work selected and spotlighted by Esri President Jack Dangermond during the global plenary presentation.",
-  },
-  {
-    src: "/images/general/certifications/jd uc25 plenary submission certificates 73_page-0001.jpg",
-    title: "Esri Professional Qualification",
-    issuer: "Esri (Environmental Systems Research Institute)",
-    description: "Specialized credentials recognizing expertise in geodatabase management, terrain modelling, and spatial data science.",
-  },
-];
+export default function AboutPage({ locale: overrideLocale }: { locale?: Locale }) {
+  const { locale: contextLocale } = useI18n();
+  const locale = overrideLocale || contextLocale || "en";
+  const t = aboutTranslations[locale] || aboutTranslations.en;
 
-export default function AboutPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
@@ -195,7 +71,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               className={`flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
             >
-              <Terminal className="h-4 w-4" /> WHOIS // PORTFOLIO_OWNER
+              <Terminal className="h-4 w-4" /> {t.hero.whois}
             </motion.div>
 
             <motion.div
@@ -204,7 +80,7 @@ export default function AboutPage() {
               className={`inline-flex items-center gap-2 border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-400 backdrop-blur-sm ${mono.className}`}
             >
               <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-              FULLY INSURED // CAD $2,000,000 LIABILITY
+              {t.hero.insuredBadge}
             </motion.div>
           </div>
 
@@ -234,9 +110,9 @@ export default function AboutPage() {
                 transition={{ delay: 0.15 }}
                 className="max-w-3xl text-4xl font-extrabold uppercase tracking-tighter leading-[0.88] md:text-6xl"
               >
-                Chris
+                {t.hero.name}
                 <br />
-                <span className="text-primary">Adamson, R.I.</span>
+                <span className="text-primary">{t.hero.titleSuffix}</span>
               </motion.h1>
 
               <motion.div
@@ -246,72 +122,44 @@ export default function AboutPage() {
                 className={`mt-4 flex flex-wrap gap-2 text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}
               >
                 <span className="border border-border bg-card px-2 py-1">
-                  GIS Specialist
+                  {t.hero.roles.gis}
                 </span>
                 <span className="border border-border bg-card px-2 py-1">
-                  Land Analyst
+                  {t.hero.roles.landAnalyst}
                 </span>
                 <span className="border border-border bg-card px-2 py-1">
-                  Mapping Professional
+                  {t.hero.roles.mapping}
                 </span>
                 <span className="border border-emerald-500/40 bg-emerald-500/10 text-emerald-400 px-2 py-1 font-bold">
-                  Insured Practice
+                  {t.hero.roles.insured}
                 </span>
               </motion.div>
 
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="mt-6 text-sm leading-relaxed text-muted-foreground md:text-base"
-              >
-                GIS and land information specialist with extensive experience in property
-                research, mineral tenure, mapping, land analysis, and resource
-                sector projects throughout British Columbia, Canada, and internationally.
-              </motion.p>
-
-              <motion.p
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 }}
-                className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base"
-              >
-                With a background in geography, mapping, and spatial analysis,
-                Chris works at the intersection of land ownership, property
-                valuation, mineral exploration, and geographic information
-                systems (GIS). His work combines technical mapping, historical
-                research, survey interpretation, and data analysis to help
-                clients make informed decisions regarding land, property, and
-                resource opportunities.
-              </motion.p>
+              {t.hero.bioParagraphs.slice(0, 2).map((p, idx) => (
+                <motion.p
+                  key={idx}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + idx * 0.05 }}
+                  className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base first-of-type:mt-6"
+                >
+                  {p}
+                </motion.p>
+              ))}
             </div>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-6 text-sm leading-relaxed text-muted-foreground md:text-base"
-          >
-            Chris has supported a wide range of projects including property due
-            diligence, title research, assessment appeals, mineral claim
-            investigations, exploration targeting, boundary analysis, and parcel
-            correction initiatives. His approach focuses on combining accurate
-            data, practical field knowledge, and modern GIS technologies to
-            solve complex land-related challenges.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base"
-          >
-            Over the years, Chris has worked with property owners, prospectors,
-            exploration companies, investors, and resource industry
-            professionals, providing mapping, research, and analytical services
-            tailored to each project&apos;s unique requirements.
-          </motion.p>
+          {t.hero.bioParagraphs.slice(2).map((p, idx) => (
+            <motion.p
+              key={idx + 2}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 + idx * 0.05 }}
+              className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base first-of-type:mt-6"
+            >
+              {p}
+            </motion.p>
+          ))}
         </div>
 
         {/* Insurance & Liability Protection Section */}
@@ -327,27 +175,36 @@ export default function AboutPage() {
               <h2
                 className={`text-xs font-bold tracking-[0.2em] text-emerald-400 ${mono.className}`}
               >
-                INSURANCE_&_LIABILITY_COVERAGE
+                {t.insurance.sectionTitle}
               </h2>
             </div>
             <span
               className={`rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-0.5 text-[10px] font-bold uppercase tracking-widest text-emerald-400 ${mono.className}`}
             >
-              ACTIVE & VERIFIED
+              {t.insurance.statusBadge}
             </span>
           </div>
 
           <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            Adamson Geomatics Ltd maintains comprehensive commercial and professional liability insurance underwritten{" "}
-            <strong className="text-foreground font-semibold">100% by Lloyd&apos;s of London Underwriters</strong> via{" "}
-            <strong className="text-foreground font-semibold">CFC Underwriting Limited</strong> and{" "}
-            <strong className="text-foreground font-semibold">Zensurance</strong>. All consulting, land acquisition, GIS mapping, and field operations carry robust worldwide protection.
+            {t.insurance.intro.prefix}
+            <strong className="text-foreground font-semibold">
+              {t.insurance.intro.lloydsText}
+            </strong>
+            {t.insurance.intro.viaText}
+            <strong className="text-foreground font-semibold">
+              {t.insurance.intro.cfcText}
+            </strong>
+            {t.insurance.intro.andText}
+            <strong className="text-foreground font-semibold">
+              {t.insurance.intro.zensuranceText}
+            </strong>
+            {t.insurance.intro.suffix}
           </p>
 
           {/* Quick Metrics Grid */}
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {insuranceDetails.coverageHighlights.map((item, idx) => {
-              const Icon = item.icon;
+            {t.insurance.cards.map((item, idx) => {
+              const Icon = COVERAGE_ICONS[idx % COVERAGE_ICONS.length];
               return (
                 <div
                   key={idx}
@@ -361,7 +218,7 @@ export default function AboutPage() {
                       <span
                         className={`text-[9px] uppercase tracking-widest text-muted-foreground ${mono.className}`}
                       >
-                        {insuranceDetails.territorialScope}
+                        {t.insurance.territorialScope}
                       </span>
                     </div>
                     <h3 className="text-xs font-bold uppercase tracking-tight text-foreground">
@@ -389,17 +246,19 @@ export default function AboutPage() {
             <div className="border-b border-border bg-muted/40 px-5 py-3.5 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Scale className="h-4 w-4 text-primary" />
-                <span className={`text-xs font-bold uppercase tracking-wider text-foreground ${mono.className}`}>
-                  Policy Scope & Insuring Clauses (Ref: #{insuranceDetails.referenceNumber})
+                <span
+                  className={`text-xs font-bold uppercase tracking-wider text-foreground ${mono.className}`}
+                >
+                  {t.insurance.table.headerTitle}
                 </span>
               </div>
               <span className={`text-[10px] text-muted-foreground ${mono.className}`}>
-                Security: 100% Lloyd&apos;s of London
+                {t.insurance.table.securityNote}
               </span>
             </div>
 
             <div className="divide-y divide-border/60">
-              {insuranceDetails.coveredItems.map((clause, i) => (
+              {t.insurance.table.items.map((clause, i) => (
                 <div
                   key={i}
                   className="flex flex-col gap-2 px-5 py-3.5 sm:flex-row sm:items-center sm:justify-between hover:bg-muted/20 transition-colors"
@@ -416,7 +275,9 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div className="sm:text-right shrink-0">
-                    <span className={`inline-block text-xs font-bold text-primary ${mono.className}`}>
+                    <span
+                      className={`inline-block text-xs font-bold text-primary ${mono.className}`}
+                    >
                       {clause.limit}
                     </span>
                   </div>
@@ -427,14 +288,16 @@ export default function AboutPage() {
 
           {/* Policy Documents Download Box */}
           <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {insuranceDetails.documents.map((doc, idx) => (
+            {t.insurance.documents.items.map((doc, idx) => (
               <div
                 key={idx}
                 className="flex flex-col justify-between rounded-lg border border-border/80 bg-card/60 p-5 transition-colors hover:border-primary/40"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className={`text-[9px] font-bold uppercase tracking-widest text-primary ${mono.className}`}>
+                    <span
+                      className={`text-[9px] font-bold uppercase tracking-widest text-primary ${mono.className}`}
+                    >
                       {doc.type}
                     </span>
                     <span className={`text-[9px] text-muted-foreground ${mono.className}`}>
@@ -457,7 +320,7 @@ export default function AboutPage() {
                     className="inline-flex items-center justify-center gap-1.5 rounded-md bg-primary px-3.5 py-2 text-xs font-bold uppercase tracking-wider text-black shadow hover:bg-primary/90 transition-colors"
                   >
                     <Eye className="h-3.5 w-3.5" />
-                    View Document
+                    {t.insurance.documents.viewDoc}
                   </a>
                   <a
                     href={doc.url}
@@ -465,7 +328,7 @@ export default function AboutPage() {
                     className="inline-flex items-center justify-center gap-1.5 rounded-md border border-border bg-background px-3.5 py-2 text-xs font-bold uppercase tracking-wider text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-colors"
                   >
                     <Download className="h-3.5 w-3.5" />
-                    Download
+                    {t.insurance.documents.download}
                   </a>
                 </div>
               </div>
@@ -485,55 +348,62 @@ export default function AboutPage() {
             <h2
               className={`text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
             >
-              CERTIFICATIONS_&_INDUSTRY_RECOGNITION
+              {t.certifications.sectionTitle}
             </h2>
           </div>
 
           <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground mb-8">
-            Demonstrated mastery in geographic information systems, spatial database design, and international recognition at the industry&apos;s leading geospatial venues.
+            {t.certifications.intro}
           </p>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {certifications.map((cert, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card/50 transition-all duration-300 hover:border-primary/40"
-              >
-                <div
-                  onClick={() => setSelectedImage(cert.src)}
-                  className="relative h-52 w-full cursor-zoom-in overflow-hidden border-b border-border bg-black/60 p-4"
+            {t.certifications.items.map((cert, idx) => {
+              const imageSrc = CERT_IMAGES[idx] || CERT_IMAGES[0];
+              return (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card/50 transition-all duration-300 hover:border-primary/40"
                 >
-                  <img
-                    src={cert.src}
-                    alt={cert.title}
-                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
-                    <span className={`inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-black ${mono.className}`}>
-                      <Eye className="h-3 w-3" /> Click to Zoom
-                    </span>
+                  <div
+                    onClick={() => setSelectedImage(imageSrc)}
+                    className="relative h-52 w-full cursor-zoom-in overflow-hidden border-b border-border bg-black/60 p-4"
+                  >
+                    <img
+                      src={imageSrc}
+                      alt={cert.title}
+                      className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
+                      <span
+                        className={`inline-flex items-center gap-1.5 rounded-full bg-primary/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-black ${mono.className}`}
+                      >
+                        <Eye className="h-3 w-3" /> {t.certifications.zoomHint}
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="p-5 flex flex-col flex-1 justify-between">
-                  <div>
-                    <span className={`text-[9px] font-bold uppercase tracking-widest text-primary ${mono.className}`}>
-                      {cert.issuer}
-                    </span>
-                    <h3 className="mt-1 text-sm font-bold uppercase tracking-tight text-white">
-                      {cert.title}
-                    </h3>
-                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                      {cert.description}
-                    </p>
+                  <div className="p-5 flex flex-col flex-1 justify-between">
+                    <div>
+                      <span
+                        className={`text-[9px] font-bold uppercase tracking-widest text-primary ${mono.className}`}
+                      >
+                        {cert.issuer}
+                      </span>
+                      <h3 className="mt-1 text-sm font-bold uppercase tracking-tight text-white">
+                        {cert.title}
+                      </h3>
+                      <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                        {cert.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
 
@@ -549,45 +419,56 @@ export default function AboutPage() {
             <h2
               className={`text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
             >
-              EDUCATION_&_BACKGROUND
+              {t.education.sectionTitle}
             </h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            {education.map((item, i) => {
-              return (
-                <motion.div
-                  key={item.institution}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group border border-border bg-card/50 p-0 transition-colors hover:border-primary/40"
-                >
-                  <div className="relative h-44 w-full overflow-hidden border-b border-border bg-black md:h-56">
-                    {item.url ? (
-                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex h-full w-full items-center justify-center p-6">
-                        <img src={item.image} alt={item.institution} className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110" />
-                      </a>
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center p-6">
-                        <img src={item.image} alt={item.institution} className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110" />
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-sm font-bold uppercase tracking-tight text-white">
-                      {item.institution}
-                    </h3>
-                    <p
-                      className={`mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}
+            {t.education.items.map((item, i) => (
+              <motion.div
+                key={item.institution}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group border border-border bg-card/50 p-0 transition-colors hover:border-primary/40"
+              >
+                <div className="relative h-44 w-full overflow-hidden border-b border-border bg-black md:h-56">
+                  {item.url ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-full w-full items-center justify-center p-6"
                     >
-                      {item.degree}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
+                      <img
+                        src={item.image}
+                        alt={item.institution}
+                        className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </a>
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center p-6">
+                      <img
+                        src={item.image}
+                        alt={item.institution}
+                        className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                  )}
+                </div>
+                <div className="p-5">
+                  <h3 className="text-sm font-bold uppercase tracking-tight text-white">
+                    {item.institution}
+                  </h3>
+                  <p
+                    className={`mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}
+                  >
+                    {item.degree}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
@@ -603,12 +484,12 @@ export default function AboutPage() {
             <h2
               className={`text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
             >
-              AREAS_OF_EXPERTISE
+              {t.expertise.sectionTitle}
             </h2>
           </div>
 
           <div className="grid gap-px border border-border bg-border md:grid-cols-2">
-            {expertiseAreas.map((area, i) => (
+            {t.expertise.items.map((area, i) => (
               <motion.div
                 key={area}
                 initial={{ opacity: 0, x: -10 }}
@@ -640,41 +521,31 @@ export default function AboutPage() {
             <h2
               className={`text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
             >
-              PROFESSIONAL_APPROACH
+              {t.approach.sectionTitle}
             </h2>
           </div>
 
           <div className="border-l-2 border-primary/40 pl-6 md:pl-8">
-            <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-              Every project begins with the same objective: delivering reliable
-              information that clients can confidently use to make decisions.
-              Whether supporting a property owner with a boundary issue,
-              assisting with a tax appeal, researching land ownership, or
-              helping evaluate mineral opportunities, the focus remains on
-              accuracy, transparency, and practical results.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
-              By combining technical GIS expertise with a strong understanding
-              of land records, mapping systems, and property research, Chris
-              provides solutions that bridge the gap between complex spatial
-              data and real-world decision making.
-            </p>
+            {t.approach.paragraphs.map((p, idx) => (
+              <p
+                key={idx}
+                className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base first:mt-0"
+              >
+                {p}
+              </p>
+            ))}
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            {[
-              { icon: MapPin, text: "Serving British Columbia & Canada" },
-              { icon: Map, text: "20+ Years of Experience" },
-              { icon: ShieldCheck, text: "CAD $2.0M Insured & Bonded" },
-            ].map((item) => {
-              const Icon = item.icon;
+            {t.approach.badges.map((badgeText, idx) => {
+              const Icon = APPROACH_ICONS[idx % APPROACH_ICONS.length];
               return (
                 <div
-                  key={item.text}
+                  key={badgeText}
                   className={`flex items-center gap-2 border border-border bg-card px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}
                 >
                   <Icon className="h-3 w-3 text-primary" />
-                  {item.text}
+                  {badgeText}
                 </div>
               );
             })}
@@ -695,13 +566,14 @@ export default function AboutPage() {
               <h2
                 className={`text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
               >
-                PLATFORM_ARCHITECTURE // SOFTWARE_ENGINEERING
+                {t.engineering.sectionTitle}
               </h2>
             </div>
+
             <span
               className={`inline-flex items-center gap-1.5 border border-primary/40 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary ${mono.className}`}
             >
-              CORE_DEVELOPER_DOSSIER
+              {t.engineering.dossierBadge}
             </span>
           </div>
 
@@ -726,7 +598,7 @@ export default function AboutPage() {
                   className={`flex items-center gap-2 border border-secondary/40 bg-secondary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-secondary ${mono.className}`}
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
-                  AVAILABLE_FOR_WORK
+                  {t.engineering.statusBadge}
                 </div>
               </div>
 
@@ -737,40 +609,40 @@ export default function AboutPage() {
                     <span
                       className={`text-[10px] font-bold uppercase tracking-[0.22em] text-primary ${mono.className}`}
                     >
-                      PLATFORM_ARCHITECT
+                      {t.engineering.roleTag}
                     </span>
                   </div>
 
                   <h3 className="mt-2 text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-white">
-                    Raed Guembri
+                    {t.engineering.title}
                   </h3>
 
                   <p
                     className={`mt-1 text-xs font-semibold uppercase tracking-wider text-primary ${mono.className}`}
                   >
-                    Software Architect Engineer
+                    {t.engineering.subtitle}
                   </p>
 
                   <div className="mt-4 border-l-2 border-primary/60 pl-4 py-2 bg-background/50">
                     <p
                       className={`text-xs md:text-sm font-medium italic leading-relaxed text-zinc-200 ${mono.className}`}
                     >
-                      "I design and ship full-stack systems where architecture, interface motion, and developer discipline work like one instrument."
+                      {t.engineering.quote}
                     </p>
                   </div>
 
                   <p className="mt-4 text-xs md:text-sm leading-relaxed text-muted-foreground">
-                    From Web GIS platforms and AI-assisted recruitment tools to dashboards, automated quality systems, VPS deployments, and data-heavy products, I build software that feels fast, legible, observable, and ready to scale.
+                    {t.engineering.description}
                   </p>
 
                   <div className="mt-5 rounded-md border border-secondary/30 bg-secondary/10 p-3">
                     <div
                       className={`text-[10px] font-bold uppercase tracking-wider text-secondary mb-1 flex items-center gap-1.5 ${mono.className}`}
                     >
-                      <CheckCircle2 className="h-3.5 w-3.5" /> AVAILABILITY
+                      <CheckCircle2 className="h-3.5 w-3.5" /> {t.engineering.availabilityHeading}
                     </div>
                     <p className="text-xs text-foreground/90">
-                      Open to software engineering, architecture, QA automation, and AI-integrated product work.
+                      {t.engineering.availabilityText}
                     </p>
                   </div>
                 </div>
@@ -784,7 +656,7 @@ export default function AboutPage() {
                     className={`inline-flex items-center gap-2 border border-primary bg-primary px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-black transition-all hover:bg-transparent hover:text-primary ${mono.className}`}
                   >
                     <Globe className="h-3.5 w-3.5" />
-                    Portfolio
+                    {t.engineering.buttons.portfolio}
                     <ExternalLink className="h-3 w-3" />
                   </a>
 
@@ -795,7 +667,7 @@ export default function AboutPage() {
                     className={`inline-flex items-center gap-2 border border-border bg-card px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:border-primary hover:text-white ${mono.className}`}
                   >
                     <Github className="h-3.5 w-3.5 text-primary" />
-                    GitHub
+                    {t.engineering.buttons.github}
                   </a>
 
                   <a
@@ -805,7 +677,7 @@ export default function AboutPage() {
                     className={`inline-flex items-center gap-2 border border-border bg-card px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:border-primary hover:text-white ${mono.className}`}
                   >
                     <Linkedin className="h-3.5 w-3.5 text-primary" />
-                    LinkedIn
+                    {t.engineering.buttons.linkedin}
                   </a>
 
                   <a
@@ -813,7 +685,7 @@ export default function AboutPage() {
                     className={`inline-flex items-center gap-2 border border-border bg-card px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground transition-colors hover:border-secondary hover:text-secondary ${mono.className}`}
                   >
                     <Mail className="h-3.5 w-3.5 text-secondary" />
-                    raed.guembri99@gmail.com
+                    {t.engineering.buttons.email}
                   </a>
                 </div>
               </div>
@@ -854,4 +726,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

@@ -11,8 +11,14 @@ import {
 } from "lucide-react";
 import { mono } from "@/lib/fonts";
 import { useHomePreview } from "@/lib/projectDataContext";
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 export function ProjectPreviewCarouselSection() {
+  const { locale } = useI18n();
+  const t = (homeTranslations[locale] || homeTranslations.en).projectPreview;
+
   // First top-level projects (with previewImage) and the total, loaded on the server.
   const { projects: previewProjects, totalCount } = useHomePreview();
   const forSaleCount = useMemo(
@@ -36,26 +42,25 @@ export function ProjectPreviewCarouselSection() {
             <div
               className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary ${mono.className}`}
             >
-              <Radar className="h-4 w-4" /> FEATURED_PROJECTS
+              <Radar className="h-4 w-4" /> {t.badge}
             </div>
             <h2 className="mt-4 text-3xl font-extrabold uppercase tracking-tighter leading-[0.88] md:text-5xl">
-              Project
+              {t.title}
               <br />
-              Portfolio
+              {t.titleHighlight}
             </h2>
             <p
               className={`mt-4 max-w-lg text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
             >
-              Active regions, available properties, and featured cartography
-              from the Adamson Geomatics project archive.
+              {t.description}
             </p>
           </div>
 
           <Link
-            href="/projects"
+            href={getLocalizedPath("/projects", locale)}
             className={`group inline-flex shrink-0 items-center gap-3 border border-primary bg-primary px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-black transition-all hover:bg-transparent hover:text-primary ${mono.className}`}
           >
-            View All Projects
+            {t.viewAll}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </motion.div>
@@ -68,12 +73,13 @@ export function ProjectPreviewCarouselSection() {
           className={`mb-8 flex items-center justify-between border-b border-border pb-3 text-[10px] uppercase tracking-[0.18em] text-[#555] ${mono.className}`}
         >
           <span>
-            Showing {previewProjects.length} of{" "}
-            {totalCount} Projects
+            {t.showing
+              .replace("{count}", String(previewProjects.length))
+              .replace("{total}", String(totalCount))}
           </span>
           <span className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
-            {forSaleCount} Available for Acquisition
+            {t.available.replace("{count}", String(forSaleCount))}
           </span>
         </motion.div>
 
@@ -88,7 +94,7 @@ export function ProjectPreviewCarouselSection() {
               transition={{ duration: 0.4, delay: index * 0.08 }}
             >
               <Link
-                href={`/projects/${project.id}`}
+                href={getLocalizedPath(`/projects/${project.id}`, locale)}
                 aria-label={`View ${project.title}`}
                 className="group relative block overflow-hidden border border-border bg-card transition-colors duration-500 hover:border-primary"
               >
@@ -110,7 +116,7 @@ export function ProjectPreviewCarouselSection() {
                           : "border border-primary/60 bg-primary/20 text-primary backdrop-blur-sm"
                       } ${mono.className}`}
                     >
-                      {project.isForSale ? "FOR SALE" : "ACTIVE"}
+                      {project.isForSale ? t.statusForSale : t.statusActive}
                     </div>
                   </div>
 
@@ -134,8 +140,7 @@ export function ProjectPreviewCarouselSection() {
                   <p
                     className={`mt-3 line-clamp-2 text-[10px] uppercase tracking-[0.14em] leading-relaxed text-muted-foreground md:text-xs ${mono.className}`}
                   >
-                    {project.summary ||
-                      "Open the project dossier for maps, highlights, and regional documentation."}
+                    {project.summary || t.defaultSummary}
                   </p>
 
                   {/* Tags */}
@@ -162,7 +167,7 @@ export function ProjectPreviewCarouselSection() {
                     <span
                       className={`text-[9px] uppercase tracking-[0.2em] text-muted-foreground ${mono.className}`}
                     >
-                      View Dossier
+                      {t.viewDossier}
                     </span>
                     <div className="flex h-8 w-8 items-center justify-center border border-border text-muted-foreground transition-all group-hover:border-primary group-hover:bg-primary group-hover:text-black">
                       <ArrowUpRight className="h-4 w-4" />
@@ -184,21 +189,21 @@ export function ProjectPreviewCarouselSection() {
           <p
             className={`text-[10px] uppercase tracking-[0.18em] text-muted-foreground md:text-xs ${mono.className}`}
           >
-            Explore the complete project archive, spatial map view, and acquisition-ready properties.
+            {t.ctaText}
           </p>
           <div className="flex shrink-0 gap-3">
             <Link
-              href="/map"
+              href={getLocalizedPath("/map", locale)}
               className={`inline-flex items-center gap-2 border border-border bg-card px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:border-primary hover:text-white md:text-xs ${mono.className}`}
             >
               <MapPin className="h-3.5 w-3.5 text-primary" />
-              Map View
+              {t.ctaMap}
             </Link>
             <Link
-              href="/projects?filter=for-sale"
+              href={getLocalizedPath("/projects?filter=for-sale", locale)}
               className={`inline-flex items-center gap-2 border border-secondary/50 bg-secondary/10 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.18em] text-secondary transition-colors hover:border-secondary hover:bg-secondary/20 md:text-xs ${mono.className}`}
             >
-              For Sale
+              {t.ctaForSale}
               <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>

@@ -3,6 +3,13 @@ import { notFound } from "next/navigation";
 import { mockPosts } from "@/lib/postData";
 import { getProject, getProjects, getProjectSummaries, toSummary } from "@/lib/projectsRepo";
 import type { ProjectPageData } from "@/lib/projectTypes";
+import { parseLocaleFromPath } from "@/lib/i18n/navigation";
+import { aboutTranslations } from "@/lib/i18n/translations/about";
+import { servicesTranslations } from "@/lib/i18n/translations/services";
+import { contactTranslations } from "@/lib/i18n/translations/contact";
+import { homeTranslations } from "@/lib/i18n/translations/home";
+import { mapTranslations } from "@/lib/i18n/translations/map";
+import { projectsTranslations } from "@/lib/i18n/translations/projects";
 import ClientPage from "./client";
 
 // Projects come from Neon. Pages are prerendered and regenerated in the background
@@ -35,10 +42,29 @@ const STATIC_PAGES = [
 async function routeExists(slugArray: string[]): Promise<boolean> {
   const [section, id] = slugArray;
   if (slugArray.length === 0) return true;
-  if (slugArray.length === 1) return STATIC_PAGES.includes(section);
+  if (slugArray.length === 1) {
+    if (section === "es" || section === "fr") return true;
+    return STATIC_PAGES.includes(section);
+  }
   if (slugArray.length === 2) {
+    if (
+      (section === "es" || section === "fr") &&
+      (id === "about" ||
+        id === "services" ||
+        id === "contact" ||
+        id === "map" ||
+        id === "projects" ||
+        id === "properties")
+    )
+      return true;
     if (section === "projects") return !!(await getProject(id));
     if (section === "post" || section === "posts") return mockPosts.some((p) => p.id === id);
+  }
+  if (slugArray.length === 3) {
+    const [lang, sec, projId] = slugArray;
+    if ((lang === "es" || lang === "fr") && sec === "projects") {
+      return !!(await getProject(projId));
+    }
   }
   return false;
 }
@@ -47,8 +73,15 @@ async function routeExists(slugArray: string[]): Promise<boolean> {
 async function getPageData(slugArray: string[]): Promise<ProjectPageData> {
   const [section, id] = slugArray;
 
-  if (section === "projects" && id) {
-    const project = await getProject(id);
+  const isLocalizedProjectDetail =
+    slugArray.length === 3 &&
+    (slugArray[0] === "es" || slugArray[0] === "fr") &&
+    slugArray[1] === "projects" &&
+    !!slugArray[2];
+
+  if ((section === "projects" && id) || isLocalizedProjectDetail) {
+    const targetProjectId = isLocalizedProjectDetail ? slugArray[2] : id;
+    const project = await getProject(targetProjectId);
     if (!project) return {};
     const relatedIds = new Set([project.parentProjectId, ...(project.subProjectIds ?? [])]);
     const related = (await getProjects()).filter((p) => relatedIds.has(p.id)).map(toSummary);
@@ -56,13 +89,19 @@ async function getPageData(slugArray: string[]): Promise<ProjectPageData> {
   }
 
   if (
-    slugArray.length === 1 &&
-    (section === "projects" || section === "properties" || section === "map" || section === "dashboard")
+    (slugArray.length === 1 &&
+      (section === "projects" || section === "properties" || section === "map" || section === "dashboard")) ||
+    (slugArray.length === 2 &&
+      (section === "es" || section === "fr") &&
+      (id === "projects" || id === "properties" || id === "map"))
   ) {
     return { summaries: await getProjectSummaries() };
   }
 
-  if (slugArray.length === 0) {
+  if (
+    slugArray.length === 0 ||
+    (slugArray.length === 1 && (slugArray[0] === "es" || slugArray[0] === "fr"))
+  ) {
     const topLevel = (await getProjectSummaries()).filter((p) => p.type !== "subproject");
     return { homePreview: { projects: topLevel.slice(0, 6), totalCount: topLevel.length } };
   }
@@ -151,19 +190,346 @@ export async function generateMetadata({
   params: Promise<{ slug?: string[] }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  if (!(await routeExists(slug?.filter(Boolean) ?? []))) notFound();
-  const path = slug ? `/${slug.join("/")}` : "/";
+  const slugArray = slug?.filter(Boolean) ?? [];
+  if (!(await routeExists(slugArray))) notFound();
+  const path = slugArray.length > 0 ? `/${slugArray.join("/")}` : "/";
+  const { locale, cleanPath } = parseLocaleFromPath(path);
   const canonical = `https://www.miningpropertymaps.com${path === "/" ? "" : path}`;
+
+  // Localized Home page (/, /es, /fr)
+  if (cleanPath === "/") {
+    const t = homeTranslations[locale] || homeTranslations.en;
+    return {
+      title: t.meta.title,
+      description: t.meta.description,
+      alternates: {
+        canonical,
+        languages: {
+          en: "https://www.miningpropertymaps.com",
+          es: "https://www.miningpropertymaps.com/es",
+          fr: "https://www.miningpropertymaps.com/fr",
+          "x-default": "https://www.miningpropertymaps.com",
+        },
+      },
+      openGraph: {
+        title: t.meta.title,
+        description: t.meta.description,
+        url: canonical,
+        siteName,
+        locale: locale === "en" ? "en_US" : locale === "es" ? "es_ES" : "fr_FR",
+        alternateLocale:
+          locale === "en"
+            ? ["es_ES", "fr_FR"]
+            : locale === "es"
+            ? ["en_US", "fr_FR"]
+            : ["en_US", "es_ES"],
+        type: "website",
+        images: [
+          {
+            url: "https://www.miningpropertymaps.com/opengraph-image.png",
+            width: 1200,
+            height: 630,
+            alt: t.meta.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: t.meta.title,
+        description: t.meta.description,
+        images: ["https://www.miningpropertymaps.com/opengraph-image.png"],
+      },
+    };
+  }
+
+  // Localized About page (/about, /es/about, /fr/about)
+  if (cleanPath === "/about") {
+    const t = aboutTranslations[locale] || aboutTranslations.en;
+    return {
+      title: t.meta.title,
+      description: t.meta.description,
+      alternates: {
+        canonical,
+        languages: {
+          en: "https://www.miningpropertymaps.com/about",
+          es: "https://www.miningpropertymaps.com/es/about",
+          fr: "https://www.miningpropertymaps.com/fr/about",
+          "x-default": "https://www.miningpropertymaps.com/about",
+        },
+      },
+      openGraph: {
+        title: t.meta.title,
+        description: t.meta.description,
+        url: canonical,
+        siteName,
+        locale: locale === "en" ? "en_US" : locale === "es" ? "es_ES" : "fr_FR",
+        alternateLocale:
+          locale === "en"
+            ? ["es_ES", "fr_FR"]
+            : locale === "es"
+            ? ["en_US", "fr_FR"]
+            : ["en_US", "es_ES"],
+        type: "website",
+        images: [
+          {
+            url: "https://www.miningpropertymaps.com/opengraph-image.png",
+            width: 1200,
+            height: 630,
+            alt: t.meta.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: t.meta.title,
+        description: t.meta.description,
+        images: ["https://www.miningpropertymaps.com/opengraph-image.png"],
+      },
+    };
+  }
+
+  // Localized Services page (/services, /es/services, /fr/services)
+  if (cleanPath === "/services") {
+    const t = servicesTranslations[locale] || servicesTranslations.en;
+    return {
+      title: t.meta.title,
+      description: t.meta.description,
+      alternates: {
+        canonical,
+        languages: {
+          en: "https://www.miningpropertymaps.com/services",
+          es: "https://www.miningpropertymaps.com/es/services",
+          fr: "https://www.miningpropertymaps.com/fr/services",
+          "x-default": "https://www.miningpropertymaps.com/services",
+        },
+      },
+      openGraph: {
+        title: t.meta.title,
+        description: t.meta.description,
+        url: canonical,
+        siteName,
+        locale: locale === "en" ? "en_US" : locale === "es" ? "es_ES" : "fr_FR",
+        alternateLocale:
+          locale === "en"
+            ? ["es_ES", "fr_FR"]
+            : locale === "es"
+            ? ["en_US", "fr_FR"]
+            : ["en_US", "es_ES"],
+        type: "website",
+        images: [
+          {
+            url: "https://www.miningpropertymaps.com/opengraph-image.png",
+            width: 1200,
+            height: 630,
+            alt: t.meta.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: t.meta.title,
+        description: t.meta.description,
+        images: ["https://www.miningpropertymaps.com/opengraph-image.png"],
+      },
+    };
+  }
+
+  // Localized Contact page (/contact, /es/contact, /fr/contact)
+  if (cleanPath === "/contact") {
+    const t = contactTranslations[locale] || contactTranslations.en;
+    return {
+      title: t.meta.title,
+      description: t.meta.description,
+      alternates: {
+        canonical,
+        languages: {
+          en: "https://www.miningpropertymaps.com/contact",
+          es: "https://www.miningpropertymaps.com/es/contact",
+          fr: "https://www.miningpropertymaps.com/fr/contact",
+          "x-default": "https://www.miningpropertymaps.com/contact",
+        },
+      },
+      openGraph: {
+        title: t.meta.title,
+        description: t.meta.description,
+        url: canonical,
+        siteName,
+        locale: locale === "en" ? "en_US" : locale === "es" ? "es_ES" : "fr_FR",
+        alternateLocale:
+          locale === "en"
+            ? ["es_ES", "fr_FR"]
+            : locale === "es"
+            ? ["en_US", "fr_FR"]
+            : ["en_US", "es_ES"],
+        type: "website",
+        images: [
+          {
+            url: "https://www.miningpropertymaps.com/opengraph-image.png",
+            width: 1200,
+            height: 630,
+            alt: t.meta.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: t.meta.title,
+        description: t.meta.description,
+        images: ["https://www.miningpropertymaps.com/opengraph-image.png"],
+      },
+    };
+  }
+
+  // Localized Map page (/map, /es/map, /fr/map)
+  if (cleanPath === "/map") {
+    const t = mapTranslations[locale] || mapTranslations.en;
+    return {
+      title: t.meta.title,
+      description: t.meta.description,
+      alternates: {
+        canonical,
+        languages: {
+          en: "https://www.miningpropertymaps.com/map",
+          es: "https://www.miningpropertymaps.com/es/map",
+          fr: "https://www.miningpropertymaps.com/fr/map",
+          "x-default": "https://www.miningpropertymaps.com/map",
+        },
+      },
+      openGraph: {
+        title: t.meta.title,
+        description: t.meta.description,
+        url: canonical,
+        siteName,
+        locale: locale === "en" ? "en_US" : locale === "es" ? "es_ES" : "fr_FR",
+        alternateLocale:
+          locale === "en"
+            ? ["es_ES", "fr_FR"]
+            : locale === "es"
+            ? ["en_US", "fr_FR"]
+            : ["en_US", "es_ES"],
+        type: "website",
+        images: [
+          {
+            url: "https://www.miningpropertymaps.com/opengraph-image.png",
+            width: 1200,
+            height: 630,
+            alt: t.meta.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: t.meta.title,
+        description: t.meta.description,
+        images: ["https://www.miningpropertymaps.com/opengraph-image.png"],
+      },
+    };
+  }
+
+  // Localized Projects page (/projects, /es/projects, /fr/projects)
+  if (cleanPath === "/projects") {
+    const t = projectsTranslations[locale] || projectsTranslations.en;
+    return {
+      title: t.meta.projectsTitle,
+      description: t.meta.projectsDescription,
+      alternates: {
+        canonical,
+        languages: {
+          en: "https://www.miningpropertymaps.com/projects",
+          es: "https://www.miningpropertymaps.com/es/projects",
+          fr: "https://www.miningpropertymaps.com/fr/projects",
+          "x-default": "https://www.miningpropertymaps.com/projects",
+        },
+      },
+      openGraph: {
+        title: t.meta.projectsTitle,
+        description: t.meta.projectsDescription,
+        url: canonical,
+        siteName,
+        locale: locale === "en" ? "en_US" : locale === "es" ? "es_ES" : "fr_FR",
+        alternateLocale:
+          locale === "en"
+            ? ["es_ES", "fr_FR"]
+            : locale === "es"
+            ? ["en_US", "fr_FR"]
+            : ["en_US", "es_ES"],
+        type: "website",
+        images: [
+          {
+            url: "https://www.miningpropertymaps.com/opengraph-image.png",
+            width: 1200,
+            height: 630,
+            alt: t.meta.projectsTitle,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: t.meta.projectsTitle,
+        description: t.meta.projectsDescription,
+        images: ["https://www.miningpropertymaps.com/opengraph-image.png"],
+      },
+    };
+  }
+
+  // Localized Properties page (/properties, /es/properties, /fr/properties)
+  if (cleanPath === "/properties") {
+    const t = projectsTranslations[locale] || projectsTranslations.en;
+    return {
+      title: t.meta.propertiesTitle,
+      description: t.meta.propertiesDescription,
+      alternates: {
+        canonical,
+        languages: {
+          en: "https://www.miningpropertymaps.com/properties",
+          es: "https://www.miningpropertymaps.com/es/properties",
+          fr: "https://www.miningpropertymaps.com/fr/properties",
+          "x-default": "https://www.miningpropertymaps.com/properties",
+        },
+      },
+      openGraph: {
+        title: t.meta.propertiesTitle,
+        description: t.meta.propertiesDescription,
+        url: canonical,
+        siteName,
+        locale: locale === "en" ? "en_US" : locale === "es" ? "es_ES" : "fr_FR",
+        alternateLocale:
+          locale === "en"
+            ? ["es_ES", "fr_FR"]
+            : locale === "es"
+            ? ["en_US", "fr_FR"]
+            : ["en_US", "es_ES"],
+        type: "website",
+        images: [
+          {
+            url: "https://www.miningpropertymaps.com/opengraph-image.png",
+            width: 1200,
+            height: 630,
+            alt: t.meta.propertiesTitle,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: t.meta.propertiesTitle,
+        description: t.meta.propertiesDescription,
+        images: ["https://www.miningpropertymaps.com/opengraph-image.png"],
+      },
+    };
+  }
 
   // Static pages
   if (pageMeta[path]) {
     return { ...pageMeta[path], alternates: { canonical } };
   }
 
-  // Project detail pages: /projects/[id]
-  const slugArray = slug ?? [];
-  if (slugArray[0] === "projects" && slugArray[1]) {
-    const project = await getProject(slugArray[1]);
+  // Project detail pages: /projects/[id], /es/projects/[id], /fr/projects/[id]
+  const isProjDetail =
+    (slugArray[0] === "projects" && !!slugArray[1]) ||
+    ((slugArray[0] === "es" || slugArray[0] === "fr") && slugArray[1] === "projects" && !!slugArray[2]);
+  if (isProjDetail) {
+    const targetId = slugArray[0] === "projects" ? slugArray[1] : slugArray[2];
+    const project = await getProject(targetId);
     if (project) {
       const location = project.region;
       const tags = project.tags?.join(", ") ?? "";
@@ -180,7 +546,15 @@ export async function generateMetadata({
       return {
         title: metaTitle,
         description: metaDescription,
-        alternates: { canonical },
+        alternates: {
+          canonical,
+          languages: {
+            en: `https://www.miningpropertymaps.com/projects/${project.id}`,
+            es: `https://www.miningpropertymaps.com/es/projects/${project.id}`,
+            fr: `https://www.miningpropertymaps.com/fr/projects/${project.id}`,
+            "x-default": `https://www.miningpropertymaps.com/projects/${project.id}`,
+          },
+        },
         openGraph: {
           title: metaTitle,
           description: metaDescription,
@@ -257,10 +631,29 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const projects = await getProjects();
+  let projects: Awaited<ReturnType<typeof getProjects>> = [];
+  try {
+    projects = await getProjects();
+  } catch (err) {
+    console.warn("generateStaticParams: falling back to static routes only due to DB connection error", err);
+  }
   return [
     { slug: [""] },
     ...STATIC_PAGES.map((page) => ({ slug: [page] })),
+    { slug: ["es"] },
+    { slug: ["fr"] },
+    { slug: ["es", "about"] },
+    { slug: ["fr", "about"] },
+    { slug: ["es", "services"] },
+    { slug: ["fr", "services"] },
+    { slug: ["es", "contact"] },
+    { slug: ["fr", "contact"] },
+    { slug: ["es", "map"] },
+    { slug: ["fr", "map"] },
+    { slug: ["es", "projects"] },
+    { slug: ["fr", "projects"] },
+    { slug: ["es", "properties"] },
+    { slug: ["fr", "properties"] },
     ...projects.map((project) => ({ slug: ["projects", project.id] })),
     ...mockPosts.flatMap((post) => [
       { slug: ["post", post.id] },
@@ -284,7 +677,93 @@ const pageLabels: Record<string, string> = {
 };
 
 function buildBreadcrumbJsonLd(slugArray: string[], projectTitle?: string) {
-  if (slugArray.length === 0) return null;
+  if (
+    slugArray.length === 0 ||
+    (slugArray.length === 1 && (slugArray[0] === "es" || slugArray[0] === "fr"))
+  ) {
+    return null;
+  }
+
+  const isLocalized =
+    (slugArray[0] === "es" || slugArray[0] === "fr") &&
+    (slugArray[1] === "about" ||
+      slugArray[1] === "services" ||
+      slugArray[1] === "contact" ||
+      slugArray[1] === "map" ||
+      slugArray[1] === "projects" ||
+      slugArray[1] === "properties");
+
+  if (isLocalized) {
+    const lang = slugArray[0];
+    const page = slugArray[1];
+    const homeLabel = lang === "es" ? "Inicio" : "Accueil";
+    let pageLabel = "";
+    if (page === "about") {
+      pageLabel = lang === "es" ? "Acerca de" : "À propos";
+    } else if (page === "services") {
+      pageLabel = lang === "es" ? "Servicios" : "Services";
+    } else if (page === "contact") {
+      pageLabel = lang === "es" ? "Contacto" : "Contact";
+    } else if (page === "map") {
+      pageLabel = lang === "es" ? "Mapa Interactivo" : "Carte Interactive";
+    } else if (page === "projects") {
+      pageLabel = lang === "es" ? "Proyectos" : "Projets";
+    } else if (page === "properties") {
+      pageLabel = lang === "es" ? "Propiedades en Venta" : "Propriétés à Vendre";
+    }
+    return {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: homeLabel,
+          item: `https://www.miningpropertymaps.com/${lang}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: pageLabel,
+          item: `https://www.miningpropertymaps.com/${lang}/${page}`,
+        },
+      ],
+    };
+  }
+
+  if (
+    slugArray.length === 3 &&
+    (slugArray[0] === "es" || slugArray[0] === "fr") &&
+    slugArray[1] === "projects"
+  ) {
+    const lang = slugArray[0];
+    const homeLabel = lang === "es" ? "Inicio" : "Accueil";
+    const projLabel = lang === "es" ? "Proyectos" : "Projets";
+    return {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: homeLabel,
+          item: `https://www.miningpropertymaps.com/${lang}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: projLabel,
+          item: `https://www.miningpropertymaps.com/${lang}/projects`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: projectTitle ?? slugArray[2],
+          item: `https://www.miningpropertymaps.com/${lang}/projects/${slugArray[2]}`,
+        },
+      ],
+    };
+  }
 
   const itemListElement = [
     {
@@ -336,9 +815,16 @@ export default async function CatchAllPage({
   const breadcrumbJsonLd = buildBreadcrumbJsonLd(slugArray, pageData.project?.title);
 
   let contentJsonLd: Record<string, unknown> | null = null;
-  if (slugArray[0] === "projects" && slugArray[1]) {
+  const isProjDetail =
+    (slugArray[0] === "projects" && slugArray[1]) ||
+    ((slugArray[0] === "es" || slugArray[0] === "fr") && slugArray[1] === "projects" && slugArray[2]);
+  if (isProjDetail) {
     const project = pageData.project;
     if (project) {
+      const canonicalProjectUrl =
+        slugArray[0] === "es" || slugArray[0] === "fr"
+          ? `https://www.miningpropertymaps.com/${slugArray[0]}/projects/${project.id}`
+          : `https://www.miningpropertymaps.com/projects/${project.id}`;
       const imageUrl = project.image
         ? project.image.startsWith("http")
           ? project.image
@@ -348,7 +834,7 @@ export default async function CatchAllPage({
       contentJsonLd = {
         "@context": "https://schema.org",
         "@type": "Article",
-        "@id": `https://www.miningpropertymaps.com/projects/${project.id}`,
+        "@id": canonicalProjectUrl,
         headline: project.title,
         description: project.summary || `${project.title} in ${project.region}.`,
         image: imageUrl,
@@ -370,7 +856,7 @@ export default async function CatchAllPage({
           url: "https://www.miningpropertymaps.com",
           logo: "https://www.miningpropertymaps.com/images/general/logo.png",
         },
-        mainEntityOfPage: `https://www.miningpropertymaps.com/projects/${project.id}`,
+        mainEntityOfPage: canonicalProjectUrl,
       };
     }
   } else if ((slugArray[0] === "post" || slugArray[0] === "posts") && slugArray[1]) {

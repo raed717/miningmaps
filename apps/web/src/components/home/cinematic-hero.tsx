@@ -4,11 +4,17 @@ import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 const noiseTexture =
   "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")";
 
 export function CinematicHero() {
+  const { locale } = useI18n();
+  const t = homeTranslations[locale] || homeTranslations.en;
+
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -75,7 +81,7 @@ export function CinematicHero() {
             className="text-xs tracking-widest text-white/40 rotate-180"
             style={{ writingMode: "vertical-rl" }}
           >
-            EVOLUTION
+            {t.cinematicHero.evolutionLabel}
           </span>
         </div>
 
@@ -150,22 +156,15 @@ export function CinematicHero() {
             <div className="border border-stone-700/60 bg-black/45 p-6 md:p-10 backdrop-blur-sm shadow-[0_0_40px_rgba(0,0,0,0.45)]">
               <div className="text-center">
                 <div className="text-[10px] md:text-xs font-mono tracking-[0.35em] text-stone-400 uppercase">
-                  Adamson Geomatics Service Registry
+                  {t.cinematicHero.serviceRegistryHeader}
                 </div>
                 <h2 className="mt-4 text-4xl md:text-7xl font-black uppercase tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-stone-200 to-stone-600 drop-shadow-2xl">
-                  Geomatics / GIS
+                  {t.cinematicHero.serviceRegistryTitle}
                 </h2>
               </div>
 
               <div className="mt-8 grid gap-px border border-stone-700/50 bg-stone-700/50 md:grid-cols-2 xl:grid-cols-3">
-                {[
-                  "Property Brokerage",
-                  "Geological Mapping",
-                  "Lidar / DEM",
-                  "Prospecting",
-                  "Permitting",
-                  "zoning applications / subdivisons",
-                ].map((item) => (
+                {t.cinematicHero.serviceRegistryItems.map((item) => (
                   <div key={item} className="bg-black/70 px-4 py-5 text-center">
                     <div className="text-sm md:text-base font-mono uppercase tracking-[0.2em] text-stone-300">
                       {item}
@@ -202,18 +201,16 @@ export function CinematicHero() {
           >
             <div className="mb-4 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm text-primary backdrop-blur-md">
               <span className="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse" />
-              Adamson Geomatics
+              {t.cinematicHero.mainBadge}
             </div>
             <h1 className="mb-6 text-5xl font-extrabold tracking-tight md:text-7xl">
-              Precision GIS & <br />
+              {t.cinematicHero.mainTitleLine} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-chart-2">
-                Land Management.
+                {t.cinematicHero.mainTitleHighlight}
               </span>
             </h1>
             <p className="mx-auto mb-10 text-xl text-muted-foreground max-w-2xl">
-              Expert geospatial consulting for mineral exploration, land
-              management, and real estate services across Canada, the USA, and
-              internationally.
+              {t.cinematicHero.mainDescription}
             </p>
 
             <motion.div
@@ -221,10 +218,10 @@ export function CinematicHero() {
               className="flex flex-col items-center justify-center gap-4 sm:flex-row"
             >
               <Link
-                href="/map"
+                href={getLocalizedPath("/map", locale)}
                 className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground shadow-[0_0_30px_rgba(0,194,255,0.4)] transition-all hover:bg-primary/90 hover:scale-105"
               >
-                View Map Portfolio
+                {t.cinematicHero.ctaMap}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <button
@@ -232,7 +229,7 @@ export function CinematicHero() {
                 onClick={scrollToServices}
                 className="inline-flex h-12 items-center justify-center rounded-full border border-input bg-background/50 backdrop-blur-md px-8 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
               >
-                My Services
+                {t.cinematicHero.ctaServices}
               </button>
             </motion.div>
           </motion.div>

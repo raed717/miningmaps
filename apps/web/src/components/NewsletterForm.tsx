@@ -4,6 +4,8 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Mail, CheckCircle, AlertCircle } from "lucide-react";
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
 
 export default function NewsletterForm({
   source = "footer",
@@ -12,6 +14,8 @@ export default function NewsletterForm({
   source?: string;
   showIntro?: boolean;
 }) {
+  const { locale } = useI18n();
+  const t = (homeTranslations[locale] || homeTranslations.en).newsletter;
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   // When the form appeared; the server rejects impossibly fast submissions.
@@ -47,11 +51,11 @@ export default function NewsletterForm({
         formEl.reset();
       } else {
         const data = await res.json().catch(() => ({}));
-        setErrorMsg(data.error || "Something went wrong");
+        setErrorMsg(data.error || t.errorDefault);
         setStatus("error");
       }
     } catch {
-      setErrorMsg("Network error. Please try again.");
+      setErrorMsg(t.errorNetwork);
       setStatus("error");
     }
   }
@@ -61,17 +65,17 @@ export default function NewsletterForm({
       {showIntro && (
         <div className="flex flex-col gap-1">
           <span className="font-bold text-foreground text-sm tracking-tight">
-            Newsletter
+            {t.title}
           </span>
           <span className="text-[10px] normal-case tracking-wider">
-            Field reports, new properties and project updates. No spam.
+            {t.intro}
           </span>
         </div>
       )}
 
       <div className="flex flex-col gap-2 sm:flex-row">
         <label htmlFor={`newsletter-email-${source}`} className="sr-only">
-          Email address
+          {t.placeholder}
         </label>
         <Input
           id={`newsletter-email-${source}`}
@@ -79,7 +83,7 @@ export default function NewsletterForm({
           type="email"
           required
           autoComplete="email"
-          placeholder="you@example.com"
+          placeholder={t.placeholder}
           className="normal-case tracking-normal"
         />
         {/* Honeypot: hidden from humans, filled by bots */}
@@ -101,7 +105,7 @@ export default function NewsletterForm({
           ) : (
             <Mail className="h-3.5 w-3.5" />
           )}
-          Subscribe
+          {status === "loading" ? t.submitting : t.submit}
         </Button>
       </div>
 
@@ -109,14 +113,14 @@ export default function NewsletterForm({
         {status === "success" && (
           <div className="flex items-center gap-2 border border-secondary/40 bg-secondary/10 px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-secondary">
             <CheckCircle className="h-4 w-4 shrink-0" />
-            Subscribed. Thanks for joining.
+            {t.success}
           </div>
         )}
 
         {status === "error" && (
           <div className="flex items-center gap-2 border border-primary/40 bg-primary/10 px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-primary">
             <AlertCircle className="h-4 w-4 shrink-0" />
-            {errorMsg || "Failed to subscribe. Please try again."}
+            {errorMsg || t.errorDefault}
           </div>
         )}
       </div>

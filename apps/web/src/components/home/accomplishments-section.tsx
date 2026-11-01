@@ -1,14 +1,17 @@
-"use client"
+"use client";
 
-import { motion } from "motion/react"
-import { Crosshair, FileSearch, MapPin, Scale, Shield } from "lucide-react"
+import { motion } from "motion/react";
+import { Crosshair, FileSearch, MapPin, Scale, Shield } from "lucide-react";
+import { mono } from "@/lib/fonts";
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
 
-import { mono } from "@/lib/fonts"
-import { accomplishments } from "@/lib/accomplishmentsData"
-
-const icons = [Scale, FileSearch, MapPin, Shield, Crosshair]
+const icons = [Scale, FileSearch, MapPin, Shield, Crosshair];
 
 export function AccomplishmentsSection() {
+  const { locale } = useI18n();
+  const t = (homeTranslations[locale] || homeTranslations.en).accomplishments;
+
   return (
     <section className="relative overflow-hidden bg-background px-4 py-24">
       <div className="mx-auto max-w-7xl">
@@ -16,26 +19,22 @@ export function AccomplishmentsSection() {
           <span
             className={`mb-2 text-xs font-bold uppercase tracking-widest text-primary ${mono.className}`}
           >
-            case files
+            {t.badge}
           </span>
           <h2 className="text-3xl font-black uppercase tracking-tighter md:text-4xl">
-            Accomplishments &amp; Case Studies
+            {t.title}
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Real-world projects often require more than research alone. By
-            combining GIS analysis, land records, survey interpretation,
-            valuation expertise, and technical investigation, we help clients
-            solve complex property, land, and resource-related challenges.
+            {t.intro1}
           </p>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            The following examples highlight some of the projects and outcomes
-            that have been successfully delivered.
+            {t.intro2}
           </p>
         </div>
 
         <div className="mt-12 space-y-12">
-          {accomplishments.map((item, i) => {
-            const Icon = icons[i % icons.length]
+          {t.items.map((item, i) => {
+            const Icon = icons[i % icons.length];
             return (
               <motion.div
                 key={item.title}
@@ -58,7 +57,7 @@ export function AccomplishmentsSection() {
                       <span
                         className={`text-[10px] uppercase tracking-[0.2em] text-primary ${mono.className}`}
                       >
-                        key areas
+                        {t.keyAreasLabel}
                       </span>
                       <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-1">
                         {item.areas.map((area) => (
@@ -75,10 +74,10 @@ export function AccomplishmentsSection() {
                   </div>
                 </div>
               </motion.div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

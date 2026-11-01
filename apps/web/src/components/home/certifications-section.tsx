@@ -6,6 +6,8 @@ import { AnimatePresence, motion } from "motion/react"
 import { Award, X } from "lucide-react"
 
 import { mono } from "@/lib/fonts"
+import { useI18n } from "@/lib/i18n/context"
+import { homeTranslations } from "@/lib/i18n/translations/home"
 import {
   Carousel,
   CarouselContent,
@@ -28,6 +30,8 @@ const certifications = [
 ];
 
 export function CertificationsSection() {
+  const { locale } = useI18n()
+  const t = (homeTranslations[locale] || homeTranslations.en).certifications
   const [selected, setSelected] = useState<string | null>(null)
 
   return (
@@ -38,14 +42,13 @@ export function CertificationsSection() {
             className={`mb-2 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary ${mono.className}`}
           >
             <Award className="h-4 w-4" />
-            credentials
+            {t.badge}
           </span>
           <h2 className="text-3xl font-black uppercase tracking-tighter">
-            Certifications
+            {t.title}
           </h2>
           <p className="mt-2 max-w-md text-sm text-muted-foreground">
-            Industry-recognized qualifications in geospatial analysis and mining
-            technology.
+            {t.description}
           </p>
         </div>
 

@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowUpRight, Satellite } from "lucide-react";
 import { mono } from "@/lib/fonts";
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 const telemetryNodes = [
   { top: "30%", left: "40%", color: "var(--color-secondary)", label: "NWT_LITHIUM" },
@@ -10,6 +15,9 @@ const telemetryNodes = [
 ];
 
 export function GlobalTelemetrySection() {
+  const { locale } = useI18n();
+  const t = (homeTranslations[locale] || homeTranslations.en).globalTelemetry;
+
   return (
     <section className="relative z-10 overflow-hidden border-y border-border bg-black py-32">
       <div className="absolute inset-0 z-0">
@@ -26,11 +34,11 @@ export function GlobalTelemetrySection() {
       <div className="container relative z-10 mx-auto px-4">
         <div className="mb-16 flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <h2 className="text-4xl font-extrabold uppercase tracking-tighter md:text-6xl">
-            Global Telemetry
+            {t.title}
           </h2>
           <div className={`flex items-center gap-4 border border-border bg-muted px-6 py-3 text-xs tracking-widest ${mono.className}`}>
             <Satellite className="h-4 w-4 animate-pulse text-secondary" />
-            <span>SATELLITE_LINK_ACTIVE</span>
+            <span>{t.satelliteActive}</span>
           </div>
         </div>
 
@@ -63,10 +71,10 @@ export function GlobalTelemetrySection() {
           ))}
 
           <Link
-            href="/map"
+            href={getLocalizedPath("/map", locale)}
             className="group absolute right-8 bottom-8 z-30 flex items-center gap-3 bg-white px-6 py-3 text-black transition-colors hover:bg-primary hover:text-white"
           >
-            <span className="text-xs font-bold uppercase tracking-widest">View Full Map</span>
+            <span className="text-xs font-bold uppercase tracking-widest">{t.viewMap}</span>
             <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>

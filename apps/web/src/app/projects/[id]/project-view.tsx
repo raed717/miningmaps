@@ -22,6 +22,8 @@ import {
 } from "lucide-react";
 import { useProjectDetail } from "@/lib/projectDataContext";
 import { ImageViewerTrigger } from "@/components/fullscreen-image-viewer";
+import { useI18n } from "@/lib/i18n/context";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 // Browser-only (Leaflet); everything else on this page is server-rendered.
 const ProjectLocationMap = dynamic(() => import("@/components/project-location-map"), {
@@ -49,6 +51,7 @@ export default function ProjectDetails({
 }: {
   projectId: string;
 }) {
+  const { locale } = useI18n();
   const [showFloatingBack, setShowFloatingBack] = useState(false);
   const [activeHeadingId, setActiveHeadingId] = useState<string | null>(null);
   const [highlightedHeadingId, setHighlightedHeadingId] = useState<string | null>(null);
@@ -151,7 +154,7 @@ export default function ProjectDetails({
         <div className="text-center">
           <h2 className="text-2xl font-bold">Project not found</h2>
           <Link
-            href="/projects"
+            href={getLocalizedPath("/projects", locale)}
             className="mt-4 inline-block text-primary hover:underline"
           >
             Back to projects
@@ -186,7 +189,7 @@ export default function ProjectDetails({
         <div className="absolute inset-0 flex items-end">
           <div className="container mx-auto px-4 pb-12">
             <Link
-              href="/projects"
+              href={getLocalizedPath("/projects", locale)}
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-background/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary backdrop-blur-md transition-all hover:border-primary hover:bg-background/90 hover:text-primary"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
@@ -295,7 +298,7 @@ export default function ProjectDetails({
 
       {/* Floating Back Button — visible when hero is scrolled past */}
       <Link
-        href="/projects"
+        href={getLocalizedPath("/projects", locale)}
         className={`fixed bottom-6 left-6 z-50 flex items-center gap-2 rounded-full border border-primary/30 bg-background/80 px-3.5 py-2 text-[10px] font-bold uppercase tracking-widest text-primary shadow-lg backdrop-blur-md transition-all duration-300 hover:border-primary hover:bg-background hover:text-primary md:bottom-8 md:left-8 ${
           showFloatingBack
             ? "translate-y-0 opacity-100"
@@ -395,7 +398,7 @@ export default function ProjectDetails({
                           className="pl-4 basis-full sm:basis-1/2"
                         >
                           <Link
-                            href={`/projects/${sub.id}`}
+                            href={getLocalizedPath(`/projects/${sub.id}`, locale)}
                             className="group relative flex flex-col h-48 overflow-hidden rounded-lg border border-border/40 bg-background/50 hover:border-primary/50 transition-colors duration-300"
                           >
                             {/* Card Image Background */}
@@ -903,7 +906,7 @@ export default function ProjectDetails({
                             Parent Project
                           </span>
                           <Link
-                            href={`/projects/${parent.id}`}
+                            href={getLocalizedPath(`/projects/${parent.id}`, locale)}
                             className="font-medium text-primary hover:underline"
                           >
                             {parent.title}
@@ -923,7 +926,7 @@ export default function ProjectDetails({
                             return sub ? (
                               <li key={subId}>
                                 <Link
-                                  href={`/projects/${sub.id}`}
+                                  href={getLocalizedPath(`/projects/${sub.id}`, locale)}
                                   className="font-medium text-primary hover:underline"
                                 >
                                   {sub.title}

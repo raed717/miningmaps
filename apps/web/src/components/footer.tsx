@@ -1,8 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { mono } from "@/lib/fonts";
 import NewsletterForm from "@/components/NewsletterForm";
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 export default function Footer() {
+  const { locale } = useI18n();
+  const t = (homeTranslations[locale] || homeTranslations.en).footer;
+
   return (
     <footer
       className={`border-t border-border py-16 bg-background ${mono.className}`}
@@ -10,7 +18,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 flex flex-col items-center justify-between gap-12 text-xs uppercase tracking-widest text-muted-foreground xl:flex-row xl:items-start">
         {/* Brand / Logo */}
         <div className="flex flex-col items-center md:items-start gap-4">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href={getLocalizedPath("/", locale)} className="flex items-center gap-3">
             <div className="h-12 w-12 flex items-center justify-center">
               <img
                 src="/images/general/minLogo.png"
@@ -23,7 +31,7 @@ export default function Footer() {
                 Adamson Geomatics
               </span>
               <span className="text-primary text-[10px] mt-1">
-                Data Extraction Matrix
+                {t.tagline}
               </span>
             </div>
           </Link>
@@ -33,56 +41,59 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-8">
           <div className="flex flex-wrap items-center justify-center gap-6 font-bold">
             <Link
-              href="/about"
+              href={getLocalizedPath("/about", locale)}
               className="hover:text-primary transition-colors"
             >
-              About
+              {t.nav.about}
             </Link>
             <Link
-              href="/services"
+              href={getLocalizedPath("/services", locale)}
               className="hover:text-primary transition-colors"
             >
-              Services
+              {t.nav.services}
             </Link>
             <Link
-              href="/projects"
+              href={getLocalizedPath("/projects", locale)}
               className="hover:text-primary transition-colors"
             >
-              Portfolio
-            </Link>
-            <Link href="/map" className="hover:text-primary transition-colors">
-              Map View
+              {t.nav.portfolio}
             </Link>
             <Link
-              href="/properties"
+              href={getLocalizedPath("/map", locale)}
               className="hover:text-primary transition-colors"
             >
-              Properties
+              {t.nav.mapView}
             </Link>
             <Link
-              href="/partners"
+              href={getLocalizedPath("/properties", locale)}
               className="hover:text-primary transition-colors"
             >
-              Partners
+              {t.nav.properties}
             </Link>
             <Link
-              href="/posts"
+              href={getLocalizedPath("/partners", locale)}
               className="hover:text-primary transition-colors"
             >
-              Field Reports
+              {t.nav.partners}
             </Link>
             <Link
-              href="/contact"
+              href={getLocalizedPath("/posts", locale)}
+              className="hover:text-primary transition-colors"
+            >
+              {t.nav.fieldReports}
+            </Link>
+            <Link
+              href={getLocalizedPath("/contact", locale)}
               className="text-primary hover:text-white transition-colors"
             >
-              Contact
+              {t.nav.contact}
             </Link>
             {/* /account redirects signed-out visitors to /sign-in */}
             <Link
-              href="/account"
+              href={getLocalizedPath("/account", locale)}
               className="hover:text-primary transition-colors"
             >
-              Client Portal
+              {t.nav.clientPortal}
             </Link>
           </div>
         </div>
@@ -115,7 +126,7 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-4 mt-16 pt-8 border-t border-border flex flex-col gap-6 md:flex-row md:items-center md:justify-between text-[10px] uppercase tracking-widest text-muted-foreground/60">
-        <p>SYSTEM STATUS: ONLINE</p>
+        <p>{t.systemStatus}</p>
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
           {[
             {
@@ -138,13 +149,13 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        <p>© 2026 ADAMSON_GEOMATICS. ALL_RIGHTS_RESERVED.</p>
+        <p>{t.rightsReserved}</p>
       </div>
 
       <div className="container mx-auto px-4 mt-6 pt-6 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] uppercase tracking-widest text-muted-foreground/80">
         <div className="flex flex-wrap items-center justify-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
-          <span>PLATFORM ARCHITECT & DEV:</span>
+          <span>{t.architectLabel}</span>
           <a
             href="https://raed.guembri.tn/"
             target="_blank"
@@ -154,7 +165,7 @@ export default function Footer() {
             RAED GUEMBRI
           </a>
           <span className="text-muted-foreground/40">//</span>
-          <span className="text-primary font-semibold">SOFTWARE ARCHITECT ENGINEER</span>
+          <span className="text-primary font-semibold">{t.softwareEngineerRole}</span>
         </div>
         <div className="flex items-center gap-3">
           <a
@@ -163,7 +174,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
           >
-            PORTFOLIO
+            {t.portfolioLink}
           </a>
           <span className="text-muted-foreground/30">•</span>
           <a

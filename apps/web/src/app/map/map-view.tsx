@@ -19,6 +19,9 @@ import {
 import { useProjectSummaries } from "@/lib/projectDataContext";
 import Link from "next/link";
 import { inter, mono } from "@/lib/fonts";
+import { useI18n } from "@/lib/i18n/context";
+import { mapTranslations } from "@/lib/i18n/translations/map";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 // Fix for default Leaflet icon in React
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -83,6 +86,8 @@ const getTagColor = (filter: string | null): string | null => {
 };
 
 export default function MapView() {
+  const { locale } = useI18n();
+  const t = mapTranslations[locale] || mapTranslations.en;
   const projects = useProjectSummaries();
   const [selectedSiteId, setSelectedSiteId] = useState<string | null>(null);
   const [flyToCoords, setFlyToCoords] = useState<[number, number] | null>(null);
@@ -131,7 +136,7 @@ export default function MapView() {
       {mobileSidebarOpen && (
         <button
           type="button"
-          aria-label="Close project list"
+          aria-label={t.sidebar.closeList}
           onClick={() => setMobileSidebarOpen(false)}
           className="absolute inset-0 z-1190 bg-black/60 md:hidden"
         />
@@ -157,12 +162,12 @@ export default function MapView() {
           <div
             className={`text-primary font-bold tracking-[0.2em] text-[10px] mb-2 flex items-center gap-2 ${mono.className}`}
           >
-            <Database className="h-3 w-3" /> MAP DATABASE
+            <Database className="h-3 w-3" /> {t.sidebar.databaseBadge}
           </div>
           <h2 className="text-3xl font-extrabold uppercase tracking-tighter leading-none">
-            Global
+            {t.sidebar.titleLine1}
             <br />
-            Telemetry
+            {t.sidebar.titleLine2}
           </h2>
         </div>
 
@@ -176,7 +181,7 @@ export default function MapView() {
               <span
                 className={`text-xs font-bold uppercase tracking-widest ${mono.className} ${showOnlyForSale ? "text-secondary" : "text-muted-foreground"}`}
               >
-                Available Assets Only
+                {t.sidebar.availableAssetsOnly}
               </span>
             </div>
             <input
@@ -203,7 +208,7 @@ export default function MapView() {
                 color: filterColor || "#FFD700",
               }}
             >
-              <span>FILTER: {activeFilter}</span>
+              <span>{t.sidebar.filterPrefix} {activeFilter}</span>
               <button
                 type="button"
                 onClick={() => setActiveFilter(null)}
@@ -221,7 +226,7 @@ export default function MapView() {
           <div
             className={`px-6 py-3 bg-muted border-b border-border text-[9px] uppercase tracking-widest font-bold text-[#666] ${mono.className} flex justify-between`}
           >
-            <span>IDENTIFIED TARGETS</span>
+            <span>{t.sidebar.identifiedTargets}</span>
             <span>[{visibleProjects.length}]</span>
           </div>
 
@@ -266,7 +271,7 @@ export default function MapView() {
                           <span>ID_{p.id}</span>
                           {p.isForSale && (
                             <span className="text-secondary px-1 border border-secondary bg-secondary/10">
-                              SALE
+                              {t.sidebar.saleBadge}
                             </span>
                           )}
                         </div>
@@ -276,7 +281,7 @@ export default function MapView() {
                         <div
                           className={`text-[10px] text-[#666] mt-1 truncate uppercase ${mono.className}`}
                         >
-                          LOC: {p.region}
+                          {t.sidebar.locPrefix} {p.region}
                         </div>
                       </div>
                     </div>
@@ -338,7 +343,7 @@ export default function MapView() {
           className="absolute left-4 top-4 z-1001 flex items-center gap-2 border border-border bg-background/90 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-white shadow-[0_0_30px_rgba(0,0,0,0.55)] backdrop-blur md:hidden"
         >
           <PanelLeft className="h-4 w-4 text-primary" />
-          Projects
+          {t.mapOverlay.projectsBtn}
         </button>
 
         {/* Scanning Line overlay */}
@@ -355,7 +360,7 @@ export default function MapView() {
           zoomControl={false}
         >
           <TileLayer
-            attribution="&copy; projects are displayed not at exact coordinates for security reasons"
+            attribution={`&copy; ${t.mapOverlay.disclaimer}`}
             url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=cb1_2v0i_1_d240e927e07ac30a1bfdf6f6"
           />
 
@@ -442,7 +447,7 @@ export default function MapView() {
                       </div>
                       {sub.isForSale && (
                         <div className="text-secondary text-[8px] border border-secondary bg-secondary/10 px-1 mb-1 inline-block">
-                          SALE
+                          {t.sidebar.saleBadge}
                         </div>
                       )}
                       <div className="text-[9px] text-muted-foreground">
@@ -474,7 +479,7 @@ export default function MapView() {
               className={`flex items-center gap-1.5 px-2 text-[10px] font-bold uppercase tracking-[0.2em] text-primary shrink-0 ${mono.className}`}
             >
               <Filter className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">TAGS</span>
+              <span className="hidden sm:inline">{t.mapOverlay.tagsLabel}</span>
             </div>
             <div className="h-4 w-px bg-border shrink-0" />
             <button
@@ -486,7 +491,7 @@ export default function MapView() {
                   : "border-border bg-background/70 text-muted-foreground hover:border-primary hover:text-primary"
               }`}
             >
-              ALL
+              {t.mapOverlay.allBtn}
             </button>
             {staticTags.map((tag) => {
               const isActive =
@@ -536,7 +541,7 @@ export default function MapView() {
               >
                 <span className="text-primary font-bold flex items-center gap-2">
                   <Activity className="h-3 w-3 animate-pulse" />
-                  TARGET LOCKED
+                  {t.dossier.targetLocked}
                 </span>
                 <button
                   onClick={() => setSelectedSiteId(null)}
@@ -563,7 +568,7 @@ export default function MapView() {
                   <div
                     className={`mb-3 md:mb-4 inline-block border border-secondary bg-secondary/10 px-3 py-1 text-[10px] font-bold tracking-widest text-secondary uppercase w-fit shadow-[0_0_10px_rgba(0,255,65,0.2)] ${mono.className}`}
                   >
-                    AVAILABLE FOR ACQUISITION
+                    {t.dossier.availableBadge}
                   </div>
                 )}
 
@@ -579,11 +584,11 @@ export default function MapView() {
                     {selectedSite.id}
                   </span>
                   <span className="flex items-center gap-2">
-                    <MapPin className="h-3 w-3 text-primary" /> REGION:{" "}
+                    <MapPin className="h-3 w-3 text-primary" /> {t.dossier.regionLabel}{" "}
                     {selectedSite.region}
                   </span>
                   <span className="flex items-center gap-2">
-                    <Crosshair className="h-3 w-3 text-primary" /> COORD:{" "}
+                    <Crosshair className="h-3 w-3 text-primary" /> {t.dossier.coordLabel}{" "}
                     {selectedSite.coordinates[0].toFixed(4)},{" "}
                     {selectedSite.coordinates[1].toFixed(4)}
                   </span>
@@ -598,10 +603,10 @@ export default function MapView() {
                 </div>
 
                 <Link
-                  href={`/projects/${selectedSite.id}`}
+                  href={getLocalizedPath(`/projects/${selectedSite.id}`, locale)}
                   className={`mt-5 md:mt-8 flex w-full items-center justify-between border border-primary bg-transparent hover:bg-primary hover:text-black text-primary p-4 text-[10px] font-bold uppercase tracking-widest transition-all ${mono.className} group`}
                 >
-                  <span>ACCESS FULL DOSSIER</span>
+                  <span>{t.dossier.accessDossier}</span>
                   <ChevronRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -612,4 +617,3 @@ export default function MapView() {
     </div>
   );
 }
-

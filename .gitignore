@@ -59,5 +59,9 @@ next-env.d.ts
 
 .agents
 .neon
-
+brag-output
 graphify-out
+migrations
+toolbox
+# Playwright CLI output (may contain credentials)
+.playwright-cli/

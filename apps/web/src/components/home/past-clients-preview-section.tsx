@@ -14,6 +14,9 @@ import {
 } from "lucide-react";
 import { mono } from "@/lib/fonts";
 import { pastClients } from "@/lib/pastClientsData";
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 type SpotlightClient = {
   name: string;
@@ -63,7 +66,7 @@ const spotlightClients: SpotlightClient[] = [
     category: "LEGAL & LAND TITLE",
     note: "Recommended for mining law & title issues. Complex Crown Grant transfers, historical parcel research, and title mapping.",
     url: "https://www.dentons.com/en/",
-    logo:"https://www.dentons.com/-/media/images/website/logos/logos_svg/dentons-hong-kong-logo-rgb.ashx",
+    logo: "https://www.dentons.com/-/media/images/website/logos/logos_svg/dentons-hong-kong-logo-rgb.ashx",
     icon: Scale,
   },
   {
@@ -71,7 +74,7 @@ const spotlightClients: SpotlightClient[] = [
     category: "ACADEMIC / MODELING",
     note: "Wildfire mitigation modeling consulting and terrain risk evaluation",
     url: "https://uwaterloo.ca/",
-    logo:"https://ssc.ca/sites/default/files/styles/max_1300x1300/public/imce/liaison/abkashlak/waterloo.png?itok=ikVCUvQb",
+    logo: "https://ssc.ca/sites/default/files/styles/max_1300x1300/public/imce/liaison/abkashlak/waterloo.png?itok=ikVCUvQb",
     icon: GraduationCap,
   },
   {
@@ -79,7 +82,7 @@ const spotlightClients: SpotlightClient[] = [
     category: "CRITICAL MINERALS",
     note: "Exploration GIS mapping, tenure research, and investor presentation geospatial assets",
     url: "https://www.quantumcriticalmetals.com/",
-    logo:"https://www.quantumcriticalmetals.com/images/qcm-logo-horizontal.webp",
+    logo: "https://www.quantumcriticalmetals.com/images/qcm-logo-horizontal.webp",
     icon: Pickaxe,
   },
   {
@@ -87,12 +90,14 @@ const spotlightClients: SpotlightClient[] = [
     category: "MUNICIPAL GOVERNMENT",
     note: "Produced stream monitoring maps in partnership with B.C Hydro",
     url: "https://www.coquitlam.ca/",
-    logo:"https://www.otcmarkets.com/company-otcapi/company/logo/ATOXF",
+    logo: "https://www.otcmarkets.com/company-otcapi/company/logo/ATOXF",
     icon: Building2,
   },
 ];
 
 export function PastClientsPreviewSection() {
+  const { locale } = useI18n();
+  const t = (homeTranslations[locale] || homeTranslations.en).pastClients;
   const totalCount = pastClients.length;
 
   return (
@@ -108,28 +113,26 @@ export function PastClientsPreviewSection() {
             <div
               className={`mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-primary ${mono.className}`}
             >
-              <Building2 className="h-4 w-4" /> CLIENT_INTELLIGENCE // TRUSTED_NETWORK
+              <Building2 className="h-4 w-4" /> {t.badge}
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-none text-white">
-              Trusted by Explorers,
+              {t.title}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-primary/80">
-                Industry &amp; Universities
+                {t.titleHighlight}
               </span>
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-              Precision GIS mapping, Crown Grant parcel research, tenure management,
-              and terrain modeling delivered for major mining corporations, public
-              utilities, municipalities, and academic research institutions.
+              {t.description}
             </p>
           </div>
 
           <div className="flex shrink-0 items-center gap-4">
             <Link
-              href="/services?tab=clients"
+              href={getLocalizedPath("/services?tab=clients", locale)}
               className={`group inline-flex items-center gap-2.5 border border-primary bg-primary px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-black transition-all hover:bg-primary/90 hover:shadow-[0_0_25px_rgba(255,215,0,0.3)] active:scale-[0.99] ${mono.className}`}
             >
-              See All Clients ({totalCount})
+              {t.seeAll.replace("{count}", String(totalCount))}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
@@ -140,6 +143,8 @@ export function PastClientsPreviewSection() {
           {spotlightClients.map((client, idx) => {
             const Icon = client.icon;
             const isFeatured = Boolean(client.image || client.logo);
+            const category = t.spotlightCategories[client.name] || client.category;
+            const note = t.spotlightNotes[client.name] || client.note;
 
             return (
               <motion.div
@@ -160,7 +165,7 @@ export function PastClientsPreviewSection() {
                     <span
                       className={`text-[10px] font-mono font-bold tracking-widest text-primary ${mono.className}`}
                     >
-                      {String(idx + 1).padStart(2, "0")} // {client.category}
+                      {String(idx + 1).padStart(2, "0")} // {category}
                     </span>
                     <Icon className="h-3.5 w-3.5 text-muted-foreground transition-colors group-hover:text-primary" />
                   </div>
@@ -184,7 +189,7 @@ export function PastClientsPreviewSection() {
 
                   {/* Engagement Note */}
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-3">
-                    {client.note}
+                    {note}
                   </p>
 
                   {/* Image attachment preview if present */}
@@ -210,21 +215,21 @@ export function PastClientsPreviewSection() {
                       aria-label={`Visit ${client.name} official website`}
                       className={`inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-white ${mono.className}`}
                     >
-                      Website <ArrowUpRight className="h-3 w-3 text-primary" />
+                      {t.website} <ArrowUpRight className="h-3 w-3 text-primary" />
                     </a>
                   ) : (
                     <span
                       className={`text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60 ${mono.className}`}
                     >
-                      Verified Client
+                      {t.verifiedClient}
                     </span>
                   )}
 
                   <Link
-                    href="/services?tab=clients"
+                    href={getLocalizedPath("/services?tab=clients", locale)}
                     className="text-[10px] font-mono text-primary/80 opacity-0 group-hover:opacity-100 transition-opacity hover:underline"
                   >
-                    View in Archive &rarr;
+                    {t.viewInArchive}
                   </Link>
                 </div>
               </motion.div>
@@ -240,19 +245,19 @@ export function PastClientsPreviewSection() {
             </div>
             <div>
               <div className="text-sm font-bold uppercase tracking-wide text-white">
-                Looking for our full client archive?
+                {t.calloutTitle}
               </div>
               <p className="text-xs text-muted-foreground">
-                Browse all {totalCount}+ documented client engagements, consulting projects, and institutional partnerships.
+                {t.calloutDesc.replace("{totalCount}", String(totalCount))}
               </p>
             </div>
           </div>
 
           <Link
-            href="/services?tab=clients"
+            href={getLocalizedPath("/services?tab=clients", locale)}
             className={`inline-flex shrink-0 items-center gap-2 border border-border/80 bg-card px-5 py-3 text-xs font-bold uppercase tracking-[0.2em] text-white transition-all hover:border-primary hover:bg-primary/10 hover:text-primary active:scale-[0.99] ${mono.className}`}
           >
-            See More on Services Page
+            {t.calloutBtn}
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

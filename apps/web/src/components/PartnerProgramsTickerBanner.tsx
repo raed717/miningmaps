@@ -5,17 +5,19 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { Handshake, X, ArrowRight } from "lucide-react";
 import { mono } from "@/lib/fonts";
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
+import { getLocalizedPath } from "@/lib/i18n/navigation";
 
 const DISMISS_KEY = "partner-programs-ticker-dismissed";
-
-const TICKER_TEXT =
-  "\u{1F91D} AFFILIATE PROGRAM — Earn 10% of payments from new clients you refer during their first year, 5% thereafter.     ⛏️ FINDER'S FEE PROGRAM — Available for qualified buyer referrals on our mining projects. Contact us for details.     ";
 
 export function PartnerProgramsTickerBanner({
   triggerSelector = "[data-hero-section]",
 }: {
   triggerSelector?: string;
 }) {
+  const { locale } = useI18n();
+  const t = (homeTranslations[locale] || homeTranslations.en).tickerBanner;
   const [pastHero, setPastHero] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -62,7 +64,7 @@ export function PartnerProgramsTickerBanner({
             className={`flex shrink-0 items-center gap-2 border-r border-primary/40 bg-primary px-3 text-[10px] font-bold uppercase tracking-[0.2em] text-black md:px-4 ${mono.className}`}
           >
             <Handshake className="h-3.5 w-3.5" />
-            <span className="hidden sm:inline">Partners</span>
+            <span className="hidden sm:inline">{t.partnersLabel}</span>
           </div>
 
           <div className="relative flex-1 overflow-hidden">
@@ -70,13 +72,13 @@ export function PartnerProgramsTickerBanner({
               <span
                 className={`shrink-0 px-6 text-[11px] uppercase tracking-wider text-zinc-100 md:text-xs ${mono.className}`}
               >
-                {TICKER_TEXT}
+                {t.tickerText}
               </span>
               <span
                 className={`shrink-0 px-6 text-[11px] uppercase tracking-wider text-zinc-100 md:text-xs ${mono.className}`}
                 aria-hidden="true"
               >
-                {TICKER_TEXT}
+                {t.tickerText}
               </span>
             </div>
             {/* Edge fades so the scrolling text doesn't hard-cut at the container bounds */}
@@ -85,17 +87,17 @@ export function PartnerProgramsTickerBanner({
           </div>
 
           <Link
-            href="/partners"
+            href={getLocalizedPath("/partners", locale)}
             className={`group flex shrink-0 items-center gap-1.5 border-l border-primary/40 px-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary transition-colors hover:bg-primary hover:text-black md:px-5 ${mono.className}`}
           >
-            <span className="hidden sm:inline">Learn More</span>
+            <span className="hidden sm:inline">{t.learnMore}</span>
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
           </Link>
 
           <button
             type="button"
             onClick={dismiss}
-            aria-label="Dismiss"
+            aria-label={t.dismiss}
             className="flex shrink-0 items-center border-l border-primary/40 px-3 text-white/60 transition-colors hover:text-primary md:px-4"
           >
             <X className="h-3.5 w-3.5" />

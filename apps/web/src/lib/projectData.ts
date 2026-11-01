@@ -5853,4 +5853,729 @@ The Woodchopper Creek Gold Claims have a rich history and remain a significant s
       },
     ],
   },
+  {
+    id: "bc-011",
+    type: "project",
+    title: "HB / Garnet Property - British Columbia",
+    summary:
+      "A 232.42-hectare past-producing zinc-lead-silver polymetallic property in the historic Salmo-Sheep Creek mining district (Nelson Mining Division). Encompasses the past-producing HB underground mine and Garnet open pit hosted in Lower Cambrian Reeves Member carbonate rocks[cite: 2, 3, 5], with over 6.65 million tonnes of historical production[cite: 3, 7] and 2026 selective surface sampling returning up to 3,413 g/t Ag and 10.16% Pb[cite: 6, 7].",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793100479/hb0_q4m5gh.png",
+    coordinates: [49.1158, -117.2067], // Exact coordinates from Crown Grant Map center: 49°06'57" N, 117°12'24" W
+    isForSale: true,
+    author: "Adamson Geomatics", //
+    quickFacts: [
+      { label: "Property", value: "HB / Garnet Mine" }, //[cite: 2]
+      { label: "Tenure Number", value: "1109085" }, //[cite: 2]
+      {
+        label: "Mining District",
+        value: "Salmo-Sheep Creek (Nelson Mining Division)",
+      }, //[cite: 2]
+      { label: "Area", value: "232.42 Hectares" }, //[cite: 2]
+      { label: "Primary Commodities", value: "Zn, Pb, Ag, Cd, Cu, Au" }, //[cite: 2, 3]
+      {
+        label: "Deposit Type",
+        value: "Carbonate-Hosted / Kootenay Arc Zn-Pb (Manto / Replacement)",
+      }, //[cite: 2, 5]
+      { label: "Status", value: "Past Producer / Advanced Exploration" }, //[cite: 2]
+      { label: "Historical Production", value: "6,656,101 tonnes (1912–1978)" }, //
+      { label: "Owner / Vendor", value: "Aurora Gold and Gravels Inc." }, //[cite: 2]
+    ],
+    tags: [
+      "Zinc",
+      "Lead",
+      "Silver",
+      "Cadmium",
+      "Copper",
+      "Gold",
+      "Past Producer",
+      "Carbonate-Hosted Zn-Pb",
+      "Salmo-Sheep Creek",
+      "Kootenay Arc",
+      "For Sale",
+      "Option Available",
+    ],
+    sections: [
+      {
+        heading: "Property Overview & Location",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793100479/HB1_piuvpd.png",
+        imageCaption:
+          "HB/Garnet Mineral Claim (Tenure 1109085) and Crown Grant Map (MTO/MTA overlay)[cite: 2].",
+        content:
+          "The HB/Garnet Property is a past-producing zinc-lead-silver polymetallic project located approximately 8 km southeast of Salmo, British Columbia, within the historic Salmo-Sheep Creek mining district[cite: 2]. Covering approximately 232.42 hectares under mineral tenure 1109085, the property encompasses the historic HB Mine and Garnet mineralized trend[cite: 2]. The project benefits from excellent infrastructure, accessed from Salmo via Airport Road, Sheep Creek Road, and the Woodchuck Forest Service Road, with nearby power, local workforce, and essential services[cite: 2].",
+      },
+      {
+        heading: "Project Highlights",
+        type: "bullet_list",
+        content: [
+          "Past-producing polymetallic mine property covering 232.42 hectares in the prolific Salmo-Sheep Creek mining camp[cite: 2].",
+          "Substantial documented historical production of ~6,656,101 tonnes of ore mined across 29 operating years between 1912 and 1978[cite: 3].",
+          "Extensive cumulative metal recoveries: 260.43M kg Zn, 49.51M kg Pb, 29.43M g Ag, 2.02M kg Cd, 105,412 kg Cu, and 6,159 g Au[cite: 3].",
+          "Includes both deep underground workings (HB Mine) and open-pit development (Garnet orebody)[cite: 3, 5].",
+          "High-grade modern 2026 rock sampling yielding up to 10.16% Pb, 3,413 g/t Ag, 0.70% Cu, and 1.07% Sb (Sample HB3)[cite: 6, 7].",
+          "Stratabound and structural carbonate-hosted mineralization with pencil-like ore shoots extending up to 900 metres down plunge[cite: 5].",
+          "Turnkey road access 8 km from Salmo with intact logging and forestry road infrastructure across the claim[cite: 2, 7].",
+        ],
+      },
+      {
+        heading: "Historical Production Summary (1912–1978)",
+        type: "table",
+        caption:
+          "Reported recovered historical metal output from the HB Mine across 29 years of active production (approx. 6,656,101 tonnes mined)[cite: 3]. Figures are presented for historical context and are not treated as current NI 43-101 resources[cite: 3].",
+        headers: [
+          "Commodity",
+          "Recovered Metal",
+          "Imperial / Equivalent Units",
+        ],
+        rows: [
+          ["Zinc (Zn)", "260,430,000 kg", "260.43 million kg (~574.15M lbs)"], //[cite: 3]
+          ["Lead (Pb)", "49,510,000 kg", "49.51 million kg (~109.15M lbs)"], //[cite: 3]
+          ["Silver (Ag)", "29,430,000 g", "29.43 million g (~946,200 oz)"], //[cite: 3]
+          ["Cadmium (Cd)", "2,020,000 kg", "2.02 million kg (~4.45M lbs)"], //[cite: 3]
+          ["Copper (Cu)", "105,412 kg", "105.41 tonnes (~232,400 lbs)"], //[cite: 3]
+          ["Gold (Au)", "6,159 g", "6.16 kg (~198 oz)"], //[cite: 3]
+        ],
+      },
+      {
+        heading: "Historical Mine Operations & Infrastructure",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793100479/hb0_q4m5gh.png",
+        imageCaption:
+          "Historical surface works and mill plant facility at the HB Mine site[cite: 3].",
+        content:
+          "The HB Mine was developed as a substantial multi-level underground operation, while the nearby Garnet orebody, situated southwest of the main HB underground workings, was exploited from surface via an open pit[cite: 3, 5]. Mining ceased in 1978 with historical measured and indicated reserves documented at closure[cite: 3]. Extant access routes and historic bench/adit positions offer direct entry points for modern structural evaluation and geotechnical appraisal[cite: 2, 7].",
+      },
+      {
+        heading: "Geological & Structural Architecture",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793100480/hb2_dht9xy.png",
+        imageCaption:
+          "Bedrock geology map showing the Reeves Member carbonate belt west of the Active Formation thrust fault[cite: 4, 5].",
+        content:
+          "The HB/Garnet Property is predominantly underlain by carbonate strata of the Lower Cambrian Laib Formation (Reeves Member), comprising limestone with widespread, variable dolomitization[cite: 3]. The mineralized sequence sits immediately west of a major regional thrust fault that juxtaposes the Laib Formation against Lower to Middle Ordovician Active Formation argillites[cite: 5]. Severe polyphase deformation has produced tight folding, shearing, brecciation, and structural thickening[cite: 5]. Key hydrothermal alteration assemblages associated with high-grade mineralization include strong dolomitization, silicification, and pervasive talc-tremolite development, which serve as crucial vectors for systematic exploration[cite: 5].",
+      },
+      {
+        heading: "Deposit Mineralization Styles & Zonation",
+        type: "bullet_list",
+        content: [
+          "HB Steep Pencil Shoots: Primary hypogene mineralization consists of sphalerite, galena, pyrite, and pyrrhotite with silver, cadmium, copper, antimony, and local gold[cite: 5]. Three steeply dipping, subparallel zones plunge continuously for roughly 900 metres, with the largest historical shoot reaching 140 m vertical height and 30 m maximum width[cite: 5].",
+          "HB Cross-Cutting Breccia Zones: Flatter-lying stratabound breccia layers ranging from 3 to 5 metres thick (locally up to 12 metres)[cite: 5]. The richest mineralized shoots developed precisely at the intersections of steeply dipping shear zones with these low-angle breccia horizons[cite: 5].",
+          "Garnet Open-Pit Zone: Located southwest of the HB portals, featuring fine-grained sphalerite, pyrite, and minor galena disseminated and banded within dolomite[cite: 5]. The primary Garnet zone is ~15 metres wide, outcropping between 1,050 and 1,160 metres elevation, roughly 50 metres west of the Garnet Fault[cite: 5].",
+          "Lucky Boy Showing: Located near the base of the Reeves Member, hosting disseminated, banded, and massive sphalerite lenses across intervals of 0.3 to 5.0 metres (historical core intercept: 4.7% Zn over 0.5 m with Pb, Ag, and Cd)[cite: 5, 6].",
+        ],
+      },
+      {
+        heading: "2026 Surface Exploration Assays",
+        type: "table",
+        caption:
+          "Selective surface rock grab samples collected during the 2026 exploration program[cite: 6, 7]. Rock samples represent localized high-grade tenor and do not define average deposit width[cite: 7].",
+        headers: [
+          "Sample ID",
+          "Pb (%)",
+          "Ag (g/t)",
+          "Cu (%)",
+          "Zn (%)",
+          "Sb (%)",
+          "Cd (ppm)",
+          "Te (ppm)",
+          "Key Notes",
+        ],
+        rows: [
+          [
+            "HB3",
+            "10.16%",
+            "3,413 g/t",
+            "0.70%",
+            "0.45%",
+            "1.07%",
+            "84.9",
+            "14.2",
+            "Also returned 602 ppm As; ultra-high silver/lead tenor",
+          ],
+          [
+            "HB1",
+            "0.26%",
+            "2.24 g/t",
+            "—",
+            "0.67%",
+            "—",
+            "24.6",
+            "—",
+            "Returned 23.4% S; massive sulphide indicator[cite: 6]",
+          ],
+          [
+            "HB2",
+            "0.027%",
+            "150 g/t",
+            "0.0079%",
+            "0.0585%",
+            "—",
+            "—",
+            "85.9",
+            "Significant tellurium and silver enrichment[cite: 6]",
+          ],
+        ],
+      },
+      {
+        heading: "Selective Mineralized Specimen",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793100480/hb3_aw3gpl.png",
+        imageCaption:
+          "Polymetallic sulphide rock specimen showing galena, sphalerite, and secondary oxidation[cite: 6].",
+        content:
+          "Recent geochemical verification highlights high-grade polymetallic mineralization outcropping at surface[cite: 6]. In particular, sample HB3 demonstrated strong precious-metal concentration (3,413 g/t Ag) alongside massive base-metal enrichment (10.16% Pb, 0.70% Cu, 0.45% Zn, 1.07% Sb) and trace tellurium/arsenic, confirming an active epithermal-to-replacement precious-metal overprint within the broader carbonate system[cite: 6].",
+      },
+      {
+        heading: "Commercial Acquisition & Option Terms",
+        type: "paragraph",
+        content:
+          "Aurora Gold and Gravels Inc. is making the 232.42-hectare HB/Garnet Property available for acquisition or staged farm-in/option[cite: 2]. The vendors are seeking an exploration team with the capability to execute modern geophysical surveys, 3D structural modeling of the historic workings, and drill testing. Deal structures available include: (1) Outright Purchase for cash and/or equity consideration subject to a retained Net Smelter Return royalty; or (2) Staged Option-to-Purchase earning up to 100% through milestone cash payments, share issuances, and funded exploration expenditures. The vendors propose a 2.0% NSR royalty with standard buyback options subject to mutual agreement. Contact: chris@miningpropertymaps.com, Aurora Gold and Gravels Inc., Bella Coola, BC.",
+      },
+    ],
+  },
+  {
+    id: "bc-012", // TODO: verify ID sequence
+    type: "project",
+    title: "Red GT Property - British Columbia",
+    summary:
+      "An 18.17-hectare early-stage high-grade polymetallic exploration project in the Golden Triangle (Skeena Mining Division)[cite: 8]. Features the historic Red 12/16 occurrence hosted in Jurassic Hazelton Group volcanics, with historic grab sampling returning up to 1,024.7 g/t Ag, 9.68% Zn, 3.3% Pb, and exceptionally high (>1%) Tungsten and Cadmium[cite: 8, 10, 11].",
+    region: "British Columbia, Canada",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/f/f3/Canadian_Coast_Range.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+    coordinates: [55.8, -129.906592], // TODO: confirm exact coordinates (approx. 19 km SE of Stewart / 4 km E of Treble Mountain)[cite: 9]
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    quickFacts: [
+      { label: "Property", value: "Red GT (Red 12/16)" },
+      { label: "MINFILE Number", value: "103P 310" },
+      { label: "Mining Division", value: "Skeena" },
+      { label: "Area", value: "18.17 Hectares" },
+      { label: "Primary Commodities", value: "Ag, Zn, Pb, Cu, W, Sb, Cd" },
+      {
+        label: "Deposit Type",
+        value: "I05 - Polymetallic Veins Ag-Pb-Zn ± Au",
+      },
+      { label: "Status", value: "Showing / Early-Stage Exploration" },
+      {
+        label: "Location",
+        value: "Golden Triangle (~19 km SE of Stewart, BC)",
+      },
+    ],
+    tags: [
+      "Silver",
+      "Zinc",
+      "Lead",
+      "Tungsten",
+      "Cadmium",
+      "Polymetallic Veins",
+      "Golden Triangle",
+      "Hazelton Group",
+      "For Sale",
+      "Option Available",
+    ],
+    sections: [
+      {
+        heading: "Property Overview & Regional Setting",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793108961/Red_GT_Property_Mineral_Property_Acquisition_-_Option_Proposal_fi6pxt.png",
+        imageCaption:
+          "Red GT property location map near the Burniston Range[cite: 8].",
+        content:
+          "The Red GT Property is an early-stage high-grade polymetallic exploration project located in the Golden Triangle region of northwestern British Columbia, within the Skeena Mining Division[cite: 8]. Covering approximately 18.17 hectares, the property is situated within the Intermontane tectonic belt and Stikine terrane, approximately 4 km east of Treble Mountain and 19 km southeast of the principal mining service community of Stewart[cite: 8, 9]. Its location at the southern limits of the Cambria Icefield provides a compact, focused target within one of British Columbia's most active and internationally recognized mineral exploration districts[cite: 9].",
+      },
+      {
+        heading: "Project Highlights",
+        type: "bullet_list",
+        content: [
+          "Compact 18.17-hectare land package in the prolific Golden Triangle region[cite: 8, 13].",
+          "Hosts the historic Red 12/16 polymetallic mineral occurrence (MINFILE 103P 310)[cite: 8, 11].",
+          "Exceptional historic grab sample (ERK-731) returning 1,024.7 g/t Ag (approx. 32.9 oz/t), 9.68% Zn, and 3.3% Pb[cite: 11, 12].",
+          "Unusual and highly anomalous multi-element geochemical signature including >1.00% Tungsten (W) and >1.00% Cadmium (Cd) which exceeded original laboratory analytical limits[cite: 11, 12].",
+          "Mineralization occurs within quartz-carbonate stockworks up to 5 metres wide hosted in Jurassic volcanic rocks[cite: 10, 13].",
+          "Limited documented modern systematic exploration, presenting an excellent opportunity for comprehensive geological mapping and geophysics[cite: 13].",
+        ],
+      },
+      {
+        heading: "Geological Setting",
+        type: "paragraph",
+        content:
+          "The Red GT occurrence is predominantly hosted by Jurassic Hazelton Group volcanic rocks, specifically maroon andesitic volcanics[cite: 10]. These host rocks are cut by numerous quartz-carbonate veins and stockwork zones up to 5 metres wide exhibiting local carbonate alteration[cite: 10]. To the north, hornfelsed augite porphyry basalt contains 1-4% fine-grained pyrrhotite[cite: 10]. To the east, the volcanic and argillite sequence is intruded by medium-grained granodiorite dykes striking approximately 320 degrees, accompanied by narrow carbonate veinlets[cite: 10]. This combination of intrusive dykes, hornfelsing, carbonate alteration, and stockworking provides a highly favourable environment for polymetallic deposition[cite: 10].",
+      },
+      {
+        heading: "Mineralization & Deposit Model",
+        type: "paragraph",
+        content:
+          "Mineralization conforms to the I05 Polymetallic Veins (Ag-Pb-Zn ± Au) deposit model[cite: 11]. It consists of a broad polymetallic sulphide assemblage including galena, sphalerite, pyrite, and chalcopyrite, with tetrahedrite reported in trace amounts[cite: 11]. Sulphides are primarily concentrated within quartz-carbonate stockworks and structurally controlled zones[cite: 8, 11]. The presence of tetrahedrite provides a mineralogical association for the antimony-bearing mineralization[cite: 12]. The strongly anomalous tungsten, antimony, and cadmium values provide unique exploration vectors requiring comprehensive multi-element analytical work in future programs[cite: 11].",
+      },
+      {
+        heading: "Historical High-Grade Assays (1994 Teuton Resources)",
+        type: "table",
+        caption:
+          "Historical grab sample (ERK-731) results from a 2-3 metre wide carbonate-altered zone containing 2-15 cm wide sulphide stringers[cite: 11]. Note: Tungsten and Cadmium exceeded laboratory detection limits[cite: 11, 12].",
+        headers: [
+          "Sample ID",
+          "Ag (g/t)",
+          "Zn (%)",
+          "Pb (%)",
+          "Cu (%)",
+          "W (%)",
+          "Cd (%)",
+          "Sb (%)",
+        ],
+        rows: [
+          [
+            "ERK-731",
+            "1,024.7",
+            "9.68",
+            "3.3",
+            "0.12",
+            ">1.00",
+            ">1.00",
+            "0.19",
+          ],
+        ],
+      },
+      {
+        heading: "Acquisition & Option Terms",
+        type: "paragraph",
+        content:
+          "The Red GT Property is offered for outright purchase or through a staged option agreement. Aurora Gold and Gravels Inc. is seeking a partner to advance the project through systematic modern exploration and drill testing. An outright 100% acquisition can be negotiated via cash and/or share payments, subject to a retained Net Smelter Return (NSR) royalty. Alternatively, a company may earn up to 100% ownership via an option agreement combining staged cash payments, share issuances, and funded exploration expenditures. A proposed structure includes a 2% NSR royalty, with all purchase prices, commitments, and buyback provisions open to negotiation.",
+      },
+    ],
+  },
+  {
+    id: "bc-014",
+    type: "project",
+    title: "BJ Property - British Columbia",
+    summary:
+      "A compact 20.59-hectare early-stage silver-lead-zinc-copper polymetallic vein exploration project in the Golden Mining Division[cite: 19]. Located near Shamrock Lake at 2,320 metres elevation, featuring historically trenched quartz-carbonate veins returning rock-channel assays up to 88 g/t Ag, 8.95% Pb, and 4.36% Zn[cite: 21, 22].",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793109478/BJ_Property_Mineral_Property_Acquisition_-_Option_Proposal_ldt5qd.png",
+    coordinates: [50.45, -116.15], 
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    quickFacts: [
+      { label: "Property", value: "BJ Property" }, //[cite: 19]
+      { label: "Mining Division", value: "Golden Mining Division" }, //[cite: 19]
+      { label: "Area", value: "20.59 Hectares" }, //[cite: 19]
+      { label: "Primary Commodities", value: "Ag, Pb, Zn, Cu" }, //[cite: 19]
+      {
+        label: "Deposit Type",
+        value: "I05 - Polymetallic Veins Ag-Pb-Zn ± Au",
+      }, //[cite: 21]
+      { label: "Status", value: "Early-Stage Exploration / Showing" }, //[cite: 19, 22]
+      { label: "Elevation", value: "~2,320 metres" }, //[cite: 21]
+    ],
+    tags: [
+      "Silver",
+      "Lead",
+      "Zinc",
+      "Copper",
+      "Polymetallic Veins",
+      "Golden Mining Division",
+      "Purcell Supergroup",
+      "For Sale",
+      "Option Available",
+    ],
+    sections: [
+      {
+        heading: "Property Overview & Regional Setting",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793109478/BJ_Property_Mineral_Property_Acquisition_-_Option_Proposal_ldt5qd.png",
+        imageCaption:
+          "Aerial view and property boundary of the 20.59-hectare BJ Property near Shamrock Lake[cite: 19].",
+        content:
+          "The BJ Property is an early-stage silver-lead-zinc-copper polymetallic vein exploration project situated in the Golden Mining Division of southeastern British Columbia[cite: 19]. The 20.59-hectare property lies near the south shore of Shamrock Lake at an elevation of approximately 2,320 metres within the Omineca tectonic belt and Ancestral North America terrane[cite: 19, 21]. The property's focused size provides an exploration target centred directly on a documented high-grade polymetallic occurrence within a region known for carbonate-hosted and Mississippi Valley-type mineralization, such as the historic Paradise Mine[cite: 19, 21].",
+      },
+      {
+        heading: "Project Highlights",
+        type: "bullet_list",
+        content: [
+          "Compact 20.59-hectare land position hosting the historic BJ high-grade polymetallic vein occurrence[cite: 19, 23].",
+          "Historical 0.5-metre rock-channel sample returning 88 g/t Ag, 8.95% Pb, 4.36% Zn, and 0.05% Cu[cite: 22, 23].",
+          "Mineralization occurs within quartz-carbonate veins and fractures hosted in Horsethief Creek Group dolomite[cite: 22].",
+          "Structurally controlled vein system associated with a local fold axis and tensional fracturing[cite: 22, 23].",
+          "Documented presence of tetrahedrite, which provides a strong vector for silver and antimony enrichment[cite: 22].",
+          "Existing historical trenching (two small trenches) exposing the vein structure near Shamrock Lake, with limited documented modern systematic exploration[cite: 22, 23].",
+        ],
+      },
+      {
+        heading: "Geological & Structural Setting",
+        type: "paragraph",
+        content:
+          "The regional geology is defined by Proterozoic clastic sedimentary rocks of the Purcell (Aldridge, Creston, Kitchener, Dutch Creek, Mount Nelson formations) and Windermere (Toby Formation, Horsethief Creek Group) supergroups, along with lower Paleozoic strata[cite: 21]. Locally, these rocks have undergone regional greenschist facies metamorphism and significant structural deformation, where folding and overthrusting have created permeable pathways for hydrothermal vein emplacement[cite: 21]. At the BJ occurrence, mineralization is specifically hosted within dolomite of the Monk Formation (Horsethief Creek Group), where tensional fractures developed near a fold axis have acted as traps for sulphide deposition[cite: 22].",
+      },
+      {
+        heading: "Mineralization Styles & Assays",
+        type: "table",
+        caption:
+          "Historical rock-channel sampling from narrow high-grade vein exposures. Results demonstrate tenor but do not represent average property grade or true width[cite: 22].",
+        headers: [
+          "Sample Type",
+          "Interval",
+          "Ag (g/t)",
+          "Pb (%)",
+          "Zn (%)",
+          "Cu (%)",
+          "Mineralogy",
+        ],
+        rows: [
+          [
+            "Rock-channel sample",
+            "0.5 m across 0.1 m vein",
+            "88",
+            "8.95%",
+            "4.36%",
+            "0.05%",
+            "Galena, tetrahedrite, sphalerite, smithsonite[cite: 22]",
+          ],
+        ],
+      },
+      {
+        heading: "Structural Exploration Model",
+        type: "paragraph",
+        content:
+          "Mineralization at the BJ showing is heavily structurally controlled, occurring in two principal styles: (1) galena-sphalerite-tetrahedrite within fractures and quartz-carbonate veins (with secondary smithsonite), and (2) subvertical quartz veins dominated by galena and tetrahedrite[cite: 22]. Because the mineralization is intimately linked to folding and tensional fracturing, future exploration must expand beyond the historic trenches to map parallel fractures, fold hinges, carbonate contacts, and structural intersections[cite: 22, 23]. This structural framework presents an excellent opportunity for targeted geophysical and geochemical surveys to delineate strike extensions[cite: 23].",
+      },
+      {
+        heading: "Commercial Terms & Acquisition",
+        type: "paragraph",
+        content:
+          "Aurora Gold and Gravels Inc. offers the BJ Property for outright purchase or through a staged option-to-purchase agreement. An outright 100% acquisition can be negotiated via cash and/or share payments, subject to a retained Net Smelter Return (NSR) royalty. Alternatively, a partner may earn up to 100% ownership through staged cash payments, company shares, and exploration expenditures. The vendors propose a 2% NSR royalty structure, with all final purchase prices, commitments, and buyback provisions open to mutual negotiation.",
+      },
+    ],
+  },
+  {
+    id: "bc-015", // TODO: verify ID sequence
+    type: "project",
+    title: "Dove Property - British Columbia",
+    summary:
+      "A 78.50-hectare gold-copper-silver exploration project located approximately 24 kilometres southeast of Valemount, British Columbia[cite: 24]. Encompasses the historic Dove/Ingrid occurrence where structurally controlled quartz veins and stratiform zones within the Malton Gneiss Complex host native gold and copper sulphides[cite: 24]. Includes significant historical drilling and surface assays up to 8.64 g/t Au, 60.5 g/t Ag, and 1.82% Cu[cite: 24].",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793109785/Dove_Property_Mineral_Property_Acquisition_-_Option_Proposal_d6fv17.png", // TODO: Upload satellite property map to Cloudinary and insert URL
+    coordinates: [52.6833, -119.0833], // TODO: Confirm exact coordinates for Valemount / Malton Gneiss area (Cariboo/Kamloops Mining Divisions)
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    quickFacts: [
+      { label: "Property", value: "Dove / Ingrid" }, //[cite: 24]
+      { label: "Mining Division", value: "Cariboo and Kamloops" }, //[cite: 24]
+      { label: "Area", value: "78.50 Hectares" }, //[cite: 24]
+      { label: "Primary Commodities", value: "Au, Cu, Ag" }, //[cite: 24]
+      {
+        label: "Deposit Type",
+        value: "Structurally Controlled Vein / Stratiform",
+      }, //[cite: 24, 26, 29]
+      { label: "Status", value: "Early-Stage Exploration (Drilled)" }, //[cite: 24, 28]
+      { label: "Location", value: "~24 km SE of Valemount, BC" }, //[cite: 24]
+    ],
+    tags: [
+      "Gold",
+      "Copper",
+      "Silver",
+      "Native Gold",
+      "Malton Gneiss Complex",
+      "Omineca Belt",
+      "For Sale",
+      "Option Available",
+    ],
+    sections: [
+      {
+        heading: "Property Overview & Regional Setting",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793109785/Dove_Property_Mineral_Property_Acquisition_-_Option_Proposal_d6fv17.png",
+        imageCaption: "Satellite overview of the Dove Property[cite: 24].",
+        content:
+          "The Dove Property is a gold-copper-silver exploration project covering approximately 78.50 hectares in east-central British Columbia, roughly 24 kilometres southeast of Valemount[cite: 24]. The location benefits from proximity to the Yellowhead Highway corridor, providing established transportation infrastructure, accommodation, and supplies[cite: 25]. Situated within the Omineca tectonic belt, the property is underlain by Ancestral North America rocks and encompasses the historic Dove/Ingrid mineral occurrence[cite: 24, 25].",
+      },
+      {
+        heading: "Project Highlights",
+        type: "bullet_list",
+        content: [
+          "Compact 78.50-hectare project centered on a known gold-copper-silver system with documented native gold[cite: 24, 29].",
+          "Historical surface sampling returned maximum individual values of 8.64 g/t Au, 60.5 g/t Ag, and 1.82% Cu[cite: 24, 27].",
+          "Mineralization occurs in two vertically adjacent structurally controlled zones and two stratiform units within the Malton Gneiss Complex[cite: 24].",
+          "Extensive historical database including over 300 metres of diamond drilling across at least 17 holes (1978, 1983, and 1987 programs)[cite: 28, 29].",
+          "Strong structural control model indicating mineralization is localized at intersections between mafic-rich metamorphic units, deformation zones, and quartz veining[cite: 26].",
+        ],
+      },
+      {
+        heading: "Geological & Structural Architecture",
+        type: "paragraph",
+        content:
+          "Regionally, the area is underlain by Upper Proterozoic metamorphic rocks of the Malton Gneiss Complex[cite: 25]. The dominant local lithologies include quartz-mica schist, amphibolite, and hornblende gneiss, all of which contain massive white quartz veins and stringers[cite: 25]. The sequence has undergone polyphase folding, resulting in a west-northwest-trending regional fold axis[cite: 25]. The nearby North Thompson Valley fault is a major regional structural feature[cite: 25]. Structure is a critical control on mineralization at Dove: gold and copper occur along fractures, foliation surfaces, and within quartz veins localized in deformed, less competent mafic-rich metamorphic zones[cite: 25, 26]. Encouraging historical values were noted along a trend of slickenside lineations, confirming late-stage structural emplacement[cite: 25].",
+      },
+      {
+        heading: "Mineralized Zones",
+        type: "bullet_list",
+        content: [
+          "Lower Mineralized Zone: An approximately 70-metre-long exposure with a 3-metre reported width[cite: 26]. Hosted in quartz veins, hornblende-quartz gneiss, and biotite schist[cite: 26]. 1987 sampling returned 0.10 to 8.64 g/t Au, 0.2 to 51.9 g/t Ag, and <0.01% to 1.82% Cu[cite: 26].",
+          "Upper Mineralized Zone: An approximately 20-metre exposure with a 4-5 metre reported width[cite: 26]. Comprises quartz veins, hornblende-biotite-quartz gneiss, and mica schist[cite: 26]. Historical samples returned 0.18 to 7.45 g/t Au, 0.1 to 60.5 g/t Ag, and 0.01 to 1.77% Cu[cite: 26, 27].",
+          "Stratiform Units: Two additional mineralized stratiform units were identified during historical diamond drilling[cite: 24, 26].",
+        ],
+      },
+      {
+        heading: "Historical High-Grade Assays",
+        type: "table",
+        caption:
+          "Summary of maximum individual historical surface assay results demonstrating local high-grade tenor[cite: 24, 27]. Note: Values represent selective sampling and not average property grade[cite: 27, 28].",
+        headers: ["Sample Year / Type", "Au (g/t)", "Ag (g/t)", "Cu (%)"],
+        rows: [
+          ["1986 - Epidote/Hornblendite Rock Sample", "8.30", "28.3", ">0.5%"], //[cite: 27]
+          ["1987 - Maximum Individual Samples", "8.64", "60.5", "1.82%"], //[cite: 24, 27]
+        ],
+      },
+      {
+        heading: "Historical Exploration & Drilling Summary",
+        type: "paragraph",
+        content:
+          "Exploration in the area dates back to the early 1970s with regional stream-sediment sampling by Hudson's Bay Minerals[cite: 28]. Following the discovery of malachite during hydro-line construction, the Ingrid claims were staked in 1978 and tested with two short diamond drill holes (~20 metres total)[cite: 27, 28]. A subsequent 7.5-metre hole was drilled in 1983[cite: 27]. The most comprehensive program occurred in 1987, consisting of 14 diamond drill holes totaling 283 metres, geological mapping, soil/rock geochemistry, and 6 kilometres of ground magnetics[cite: 27, 28]. Collectively, the drilling confirmed mineralization over an area of approximately 200 square metres[cite: 27, 29]. Because historical records suggest the irregular presence of coarse native gold (the 'nugget effect'), future evaluation should employ larger sample volumes and metallic-screen fire assays[cite: 28].",
+      },
+      {
+        heading: "Acquisition & Option Terms",
+        type: "paragraph",
+        content:
+          "The Dove Property is offered by Aurora Gold and Gravels Inc. for outright purchase or through a staged option agreement[cite: 30]. An outright 100% acquisition is available via negotiated cash and/or share payments subject to a retained Net Smelter Return (NSR) royalty[cite: 30]. Alternatively, an earn-in option structure can be negotiated combining cash payments, share issuances, and funded exploration commitments[cite: 30]. The vendors propose a 2% NSR royalty as part of the transaction, with all buyback provisions and commercial terms subject to a definitive agreement[cite: 30].",
+      },
+    ],
+  },
+  {
+    id: "bc-016", // TODO: verify ID sequence
+    type: "project",
+    title: "Dalvine East Property - British Columbia",
+    summary:
+      "A 17.06-hectare early-stage gold-silver-copper-bismuth project in the Golden Triangle (Liard Mining Division)[cite: 31, 32]. Encompasses the Upper Gnat Creek occurrence hosted within the Upper Triassic Cake Hill pluton, featuring structurally controlled quartz veins and massive sulphide breccias[cite: 31, 34]. Historical sampling returned peak values of 14.94% Cu, 7.50 g/t Au, and 117.1 g/t Ag[cite: 31, 35].",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793109785/Dove_Property_Mineral_Property_Acquisition_-_Option_Proposal_d6fv17.png",
+    coordinates: [58.2, -129.8], // TODO: Confirm exact coordinates for Upper Gnat Creek / NTS 104I
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    quickFacts: [
+      { label: "Property", value: "Dalvine East (Upper Gnat Creek / Galaxie)" }, //[cite: 31]
+      { label: "MINFILE Number", value: "104I 149" }, //[cite: 35]
+      { label: "Mining Division", value: "Liard" }, //[cite: 32]
+      { label: "Area", value: "17.06 Hectares" }, //[cite: 31]
+      { label: "Primary Commodities", value: "Au, Ag, Cu, Bi" }, //[cite: 31]
+      { label: "Deposit Type", value: "I06 - Cu±Ag Quartz Veins" }, //[cite: 31, 34]
+      { label: "Status", value: "Showing / Early-Stage Exploration" }, //[cite: 31, 35]
+    ],
+    tags: [
+      "Gold",
+      "Silver",
+      "Copper",
+      "Bismuth",
+      "Quartz Veins",
+      "Golden Triangle",
+      "Liard Mining Division",
+      "For Sale",
+      "Option Available",
+    ],
+    sections: [
+      {
+        heading: "Property Overview & Regional Setting",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793109785/Dove_Property_Mineral_Property_Acquisition_-_Option_Proposal_d6fv17.png",
+        imageCaption:
+          "Satellite overview of the Dalvine East property[cite: 33].",
+        content:
+          "The Dalvine East Property is a compact 17.06-hectare early-stage exploration project situated within the Intermontane tectonic belt and Stikine terrane in northern British Columbia[cite: 31, 32]. The property encompasses the historic Upper Gnat Creek occurrence, located on a ridge approximately 1.5 kilometres south of Upper Gnat Lake in the Liard Mining Division[cite: 32]. The broader region forms part of the highly prospective Golden Triangle, characterized by extensive Mesozoic intrusive and volcanic activity that has produced numerous porphyry, intrusion-related, vein, and hydrothermal mineral systems[cite: 32].",
+      },
+      {
+        heading: "Project Highlights",
+        type: "bullet_list",
+        content: [
+          "Compact 17.06-hectare target located in the Golden Triangle exploration district[cite: 31, 38].",
+          "Structurally controlled I06 Cu±Ag Quartz Vein mineralization hosted in Upper Triassic Cake Hill plutonic rocks[cite: 31, 34].",
+          "Significant polymetallic assays from massive sulphide breccia, including 1.7 g/t Au, 82 g/t Ag, >1% Cu, and 483 ppm Bi[cite: 31, 35].",
+          "Peak historical selected grab sampling yielded 14.94% Cu, 7.50 g/t Au, and 117.1 g/t Ag from massive chalcopyrite[cite: 31, 35].",
+          "Mineralization is accompanied by strong potassium-feldspar alteration, brecciated wall rocks, and copper oxide staining[cite: 34, 36].",
+          "Additional historical copper-sulphide-bearing veinlets documented 140 metres southeast along the ridge, indicating broader system potential[cite: 35].",
+        ],
+      },
+      {
+        heading: "Geological & Structural Architecture",
+        type: "paragraph",
+        content:
+          "The property is principally underlain by intrusive rocks of the Upper Triassic Cake Hill pluton, a component of the Jurassic-Triassic Hotailuh batholith[cite: 34]. Intrusive lithologies include hornblende quartz monzonite, granodiorite, and rare hornblende diorite[cite: 34]. Regional mapping immediately west of the Upper Gnat Creek showing indicates the presence of Upper Triassic Stuhini Group volcanic rocks, consisting of andesite, basalt flows, tuff, and breccia[cite: 34]. The juxtaposition of these intrusive rocks with Stuhini volcanics, combined with strong hydrothermal alteration and sulphide-bearing structures, creates a highly favourable environment for Cu-Au-Ag exploration[cite: 34].",
+      },
+      {
+        heading: "Mineralization & Hydrothermal Alteration",
+        type: "paragraph",
+        content:
+          "Mineralization conforms to the I06 Cu±Ag Quartz Veins deposit model, typically developing within faults, fractures, and shear zones[cite: 34]. At Upper Gnat Creek, a gossanous, oxidized, and chlorite-altered diorite to monzodiorite hosts quartz stringers and veins containing chalcopyrite, bornite, and pyrite[cite: 34]. Sulphides locally occur as massive mineralization within quartz veins ranging from 1 to 10 centimetres wide, and the mineralized zone reportedly widens locally into a 20 m x 20 cm pod[cite: 34]. Strong potassium-feldspar alteration halos encircle portions of the mineralized veins[cite: 34, 36]. The strong association of Cu-Au-Ag with elevated Bismuth provides a vital geochemical vector for mapping hydrothermal zoning[cite: 36].",
+      },
+      {
+        heading: "Historical High-Grade Assays (2011-2012)",
+        type: "table",
+        caption:
+          "Summary of selective historical high-grade sampling from the Upper Gnat Creek showing[cite: 35, 36]. Note: These are selected samples and do not represent average property grades[cite: 36].",
+        headers: [
+          "Year",
+          "Sample Material",
+          "Cu (%)",
+          "Au (g/t)",
+          "Ag (g/t)",
+          "Bi (ppm)",
+        ],
+        rows: [
+          ["2011", "Massive sulphide breccia", ">1%", "1.7", "82", "483"], //[cite: 35, 36]
+          ["2012", "Massive chalcopyrite vein", "14.94%", "7.50", "117.1", "—"], //[cite: 35, 36]
+        ],
+      },
+      {
+        heading: "Historical Exploration & Geophysics",
+        type: "paragraph",
+        image:
+          "https://stewartcassiarhighway.com/images/uploads/gallery/RS9859_Stewart_Cassiar-2013_%28369_of_396%29.jpg",
+        imageCaption:
+          "MINFILE Inventory Detail Report for Upper Gnat Creek (104I 149)[cite: 35].",
+        content:
+          "Modern exploration of the broader historical Galaxie property included significant regional programs[cite: 37]. In 2011, Finsbury Exploration Ltd. executed a large soil and silt sampling program that successfully identified the massive sulphide breccia at Upper Gnat Creek[cite: 37]. In 2012, Quartz Mountain Resources Ltd. followed up with systematic soil geochemistry and induced polarization (IP) geophysical surveys over high-priority grids[cite: 37]. Because the known chalcopyrite, bornite, and massive pyrite mineralization may produce distinct chargeability responses, compiling and georeferencing this historical IP data against the current 17.06-hectare property boundary is a primary target for future verification[cite: 37].",
+      },
+      {
+        heading: "Acquisition & Option Terms",
+        type: "paragraph",
+        content:
+          "Aurora Gold and Gravels Inc. is offering the Dalvine East Property to groups capable of advancing the project through systematic exploration and drill testing. Deal structures include 100% outright acquisition via negotiated cash and/or share payments, or a staged option-to-purchase agreement earning up to 100% through milestone cash payments, share issuances, and funded exploration expenditures. The vendors require a retained Net Smelter Return (NSR) royalty (e.g., 2%), with all commercial terms, purchase prices, and buyback provisions open to negotiation prior to a definitive agreement.",
+      },
+    ],
+  },
+  {
+    id: "bc-017",
+    type: "project",
+    title: "Tets Property - British Columbia",
+    summary:
+      "A 3,527.51-hectare early-stage copper-gold-silver-molybdenum exploration project situated within the Tahtsa porphyry district of west-central British Columbia[cite: 39]. The property is located approximately 80 km southeast of Houston and lies in close proximity to established porphyry systems including the Huckleberry Mine, Berg deposit, and Poplar deposit[cite: 39, 40]. The project features historical high-grade polymetallic surface sampling (up to 15.4% Cu and 438.86 g/t Ag) and recent 2025 assays confirming significant surface Cu-Au-Mo mineralization (up to 1.306% Cu)[cite: 42, 43].",
+    region: "British Columbia, Canada",
+    image:
+      "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793202842/Capture_d_%C3%A9cran_2026-10-28_165053_blt08n.png", // TODO: Upload Claim Map to Cloudinary and insert URL
+    coordinates: [53.846386, -126.956948], // Coordinates from property summary[cite: 39]
+    isForSale: true,
+    author: "Adamson Geomatics",
+    contactEmail: "chris@miningpropertymaps.com",
+    quickFacts: [
+      { label: "Property", value: "Tets" }, //[cite: 39]
+      { label: "District", value: "Tahtsa Porphyry District" }, //[cite: 39]
+      { label: "Area", value: "3,527.51 Hectares (19 claims)" }, //[cite: 39]
+      { label: "Primary Commodities", value: "Cu, Au, Ag, Mo" }, //[cite: 39]
+      { label: "Deposit Type", value: "Porphyry Cu-Mo / Polymetallic Breccia" }, //[cite: 39, 42]
+      { label: "Status", value: "Early-Stage Exploration" }, //[cite: 39]
+      { label: "Location", value: "~80 km SE of Houston, BC" }, //[cite: 39]
+    ],
+    tags: [
+      "Copper",
+      "Gold",
+      "Silver",
+      "Molybdenum",
+      "Tahtsa Porphyry District",
+      "Hazelton Group",
+      "For Sale",
+      "Option Available",
+    ],
+    sections: [
+      {
+        heading: "Property Overview & Regional Setting",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793202842/Capture_d_%C3%A9cran_2026-10-28_165134_s0jctf.png",
+        imageCaption:
+          "Satellite overview of the Tets Property relative to the Huckleberry, Berg, and Poplar deposits[cite: 40].",
+        content:
+          "The Tets Property is an early-stage copper-gold-silver-molybdenum exploration project situated within the Tahtsa porphyry district of west-central British Columbia[cite: 39]. Comprising 19 mineral claims covering approximately 3,527.51 hectares, the property is centred at approximately 53.846386°N, 126.956948°W, roughly 80 km southeast of Houston, British Columbia[cite: 39]. The project is strategically positioned in a broader district containing several established porphyry systems, located approximately 21 km from Huckleberry Mine, 30 km from the Berg deposit, and 5.4 km from the Poplar/Thira area[cite: 40]. Access is supported by Highway 16 and a network of forestry and resource roads[cite: 39].",
+      },
+      {
+        heading: "Project Highlights",
+        type: "bullet_list",
+        content: [
+          "Extensive 3,527.51-hectare land package in an established porphyry district with room for expansion[cite: 39].",
+          "Historical high-grade surface sampling returning values up to 15.4% Cu and 438.86 g/t Ag[cite: 42].",
+          "Historical drilling beneath mineralized trenches intercepted up to 0.77% Cu and 35.3 g/t Ag over 1.52 metres[cite: 42].",
+          "Confirmed surface mineralization from the 2025 field program, with highlights including 1.306% Cu, 0.400 g/t Au, 4.28 g/t Ag, and 73.3 ppm Mo[cite: 43].",
+          "Large historical soil anomaly (~600 m x 1,300 m) featuring values up to 350 ppm Cu, 2,200 ppm Zn, 290 ppm Pb, and 4.7 ppm Ag[cite: 42].",
+          "Complex magnetic geophysical signature coinciding with mapped geological contacts and structural fault intersections[cite: 43].",
+        ],
+      },
+      {
+        heading: "Geological & Structural Architecture",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793202843/Capture_d_%C3%A9cran_2026-10-28_165008_jcbkba.png",
+        imageCaption:
+          "Bedrock geology and structural fault map of the Tets Property[cite: 41].",
+        content:
+          "The property is primarily underlain by Middle Jurassic Hazelton Group volcanic and sedimentary rocks, specifically units assigned to the Smithers Formation[cite: 41]. Local lithologies include volcanic flows, tuffs, volcanic breccias, and potential hypabyssal intrusive bodies (altered gabbroic plug and a diabase body)[cite: 41]. Alteration is locally intense, featuring chlorite, montmorillonite, pumpellyite, and calcite[cite: 41]. Several major faults cross or occur adjacent to the property[cite: 41]. The intersections between northeast-southwest and northwest-southeast structural faults are critical exploration targets, as they likely acted as pathways for intrusive emplacement and hydrothermal fluid circulation[cite: 41].",
+      },
+      {
+        heading: "Known Mineralization",
+        type: "paragraph",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793202842/Capture_d_%C3%A9cran_2026-10-28_165038_ohxexo.png",
+        imageCaption:
+          "High-grade copper-bearing rock sample from the Tets Property[cite: 42].",
+        content:
+          "The Tets occurrence hosts a broad polymetallic mineral assemblage that includes chalcopyrite, bornite, chalcocite, native copper, sphalerite, galena, and pyrite[cite: 42]. This mineralization has been reported within breccia zones, along fractures, and as open-space fillings[cite: 42]. The presence of extensive surface copper oxide staining and massive sulphide veining confirms an active and robust hydrothermal system[cite: 41, 42].",
+      },
+      {
+        heading: "Recent 2025 Exploration Assays",
+        type: "table",
+        caption:
+          "Significant Cu-Au-Mo assay results from the 2025 field sampling program, demonstrating percent-level copper mineralization accompanied by gold and molybdenum at surface[cite: 43].",
+        headers: ["Sample ID", "Cu (%)", "Au (g/t)", "Ag (g/t)", "Mo (ppm)"],
+        rows: [
+          ["89026", "1.306%", "0.400", "4.28", "73.3"], //[cite: 43]
+          ["89029", "0.69%", "0.267", "—", "15.4"], //[cite: 43]
+          ["89033", "0.5605%", "0.268", "—", "50.5"], //[cite: 43]
+          ["89034", "0.37%", "0.164", "—", "28.1"], //[cite: 43]
+        ],
+      },
+      {
+        heading: "Geophysical Targeting",
+        type: "paragraph",
+        content:
+          "Airborne magnetic data outlines a complex environment across the property[cite: 43]. A prominent magnetic-high domain occurs northwest of the principal claim block, alongside a sharp magnetic gradient near tenures 1139030, 1139024, and 1139025[cite: 43]. A relatively compact magnetic anomaly is located near tenure 1139025, and an elongate north-northeast to south-southwest magnetic feature extends through the central and southeastern portions of the property[cite: 43]. The eastern portion contains closely spaced magnetic highs and lows that broadly coincide with mapped geological contacts and faults, presenting immediate targets for field verification[cite: 43].",
+      },
+      {
+        heading: "Commercial Option Terms",
+        type: "paragraph",
+        content:
+          "The Tets Property is available for outright purchase or through a staged option agreement[cite: 45]. The vendors are seeking a partner capable of advancing the project through systematic exploration and drill testing[cite: 45]. A 100% acquisition is possible via negotiated cash and/or share payments, subject to a retained Net Smelter Return (NSR) royalty[cite: 45]. Alternatively, a company may earn up to 100% ownership through staged cash payments, company shares, and exploration expenditures[cite: 45]. The vendors propose a 2% NSR royalty with all final royalty, buyback provisions, and purchase price terms subject to a definitive agreement[cite: 45].",
+      },
+      // rest of images gallery
+      {
+        heading: "Property Images",
+        type: "ImageGallery",
+        galleryType: "mosaic",
+        images: [
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793202843/Capture_d_%C3%A9cran_2026-10-28_165219_lf2yvy.png",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793202843/Capture_d_%C3%A9cran_2026-10-28_165155_c5vtnp.png",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793202843/Capture_d_%C3%A9cran_2026-10-28_165204_hx2sdw.png",
+          },
+          {
+            src: "https://res.cloudinary.com/dfytfu2jq/image/upload/v1793202843/Capture_d_%C3%A9cran_2026-10-28_165211_g2eked.png",
+          },
+        ],
+      },
+    ],
+  },
 ];

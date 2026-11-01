@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { CinematicHero } from "@/components/home/cinematic-hero";
 import { FieldReportsSection } from "@/components/home/field-reports-section";
 import { GlobalTelemetrySection } from "@/components/home/global-telemetry-section";
@@ -13,8 +12,9 @@ import { CertificationsSection } from "@/components/home/certifications-section"
 import { PartnerProgramsTickerBanner } from "@/components/PartnerProgramsTickerBanner";
 import Footer from "@/components/footer";
 import { inter } from "@/lib/fonts";
+import type { Locale } from "@/lib/i18n/types";
 
-export default function HomePage() {
+export default function HomePage({ locale: _locale }: { locale?: Locale } = {}) {
   return (
     <div
       data-home-scroll

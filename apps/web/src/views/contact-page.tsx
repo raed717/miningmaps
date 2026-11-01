@@ -3,7 +3,6 @@
 import { motion } from "motion/react";
 import {
   ArrowUpRight,
-  Building2,
   Facebook,
   Gem,
   Linkedin,
@@ -18,58 +17,17 @@ import {
 import { inter, mono } from "@/lib/fonts";
 import ContactForm from "@/components/ContactForm";
 import NewsletterForm from "@/components/NewsletterForm";
+import { useI18n } from "@/lib/i18n/context";
+import { contactTranslations } from "@/lib/i18n/translations/contact";
+import type { Locale } from "@/lib/i18n/types";
 
-type ContactRoute = {
-  id: string;
-  title: string;
-  description: string;
-  icon: typeof Mail;
-  href: string;
-  label: string;
-  external?: boolean;
-};
+const routeIcons = [Gem, Map, Linkedin, Facebook];
 
-const contactRoutes = [
-  {
-    id: "COMM_LINK_01",
-    title: "For a quote or proposal",
-    description: "Mining property maps, GIS services, data analysis.",
-    icon: Gem,
-    href: "mailto:chris@miningpropertymaps.com",
-    label: "chris@miningpropertymaps.com",
-  },
-  {
-    id: "COMM_LINK_02",
-    title: "Land Services",
-    description:
-      "Claim staking, tenure support, permitting, land management, and field coordination.",
-    icon: Map,
-    href: "mailto:chris@adamsonlandservices.com",
-    label: "chris@adamsonlandservices.com",
-  },
-  {
-    id: "NETWORK_01",
-    title: "LinkedIn",
-    description:
-      "Best for partnerships, professional introductions, and broader business discussions.",
-    icon: Linkedin,
-    href: "https://www.linkedin.com/company/adamson-geomatics/",
-    label: "Chris Adamson",
-    external: true,
-  },
-  {
-    id: "NETWORK_02",
-    title: "Facebook",
-    description:
-      "Best for general updates, brand presence, and casual outreach to Adamson Geomatics.",
-    icon: Facebook,
-    href: "https://www.facebook.com/profile.php?id=61561908187975",
-    label: "Adamson Geomatics",
-    external: true,
-  },
-] satisfies ContactRoute[];
+export default function ContactPage({ locale: overrideLocale }: { locale?: Locale }) {
+  const { locale: contextLocale } = useI18n();
+  const locale = overrideLocale || contextLocale || "en";
+  const t = contactTranslations[locale] || contactTranslations.en;
 
-export default function ContactPage() {
   return (
     <div
       className={`relative min-h-screen w-full overflow-x-hidden bg-background text-foreground ${inter.className}`}
@@ -91,7 +49,7 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             className={`mb-5 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
           >
-            <Terminal className="h-4 w-4" /> SECURE_CHANNEL_OPEN
+            <Terminal className="h-4 w-4" /> {t.hero.badge}
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -99,9 +57,9 @@ export default function ContactPage() {
             transition={{ delay: 0.1 }}
             className="max-w-3xl text-4xl font-extrabold uppercase tracking-tighter leading-[0.88] md:text-6xl"
           >
-            Contact
+            {t.hero.title}
             <br />
-            <span className="text-primary">Routing</span>
+            <span className="text-primary">{t.hero.titleHighlight}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: -20 }}
@@ -109,8 +67,7 @@ export default function ContactPage() {
             transition={{ delay: 0.2 }}
             className={`mt-6 max-w-2xl text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
           >
-            Pick the contact path that matches what you need help with, and
-            route your inquiry directly to the right place.
+            {t.hero.subtitle}
           </motion.p>
         </div>
 
@@ -125,24 +82,23 @@ export default function ContactPage() {
             <div
               className={`flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
             >
-              <PenLine className="h-4 w-4" /> SEND INQUIRY
+              <PenLine className="h-4 w-4" /> {t.form.cardBadge}
             </div>
             <p
               className={`mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground ${mono.className}`}
             >
-              Use the form below and we&rsquo;ll route your message to the right
-              person.
+              {t.form.cardDesc}
             </p>
           </div>
           <div className="px-5 py-6 md:px-8 md:py-8">
-            <ContactForm />
+            <ContactForm locale={locale} />
           </div>
         </motion.div>
 
         <div className="border border-border bg-card/70 backdrop-blur-sm">
           <div className="grid gap-px bg-border">
-            {contactRoutes.map((route, index) => {
-              const Icon = route.icon;
+            {t.routes.map((route, index) => {
+              const Icon = routeIcons[index % routeIcons.length];
 
               return (
                 <motion.a
@@ -173,7 +129,7 @@ export default function ContactPage() {
                     <div
                       className={`mt-3 text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}
                     >
-                      Best for
+                      {route.bestFor}
                     </div>
                   </div>
 
@@ -212,16 +168,15 @@ export default function ContactPage() {
               <div
                 className={`flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
               >
-                <Radio className="h-4 w-4" /> NEWSLETTER_FEED
+                <Radio className="h-4 w-4" /> {t.newsletter.badge}
               </div>
               <h3 className="mt-2 text-xl font-black uppercase tracking-tight text-white md:text-2xl">
-                Not ready to reach out yet?
+                {t.newsletter.title}
               </h3>
               <p
                 className={`mt-3 text-xs uppercase tracking-[0.16em] leading-relaxed text-muted-foreground ${mono.className}`}
               >
-                Get field reports, new mining properties, and project updates
-                delivered to your inbox. Unsubscribe anytime.
+                {t.newsletter.description}
               </p>
             </div>
             <div
@@ -244,49 +199,27 @@ export default function ContactPage() {
               <div
                 className={`flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
               >
-                <Scale className="h-4 w-4" /> RECOMMENDED LEGAL COUNSEL
+                <Scale className="h-4 w-4" /> {t.legal.badge}
               </div>
               <h3 className="mt-2 text-xl font-black uppercase tracking-tight text-white md:text-2xl">
-                Mining Law &amp; Title Issues
+                {t.legal.title}
               </h3>
             </div>
             <span
               className={`inline-flex items-center gap-1.5 self-start sm:self-auto border border-secondary/40 bg-secondary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-secondary ${mono.className}`}
             >
-              TRUSTED COLLABORATORS
+              {t.legal.trustedTag}
             </span>
           </div>
 
           <p
             className={`mt-4 text-xs uppercase tracking-[0.16em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}
           >
-            Adamson Geomatics frequently works alongside and highly recommends
-            these leading Canadian and global law firms for complex mineral
-            title research, Crown Grant conveyancing, tenure disputes, and mining
-            transactions.
+            {t.legal.description}
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {[
-              {
-                name: "Bennett Jones",
-                focus: "Recommended for Mining Law & Title Issues",
-                desc: "Longstanding collaboration on complex mining transactions, resource development, and title diligence.",
-                href: "https://www.bennettjones.com/",
-              },
-              {
-                name: "Dentons LLC",
-                focus: "Recommended for Mining Law & Title Issues",
-                desc: "Trusted counsel on complex Crown Grant transfers, historical parcel research, and boundary mappings.",
-                href: "https://www.dentons.com/en/",
-              },
-              {
-                name: "McCarthy Tétrault",
-                focus: "Recommended for Mining Law & Title Issues",
-                desc: "Top-tier global metals & mining group advising on mineral tenure, acquisitions, and regulatory matters.",
-                href: "https://www.mccarthy.ca/",
-              },
-            ].map((firm) => (
+            {t.legal.firms.map((firm) => (
               <a
                 key={firm.name}
                 href={firm.href}
@@ -320,7 +253,7 @@ export default function ContactPage() {
                 <div
                   className={`mt-5 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-primary group-hover:underline ${mono.className}`}
                 >
-                  Visit Official Site &rsaquo;
+                  {firm.button}
                 </div>
               </a>
             ))}
@@ -337,16 +270,9 @@ export default function ContactPage() {
           <div
             className={`space-y-3 text-xs uppercase tracking-[0.18em] leading-relaxed text-muted-foreground ${mono.className}`}
           >
-            <p>
-              Response time is typically within 24-48 hours. For urgent field
-              operations or immediate staking requirements, include `URGENT` in
-              the subject line.
-            </p>
-            <p>
-              For mining property opportunities use the mining properties route
-              first. For GIS, land management, tenure, or permitting support use
-              the land services route.
-            </p>
+            {t.notice.map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
           </div>
         </motion.div>
 
@@ -359,15 +285,10 @@ export default function ContactPage() {
           <div
             className={`text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}
           >
-            Please Provide
+            {t.checklist.badge}
           </div>
           <div className="mt-4 grid gap-px border border-border bg-border">
-            {[
-              "Clear explanation of your project needs / land issue",
-              "Property address, tenure ID, or lat/long coordinates",
-              "Desired output format (i.e PDF or JPG maps, PowerPoint reports, written documents)",
-              "Intended audience",
-            ].map((item) => (
+            {t.checklist.items.map((item) => (
               <div
                 key={item}
                 className={`bg-background px-4 py-4 text-xs uppercase tracking-[0.16em] leading-relaxed text-muted-foreground md:text-sm ${mono.className}`}

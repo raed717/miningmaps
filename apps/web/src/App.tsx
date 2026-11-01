@@ -8,6 +8,8 @@ import NavigationProgressBar from "@/components/navigation-progress-bar";
 import Loader from "@/components/loader";
 import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next";
+import { I18nProvider } from "@/lib/i18n/context";
+import { parseLocaleFromPath } from "@/lib/i18n/navigation";
 
 const HomePage = dynamic(() => import("@/views/home-page"), {
   loading: () => <Loader message="Loading Home..." />,
@@ -104,29 +106,31 @@ export default function App() {
     return () => window.clearTimeout(timeout);
   }, [normalizedPathname]);
 
-  const segments = normalizedPathname
+  const { locale, cleanPath } = parseLocaleFromPath(normalizedPathname);
+
+  const segments = cleanPath
     .split("/")
     .filter(Boolean)
     .map(decodeSegment);
 
   let content = <NotFoundPage path={normalizedPathname} />;
 
-  if (normalizedPathname === "/") {
-    content = <HomePage />;
-  } else if (normalizedPathname === "/about") {
-    content = <AboutPage />;
-  } else if (normalizedPathname === "/services") {
-    content = <ServicesPage />;
-  } else if (normalizedPathname === "/contact") {
-    content = <ContactPage />;
-  } else if (normalizedPathname === "/map") {
+  if (cleanPath === "/") {
+    content = <HomePage locale={locale} />;
+  } else if (cleanPath === "/about") {
+    content = <AboutPage locale={locale} />;
+  } else if (cleanPath === "/services") {
+    content = <ServicesPage locale={locale} />;
+  } else if (cleanPath === "/contact") {
+    content = <ContactPage locale={locale} />;
+  } else if (cleanPath === "/map") {
     content = <MapView />;
-  } else if (normalizedPathname === "/dashboard") {
+  } else if (cleanPath === "/dashboard") {
     content = <DashboardView />;
-  } else if (normalizedPathname === "/projects") {
-    content = <ProjectsPage />;
-  } else if (normalizedPathname === "/properties") {
-    content = <ProjectsPage showOnlyForSale />;
+  } else if (cleanPath === "/projects") {
+    content = <ProjectsPage locale={locale} />;
+  } else if (cleanPath === "/properties") {
+    content = <ProjectsPage showOnlyForSale locale={locale} />;
   } else if (normalizedPathname === "/other-projects") {
     content = <OtherProjectsPage />;
   } else if (normalizedPathname === "/partners") {
@@ -151,12 +155,14 @@ export default function App() {
   }
 
   return (
-    <div className="grid min-h-svh grid-rows-[auto_1fr] w-full max-w-full overflow-x-clip">
-      <NavigationProgressBar />
-      <Header />
-      <Analytics />
-      <div className="h-full min-h-0 flex flex-col w-full max-w-full overflow-x-clip">{content}</div>
-      <Toaster richColors />
-    </div>
+    <I18nProvider initialLocale={locale}>
+      <div className="grid min-h-svh grid-rows-[auto_1fr] w-full max-w-full overflow-x-clip">
+        <NavigationProgressBar />
+        <Header />
+        <Analytics />
+        <div className="h-full min-h-0 flex flex-col w-full max-w-full overflow-x-clip">{content}</div>
+        <Toaster richColors />
+      </div>
+    </I18nProvider>
   );
 }

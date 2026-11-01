@@ -3,40 +3,26 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { mono } from "@/lib/fonts";
-
-const fieldReports = [
-  {
-    text: `
-    I have had the opportunity over the last several years to work closely with Chris on a number of matters, some of which were very complex in nature and required a careful analysis of the approach to take in order to achieve the desired result. 
-He is very intelligent, hardworking, seeks solutions and follows up on various matters including staying on top of developments and what needs to be carried out with respect to files and matters that he deals with. 
-He has a very solid understanding of the issues and challenges on matters that arise and I found him excellent to work with and he develops a thorough knowledge of the matter that he is working on. 
-I am pleased to be able to provide a reference letter for him and I would be pleased to expand on the positive experiences that I have had working with him if comments or questions need to be followed up further. 
-    `,
-    author: "Brian Abraham",
-    role: "K.C., P.Geo",
-  },
-  {
-    text: `
-    Hi Chris, 
-Congratulations on having your image selected
- for the 2025 Esri User Conference!  Your image was displayed in Jack
- Dangermond's Plenary Presentation.  Well
- done!  
- We would like to sincerely thank you for your work
- and look forward to your future submissions.
-`,
-    author: "Esri",
-    role: "Esri Plenary Image Submission Team",
-    link: "https://mediaspace.esri.com/media/1_2rc7uxir?kalturaStartTime=563",
-  },
-];
+import { useI18n } from "@/lib/i18n/context";
+import { homeTranslations } from "@/lib/i18n/translations/home";
 
 function FieldReportItem({
   report,
   index,
+  readMoreText,
+  readLessText,
+  presentationLinkText,
 }: {
-  report: (typeof fieldReports)[number];
+  report: {
+    text: string;
+    author: string;
+    role: string;
+    link?: string;
+  };
   index: number;
+  readMoreText: string;
+  readLessText: string;
+  presentationLinkText: string;
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const cleanText = report.text.trim().replace(/\s+/g, " ");
@@ -74,7 +60,7 @@ function FieldReportItem({
             onClick={() => setIsExpanded(!isExpanded)}
             className={`mb-6 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.18em] text-primary transition-colors hover:text-white focus:outline-none ${mono.className}`}
           >
-            {isExpanded ? "read less" : "read more.."}
+            {isExpanded ? readLessText : readMoreText}
           </button>
         )}
       </div>
@@ -93,7 +79,7 @@ function FieldReportItem({
             rel="noopener noreferrer"
             className="mt-4 inline-block text-primary hover:text-primary/80 transition-colors"
           >
-            Jack Dangermond's Plenary Presentation.
+            {presentationLinkText}
           </a>
         )}
       </div>
@@ -102,29 +88,34 @@ function FieldReportItem({
 }
 
 export function FieldReportsSection() {
+  const { locale } = useI18n();
+  const t = (homeTranslations[locale] || homeTranslations.en).fieldReports;
+
   return (
     <section className="relative z-10 bg-background px-4 py-32 md:px-12 lg:px-24">
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-24">
         <div className="lg:col-span-1">
           <h2 className="mb-6 text-4xl font-extrabold uppercase tracking-tighter md:text-5xl">
-            Field
+            {t.title}
             <br />
-            Reports
+            {t.titleHighlight}
           </h2>
           <p
             className={`text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}
           >
-            Endorsements from executives, geologists, and industry leaders.
-            Verified intelligence.
+            {t.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:col-span-2">
-          {fieldReports.map((report, index) => (
+          {t.reports.map((report, index) => (
             <FieldReportItem
               key={report.author}
               report={report}
               index={index}
+              readMoreText={t.readMore}
+              readLessText={t.readLess}
+              presentationLinkText={t.presentationLink}
             />
           ))}
         </div>
