@@ -15,6 +15,7 @@ import {
   FolderKanban,
   Tag,
   Gem,
+  BadgeCheck,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { useProjectSummaries } from "@/lib/projectDataContext";
@@ -64,13 +65,15 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
-  const [forSaleOnly, setForSaleOnly] = useState(false);
+  const [saleFilter, setSaleFilter] = useState<"all" | "for-sale" | "sold">("all");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const params = new URLSearchParams(window.location.search);
       if (params.get("forSale") === "true" || params.get("filter") === "for-sale") {
-        setForSaleOnly(true);
+        setSaleFilter("for-sale");
+      } else if (params.get("sold") === "true" || params.get("filter") === "sold") {
+        setSaleFilter("sold");
       }
       const typeParam = params.get("type")?.toLowerCase();
       if (
@@ -99,7 +102,18 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
             (id) => projects.find((sub) => sub.id === id)?.isForSale
           ))
     ).length;
-  }, []);
+  }, [projects]);
+
+  const totalSoldCount = useMemo(() => {
+    return projects.filter(
+      (p) =>
+        p.type !== "subproject" &&
+        !p.isForSale &&
+        !(p.subProjectIds || []).some(
+          (id) => projects.find((sub) => sub.id === id)?.isForSale
+        )
+    ).length;
+  }, [projects]);
 
   const totalSpecimensCount = useMemo(() => {
     const specimenTagSet = new Set(SPECIMEN_TAGS.map((t) => t.toLowerCase()));
@@ -114,7 +128,7 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
       ].map((t) => t.toLowerCase());
       return allTags.some((t) => specimenTagSet.has(t));
     }).length;
-  }, []);
+  }, [projects]);
 
   const filteredProjects = projects.filter((project) => {
     if (project.type === "subproject") return false;
@@ -159,8 +173,10 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
     }
 
     const matchesSaleState =
-      showOnlyForSale || forSaleOnly
+      showOnlyForSale || saleFilter === "for-sale"
         ? project.isForSale || subs.some((sub) => sub!.isForSale)
+        : saleFilter === "sold"
+        ? !project.isForSale && !subs.some((sub) => sub!.isForSale)
         : true;
 
     return matchesSearch && matchesFilter && matchesSaleState;
@@ -289,10 +305,10 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
               type="button"
               onClick={() => {
                 setActiveFilter(null);
-                setForSaleOnly(false);
+                setSaleFilter("all");
               }}
               className={`px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
-                activeFilter === null && !forSaleOnly
+                activeFilter === null && saleFilter === "all"
                   ? "border-primary bg-primary text-black"
                   : "border-border bg-card text-muted-foreground hover:border-primary hover:text-primary"
               } border`}
@@ -300,28 +316,52 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
               {t.controls.all}
             </button>
             {!showOnlyForSale && (
-              <button
-                type="button"
-                onClick={() => setForSaleOnly((prev) => !prev)}
-                className={`inline-flex items-center gap-1.5 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
-                  forSaleOnly
-                    ? "border-secondary bg-secondary text-black shadow-[0_0_12px_rgba(0,255,65,0.4)]"
-                    : "border-secondary/40 bg-secondary/10 text-secondary hover:border-secondary hover:bg-secondary/20"
-                } border`}
-                title={forSaleOnly ? "Show all projects" : "Filter projects available for sale"}
-              >
-                <Tag className="h-3 w-3" />
-                <span>{t.controls.forSale}</span>
-                <span
-                  className={`ml-0.5 px-1.5 py-0.2 text-[9px] font-extrabold ${
-                    forSaleOnly
-                      ? "bg-black text-secondary"
-                      : "border border-secondary/40 bg-secondary/20 text-secondary"
-                  }`}
+              <>
+                <button
+                  type="button"
+                  onClick={() => setSaleFilter((prev) => (prev === "for-sale" ? "all" : "for-sale"))}
+                  className={`inline-flex items-center gap-1.5 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
+                    saleFilter === "for-sale"
+                      ? "border-secondary bg-secondary text-black shadow-[0_0_12px_rgba(0,255,65,0.4)]"
+                      : "border-secondary/40 bg-secondary/10 text-secondary hover:border-secondary hover:bg-secondary/20"
+                  } border`}
+                  title={saleFilter === "for-sale" ? "Show all projects" : "Filter projects available for sale"}
                 >
-                  {totalForSaleCount}
-                </span>
-              </button>
+                  <Tag className="h-3 w-3" />
+                  <span>{t.controls.forSale}</span>
+                  <span
+                    className={`ml-0.5 px-1.5 py-0.2 text-[9px] font-extrabold ${
+                      saleFilter === "for-sale"
+                        ? "bg-black text-secondary"
+                        : "border border-secondary/40 bg-secondary/20 text-secondary"
+                    }`}
+                  >
+                    {totalForSaleCount}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setSaleFilter((prev) => (prev === "sold" ? "all" : "sold"))}
+                  className={`inline-flex items-center gap-1.5 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.18em] transition-all md:px-4 md:text-xs ${mono.className} ${
+                    saleFilter === "sold"
+                      ? "border-amber-500 bg-amber-500 text-black shadow-[0_0_12px_rgba(245,158,11,0.4)]"
+                      : "border-amber-500/40 bg-amber-500/10 text-amber-500 hover:border-amber-500 hover:bg-amber-500/20"
+                  } border`}
+                  title={saleFilter === "sold" ? "Show all projects" : "Filter projects already sold"}
+                >
+                  <BadgeCheck className="h-3 w-3" />
+                  <span>{t.controls.sold}</span>
+                  <span
+                    className={`ml-0.5 px-1.5 py-0.2 text-[9px] font-extrabold ${
+                      saleFilter === "sold"
+                        ? "bg-black text-amber-500"
+                        : "border border-amber-500/40 bg-amber-500/20 text-amber-500"
+                    }`}
+                  >
+                    {totalSoldCount}
+                  </span>
+                </button>
+              </>
             )}
             {COMMODITY_TAGS.map((tag) => (
               <button
@@ -397,14 +437,28 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
             <span>
               {t.controls.displayingRecords.replace("{count}", String(filteredProjects.length))}
             </span>
-            {forSaleOnly && (
+            {saleFilter === "for-sale" && (
               <span className="inline-flex items-center gap-1.5 border border-secondary/50 bg-secondary/15 px-2 py-0.5 text-[9px] font-bold text-secondary">
                 <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
                 {t.controls.forSaleOnlyBadge}
                 <button
                   type="button"
-                  onClick={() => setForSaleOnly(false)}
+                  onClick={() => setSaleFilter("all")}
                   className="ml-1 text-secondary/70 hover:text-white transition-colors"
+                  title="Remove filter"
+                >
+                  ×
+                </button>
+              </span>
+            )}
+            {saleFilter === "sold" && (
+              <span className="inline-flex items-center gap-1.5 border border-amber-500/50 bg-amber-500/15 px-2 py-0.5 text-[9px] font-bold text-amber-500">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse" />
+                {t.controls.soldOnlyBadge}
+                <button
+                  type="button"
+                  onClick={() => setSaleFilter("all")}
+                  className="ml-1 text-amber-500/70 hover:text-white transition-colors"
                   title="Remove filter"
                 >
                   ×
@@ -441,7 +495,7 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                transition={{ duration: 0.25 }}
               >
                 <div className="group relative block h-full overflow-hidden border border-accent bg-card transition-colors duration-500 hover:border-primary">
                   <Link
@@ -473,17 +527,26 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
                       className="h-full w-full object-cover opacity-60 mix-blend-luminosity transition-all duration-700 group-hover:scale-105 group-hover:opacity-100 group-hover:mix-blend-normal"
                     />
                     <div className="absolute top-4 left-4">
-                      <div
-                        className={`px-2 py-1 text-[9px] font-bold tracking-widest uppercase ${
-                          project.isForSale
-                            ? "border border-secondary bg-secondary text-black shadow-[0_0_10px_var(--color-secondary)]"
-                            : "border border-gold-500 bg-yellow-500 text-black shadow-[0_0_10px_#22c55e]"
-                        } ${mono.className}`}
-                      >
-                        {project.isForSale
-                          ? t.card.availableForAcquisition
-                          : t.card.acquired}
-                      </div>
+                      {(() => {
+                        const isProjectAvailable =
+                          project.isForSale ||
+                          (project.subProjectIds || []).some(
+                            (id) => projects.find((sub) => sub.id === id)?.isForSale
+                          );
+                        return (
+                          <div
+                            className={`px-2 py-1 text-[9px] font-bold tracking-widest uppercase ${
+                              isProjectAvailable
+                                ? "border border-secondary bg-secondary text-black shadow-[0_0_10px_var(--color-secondary)]"
+                                : "border border-amber-500 bg-amber-500 text-black shadow-[0_0_10px_rgba(245,158,11,0.5)]"
+                            } ${mono.className}`}
+                          >
+                            {isProjectAvailable
+                              ? t.card.availableForAcquisition
+                              : t.card.sold}
+                          </div>
+                        );
+                      })()}
                     </div>
                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(255,255,255,0.05)_50%)] bg-[length:100%_4px] mix-blend-overlay" />
                   </div>
@@ -663,7 +726,7 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
                 onClick={() => {
                   setSearchQuery("");
                   setActiveFilter(null);
-                  setForSaleOnly(false);
+                  setSaleFilter("all");
                 }}
                 className={`border border-border bg-card/80 px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-muted-foreground transition-all hover:border-primary hover:text-primary ${mono.className}`}
               >

@@ -487,9 +487,11 @@ export interface ProjectsPageTranslation {
     searchPlaceholder: string;
     all: string;
     forSale: string;
+    sold: string;
     fossilsAgatesGems: string;
     displayingRecords: string;
     forSaleOnlyBadge: string;
+    soldOnlyBadge: string;
     typePrefix: string;
     tagPrefix: string;
     systemStatusOnline: string;
@@ -497,6 +499,7 @@ export interface ProjectsPageTranslation {
   };
   card: {
     availableForAcquisition: string;
+    sold: string;
     acquired: string;
     clientProjects: string;
   };
