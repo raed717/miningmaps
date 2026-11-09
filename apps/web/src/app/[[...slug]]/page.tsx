@@ -14,7 +14,8 @@ import ClientPage from "./client";
 
 // Projects come from Neon. Pages are prerendered and regenerated in the background
 // at most every 5 minutes, so database edits (and new projects) go live without a redeploy.
-// Also bounds how long a 404 for a not-yet-added project stays cached.
+// Exception: a 404 cached for a project URL visited before its row existed is NOT refreshed by
+// this (Next 15.0 on Vercel); it stays until a deploy or POST /api/revalidate (api/revalidate/route.ts).
 export const revalidate = 300;
 
 const siteName = "Adamson Geomatics";
