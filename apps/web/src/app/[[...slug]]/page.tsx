@@ -4,6 +4,7 @@ import { mockPosts } from "@/lib/postData";
 import { getProject, getProjects, getProjectSummaries, toSummary } from "@/lib/projectsRepo";
 import type { ProjectPageData } from "@/lib/projectTypes";
 import { parseLocaleFromPath } from "@/lib/i18n/navigation";
+import type { Locale } from "@/lib/i18n/types";
 import { aboutTranslations } from "@/lib/i18n/translations/about";
 import { servicesTranslations } from "@/lib/i18n/translations/services";
 import { contactTranslations } from "@/lib/i18n/translations/contact";
@@ -73,6 +74,8 @@ async function routeExists(slugArray: string[]): Promise<boolean> {
 /** Only the project data this route renders, so pages don't ship the whole catalog. */
 async function getPageData(slugArray: string[]): Promise<ProjectPageData> {
   const [section, id] = slugArray;
+  // Project content comes from projects.translations for /es and /fr (English where untranslated).
+  const locale: Locale = section === "es" || section === "fr" ? section : "en";
 
   const isLocalizedProjectDetail =
     slugArray.length === 3 &&
@@ -82,10 +85,10 @@ async function getPageData(slugArray: string[]): Promise<ProjectPageData> {
 
   if ((section === "projects" && id) || isLocalizedProjectDetail) {
     const targetProjectId = isLocalizedProjectDetail ? slugArray[2] : id;
-    const project = await getProject(targetProjectId);
+    const project = await getProject(targetProjectId, locale);
     if (!project) return {};
     const relatedIds = new Set([project.parentProjectId, ...(project.subProjectIds ?? [])]);
-    const related = (await getProjects()).filter((p) => relatedIds.has(p.id)).map(toSummary);
+    const related = (await getProjects(locale)).filter((p) => relatedIds.has(p.id)).map(toSummary);
     return { project, related };
   }
 
@@ -96,14 +99,14 @@ async function getPageData(slugArray: string[]): Promise<ProjectPageData> {
       (section === "es" || section === "fr") &&
       (id === "projects" || id === "properties" || id === "map"))
   ) {
-    return { summaries: await getProjectSummaries() };
+    return { summaries: await getProjectSummaries(locale) };
   }
 
   if (
     slugArray.length === 0 ||
     (slugArray.length === 1 && (slugArray[0] === "es" || slugArray[0] === "fr"))
   ) {
-    const topLevel = (await getProjectSummaries()).filter((p) => p.type !== "subproject");
+    const topLevel = (await getProjectSummaries(locale)).filter((p) => p.type !== "subproject");
     return { homePreview: { projects: topLevel.slice(0, 6), totalCount: topLevel.length } };
   }
 
@@ -530,7 +533,7 @@ export async function generateMetadata({
     ((slugArray[0] === "es" || slugArray[0] === "fr") && slugArray[1] === "projects" && !!slugArray[2]);
   if (isProjDetail) {
     const targetId = slugArray[0] === "projects" ? slugArray[1] : slugArray[2];
-    const project = await getProject(targetId);
+    const project = await getProject(targetId, locale);
     if (project) {
       const location = project.region;
       const tags = project.tags?.join(", ") ?? "";

@@ -1,37 +1,37 @@
-# Graph Report - miningmaps  (2026-10-27)
+# Graph Report - miningmaps  (2026-11-10)
 
 ## Corpus Check
-- 126 files · ~10,806,120 words
+- 130 files · ~10,807,899 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 860 nodes · 1093 edges · 131 communities (56 shown, 75 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 28 edges (avg confidence: 0.86)
+- 870 nodes · 1339 edges · 124 communities (49 shown, 75 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 28 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `03bec7e6`
+- Built from commit: `316b28da`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- projects-page.tsx
-- auth-page.tsx
+- class-variance-authority
+- project-view.tsx
 - scripts
 - page.tsx
 - devDependencies
 - compilerOptions
 - compilerOptions
 - components.json
-- layout.tsx
-- home-page.tsx
+- env
+- useI18n
 - env/package.json
 - App.tsx
 - Adamson Geomatics
 - Industrial Cartography / Terminal Brutalism
 - playwright
 - Nunavut Mining Projects
-- generate_new_projects_migration.mjs
+- projects-page.tsx
 - Newfoundland Mining Projects
 - profile/route.ts
 - update_colors.cjs
@@ -40,7 +40,6 @@
 - Nevada Northumberland Project Area
 - Northumberland Staking Report
 - Ontario Mining Projects
-- services-page.tsx
 - swap_phases.cjs
 - update_projects.cjs
 - Adamson Geomatics Main Logo
@@ -62,15 +61,13 @@
 - next.config.mjs
 - next-sitemap.config.js
 - dependencies
-- class-variance-authority
 - Field-Mapping Rules
-- partners-page.tsx
+- other-projects-page.tsx
 - @fontsource-variable/inter
 - @hookform/resolvers
 - leaflet
 - jose
 - @miningmaps/env
-- about-page.tsx
 - next
 - next-themes
 - radix-ui
@@ -89,21 +86,19 @@
 - Adamson Geomatics Minimal Logo Variant 1
 - Real Estate Institute of British Columbia Logo
 - Fraser Plateau Topographic Claim Map Screenshot 141901
-- fonts.ts
-- 1. Database Migration Tool (`generate_projects_migration.mjs`)
+- account-page.tsx
 - @neondatabase/auth
 - postData.ts
-- past-clients-preview-section.tsx
+- servicesData.ts
 - zod
-- accomplishments-section.tsx
+- accomplishmentsData.ts
 - @neondatabase/serverless
 - react-medium-image-zoom
 - @vercel/speed-insights
 - vercel.json
-- embla-carousel-react
 - project-location-map.tsx
 - @fontsource/jetbrains-mono
-- project-preview-carousel-section.tsx
+- clsx
 - NWT/1.jpg
 - NWT/2.jpg
 - Target20230830_2.JPG (NWT Target Map)
@@ -138,28 +133,28 @@
 - Cinematic Scroll Landing Page
 
 ## God Nodes (most connected - your core abstractions)
-1. `mono` - 28 edges
-2. `cn()` - 19 edges
-3. `compilerOptions` - 18 edges
-4. `compilerOptions` - 17 edges
-5. `Field-Mapping Rules` - 16 edges
-6. `inter` - 13 edges
-7. `scripts` - 11 edges
-8. `Button()` - 8 edges
-9. `Carousel()` - 7 edges
-10. `useProjectSummaries()` - 7 edges
+1. `useI18n()` - 43 edges
+2. `getLocalizedPath()` - 35 edges
+3. `mono` - 30 edges
+4. `Locale` - 20 edges
+5. `cn()` - 19 edges
+6. `compilerOptions` - 18 edges
+7. `compilerOptions` - 17 edges
+8. `Field-Mapping Rules` - 16 edges
+9. `homeTranslations` - 14 edges
+10. `inter` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Frontend Aesthetics Guidelines` --semantically_similar_to--> `Industrial Cartography / Terminal Brutalism`  [INFERRED] [semantically similar]
   .agents/skills/frontend-design/SKILL.md → DESIGN_SYSTEM.md
 - `Industrial Cartography / Terminal Brutalism` --rationale_for--> `MiningMaps Project Guidelines`  [EXTRACTED]
   DESIGN_SYSTEM.md → CLAUDE.md
+- `ContactPage()` --calls--> `useI18n()`  [EXTRACTED]
+  apps/web/src/views/contact-page.tsx → apps/web/src/lib/i18n/context.tsx
 - `Adamson Geomatics Banner Logo` --semantically_similar_to--> `Adamson Geomatics Banner Logo Variant 1`  [INFERRED] [semantically similar]
   apps/web/public/images/general/bannerlogo.png → apps/web/public/images/general/bannerlogo1.png
 - `Esri UC 2025 Plenary Certificate - Golden Triangle Geology Map` --semantically_similar_to--> `Esri UC 2025 Plenary Certificate - Little Fort Polymetallic Property Map`  [INFERRED] [semantically similar]
   apps/web/public/images/general/certifications/jd uc25 plenary submission certificates 73_page-0001.jpg → apps/web/public/images/general/certifications/jd uc25 plenary submission certificates 74_page-0001.jpg
-- `Adamson Geomatics Main Logo` --semantically_similar_to--> `Adamson Geomatics Full Logo`  [INFERRED] [semantically similar]
-  apps/web/public/images/general/logo.png → apps/web/public/images/general/full-logo.png
 
 ## Import Cycles
 - None detected.
@@ -168,22 +163,18 @@
 - **Barkerville Gold Camp Placer-Lode System** — apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_mosquito_creek_claim, apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_lowhee_cow_mountain_claim, apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_ballarat_claim [EXTRACTED 1.00]
 - **Northumberland Deposit Geological and Staking Framework** — apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_report, apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_rationale, apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_newmont_northumberland_memo, apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_northumberland_deposits [EXTRACTED 1.00]
 
-## Communities (131 total, 75 thin omitted)
+## Communities (124 total, 75 thin omitted)
 
-### Community 0 - "projects-page.tsx"
-Cohesion: 0.09
-Nodes (26): activityData, createCustomIcon(), Dashboard(), resourceData, createCustomIcon(), getTagColor(), MapView(), messages (+18 more)
-
-### Community 1 - "auth-page.tsx"
-Cohesion: 0.09
-Nodes (38): react, PdfPreview, ProjectDetails(), ProjectLocationMap, serviceOptions, FullscreenImageViewer(), FullscreenImageViewerProps, ImageViewerTrigger() (+30 more)
+### Community 1 - "project-view.tsx"
+Cohesion: 0.07
+Nodes (43): react, DATE_LOCALES, PdfPreview, ProjectLocationMap, ContactForm(), FullscreenImageViewer(), FullscreenImageViewerProps, ImageViewerTrigger() (+35 more)
 
 ### Community 2 - "scripts"
 Cohesion: 0.04
 Nodes (48): @neon/config, @neon/env, next-sitemap, dependencies, @miningmaps/env, @neon/config, @neon/env, @react-email/render (+40 more)
 
 ### Community 3 - "page.tsx"
-Cohesion: 0.06
+Cohesion: 0.07
 Nodes (46): metadata, GET(), revalidate, ClientPage(), buildBreadcrumbJsonLd(), CatchAllPage(), generateMetadata(), generateStaticParams() (+38 more)
 
 ### Community 4 - "devDependencies"
@@ -202,21 +193,21 @@ Nodes (21): compilerOptions, allowSyntheticDefaultImports, esModuleInterop, forc
 Cohesion: 0.10
 Nodes (20): aliases, components, hooks, lib, ui, utils, iconLibrary, menuAccent (+12 more)
 
-### Community 8 - "layout.tsx"
-Cohesion: 0.06
-Nodes (31): jsonLd, metadata, ThemeProvider(), ^build, ^check-types, DATABASE_URL, dist/**, .env* (+23 more)
+### Community 8 - "env"
+Cohesion: 0.05
+Nodes (36): isAuthorized(), LOCALE_PREFIXES, POST(), schema, jsonLd, metadata, ThemeProvider(), ^build (+28 more)
 
-### Community 9 - "home-page.tsx"
-Cohesion: 0.17
-Nodes (8): CertificationsSection(), CinematicHero(), fieldReports, FieldReportsSection(), GlobalTelemetrySection(), telemetryNodes, ListingMembershipSection(), PartnerProgramsTickerBanner()
+### Community 9 - "useI18n"
+Cohesion: 0.07
+Nodes (58): ProjectDetails(), Footer(), Header(), AccomplishmentsSection(), icons, certifications, CertificationsSection(), CinematicHero() (+50 more)
 
 ### Community 10 - "env/package.json"
 Cohesion: 0.11
 Nodes (18): dotenv, dependencies, dotenv, @t3-oss/env-core, zod, devDependencies, @miningmaps/config, typescript (+10 more)
 
 ### Community 11 - "App.tsx"
-Cohesion: 0.06
-Nodes (41): AboutPage, AccountPage, App(), AuthPage, CommunityPage, ContactPage, DashboardView, decodeSegment() (+33 more)
+Cohesion: 0.09
+Nodes (20): AboutPage, AccountPage, App(), AuthPage, CommunityPage, ContactPage, DashboardView, decodeSegment() (+12 more)
 
 ### Community 12 - "Adamson Geomatics"
 Cohesion: 0.26
@@ -230,9 +221,9 @@ Nodes (10): Apache License 2.0, Design Thinking Framework, Frontend Aesthetics G
 Cohesion: 0.22
 Nodes (8): mcp, playwright, command, enabled, type, $schema, npx, @playwright/mcp@latest
 
-### Community 16 - "generate_new_projects_migration.mjs"
-Cohesion: 0.09
-Nodes (18): after, before, check, dataArray, dataAst, dataText, errors, fail() (+10 more)
+### Community 16 - "projects-page.tsx"
+Cohesion: 0.08
+Nodes (29): activityData, createCustomIcon(), Dashboard(), resourceData, createCustomIcon(), getTagColor(), MapView(), ExpandableSummary() (+21 more)
 
 ### Community 18 - "profile/route.ts"
 Cohesion: 0.13
@@ -253,10 +244,6 @@ Nodes (5): 13N 45E Grouped Geology (1)_page-0001.jpg (Nevada 13N 45E Grouped Geo
 ### Community 23 - "Northumberland Staking Report"
 Cohesion: 0.40
 Nodes (5): Newmont Northumberland Geological Memo, Northumberland Gold-Silver Deposits, Northumberland Staking Rationale, Northumberland Staking Report, Township 13 North Range 45 East Mining Claims Plat
-
-### Community 25 - "services-page.tsx"
-Cohesion: 0.15
-Nodes (13): outputFeed, serviceAccentColors, serviceFeed, serviceIcons, ServiceRegistrySection(), serviceDeliverables, serviceMetrics, ServiceModule (+5 more)
 
 ### Community 26 - "swap_phases.cjs"
 Cohesion: 0.40
@@ -320,59 +307,47 @@ Nodes (3): Green Mountain Gold, PGE & REE Assessment (Dec 30), Green Mountain Li
 
 ### Community 46 - "dependencies"
 Cohesion: 0.22
-Nodes (9): dependencies, @base-ui/react, clsx, embla-carousel-autoplay, motion, @base-ui/react, clsx, embla-carousel-autoplay (+1 more)
+Nodes (9): dependencies, @base-ui/react, embla-carousel-autoplay, embla-carousel-react, motion, @base-ui/react, embla-carousel-autoplay, embla-carousel-react (+1 more)
 
 ### Community 48 - "Field-Mapping Rules"
 Cohesion: 0.10
 Nodes (20): 360° Virtual Tours (`kuulaFrame`), `coordinates`, Field-Mapping Rules, `id`, `image`, `isForSale`, Output Format, PDF Documents (`PdfDocuments`) (+12 more)
 
-### Community 49 - "partners-page.tsx"
-Cohesion: 0.33
-Nodes (4): affiliateEligibility, affiliateTerms, finderEligibility, finderTerms
+### Community 49 - "other-projects-page.tsx"
+Cohesion: 0.30
+Nodes (9): ProjectDetailModal(), ProjectDetailModalProps, commodityCategories, getCommodityCategory(), OtherProject, otherProjects, OtherProjectsPage(), priorityLevels (+1 more)
 
-### Community 55 - "about-page.tsx"
-Cohesion: 0.33
-Nodes (4): certifications, education, expertiseAreas, insuranceDetails
-
-### Community 74 - "fonts.ts"
-Cohesion: 0.23
-Nodes (8): ContactForm(), Footer(), NewsletterForm(), PartnerProgramsModal(), PartnerProgramsModalProps, inter, mono, ContactRoute
-
-### Community 75 - "1. Database Migration Tool (`generate_projects_migration.mjs`)"
-Cohesion: 0.15
-Nodes (12): 1. Database Migration Tool (`generate_projects_migration.mjs`), 1b. Add New Projects (`generate_new_projects_migration.mjs`), 2. CSV Catalog Exporter (`generate_projects_csv.mjs`), Compatible Databases:, Developer Toolbox & Migration Utilities, How to apply to Neon / Supabase:, How to Run:, How to Run: (+4 more)
+### Community 74 - "account-page.tsx"
+Cohesion: 0.10
+Nodes (24): HeaderAuthDesktop(), HeaderAuthMobile(), useSignOut(), Loader(), authClient, getAuthToken(), inter, AuthSession (+16 more)
 
 ### Community 78 - "postData.ts"
 Cohesion: 0.28
 Nodes (4): mockPosts, Post, PostSection, PostDetailPageProps
 
-### Community 80 - "past-clients-preview-section.tsx"
+### Community 82 - "servicesData.ts"
 Cohesion: 0.33
-Nodes (5): PastClientsPreviewSection(), SpotlightClient, spotlightClients, PastClient, pastClients
-
-### Community 84 - "accomplishments-section.tsx"
-Cohesion: 0.40
-Nodes (4): AccomplishmentsSection(), icons, Accomplishment, accomplishments
+Nodes (5): serviceDeliverables, serviceMetrics, ServiceModule, serviceModules, ServiceSampleCase
 
 ## Knowledge Gaps
-- **425 isolated node(s):** `fs`, `path`, `filePath`, `content`, `$schema` (+420 more)
+- **406 isolated node(s):** `fs`, `path`, `filePath`, `content`, `$schema` (+401 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **75 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `auth-page.tsx`, `devDependencies`, `class-variance-authority`, `@fontsource-variable/inter`, `@hookform/resolvers`, `leaflet`, `jose`, `@miningmaps/env`, `next`, `next-themes`, `radix-ui`, `react-dom`, `react-leaflet`, `recharts`, `shadcn`, `sonner`, `tailwind-merge`, `@tailwindcss/postcss`, `@tanstack/react-form`, `tw-animate-css`, `@types/leaflet`, `lucide-react`, `@neondatabase/auth`, `zod`, `@neondatabase/serverless`, `react-medium-image-zoom`, `@vercel/speed-insights`, `embla-carousel-react`, `@fontsource/jetbrains-mono`?**
+- **Why does `dependencies` connect `dependencies` to `class-variance-authority`, `project-view.tsx`, `devDependencies`, `@fontsource-variable/inter`, `@hookform/resolvers`, `leaflet`, `jose`, `@miningmaps/env`, `next`, `next-themes`, `radix-ui`, `react-dom`, `react-leaflet`, `recharts`, `shadcn`, `sonner`, `tailwind-merge`, `@tailwindcss/postcss`, `@tanstack/react-form`, `tw-animate-css`, `@types/leaflet`, `lucide-react`, `@neondatabase/auth`, `zod`, `@neondatabase/serverless`, `react-medium-image-zoom`, `@vercel/speed-insights`, `@fontsource/jetbrains-mono`, `clsx`?**
+  _High betweenness centrality (0.105) - this node is a cross-community bridge._
+- **Why does `react` connect `project-view.tsx` to `dependencies`?**
   _High betweenness centrality (0.097) - this node is a cross-community bridge._
-- **Why does `react` connect `auth-page.tsx` to `dependencies`?**
-  _High betweenness centrality (0.089) - this node is a cross-community bridge._
+- **Why does `Carousel()` connect `project-view.tsx` to `useI18n`?**
+  _High betweenness centrality (0.094) - this node is a cross-community bridge._
 - **What connects `fs`, `path`, `filePath` to the rest of the system?**
-  _425 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `projects-page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.0907563025210084 - nodes in this community are weakly interconnected._
-- **Should `auth-page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.08525506638714186 - nodes in this community are weakly interconnected._
+  _406 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `project-view.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.07401129943502825 - nodes in this community are weakly interconnected._
 - **Should `scripts` be split into smaller, more focused modules?**
   _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
 - **Should `page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.05792349726775956 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06558441558441558 - nodes in this community are weakly interconnected._

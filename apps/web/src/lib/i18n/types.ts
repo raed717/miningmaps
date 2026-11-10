@@ -515,6 +515,38 @@ export interface ProjectsPageTranslation {
       close: string;
     };
   };
+  detail: {
+    projectNotFound: string;
+    backToProjects: string;
+    back: string;
+    dossier: string;
+    documentSections: string;
+    jumpToSection: string;
+    toggleOutline: string;
+    dossierSummary: string;
+    executiveOverview: string;
+    sections: string;
+    selectSection: string;
+    clientProjects: string;
+    projectImage: string;
+    downloadPdf: string;
+    watchOnVimeo: string;
+    invalidVideo: string;
+    locationContext: string;
+    openInGoogleMaps: string;
+    quickFacts: string;
+    location: string;
+    availability: string;
+    forSale: string;
+    active: string;
+    projectRelations: string;
+    parentProject: string;
+    subProjects: string;
+    projectMeta: string;
+    author: string;
+    date: string;
+    tags: string;
+  };
   extendedArchive: {
     badge: string;
     heading: string;

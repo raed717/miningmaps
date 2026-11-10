@@ -22,6 +22,7 @@ import { inter, mono } from "@/lib/fonts";
 import { useI18n } from "@/lib/i18n/context";
 import { mapTranslations } from "@/lib/i18n/translations/map";
 import { getLocalizedPath } from "@/lib/i18n/navigation";
+import { filterTags } from "@/lib/projectTags";
 
 // Fix for default Leaflet icon in React
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -115,7 +116,7 @@ export default function MapView() {
 
     const matchesSale = showOnlyForSale ? site.isForSale : true;
     const matchesFilter = activeFilter
-      ? site.tags?.some((t) => t.toLowerCase() === activeFilter.toLowerCase())
+      ? filterTags(site).some((t) => t.toLowerCase() === activeFilter.toLowerCase())
       : true;
 
     return matchesSale && matchesFilter;

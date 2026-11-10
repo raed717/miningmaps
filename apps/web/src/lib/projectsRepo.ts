@@ -2,6 +2,7 @@
 import { cache } from "react";
 import { neon } from "@neondatabase/serverless";
 import type { Project, ProjectSection, ProjectSummary, QuickFact } from "@/lib/projectTypes";
+import type { Locale } from "@/lib/i18n/types";
 import { projects as fallbackProjects } from "./projectData";
 
 type ProjectRow = {
@@ -22,7 +23,28 @@ type ProjectRow = {
   sub_project_ids: string[] | null;
   quick_facts: QuickFact[] | null;
   sections: ProjectSection[] | null;
+  translations: ProjectTranslations | null;
 };
+
+/**
+ * Per-locale overrides stored in projects.translations, e.g. { "fr": { title, summary, region, tags,
+ * quick_facts, sections } }. quick_facts and sections are matched by index to the English arrays;
+ * a null entry (or a missing / empty-string field) keeps the English value. tags replace the list.
+ */
+type ProjectTranslation = {
+  title?: string;
+  summary?: string;
+  region?: string;
+  date?: string;
+  tags?: string[];
+  quick_facts?: (Partial<QuickFact> | null)[];
+  quickFacts?: (Partial<QuickFact> | null)[];
+  sections?: (Record<string, unknown> | null)[];
+};
+type ProjectTranslations = Partial<Record<Locale, ProjectTranslation>>;
+
+/** Project as loaded from the DB, with every language. Never sent to the client as-is. */
+type StoredProject = Project & { translations?: ProjectTranslations };
 
 /** Empty arrays become undefined, matching projectData.ts where those fields are simply absent. */
 function optionalList<T>(list: T[] | null): T[] | undefined {
@@ -30,7 +52,7 @@ function optionalList<T>(list: T[] | null): T[] | undefined {
 }
 
 // Map DB nulls to the optional (undefined) fields the Project type expects.
-function rowToProject(row: ProjectRow): Project {
+function rowToProject(row: ProjectRow): StoredProject {
   return {
     id: row.id,
     type: row.type === "subproject" ? "subproject" : "project",
@@ -48,6 +70,53 @@ function rowToProject(row: ProjectRow): Project {
     tags: optionalList(row.tags),
     parentProjectId: row.parent_project_id ?? undefined,
     subProjectIds: optionalList(row.sub_project_ids),
+    translations: row.translations ?? undefined,
+  };
+}
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+/**
+ * Overlays a translation onto the English value: objects merge key by key, arrays by index
+ * (keeping the English length), and null / undefined / "" keep the English value.
+ * A section's `type` is never overridden.
+ */
+function overlay<T>(base: T, translated: unknown): T {
+  if (translated === null || translated === undefined || translated === "") return base;
+  if (Array.isArray(base)) {
+    if (!Array.isArray(translated)) return base;
+    return base.map((item, i) => overlay(item, translated[i])) as T;
+  }
+  if (isPlainObject(base)) {
+    if (!isPlainObject(translated)) return base;
+    const merged: Record<string, unknown> = { ...base };
+    for (const [key, value] of Object.entries(translated)) {
+      if (key === "type") continue;
+      merged[key] = key in base ? overlay(base[key], value) : value;
+    }
+    return merged as T;
+  }
+  if (base === undefined || base === null) return translated as T;
+  return typeof translated === typeof base ? (translated as T) : base;
+}
+
+/** The project in the requested language (English fields where no translation exists), without the translations blob. */
+function localizeProject({ translations, ...project }: StoredProject, locale: Locale): Project {
+  const t = locale === "en" ? undefined : translations?.[locale];
+  if (!t) return project;
+  return {
+    ...project,
+    title: overlay(project.title, t.title),
+    summary: overlay(project.summary, t.summary),
+    region: overlay(project.region, t.region),
+    date: overlay(project.date, t.date),
+    tags: Array.isArray(t.tags) && t.tags.length > 0 ? t.tags : project.tags,
+    // Filters use English tag names; keep them when the displayed tags are translated.
+    tagKeys: Array.isArray(t.tags) && t.tags.length > 0 ? project.tags : undefined,
+    quickFacts: project.quickFacts && overlay(project.quickFacts, t.quick_facts ?? t.quickFacts),
+    sections: overlay(project.sections, t.sections),
   };
 }
 
@@ -60,10 +129,10 @@ export function toSummary({ sections, ...rest }: Project): ProjectSummary {
   return { ...rest, previewImage: rest.image };
 }
 
-let lastSuccessfulProjects: Project[] | null = null;
+let lastSuccessfulProjects: StoredProject[] | null = null;
 
-/** All projects in display order. Cached per request (generateMetadata + page share it). */
-export const getProjects = cache(async (): Promise<Project[]> => {
+/** All projects in display order, with every language. Cached per request (generateMetadata + page share it). */
+const getStoredProjects = cache(async (): Promise<StoredProject[]> => {
   const databaseUrl = process.env.DATABASE_URL;
   if (!databaseUrl) throw new Error("DATABASE_URL is not set");
   const sql = neon(databaseUrl);
@@ -74,7 +143,7 @@ export const getProjects = cache(async (): Promise<Project[]> => {
       const rows = (await sql`
         SELECT id, type, title, summary, region, image, latitude, longitude, is_for_sale,
                date, author, contact_email, parent_project_id, tags, sub_project_ids,
-               quick_facts, sections
+               quick_facts, sections, translations
         FROM projects
         ORDER BY sort_order NULLS LAST, created_at, id
       `) as ProjectRow[];
@@ -88,7 +157,7 @@ export const getProjects = cache(async (): Promise<Project[]> => {
           return lastSuccessfulProjects;
         }
         console.warn("Neon connection failed after 3 attempts, using local fallback projects", err);
-        return fallbackProjects as unknown as Project[];
+        return fallbackProjects as unknown as StoredProject[];
       }
       await new Promise((r) => setTimeout(r, 400 * attempts));
     }
@@ -110,10 +179,16 @@ export async function getProjectSitemapEntries(): Promise<{ id: string; updatedA
   }
 }
 
-export async function getProjectSummaries(): Promise<ProjectSummary[]> {
-  return (await getProjects()).map(toSummary);
+/** All projects in display order, in the given language (English where untranslated). */
+export async function getProjects(locale: Locale = "en"): Promise<Project[]> {
+  return (await getStoredProjects()).map((p) => localizeProject(p, locale));
 }
 
-export async function getProject(id: string): Promise<Project | undefined> {
-  return (await getProjects()).find((p) => p.id === id);
+export async function getProjectSummaries(locale: Locale = "en"): Promise<ProjectSummary[]> {
+  return (await getProjects(locale)).map(toSummary);
+}
+
+export async function getProject(id: string, locale: Locale = "en"): Promise<Project | undefined> {
+  const project = (await getStoredProjects()).find((p) => p.id === id);
+  return project && localizeProject(project, locale);
 }

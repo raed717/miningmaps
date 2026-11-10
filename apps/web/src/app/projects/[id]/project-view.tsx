@@ -24,6 +24,9 @@ import { useProjectDetail } from "@/lib/projectDataContext";
 import { ImageViewerTrigger } from "@/components/fullscreen-image-viewer";
 import { useI18n } from "@/lib/i18n/context";
 import { getLocalizedPath } from "@/lib/i18n/navigation";
+import { projectsTranslations } from "@/lib/i18n/translations/projects";
+
+const DATE_LOCALES = { en: "en-US", es: "es-ES", fr: "fr-FR" } as const;
 
 // Browser-only (Leaflet); everything else on this page is server-rendered.
 const ProjectLocationMap = dynamic(() => import("@/components/project-location-map"), {
@@ -52,6 +55,7 @@ export default function ProjectDetails({
   projectId: string;
 }) {
   const { locale } = useI18n();
+  const d = (projectsTranslations[locale] || projectsTranslations.en).detail;
   const [showFloatingBack, setShowFloatingBack] = useState(false);
   const [activeHeadingId, setActiveHeadingId] = useState<string | null>(null);
   const [highlightedHeadingId, setHighlightedHeadingId] = useState<string | null>(null);
@@ -152,12 +156,12 @@ export default function ProjectDetails({
     return (
       <div className="flex h-full items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold">Project not found</h2>
+          <h2 className="text-2xl font-bold">{d.projectNotFound}</h2>
           <Link
             href={getLocalizedPath("/projects", locale)}
             className="mt-4 inline-block text-primary hover:underline"
           >
-            Back to projects
+            {d.backToProjects}
           </Link>
         </div>
       </div>
@@ -193,7 +197,7 @@ export default function ProjectDetails({
               className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-background/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary backdrop-blur-md transition-all hover:border-primary hover:bg-background/90 hover:text-primary"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
-              Back to Projects
+              {d.backToProjects}
             </Link>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -227,15 +231,15 @@ export default function ProjectDetails({
             }}
             className="flex w-full min-w-0 max-w-full cursor-pointer items-center justify-between rounded-lg border border-primary/30 bg-card/90 px-3.5 py-2 text-xs font-medium text-foreground shadow-sm transition-all hover:border-primary active:scale-[0.99]"
             aria-expanded={mobileOutlineOpen}
-            aria-label="Toggle document outline"
+            aria-label={d.toggleOutline}
           >
             <div className="flex min-w-0 flex-1 items-center gap-2 overflow-hidden pr-2">
               <FileText className="h-4 w-4 shrink-0 text-primary" />
               <span className="shrink-0 font-mono text-[10px] font-bold uppercase tracking-wider text-primary">
-                DOSSIER:
+                {d.dossier}
               </span>
               <span className="block min-w-0 flex-1 truncate text-xs font-semibold text-white">
-                {currentHeading?.title || "Document Sections"}
+                {currentHeading?.title || d.documentSections}
               </span>
             </div>
             <div className="flex shrink-0 items-center gap-1.5 border-l border-border/60 pl-2">
@@ -260,7 +264,7 @@ export default function ProjectDetails({
               />
               <div className="absolute top-full left-4 right-4 mt-1.5 max-h-72 w-auto overflow-y-auto overflow-x-hidden rounded-xl border border-border/80 bg-card/98 p-2.5 shadow-2xl backdrop-blur-xl z-50 animate-in fade-in-50 slide-in-from-top-1">
                 <div className="mb-1.5 border-b border-border/50 px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                  Jump to Section
+                  {d.jumpToSection}
                 </div>
                 <div className="space-y-1 w-full min-w-0">
                   {documentHeadings.map((h, i) => {
@@ -306,7 +310,7 @@ export default function ProjectDetails({
         }`}
       >
         <ArrowLeft className="h-3.5 w-3.5" />
-        Back
+        {d.back}
       </Link>
 
       <div className="container mx-auto px-4 py-16 w-full max-w-full min-w-0">
@@ -323,20 +327,20 @@ export default function ProjectDetails({
                     </div>
                     <div>
                       <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-                        Document Dossier Summary
+                        {d.dossierSummary}
                       </h3>
                       <p className="text-[10px] font-mono text-muted-foreground tracking-widest">
-                        EXECUTIVE CONTENT OVERVIEW
+                        {d.executiveOverview}
                       </p>
                     </div>
                   </div>
                   <span className="rounded border border-primary/30 bg-primary/10 px-2 py-0.5 font-mono text-[10px] font-bold text-primary">
-                    {documentHeadings.length} SECTIONS
+                    {documentHeadings.length} {d.sections}
                   </span>
                 </div>
 
                 <p className="text-xs text-muted-foreground leading-relaxed">
-                  Select any section below to jump directly to detailed findings:
+                  {d.selectSection}
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full min-w-0">
@@ -374,7 +378,7 @@ export default function ProjectDetails({
                     <TrendingUp className="h-5 w-5" />
                   </div>
                   <h2 className="text-2xl font-bold uppercase tracking-tight">
-                    Client Projects
+                    {d.clientProjects}
                   </h2>
                 </div>
 
@@ -482,7 +486,7 @@ export default function ProjectDetails({
                       alt={
                         section.heading ||
                         section.imageCaption ||
-                        "Project image"
+                        d.projectImage
                       }
                       className="w-full flex justify-center"
                       imageClassName="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
@@ -531,7 +535,7 @@ export default function ProjectDetails({
                             className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-6 py-2"
                           >
                             <Download className="mr-2 h-4 w-4" />
-                            Download PDF
+                            {d.downloadPdf}
                           </a>
                         </div>
                       </div>
@@ -570,7 +574,7 @@ export default function ProjectDetails({
                           alt={
                             section.heading ||
                             section.imageCaption ||
-                            "Project image"
+                            d.projectImage
                           }
                           className="w-full flex justify-center"
                           imageClassName="max-w-full max-h-[600px] w-auto h-auto object-contain mx-auto"
@@ -794,13 +798,13 @@ export default function ProjectDetails({
                                       <PlayCircle className="h-10 w-10" />
                                     </div>
                                     <span className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary group-hover:underline">
-                                      Watch on Vimeo{" "}
+                                      {d.watchOnVimeo}{" "}
                                       <ExternalLink className="h-4 w-4" />
                                     </span>
                                   </a>
                                 ) : (
                                   <div className="flex h-full w-full items-center justify-center p-4 text-sm text-muted-foreground text-center">
-                                    Invalid video URL or missing provider
+                                    {d.invalidVideo}
                                   </div>
                                 )}
                               </div>
@@ -833,7 +837,7 @@ export default function ProjectDetails({
           <div className="space-y-6 order-1 lg:order-2 w-full min-w-0">
             <div className="rounded-xl border border-border/50 bg-card p-6">
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Location Context
+                {d.locationContext}
               </h3>
               <div className="relative z-0 isolate h-[18.75rem] w-full overflow-hidden rounded-lg border border-border/50">
                 <ProjectLocationMap coordinates={mapCoords} />
@@ -845,13 +849,13 @@ export default function ProjectDetails({
                 className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-md border border-primary/30 bg-primary/5 px-4 py-2 text-xs font-bold uppercase tracking-widest text-primary transition-all hover:bg-primary/20 hover:border-primary"
               >
                 <MapPin className="h-3.5 w-3.5" />
-                Open in Google Maps
+                {d.openInGoogleMaps}
               </a>
             </div>
 
             <div className="rounded-xl border border-border/50 bg-card p-6">
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Quick Facts
+                {d.quickFacts}
               </h3>
               <ul className="space-y-4 text-sm">
                 {project.quickFacts ? (
@@ -871,17 +875,17 @@ export default function ProjectDetails({
                 ) : (
                   <>
                     <li className="flex justify-between border-b border-border/50 pb-2">
-                      <span className="text-muted-foreground">Location</span>
+                      <span className="text-muted-foreground">{d.location}</span>
                       <span className="font-medium text-foreground">
                         {project.region}
                       </span>
                     </li>
                     <li className="flex justify-between border-b border-border/50 pb-2">
                       <span className="text-muted-foreground">
-                        Availability
+                        {d.availability}
                       </span>
                       <span className="font-medium text-foreground">
-                        {project.isForSale ? "For Sale" : "Active"}
+                        {project.isForSale ? d.forSale : d.active}
                       </span>
                     </li>
                   </>
@@ -894,7 +898,7 @@ export default function ProjectDetails({
               (project.subProjectIds && project.subProjectIds.length > 0)) && (
               <div className="rounded-xl border border-border/50 bg-card p-6">
                 <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Project Relations
+                  {d.projectRelations}
                 </h3>
                 <div className="space-y-3 text-sm">
                   {project.parentProjectId &&
@@ -903,7 +907,7 @@ export default function ProjectDetails({
                       return parent ? (
                         <div className="flex flex-col">
                           <span className="text-xs text-muted-foreground">
-                            Parent Project
+                            {d.parentProject}
                           </span>
                           <Link
                             href={getLocalizedPath(`/projects/${parent.id}`, locale)}
@@ -918,7 +922,7 @@ export default function ProjectDetails({
                     project.subProjectIds.length > 0 && (
                       <div className="flex flex-col">
                         <span className="text-xs text-muted-foreground">
-                          Sub Projects
+                          {d.subProjects}
                         </span>
                         <ul className="mt-1 space-y-1">
                           {project.subProjectIds.map((subId) => {
@@ -944,13 +948,13 @@ export default function ProjectDetails({
             {(project.tags || project.date || project.author) && (
               <div className="rounded-xl border border-border/50 bg-card p-6 mt-6">
                 <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Project Meta
+                  {d.projectMeta}
                 </h3>
                 <div className="space-y-4 text-sm">
                   {project.author && (
                     <div className="flex flex-col">
                       <span className="text-xs text-muted-foreground">
-                        Author
+                        {d.author}
                       </span>
                       {project.contactEmail ? (
                         <a
@@ -969,13 +973,15 @@ export default function ProjectDetails({
                   {project.date && (
                     <div className="flex flex-col">
                       <span className="text-xs text-muted-foreground">
-                        Date
+                        {d.date}
                       </span>
                       <span className="font-medium text-foreground">
-                        {new Date(project.date).toLocaleDateString(undefined, {
+                        {new Date(project.date).toLocaleDateString(DATE_LOCALES[locale] ?? "en-US", {
                           year: "numeric",
                           month: "long",
                           day: "numeric",
+                          // Dates are stored as YYYY-MM-DD (UTC midnight); keep server and browser on the same day.
+                          timeZone: "UTC",
                         })}
                       </span>
                     </div>
@@ -983,7 +989,7 @@ export default function ProjectDetails({
                   {project.tags && project.tags.length > 0 && (
                     <div className="flex flex-col pt-2">
                       <span className="text-xs text-muted-foreground mb-2">
-                        Tags
+                        {d.tags}
                       </span>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag, idx) => (

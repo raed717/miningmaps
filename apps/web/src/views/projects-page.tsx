@@ -23,6 +23,7 @@ import { otherProjects } from "@/lib/otherProjectsData";
 import { PartnerNoticeRotator } from "@/components/partner-notice-rotator";
 import { ShareProjectButton } from "@/components/share-project-button";
 import { ExpandableSummary } from "@/components/expandable-summary";
+import { filterTags, searchableTags } from "@/lib/projectTags";
 import { useI18n } from "@/lib/i18n/context";
 import { projectsTranslations } from "@/lib/i18n/translations/projects";
 import { getLocalizedPath } from "@/lib/i18n/navigation";
@@ -125,8 +126,8 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
         .map((id) => projects.find((p) => p.id === id))
         .filter(Boolean);
       const allTags = [
-        ...(project.tags || []),
-        ...subs.flatMap((s) => s?.tags || []),
+        ...filterTags(project),
+        ...subs.flatMap((s) => (s ? filterTags(s) : [])),
       ].map((t) => t.toLowerCase());
       return allTags.some((t) => specimenTagSet.has(t));
     }).length;
@@ -146,13 +147,13 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
       project.title.toLowerCase().includes(query) ||
       project.summary.toLowerCase().includes(query) ||
       project.region.toLowerCase().includes(query) ||
-      (project.tags || []).some((t) => t.toLowerCase().includes(query)) ||
+      searchableTags(project).some((t) => t.toLowerCase().includes(query)) ||
       subs.some(
         (sub) =>
           sub!.title.toLowerCase().includes(query) ||
           sub!.summary.toLowerCase().includes(query) ||
           sub!.region.toLowerCase().includes(query) ||
-          (sub!.tags || []).some((t) => t.toLowerCase().includes(query))
+          searchableTags(sub!).some((t) => t.toLowerCase().includes(query))
       );
 
     let matchesFilter = true;
@@ -160,15 +161,15 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
       if (activeFilter === FOSSILS_GEMSTONES_TYPE) {
         const specimenTagSet = new Set(SPECIMEN_TAGS.map((t) => t.toLowerCase()));
         const allTags = [
-          ...(project.tags || []),
-          ...subs.flatMap((s) => s?.tags || []),
+          ...filterTags(project),
+          ...subs.flatMap((s) => (s ? filterTags(s) : [])),
         ].map((t) => t.toLowerCase());
         matchesFilter = allTags.some((t) => specimenTagSet.has(t));
       } else {
         const filterLower = activeFilter.toLowerCase();
         const allTags = [
-          ...(project.tags || []),
-          ...subs.flatMap((s) => s?.tags || []),
+          ...filterTags(project),
+          ...subs.flatMap((s) => (s ? filterTags(s) : [])),
         ].map((t) => t.toLowerCase());
         matchesFilter = allTags.includes(filterLower);
       }

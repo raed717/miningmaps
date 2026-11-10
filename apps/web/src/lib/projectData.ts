@@ -106,6 +106,8 @@ export interface Project {
   author?: string;
   contactEmail?: string;
   tags?: string[];
+  /** Server-set: the English tags when `tags` is translated, so filters match in every language. */
+  tagKeys?: string[];
   parentProjectId?: string;
   subProjectIds?: string[];
 }
