@@ -21,6 +21,8 @@ import { inter, mono } from "@/lib/fonts";
 import { useProjectSummaries } from "@/lib/projectDataContext";
 import { otherProjects } from "@/lib/otherProjectsData";
 import { PartnerNoticeRotator } from "@/components/partner-notice-rotator";
+import { ShareProjectButton } from "@/components/share-project-button";
+import { ExpandableSummary } from "@/components/expandable-summary";
 import { useI18n } from "@/lib/i18n/context";
 import { projectsTranslations } from "@/lib/i18n/translations/projects";
 import { getLocalizedPath } from "@/lib/i18n/navigation";
@@ -524,7 +526,7 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="h-full w-full object-cover opacity-60 mix-blend-luminosity transition-all duration-700 group-hover:scale-105 group-hover:opacity-100 group-hover:mix-blend-normal"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4">
                       {(() => {
@@ -556,11 +558,14 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
                       {highlightMatch(project.title, searchQuery)}
                     </h3>
 
-                    <p
-                      className={`mb-6 text-sm uppercase leading-relaxed text-muted-foreground ${mono.className}`}
+                    <ExpandableSummary
+                      text={project.summary}
+                      readMore={t.card.readMore}
+                      showLess={t.card.showLess}
+                      className={`text-sm uppercase leading-relaxed text-muted-foreground ${mono.className}`}
                     >
                       {highlightMatch(project.summary, searchQuery)}
-                    </p>
+                    </ExpandableSummary>
 
                     {project.subProjectIds &&
                       project.subProjectIds.length > 0 && (
@@ -610,8 +615,17 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
                           </span>
                         )}
                       </div>
-                      <div className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-all group-hover:border-primary group-hover:bg-primary group-hover:text-black">
-                        <ArrowUpRight className="h-5 w-5" />
+                      <div className="flex items-center gap-2">
+                        <ShareProjectButton
+                          path={getLocalizedPath(`/projects/${project.id}`, locale)}
+                          title={project.title}
+                          region={project.region}
+                          image={project.image}
+                          labels={t.card.share}
+                        />
+                        <div className="flex h-10 w-10 items-center justify-center border border-border text-muted-foreground transition-all group-hover:border-primary group-hover:bg-primary group-hover:text-black">
+                          <ArrowUpRight className="h-5 w-5" />
+                        </div>
                       </div>
                     </div>
                   </div>

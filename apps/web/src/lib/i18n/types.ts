@@ -502,6 +502,18 @@ export interface ProjectsPageTranslation {
     sold: string;
     acquired: string;
     clientProjects: string;
+    readMore: string;
+    showLess: string;
+    share: {
+      button: string;
+      title: string;
+      message: string;
+      copyLink: string;
+      copied: string;
+      email: string;
+      more: string;
+      close: string;
+    };
   };
   extendedArchive: {
     badge: string;
