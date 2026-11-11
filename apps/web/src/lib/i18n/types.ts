@@ -496,6 +496,8 @@ export interface ProjectsPageTranslation {
     tagPrefix: string;
     systemStatusOnline: string;
     systemStatusNoMatch: string;
+    exportCsv: string;
+    exportCsvTitle: string;
   };
   card: {
     availableForAcquisition: string;

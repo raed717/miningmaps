@@ -36,6 +36,8 @@ export const projectsTranslations: Record<Locale, ProjectsPageTranslation> = {
       tagPrefix: "TAG:",
       systemStatusOnline: "ONLINE",
       systemStatusNoMatch: "NO_MATCH",
+      exportCsv: "EXPORT CSV",
+      exportCsvTitle: "Download the {count} projects shown (with current filters) as a CSV file",
     },
     card: {
       availableForAcquisition: "AVAILABLE FOR ACQUISITION",
@@ -142,6 +144,8 @@ export const projectsTranslations: Record<Locale, ProjectsPageTranslation> = {
       tagPrefix: "ETIQUETA:",
       systemStatusOnline: "EN LÍNEA",
       systemStatusNoMatch: "SIN_COINCIDENCIAS",
+      exportCsv: "EXPORTAR CSV",
+      exportCsvTitle: "Descargar los {count} proyectos mostrados (con los filtros actuales) en un archivo CSV",
     },
     card: {
       availableForAcquisition: "DISPONIBLE PARA ADQUISICIÓN",
@@ -248,6 +252,8 @@ export const projectsTranslations: Record<Locale, ProjectsPageTranslation> = {
       tagPrefix: "TAG :",
       systemStatusOnline: "EN LIGNE",
       systemStatusNoMatch: "AUCUNE_CORRESPONDANCE",
+      exportCsv: "EXPORTER CSV",
+      exportCsvTitle: "Télécharger les {count} projets affichés (avec les filtres actuels) au format CSV",
     },
     card: {
       availableForAcquisition: "DISPONIBLE À L'ACQUISITION",

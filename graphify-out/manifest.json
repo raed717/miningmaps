@@ -315,8 +315,8 @@
     "semantic_hash": "c3f6327077214d9fb4220b1f60099327"
   },
   "apps/web/src/views/projects-page.tsx": {
-    "mtime": 1794308180.8919027,
-    "ast_hash": "d55ceb02a4863fe90b5d7751f81348cd",
+    "mtime": 1794411764.2605107,
+    "ast_hash": "188b72bab51970b6ce7dc972989cf1ae",
     "semantic_hash": ""
   },
   "apps/web/src/views/services-page.tsx": {
@@ -1450,8 +1450,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/projects.ts": {
-    "mtime": 1794307873.801374,
-    "ast_hash": "149f5686fecf51c52a9a3d011a4cdce1",
+    "mtime": 1794411764.2595093,
+    "ast_hash": "b2230dbd3ea10bc416d97292adab93a8",
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/services.ts": {
@@ -1460,13 +1460,18 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/types.ts": {
-    "mtime": 1794307873.8003728,
-    "ast_hash": "69caa37510a7ba985c5a39544a0d80fa",
+    "mtime": 1794411764.258503,
+    "ast_hash": "546e49efc51d958cb0ba37101b2fffd8",
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectTags.ts": {
     "mtime": 1794308180.8898711,
     "ast_hash": "c60b7af0875d1bc3cfa6f4ee99ec6bf1",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/projectsCsv.ts": {
+    "mtime": 1794411762.5781777,
+    "ast_hash": "ffa4153c822eedb6704a3bc9855a7b02",
     "semantic_hash": ""
   }
 }

@@ -788,8 +788,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "apps_web_package_dependencies_clsx",
-      "community": 92,
-      "community_name": "clsx",
+      "community": 46,
+      "community_name": "dependencies",
       "norm_label": "clsx"
     },
     {
@@ -799,8 +799,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "clsx",
-      "community": 92,
-      "community_name": "clsx",
+      "community": 46,
+      "community_name": "dependencies",
       "norm_label": "clsx"
     },
     {
@@ -832,8 +832,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "apps_web_package_dependencies_embla_carousel_react",
-      "community": 46,
-      "community_name": "dependencies",
+      "community": 75,
+      "community_name": "embla-carousel-react",
       "norm_label": "embla-carousel-react"
     },
     {
@@ -843,8 +843,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "embla_carousel_react",
-      "community": 46,
-      "community_name": "dependencies",
+      "community": 75,
+      "community_name": "embla-carousel-react",
       "norm_label": "embla-carousel-react"
     },
     {
@@ -1932,8 +1932,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_app_api_revalidate_route",
-      "community": 8,
-      "community_name": "env",
+      "community": 25,
+      "community_name": "revalidate/route.ts",
       "norm_label": "revalidate/route.ts"
     },
     {
@@ -1943,8 +1943,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "apps_web_src_app_api_revalidate_route_schema",
-      "community": 8,
-      "community_name": "env",
+      "community": 25,
+      "community_name": "revalidate/route.ts",
       "norm_label": "schema"
     },
     {
@@ -1954,8 +1954,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "apps_web_src_app_api_revalidate_route_locale_prefixes",
-      "community": 8,
-      "community_name": "env",
+      "community": 25,
+      "community_name": "revalidate/route.ts",
       "norm_label": "locale_prefixes"
     },
     {
@@ -1965,8 +1965,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "apps_web_src_app_api_revalidate_route_isauthorized",
-      "community": 8,
-      "community_name": "env",
+      "community": 25,
+      "community_name": "revalidate/route.ts",
       "norm_label": "isauthorized()"
     },
     {
@@ -1976,8 +1976,8 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "apps_web_src_app_api_revalidate_route_post",
-      "community": 8,
-      "community_name": "env",
+      "community": 25,
+      "community_name": "revalidate/route.ts",
       "norm_label": "post()"
     },
     {
@@ -2053,8 +2053,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_app_layout",
-      "community": 8,
-      "community_name": "env",
+      "community": 47,
+      "community_name": "layout.tsx",
       "norm_label": "layout.tsx"
     },
     {
@@ -2064,8 +2064,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_web_src_app_layout_metadata",
-      "community": 8,
-      "community_name": "env",
+      "community": 47,
+      "community_name": "layout.tsx",
       "norm_label": "metadata"
     },
     {
@@ -2075,8 +2075,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "apps_web_src_app_layout_jsonld",
-      "community": 8,
-      "community_name": "env",
+      "community": 47,
+      "community_name": "layout.tsx",
       "norm_label": "jsonld"
     },
     {
@@ -2086,8 +2086,8 @@
       "source_location": "L180",
       "_origin": "ast",
       "id": "apps_web_src_app_layout_rootlayout",
-      "community": 8,
-      "community_name": "env",
+      "community": 47,
+      "community_name": "layout.tsx",
       "norm_label": "rootlayout()"
     },
     {
@@ -2284,8 +2284,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "apps_web_src_components_contactform_contactform",
-      "community": 1,
-      "community_name": "project-view.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "contactform()"
     },
     {
@@ -2295,8 +2295,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_newsletterform",
-      "community": 1,
-      "community_name": "project-view.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "newsletterform.tsx"
     },
     {
@@ -2306,8 +2306,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "apps_web_src_components_newsletterform_newsletterform",
-      "community": 1,
-      "community_name": "project-view.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "newsletterform()"
     },
     {
@@ -3307,8 +3307,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_theme_provider",
-      "community": 8,
-      "community_name": "env",
+      "community": 47,
+      "community_name": "layout.tsx",
       "norm_label": "theme-provider.tsx"
     },
     {
@@ -3318,8 +3318,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "apps_web_src_components_theme_provider_themeprovider",
-      "community": 8,
-      "community_name": "env",
+      "community": 47,
+      "community_name": "layout.tsx",
       "norm_label": "themeprovider()"
     },
     {
@@ -3780,8 +3780,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_fonts_inter",
-      "community": 74,
-      "community_name": "account-page.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "inter"
     },
     {
@@ -3967,8 +3967,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_i18n_translations_contact",
-      "community": 1,
-      "community_name": "project-view.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "contact.ts"
     },
     {
@@ -3978,8 +3978,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "apps_web_src_lib_i18n_translations_contact_contacttranslations",
-      "community": 1,
-      "community_name": "project-view.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "contacttranslations"
     },
     {
@@ -4011,8 +4011,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_i18n_translations_map",
-      "community": 3,
-      "community_name": "page.tsx",
+      "community": 16,
+      "community_name": "projects-page.tsx",
       "norm_label": "map.ts"
     },
     {
@@ -4022,8 +4022,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "apps_web_src_lib_i18n_translations_map_maptranslations",
-      "community": 3,
-      "community_name": "page.tsx",
+      "community": 16,
+      "community_name": "projects-page.tsx",
       "norm_label": "maptranslations"
     },
     {
@@ -4033,8 +4033,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_i18n_translations_projects",
-      "community": 3,
-      "community_name": "page.tsx",
+      "community": 1,
+      "community_name": "project-view.tsx",
       "norm_label": "projects.ts"
     },
     {
@@ -4044,8 +4044,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "apps_web_src_lib_i18n_translations_projects_projectstranslations",
-      "community": 3,
-      "community_name": "page.tsx",
+      "community": 1,
+      "community_name": "project-view.tsx",
       "norm_label": "projectstranslations"
     },
     {
@@ -4143,8 +4143,8 @@
       "source_location": "L189",
       "_origin": "ast",
       "id": "apps_web_src_lib_i18n_types_contacttranslation",
-      "community": 1,
-      "community_name": "project-view.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "contacttranslation"
     },
     {
@@ -4165,8 +4165,8 @@
       "source_location": "L436",
       "_origin": "ast",
       "id": "apps_web_src_lib_i18n_types_maptranslation",
-      "community": 3,
-      "community_name": "page.tsx",
+      "community": 16,
+      "community_name": "projects-page.tsx",
       "norm_label": "maptranslation"
     },
     {
@@ -4176,8 +4176,8 @@
       "source_location": "L467",
       "_origin": "ast",
       "id": "apps_web_src_lib_i18n_types_projectspagetranslation",
-      "community": 3,
-      "community_name": "page.tsx",
+      "community": 1,
+      "community_name": "project-view.tsx",
       "norm_label": "projectspagetranslation"
     },
     {
@@ -4539,8 +4539,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdatacontext",
-      "community": 16,
-      "community_name": "projects-page.tsx",
+      "community": 3,
+      "community_name": "page.tsx",
       "norm_label": "projectdatacontext.tsx"
     },
     {
@@ -4550,8 +4550,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdatacontext_projectdatacontext",
-      "community": 16,
-      "community_name": "projects-page.tsx",
+      "community": 3,
+      "community_name": "page.tsx",
       "norm_label": "projectdatacontext"
     },
     {
@@ -4561,8 +4561,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdatacontext_projectdataprovider",
-      "community": 16,
-      "community_name": "projects-page.tsx",
+      "community": 3,
+      "community_name": "page.tsx",
       "norm_label": "projectdataprovider()"
     },
     {
@@ -4583,8 +4583,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "apps_web_src_lib_projectdatacontext_useprojectdetail",
-      "community": 16,
-      "community_name": "projects-page.tsx",
+      "community": 3,
+      "community_name": "page.tsx",
       "norm_label": "useprojectdetail()"
     },
     {
@@ -4649,8 +4649,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_web_src_lib_projecttypes_projectsummary",
-      "community": 16,
-      "community_name": "projects-page.tsx",
+      "community": 3,
+      "community_name": "page.tsx",
       "norm_label": "projectsummary"
     },
     {
@@ -4663,6 +4663,94 @@
       "community": 3,
       "community_name": "page.tsx",
       "norm_label": "projectpagedata"
+    },
+    {
+      "label": "projectsCsv.ts",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectscsv",
+      "community": 16,
+      "community_name": "projects-page.tsx",
+      "norm_label": "projectscsv.ts"
+    },
+    {
+      "label": "HEADERS",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectscsv_headers",
+      "community": 16,
+      "community_name": "projects-page.tsx",
+      "norm_label": "headers"
+    },
+    {
+      "label": "ProjectCsvRow",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectscsv_projectcsvrow",
+      "community": 16,
+      "community_name": "projects-page.tsx",
+      "norm_label": "projectcsvrow"
+    },
+    {
+      "label": "quote()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectscsv_quote",
+      "community": 16,
+      "community_name": "projects-page.tsx",
+      "norm_label": "quote()"
+    },
+    {
+      "label": "buildProjectsCsv()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectscsv_buildprojectscsv",
+      "community": 16,
+      "community_name": "projects-page.tsx",
+      "norm_label": "buildprojectscsv()"
+    },
+    {
+      "label": "downloadCsv()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectscsv_downloadcsv",
+      "community": 16,
+      "community_name": "projects-page.tsx",
+      "norm_label": "downloadcsv()"
+    },
+    {
+      "label": "csvFileName()",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_projectscsv_csvfilename",
+      "community": 16,
+      "community_name": "projects-page.tsx",
+      "norm_label": "csvfilename()"
+    },
+    {
+      "label": "RFC-4180",
+      "file_type": "concept",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "docref_rfc_4180",
+      "community": 16,
+      "community_name": "projects-page.tsx",
+      "norm_label": "rfc-4180"
     },
     {
       "label": "projectsRepo.ts",
@@ -5265,8 +5353,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_views_contact_page",
-      "community": 1,
-      "community_name": "project-view.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "contact-page.tsx"
     },
     {
@@ -5276,8 +5364,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "apps_web_src_views_contact_page_routeicons",
-      "community": 1,
-      "community_name": "project-view.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "routeicons"
     },
     {
@@ -5287,8 +5375,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "apps_web_src_views_contact_page_contactpage",
-      "community": 1,
-      "community_name": "project-view.tsx",
+      "community": 9,
+      "community_name": "useI18n",
       "norm_label": "contactpage()"
     },
     {
@@ -5397,8 +5485,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page",
-      "community": 74,
-      "community_name": "account-page.tsx",
+      "community": 55,
+      "community_name": "partners-page.tsx",
       "norm_label": "partners-page.tsx"
     },
     {
@@ -5408,8 +5496,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_affiliateterms",
-      "community": 74,
-      "community_name": "account-page.tsx",
+      "community": 55,
+      "community_name": "partners-page.tsx",
       "norm_label": "affiliateterms"
     },
     {
@@ -5419,8 +5507,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_affiliateeligibility",
-      "community": 74,
-      "community_name": "account-page.tsx",
+      "community": 55,
+      "community_name": "partners-page.tsx",
       "norm_label": "affiliateeligibility"
     },
     {
@@ -5430,8 +5518,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_finderterms",
-      "community": 74,
-      "community_name": "account-page.tsx",
+      "community": 55,
+      "community_name": "partners-page.tsx",
       "norm_label": "finderterms"
     },
     {
@@ -5441,8 +5529,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_findereligibility",
-      "community": 74,
-      "community_name": "account-page.tsx",
+      "community": 55,
+      "community_name": "partners-page.tsx",
       "norm_label": "findereligibility"
     },
     {
@@ -5452,8 +5540,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "apps_web_src_views_partners_page_partnerspage",
-      "community": 74,
-      "community_name": "account-page.tsx",
+      "community": 55,
+      "community_name": "partners-page.tsx",
       "norm_label": "partnerspage()"
     },
     {
@@ -5526,7 +5614,7 @@
       "label": "ProjectsPageProps",
       "file_type": "code",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L32",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_projectspageprops",
       "community": 16,
@@ -5537,7 +5625,7 @@
       "label": "escapeRegExp()",
       "file_type": "code",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L37",
+      "source_location": "L39",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_escaperegexp",
       "community": 16,
@@ -5548,7 +5636,7 @@
       "label": "highlightMatch()",
       "file_type": "code",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L41",
+      "source_location": "L43",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_highlightmatch",
       "community": 16,
@@ -5559,7 +5647,7 @@
       "label": "COMMODITY_TAGS",
       "file_type": "code",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L58",
+      "source_location": "L60",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_commodity_tags",
       "community": 16,
@@ -5570,7 +5658,7 @@
       "label": "SPECIMEN_TAGS",
       "file_type": "code",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L59",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_specimen_tags",
       "community": 16,
@@ -5581,7 +5669,7 @@
       "label": "ProjectsPage()",
       "file_type": "code",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L62",
+      "source_location": "L64",
       "_origin": "ast",
       "id": "apps_web_src_views_projects_page_projectspage",
       "community": 16,
@@ -7509,8 +7597,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "turbo_build_outputs",
-      "community": 8,
-      "community_name": "env",
+      "community": 3,
+      "community_name": "page.tsx",
       "norm_label": "outputs"
     },
     {
@@ -7520,8 +7608,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ref_dist",
-      "community": 8,
-      "community_name": "env",
+      "community": 3,
+      "community_name": "page.tsx",
       "norm_label": "dist/**"
     },
     {
@@ -7531,8 +7619,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ref_next",
-      "community": 8,
-      "community_name": "env",
+      "community": 3,
+      "community_name": "page.tsx",
       "norm_label": ".next/**"
     },
     {
@@ -7542,8 +7630,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ref_next_cache",
-      "community": 8,
-      "community_name": "env",
+      "community": 25,
+      "community_name": "revalidate/route.ts",
       "norm_label": "!.next/cache/**"
     },
     {
@@ -14720,7 +14808,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -14732,7 +14820,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -17380,7 +17468,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -17392,7 +17480,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -17681,7 +17769,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -17705,7 +17793,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -18802,7 +18890,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -18922,7 +19010,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -19030,7 +19118,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -19346,7 +19434,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -19454,7 +19542,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -19467,7 +19555,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L63",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_projectspage",
@@ -19548,7 +19636,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -19572,7 +19660,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -19585,7 +19673,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L242",
+      "source_location": "L196",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_projectspage",
@@ -19903,7 +19991,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -19915,7 +20003,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -20145,7 +20233,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -20217,7 +20305,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -20319,7 +20407,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -20355,7 +20443,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -20978,7 +21066,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -20990,7 +21078,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -21003,7 +21091,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L67",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_projectspage",
@@ -21036,7 +21124,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -21048,7 +21136,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -21061,7 +21149,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L129",
+      "source_location": "L131",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_projectspage",
@@ -21072,7 +21160,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -21085,7 +21173,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L150",
+      "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_projectspage",
@@ -21136,6 +21224,179 @@
       "source": "apps_web_src_lib_projectsrepo",
       "target": "apps_web_src_lib_projecttypes_projectsummary",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectscsv",
+      "target": "apps_web_src_lib_projectscsv_buildprojectscsv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectscsv",
+      "target": "apps_web_src_lib_projectscsv_csvfilename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectscsv",
+      "target": "apps_web_src_lib_projectscsv_downloadcsv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectscsv",
+      "target": "apps_web_src_lib_projectscsv_headers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectscsv",
+      "target": "apps_web_src_lib_projectscsv_projectcsvrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectscsv",
+      "target": "apps_web_src_lib_projectscsv_quote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "cites",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectscsv",
+      "target": "docref_rfc_4180",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page",
+      "target": "apps_web_src_lib_projectscsv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "apps/web/src/lib/projectsCsv.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_lib_projectscsv_buildprojectscsv",
+      "target": "apps_web_src_lib_projectscsv_quote",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page",
+      "target": "apps_web_src_lib_projectscsv_buildprojectscsv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L207",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page_projectspage",
+      "target": "apps_web_src_lib_projectscsv_buildprojectscsv"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page",
+      "target": "apps_web_src_lib_projectscsv_downloadcsv",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L206",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page_projectspage",
+      "target": "apps_web_src_lib_projectscsv_downloadcsv"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page",
+      "target": "apps_web_src_lib_projectscsv_csvfilename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/views/projects-page.tsx",
+      "source_location": "L208",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_views_projects_page_projectspage",
+      "target": "apps_web_src_lib_projectscsv_csvfilename"
     },
     {
       "relation": "contains",
@@ -21969,7 +22230,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L58",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -21980,7 +22241,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L37",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -21991,7 +22252,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L41",
+      "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -22002,7 +22263,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L62",
+      "source_location": "L64",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -22013,7 +22274,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -22024,7 +22285,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L59",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page",
@@ -22036,7 +22297,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_highlightmatch",
@@ -22048,7 +22309,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L559",
+      "source_location": "L595",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_projectspage",
@@ -22061,7 +22322,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/views/projects-page.tsx",
-      "source_location": "L92",
+      "source_location": "L94",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_views_projects_page_projectspage",
@@ -25415,5 +25676,5 @@
       "source_file": "apps/web/public/images/projects/Nevada/Northumberland Staking Report (2).pdf"
     }
   ],
-  "built_at_commit": "316b28da583caff84aad8c09a2c0695f57bf0d0f"
+  "built_at_commit": "755c0d88206dd9ff577c7d86344d795a34ea4187"
 }

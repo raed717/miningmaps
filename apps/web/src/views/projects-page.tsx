@@ -16,6 +16,7 @@ import {
   Tag,
   Gem,
   BadgeCheck,
+  Download,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { useProjectSummaries } from "@/lib/projectDataContext";
@@ -24,6 +25,7 @@ import { PartnerNoticeRotator } from "@/components/partner-notice-rotator";
 import { ShareProjectButton } from "@/components/share-project-button";
 import { ExpandableSummary } from "@/components/expandable-summary";
 import { filterTags, searchableTags } from "@/lib/projectTags";
+import { buildProjectsCsv, csvFileName, downloadCsv } from "@/lib/projectsCsv";
 import { useI18n } from "@/lib/i18n/context";
 import { projectsTranslations } from "@/lib/i18n/translations/projects";
 import { getLocalizedPath } from "@/lib/i18n/navigation";
@@ -184,6 +186,28 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
 
     return matchesSearch && matchesFilter && matchesSaleState;
   });
+
+  // Exports exactly what's displayed: current search, tag/type and sale filters, in display order.
+  const exportCsv = () => {
+    if (filteredProjects.length === 0) return;
+    const rows = filteredProjects.map((project) => ({
+      id: project.id,
+      title: project.title,
+      path: getLocalizedPath(`/projects/${project.id}`, locale),
+      // Same availability rule as the card badge (the project or any of its sub-projects).
+      forSale:
+        !!project.isForSale ||
+        (project.subProjectIds || []).some((id) => projects.find((sub) => sub.id === id)?.isForSale),
+      region: project.region,
+      commodities: project.tags || [],
+    }));
+    const sale = showOnlyForSale || saleFilter === "for-sale" ? "for-sale" : saleFilter === "sold" ? "sold" : null;
+    const type = activeFilter === FOSSILS_GEMSTONES_TYPE ? "fossils-agates-gemstones" : activeFilter;
+    downloadCsv(
+      buildProjectsCsv(rows),
+      csvFileName([type, sale, searchQuery.trim() ? "search" : null, locale === "en" ? null : locale]),
+    );
+  };
 
   const matchingOtherProjectsCount = useMemo(() => {
     if (!searchQuery.trim()) return 0;
@@ -484,9 +508,21 @@ export default function ProjectsPage({ showOnlyForSale = false, locale: propLoca
               </span>
             )}
           </div>
-          <span>
-            SYSTEM STATUS: {filteredProjects.length > 0 ? t.controls.systemStatusOnline : t.controls.systemStatusNoMatch}
-          </span>
+          <div className="flex items-center gap-3">
+            <span>
+              SYSTEM STATUS: {filteredProjects.length > 0 ? t.controls.systemStatusOnline : t.controls.systemStatusNoMatch}
+            </span>
+            <button
+              type="button"
+              onClick={exportCsv}
+              disabled={filteredProjects.length === 0}
+              title={t.controls.exportCsvTitle.replace("{count}", String(filteredProjects.length))}
+              className="inline-flex items-center gap-1.5 border border-primary/40 bg-primary/10 px-3 py-1.5 text-[10px] font-bold tracking-[0.18em] text-primary transition-colors hover:border-primary hover:bg-primary hover:text-black disabled:pointer-events-none disabled:opacity-40"
+            >
+              <Download className="h-3.5 w-3.5" />
+              {t.controls.exportCsv}
+            </button>
+          </div>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
