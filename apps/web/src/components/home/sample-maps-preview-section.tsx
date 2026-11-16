@@ -157,8 +157,44 @@ export function SampleMapsPreviewSection() {
             </ul>
           </motion.nav>
 
-          {/* Showcase: a strip of map sheets that keeps gliding left (two copies, so it loops seamlessly). */}
-          <div className="min-w-0">
+          {/* Tablet and up: one large sheet and two smaller ones. */}
+          <div className="hidden min-w-0 gap-4 md:grid md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] md:grid-rows-2">
+            {showcase.slice(0, 3).map((map, i, picked) => (
+              <motion.figure
+                key={map.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className={`group/tile flex flex-col border border-border bg-card transition-colors hover:border-primary/60 ${
+                  i === 0 ? "row-span-2" : ""
+                } ${picked.length === 1 ? "col-span-2" : ""}`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setViewing(map)}
+                  aria-label={`${mapsT.card.viewFullSize}: ${map.title}`}
+                  className={`relative block w-full flex-1 cursor-zoom-in overflow-hidden ${GRAPH_PAPER} ${
+                    i === 0 ? "min-h-96" : "min-h-40"
+                  }`}
+                >
+                  <MapThumb map={map} label={mapsT.card.viewFullSize} />
+                </button>
+                <figcaption className="border-t border-border p-4">
+                  <TypeLink href={typeHref(map.mapType)} type={map.mapType} label={mapsT.filters.types[map.mapType]} />
+                  <p className={`mt-2 font-bold leading-snug ${i === 0 ? "text-lg" : "line-clamp-2 text-sm"}`}>{map.title}</p>
+                  {map.region && (
+                    <p className={`mt-1.5 truncate text-[10px] uppercase tracking-[0.14em] text-muted-foreground ${mono.className}`}>
+                      {map.region}
+                    </p>
+                  )}
+                </figcaption>
+              </motion.figure>
+            ))}
+          </div>
+
+          {/* Phones: a strip of map sheets that keeps gliding left (two copies, so it loops seamlessly). */}
+          <div className="min-w-0 md:hidden">
             <div className="group/strip relative overflow-hidden mask-[linear-gradient(to_right,transparent,#000_5%,#000_95%,transparent)] motion-reduce:overflow-x-auto">
               <div
                 className="flex w-max animate-[ticker-scroll_var(--strip-duration)_linear_infinite] group-focus-within/strip:[animation-play-state:paused] group-hover/strip:[animation-play-state:paused] motion-reduce:animate-none"
@@ -185,43 +221,16 @@ export function SampleMapsPreviewSection() {
                             aria-label={`${mapsT.card.viewFullSize}: ${map.title}`}
                             className={`relative block h-44 w-full cursor-zoom-in overflow-hidden md:h-52 ${GRAPH_PAPER}`}
                           >
-                            <img
-                              src={map.thumbnailUrl}
-                              alt={map.title}
-                              loading="lazy"
-                              draggable={false}
-                              className="absolute inset-0 h-full w-full object-contain p-4 drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)] transition-transform duration-500 group-hover/tile:scale-[1.03]"
-                            />
-                            {[
-                              "left-2 top-2 border-l-2 border-t-2",
-                              "right-2 top-2 border-r-2 border-t-2",
-                              "bottom-2 left-2 border-b-2 border-l-2",
-                              "bottom-2 right-2 border-b-2 border-r-2",
-                            ].map((pos) => (
-                              <span
-                                key={pos}
-                                className={`pointer-events-none absolute h-3 w-3 border-white/40 transition-all duration-300 group-hover/tile:h-5 group-hover/tile:w-5 group-hover/tile:border-primary ${pos}`}
-                              />
-                            ))}
-                            <span
-                              className={`pointer-events-none absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 border border-primary/60 bg-black/80 px-2.5 py-1.5 text-[9px] font-bold uppercase tracking-[0.18em] whitespace-nowrap text-primary opacity-0 transition-opacity duration-300 group-hover/tile:opacity-100 ${mono.className}`}
-                            >
-                              <Crosshair className="h-3 w-3" />
-                              {mapsT.card.viewFullSize}
-                            </span>
+                            <MapThumb map={map} label={mapsT.card.viewFullSize} />
                           </button>
 
                           <figcaption className="flex flex-1 flex-col border-t border-border p-4">
-                            <Link
+                            <TypeLink
                               href={typeHref(map.mapType)}
+                              type={map.mapType}
+                              label={mapsT.filters.types[map.mapType]}
                               tabIndex={copy ? -1 : undefined}
-                              className={`inline-flex items-center gap-2 self-start text-[9px] font-bold uppercase tracking-[0.18em] text-primary hover:underline ${mono.className}`}
-                            >
-                              <span className="h-3 w-3 shrink-0">
-                                <MapLegendSwatch type={map.mapType} />
-                              </span>
-                              {mapsT.filters.types[map.mapType]}
-                            </Link>
+                            />
                             <p className="mt-2 line-clamp-2 text-sm font-bold leading-snug">{map.title}</p>
                             {map.region && (
                               <p
@@ -261,5 +270,63 @@ export function SampleMapsPreviewSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+/** Map thumbnail on graph paper with registration marks and a hover badge. Sits inside the clickable frame. */
+function MapThumb({ map, label }: { map: SampleMap; label: string }) {
+  return (
+    <>
+      <img
+        src={map.thumbnailUrl}
+        alt={map.title}
+        loading="lazy"
+        draggable={false}
+        className="absolute inset-0 h-full w-full object-contain p-4 drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)] transition-transform duration-500 group-hover/tile:scale-[1.02] md:p-6"
+      />
+      {[
+        "left-2 top-2 border-l-2 border-t-2",
+        "right-2 top-2 border-r-2 border-t-2",
+        "bottom-2 left-2 border-b-2 border-l-2",
+        "bottom-2 right-2 border-b-2 border-r-2",
+      ].map((pos) => (
+        <span
+          key={pos}
+          className={`pointer-events-none absolute h-3 w-3 border-white/40 transition-all duration-300 group-hover/tile:h-5 group-hover/tile:w-5 group-hover/tile:border-primary ${pos}`}
+        />
+      ))}
+      <span
+        className={`pointer-events-none absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 border border-primary/60 bg-black/80 px-2.5 py-1.5 text-[9px] font-bold uppercase tracking-[0.18em] whitespace-nowrap text-primary opacity-0 transition-opacity duration-300 group-hover/tile:opacity-100 ${mono.className}`}
+      >
+        <Crosshair className="h-3 w-3" />
+        {label}
+      </span>
+    </>
+  );
+}
+
+/** The map's category, linking to /sample-maps?type=... */
+function TypeLink({
+  href,
+  type,
+  label,
+  tabIndex,
+}: {
+  href: string;
+  type: SampleMapType;
+  label: string;
+  tabIndex?: number;
+}) {
+  return (
+    <Link
+      href={href}
+      tabIndex={tabIndex}
+      className={`inline-flex items-center gap-2 self-start text-[9px] font-bold uppercase tracking-[0.18em] text-primary hover:underline ${mono.className}`}
+    >
+      <span className="h-3 w-3 shrink-0">
+        <MapLegendSwatch type={type} />
+      </span>
+      {label}
+    </Link>
   );
 }
