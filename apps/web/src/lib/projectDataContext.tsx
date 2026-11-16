@@ -2,6 +2,7 @@
 
 import { createContext, useContext, type ReactNode } from "react";
 import type { ProjectPageData, ProjectSummary } from "@/lib/projectTypes";
+import type { SampleMap } from "@/lib/sampleMapTypes";
 
 // Filled per route by the server page ([[...slug]]/page.tsx) with only the data that route needs.
 const ProjectDataContext = createContext<ProjectPageData>({});
@@ -19,6 +20,11 @@ export function useProjectSummaries(): ProjectSummary[] {
 export function useProjectDetail() {
   const { project, related } = useContext(ProjectDataContext);
   return { project, related: related ?? [] };
+}
+
+/** The /sample-maps cards, in the page's language. */
+export function useSampleMaps(): SampleMap[] {
+  return useContext(ProjectDataContext).sampleMaps ?? [];
 }
 
 /** The home page carousel's projects and the total project count. */

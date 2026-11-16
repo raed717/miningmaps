@@ -14,6 +14,7 @@ import { useHomePreview } from "@/lib/projectDataContext";
 import { useI18n } from "@/lib/i18n/context";
 import { homeTranslations } from "@/lib/i18n/translations/home";
 import { getLocalizedPath } from "@/lib/i18n/navigation";
+import { ProjectFanDeck } from "@/components/home/project-fan-deck";
 
 export function ProjectPreviewCarouselSection() {
   const { locale } = useI18n();
@@ -83,8 +84,13 @@ export function ProjectPreviewCarouselSection() {
           </span>
         </motion.div>
 
-        {/* Project Grid */}
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Phones: a fanned hand of cards instead of a long scroll. */}
+        <div className="sm:hidden">
+          <ProjectFanDeck projects={previewProjects} locale={locale} t={t} />
+        </div>
+
+        {/* Project Grid (tablet and up) */}
+        <div className="hidden gap-5 sm:grid sm:grid-cols-2 lg:grid-cols-3">
           {previewProjects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -103,6 +109,7 @@ export function ProjectPreviewCarouselSection() {
                   <img
                     src={project.previewImage}
                     alt={project.title}
+                    loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />

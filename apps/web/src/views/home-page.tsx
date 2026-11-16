@@ -4,6 +4,7 @@ import { CinematicHero } from "@/components/home/cinematic-hero";
 import { FieldReportsSection } from "@/components/home/field-reports-section";
 import { GlobalTelemetrySection } from "@/components/home/global-telemetry-section";
 import { ProjectPreviewCarouselSection } from "@/components/home/project-preview-carousel-section";
+import { SampleMapsPreviewSection } from "@/components/home/sample-maps-preview-section";
 import { ServiceRegistrySection } from "@/components/home/service-registry-section";
 import { ListingMembershipSection } from "@/components/home/listing-membership-section";
 import { AccomplishmentsSection } from "@/components/home/accomplishments-section";
@@ -34,6 +35,7 @@ export default function HomePage({ locale: _locale }: { locale?: Locale } = {}) 
         <CinematicHero />
       </div>
       <ProjectPreviewCarouselSection />
+      <SampleMapsPreviewSection />
       <div id="services-section">
         <ServiceRegistrySection />
       </div>

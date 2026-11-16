@@ -19,26 +19,57 @@ export type ServiceModule = {
 
 export const serviceModules: ServiceModule[] = [
   {
-    id: "tenure-operations",
+    id: "terrain-imagery",
     code: "OPS_01",
-    title: "Tenure Operations",
+    title: "Terrain, Remote Sensing & LiDAR",
     summary:
-      "Keep land positions active, traceable, and expansion-ready with staking, renewals, and title intelligence.",
+      "Translate topography, satellite spectral imagery, and LiDAR into planning layers that improve terrain and alteration understanding before field deployment.",
     services: [
-      "Claim renewals and expiry tracking",
-      "Claim staking support and field-ready packages",
-      "Tenure research for Crown granted and patented mineral claims",
-      "Mineral claim ownership verification",
-      "Historical tenure research",
-      "Mineral claim due diligence",
+      "Remote sensing and satellite spectral analysis (Sentinel NDVI, Iron Oxide B4/B2)",
+      "LiDAR analysis and Digital Terrain Models (DTM / DEM)",
+      "Topographic and contour mapping",
+      "Photogrammetry",
+      "Aerial photo sourcing and analysis",
+      "Terrain modelling for exploration projects",
+      "Virtual Tours (Panoramic Drone Photography) - client partner",
     ],
     deliverables: [
-      "Tenure status summaries",
-      "Renewal calendars",
-      "Ownership snapshots",
+      "Spectral alteration & NDVI maps",
+      "LiDAR DTM / DEM surface models",
+      "Orthomosaic imagery",
+      "Aerial interpretation layers",
     ],
     outcome:
-      "Mineral tenure stays organized and ready for acquisition, exploration, or review.",
+      "Terrain context and spectral alteration targets become clearer for planning access, prospecting, and technical review.",
+    sampleCases: [
+      {
+        title: "NDVI Spectral Analysis — Sentinel Imagery",
+        description:
+          "Normalized Difference Vegetation Index (NDVI) derived from Sentinel satellite imagery. Greener areas indicate healthy, dense vegetation cover.",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
+        linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+        linkLabel: "BC MINFILE 082JSW018",
+      },
+      {
+        title: "Iron Oxide Spectral Analysis (B4/B2) — Sentinel Imagery",
+        description:
+          "Band ratio (B4/B2) spectral analysis derived from Sentinel satellite imagery. Red zones highlight areas where iron oxide alteration is showing up strongest.",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
+        linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+        linkLabel: "BC MINFILE 082JSW018",
+      },
+      {
+        title: "Digital Terrain Model (DTM) — LiDAR Derived",
+        description:
+          "High-resolution bare-earth Digital Terrain Model (DTM) derived from LiDAR data for structural and topographic visualization.",
+        image:
+          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
+        linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
+        linkLabel: "BC MINFILE 093F 037",
+      },
+    ],
   },
   {
     id: "acquisition-brokerage",
@@ -106,57 +137,26 @@ export const serviceModules: ServiceModule[] = [
       "Regulatory steps are documented clearly and delivered in a format stakeholders can act on.",
   },
   {
-    id: "terrain-imagery",
+    id: "tenure-operations",
     code: "OPS_05",
-    title: "Terrain, Remote Sensing & LiDAR",
+    title: "Tenure Operations",
     summary:
-      "Translate topography, satellite spectral imagery, and LiDAR into planning layers that improve terrain and alteration understanding before field deployment.",
+      "Keep land positions active, traceable, and expansion-ready with staking, renewals, and title intelligence.",
     services: [
-      "Remote sensing and satellite spectral analysis (Sentinel NDVI, Iron Oxide B4/B2)",
-      "LiDAR analysis and Digital Terrain Models (DTM / DEM)",
-      "Topographic and contour mapping",
-      "Photogrammetry",
-      "Aerial photo sourcing and analysis",
-      "Terrain modelling for exploration projects",
-      "Virtual Tours (Panoramic Drone Photography) - client partner",
+      "Claim renewals and expiry tracking",
+      "Claim staking support and field-ready packages",
+      "Tenure research for Crown granted and patented mineral claims",
+      "Mineral claim ownership verification",
+      "Historical tenure research",
+      "Mineral claim due diligence",
     ],
     deliverables: [
-      "Spectral alteration & NDVI maps",
-      "LiDAR DTM / DEM surface models",
-      "Orthomosaic imagery",
-      "Aerial interpretation layers",
+      "Tenure status summaries",
+      "Renewal calendars",
+      "Ownership snapshots",
     ],
     outcome:
-      "Terrain context and spectral alteration targets become clearer for planning access, prospecting, and technical review.",
-    sampleCases: [
-      {
-        title: "NDVI Spectral Analysis — Sentinel Imagery",
-        description:
-          "Normalized Difference Vegetation Index (NDVI) derived from Sentinel satellite imagery. Greener areas indicate healthy, dense vegetation cover.",
-        image:
-          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
-        linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
-        linkLabel: "BC MINFILE 082JSW018",
-      },
-      {
-        title: "Iron Oxide Spectral Analysis (B4/B2) — Sentinel Imagery",
-        description:
-          "Band ratio (B4/B2) spectral analysis derived from Sentinel satellite imagery. Red zones highlight areas where iron oxide alteration is showing up strongest.",
-        image:
-          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
-        linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
-        linkLabel: "BC MINFILE 082JSW018",
-      },
-      {
-        title: "Digital Terrain Model (DTM) — LiDAR Derived",
-        description:
-          "High-resolution bare-earth Digital Terrain Model (DTM) derived from LiDAR data for structural and topographic visualization.",
-        image:
-          "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
-        linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
-        linkLabel: "BC MINFILE 093F 037",
-      },
-    ],
+      "Mineral tenure stays organized and ready for acquisition, exploration, or review.",
   },
   {
     id: "property-valuation",

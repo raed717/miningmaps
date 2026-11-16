@@ -25,8 +25,8 @@
     "semantic_hash": "02585399f7ff3a13211e84f818724111"
   },
   "apps/web/next-sitemap.config.js": {
-    "mtime": 1793397074.869426,
-    "ast_hash": "1f74dc79e16f2849415eb2991fbc3527",
+    "mtime": 1794820746.0176158,
+    "ast_hash": "58e2653173284734b3df3191566209a9",
     "semantic_hash": ""
   },
   "apps/web/next.config.mjs": {
@@ -45,8 +45,8 @@
     "semantic_hash": "0f8aa602547b154dc06be77b007c51d2"
   },
   "apps/web/src/App.tsx": {
-    "mtime": 1793396959.3436484,
-    "ast_hash": "90d36d70af5fd104b8f2a65ea3d6264f",
+    "mtime": 1794820694.572541,
+    "ast_hash": "15616258aa3b2f707758df1d94c36b03",
     "semantic_hash": ""
   },
   "apps/web/src/app/[[...slug]]/client.tsx": {
@@ -55,8 +55,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/app/[[...slug]]/page.tsx": {
-    "mtime": 1794307778.4339824,
-    "ast_hash": "e3b5314fa41fb4ca7798e38172b39a9f",
+    "mtime": 1794834551.619545,
+    "ast_hash": "103ca30354bd5af4e49a883c97942cd8",
     "semantic_hash": ""
   },
   "apps/web/src/app/api/contact/route.ts": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/app/layout.tsx": {
-    "mtime": 1793025789.6100256,
-    "ast_hash": "6e3ce56ad3ed4d73c5d4d26626c6ace2",
+    "mtime": 1794676239.8137028,
+    "ast_hash": "1cc21593322807dcb044f6f1372c64d1",
     "semantic_hash": ""
   },
   "apps/web/src/app/map/map-view.tsx": {
@@ -100,8 +100,8 @@
     "semantic_hash": "6625423c2c41f8afb677cabde2b15f14"
   },
   "apps/web/src/components/footer.tsx": {
-    "mtime": 1793379466.8258512,
-    "ast_hash": "3dfc4649b10fcab5d208c5beef3a0ea6",
+    "mtime": 1794820676.3236916,
+    "ast_hash": "536f5e18cb2550f35f83bfaa15b05064",
     "semantic_hash": ""
   },
   "apps/web/src/components/header.tsx": {
@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/home/service-registry-section.tsx": {
-    "mtime": 1793379271.6379886,
-    "ast_hash": "241f7d496564e0ef7f02c298175d2f6e",
+    "mtime": 1794834852.9996996,
+    "ast_hash": "e96b721624f865cc709b6c094127742c",
     "semantic_hash": ""
   },
   "apps/web/src/components/home/testimonials-section.tsx": {
@@ -265,8 +265,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/servicesData.ts": {
-    "mtime": 1790758854.6776757,
-    "ast_hash": "41dfe976870291da3b573ead00f5fa4a",
+    "mtime": 1794817606.1588738,
+    "ast_hash": "f36a8bc9f4be290dbeeca36735036212",
     "semantic_hash": ""
   },
   "apps/web/src/lib/utils.ts": {
@@ -290,8 +290,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/views/home-page.tsx": {
-    "mtime": 1793365104.89006,
-    "ast_hash": "b7aebb7b841ff488a19b4e90875c3ca9",
+    "mtime": 1794834587.560216,
+    "ast_hash": "355e647d9356ad010910ca6ee561f90c",
     "semantic_hash": ""
   },
   "apps/web/src/views/not-found-page.tsx": {
@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/views/services-page.tsx": {
-    "mtime": 1793364033.3783774,
-    "ast_hash": "e2a5a6a606d929fe189bc9d6cab46f9c",
+    "mtime": 1794829244.6832192,
+    "ast_hash": "1e753b72b9db3fa1fc34bf6023505afb",
     "semantic_hash": ""
   },
   "apps/web/tsconfig.json": {
@@ -410,8 +410,8 @@
     "semantic_hash": "ff5ccff88485658260173dff9f0fe74b"
   },
   "CLAUDE.md": {
-    "mtime": 1794308229.523818,
-    "ast_hash": "34e1acd396aabc1ee02cd395f2606d79",
+    "mtime": 1794834886.1335104,
+    "ast_hash": "f709b2b2122b212e56cda8cdf42a073a",
     "semantic_hash": ""
   },
   "DESIGN_SYSTEM.md": {
@@ -950,8 +950,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/fullscreen-image-viewer.tsx": {
-    "mtime": 1788518027.4038348,
-    "ast_hash": "7a1b24ec92b66be48d93d1499dceccf1",
+    "mtime": 1794817717.431831,
+    "ast_hash": "ac351d388cbc67ab14bc2c44ce8593c0",
     "semantic_hash": ""
   },
   "apps/web/src/components/home/past-clients-preview-section.tsx": {
@@ -1370,13 +1370,13 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectDataContext.tsx": {
-    "mtime": 1793023619.6079326,
-    "ast_hash": "13a37d7f5c22a5ceb6b663397c53e547",
+    "mtime": 1794820639.3463256,
+    "ast_hash": "1c7db1315633e12ec7f102faad677b6b",
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectTypes.ts": {
-    "mtime": 1793023535.6510088,
-    "ast_hash": "b27051f5f61bb830b21410e297d58916",
+    "mtime": 1794820639.345323,
+    "ast_hash": "8269412c84608558024330ae6fcc043f",
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectsRepo.ts": {
@@ -1440,8 +1440,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/home.ts": {
-    "mtime": 1793379203.388394,
-    "ast_hash": "a4d272664b67707b97d1e66d77902328",
+    "mtime": 1794834551.6185465,
+    "ast_hash": "6bb690491aab519f83de41bb5d5e8b1a",
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/map.ts": {
@@ -1455,13 +1455,13 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/services.ts": {
-    "mtime": 1793363977.2651057,
-    "ast_hash": "17d8292bca5790ac556e6fe86fca68da",
+    "mtime": 1794829176.0929205,
+    "ast_hash": "739a600a5a4b4a28dce8f97a768beb2a",
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/types.ts": {
-    "mtime": 1794411764.258503,
-    "ast_hash": "546e49efc51d958cb0ba37101b2fffd8",
+    "mtime": 1794834551.6165395,
+    "ast_hash": "f72afc3a1abe5e263c1da6c5fa3446e8",
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectTags.ts": {
@@ -1472,6 +1472,51 @@
   "apps/web/src/lib/projectsCsv.ts": {
     "mtime": 1794411762.5781777,
     "ast_hash": "ffa4153c822eedb6704a3bc9855a7b02",
+    "semantic_hash": ""
+  },
+  "docs/client-requests/2026-11-14.md": {
+    "mtime": 1794829334.9844656,
+    "ast_hash": "c3493dc44dcaa1060c40b97d9b11f13c",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/cloudinary.ts": {
+    "mtime": 1794828113.879591,
+    "ast_hash": "39e1da63807d185d797fd29915bc2723",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/i18n/translations/sampleMaps.ts": {
+    "mtime": 1794828579.0909553,
+    "ast_hash": "b4682f1fa8261f049bd087e881c0494f",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/sampleMapTypes.ts": {
+    "mtime": 1794820617.3033197,
+    "ast_hash": "7e2a60ebd317c8931f720259b12fe9ee",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/sampleMapsRepo.ts": {
+    "mtime": 1794828116.6579404,
+    "ast_hash": "6034962bf6a05ca3ba41fa4d809c2575",
+    "semantic_hash": ""
+  },
+  "apps/web/src/views/sample-maps-page.tsx": {
+    "mtime": 1794829199.1764734,
+    "ast_hash": "74735c0a37456299ee419fe4e23ba0be",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/home/sample-maps-preview-section.tsx": {
+    "mtime": 1794834631.1998384,
+    "ast_hash": "b216d1e964eaf008d934279af366fd52",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/map-legend-swatch.tsx": {
+    "mtime": 1794829195.5259671,
+    "ast_hash": "074fe1f9c6723a99c5f804e57bfc900c",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/serviceMapLinks.ts": {
+    "mtime": 1794829281.6080396,
+    "ast_hash": "a159b288def0fd70418a99728213df65",
     "semantic_hash": ""
   }
 }

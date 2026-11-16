@@ -32,6 +32,10 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
       sampleWorkTitle: "Sample Work & Technical Case Studies",
       realFieldDataBadge: "Real Field Data",
       viewRecord: "View Record",
+      viewFullSize: "View full size",
+      browseSampleMaps: "Browse all sample maps",
+      sampleMapsTitle: "Sample maps",
+      seeSampleMaps: "See sample maps",
     },
     clientsSection: {
       badge: "CLIENT_ARCHIVE",
@@ -69,26 +73,57 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
     },
     modules: [
       {
-        id: "tenure-operations",
+        id: "terrain-imagery",
         code: "OPS_01",
-        title: "Tenure Operations",
+        title: "Terrain, Remote Sensing & LiDAR",
         summary:
-          "Keep land positions active, traceable, and expansion-ready with staking, renewals, and title intelligence.",
+          "Translate topography, satellite spectral imagery, and LiDAR into planning layers that improve terrain and alteration understanding before field deployment.",
         services: [
-          "Claim renewals and expiry tracking",
-          "Claim staking support and field-ready packages",
-          "Tenure research for Crown granted and patented mineral claims",
-          "Mineral claim ownership verification",
-          "Historical tenure research",
-          "Mineral claim due diligence",
+          "Remote sensing and satellite spectral analysis (Sentinel NDVI, Iron Oxide B4/B2)",
+          "LiDAR analysis and Digital Terrain Models (DTM / DEM)",
+          "Topographic and contour mapping",
+          "Photogrammetry",
+          "Aerial photo sourcing and analysis",
+          "Terrain modelling for exploration projects",
+          "Virtual Tours (Panoramic Drone Photography) - client partner",
         ],
         deliverables: [
-          "Tenure status summaries",
-          "Renewal calendars",
-          "Ownership snapshots",
+          "Spectral alteration & NDVI maps",
+          "LiDAR DTM / DEM surface models",
+          "Orthomosaic imagery",
+          "Aerial interpretation layers",
         ],
         outcome:
-          "Mineral tenure stays organized and ready for acquisition, exploration, or review.",
+          "Terrain context and spectral alteration targets become clearer for planning access, prospecting, and technical review.",
+        sampleCases: [
+          {
+            title: "NDVI Spectral Analysis — Sentinel Imagery",
+            description:
+              "Normalized Difference Vegetation Index (NDVI) derived from Sentinel satellite imagery. Greener areas indicate healthy, dense vegetation cover.",
+            image:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
+            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+            linkLabel: "BC MINFILE 082JSW018",
+          },
+          {
+            title: "Iron Oxide Spectral Analysis (B4/B2) — Sentinel Imagery",
+            description:
+              "Band ratio (B4/B2) spectral analysis derived from Sentinel satellite imagery. Red zones highlight areas where iron oxide alteration is showing up strongest.",
+            image:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
+            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+            linkLabel: "BC MINFILE 082JSW018",
+          },
+          {
+            title: "Digital Terrain Model (DTM) — LiDAR Derived",
+            description:
+              "High-resolution bare-earth Digital Terrain Model (DTM) derived from LiDAR data for structural and topographic visualization.",
+            image:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
+            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
+            linkLabel: "BC MINFILE 093F 037",
+          },
+        ],
       },
       {
         id: "acquisition-brokerage",
@@ -156,57 +191,26 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
           "Regulatory steps are documented clearly and delivered in a format stakeholders can act on.",
       },
       {
-        id: "terrain-imagery",
+        id: "tenure-operations",
         code: "OPS_05",
-        title: "Terrain, Remote Sensing & LiDAR",
+        title: "Tenure Operations",
         summary:
-          "Translate topography, satellite spectral imagery, and LiDAR into planning layers that improve terrain and alteration understanding before field deployment.",
+          "Keep land positions active, traceable, and expansion-ready with staking, renewals, and title intelligence.",
         services: [
-          "Remote sensing and satellite spectral analysis (Sentinel NDVI, Iron Oxide B4/B2)",
-          "LiDAR analysis and Digital Terrain Models (DTM / DEM)",
-          "Topographic and contour mapping",
-          "Photogrammetry",
-          "Aerial photo sourcing and analysis",
-          "Terrain modelling for exploration projects",
-          "Virtual Tours (Panoramic Drone Photography) - client partner",
+          "Claim renewals and expiry tracking",
+          "Claim staking support and field-ready packages",
+          "Tenure research for Crown granted and patented mineral claims",
+          "Mineral claim ownership verification",
+          "Historical tenure research",
+          "Mineral claim due diligence",
         ],
         deliverables: [
-          "Spectral alteration & NDVI maps",
-          "LiDAR DTM / DEM surface models",
-          "Orthomosaic imagery",
-          "Aerial interpretation layers",
+          "Tenure status summaries",
+          "Renewal calendars",
+          "Ownership snapshots",
         ],
         outcome:
-          "Terrain context and spectral alteration targets become clearer for planning access, prospecting, and technical review.",
-        sampleCases: [
-          {
-            title: "NDVI Spectral Analysis — Sentinel Imagery",
-            description:
-              "Normalized Difference Vegetation Index (NDVI) derived from Sentinel satellite imagery. Greener areas indicate healthy, dense vegetation cover.",
-            image:
-              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
-            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
-            linkLabel: "BC MINFILE 082JSW018",
-          },
-          {
-            title: "Iron Oxide Spectral Analysis (B4/B2) — Sentinel Imagery",
-            description:
-              "Band ratio (B4/B2) spectral analysis derived from Sentinel satellite imagery. Red zones highlight areas where iron oxide alteration is showing up strongest.",
-            image:
-              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
-            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
-            linkLabel: "BC MINFILE 082JSW018",
-          },
-          {
-            title: "Digital Terrain Model (DTM) — LiDAR Derived",
-            description:
-              "High-resolution bare-earth Digital Terrain Model (DTM) derived from LiDAR data for structural and topographic visualization.",
-            image:
-              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
-            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
-            linkLabel: "BC MINFILE 093F 037",
-          },
-        ],
+          "Mineral tenure stays organized and ready for acquisition, exploration, or review.",
       },
       {
         id: "property-valuation",
@@ -354,6 +358,10 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
       sampleWorkTitle: "Muestras de Trabajo y Casos de Estudio Técnicos",
       realFieldDataBadge: "Datos Reales de Campo",
       viewRecord: "Ver Registro",
+      viewFullSize: "Ver en tamaño completo",
+      browseSampleMaps: "Ver todos los mapas de muestra",
+      sampleMapsTitle: "Mapas de muestra",
+      seeSampleMaps: "Ver mapas de muestra",
     },
     clientsSection: {
       badge: "ARCHIVO_DE_CLIENTES",
@@ -391,26 +399,57 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
     },
     modules: [
       {
-        id: "tenure-operations",
+        id: "terrain-imagery",
         code: "OPS_01",
-        title: "Operaciones de Tenencia Minera",
+        title: "Terreno, Teledetección y LiDAR",
         summary:
-          "Mantenga sus concesiones mineras activas, trazables y preparadas para expansión con servicios de estacado, renovaciones y análisis de títulos.",
+          "Transforme datos topográficos, imágenes satelitales multiespectrales y LiDAR en capas operativas que revelan relieve y alteraciones hidrotermales antes de desplegar cuadrillas.",
         services: [
-          "Renovación de claims y seguimiento de fechas de vencimiento",
-          "Soporte para estacado de claims y expedientes de campo",
-          "Investigación de títulos sobre concesiones Crown granted y patentadas",
-          "Verificación de titularidad de concesiones mineras",
-          "Investigación histórica de derechos mineros",
-          "Debida diligencia sobre claims mineros",
+          "Teledetección y análisis espectral satelital (Sentinel NDVI, Óxidos de Hierro B4/B2)",
+          "Análisis LiDAR y Modelos Digitales de Terreno (MDT / MDE)",
+          "Cartografía topográfica y curvas de nivel de alta precisión",
+          "Fotogrametría digital",
+          "Búsqueda, adquisición y análisis de fotografía aérea histórica",
+          "Modelado de relieve para proyectos de exploración",
+          "Recorridos virtuales y fotografía panorámica con drones (en asociación)",
         ],
         deliverables: [
-          "Resúmenes del estado de tenencia",
-          "Calendarios de renovación",
-          "Informes consolidados de titularidad",
+          "Mapas de alteración espectral y NDVI",
+          "Modelos de superficie MDT / MDE derivados de LiDAR",
+          "Mosaicos ortorrectificados",
+          "Capas de fotointerpretación aérea",
         ],
         outcome:
-          "Los derechos mineros permanecen organizados y plenamente listos para adquisición, exploración o auditoría.",
+          "La estructura morfológica y los blancos de alteración se visualizan con claridad para planificar accesos y muestreo.",
+        sampleCases: [
+          {
+            title: "Análisis Espectral NDVI — Imágenes Sentinel",
+            description:
+              "Índice de Vegetación de Diferencia Normalizada (NDVI) calculado a partir de imágenes Sentinel. Las zonas verdes evidencian vegetación densa y vigorosa.",
+            image:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
+            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+            linkLabel: "BC MINFILE 082JSW018",
+          },
+          {
+            title: "Análisis Espectral Óxidos de Hierro (B4/B2) — Sentinel",
+            description:
+              "Cociente de bandas (B4/B2) derivado de satélite Sentinel. Los tonos rojizos destacan concentraciones de alteración de óxidos de hierro.",
+            image:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
+            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+            linkLabel: "BC MINFILE 082JSW018",
+          },
+          {
+            title: "Modelo Digital de Terreno (MDT) — Derivado de LiDAR",
+            description:
+              "Modelo Digital de Terreno (MDT) a suelo desnudo de alta resolución generado mediante LiDAR para análisis estructural y topográfico.",
+            image:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
+            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
+            linkLabel: "BC MINFILE 093F 037",
+          },
+        ],
       },
       {
         id: "acquisition-brokerage",
@@ -477,57 +516,26 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
           "Las exigencias normativas se gestionan con rigor técnico y en formatos estandarizados para aprobación oficial.",
       },
       {
-        id: "terrain-imagery",
+        id: "tenure-operations",
         code: "OPS_05",
-        title: "Terreno, Teledetección y LiDAR",
+        title: "Operaciones de Tenencia Minera",
         summary:
-          "Transforme datos topográficos, imágenes satelitales multiespectrales y LiDAR en capas operativas que revelan relieve y alteraciones hidrotermales antes de desplegar cuadrillas.",
+          "Mantenga sus concesiones mineras activas, trazables y preparadas para expansión con servicios de estacado, renovaciones y análisis de títulos.",
         services: [
-          "Teledetección y análisis espectral satelital (Sentinel NDVI, Óxidos de Hierro B4/B2)",
-          "Análisis LiDAR y Modelos Digitales de Terreno (MDT / MDE)",
-          "Cartografía topográfica y curvas de nivel de alta precisión",
-          "Fotogrametría digital",
-          "Búsqueda, adquisición y análisis de fotografía aérea histórica",
-          "Modelado de relieve para proyectos de exploración",
-          "Recorridos virtuales y fotografía panorámica con drones (en asociación)",
+          "Renovación de claims y seguimiento de fechas de vencimiento",
+          "Soporte para estacado de claims y expedientes de campo",
+          "Investigación de títulos sobre concesiones Crown granted y patentadas",
+          "Verificación de titularidad de concesiones mineras",
+          "Investigación histórica de derechos mineros",
+          "Debida diligencia sobre claims mineros",
         ],
         deliverables: [
-          "Mapas de alteración espectral y NDVI",
-          "Modelos de superficie MDT / MDE derivados de LiDAR",
-          "Mosaicos ortorrectificados",
-          "Capas de fotointerpretación aérea",
+          "Resúmenes del estado de tenencia",
+          "Calendarios de renovación",
+          "Informes consolidados de titularidad",
         ],
         outcome:
-          "La estructura morfológica y los blancos de alteración se visualizan con claridad para planificar accesos y muestreo.",
-        sampleCases: [
-          {
-            title: "Análisis Espectral NDVI — Imágenes Sentinel",
-            description:
-              "Índice de Vegetación de Diferencia Normalizada (NDVI) calculado a partir de imágenes Sentinel. Las zonas verdes evidencian vegetación densa y vigorosa.",
-            image:
-              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
-            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
-            linkLabel: "BC MINFILE 082JSW018",
-          },
-          {
-            title: "Análisis Espectral Óxidos de Hierro (B4/B2) — Sentinel",
-            description:
-              "Cociente de bandas (B4/B2) derivado de satélite Sentinel. Los tonos rojizos destacan concentraciones de alteración de óxidos de hierro.",
-            image:
-              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
-            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
-            linkLabel: "BC MINFILE 082JSW018",
-          },
-          {
-            title: "Modelo Digital de Terreno (MDT) — Derivado de LiDAR",
-            description:
-              "Modelo Digital de Terreno (MDT) a suelo desnudo de alta resolución generado mediante LiDAR para análisis estructural y topográfico.",
-            image:
-              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
-            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
-            linkLabel: "BC MINFILE 093F 037",
-          },
-        ],
+          "Los derechos mineros permanecen organizados y plenamente listos para adquisición, exploración o auditoría.",
       },
       {
         id: "property-valuation",
@@ -675,6 +683,10 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
       sampleWorkTitle: "Exemples de Travaux et Études de Cas Techniques",
       realFieldDataBadge: "Données Réelles de Terrain",
       viewRecord: "Consulter la Fiche",
+      viewFullSize: "Voir en taille réelle",
+      browseSampleMaps: "Voir tous les exemples de cartes",
+      sampleMapsTitle: "Exemples de cartes",
+      seeSampleMaps: "Voir les exemples de cartes",
     },
     clientsSection: {
       badge: "ARCHIVES_CLIENTS",
@@ -712,26 +724,57 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
     },
     modules: [
       {
-        id: "tenure-operations",
+        id: "terrain-imagery",
         code: "OPS_01",
-        title: "Opérations sur les Titres Miniers",
+        title: "Relief, Télédétection et LiDAR",
         summary:
-          "Maintenez vos droits miniers actifs, conformes et parés à l'expansion grâce au jalonnement, au renouvellement et à l'analyse de titres.",
+          "Traduisez topographie, imagerie satellitaire spectrale et LiDAR en couches opérationnelles facilitant l'évaluation du relief et des altérations.",
         services: [
-          "Renouvellement de claims et calendrier de suivi des échéances",
-          "Assistance au jalonnement et dossiers cartographiques de terrain",
-          "Recherche de titres fonciers pour concessions Crown granted et brevetées",
-          "Vérification formelle de la propriété des claims miniers",
-          "Recherche historique de tenures et titres miniers",
-          "Contrôle de conformité et vérification diligente des claims",
+          "Télédétection et analyse spectrale satellitaire (Sentinel NDVI, Oxydes de Fer B4/B2)",
+          "Traitement LiDAR et Modèles Numériques de Terrain (MNT / MNE)",
+          "Cartographie topographique et courbes de niveau de précision",
+          "Photogrammétrie numérique",
+          "Recherche et interprétation de photographies aériennes d'archives",
+          "Modélisation 3D de relief pour campagnes d'exploration",
+          "Visites virtuelles et photographies panoramiques par drone (en partenariat)",
         ],
         deliverables: [
-          "Synthèses d'état des tenures",
-          "Calendriers de renouvellement",
-          "Portraits exhaustifs de propriété",
+          "Cartes d'altération spectrale et d'indices NDVI",
+          "Modèles de surface MNT / MNE issus de LiDAR",
+          "Mosaïques orthophotographiques",
+          "Couches d'interprétation photo-aérienne",
         ],
         outcome:
-          "Les claims miniers demeurent structurés et immédiatement exploitables pour une acquisition, une vérification ou des forages.",
+          "La structure du relief et les anomalies d'altération ressortent avec précision pour sécuriser l'accès et guider la prospection.",
+        sampleCases: [
+          {
+            title: "Analyse Spectrale NDVI — Imagerie Sentinel",
+            description:
+              "Indice de Végétation par Différence Normalisée (NDVI) extrait des données Sentinel. Les teintes vertes reflètent une couverture végétale saine et dense.",
+            image:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
+            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+            linkLabel: "BC MINFILE 082JSW018",
+          },
+          {
+            title: "Analyse Spectrale des Oxydes de Fer (B4/B2) — Sentinel",
+            description:
+              "Rapport de bandes (B4/B2) dérivé d'images satellites Sentinel. Les zones en rouge mettent en exergue les altérations d'oxydes de fer les plus marquées.",
+            image:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
+            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
+            linkLabel: "BC MINFILE 082JSW018",
+          },
+          {
+            title: "Modèle Numérique de Terrain (MNT) — Dérivé de LiDAR",
+            description:
+              "Modèle Numérique de Terrain (MNT) haute résolution 'sol nu' issu de relevés LiDAR, optimisé pour la lecture topographique et structurale.",
+            image:
+              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
+            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
+            linkLabel: "BC MINFILE 093F 037",
+          },
+        ],
       },
       {
         id: "acquisition-brokerage",
@@ -799,57 +842,26 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
           "Toutes les démarches réglementaires sont formalisées avec rigueur et conformes aux exigences administratives.",
       },
       {
-        id: "terrain-imagery",
+        id: "tenure-operations",
         code: "OPS_05",
-        title: "Relief, Télédétection et LiDAR",
+        title: "Opérations sur les Titres Miniers",
         summary:
-          "Traduisez topographie, imagerie satellitaire spectrale et LiDAR en couches opérationnelles facilitant l'évaluation du relief et des altérations.",
+          "Maintenez vos droits miniers actifs, conformes et parés à l'expansion grâce au jalonnement, au renouvellement et à l'analyse de titres.",
         services: [
-          "Télédétection et analyse spectrale satellitaire (Sentinel NDVI, Oxydes de Fer B4/B2)",
-          "Traitement LiDAR et Modèles Numériques de Terrain (MNT / MNE)",
-          "Cartographie topographique et courbes de niveau de précision",
-          "Photogrammétrie numérique",
-          "Recherche et interprétation de photographies aériennes d'archives",
-          "Modélisation 3D de relief pour campagnes d'exploration",
-          "Visites virtuelles et photographies panoramiques par drone (en partenariat)",
+          "Renouvellement de claims et calendrier de suivi des échéances",
+          "Assistance au jalonnement et dossiers cartographiques de terrain",
+          "Recherche de titres fonciers pour concessions Crown granted et brevetées",
+          "Vérification formelle de la propriété des claims miniers",
+          "Recherche historique de tenures et titres miniers",
+          "Contrôle de conformité et vérification diligente des claims",
         ],
         deliverables: [
-          "Cartes d'altération spectrale et d'indices NDVI",
-          "Modèles de surface MNT / MNE issus de LiDAR",
-          "Mosaïques orthophotographiques",
-          "Couches d'interprétation photo-aérienne",
+          "Synthèses d'état des tenures",
+          "Calendriers de renouvellement",
+          "Portraits exhaustifs de propriété",
         ],
         outcome:
-          "La structure du relief et les anomalies d'altération ressortent avec précision pour sécuriser l'accès et guider la prospection.",
-        sampleCases: [
-          {
-            title: "Analyse Spectrale NDVI — Imagerie Sentinel",
-            description:
-              "Indice de Végétation par Différence Normalisée (NDVI) extrait des données Sentinel. Les teintes vertes reflètent une couverture végétale saine et dense.",
-            image:
-              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/NDVI_ekagwl.jpg",
-            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
-            linkLabel: "BC MINFILE 082JSW018",
-          },
-          {
-            title: "Analyse Spectrale des Oxydes de Fer (B4/B2) — Sentinel",
-            description:
-              "Rapport de bandes (B4/B2) dérivé d'images satellites Sentinel. Les zones en rouge mettent en exergue les altérations d'oxydes de fer les plus marquées.",
-            image:
-              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758749/Iron_Oxide_yajocz.jpg",
-            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=082JSW018",
-            linkLabel: "BC MINFILE 082JSW018",
-          },
-          {
-            title: "Modèle Numérique de Terrain (MNT) — Dérivé de LiDAR",
-            description:
-              "Modèle Numérique de Terrain (MNT) haute résolution 'sol nu' issu de relevés LiDAR, optimisé pour la lecture topographique et structurale.",
-            image:
-              "https://res.cloudinary.com/dfytfu2jq/image/upload/v1790758750/lidar_blackwater_wxdfmb.png",
-            linkUrl: "https://minfile.gov.bc.ca/summary.aspx?minfilno=093F++037",
-            linkLabel: "BC MINFILE 093F 037",
-          },
-        ],
+          "Les claims miniers demeurent structurés et immédiatement exploitables pour une acquisition, une vérification ou des forages.",
       },
       {
         id: "property-valuation",

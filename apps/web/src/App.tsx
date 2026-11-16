@@ -57,6 +57,9 @@ const DashboardView = dynamic(() => import("@/app/dashboard/dashboard-view"), {
 const ProjectView = dynamic(() => import("@/app/projects/[id]/project-view"), {
   loading: () => <Loader message="Loading Project Dossier..." />,
 });
+const SampleMapsPage = dynamic(() => import("@/views/sample-maps-page"), {
+  loading: () => <Loader message="Loading Sample Maps..." />,
+});
 const OtherProjectsPage = dynamic(() => import("@/views/other-projects-page"), {
   loading: () => <Loader message="Loading Portfolio..." />,
 });
@@ -129,6 +132,8 @@ export default function App() {
     content = <DashboardView />;
   } else if (cleanPath === "/projects") {
     content = <ProjectsPage locale={locale} />;
+  } else if (cleanPath === "/sample-maps") {
+    content = <SampleMapsPage locale={locale} />;
   } else if (cleanPath === "/properties") {
     content = <ProjectsPage showOnlyForSale locale={locale} />;
   } else if (normalizedPathname === "/other-projects") {

@@ -53,6 +53,12 @@ export default function Footer() {
               {t.nav.services}
             </Link>
             <Link
+              href={getLocalizedPath("/sample-maps", locale)}
+              className="hover:text-primary transition-colors"
+            >
+              {t.nav.sampleMaps}
+            </Link>
+            <Link
               href={getLocalizedPath("/projects", locale)}
               className="hover:text-primary transition-colors"
             >

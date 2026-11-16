@@ -160,6 +160,10 @@ export interface ServicesTranslation {
     sampleWorkTitle: string;
     realFieldDataBadge: string;
     viewRecord: string;
+    viewFullSize: string;
+    browseSampleMaps: string;
+    sampleMapsTitle: string;
+    seeSampleMaps: string;
   };
   clientsSection: {
     badge: string;
@@ -299,6 +303,17 @@ export interface HomeTranslation {
     reviewSpecification: string;
     seeAllDetails: string;
   };
+  /** Home "Sample maps" teaser linking to /sample-maps. Type labels come from sampleMapsTranslations. */
+  sampleMapsPreview: {
+    badge: string;
+    title: string;
+    titleHighlight: string;
+    description: string;
+    viewAll: string;
+    allMaps: string;
+    /** "{maps}", "{types}" and "{regions}" are replaced by counts. */
+    stats: string;
+  };
   projectPreview: {
     badge: string;
     title: string;
@@ -314,6 +329,12 @@ export interface HomeTranslation {
     ctaText: string;
     ctaMap: string;
     ctaForSale: string;
+    /** Mobile card fan: button labels and the swipe hint. */
+    prevProject: string;
+    nextProject: string;
+    swipeHint: string;
+    pauseAutoplay: string;
+    playAutoplay: string;
   };
   listingMembership: {
     badge: string;
@@ -407,6 +428,7 @@ export interface HomeTranslation {
     nav: {
       about: string;
       services: string;
+      sampleMaps: string;
       portfolio: string;
       mapView: string;
       properties: string;
@@ -569,3 +591,56 @@ export interface ProjectsPageTranslation {
 
 
 
+
+export interface SampleMapsTranslation {
+  meta: {
+    title: string;
+    description: string;
+  };
+  header: {
+    badge: string;
+    titleLine1: string;
+    titleLine2: string;
+    subtitle: string;
+    backToServices: string;
+  };
+  filters: {
+    all: string;
+    /** Keyed by SampleMapType (src/lib/sampleMapTypes.ts). */
+    types: Record<import("@/lib/sampleMapTypes").SampleMapType, string>;
+  };
+  card: {
+    viewFullSize: string;
+    /** "{type}" is replaced by the file type, e.g. "PDF". */
+    openFile: string;
+    viewProject: string;
+    featured: string;
+    readMore: string;
+    showLess: string;
+  };
+  /** Short note under the page intro (also shown on the home teaser). */
+  notice: {
+    label: string;
+    uploading: string;
+    confidential: string;
+  };
+  /** Map-legend filter panel and the sheet title blocks. */
+  legend: {
+    heading: string;
+    sheet: string;
+    sheets: string;
+    regions: string;
+    types: string;
+  };
+  countLabel: string;
+  noMatch: string;
+  empty: {
+    title: string;
+    text: string;
+  };
+  cta: {
+    heading: string;
+    text: string;
+    button: string;
+  };
+}

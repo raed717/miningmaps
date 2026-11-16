@@ -10,6 +10,8 @@ import { servicesTranslations } from "@/lib/i18n/translations/services";
 import { contactTranslations } from "@/lib/i18n/translations/contact";
 import { homeTranslations } from "@/lib/i18n/translations/home";
 import { mapTranslations } from "@/lib/i18n/translations/map";
+import { sampleMapsTranslations } from "@/lib/i18n/translations/sampleMaps";
+import { getSampleMaps } from "@/lib/sampleMapsRepo";
 import { projectsTranslations } from "@/lib/i18n/translations/projects";
 import ClientPage from "./client";
 
@@ -38,6 +40,7 @@ const STATIC_PAGES = [
   "sign-in",
   "account",
   "community",
+  "sample-maps",
 ];
 
 /** Whether a path has real content; anything else gets a true 404 (not a "not found" page with 200). */
@@ -56,7 +59,8 @@ async function routeExists(slugArray: string[]): Promise<boolean> {
         id === "contact" ||
         id === "map" ||
         id === "projects" ||
-        id === "properties")
+        id === "properties" ||
+        id === "sample-maps")
     )
       return true;
     if (section === "projects") return !!(await getProject(id));
@@ -102,12 +106,25 @@ async function getPageData(slugArray: string[]): Promise<ProjectPageData> {
     return { summaries: await getProjectSummaries(locale) };
   }
 
+  // /services links its map types to /sample-maps and shows thumbnails, so it gets the maps too.
+  if (
+    (slugArray.length === 1 && (section === "sample-maps" || section === "services")) ||
+    (slugArray.length === 2 && (section === "es" || section === "fr") && (id === "sample-maps" || id === "services"))
+  ) {
+    return { sampleMaps: await getSampleMaps(locale) };
+  }
+
   if (
     slugArray.length === 0 ||
     (slugArray.length === 1 && (slugArray[0] === "es" || slugArray[0] === "fr"))
   ) {
-    const topLevel = (await getProjectSummaries(locale)).filter((p) => p.type !== "subproject");
-    return { homePreview: { projects: topLevel.slice(0, 6), totalCount: topLevel.length } };
+    const [summaries, sampleMaps] = await Promise.all([getProjectSummaries(locale), getSampleMaps(locale)]);
+    const topLevel = summaries.filter((p) => p.type !== "subproject");
+    return {
+      homePreview: { projects: topLevel.slice(0, 6), totalCount: topLevel.length },
+      // The home "Sample maps" teaser shows thumbnails and counts only, so descriptions stay off the page.
+      sampleMaps: sampleMaps.map(({ description: _description, ...map }) => map),
+    };
   }
 
   return {};
@@ -385,6 +402,40 @@ export async function generateMetadata({
   }
 
   // Localized Map page (/map, /es/map, /fr/map)
+  if (cleanPath === "/sample-maps") {
+    const t = sampleMapsTranslations[locale] || sampleMapsTranslations.en;
+    const maps = await getSampleMaps(locale);
+    const ogImage = maps[0]?.thumbnailUrl ?? "https://www.miningpropertymaps.com/opengraph-image.png";
+    return {
+      title: t.meta.title,
+      description: t.meta.description,
+      alternates: {
+        canonical,
+        languages: {
+          en: "https://www.miningpropertymaps.com/sample-maps",
+          es: "https://www.miningpropertymaps.com/es/sample-maps",
+          fr: "https://www.miningpropertymaps.com/fr/sample-maps",
+          "x-default": "https://www.miningpropertymaps.com/sample-maps",
+        },
+      },
+      openGraph: {
+        title: t.meta.title,
+        description: t.meta.description,
+        url: canonical,
+        siteName,
+        locale: locale === "en" ? "en_US" : locale === "es" ? "es_ES" : "fr_FR",
+        type: "website",
+        images: [{ url: ogImage, alt: t.meta.title }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: t.meta.title,
+        description: t.meta.description,
+        images: [ogImage],
+      },
+    };
+  }
+
   if (cleanPath === "/map") {
     const t = mapTranslations[locale] || mapTranslations.en;
     return {
@@ -627,7 +678,7 @@ export async function generateMetadata({
 
   // Fallback to home
   return {
-    title: `${siteName} | GIS & Mineral Claim Services in BC`,
+    title: `${siteName} | GIS & Mineral Claim Services, Properties for Sale`,
     description:
       "Professional land and geospatial services — GIS mapping, mineral claim staking, LiDAR, and geological modelling.",
     alternates: { canonical },
@@ -658,6 +709,8 @@ export async function generateStaticParams() {
     { slug: ["fr", "projects"] },
     { slug: ["es", "properties"] },
     { slug: ["fr", "properties"] },
+    { slug: ["es", "sample-maps"] },
+    { slug: ["fr", "sample-maps"] },
     ...projects.map((project) => ({ slug: ["projects", project.id] })),
     ...mockPosts.flatMap((post) => [
       { slug: ["post", post.id] },

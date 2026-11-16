@@ -83,9 +83,12 @@ export function ServiceRegistrySection() {
               <div
                 className={`mb-4 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-primary ${mono.className}`}
               >
-                <ShieldAlert className="h-4 w-4" /> {tHome.badge}
+                <ShieldAlert className="h-4 w-4 shrink-0" />
+                {/* Long badges (FR "RÉPERTOIRE_DES_SERVICES") must wrap on phones instead of widening the page. */}
+                <span className="min-w-0 wrap-anywhere">{tHome.badge}</span>
               </div>
-              <h2 className="text-5xl font-extrabold uppercase tracking-tighter leading-[0.85] md:text-7xl xl:text-8xl">
+              {/* Scales with the screen on phones so long FR/ES words ("Opérationnelle") fit instead of widening the page. */}
+              <h2 className="text-[min(3rem,9vw)] font-extrabold uppercase tracking-tighter leading-[0.85] wrap-anywhere md:text-7xl xl:text-8xl">
                 {tHome.title}
                 <br />
                 {tHome.titleHighlight}

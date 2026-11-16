@@ -8,6 +8,7 @@ import {
   type PointerEvent as ReactPointerEvent,
   type WheelEvent as ReactWheelEvent,
 } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { X, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 
@@ -50,6 +51,9 @@ export function FullscreenImageViewer({
   open,
   onClose,
 }: FullscreenImageViewerProps) {
+  // Rendered into <body> (portal) so transformed/animated ancestors and the sticky header can't cover it.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const [scale, setScale] = useState(1);
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
 
@@ -238,7 +242,9 @@ export function FullscreenImageViewer({
     []
   );
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -356,7 +362,8 @@ export function FullscreenImageViewer({
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
 

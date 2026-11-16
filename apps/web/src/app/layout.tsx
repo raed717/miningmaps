@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   verification: {
     google: "Rwujs0TvL9GqRD9XrnDvEr31T7jxfUltW3nWQkJ6XzE",
   },
-  title: "Adamson Geomatics | GIS & Mineral Claim Services in BC | Chris Adamson, R.I.",
+  title:
+    "Adamson Geomatics | GIS & Mineral Claim Services, Properties for Sale | Chris Adamson, R.I.",
   description:
     "Professional land and geospatial services in British Columbia. GIS mapping, mineral claim staking, LiDAR, digital elevation models, geological modelling, land valuations, and legal dispute support.",
   icons: {

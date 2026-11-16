@@ -1,6 +1,7 @@
 // Project types for the app. Type-only re-exports: projectData.ts is kept as a
 // backup/draft and its data is never bundled (projects are loaded from Neon).
 import type { Project } from "@/lib/projectData";
+import type { SampleMap } from "@/lib/sampleMapTypes";
 
 export type {
   Project,
@@ -28,4 +29,6 @@ export type ProjectPageData = {
   related?: ProjectSummary[];
   /** Home carousel: the first few top-level projects and the total count. */
   homePreview?: { projects: ProjectSummary[]; totalCount: number };
+  /** /sample-maps cards (from the sample_maps table). */
+  sampleMaps?: SampleMap[];
 };

@@ -3,7 +3,8 @@ import type { Locale, HomeTranslation } from "../types";
 export const homeTranslations: Record<Locale, HomeTranslation> = {
   en: {
     meta: {
-      title: "Adamson Geomatics | GIS & Mineral Claim Services in BC | Chris Adamson, R.I.",
+      title:
+        "Adamson Geomatics | GIS & Mineral Claim Services, Properties for Sale | Chris Adamson, R.I.",
       description:
         "Professional land and geospatial services in British Columbia. GIS mapping, mineral claim staking, LiDAR, digital elevation models, geological modelling, land valuations, and legal dispute support.",
     },
@@ -48,6 +49,16 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
       reviewSpecification: "Review Full Specification",
       seeAllDetails: "SEE_ALL_DETAILS",
     },
+    sampleMapsPreview: {
+      badge: "MAP_ARCHIVE",
+      title: "Sample",
+      titleHighlight: "Maps",
+      description:
+        "Claim and tenure maps, geology, land title, LiDAR and more, produced for real clients. Open any sheet full size.",
+      viewAll: "Browse All Sample Maps",
+      allMaps: "All maps",
+      stats: "{maps} maps · {types} map types · {regions} regions",
+    },
     projectPreview: {
       badge: "FEATURED_PROJECTS",
       title: "Project",
@@ -66,6 +77,11 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
         "Explore the complete project archive, spatial map view, and acquisition-ready properties.",
       ctaMap: "Map View",
       ctaForSale: "For Sale",
+      prevProject: "Previous project",
+      nextProject: "Next project",
+      swipeHint: "Swipe or tap a card",
+      pauseAutoplay: "Pause slideshow",
+      playAutoplay: "Play slideshow",
     },
     listingMembership: {
       badge: "LISTING MODELS // MEMBERSHIP",
@@ -84,7 +100,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
           period: "upfront",
           description:
             "List your property for free. We handle marketing and technical exposure, earning a commission only when a successful sale completes.",
-          idealFor: "Property owners looking to minimize upfront listing costs.",
+          idealFor:
+            "Property owners looking to minimize upfront listing costs.",
           features: [
             "No upfront listing fee",
             "Full marketing & property exposure",
@@ -317,6 +334,7 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
       nav: {
         about: "About",
         services: "Services",
+        sampleMaps: "Sample Maps",
         portfolio: "Portfolio",
         mapView: "Map View",
         properties: "Properties",
@@ -344,7 +362,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
   },
   es: {
     meta: {
-      title: "Adamson Geomatics | Servicios SIG y Concesiones Mineras en BC | Chris Adamson, R.I.",
+      title:
+        "Adamson Geomatics | Servicios SIG y Concesiones Mineras en BC | Chris Adamson, R.I.",
       description:
         "Servicios profesionales territoriales y geoespaciales en Columbia Británica. Mapeo SIG, estacado de claims mineros, LiDAR, modelos de elevación, geología y tasaciones de tierras.",
     },
@@ -389,6 +408,16 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
       reviewSpecification: "Ver Especificación Completa",
       seeAllDetails: "VER_MÁS_DETALLES",
     },
+    sampleMapsPreview: {
+      badge: "ARCHIVO_DE_MAPAS",
+      title: "Mapas de",
+      titleHighlight: "Muestra",
+      description:
+        "Mapas de concesiones y tenencia, geología, títulos de propiedad, LiDAR y más, elaborados para clientes reales. Abra cualquier hoja a tamaño completo.",
+      viewAll: "Ver Todos los Mapas de Muestra",
+      allMaps: "Todos los mapas",
+      stats: "{maps} mapas · {types} tipos de mapa · {regions} regiones",
+    },
     projectPreview: {
       badge: "PROYECTOS_DESTACADOS",
       title: "Portafolio de",
@@ -407,6 +436,11 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
         "Explore el archivo completo de proyectos, la visualización en mapa espacial y propiedades listas para adquisición.",
       ctaMap: "Vista de Mapa",
       ctaForSale: "En Venta",
+      prevProject: "Proyecto anterior",
+      nextProject: "Proyecto siguiente",
+      swipeHint: "Deslice o toque una tarjeta",
+      pauseAutoplay: "Pausar presentación",
+      playAutoplay: "Reanudar presentación",
     },
     listingMembership: {
       badge: "MODELOS DE PUBLICACIÓN // MEMBRESÍA",
@@ -425,7 +459,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
           period: "inicial",
           description:
             "Publique su propiedad sin costo inicial. Gestionamos la promoción y el posicionamiento técnico, cobrando una comisión únicamente tras concretar una venta exitosa.",
-          idealFor: "Propietarios que buscan minimizar costos iniciales de publicación.",
+          idealFor:
+            "Propietarios que buscan minimizar costos iniciales de publicación.",
           features: [
             "Sin tarifa inicial de publicación",
             "Exposición comercial y técnica completa",
@@ -444,7 +479,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
           promoBadge: "PRIMER MES GRATIS",
           description:
             "Conserve el 100% de los ingresos de su venta con una tarifa mensual fija. Control total sobre fotos, mapas, documentos PDF y datos de contacto del vendedor.",
-          idealFor: "Vendedores que buscan costos predecibles y 0% de comisión.",
+          idealFor:
+            "Vendedores que buscan costos predecibles y 0% de comisión.",
           features: [
             "Conserve el 100% de la venta (0% comisión)",
             "Primer mes totalmente GRATIS",
@@ -463,7 +499,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
           promoBadge: "PRIMER MES GRATIS",
           description:
             "Branding integral y listados ilimitados para empresas mineras junior, prospectores, consultores y desarrolladores de tierras.",
-          idealFor: "Mineras junior, prospectores, consultores y desarrolladores.",
+          idealFor:
+            "Mineras junior, prospectores, consultores y desarrolladores.",
           features: [
             "Página de perfil corporativo y logotipo exclusivo",
             "Enlace directo hacia el sitio web de su empresa",
@@ -658,6 +695,7 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
       nav: {
         about: "Acerca de",
         services: "Servicios",
+        sampleMaps: "Mapas de Muestra",
         portfolio: "Portafolio",
         mapView: "Mapa",
         properties: "Propiedades",
@@ -667,14 +705,16 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
         clientPortal: "Portal de Clientes",
       },
       systemStatus: "ESTADO DEL SISTEMA: EN LÍNEA",
-      rightsReserved: "© 2026 ADAMSON_GEOMATICS. TODOS LOS DERECHOS RESERVADOS.",
+      rightsReserved:
+        "© 2026 ADAMSON_GEOMATICS. TODOS LOS DERECHOS RESERVADOS.",
       architectLabel: "ARQUITECTO DE PLATAFORMA & DEV:",
       softwareEngineerRole: "INGENIERO ARQUITECTO DE SOFTWARE",
       portfolioLink: "PORTFOLIO",
     },
     newsletter: {
       title: "Boletín Informativo",
-      intro: "Informes de campo, nuevas propiedades y actualizaciones de proyectos. Sin spam.",
+      intro:
+        "Informes de campo, nuevas propiedades y actualizaciones de proyectos. Sin spam.",
       placeholder: "su_correo@ejemplo.com",
       submit: "Suscribirse",
       submitting: "Suscribiendo...",
@@ -685,7 +725,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
   },
   fr: {
     meta: {
-      title: "Adamson Geomatics | Services SIG & Claims Miniers en Colombie-Britannique",
+      title:
+        "Adamson Geomatics | Services SIG & Claims Miniers en Colombie-Britannique",
       description:
         "Services géospatiaux et fonciers professionnels en Colombie-Britannique. Cartographie SIG, jalonnement de claims miniers, LiDAR, modèles d'élévation et expertises foncières.",
     },
@@ -730,6 +771,16 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
       reviewSpecification: "Consulter les Spécifications Complètes",
       seeAllDetails: "VOIR_TOUS_LES_DÉTAILS",
     },
+    sampleMapsPreview: {
+      badge: "ARCHIVE_CARTOGRAPHIQUE",
+      title: "Exemples de",
+      titleHighlight: "Cartes",
+      description:
+        "Cartes de claims et de tenure, géologie, titres fonciers, LiDAR et plus, réalisées pour de vrais clients. Ouvrez chaque feuille en pleine taille.",
+      viewAll: "Voir Tous les Exemples de Cartes",
+      allMaps: "Toutes les cartes",
+      stats: "{maps} cartes · {types} types de cartes · {regions} régions",
+    },
     projectPreview: {
       badge: "PROJETS_À_LA_UNE",
       title: "Portefeuille",
@@ -748,6 +799,11 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
         "Explorez l'archive intégrale des projets, la cartographie spatiale et les propriétés prêtes à l'acquisition.",
       ctaMap: "Carte Interactive",
       ctaForSale: "À Vendre",
+      prevProject: "Projet précédent",
+      nextProject: "Projet suivant",
+      swipeHint: "Glissez ou touchez une carte",
+      pauseAutoplay: "Mettre en pause le défilement",
+      playAutoplay: "Reprendre le défilement",
     },
     listingMembership: {
       badge: "MODÈLES D'INSCRIPTION // ADHÉSION",
@@ -766,7 +822,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
           period: "au départ",
           description:
             "Diffusez votre bien gratuitement. Nous assurons la promotion et la visibilité technique, percevant une commission uniquement lors de la conclusion d'une vente.",
-          idealFor: "Propriétaires souhaitant éliminer tout coût initial de mise en marché.",
+          idealFor:
+            "Propriétaires souhaitant éliminer tout coût initial de mise en marché.",
           features: [
             "Aucun frais d'inscription initial",
             "Visibilité commerciale et technique maximale",
@@ -785,7 +842,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
           promoBadge: "1ER MOIS OFFERT",
           description:
             "Conservez 100 % du produit de votre vente grâce à un tarif mensuel forfaitaire. Maîtrise totale des photos, cartes, documents PDF et coordonnées du vendeur.",
-          idealFor: "Vendeurs recherchant des coûts prévisibles et 0 % de commission.",
+          idealFor:
+            "Vendeurs recherchant des coûts prévisibles et 0 % de commission.",
           features: [
             "Conservez 100 % du prix de vente (0 % commission)",
             "Premier mois entièrement GRATUIT",
@@ -804,7 +862,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
           promoBadge: "1ER MOIS OFFERT",
           description:
             "Valorisation de marque complète et annonces illimitées pour les sociétés minières juniors, prospecteurs, consultants et aménageurs.",
-          idealFor: "Sociétés juniors, prospecteurs, consultants et promoteurs.",
+          idealFor:
+            "Sociétés juniors, prospecteurs, consultants et promoteurs.",
           features: [
             "Page profil entreprise dédiée avec logo officiel",
             "Lien retour direct vers votre site internet",
@@ -999,6 +1058,7 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
       nav: {
         about: "À propos",
         services: "Services",
+        sampleMaps: "Exemples de Cartes",
         portfolio: "Portefeuille",
         mapView: "Carte",
         properties: "Propriétés",
@@ -1015,7 +1075,8 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
     },
     newsletter: {
       title: "Lettre d'Information",
-      intro: "Rapports de terrain, nouvelles propriétés et actualités de projets. Sans spam.",
+      intro:
+        "Rapports de terrain, nouvelles propriétés et actualités de projets. Sans spam.",
       placeholder: "votre_email@exemple.com",
       submit: "S'abonner",
       submitting: "Inscription...",

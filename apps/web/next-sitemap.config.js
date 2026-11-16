@@ -31,6 +31,8 @@ const config = {
       await config.transform(config, '/fr/projects'),
       await config.transform(config, '/es/properties'),
       await config.transform(config, '/fr/properties'),
+      await config.transform(config, '/es/sample-maps'),
+      await config.transform(config, '/fr/sample-maps'),
     ];
   },
   transform: async (config, url) => {
