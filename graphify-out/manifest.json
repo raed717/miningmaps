@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/home/project-preview-carousel-section.tsx": {
-    "mtime": 1793379230.8702617,
-    "ast_hash": "afbbe3ac452d197d53d8ee72f473d2cf",
+    "mtime": 1794835389.4370244,
+    "ast_hash": "fd748b025370334aef82b854281b57e3",
     "semantic_hash": ""
   },
   "apps/web/src/components/home/properties-section.tsx": {
@@ -325,7 +325,7 @@
     "semantic_hash": ""
   },
   "apps/web/tsconfig.json": {
-    "mtime": 1794218444.753408,
+    "mtime": 1795598917.5462537,
     "ast_hash": "319f003e66d510ed28a680c9c3f154fd",
     "semantic_hash": ""
   },
@@ -410,8 +410,8 @@
     "semantic_hash": "ff5ccff88485658260173dff9f0fe74b"
   },
   "CLAUDE.md": {
-    "mtime": 1794834886.1335104,
-    "ast_hash": "f709b2b2122b212e56cda8cdf42a073a",
+    "mtime": 1795598916.1085477,
+    "ast_hash": "b99a69bac8b6c00322d29b01ef3d3208",
     "semantic_hash": ""
   },
   "DESIGN_SYSTEM.md": {
@@ -990,8 +990,8 @@
     "semantic_hash": ""
   },
   "projectdataPrep.md": {
-    "mtime": 1787500424.3043869,
-    "ast_hash": "922c6f7d61e840186603289cbafd0a42",
+    "mtime": 1795598723.4895353,
+    "ast_hash": "8572101798760e7e17ba03c61121c2e6",
     "semantic_hash": ""
   },
   "apps/web/public/documents/20260817 QUOTE 7693234.Pdf": {
@@ -1380,8 +1380,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectsRepo.ts": {
-    "mtime": 1794308180.89138,
-    "ast_hash": "f17bc7cff08adaac6b920479d5e822db",
+    "mtime": 1795598455.0597515,
+    "ast_hash": "d3a1719d137ab67510a90f0fcc7873d1",
     "semantic_hash": ""
   },
   "apps/web/src/app/not-found.tsx": {
@@ -1440,8 +1440,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/home.ts": {
-    "mtime": 1794834551.6185465,
-    "ast_hash": "6bb690491aab519f83de41bb5d5e8b1a",
+    "mtime": 1794835598.7747047,
+    "ast_hash": "26024c4c3b73eb20fc9cce789418ec94",
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/map.ts": {
@@ -1460,8 +1460,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/types.ts": {
-    "mtime": 1794834551.6165395,
-    "ast_hash": "f72afc3a1abe5e263c1da6c5fa3446e8",
+    "mtime": 1794835598.7717028,
+    "ast_hash": "f57358f3dc0ed7e661af7b4a28355424",
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectTags.ts": {
@@ -1485,8 +1485,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/sampleMaps.ts": {
-    "mtime": 1794828579.0909553,
-    "ast_hash": "b4682f1fa8261f049bd087e881c0494f",
+    "mtime": 1794835096.8371527,
+    "ast_hash": "d6fbbb5ab74ce239fd20f7aeb4313144",
     "semantic_hash": ""
   },
   "apps/web/src/lib/sampleMapTypes.ts": {
@@ -1500,13 +1500,13 @@
     "semantic_hash": ""
   },
   "apps/web/src/views/sample-maps-page.tsx": {
-    "mtime": 1794829199.1764734,
-    "ast_hash": "74735c0a37456299ee419fe4e23ba0be",
+    "mtime": 1794835109.8434322,
+    "ast_hash": "c7b1878b3adbee1ca25bb19a82a91138",
     "semantic_hash": ""
   },
   "apps/web/src/components/home/sample-maps-preview-section.tsx": {
-    "mtime": 1794834631.1998384,
-    "ast_hash": "b216d1e964eaf008d934279af366fd52",
+    "mtime": 1794836638.283656,
+    "ast_hash": "9c7809869434c94858b2eaa11d815ffc",
     "semantic_hash": ""
   },
   "apps/web/src/components/map-legend-swatch.tsx": {
@@ -1517,6 +1517,16 @@
   "apps/web/src/lib/serviceMapLinks.ts": {
     "mtime": 1794829281.6080396,
     "ast_hash": "a159b288def0fd70418a99728213df65",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/home/project-fan-deck.tsx": {
+    "mtime": 1794835618.649277,
+    "ast_hash": "78ea0a914274411f9abea0cfdbcc2ccc",
+    "semantic_hash": ""
+  },
+  "apps/web/src/components/sample-maps-notice.tsx": {
+    "mtime": 1794835111.3520453,
+    "ast_hash": "410c9607b95f993bcfdd1d6bc102615a",
     "semantic_hash": ""
   }
 }

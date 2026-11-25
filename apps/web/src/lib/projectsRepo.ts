@@ -3,7 +3,6 @@ import { cache } from "react";
 import { neon } from "@neondatabase/serverless";
 import type { Project, ProjectSection, ProjectSummary, QuickFact } from "@/lib/projectTypes";
 import type { Locale } from "@/lib/i18n/types";
-import { projects as fallbackProjects } from "./projectData";
 
 type ProjectRow = {
   id: string;
@@ -129,54 +128,57 @@ export function toSummary({ sections, ...rest }: Project): ProjectSummary {
   return { ...rest, previewImage: rest.image };
 }
 
-let lastSuccessfulProjects: StoredProject[] | null = null;
+const MAX_ATTEMPTS = 3;
+
+/**
+ * Runs a query, retrying short outages (e.g. a compute waking up), then throws.
+ *
+ * Never fall back to projectData.ts or an older list here. A project missing from that list looks
+ * deleted, so its page becomes a 404 that Vercel keeps until a deploy or POST /api/revalidate.
+ * When this throws, Next keeps serving the last good version of the page and tries again later.
+ */
+async function withRetry<T>(query: () => Promise<T>): Promise<T> {
+  for (let attempt = 1; ; attempt++) {
+    try {
+      return await query();
+    } catch (err) {
+      if (attempt >= MAX_ATTEMPTS) {
+        console.error(`Neon query failed after ${MAX_ATTEMPTS} attempts`, err);
+        throw err;
+      }
+      await new Promise((r) => setTimeout(r, 400 * attempt));
+    }
+  }
+}
+
+function getSql() {
+  const databaseUrl = process.env.DATABASE_URL;
+  if (!databaseUrl) throw new Error("DATABASE_URL is not set");
+  return neon(databaseUrl);
+}
 
 /** All projects in display order, with every language. Cached per request (generateMetadata + page share it). */
 const getStoredProjects = cache(async (): Promise<StoredProject[]> => {
-  const databaseUrl = process.env.DATABASE_URL;
-  if (!databaseUrl) throw new Error("DATABASE_URL is not set");
-  const sql = neon(databaseUrl);
-  let attempts = 0;
-  while (true) {
-    try {
-      attempts++;
-      const rows = (await sql`
-        SELECT id, type, title, summary, region, image, latitude, longitude, is_for_sale,
-               date, author, contact_email, parent_project_id, tags, sub_project_ids,
-               quick_facts, sections, translations
-        FROM projects
-        ORDER BY sort_order NULLS LAST, created_at, id
-      `) as ProjectRow[];
-      const res = rows.map(rowToProject);
-      lastSuccessfulProjects = res;
-      return res;
-    } catch (err) {
-      if (attempts >= 3) {
-        if (lastSuccessfulProjects) {
-          console.warn("Neon connection failed after 3 attempts, using last cached projects", err);
-          return lastSuccessfulProjects;
-        }
-        console.warn("Neon connection failed after 3 attempts, using local fallback projects", err);
-        return fallbackProjects as unknown as StoredProject[];
-      }
-      await new Promise((r) => setTimeout(r, 400 * attempts));
-    }
-  }
+  const sql = getSql();
+  const rows = (await withRetry(
+    () => sql`
+      SELECT id, type, title, summary, region, image, latitude, longitude, is_for_sale,
+             date, author, contact_email, parent_project_id, tags, sub_project_ids,
+             quick_facts, sections, translations
+      FROM projects
+      ORDER BY sort_order NULLS LAST, created_at, id
+    `,
+  )) as ProjectRow[];
+  return rows.map(rowToProject);
 });
 
 /** Lightweight id + last-modified list for the projects sitemap. */
 export async function getProjectSitemapEntries(): Promise<{ id: string; updatedAt: Date }[]> {
-  try {
-    const databaseUrl = process.env.DATABASE_URL;
-    if (!databaseUrl) throw new Error("DATABASE_URL is not set");
-    const rows = await neon(databaseUrl)`
-      SELECT id, updated_at FROM projects ORDER BY sort_order NULLS LAST, created_at, id
-    `;
-    return rows.map((r) => ({ id: r.id as string, updatedAt: new Date(r.updated_at as string) }));
-  } catch (err) {
-    console.warn("Failed to fetch sitemap entries from Neon, using fallback", err);
-    return fallbackProjects.map((p) => ({ id: p.id, updatedAt: new Date() }));
-  }
+  const sql = getSql();
+  const rows = await withRetry(
+    () => sql`SELECT id, updated_at FROM projects ORDER BY sort_order NULLS LAST, created_at, id`,
+  );
+  return rows.map((r) => ({ id: r.id as string, updatedAt: new Date(r.updated_at as string) }));
 }
 
 /** All projects in display order, in the given language (English where untranslated). */
