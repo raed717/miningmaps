@@ -11,14 +11,18 @@ import {
   Crosshair,
   ExternalLink,
   FileText,
+  Handshake,
   Mail,
   Maximize2,
   Mountain,
   ShieldAlert,
   ShieldCheck,
+  Tag,
+  Users,
 } from "lucide-react";
 import { inter, mono } from "@/lib/fonts";
 import { pastClients } from "@/lib/pastClientsData";
+import { partners } from "@/lib/partnersData";
 import { useI18n } from "@/lib/i18n/context";
 import { servicesTranslations } from "@/lib/i18n/translations/services";
 import type { Locale } from "@/lib/i18n/types";
@@ -29,6 +33,8 @@ import { useSampleMaps } from "@/lib/projectDataContext";
 import { sampleMapsTranslations } from "@/lib/i18n/translations/sampleMaps";
 import type { SampleMapType } from "@/lib/sampleMapTypes";
 import { SERVICE_MAP_LINKS, moduleMapTypes, pickModuleMaps } from "@/lib/serviceMapLinks";
+
+type ServicesTab = "services" | "clients" | "partners";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -46,14 +52,18 @@ export default function ServicesPage({ locale: overrideLocale }: { locale?: Loca
   const locale = overrideLocale || contextLocale || "en";
   const t = servicesTranslations[locale] || servicesTranslations.en;
 
-  const [activeTab, setActiveTab] = useState<"services" | "clients">("services");
+  const [activeTab, setActiveTab] = useState<ServicesTab>("services");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const search = window.location.search;
       const hash = window.location.hash;
-      if (search.includes("tab=clients") || hash === "#clients") {
-        setActiveTab("clients");
+      // /services?tab=clients and ?tab=partners (or #clients, #partners) open that tab.
+      const requested = (["clients", "partners"] as const).find(
+        (tab) => search.includes(`tab=${tab}`) || hash === `#${tab}`,
+      );
+      if (requested) {
+        setActiveTab(requested);
         setTimeout(() => {
           const tabSection = document.getElementById("services-tabs");
           if (tabSection) {
@@ -153,14 +163,17 @@ export default function ServicesPage({ locale: overrideLocale }: { locale?: Loca
 
         <section className="mt-16" id="services-tabs">
           <div className="mb-6 flex flex-wrap gap-3 border-b border-border pb-4">
-            {[
-              { id: "services", label: t.tabs.services },
-              { id: "clients", label: t.tabs.clients },
-            ].map((tab) => (
+            {(
+              [
+                { id: "services", label: t.tabs.services },
+                { id: "clients", label: t.tabs.clients },
+                { id: "partners", label: t.tabs.partners },
+              ] satisfies { id: ServicesTab; label: string }[]
+            ).map((tab) => (
               <button
                 key={tab.id}
                 type="button"
-                onClick={() => setActiveTab(tab.id as "services" | "clients")}
+                onClick={() => setActiveTab(tab.id as ServicesTab)}
                 className={`border px-4 py-3 text-xs font-bold uppercase tracking-[0.22em] transition-colors ${mono.className} ${
                   activeTab === tab.id
                     ? "border-primary bg-primary text-black"
@@ -428,7 +441,7 @@ export default function ServicesPage({ locale: overrideLocale }: { locale?: Loca
                 );
               })}
             </div>
-          ) : (
+          ) : activeTab === "clients" ? (
             <motion.section
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
@@ -530,6 +543,117 @@ export default function ServicesPage({ locale: overrideLocale }: { locale?: Loca
                     );
                   })}
                 </div>
+              </div>
+            </motion.section>
+          ) : (
+            <motion.section
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="border border-border bg-card/90"
+            >
+              <div className="grid grid-cols-1 gap-px bg-border lg:grid-cols-[minmax(280px,0.82fr)_minmax(0,1.18fr)]">
+                <div className="bg-background/80 p-6 md:p-8">
+                  <div className={`flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-primary ${mono.className}`}>
+                    <Handshake className="h-4 w-4" /> {t.partnersSection.badge}
+                  </div>
+                  <h2 className="mt-6 text-4xl font-extrabold uppercase tracking-tight leading-none md:text-5xl">
+                    {t.partnersSection.title}
+                  </h2>
+                  <p className={`mt-5 text-sm uppercase tracking-widest leading-relaxed text-muted-foreground ${mono.className}`}>
+                    {t.partnersSection.description}
+                  </p>
+                  <div className="mt-8 border border-border bg-card p-4">
+                    <div className={`text-[10px] uppercase tracking-[0.22em] text-muted-foreground ${mono.className}`}>
+                      {t.partnersSection.listedPartnersLabel}
+                    </div>
+                    <div className="mt-2 text-3xl font-extrabold tracking-tight">{pad(partners.length)}</div>
+                  </div>
+                </div>
+
+                <ul className="flex flex-col gap-px bg-border">
+                  {partners.map((partner) => {
+                    const description = t.partnersSection.descriptions[partner.id];
+                    const KindIcon = partner.kind === "group" ? Users : Building2;
+                    // Split the note around {code} so the code itself can be highlighted.
+                    const [beforeCode, afterCode] = t.partnersSection.discountNote
+                      .replace("{partner}", partner.name)
+                      .replace("{amount}", String(partner.discount?.amount ?? ""))
+                      .split("{code}");
+
+                    return (
+                      <li
+                        key={partner.id}
+                        className="grid grid-cols-[64px_minmax(0,1fr)] content-start gap-x-4 gap-y-4 bg-card px-5 py-6 last:grow md:grid-cols-[80px_minmax(0,1fr)_auto] md:gap-x-6 md:px-6"
+                      >
+                        {partner.logo ? (
+                          <img
+                            src={partner.logo}
+                            alt={`${partner.name} logo`}
+                            width={80}
+                            height={80}
+                            loading="lazy"
+                            className="h-16 w-16 rounded-full border border-border object-cover md:h-20 md:w-20"
+                          />
+                        ) : (
+                          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-border bg-background text-primary md:h-20 md:w-20">
+                            <KindIcon className="h-6 w-6 md:h-7 md:w-7" aria-hidden />
+                          </div>
+                        )}
+
+                        <div className="min-w-0 self-center">
+                          <h3 className="text-lg font-extrabold uppercase tracking-tight text-white md:text-xl">
+                            {partner.name}
+                          </h3>
+                          <div
+                            className={`mt-1.5 flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground ${mono.className}`}
+                          >
+                            <KindIcon className="h-3 w-3 text-primary" aria-hidden />
+                            {t.partnersSection.kinds[partner.kind]}
+                          </div>
+                        </div>
+
+                        {/* Last on phones (after the description and offer), top right from md up. */}
+                        <div className="order-last col-span-2 flex md:order-0 md:col-span-1 md:col-start-3 md:row-start-1 md:items-start md:justify-end">
+                          <a
+                            href={partner.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`inline-flex items-center gap-2 border border-primary px-3 py-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary transition-colors hover:bg-primary hover:text-black ${mono.className}`}
+                          >
+                            {t.partnersSection.visitButton} <ArrowUpRight className="h-4 w-4" />
+                          </a>
+                        </div>
+
+                        {(description || partner.discount) && (
+                          <div className="col-span-2 md:col-start-2 md:col-end-4">
+                            {description && (
+                              <p className="text-sm leading-relaxed text-foreground/85">{description}</p>
+                            )}
+                            {partner.discount && (
+                              <div className="mt-4 border-l-2 border-primary bg-primary/10 px-4 py-3">
+                                <div
+                                  className={`flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.22em] text-primary ${mono.className}`}
+                                >
+                                  <Tag className="h-3.5 w-3.5" aria-hidden />
+                                  {t.partnersSection.offerLabel}
+                                </div>
+                                <p className="mt-2 text-sm font-semibold leading-relaxed text-foreground">
+                                  {beforeCode}
+                                  <span
+                                    className={`mx-0.5 inline-block border border-primary/60 bg-black/40 px-1.5 py-0.5 text-[13px] font-bold text-primary wrap-anywhere ${mono.className}`}
+                                  >
+                                    {partner.discount.code}
+                                  </span>
+                                  {afterCode}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
             </motion.section>
           )}

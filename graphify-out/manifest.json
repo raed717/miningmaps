@@ -320,8 +320,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/views/services-page.tsx": {
-    "mtime": 1794829244.6832192,
-    "ast_hash": "1e753b72b9db3fa1fc34bf6023505afb",
+    "mtime": 1795702936.8165927,
+    "ast_hash": "dad90ca0e2955c4bfbc10f53a041b2cb",
     "semantic_hash": ""
   },
   "apps/web/tsconfig.json": {
@@ -410,8 +410,8 @@
     "semantic_hash": "ff5ccff88485658260173dff9f0fe74b"
   },
   "CLAUDE.md": {
-    "mtime": 1795598916.1085477,
-    "ast_hash": "b99a69bac8b6c00322d29b01ef3d3208",
+    "mtime": 1795603281.3529375,
+    "ast_hash": "40e9c23f356e0dae51aec04b88adad59",
     "semantic_hash": ""
   },
   "DESIGN_SYSTEM.md": {
@@ -990,8 +990,8 @@
     "semantic_hash": ""
   },
   "projectdataPrep.md": {
-    "mtime": 1795598723.4895353,
-    "ast_hash": "8572101798760e7e17ba03c61121c2e6",
+    "mtime": 1795600031.101184,
+    "ast_hash": "21e266fc20d2a901f1303d37a636bfa7",
     "semantic_hash": ""
   },
   "apps/web/public/documents/20260817 QUOTE 7693234.Pdf": {
@@ -1455,13 +1455,13 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/services.ts": {
-    "mtime": 1794829176.0929205,
-    "ast_hash": "739a600a5a4b4a28dce8f97a768beb2a",
+    "mtime": 1795703001.2244997,
+    "ast_hash": "f79a667329aaf0cef1d88b7d1f89f00c",
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/types.ts": {
-    "mtime": 1794835598.7717028,
-    "ast_hash": "f57358f3dc0ed7e661af7b4a28355424",
+    "mtime": 1795702872.3616362,
+    "ast_hash": "4f08e0c79deff6362642bb5d401acbad",
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectTags.ts": {
@@ -1527,6 +1527,21 @@
   "apps/web/src/components/sample-maps-notice.tsx": {
     "mtime": 1794835111.3520453,
     "ast_hash": "410c9607b95f993bcfdd1d6bc102615a",
+    "semantic_hash": ""
+  },
+  "apps/web/src/lib/partnersData.ts": {
+    "mtime": 1795702870.3212688,
+    "ast_hash": "32f00db137eb85a3c8b17268814c1aba",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/partners/GrantsLandServices.png": {
+    "mtime": 1795702697.0982742,
+    "ast_hash": "e4acbd79d20e454d6516f9f9345e7708",
+    "semantic_hash": ""
+  },
+  "apps/web/public/images/partners/grants-land-services-logo.png": {
+    "mtime": 1795702836.668673,
+    "ast_hash": "1d7536800eba45e80d2bdff9130f138a",
     "semantic_hash": ""
   }
 }

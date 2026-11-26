@@ -23,6 +23,7 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
     tabs: {
       services: "Services",
       clients: "Past Clients",
+      partners: "Partners",
     },
     modulesSection: {
       linesSuffix: "_LINES",
@@ -52,6 +53,20 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
         "B.C Hydro": "Reservoir monitoring reportS",
         "TELUS": "Real Estate Manager",
         "The City of Coquitlam": "Produced stream monitoring maps in partnership with B.C Hydro",
+      },
+    },
+    partnersSection: {
+      badge: "PARTNER_NETWORK",
+      title: "Partners",
+      description: "Companies and communities we work with that complement our mapping and land work.",
+      listedPartnersLabel: "Listed Partners",
+      visitButton: "Visit on Facebook",
+      offerLabel: "Partner offer",
+      discountNote: "Mention code {code} when you sign up with {partner} to get ${amount} off.",
+      kinds: { business: "Local business", group: "Facebook group" },
+      descriptions: {
+        "grants-land-services": "Professional land clearing and forestry services, focused on quality work and reliable service.",
+        "mining-claims-for-sale": "Facebook group for mining claims for sale",
       },
     },
     operationalFlow: {
@@ -349,6 +364,7 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
     tabs: {
       services: "Servicios",
       clients: "Clientes Anteriores",
+      partners: "Socios",
     },
     modulesSection: {
       linesSuffix: "_LÍNEAS",
@@ -378,6 +394,21 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
         "B.C Hydro": "Informes de monitoreo de embalses",
         "TELUS": "Gestión de Activos Inmobiliarios",
         "The City of Coquitlam": "Mapas de monitoreo de cuencas en colaboración con B.C Hydro",
+      },
+    },
+    partnersSection: {
+      badge: "RED_DE_SOCIOS",
+      title: "Socios",
+      description:
+        "Empresas y comunidades con las que trabajamos y que complementan nuestro trabajo de cartografía y tierras.",
+      listedPartnersLabel: "Socios Registrados",
+      visitButton: "Ver en Facebook",
+      offerLabel: "Oferta de socio",
+      discountNote: "Mencione el código {code} al registrarse con {partner} y obtenga ${amount} de descuento.",
+      kinds: { business: "Empresa local", group: "Grupo de Facebook" },
+      descriptions: {
+        "grants-land-services": "Servicios profesionales de desmonte y forestales, centrados en un trabajo de calidad y un servicio confiable.",
+        "mining-claims-for-sale": "Grupo de Facebook de concesiones mineras en venta",
       },
     },
     operationalFlow: {
@@ -674,6 +705,7 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
     tabs: {
       services: "Services",
       clients: "Clients Précédents",
+      partners: "Partenaires",
     },
     modulesSection: {
       linesSuffix: "_LIGNES",
@@ -703,6 +735,21 @@ export const servicesTranslations: Record<Locale, ServicesTranslation> = {
         "B.C Hydro": "Rapports de surveillance des bassins réservoirs",
         "TELUS": "Gestionnaire des Actifs Immobiliers",
         "The City of Coquitlam": "Cartographie de surveillance hydrographique en partenariat avec B.C Hydro",
+      },
+    },
+    partnersSection: {
+      badge: "RÉSEAU_PARTENAIRES",
+      title: "Partenaires",
+      description:
+        "Des entreprises et des communautés avec lesquelles nous travaillons et qui complètent nos travaux de cartographie et de gestion foncière.",
+      listedPartnersLabel: "Partenaires Référencés",
+      visitButton: "Voir sur Facebook",
+      offerLabel: "Offre partenaire",
+      discountNote: "Mentionnez le code {code} lors de votre inscription chez {partner} pour obtenir {amount}\u00a0$ de réduction.",
+      kinds: { business: "Entreprise locale", group: "Groupe Facebook" },
+      descriptions: {
+        "grants-land-services": "Services professionnels de défrichage et de foresterie, axés sur un travail de qualité et un service fiable.",
+        "mining-claims-for-sale": "Groupe Facebook de claims miniers à vendre",
       },
     },
     operationalFlow: {

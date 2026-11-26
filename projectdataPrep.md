@@ -320,3 +320,4 @@ No other text before or after.
 - Coordinates: Colombo city centre (the IGL lab location). The exact mine origin wasn't given.
 - No price was provided.
 - Media: hero image, video and certificate image all came from the user's Cloudinary uploads.
+- do not include any citation source example [citation:1]

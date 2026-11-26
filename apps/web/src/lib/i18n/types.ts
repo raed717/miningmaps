@@ -151,6 +151,7 @@ export interface ServicesTranslation {
   tabs: {
     services: string;
     clients: string;
+    partners: string;
   };
   modulesSection: {
     linesSuffix: string;
@@ -175,6 +176,20 @@ export interface ServicesTranslation {
     visitButton: string;
     linkPending: string;
     clientNotes?: Record<string, string>;
+  };
+  partnersSection: {
+    badge: string;
+    title: string;
+    description: string;
+    listedPartnersLabel: string;
+    visitButton: string;
+    offerLabel: string;
+    /** "{partner}", "{amount}" and "{code}" are replaced; the code is shown highlighted. */
+    discountNote: string;
+    /** Label under the partner's name, keyed by Partner.kind. */
+    kinds: Record<"business" | "group", string>;
+    /** Keyed by partner id (src/lib/partnersData.ts). */
+    descriptions: Record<string, string>;
   };
   operationalFlow: {
     tag: string;
