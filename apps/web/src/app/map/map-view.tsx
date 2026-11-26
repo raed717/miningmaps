@@ -15,6 +15,9 @@ import {
   Target,
   Cpu,
   Database,
+  Plus,
+  Minus,
+  Gem,
 } from "lucide-react";
 import { useProjectSummaries } from "@/lib/projectDataContext";
 import Link from "next/link";
@@ -81,10 +84,22 @@ const getTagColor = (filter: string | null): string | null => {
       return "#39FF14"; // Uranium Neon Lime
     case "lithium":
       return "#FF007F"; // Lithium Hot Pink
+    case "fossils":
+      return "#D2A679"; // Fossil Sandstone
+    case "agates":
+      return "#FF8C42"; // Agate Orange
+    case "gemstones":
+      return "#B388FF"; // Gemstone Violet
     default:
       return "#FFD700";
   }
 };
+
+type SaleFilter = "all" | "for-sale" | "sold";
+
+// Same specimen group as the projects page: one button matching any of these tags, plus one per tag.
+const SPECIMEN_TAGS = ["Fossils", "Agates", "Gemstones"];
+const SPECIMENS_FILTER = "Fossils, Agates & Gemstones";
 
 export default function MapView() {
   const { locale } = useI18n();
@@ -92,9 +107,10 @@ export default function MapView() {
   const projects = useProjectSummaries();
   const [selectedSiteId, setSelectedSiteId] = useState<string | null>(null);
   const [flyToCoords, setFlyToCoords] = useState<[number, number] | null>(null);
-  const [showOnlyForSale, setShowOnlyForSale] = useState(false);
+  const [saleFilter, setSaleFilter] = useState<SaleFilter>("all");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [map, setMap] = useState<L.Map | null>(null);
 
   const staticTags = [
     "Gold",
@@ -111,16 +127,71 @@ export default function MapView() {
 
   const selectedSite = projects.find((p) => p.id === selectedSiteId);
 
-  const visibleProjects = projects.filter((site) => {
-    if (site.type === "subproject") return false;
+  type Site = (typeof projects)[number];
+  const byId = new Map(projects.map((p) => [p.id, p]));
 
-    const matchesSale = showOnlyForSale ? site.isForSale : true;
-    const matchesFilter = activeFilter
-      ? filterTags(site).some((t) => t.toLowerCase() === activeFilter.toLowerCase())
-      : true;
+  // A project is for sale if it or any of its sub-projects is (same rule as the projects page).
+  const isAvailable = (site: Site) =>
+    site.isForSale ||
+    (site.subProjectIds ?? []).some((id) => byId.get(id)?.isForSale);
 
-    return matchesSale && matchesFilter;
-  });
+  // Each parent with its sub-projects. An id listed in a parent's subProjectIds is shown under
+  // that parent only, even if its row isn't typed "subproject", so it never gets two markers.
+  const listedAsSub = new Set(
+    projects.flatMap((p) => (p.type === "subproject" ? [] : (p.subProjectIds ?? []))),
+  );
+  const groups = projects
+    .filter((p) => p.type !== "subproject" && !listedAsSub.has(p.id))
+    .map((parent) => ({
+      parent,
+      subs: (parent.subProjectIds ?? [])
+        .map((id) => byId.get(id))
+        .filter((sub): sub is Site => Boolean(sub)),
+    }));
+
+  const wantedTags = activeFilter
+    ? (activeFilter === SPECIMENS_FILTER ? SPECIMEN_TAGS : [activeFilter]).map((tag) =>
+        tag.toLowerCase(),
+      )
+    : null;
+  const hasTag = (site: Site) =>
+    !wantedTags ||
+    filterTags(site).some((tag) => wantedTags.includes(tag.toLowerCase()));
+  const matchesSale = (site: Site, sale: SaleFilter) =>
+    sale === "all" || (sale === "for-sale" ? site.isForSale : !site.isForSale);
+
+  // Parents and sub-projects are filtered on their own tags and sale status, so a sold
+  // sub-project shows under "Sold" even when its parent is for sale. A sub-project without
+  // tags of its own uses its parent's. A parent stays listed (dimmed, no marker) when only
+  // its sub-projects match.
+  const filterGroups = (sale: SaleFilter) =>
+    groups.flatMap(({ parent, subs }) => {
+      const parentMatches = hasTag(parent) && matchesSale(parent, sale);
+      const matchingSubs = subs.filter(
+        (sub) =>
+          (filterTags(sub).length > 0 ? hasTag(sub) : hasTag(parent)) &&
+          matchesSale(sub, sale),
+      );
+      return parentMatches || matchingSubs.length > 0
+        ? [{ parent, parentMatches, subs: matchingSubs }]
+        : [];
+    });
+  // Counts are map targets: matching parents plus matching sub-projects.
+  const countTargets = (list: ReturnType<typeof filterGroups>) =>
+    list.reduce((n, g) => n + (g.parentMatches ? 1 : 0) + g.subs.length, 0);
+
+  const visibleGroups = filterGroups(saleFilter);
+  const saleCounts: Record<SaleFilter, number> = {
+    all: countTargets(filterGroups("all")),
+    "for-sale": countTargets(filterGroups("for-sale")),
+    sold: countTargets(filterGroups("sold")),
+  };
+
+  const saleOptions: { id: SaleFilter; label: string }[] = [
+    { id: "all", label: t.sidebar.saleStatus.all },
+    { id: "for-sale", label: t.sidebar.saleStatus.forSale },
+    { id: "sold", label: t.sidebar.saleStatus.sold },
+  ];
 
   return (
     <div
@@ -145,12 +216,12 @@ export default function MapView() {
 
       {/* Left Sidebar - Brutalist */}
       <aside
-        className={`absolute inset-y-0 left-0 z-1200 flex h-full w-[min(20rem,calc(100vw-3rem))] shrink-0 flex-col overflow-y-auto border-r border-border bg-card p-0 shadow-[10px_0_30px_rgba(0,0,0,0.8)] transition-transform duration-300 md:relative md:z-20 md:w-80 md:translate-x-0 ${
+        className={`absolute inset-y-0 left-0 z-1200 flex h-full w-[min(22rem,calc(100vw-3rem))] shrink-0 flex-col overflow-hidden border-r border-border bg-card p-0 shadow-[10px_0_30px_rgba(0,0,0,0.8)] transition-transform duration-300 md:relative md:z-20 md:w-96 md:translate-x-0 xl:w-104 ${
           mobileSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Header */}
-        <div className="p-6 border-b border-border bg-background">
+        <div className="shrink-0 border-b border-border bg-background p-6">
           <div className="mb-4 flex items-center justify-end md:hidden">
             <button
               type="button"
@@ -173,32 +244,45 @@ export default function MapView() {
         </div>
 
         {/* Filters */}
-        <div className="p-6 border-b border-border flex flex-col gap-3">
-          <label className="flex cursor-pointer items-center justify-between group">
-            <div className="flex items-center gap-3">
-              <Filter
-                className={`h-4 w-4 ${showOnlyForSale ? "text-secondary" : "text-[#555]"}`}
-              />
-              <span
-                className={`text-xs font-bold uppercase tracking-widest ${mono.className} ${showOnlyForSale ? "text-secondary" : "text-muted-foreground"}`}
-              >
-                {t.sidebar.availableAssetsOnly}
-              </span>
-            </div>
-            <input
-              type="checkbox"
-              className="sr-only"
-              checked={showOnlyForSale}
-              onChange={() => setShowOnlyForSale(!showOnlyForSale)}
-            />
+        <div className="flex shrink-0 flex-col gap-3 border-b border-border px-6 py-5">
+          <div role="group" aria-labelledby="map-sale-filter-label">
             <div
-              className={`h-5 w-10 border border-border transition-colors flex items-center px-1 ${showOnlyForSale ? "bg-secondary/20 border-secondary" : "bg-muted"}`}
+              id="map-sale-filter-label"
+              className={`mb-2 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground ${mono.className}`}
             >
-              <div
-                className={`h-3 w-3 bg-white transition-transform ${showOnlyForSale ? "translate-x-5 bg-secondary" : "translate-x-0 bg-[#555]"}`}
-              />
+              <Filter className="h-3.5 w-3.5 text-primary" aria-hidden />
+              {t.sidebar.saleStatus.label}
             </div>
-          </label>
+            <div className="grid grid-cols-3 border border-border">
+              {saleOptions.map((option) => {
+                const isActive = saleFilter === option.id;
+                const activeStyle =
+                  option.id === "for-sale"
+                    ? "bg-secondary text-black"
+                    : option.id === "sold"
+                      ? "bg-amber-500 text-black"
+                      : "bg-primary text-black";
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    aria-pressed={isActive}
+                    onClick={() => setSaleFilter(option.id)}
+                    className={`flex min-w-0 flex-col items-center gap-0.5 border-r border-border px-1 py-2 text-[10px] font-bold uppercase tracking-[0.14em] transition-colors last:border-r-0 ${mono.className} ${
+                      isActive
+                        ? activeStyle
+                        : "bg-background/70 text-muted-foreground hover:bg-muted hover:text-white"
+                    }`}
+                  >
+                    <span className="max-w-full truncate">{option.label}</span>
+                    <span className={isActive ? "text-black/70" : "text-[#666]"}>
+                      [{saleCounts[option.id]}]
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
           {activeFilter && (
             <div
@@ -209,7 +293,10 @@ export default function MapView() {
                 color: filterColor || "#FFD700",
               }}
             >
-              <span>{t.sidebar.filterPrefix} {activeFilter}</span>
+              <span>
+                {t.sidebar.filterPrefix}{" "}
+                {activeFilter === SPECIMENS_FILTER ? t.mapOverlay.specimensBtn : activeFilter}
+              </span>
               <button
                 type="button"
                 onClick={() => setActiveFilter(null)}
@@ -223,20 +310,17 @@ export default function MapView() {
         </div>
 
         {/* Project List */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex min-h-0 flex-1 flex-col">
           <div
-            className={`px-6 py-3 bg-muted border-b border-border text-[9px] uppercase tracking-widest font-bold text-[#666] ${mono.className} flex justify-between`}
+            className={`flex shrink-0 justify-between border-b border-border bg-muted px-6 py-3 text-[9px] font-bold uppercase tracking-widest text-[#666] ${mono.className}`}
           >
             <span>{t.sidebar.identifiedTargets}</span>
-            <span>[{visibleProjects.length}]</span>
+            <span>[{saleCounts[saleFilter]}]</span>
           </div>
 
-          <div className="flex-1 overflow-y-auto">
-            {visibleProjects.map((p) => {
+          <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+            {visibleGroups.map(({ parent: p, parentMatches, subs }) => {
               const isSelected = selectedSiteId === p.id;
-              const subs = (p.subProjectIds ?? [])
-                .map((id) => projects.find((proj) => proj.id === id))
-                .filter(Boolean) as typeof projects;
               return (
                 <div key={p.id}>
                   <button
@@ -247,13 +331,13 @@ export default function MapView() {
                     }}
                     className={`w-full text-left flex items-stretch border-b border-accent transition-all duration-300 group ${
                       isSelected ? "bg-primary/10" : "hover:bg-muted"
-                    }`}
+                    } ${parentMatches || isSelected ? "" : "opacity-60 hover:opacity-100"}`}
                   >
                     <div
                       className={`w-1 transition-colors ${isSelected ? "bg-primary" : "bg-transparent group-hover:bg-[#333]"}`}
                     />
 
-                    <div className="flex-1 p-4 flex gap-4">
+                    <div className="flex min-w-0 flex-1 gap-4 p-4">
                       {/* Small Image Thumbnail */}
                       <div
                         className={`h-16 w-16 shrink-0 overflow-hidden border ${isSelected ? "border-primary" : "border-border grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100"}`}
@@ -267,16 +351,19 @@ export default function MapView() {
 
                       <div className="flex-1 min-w-0 flex flex-col justify-center">
                         <div
-                          className={`text-[10px] text-primary tracking-widest font-bold mb-1 flex items-center justify-between ${mono.className}`}
+                          className={`mb-1 flex items-center justify-between gap-2 text-[10px] font-bold tracking-widest text-primary ${mono.className}`}
                         >
-                          <span>ID_{p.id}</span>
-                          {p.isForSale && (
-                            <span className="text-secondary px-1 border border-secondary bg-secondary/10">
+                          <span className="truncate">ID_{p.id}</span>
+                          {isAvailable(p) && (
+                            <span className="shrink-0 border border-secondary bg-secondary/10 px-1 text-secondary">
                               {t.sidebar.saleBadge}
                             </span>
                           )}
                         </div>
-                        <div className="font-bold text-sm uppercase tracking-tight truncate group-hover:text-white transition-colors">
+                        <div
+                          title={p.title}
+                          className="line-clamp-2 text-sm font-bold uppercase leading-tight tracking-tight wrap-anywhere transition-colors group-hover:text-white"
+                        >
                           {p.title}
                         </div>
                         <div
@@ -296,7 +383,7 @@ export default function MapView() {
                           <button
                             key={sub.id}
                             onClick={() => {
-                              setSelectedSiteId(p.id);
+                              setSelectedSiteId(sub.id);
                               setFlyToCoords(sub.coordinates);
                               setMobileSidebarOpen(false);
                             }}
@@ -307,15 +394,20 @@ export default function MapView() {
                             <div
                               className={`w-1 transition-colors ${isSubSelected ? "bg-primary/60" : "bg-transparent group-hover:bg-[#333]"}`}
                             />
-                            <div className="flex-1 py-2 pl-12 pr-4 flex items-center gap-3">
+                            <div className="flex min-w-0 flex-1 items-center gap-3 py-2 pl-12 pr-4">
                               <span className="text-[10px] text-primary/60 font-bold">
                                 &rsaquo;
                               </span>
                               <div className="flex-1 min-w-0">
                                 <div
-                                  className={`text-[10px] text-muted-foreground tracking-widest font-bold mb-0.5 ${mono.className}`}
+                                  className={`mb-0.5 flex items-center justify-between gap-2 text-[10px] font-bold tracking-widest text-muted-foreground ${mono.className}`}
                                 >
-                                  SUB_{sub.id}
+                                  <span className="truncate">SUB_{sub.id}</span>
+                                  {sub.isForSale && (
+                                    <span className="shrink-0 border border-secondary bg-secondary/10 px-1 text-[9px] text-secondary">
+                                      {t.sidebar.saleBadge}
+                                    </span>
+                                  )}
                                 </div>
                                 <div
                                   className={`text-xs uppercase tracking-tight truncate text-muted-foreground group-hover:text-white transition-colors ${mono.className}`}
@@ -347,6 +439,27 @@ export default function MapView() {
           {t.mapOverlay.projectsBtn}
         </button>
 
+        {/* Zoom controls: below the "Projects" button on phones, top-left of the map from md up
+            (the dossier panel takes the top-right corner). */}
+        <div className="absolute left-4 top-16 z-1001 flex flex-col border border-border bg-background/90 shadow-[0_0_30px_rgba(0,0,0,0.55)] backdrop-blur md:top-4">
+          {[
+            { label: t.mapOverlay.zoomIn, Icon: Plus, onClick: () => map?.zoomIn() },
+            { label: t.mapOverlay.zoomOut, Icon: Minus, onClick: () => map?.zoomOut() },
+          ].map(({ label, Icon, onClick }) => (
+            <button
+              key={label}
+              type="button"
+              onClick={onClick}
+              disabled={!map}
+              aria-label={label}
+              title={label}
+              className="flex h-9 w-9 items-center justify-center text-white transition-colors first:border-b first:border-border hover:bg-primary hover:text-black disabled:opacity-40"
+            >
+              <Icon className="h-4 w-4" />
+            </button>
+          ))}
+        </div>
+
         {/* Scanning Line overlay */}
         <motion.div
           animate={{ top: ["-10%", "110%"] }}
@@ -359,6 +472,7 @@ export default function MapView() {
           zoom={2}
           style={{ height: "100%", width: "100%", background: "#0B0F14" }}
           zoomControl={false}
+          ref={setMap}
         >
           <TileLayer
             attribution={`&copy; ${t.mapOverlay.disclaimer}`}
@@ -367,7 +481,8 @@ export default function MapView() {
 
           <MapFlyTo coordinates={flyToCoords} />
 
-          {visibleProjects.map((project) => {
+          {visibleGroups.map(({ parent: project, parentMatches }) => {
+            if (!parentMatches) return null;
             const isSelected = selectedSiteId === project.id;
             const color = filterColor
               ? filterColor
@@ -410,12 +525,10 @@ export default function MapView() {
             );
           })}
 
-          {visibleProjects.map((project) => {
-            const subs = (project.subProjectIds ?? [])
-              .map((id) => projects.find((p) => p.id === id))
-              .filter(Boolean) as typeof projects;
+          {visibleGroups.map(({ parent: project, subs }) => {
             return subs.map((sub) => {
-              const subSelected = selectedSiteId === project.id;
+              const subSelected =
+                selectedSiteId === sub.id || selectedSiteId === project.id;
               const subColor = filterColor
                 ? filterColor
                 : sub.isForSale
@@ -433,7 +546,7 @@ export default function MapView() {
                   )}
                   eventHandlers={{
                     click: () => {
-                      setSelectedSiteId(project.id);
+                      setSelectedSiteId(sub.id);
                       setFlyToCoords(sub.coordinates);
                     },
                   }}
@@ -474,7 +587,7 @@ export default function MapView() {
         `}</style>
 
         {/* Horizontal Bottom Tag Filter Bar */}
-        <div className="pointer-events-none absolute bottom-4 left-1/2 z-1000 flex -translate-x-1/2 justify-center w-[calc(100%-2rem)] max-w-4xl">
+        <div className="pointer-events-none absolute bottom-4 left-1/2 z-1000 flex -translate-x-1/2 justify-center w-[calc(100%-2rem)] max-w-6xl">
           <div className="pointer-events-auto flex items-center gap-1.5 border border-border bg-card/90 p-2 shadow-[0_0_30px_rgba(0,0,0,0.85)] backdrop-blur-md overflow-x-auto no-scrollbar w-full">
             <div
               className={`flex items-center gap-1.5 px-2 text-[10px] font-bold uppercase tracking-[0.2em] text-primary shrink-0 ${mono.className}`}
@@ -502,6 +615,52 @@ export default function MapView() {
                 <button
                   key={tag}
                   type="button"
+                  onClick={() => setActiveFilter(isActive ? null : tag)}
+                  style={
+                    isActive && tagColor
+                      ? {
+                          backgroundColor: tagColor,
+                          borderColor: tagColor,
+                          color: "#000000",
+                          boxShadow: `0 0 12px ${tagColor}`,
+                        }
+                      : {}
+                  }
+                  className={`shrink-0 border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] transition-all ${mono.className} ${
+                    isActive
+                      ? "font-extrabold"
+                      : "border-border bg-background/70 text-muted-foreground hover:border-secondary hover:text-secondary"
+                  }`}
+                >
+                  {tag}
+                </button>
+              );
+            })}
+
+            <div className="h-4 w-px shrink-0 bg-border" aria-hidden />
+            <button
+              type="button"
+              aria-pressed={activeFilter === SPECIMENS_FILTER}
+              onClick={() =>
+                setActiveFilter(activeFilter === SPECIMENS_FILTER ? null : SPECIMENS_FILTER)
+              }
+              className={`inline-flex shrink-0 items-center gap-1.5 border px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] transition-all ${mono.className} ${
+                activeFilter === SPECIMENS_FILTER
+                  ? "border-primary bg-primary text-black shadow-[0_0_12px_rgba(234,179,8,0.35)]"
+                  : "border-primary/40 bg-primary/10 text-primary hover:border-primary hover:bg-primary/20"
+              }`}
+            >
+              <Gem className="h-3 w-3" aria-hidden />
+              {t.mapOverlay.specimensBtn}
+            </button>
+            {SPECIMEN_TAGS.map((tag) => {
+              const isActive = activeFilter === tag;
+              const tagColor = getTagColor(tag);
+              return (
+                <button
+                  key={tag}
+                  type="button"
+                  aria-pressed={isActive}
                   onClick={() => setActiveFilter(isActive ? null : tag)}
                   style={
                     isActive && tagColor

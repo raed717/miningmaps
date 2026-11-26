@@ -1,6 +1,6 @@
 "use client";
 
-import App from "../../App";
+import App from "@/App";
 import { ProjectDataProvider } from "@/lib/projectDataContext";
 import type { ProjectPageData } from "@/lib/projectTypes";
 

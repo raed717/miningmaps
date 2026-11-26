@@ -64,8 +64,10 @@ export async function POST(request: NextRequest) {
       paths.push(path);
     }
   }
-  // Every page of the catch-all route (home previews, /projects, /map, dashboards, other locales).
-  revalidatePath("/[[...slug]]", "page");
+  // Every page of the three catch-all routes, one per locale (home previews, /projects, /map, dashboards).
+  revalidatePath("/(en)/[[...slug]]", "page");
+  revalidatePath("/es/[[...slug]]", "page");
+  revalidatePath("/fr/[[...slug]]", "page");
   revalidatePath("/sitemap-projects.xml");
 
   return NextResponse.json({ revalidated: true, paths, at: new Date().toISOString() });

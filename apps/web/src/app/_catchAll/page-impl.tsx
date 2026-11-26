@@ -15,11 +15,17 @@ import { getSampleMaps } from "@/lib/sampleMapsRepo";
 import { projectsTranslations } from "@/lib/i18n/translations/projects";
 import ClientPage from "./client";
 
-// Projects come from Neon. Pages are prerendered and regenerated in the background
-// at most every 5 minutes, so database edits (and new projects) go live without a redeploy.
+// The site's pages, shared by three route files with their own root layout (for <html lang>):
+//   (en)/[[...slug]]/page.tsx  ->  /, /projects/..., ...
+//   es/[[...slug]]/page.tsx    ->  /es/...
+//   fr/[[...slug]]/page.tsx    ->  /fr/...
+// Each calls forLocale() below; everything here works on the full path (["es", "projects", id]).
+//
+// Projects come from Neon. Pages are prerendered and regenerated in the background at most
+// every 5 minutes (`revalidate = 300`, declared in each route file because Next reads it
+// statically), so database edits (and new projects) go live without a redeploy.
 // Exception: a 404 cached for a project URL visited before its row existed is NOT refreshed by
 // this (Next 15.0 on Vercel); it stays until a deploy or POST /api/revalidate (api/revalidate/route.ts).
-export const revalidate = 300;
 
 const siteName = "Adamson Geomatics";
 
@@ -967,4 +973,31 @@ export default async function CatchAllPage({
       <ClientPage data={pageData} />
     </>
   );
+}
+
+type SlugParams = Promise<{ slug?: string[] }>;
+
+/**
+ * Page exports for one locale's route. The es/fr routes only receive the part after
+ * "/es" or "/fr", so the prefix is put back before calling the shared functions above.
+ */
+export function forLocale(locale: Locale) {
+  const fullParams = (params: SlugParams): SlugParams =>
+    locale === "en"
+      ? params
+      : params.then(({ slug }) => ({ slug: [locale, ...(slug?.filter(Boolean) ?? [])] }));
+
+  return {
+    generateMetadata: ({ params }: { params: SlugParams }) =>
+      generateMetadata({ params: fullParams(params) }),
+
+    generateStaticParams: async () =>
+      (await generateStaticParams()).flatMap(({ slug }) => {
+        const first = slug[0];
+        if (locale === "en") return first === "es" || first === "fr" ? [] : [{ slug }];
+        return first === locale ? [{ slug: slug.slice(1) }] : [];
+      }),
+
+    Page: ({ params }: { params: SlugParams }) => CatchAllPage({ params: fullParams(params) }),
+  };
 }

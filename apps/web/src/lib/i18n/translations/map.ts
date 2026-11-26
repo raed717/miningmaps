@@ -11,7 +11,7 @@ export const mapTranslations: Record<Locale, MapTranslation> = {
       databaseBadge: "MAP DATABASE",
       titleLine1: "Global",
       titleLine2: "Telemetry",
-      availableAssetsOnly: "Available Assets Only",
+      saleStatus: { label: "Status", all: "All", forSale: "For sale", sold: "Sold" },
       filterPrefix: "FILTER:",
       identifiedTargets: "IDENTIFIED TARGETS",
       saleBadge: "SALE",
@@ -24,6 +24,9 @@ export const mapTranslations: Record<Locale, MapTranslation> = {
       allBtn: "ALL",
       disclaimer:
         "projects are displayed not at exact coordinates for security reasons",
+      zoomIn: "Zoom in",
+      zoomOut: "Zoom out",
+      specimensBtn: "Fossils, agates & gems",
     },
     dossier: {
       targetLocked: "TARGET LOCKED",
@@ -43,7 +46,7 @@ export const mapTranslations: Record<Locale, MapTranslation> = {
       databaseBadge: "BASE DE DATOS CARTOGRÁFICA",
       titleLine1: "Telemetría",
       titleLine2: "Global",
-      availableAssetsOnly: "Solo Activos Disponibles",
+      saleStatus: { label: "Estado", all: "Todos", forSale: "En venta", sold: "Vendido" },
       filterPrefix: "FILTRO:",
       identifiedTargets: "OBJETIVOS IDENTIFICADOS",
       saleBadge: "VENTA",
@@ -56,6 +59,9 @@ export const mapTranslations: Record<Locale, MapTranslation> = {
       allBtn: "TODOS",
       disclaimer:
         "los proyectos no se muestran en coordenadas exactas por razones de seguridad",
+      zoomIn: "Acercar",
+      zoomOut: "Alejar",
+      specimensBtn: "Fósiles, ágatas y gemas",
     },
     dossier: {
       targetLocked: "OBJETIVO BLOQUEADO",
@@ -75,7 +81,7 @@ export const mapTranslations: Record<Locale, MapTranslation> = {
       databaseBadge: "BASE DE DONNÉES CARTOGRAPHIQUE",
       titleLine1: "Télémétrie",
       titleLine2: "Globale",
-      availableAssetsOnly: "Actifs Disponibles Uniquement",
+      saleStatus: { label: "Statut", all: "Tout", forSale: "À vendre", sold: "Vendu" },
       filterPrefix: "FILTRE :",
       identifiedTargets: "CIBLES IDENTIFIÉES",
       saleBadge: "VENTE",
@@ -88,6 +94,9 @@ export const mapTranslations: Record<Locale, MapTranslation> = {
       allBtn: "TOUT",
       disclaimer:
         "les projets ne sont pas affichés aux coordonnées exactes pour des raisons de sécurité",
+      zoomIn: "Zoom avant",
+      zoomOut: "Zoom arrière",
+      specimensBtn: "Fossiles, agates & gemmes",
     },
     dossier: {
       targetLocked: "CIBLE VERROUILLÉE",

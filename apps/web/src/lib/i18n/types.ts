@@ -479,7 +479,8 @@ export interface MapTranslation {
     databaseBadge: string;
     titleLine1: string;
     titleLine2: string;
-    availableAssetsOnly: string;
+    /** Sale-status filter in the sidebar (all / for sale / sold). */
+    saleStatus: { label: string; all: string; forSale: string; sold: string };
     filterPrefix: string;
     identifiedTargets: string;
     saleBadge: string;
@@ -491,6 +492,10 @@ export interface MapTranslation {
     tagsLabel: string;
     allBtn: string;
     disclaimer: string;
+    zoomIn: string;
+    zoomOut: string;
+    /** Tag-bar button matching any of Fossils, Agates, Gemstones. */
+    specimensBtn: string;
   };
   dossier: {
     targetLocked: string;

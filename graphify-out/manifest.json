@@ -49,16 +49,6 @@
     "ast_hash": "15616258aa3b2f707758df1d94c36b03",
     "semantic_hash": ""
   },
-  "apps/web/src/app/[[...slug]]/client.tsx": {
-    "mtime": 1793023654.7093735,
-    "ast_hash": "abaeecc796965be41cb5bc6699e94d26",
-    "semantic_hash": ""
-  },
-  "apps/web/src/app/[[...slug]]/page.tsx": {
-    "mtime": 1794834551.619545,
-    "ast_hash": "103ca30354bd5af4e49a883c97942cd8",
-    "semantic_hash": ""
-  },
   "apps/web/src/app/api/contact/route.ts": {
     "mtime": 1793002091.7057543,
     "ast_hash": "43d9fcc6e6420abb53bbb7bdd6e2f896",
@@ -69,14 +59,9 @@
     "ast_hash": "4dd2c021f7b01dd05397bc3f05be3d13",
     "semantic_hash": ""
   },
-  "apps/web/src/app/layout.tsx": {
-    "mtime": 1794676239.8137028,
-    "ast_hash": "1cc21593322807dcb044f6f1372c64d1",
-    "semantic_hash": ""
-  },
   "apps/web/src/app/map/map-view.tsx": {
-    "mtime": 1794308180.8955772,
-    "ast_hash": "da92376c5179f3b8483605a8001ad034",
+    "mtime": 1795715169.2391956,
+    "ast_hash": "a50b1aaa8058e13640c3d60945b7e350",
     "semantic_hash": ""
   },
   "apps/web/src/app/projects/[id]/project-view.tsx": {
@@ -325,7 +310,7 @@
     "semantic_hash": ""
   },
   "apps/web/tsconfig.json": {
-    "mtime": 1795598917.5462537,
+    "mtime": 1795724435.8139977,
     "ast_hash": "319f003e66d510ed28a680c9c3f154fd",
     "semantic_hash": ""
   },
@@ -410,8 +395,8 @@
     "semantic_hash": "ff5ccff88485658260173dff9f0fe74b"
   },
   "CLAUDE.md": {
-    "mtime": 1795603281.3529375,
-    "ast_hash": "40e9c23f356e0dae51aec04b88adad59",
+    "mtime": 1795724471.980553,
+    "ast_hash": "e8bf40a5441c11a8f331b4e05dab4f28",
     "semantic_hash": ""
   },
   "DESIGN_SYSTEM.md": {
@@ -1370,8 +1355,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectDataContext.tsx": {
-    "mtime": 1794820639.3463256,
-    "ast_hash": "1c7db1315633e12ec7f102faad677b6b",
+    "mtime": 1795724472.0773096,
+    "ast_hash": "28c989ce5fa8279f9534fabe2b323860",
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectTypes.ts": {
@@ -1384,19 +1369,14 @@
     "ast_hash": "d3a1719d137ab67510a90f0fcc7873d1",
     "semantic_hash": ""
   },
-  "apps/web/src/app/not-found.tsx": {
-    "mtime": 1793025799.2852767,
-    "ast_hash": "745d0fd41c03637c6b2c4f217adc6fe0",
-    "semantic_hash": ""
-  },
   "apps/web/src/views/community-page.tsx": {
     "mtime": 1793026428.6957023,
     "ast_hash": "cde19f4c239ce869c9343620c65ef156",
     "semantic_hash": ""
   },
   "apps/web/src/app/api/revalidate/route.ts": {
-    "mtime": 1794218377.6845188,
-    "ast_hash": "fc43f4ecb7ccbc705dbe96d5a15a9b02",
+    "mtime": 1795723800.4885468,
+    "ast_hash": "799f07183efd5f227d955b346357c41f",
     "semantic_hash": ""
   },
   "apps/web/src/components/expandable-summary.tsx": {
@@ -1445,8 +1425,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/map.ts": {
-    "mtime": 1793396760.8836515,
-    "ast_hash": "6e1986f945f529a7562986562317f5de",
+    "mtime": 1795715114.484846,
+    "ast_hash": "38dc84f40f98b06f41fb831d96c638e2",
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/projects.ts": {
@@ -1460,8 +1440,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/types.ts": {
-    "mtime": 1795702872.3616362,
-    "ast_hash": "4f08e0c79deff6362642bb5d401acbad",
+    "mtime": 1795715110.476133,
+    "ast_hash": "fa6447b6a5681aaa3888d0452d706a44",
     "semantic_hash": ""
   },
   "apps/web/src/lib/projectTags.ts": {
@@ -1542,6 +1522,71 @@
   "apps/web/public/images/partners/grants-land-services-logo.png": {
     "mtime": 1795702836.668673,
     "ast_hash": "1d7536800eba45e80d2bdff9130f138a",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/(en)/[[...slug]]/page.tsx": {
+    "mtime": 1795723792.829035,
+    "ast_hash": "aa1f64ee26aab50b91cf054706038888",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/(en)/layout.tsx": {
+    "mtime": 1795723792.7938817,
+    "ast_hash": "a5da500f2c9db1e90fab03f9665c8e37",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/(en)/not-found.tsx": {
+    "mtime": 1795723792.8690987,
+    "ast_hash": "ad9128cde98274e4bd7dc87de1ff45a1",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/_catchAll/client.tsx": {
+    "mtime": 1795723783.8344598,
+    "ast_hash": "58a6bd73c61a15c279e766285b79bb5e",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/_catchAll/not-found-impl.tsx": {
+    "mtime": 1795723783.7243228,
+    "ast_hash": "e9ce10b9d3d4870e1bfa053f8ebacfe9",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/_catchAll/page-impl.tsx": {
+    "mtime": 1795723783.5466685,
+    "ast_hash": "1f167e2eb6b20d1837aed404494a3983",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/_catchAll/root-shell.tsx": {
+    "mtime": 1795723759.144624,
+    "ast_hash": "a51c00eaedb1c1b47663e1dc3ce20496",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/es/[[...slug]]/page.tsx": {
+    "mtime": 1795723792.9442835,
+    "ast_hash": "79f6e24ae0f131ab522a4bd064412002",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/es/layout.tsx": {
+    "mtime": 1795723792.9070244,
+    "ast_hash": "700d4dc3b33ed811941bcfd3a71a46d8",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/es/not-found.tsx": {
+    "mtime": 1795723792.9867308,
+    "ast_hash": "ad9128cde98274e4bd7dc87de1ff45a1",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/fr/[[...slug]]/page.tsx": {
+    "mtime": 1795723793.0609078,
+    "ast_hash": "ac1798d2344a10d73879fd7855864fc9",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/fr/layout.tsx": {
+    "mtime": 1795723793.0174294,
+    "ast_hash": "8797a3aa18c14a21756679e765e5e109",
+    "semantic_hash": ""
+  },
+  "apps/web/src/app/fr/not-found.tsx": {
+    "mtime": 1795723793.0956762,
+    "ast_hash": "ad9128cde98274e4bd7dc87de1ff45a1",
     "semantic_hash": ""
   }
 }

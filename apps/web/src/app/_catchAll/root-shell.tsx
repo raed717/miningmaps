@@ -1,16 +1,20 @@
-// Global styles live in the root layout so both the catch-all page and not-found.tsx get them.
+// Shared by the three root layouts: (en)/layout.tsx, es/layout.tsx and fr/layout.tsx.
+// Each language has its own root layout so <html lang> is right in the server HTML
+// (one root layout can't see the URL of a prerendered page). Global styles live here so
+// every page and not-found view gets them.
 import "@fontsource-variable/inter";
 import "@fontsource/jetbrains-mono/400.css";
 import "@fontsource/jetbrains-mono/500.css";
 import "@fontsource/jetbrains-mono/700.css";
-import "./globals.css";
+import "../globals.css";
 import "leaflet/dist/leaflet.css";
 import "react-medium-image-zoom/dist/styles.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Locale } from "@/lib/i18n/types";
 
-export const metadata: Metadata = {
+export const rootMetadata: Metadata = {
   metadataBase: new URL("https://www.miningpropertymaps.com"),
   verification: {
     google: "Rwujs0TvL9GqRD9XrnDvEr31T7jxfUltW3nWQkJ6XzE",
@@ -178,13 +182,15 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({
+export function RootShell({
+  lang,
   children,
 }: {
+  lang: Locale;
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <body suppressHydrationWarning={true}>
         <script
           type="application/ld+json"
