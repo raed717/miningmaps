@@ -320,8 +320,8 @@
     "semantic_hash": "5f6fe1f808d6c1f4d09dff66f9221187"
   },
   "package.json": {
-    "mtime": 1793094294.4051511,
-    "ast_hash": "cce083a58be63b3a07a1e773ca56e39e",
+    "mtime": 1795725228.9073267,
+    "ast_hash": "a24a9eeedcbb18d05952a67db41f4a30",
     "semantic_hash": ""
   },
   "packages/config/package.json": {
@@ -395,8 +395,8 @@
     "semantic_hash": "ff5ccff88485658260173dff9f0fe74b"
   },
   "CLAUDE.md": {
-    "mtime": 1795724471.980553,
-    "ast_hash": "e8bf40a5441c11a8f331b4e05dab4f28",
+    "mtime": 1795725294.7772517,
+    "ast_hash": "59b694529914063cf81d37c9ec7fb764",
     "semantic_hash": ""
   },
   "DESIGN_SYSTEM.md": {
@@ -1420,8 +1420,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/home.ts": {
-    "mtime": 1794835598.7747047,
-    "ast_hash": "26024c4c3b73eb20fc9cce789418ec94",
+    "mtime": 1795873754.2113354,
+    "ast_hash": "2148c53a717748082c203133b3f4b035",
     "semantic_hash": ""
   },
   "apps/web/src/lib/i18n/translations/map.ts": {
@@ -1550,13 +1550,13 @@
     "semantic_hash": ""
   },
   "apps/web/src/app/_catchAll/page-impl.tsx": {
-    "mtime": 1795723783.5466685,
-    "ast_hash": "1f167e2eb6b20d1837aed404494a3983",
+    "mtime": 1795873754.5388975,
+    "ast_hash": "5349fbb64c2ac3c71ee921180f04492b",
     "semantic_hash": ""
   },
   "apps/web/src/app/_catchAll/root-shell.tsx": {
-    "mtime": 1795723759.144624,
-    "ast_hash": "a51c00eaedb1c1b47663e1dc3ce20496",
+    "mtime": 1795873754.4774835,
+    "ast_hash": "120d9868c56d5d3d65e6ad8130ad1c5c",
     "semantic_hash": ""
   },
   "apps/web/src/app/es/[[...slug]]/page.tsx": {

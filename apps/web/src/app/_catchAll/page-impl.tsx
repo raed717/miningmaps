@@ -684,7 +684,7 @@ export async function generateMetadata({
 
   // Fallback to home
   return {
-    title: `${siteName} | GIS & Mineral Claim Services, Properties for Sale`,
+    title: `${siteName} | Mining Claims For Sale, GIS, Prospecting, Staking, Land Management`,
     description:
       "Professional land and geospatial services — GIS mapping, mineral claim staking, LiDAR, and geological modelling.",
     alternates: { canonical },

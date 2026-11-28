@@ -20,9 +20,9 @@ export const rootMetadata: Metadata = {
     google: "Rwujs0TvL9GqRD9XrnDvEr31T7jxfUltW3nWQkJ6XzE",
   },
   title:
-    "Adamson Geomatics | GIS & Mineral Claim Services, Properties for Sale | Chris Adamson, R.I.",
+    "Adamson Geomatics | Mining Claims For Sale, GIS, Prospecting, Staking, Land Management",
   description:
-    "Professional land and geospatial services in British Columbia. GIS mapping, mineral claim staking, LiDAR, digital elevation models, geological modelling, land valuations, and legal dispute support.",
+    "Mining claims and properties for sale, GIS mapping, prospecting, claim staking, land management and title searches in British Columbia. LiDAR, elevation models, geological modelling and land valuations.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
@@ -33,9 +33,9 @@ export const rootMetadata: Metadata = {
     apple: "/favicon.png",
   },
   openGraph: {
-    title: "Adamson Geomatics | GIS & Mineral Claims in BC",
+    title: "Adamson Geomatics | Mining Claims For Sale, GIS, Prospecting, Staking, Land Management",
     description:
-      "Professional land and geospatial services in BC — claim staking, GIS mapping, LiDAR, 3D geological modelling, and more.",
+      "Mining claims for sale, GIS mapping, prospecting, claim staking, land management and title searches in BC.",
     url: "https://www.miningpropertymaps.com",
     siteName: "Adamson Geomatics",
     type: "website",
@@ -43,9 +43,9 @@ export const rootMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adamson Geomatics | GIS & Mineral Claims in BC",
+    title: "Adamson Geomatics | Mining Claims For Sale, GIS, Prospecting, Staking, Land Management",
     description:
-      "Professional land and geospatial services in BC — claim staking, GIS mapping, LiDAR, 3D geological modelling, and more.",
+      "Mining claims for sale, GIS mapping, prospecting, claim staking, land management and title searches in BC.",
     images: ["/opengraph-image.png"],
   },
 };

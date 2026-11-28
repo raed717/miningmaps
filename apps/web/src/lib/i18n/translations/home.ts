@@ -4,9 +4,9 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
   en: {
     meta: {
       title:
-        "Adamson Geomatics | GIS & Mineral Claim Services, Properties for Sale | Chris Adamson, R.I.",
+        "Adamson Geomatics | Mining Claims For Sale, GIS, Prospecting, Staking, Land Management",
       description:
-        "Professional land and geospatial services in British Columbia. GIS mapping, mineral claim staking, LiDAR, digital elevation models, geological modelling, land valuations, and legal dispute support.",
+        "Mining claims and properties for sale, GIS mapping, prospecting, claim staking, land management and title searches in British Columbia. LiDAR, elevation models, geological modelling and land valuations.",
     },
     cinematicHero: {
       evolutionLabel: "EVOLUTION",
@@ -363,9 +363,9 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
   es: {
     meta: {
       title:
-        "Adamson Geomatics | Servicios SIG y Concesiones Mineras en BC | Chris Adamson, R.I.",
+        "Adamson Geomatics | Concesiones Mineras en Venta, SIG, Prospección, Estacado, Gestión de Tierras",
       description:
-        "Servicios profesionales territoriales y geoespaciales en Columbia Británica. Mapeo SIG, estacado de claims mineros, LiDAR, modelos de elevación, geología y tasaciones de tierras.",
+        "Concesiones y propiedades mineras en venta, mapeo SIG, prospección, estacado de concesiones, gestión de tierras y búsquedas de títulos en Columbia Británica. LiDAR, modelos de elevación, geología y tasaciones.",
     },
     cinematicHero: {
       evolutionLabel: "EVOLUCIÓN",
@@ -726,9 +726,9 @@ export const homeTranslations: Record<Locale, HomeTranslation> = {
   fr: {
     meta: {
       title:
-        "Adamson Geomatics | Services SIG & Claims Miniers en Colombie-Britannique",
+        "Adamson Geomatics | Claims Miniers à Vendre, SIG, Prospection, Jalonnement, Gestion Foncière",
       description:
-        "Services géospatiaux et fonciers professionnels en Colombie-Britannique. Cartographie SIG, jalonnement de claims miniers, LiDAR, modèles d'élévation et expertises foncières.",
+        "Claims et propriétés minières à vendre, cartographie SIG, prospection, jalonnement, gestion foncière et recherches de titres en Colombie-Britannique. LiDAR, modèles d'élévation, géologie et expertises foncières.",
     },
     cinematicHero: {
       evolutionLabel: "ÉVOLUTION",

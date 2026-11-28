@@ -1,23 +1,23 @@
 # Graph Report - miningmaps  (2026-11-26)
 
 ## Corpus Check
-- 152 files · ~10,826,571 words
+- 152 files · ~10,826,612 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 979 nodes · 1602 edges · 134 communities (59 shown, 75 thin omitted)
+- 980 nodes · 1603 edges · 137 communities (61 shown, 76 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 29 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1cfc929b`
+- Built from commit: `18510f61`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - class-variance-authority
 - project-view.tsx
-- scripts
+- dependencies
 - projectsRepo.ts
 - devDependencies
 - compilerOptions
@@ -26,7 +26,7 @@
 - env
 - useI18n
 - env/package.json
-- projectDataContext.tsx
+- scripts
 - Adamson Geomatics
 - Industrial Cartography / Terminal Brutalism
 - playwright
@@ -109,6 +109,9 @@
 - (en)/[[...slug]]/page.tsx
 - es/[[...slug]]/page.tsx
 - fr/[[...slug]]/page.tsx
+- package.json
+- devDependencies
+- @neon/env
 - NWT/1.jpg
 - NWT/2.jpg
 - Target20230830_2.JPG (NWT Target Map)
@@ -173,19 +176,19 @@
 - **Barkerville Gold Camp Placer-Lode System** — apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_mosquito_creek_claim, apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_lowhee_cow_mountain_claim, apps_web_public_images_projects_barkerville_geologicsummaryofbarkervilleclaims_ballarat_claim [EXTRACTED 1.00]
 - **Northumberland Deposit Geological and Staking Framework** — apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_report, apps_web_public_images_projects_nevada_northumberland_staking_report_2_northumberland_staking_rationale, apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_newmont_northumberland_memo, apps_web_public_images_projects_nevada_northumberland_geology_summaryfinal_northumberland_deposits [EXTRACTED 1.00]
 
-## Communities (134 total, 75 thin omitted)
+## Communities (137 total, 76 thin omitted)
 
 ### Community 1 - "project-view.tsx"
 Cohesion: 0.10
 Nodes (33): react, DATE_LOCALES, PdfPreview, ProjectLocationMap, GalleryImage, ProjectImageGallery(), ProjectImageGalleryProps, Button() (+25 more)
 
-### Community 2 - "scripts"
-Cohesion: 0.04
-Nodes (48): @neon/config, @neon/env, next-sitemap, dependencies, @miningmaps/env, @neon/config, @neon/env, @react-email/render (+40 more)
+### Community 2 - "dependencies"
+Cohesion: 0.12
+Nodes (17): @neon/config, dependencies, @miningmaps/env, @neon/config, @react-email/render, react-intersection-observer, react-is, resend (+9 more)
 
 ### Community 3 - "projectsRepo.ts"
-Cohesion: 0.18
-Nodes (14): GET(), revalidate, getProjectSitemapEntries(), getSql(), isPlainObject(), localizeProject(), optionalList(), overlay() (+6 more)
+Cohesion: 0.10
+Nodes (26): GET(), revalidate, KuulaFrame, LinkPreview, Project, projects, ProjectSection, QuickFact (+18 more)
 
 ### Community 4 - "devDependencies"
 Cohesion: 0.07
@@ -215,9 +218,9 @@ Nodes (54): ProjectDetails(), Footer(), AccomplishmentsSection(), icons, certifi
 Cohesion: 0.11
 Nodes (18): dotenv, dependencies, dotenv, @t3-oss/env-core, zod, devDependencies, @miningmaps/config, typescript (+10 more)
 
-### Community 11 - "projectDataContext.tsx"
-Cohesion: 0.11
-Nodes (18): ClientPage(), metadata, KuulaFrame, LinkPreview, Project, projects, ProjectSection, QuickFact (+10 more)
+### Community 11 - "scripts"
+Cohesion: 0.17
+Nodes (12): scripts, build, check-types, dev, dev:native, dev:web, export:csv, export:sql (+4 more)
 
 ### Community 12 - "Adamson Geomatics"
 Cohesion: 0.26
@@ -336,12 +339,12 @@ Cohesion: 0.07
 Nodes (37): AboutPage, AccountPage, App(), AuthPage, CommunityPage, ContactPage, DashboardView, decodeSegment() (+29 more)
 
 ### Community 69 - "sample-maps-page.tsx"
-Cohesion: 0.08
-Nodes (38): ExpandableSummary(), Props, FullscreenImageViewer(), FullscreenImageViewerProps, ImageViewerTrigger(), ImageViewerTriggerProps, pad(), pickShowcase() (+30 more)
+Cohesion: 0.07
+Nodes (42): ExpandableSummary(), Props, FullscreenImageViewer(), FullscreenImageViewerProps, ImageViewerTrigger(), ImageViewerTriggerProps, pad(), pickShowcase() (+34 more)
 
 ### Community 74 - "root-shell.tsx"
-Cohesion: 0.11
-Nodes (15): isAuthorized(), LOCALE_PREFIXES, POST(), schema, jsonLd, rootMetadata, RootShell(), metadata (+7 more)
+Cohesion: 0.09
+Nodes (17): isAuthorized(), LOCALE_PREFIXES, POST(), schema, ClientPage(), metadata, jsonLd, rootMetadata (+9 more)
 
 ### Community 78 - "types.ts"
 Cohesion: 0.15
@@ -379,25 +382,33 @@ Nodes (4): generateMetadata, generateStaticParams, revalidate, route
 Cohesion: 0.40
 Nodes (4): generateMetadata, generateStaticParams, revalidate, route
 
+### Community 95 - "package.json"
+Cohesion: 0.20
+Nodes (9): name, overrides, next, packageManager, private, type, workspaces, apps/* (+1 more)
+
+### Community 96 - "devDependencies"
+Cohesion: 0.22
+Nodes (9): next-sitemap, devDependencies, @miningmaps/config, next-sitemap, turbo, typescript, @miningmaps/config, turbo (+1 more)
+
 ## Knowledge Gaps
-- **442 isolated node(s):** `fs`, `path`, `filePath`, `content`, `$schema` (+437 more)
+- **443 isolated node(s):** `fs`, `path`, `filePath`, `content`, `$schema` (+438 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **75 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **76 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `class-variance-authority`, `project-view.tsx`, `devDependencies`, `clsx`, `@fontsource-variable/inter`, `@hookform/resolvers`, `leaflet`, `jose`, `@miningmaps/env`, `next`, `next-themes`, `radix-ui`, `react-dom`, `react-leaflet`, `recharts`, `shadcn`, `sonner`, `tailwind-merge`, `@tailwindcss/postcss`, `@tanstack/react-form`, `tw-animate-css`, `@types/leaflet`, `embla-carousel-react`, `@neondatabase/auth`, `zod`, `@neondatabase/serverless`, `react-medium-image-zoom`, `@vercel/speed-insights`, `@fontsource/jetbrains-mono`?**
-  _High betweenness centrality (0.102) - this node is a cross-community bridge._
+  _High betweenness centrality (0.101) - this node is a cross-community bridge._
 - **Why does `react` connect `project-view.tsx` to `dependencies`?**
-  _High betweenness centrality (0.096) - this node is a cross-community bridge._
+  _High betweenness centrality (0.095) - this node is a cross-community bridge._
 - **Why does `Carousel()` connect `project-view.tsx` to `useI18n`?**
-  _High betweenness centrality (0.094) - this node is a cross-community bridge._
+  _High betweenness centrality (0.093) - this node is a cross-community bridge._
 - **What connects `fs`, `path`, `filePath` to the rest of the system?**
-  _442 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _443 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `project-view.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.10144927536231885 - nodes in this community are weakly interconnected._
-- **Should `scripts` be split into smaller, more focused modules?**
-  _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._
-- **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._
+- **Should `dependencies` be split into smaller, more focused modules?**
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
+- **Should `projectsRepo.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.10344827586206896 - nodes in this community are weakly interconnected._
